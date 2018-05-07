@@ -1,0 +1,3 @@
+Añade el menú Líneas Factura proveedor En Contabilidad/Proveedores.
+Se añaden muchos related de la factura a la línea de factura.
+Se renombro algún campo, como el uos_id por uom_id, y el de .._taxes_id por ..taxes_id
