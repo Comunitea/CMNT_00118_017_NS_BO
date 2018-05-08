@@ -1,0 +1,7 @@
+Añade el campo purchase price a la línea de factura y la de compra.
+El purchase_price de compra se movió antes de la migración al módulo de sale_margin por un tema del orden en que se ejecutaban los onchanges.
+
+Se declara un report, que sale en el Menu de Ventas/Commission y se llama Commission, qizás lo quitemos después
+
+PENDIENTE DE MOVER EL PURCHASE PRICE DESDE LA FACTURACIÓN DE ALBARÁN A LA LÍNEA
+DE FACTURA
