@@ -1,0 +1,2 @@
+Esconde el precio de coste en todos los siotios salvo que se tenga marcado el 
+permiso para verlo
