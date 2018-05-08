@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="indaws_sending_stock_picking_form" model="ir.ui.view">
+      <field name="name">indaws_sending.stock.picking.form</field>
+      <field name="model">stock.picking</field>
+      <field name="priority">32</field>
+      <field name="inherit_id" ref="stock.view_picking_form" />
+      <field name="arch" type="xml">
+        <notebook position="inside">
+            <page string="Configuración Sending">
+                <field name="sending" invisible="1"/>
+                <separator string="Sending" attrs="{'invisible':[('sending', '=', False)]}"/>
+                <group attrs="{'invisible':[('sending', '=', False)]}">
+                  <group colspan="4">
+                    <button name="button_sending_etiqueta" string="Grabar Envío" type="object" class="oe_highlight" attrs="{'invisible':[('sending_expedicion', '!=', False)]}"/>
+                  </group>
+                  <group>
+                    <field name="sending_portes" required="0" attrs="{'readonly':[('sending_expedicion', '!=', False)],'required':[('sending', '=', True)]}"/>
+                    <field name="sending_reembolso" attrs="{'readonly':[('sending_expedicion', '!=', False)]}"/>
+                    <field name="sending_seguro"  attrs="{'readonly':[('sending_expedicion', '!=', False)]}" />
+                    <field name="sending_retorno"  required="1" attrs="{'readonly':[('sending_expedicion', '!=', False)]}" />  
+                    <field name="sending_numbultos" required="1" attrs="{'readonly':[('sending_expedicion', '!=', False)]}" />  
+                    <field name="sending_kilos" required="1" attrs="{'readonly':[('sending_expedicion', '!=', False)]}" />  
+                  </group>
+                  <group colspan="4">
+                    <field name="sending_observaciones"  attrs="{'readonly':[('sending_expedicion', '!=', False)]}"/>
+                  </group>            
+                  <group>             
+                    <field name="sending_expedicion" readonly="1" />
+                    <field name="url_etiqueta" widget="url" readonly="1" string="Descargar"/>
+                    <field name="sending_mensaje_error" readonly="1"/>
+                  </group>                                         
+                </group>
+            </page>
+        </notebook>
+      </field>
+    </record>
+  </data>
+</openerp>
