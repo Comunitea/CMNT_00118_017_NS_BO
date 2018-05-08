@@ -24,6 +24,7 @@ from odoo.exceptions import UserError
 from datetime import datetime
 import sys
 from ..mrw.picking import *
+from urllib import unquote_plus
 reload(sys)
 sys.setdefaultencoding('iso-8859-1')
 
