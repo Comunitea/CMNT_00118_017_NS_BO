@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_globle_report_wizard_form" model="ir.ui.view">
+        <field name="name">view.globle.report.wizrd.form</field>
+        <field name="model">generic.excel.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Excel report ">
+                <field name="state" invisible="1"/>
+                <field name="name" invisible="1"/>
+                <group states="choose" string="Excel report">
+                    <div >
+                        Are you sure to print report?
+                    </div>
+                <footer states="choose">
+                    <button name="print_report" string="Ok" type="object" class="oe_highlight"/>
+                    <button string="Cancel" special="cancel" class="oe_link"/>
+                </footer>
+                </group>
+                <div states="get">
+                         <h2>Report Generated</h2>
+                         <p>Here is the Excel Report: <field name="data" readonly="1" filename="name"/></p>
+                 </div>
+            </form>
+        </field>
+    </record>
+</odoo>
+        
