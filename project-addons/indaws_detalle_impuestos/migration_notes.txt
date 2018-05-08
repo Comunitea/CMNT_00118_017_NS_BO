@@ -1,0 +1,2 @@
+Añade un desglose de impuestos, por iba 21 , 4 y 10 en una nueva pestaña en 
+ventas facturas y terminal punto de venta, aunque en esta ultima no se modifica la vista

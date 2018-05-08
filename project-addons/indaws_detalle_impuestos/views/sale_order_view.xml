@@ -1,0 +1,33 @@
+﻿<odoo>
+    <record id="view_detalle_impuestos_sale_order_form" model="ir.ui.view">
+        <field name="name">sale.order.detalle.impuestos.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+		
+			<notebook position="inside">
+                <page string="Detalle impuestos">
+                     <group>
+
+                        <field name="base_21" />
+                        <field name="iva_21" />
+                        <field name="base_10" />
+                        <field name="iva_10" />
+                        <field name="base_4" />
+                        <field name="iva_4" />
+                        <field name="base_0" />
+                        <field name="iva_0" />
+                        <field name="base_req" />
+                        <field name="ptje_req" />
+                        <field name="cuota_req" />
+
+                    </group>
+                </page>
+            </notebook>
+            
+            
+            
+
+        </field>
+    </record>
+</odoo>
