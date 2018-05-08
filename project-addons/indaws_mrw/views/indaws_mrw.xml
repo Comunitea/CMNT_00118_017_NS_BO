@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--~~~~
+         MRW Configuración
+         ~~~~~-->
+    <record id="indaws_mrw_configuracion_form" model="ir.ui.view">
+      <field name="name">indaws_mrw.configuracion.form</field>
+      <field name="model">indaws_mrw.configuracion</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="Configuración MRW">
+          <header>
+            <button name="test_connection" string="Test Conexión" type="object" class="oe_highlight" icon="gtk-network" />
+          </header>
+          <sheet>
+            <separator string="Información de Conexión" />
+            <group>
+              <h3>
+                <field name="status" />
+              </h3>
+            </group>
+            <group>
+              <field name="active" />
+              <field name="username" required="1"  />
+              <field name="password" required="1" />
+              <field name="franchise" required="1" />
+              <field name="subscriber" required="1"  />
+              <field name="department" />
+              <field name="debug" required="0" />            
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    <record id="indaws_mrw_configuracion_tree" model="ir.ui.view">
+      <field name="name">indaws_mrw.configuracion.tree</field>
+      <field name="model">indaws_mrw.configuracion</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string="Configuración MRW">
+          <field name="username" />
+          <field name="password" />
+          <field name="franchise" />
+          <field name="debug" />
+        </tree>
+      </field>
+    </record>
+    <record id="indaws_mrw_configuracion_action" model="ir.actions.act_window">
+      <field name="name">Configuracion MRW</field>
+      <field name="res_model">indaws_mrw.configuracion</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="indaws_mrw_configuracion_tree" />
+    </record> 
+    <menuitem id="menu_indaws_mrw_configuracion" parent="base_setup.menu_config" action="indaws_mrw_configuracion_action"/>                         
+
+</odoo>    
+

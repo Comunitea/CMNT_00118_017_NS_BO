@@ -1,0 +1,1 @@
+Se añaden campos transportidta a la factura aunque no hay vista declarada
