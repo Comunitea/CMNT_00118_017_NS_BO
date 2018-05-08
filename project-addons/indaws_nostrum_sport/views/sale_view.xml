@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        
+        <!--SALE ORDER-->
+        <record id="view_sale_order_other_nostrum_tree" model="ir.ui.view">
+            <field name="name">sale.order.other.nostrum.tree</field>
+            <field name="model">sale.order</field>
+            <field name="priority">9999</field>
+            <field name="arch" type="xml">
+			
+                <tree string="Informes Nostrum Sport">
+                    <field name='name' />
+                    <field name='date_order' />
+                    <field name='base_21' />
+                    <field name='base_10' />
+                    <field name='base_4' />
+                    <field name='iva_21' />
+                    <field name='iva_10' />
+                    <field name='iva_4' />
+                    <field name='amount_untaxed' />
+                    <field name='amount_tax' />
+                    <field name='amount_total' />
+                    <field name='state' invisible="1" />
+                </tree>
+            </field>
+        </record>
+        
+        
+        
+        <record id="view_nostrum_sale_order_form" model="ir.ui.view">
+            <field name="name">sale.order.nostrum.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/tree/field[@name='discount']" position="after">
+                    <field name="price_unit_net" />
+                </xpath>
+            </field>
+        </record>
+        
+        
+        
+        <record id="act_invoice_nostrum_2_sale_ids" model="ir.actions.act_window">
+            <field name="name">Ventas Nostrum</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="indaws_nostrum_sport.view_sale_order_other_nostrum_tree" />
+        </record>
+        
+        <!--LINEAS SALES-->
+        <record id="view_sale_order_line_other_nostrum_tree" model="ir.ui.view">
+            <field name="name">sale.order.line.other.nostrum.tree</field>
+            <field name="model">sale.order.line</field>
+            <field name="priority">9999</field>
+            <field name="arch" type="xml">
+			
+                <tree string="Informes Nostrum Sport">
+                    <field name='order_id' />
+                    <field name='date_order' />
+                    <field name='ref_product' />
+                    <field name='product_id' />
+                    <field name='name' />
+                    <field name='product_uom_qty' />
+                    <field name='price_unit' />
+                    <field name='purchase_price' />
+                    <field name='price_subtotal' />
+                    <field name='state' invisible="1" />
+                </tree>
+                
+
+            </field>
+        </record>
+        
+        <record id="act_invoice_nostrum_2_sale_order_line_ids" model="ir.actions.act_window">
+            <field name="name">Sale order Nostrum</field>
+            <field name="res_model">sale.order.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="indaws_nostrum_sport.view_sale_order_line_other_nostrum_tree" />
+        </record>
+</odoo>

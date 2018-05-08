@@ -1,0 +1,2 @@
+Se definen los campos margenes tan importantes para Nostrum
+Dividí el modulo original en un fichero por cada herencia de modelos básicos

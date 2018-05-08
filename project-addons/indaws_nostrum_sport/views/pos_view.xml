@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        
+        <!--POS ORDER-->
+        <record id="view_pos_order_other_nostrum_tree" model="ir.ui.view">
+            <field name="name">pos.order.other.nostrum.tree</field>
+            <field name="model">pos.order</field>
+            <field name="priority">9999</field>
+            <field name="arch" type="xml">
+			
+                <tree string="Informes Nostrum Sport">
+                    <field name="name"/>
+                    <field name="pos_reference"/>
+                    <field name="partner_id"/>
+                    <field name="date_order"/>
+                    <field name="amount_total" sum="Amount total"/>
+                    <field name="state"/>
+                </tree>
+                
+
+            </field>
+        </record>
+        
+        <record id="act_invoice_nostrum_2_pos_ids" model="ir.actions.act_window">
+            <field name="name">Ventas TPV Nostrum</field>
+            <field name="res_model">pos.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="indaws_nostrum_sport.view_pos_order_other_nostrum_tree" />
+        </record>
+ 
+ </odoo>
+       
+        
+        
+       

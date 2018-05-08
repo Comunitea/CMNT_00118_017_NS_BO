@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+         <!--LINEAS PURCHASES-->
+        <record id="view_purchase_order_line_other_nostrum_tree" model="ir.ui.view">
+            <field name="name">purchase.order.line.other.nostrum.tree</field>
+            <field name="model">purchase.order.line</field>
+            <field name="priority">9999</field>
+            <field name="arch" type="xml">
+            
+                <tree string="Informes Nostrum Sport">
+                    <field name='order_id' />
+                    <field name='date_order' />
+                    <field name='ref_product' />
+                    <field name='product_id' />
+                    <field name='name' />
+                    <field name='product_qty' />
+                    <field name='price_unit' />
+                    <field name='price_subtotal' />
+                    <field name='state' invisible="1" />
+                </tree>
+                
+
+            </field>
+        </record>
+        
+        <record id="act_invoice_nostrum_2_purchase_order_line_ids" model="ir.actions.act_window">
+            <field name="name">purchase order Nostrum</field>
+            <field name="res_model">purchase.order.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="indaws_nostrum_sport.view_purchase_order_line_other_nostrum_tree" />
+        </record>
+        
+</odoo>

@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!--FACTURAS-->
+        <record id="view_account_invoice_other_nostrum_tree" model="ir.ui.view">
+            <field name="name">account.invoice.other.nostrum.tree</field>
+            <field name="model">account.invoice</field>
+            <field name="priority">9999</field>
+            <field name="arch" type="xml">
+			
+                <tree string="Informes Nostrum Sport">
+                    <field name='number' />
+                    <field name='date_invoice' />
+                    <!--<field name='base_21' />
+                    <field name='base_10' />
+                    <field name='base_4' />
+                    <field name='iva_21' />
+                    <field name='iva_10' />
+                    <field name='iva_4' />
+                    <field name='base_req' />-->
+                    <field name='amount_untaxed' />
+                    <field name='amount_tax' />
+                    <field name='amount_total' />
+                    <field name='state' invisible="1" />
+                </tree>
+                
+
+            </field>
+        </record>
+        
+        <record id="act_invoice_nostrum_2_invoice_ids" model="ir.actions.act_window">
+            <field name="name">Facturas Nostrum</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="indaws_nostrum_sport.view_account_invoice_other_nostrum_tree" />
+        </record>
+                
+        <!--LINEAS FACTURAS-->
+        <record id="view_account_invoice_line_other_nostrum_tree" model="ir.ui.view">
+            <field name="name">account.invoice.line.other.nostrum.tree</field>
+            <field name="model">account.invoice.line</field>
+            <field name="priority">9999</field>
+            <field name="arch" type="xml">
+			
+                <tree string="Informes Nostrum Sport">
+                    <field name='number' />
+                    <field name='date_invoice' />
+                    <field name='ref_product' />
+                    <field name='product_id' />
+                    <field name='account_id' />
+                    <field name='quantity' />
+                    <field name='price_unit' />
+                    <field name='invoice_line_tax_ids' />
+                    <field name='price_subtotal' />
+                </tree>
+                
+
+            </field>
+        </record>
+        
+        <record id="act_invoice_nostrum_2_invoice_line_ids" model="ir.actions.act_window">
+            <field name="name">Facturas Nostrum</field>
+            <field name="res_model">account.invoice.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="indaws_nostrum_sport.view_account_invoice_line_other_nostrum_tree" />
+        </record>
+        
+        <!--LINEAS ASIENTOS-->        
+        <record id="view_account_move_line_other_nostrum_tree" model="ir.ui.view">
+            <field name="name">account.move.line.other.nostrum.tree</field>
+            <field name="model">account.move.line</field>
+            <field name="priority">9999</field>
+            <field name="arch" type="xml">
+			
+                <tree string="Informes Nostrum Sport">
+                    <field name='move_id' />
+                    <field name='date' />
+                    <field name='account_id' />
+                    <field name='name' />
+                    <field name='debit' />
+                    <field name='credit' />
+                    <field name='invoice_id' />
+                </tree>
+                
+
+            </field>
+        </record>
+        
+        <record id="act_invoice_nostrum_2_move_line_ids" model="ir.actions.act_window">
+            <field name="name">Asientos Nostrum</field>
+            <field name="res_model">account.move.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="indaws_nostrum_sport.view_account_move_line_other_nostrum_tree" />
+        </record>
+        
+        
+        <!--FORMULARIO-->
+        <record id="view_account_invoice_nostrum_tree" model="ir.ui.view">
+            <field name="name">account.invoice.nostrum.tree</field>
+            <field name="model">account.invoice.nostrum</field>
+            <field name="arch" type="xml">
+			
+                <tree string="Informes Nostrum Sport">
+                    <field name="date_ini"/>
+                    <field name="date_fin"/>
+                    <field name="date_calc"/>
+                    <field name="invoice_out"/>
+                    <field name="invoice_refund_out"/>
+                    <field name="invoice_in"/>
+                    <field name="invoice_refund_in"/>
+                </tree>
+                
+
+            </field>
+        </record>
+        
+        
+
+        <record id="view_account_invoice_nostrum_form" model="ir.ui.view">
+            <field name="name">account.invoice.nostrum.form</field>
+            <field name="model">account.invoice.nostrum</field>
+            <field name="arch" type="xml">
+			
+				<form string="Informe nostrum">
+                    <header>
+                        <button string="Calcular" type="object" name="action_confirm"
+                                class="oe_highlight" />
+                    </header>
+                    <sheet>
+                         <div class="oe_right oe_button_box" name="buttons">
+                            <button class="oe_stat_button"
+                                   name="action_open_invoices"
+                                   icon="fa-building-o"
+                                   type="object" string="Facturas">
+                            </button>
+                            <button class="oe_stat_button"
+                                   name="action_open_invoices_lines"
+                                   icon="fa-building-o"
+                                   type="object" string="Líneas de factura">
+                            </button>
+                            <button class="oe_stat_button"
+                                   name="action_open_pos"
+                                   icon="fa-building-o"
+                                   type="object" string="Ventas TPV">
+                            </button>
+                            <button class="oe_stat_button"
+                                   name="action_open_sales_lines"
+                                   icon="fa-building-o"
+                                   type="object" string="Líneas ventas">
+                            </button>
+                            <button class="oe_stat_button"
+                                   name="action_open_purchases_lines"
+                                   icon="fa-building-o"
+                                   type="object" string="Líneas compras">
+                            </button>
+                            <button class="oe_stat_button"
+                                   name="action_open_move_lines"
+                                   icon="fa-building-o"
+                                   type="object" string="Asientos facturas">
+                            </button>
+                        </div>
+                        
+                        <group colspan="2" col="2">
+                            
+                            <field name="date_ini"/>
+                            <field name="date_fin"/>
+                            <field name="date_calc"/>
+                            <field name="invoice_out"/>
+                            <field name="invoice_refund_out"/>
+                            <field name="invoice_in"/>
+                            <field name="invoice_refund_in"/>
+                            
+                        </group>
+                        
+                    </sheet>
+                </form>
+                
+
+            </field>
+        </record>
+        
+        
+        <record model="ir.actions.act_window" id="action_account_invoice_nostrum">
+            <field name="name">informes Nostrum</field>
+            <field name="res_model">account.invoice.nostrum</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem name="Informes Nostrum" parent="account.menu_finance_receivables" id="menu_account_invoice_nostrum" action="action_account_invoice_nostrum" sequence="348"/>
+        
+        
+        <record id="invoice_form_add_margin" model="ir.ui.view">
+            <field name="name">invoice_form_add_margin</field>
+            <field name="model">account.invoice</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr='//field[@name="account_id"]' position="after">
+                    <field name="margin_base" groups="deltatech_sale_margin.group_sale_margin"/>
+                    <field name="margin_ptje" groups="deltatech_sale_margin.group_sale_margin"/>
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="after">
+                    <field name="margin_base" groups="deltatech_sale_margin.group_sale_margin"/>
+                    <field name="margin_ptje" groups="deltatech_sale_margin.group_sale_margin"/>
+                </xpath>
+            </field>
+        </record>   
+</odoo>
