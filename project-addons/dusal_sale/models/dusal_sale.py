@@ -15,7 +15,7 @@ class SaleOrder(models.Model):
 
     print_product_image = fields.Boolean('Print product image',
                                          readonly=False,
-                                         select=True,
+                                         index=True,
                                          default=True,
                                          help="If this checkbox checked then \
         print product images on Sales order & Quotation")
@@ -23,9 +23,9 @@ class SaleOrder(models.Model):
         ('small', 'Small'),
         ('medium', 'Medium'),
         ('original', 'Big')], 'Image sizes', default='small',
-        help="Choose an image size here", select=True)
+        help="Choose an image size here", index=True)
     print_line_number = fields.Boolean('Print line number', readonly=False,
-                                       select=True, help="Print line number on \
+                                       index=True, help="Print line number on \
                                        Sales order & Quotation")
 
 
