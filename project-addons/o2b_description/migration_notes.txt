@@ -1,0 +1,2 @@
+Añade un asistente para cambiar la descripción del producto desde la venta
+Tb la csambia en factura
