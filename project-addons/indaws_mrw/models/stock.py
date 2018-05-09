@@ -93,7 +93,7 @@ class StockPicking(models.Model):
         pedido')
     mrw_importe_reembolso = fields.\
         Float(string='Importe Reembolso',
-              digits_compute=dp.get_precision('Totales RC'),
+              digits=dp.get_precision('Totales RC'),
               help='Importe del pedido cuando el modo de pago es \
                     contra-reembolso')
     delivery_direccion = fields.Char(compute='_get_delivery_address',
