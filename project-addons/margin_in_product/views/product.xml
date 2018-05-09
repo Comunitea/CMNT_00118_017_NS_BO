@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+
+
+    <record model="ir.ui.view" id="margin_percent_product_template">
+        <field name="name">product.template.margin.view.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='list_price']" position="after">
+                    <field name="margin_percent" attrs="{'invisible': [('margin_percent', '=', 0)]}" groups="base.group_user"/>
+            </xpath>
+        </field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="margin_percent_product_template_tree">
+        <field name="name">product.template.margin.view.tree</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="margin_percent" groups="base.group_user"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="margin_percent_product_variant">
+        <field name="name">product.variant.margin.view.form</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='lst_price']" position="after">
+                <field name="margin_percent" groups="base.group_user"/>
+            </xpath>
+        </field>
+    </record>
+
+
+
+
+     <record model="ir.ui.view" id="margin_percent_product_variant_tree">
+        <field name="name">product.variant.margin.view.tree</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='lst_price']" position="after">
+                <field name="margin_percent" groups="base.group_user"/>
+            </xpath>
+        </field>
+    </record>
+
+
+
+
+
+</data>
+</openerp>
