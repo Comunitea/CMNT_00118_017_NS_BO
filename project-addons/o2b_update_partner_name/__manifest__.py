@@ -4,7 +4,7 @@
     "author": "O2B Technologies",
     'website': 'http://www.o2b.co.in',
     "depends": ["base", "o2b_stock_filter", "o2b_vendor_reference"],
-    "data": ['res_partner.xml'],
+    "data": ['views/res_partner.xml'],
     "auto_install": False,
     "installable": True,
 }
