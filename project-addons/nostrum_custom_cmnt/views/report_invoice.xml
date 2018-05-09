@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+<template id="report_invoice_document_custom" inherit_id="account.report_invoice_document">
+            <xpath expr="//div[@class='row mt32 mb32']" position="replace">
+                <div class="row mt32 mb32">
+                    <div class="col-xs-2" t-if="o.name">
+                        <strong>Description:</strong>
+                        <p t-field="o.name"/>
+                    </div>
+                    <div class="col-xs-2" t-if="o.date_invoice">
+                        <strong>Invoice Date:</strong>
+                        <p t-field="o.date_invoice"/>
+                    </div>
+                    <div class="col-xs-2" t-if="o.origin">
+                        <strong>Source:</strong>
+                        <p t-field="o.origin"/>
+                    </div>
+                    <div class="col-xs-2" t-if="o.partner_id.ref">
+                        <strong>Customer Code:</strong>
+                        <p t-field="o.partner_id.ref"/>
+                    </div>
+                    <div name="reference" class="col-xs-2" t-if="o.reference">
+                        <strong>Reference:</strong>
+                        <p t-field="o.reference"/>
+                    </div>
+                    <div class="col-xs-2" t-if="o.customer_ref">
+                        <strong>Referencia cliente:</strong>
+                        <p t-field="o.customer_ref"/>
+                    </div>
+                    <div class="col-xs-2" t-if="o.vendor_ref">
+                        <strong>Referencia proveedor:</strong>
+                        <p t-field="o.vendor_ref"/>
+                    </div>
+                </div>
+            </xpath>
+    </template>
+  </data>
+</openerp>

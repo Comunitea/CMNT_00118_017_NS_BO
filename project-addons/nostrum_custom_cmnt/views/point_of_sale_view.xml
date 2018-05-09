@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="pos_order_lines_form_adding_cost" model="ir.ui.view">
+            <field name="name">pos.order.lines.adding.cost</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lines']/tree/field[@name='price_unit']" position="after">
+                    <field name="state" invisible="1"/>
+                    <button name="%(action_change_pos_price_wzd)d"
+                        type="action"
+                        string="Modify Price"
+                        icon="terp-dolar"
+                        states='paid'
+                    />
+                </xpath>
+                <xpath expr="//field[@name='lines']/tree/field[@name='price_unit']" position="before">
+                    <field name="cost"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_pos_order_filter_cmnt" model="ir.ui.view">
+            <field name="name">pos.order.lines.adding.cost</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+            <field name="arch" type="xml">
+                    <field name="date_order" position="after">
+                        <filter string="Day" domain="[ ]" context="{'group_by': 'date_order:day'}" />
+                    </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

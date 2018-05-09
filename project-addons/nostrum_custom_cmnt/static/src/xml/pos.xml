@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<templates id="template_cmnt_custom" inherit_id="point_of_sale.template">
+
+    <!-- Add states Pending Approval and LQDR to order Widget -->
+    <t t-extend="PosTicket">
+        <t t-jquery=".pos-sale-ticket" t-operation="replace">
+            <div class="pos-sale-ticket">
+                <div class="pos-center-align" style="border-top: 1px solid #000;border-bottom: 1px solid #000;">
+                    <t t-esc="widget.pos.company.name"/> (Sports Medicine Center SL)<br/>
+                    CIF: <t t-esc="widget.pos.company.vat"/><br/>
+                    <!-- <t t-esc="widget.pos.company.street"/> -->
+                    <!-- <t t-esc="widget.pos.company.city"/> -->
+                    AVDA. PIO XII, 1 BAJO<br/>
+                    VALENCIA<br/>
+                    TEL. <t t-esc="widget.pos.company.phone"/><br/>
+                </div>
+                <br/>
+                 <div class="pos-center-align">
+                    FACTURA SIMPLIFICADA
+                </div>
+                <table style="border-top: 1px solid #000;">
+                    <colgroup>
+                        <col width='15%'/>
+                        <col width='20%'/>
+                        <col width='20%'/>
+                        <col width='20%'/>
+                        <col width='25%'/>
+                    </colgroup>
+                    <tr style="border-bottom: 1px solid #000;">
+                        <th class="pos-right-align">CODIGO</th>
+                        <th class="pos-right-align">CANT</th>
+                        <th class="pos-right-align">P.V.P</th>
+                        <th class="pos-right-align">DTO %</th>
+                        <th class="pos-right-align">IMPORTES</th>
+                     </tr>
+                    <t t-foreach="orderlines" t-as="orderline">
+                        <tr>
+                            <td class="pos-right-align">
+                                <t t-esc="orderline.get_product().default_code"/>
+                            </td>
+                            <td class="pos-right-align">
+                                <t t-esc="orderline.get_quantity().toFixed(2)"/>
+                            </td>
+                            <td class="pos-right-align">
+                                <t t-esc="orderline.get_price_with_tax().toFixed(2)"/>
+                            </td>
+                            <td class="pos-right-align">
+                                 <t t-if="orderline.get_discount() > 0">
+                                    <t t-esc="orderline.get_discount()"/>
+                                </t>
+                            </td>
+                            <td class="pos-right-align">
+                                <t t-esc="widget.format_currency(orderline.get_price_with_tax() * orderline.get_quantity() * (1 - orderline.get_discount()/100))"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">
+                                <t t-esc="orderline.get_product().display_name"/>
+                            </td>
+                        </tr>
+                    </t>
+                </table>
+                <br />
+                <table style="border-top: 1px solid #000;">
+                    <tr>
+                        <td>Subtotal:</td>
+                        <td class="pos-right-align">
+                            <t t-esc="widget.format_currency(order.getTotalTaxExcluded())"/>
+                        </td>
+                    </tr>
+                    <t t-foreach="order.getTaxDetails()" t-as="taxdetail">
+                        <tr>
+                            <td><t t-esc="taxdetail.name" /></td>
+                            <td class="pos-right-align">
+                                <t t-esc="widget.format_currency(taxdetail.amount)" />
+                            </td>
+                        </tr>
+                    </t>
+                    <tr>
+                        <td>Discount:</td>
+                        <td class="pos-right-align">
+                            <t t-esc="widget.format_currency(order.getDiscountTotal())"/>
+                        </td>
+                    </tr>
+                    <tr class="emph">
+                        <td>Total</td>
+                        <td class="pos-right-align">
+                            <t t-esc="widget.format_currency(order.getTotalTaxIncluded())"/>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <div style="border-top: 1px solid #000;">
+                    VENTA: <t t-esc="order.get('name')"/><br/>
+                    VEND: <t t-esc="widget.pos.cashier ? widget.pos.cashier.name : widget.pos.user.name"/><br/>
+                    FECHA: <t t-esc="new Date().toString(Date.CultureInfo.formatPatterns.shortDate + ' ' + Date.CultureInfo.formatPatterns.longTime)"/>
+                </div>
+                <div class="pos-center-align" style="border-top: 1px solid #000;">
+                    <br />
+                   ¡¡ GRACIAS POR SU VISITA !!<br/>
+                   Visite la web nostrumsport.com
+                </div>
+            </div>
+
+
+        </t>
+    </t>
+
+</templates>

@@ -36,7 +36,7 @@
     ],
     "data": [
         'views/dusal_sale_view.xml',
-        'views/report_saleorder.xml',
+        # 'views/report_saleorder.xml',  Lo comento para tenerlo todo en custom
     ],
     "auto_install": False,
     "installable": True,

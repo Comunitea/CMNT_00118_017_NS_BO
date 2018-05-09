@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+   <data>
+
+        <record id="change_pos_price_form" model="ir.ui.view">
+            <field name="model">change.pos.price</field>
+            <field name="arch" type="xml">
+                <form string="Change Price">
+                    <group>
+                        <field name="new_price"/>
+                    </group>
+                    <footer>
+                        <button name="apply"
+                                type="object"
+                                string="Apply"
+                                class="oe_highlight"
+                        />
+                        <button class="oe_link"
+                                special="cancel"
+                                string="Cancel"
+                        />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_change_pos_price_wzd">
+            <field name="name">Change Price</field>
+            <field name="res_model">change.pos.price</field>
+            <field name="view_mode">form</field>
+            <field name="view_type">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</openerp>

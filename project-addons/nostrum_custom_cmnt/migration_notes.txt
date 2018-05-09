@@ -1,0 +1,4 @@
+Hay que añadir lo de los vencimientos de los informes,
+aplicar el commit de la rama 8
+Ver el comentario del fichero product. ¿Que hacemos con ese precio?
+¿Que hacia la herencia de slae.order que añadia el campo date_confirm de donde sale?

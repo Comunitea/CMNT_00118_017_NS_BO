@@ -1,0 +1,417 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* nostrum_custom_cmnt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-28 09:36+0000\n"
+"PO-Revision-Date: 2018-03-28 09:36+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:10
+#, python-format
+msgid "(Sports Medicine Center SL)"
+msgstr "(Sports Medicine Center SL)"
+
+#. module: nostrum_custom_cmnt
+#: view:change.pos.price:nostrum_custom_cmnt.change_pos_price_form
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: nostrum_custom_cmnt
+#: view:account.invoice:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
+msgid "Año"
+msgstr "Año"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:32
+#, python-format
+msgid "CANT"
+msgstr "CANT"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:10
+#, python-format
+msgid "CIF:"
+msgstr "CIF:"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:31
+#, python-format
+msgid "CODIGO"
+msgstr "CODIGO"
+
+#. module: nostrum_custom_cmnt
+#: view:change.pos.price:nostrum_custom_cmnt.change_pos_price_form
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: nostrum_custom_cmnt
+#: view:change.pos.price:nostrum_custom_cmnt.change_pos_price_form
+#: model:ir.actions.act_window,name:nostrum_custom_cmnt.action_change_pos_price_wzd
+msgid "Change Price"
+msgstr "Cambiar Precio"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.model,name:nostrum_custom_cmnt.model_change_pos_price
+msgid "Change Price Unit"
+msgstr "Cambiar precio unitario"
+
+#. module: nostrum_custom_cmnt
+#: field:pos.order.line,cost:0
+#: field:pricelist.partnerinfo,cost:0
+msgid "Cost"
+msgstr "Coste"
+
+#. module: nostrum_custom_cmnt
+#: help:pricelist.partnerinfo,cost:0
+msgid "Cost price of the product template used for standard stock valuation in accounting and used as a base price on purchase orders. Expressed in the default unit of measure of the product."
+msgstr "Cost price of the product template used for standard stock valuation in accounting and used as a base price on purchase orders. Expressed in the default unit of measure of the product."
+
+#. module: nostrum_custom_cmnt
+#: help:pos.order.line,cost:0
+msgid "Cost price of the product variant used for standard stock valuation in accounting and used as a base price on purchase orders. Expressed in the default unit of measure of the product."
+msgstr "Cost price of the product variant used for standard stock valuation in accounting and used as a base price on purchase orders. Expressed in the default unit of measure of the product."
+
+#. module: nostrum_custom_cmnt
+#: field:change.pos.price,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: nostrum_custom_cmnt
+#: field:change.pos.price,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: nostrum_custom_cmnt
+#: view:website:account.report_invoice_document
+msgid "Customer Code:"
+msgstr "Código de cliente"
+
+#. module: nostrum_custom_cmnt
+#: field:account.invoice,customer_ref:0
+msgid "Customer Reference"
+msgstr "Referencia cliente"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:34
+#, python-format
+msgid "DTO %"
+msgstr "DTO %"
+
+#. module: nostrum_custom_cmnt
+#: view:pos.order:nostrum_custom_cmnt.view_pos_order_filter_cmnt
+msgid "Day"
+msgstr "Día"
+
+#. module: nostrum_custom_cmnt
+#: view:website:sale.report_saleorder_document
+msgid "Description"
+msgstr "Descripción"
+
+#. module: nostrum_custom_cmnt
+#: view:website:account.report_invoice_document
+msgid "Description:"
+msgstr "Descripción:"
+
+#. module: nostrum_custom_cmnt
+#: view:account.invoice:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
+msgid "Diario"
+msgstr "Diario"
+
+#. module: nostrum_custom_cmnt
+#: view:website:sale.report_saleorder_document
+msgid "Disc.(%)"
+msgstr "Desc.(%)"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:81
+#, python-format
+msgid "Discount:"
+msgstr "Discount:"
+
+#. module: nostrum_custom_cmnt
+#: field:change.pos.price,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: nostrum_custom_cmnt
+#: view:account.invoice:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
+msgid "Due Month"
+msgstr "Mes de vencimiento"
+
+#. module: nostrum_custom_cmnt
+#: view:account.invoice:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
+msgid "Día vencimiento"
+msgstr "Día vencimiento"
+
+#. module: nostrum_custom_cmnt
+#: view:account.invoice:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
+msgid "Días"
+msgstr "Días"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:19
+#, python-format
+msgid "FACTURA SIMPLIFICADA"
+msgstr "FACTURA SIMPLIFICADA"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:96
+#, python-format
+msgid "FECHA:"
+msgstr "FECHA:"
+
+#. module: nostrum_custom_cmnt
+#: view:sale.order.line:nostrum_custom_cmnt.view_sales_order_lines_filter
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: nostrum_custom_cmnt
+#: field:change.pos.price,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:35
+#, python-format
+msgid "IMPORTES"
+msgstr "IMPORTES"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.model,name:nostrum_custom_cmnt.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: nostrum_custom_cmnt
+#: view:website:account.report_invoice_document
+msgid "Invoice Date:"
+msgstr "Fecha de factura:"
+
+#. module: nostrum_custom_cmnt
+#: field:change.pos.price,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: nostrum_custom_cmnt
+#: field:change.pos.price,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: nostrum_custom_cmnt
+#: field:change.pos.price,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: nostrum_custom_cmnt
+#: view:sale.order.line:nostrum_custom_cmnt.view_sale_order_lines_form
+#: view:sale.order.line:nostrum_custom_cmnt.view_sale_order_lines_tree
+msgid "Lines"
+msgstr "Líneas"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.model,name:nostrum_custom_cmnt.model_pos_order_line
+msgid "Lines of Point of Sale"
+msgstr "Líneas del Terminal Punto de Venta"
+
+#. module: nostrum_custom_cmnt
+#: view:account.invoice:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
+msgid "Mes"
+msgstr "Mes"
+
+#. module: nostrum_custom_cmnt
+#: view:pos.order:nostrum_custom_cmnt.pos_order_lines_form_adding_cost
+msgid "Modify Price"
+msgstr "Modificar precio"
+
+#. module: nostrum_custom_cmnt
+#: view:sale.order.line:nostrum_custom_cmnt.view_sales_order_lines_filter
+msgid "Month"
+msgstr "Mes"
+
+#. module: nostrum_custom_cmnt
+#: field:change.pos.price,new_price:0
+msgid "New Price Unit"
+msgstr "Nuevo precio unitario"
+
+#. module: nostrum_custom_cmnt
+#: view:sale.order.line:nostrum_custom_cmnt.view_sales_order_lines_filter
+msgid "Order"
+msgstr "Pedido"
+
+#. module: nostrum_custom_cmnt
+#: view:pos.order:nostrum_custom_cmnt.view_pos_order_filter_cmnt
+msgid "Order Month"
+msgstr "Mes del pedido"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:33
+#, python-format
+msgid "P.V.P"
+msgstr "P.V.P"
+
+#. module: nostrum_custom_cmnt
+#: field:sale.order.line,partner_id:0
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: nostrum_custom_cmnt
+#: view:website:sale.report_saleorder_document
+msgid "Price"
+msgstr "Precio"
+
+#. module: nostrum_custom_cmnt
+#: view:sale.order.line:nostrum_custom_cmnt.view_sales_order_lines_filter
+msgid "Product"
+msgstr "Producto"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.model,name:nostrum_custom_cmnt.model_purchase_order
+msgid "Purchase Order"
+msgstr "Pedido de compra"
+
+#. module: nostrum_custom_cmnt
+#: view:website:sale.report_saleorder_document
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: nostrum_custom_cmnt
+#: view:website:account.report_invoice_document
+msgid "Reference:"
+msgstr "Referencia:"
+
+#. module: nostrum_custom_cmnt
+#: view:website:account.report_invoice_document
+msgid "Referencia cliente:"
+msgstr "Referencia cliente:"
+
+#. module: nostrum_custom_cmnt
+#: view:website:account.report_invoice_document
+msgid "Referencia proveedor:"
+msgstr "Referencia proveedor:"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.model,name:nostrum_custom_cmnt.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.model,name:nostrum_custom_cmnt.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea pedido de venta"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.actions.act_window,name:nostrum_custom_cmnt.action_sale_order_lines
+#: model:ir.ui.menu,name:nostrum_custom_cmnt.menu_sale_order_lines
+msgid "Sales Order Lines"
+msgstr "Líneas pedido de ventas"
+
+#. module: nostrum_custom_cmnt
+#: view:sale.order.line:nostrum_custom_cmnt.view_sales_order_lines_filter
+msgid "Search Sales Order"
+msgstr "Buscar pedido de venta"
+
+#. module: nostrum_custom_cmnt
+#: view:website:account.report_invoice_document
+msgid "Source:"
+msgstr "Origen:"
+
+#. module: nostrum_custom_cmnt
+#: field:pos.order.line,state:0
+msgid "Status"
+msgstr "Estado"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:67
+#, python-format
+msgid "Subtotal:"
+msgstr "Subtotal:"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:15
+#, python-format
+msgid "TEL."
+msgstr "TEL."
+
+#. module: nostrum_custom_cmnt
+#: view:website:sale.report_saleorder_document
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:87
+#, python-format
+msgid "Total"
+msgstr "Total"
+
+#. module: nostrum_custom_cmnt
+#: view:website:sale.report_saleorder_document
+msgid "Unit Price"
+msgstr "Precio unidad"
+
+#. module: nostrum_custom_cmnt
+#: view:website:sale.report_saleorder_document
+msgid "Unit Price Net"
+msgstr "Precio neto ud"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:14
+#, python-format
+msgid "VALENCIA"
+msgstr "VALENCIA"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:95
+#, python-format
+msgid "VEND:"
+msgstr "VEND:"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:94
+#, python-format
+msgid "VENTA:"
+msgstr "VENTA:"
+
+#. module: nostrum_custom_cmnt
+#: field:account.invoice,vendor_ref:0
+msgid "Vendor Reference"
+msgstr "Referencia proveedor"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:101
+#, python-format
+msgid "Visite la web nostrumsport.com"
+msgstr "Visite la web nostrumsport.com"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/pos.xml:100
+#, python-format
+msgid "¡¡ GRACIAS POR SU VISITA !!"
+msgstr "¡¡ GRACIAS POR SU VISITA !!"
+
