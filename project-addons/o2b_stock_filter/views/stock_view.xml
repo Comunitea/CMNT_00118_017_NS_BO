@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--  Add menu: Billing - Deliveries to invoice -->
+        <record id="view_picking_internal_search_company_a" model="ir.ui.view">
+            <field name="name">stock.picking.internal.search</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='done']" position="after">
+                 <filter icon="terp-dialog-close" name="origin" string="Company B" domain="[('origin','ilike','AC')]"/>
+             </xpath>
+            </field>
+        </record>
+
+
+        <!--record id="view_partner_form_customer_ref" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='email']" position="after">
+                    <field name="customer_ref" string="Numero de cliente" attrs="{'invisible': [('customer', '=', False)]}"/>
+                </xpath>
+            </field>
+        </record-->
+    </data>
+</openerp>

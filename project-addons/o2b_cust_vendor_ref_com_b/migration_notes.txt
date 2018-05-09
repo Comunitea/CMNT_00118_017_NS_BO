@@ -1,0 +1,1 @@
+Añade dos campos de referencia a res.partner.

@@ -1,0 +1,2 @@
+Estaba metiendo el campo customer_ref en res.partner, pero eso ya lo hace el modulo 02vb_cust_vendor_ref_com_b
+dejamos solo la herencia de la vista.
