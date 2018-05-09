@@ -1,0 +1,1 @@
+Revisar la herencia de los campos de stock y como se calculan teniendo en cuenta los packs
