@@ -31,9 +31,9 @@ class ProductProduct(models.Model):
                                help="This shows the sum of all attribute \
                                price and additional price of variant (\
                                All Attribute Price+Additional Variant price)",
-                               digits_compute=dp.
+                               digits=dp.
                                get_precision('Product Price'))
     attr_price_extra = fields.Float(compute='_get_price_extra',
                                     string='Variant Extra Price',
-                                    digits_compute=dp.
+                                    digits=dp.
                                     get_precision('Product Price'))

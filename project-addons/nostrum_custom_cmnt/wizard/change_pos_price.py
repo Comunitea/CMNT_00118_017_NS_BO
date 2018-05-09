@@ -10,7 +10,7 @@ class ChangePosPrice(models.TransientModel):
     _description = 'Change Price Unit'
 
     new_price = fields.Float('New Price Unit',
-                             digits_compute=dp.get_precision('Product Price'))
+                             digits=dp.get_precision('Product Price'))
 
     @api.multi
     def apply(self):

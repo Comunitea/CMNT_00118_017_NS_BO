@@ -68,6 +68,6 @@ class AccountInvoiceLine(models.Model):
                                 related='invoice_id.currency_id')
     rate = fields.Float(string="Rate", compute='_get_base_amt')
     base_amt = fields.Float(string="Base Imponible", compute='_get_base_amt',
-                            digits_compute=dp.get_precision('Account'))
+                            digits=dp.get_precision('Account'))
     partner_id = fields.Many2one('res.partner', string="Cliente",
                                  related='invoice_id.partner_id', sotre=True)
