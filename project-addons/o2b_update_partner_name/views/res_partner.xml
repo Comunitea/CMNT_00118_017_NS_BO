@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+		 <!-- Partner kanban view inherte -->
+		        <record model="ir.ui.view" id="display_name_partner_kanban_view">
+		            <field name="name">res.partner.kanban.display.inherit</field>
+		            <field name="model">res.partner</field>
+		            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+		            <field name="priority" eval="20"/>
+		            <field name="arch" type="xml">
+		                <xpath expr="//h4[@class='oe_partner_heading']" position="replace">
+		                   <h4 class="oe_partner_heading">
+		                   		<a type="open">
+		                   			<span t-if="record.customer_ref.raw_value">
+		                   				[<field name="customer_ref"/>]
+                                    </span>
+		                   			<field name="display_name"/>
+		                   		</a>
+		                   </h4>
+		                </xpath>
+		            </field>
+		        </record>
+	</data>
+</openerp>
