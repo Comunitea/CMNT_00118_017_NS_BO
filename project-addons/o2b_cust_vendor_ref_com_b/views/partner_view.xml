@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--  Add field: customer reference and vendor reference -->
+
+        <record id="view_partner_form_customer_ref_b" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='email']" position="after">
+                    <field name="customer_ref" string="Numero de cliente" attrs="{'invisible': [('customer', '=', False)]}"/>
+                    <field name="vendor_ref" string="Numero de proveedor" attrs="{'invisible': [('supplier', '=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_res_partner_filter_inherit_b" model="ir.ui.view">
+            <field name="name">res.partner.select</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='name']" position="replace">
+                    <field name="name"
+                       filter_domain="['|','|','|','|',('display_name','ilike',self),('ref','=',self),('email','ilike',self),('vendor_ref','ilike',self),('customer_ref','ilike',self)]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
