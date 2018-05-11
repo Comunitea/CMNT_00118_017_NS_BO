@@ -1,5 +1,4 @@
-Cambié el modelo que hace update por un wizard
-
 PRUEBAS
 ===============================================================================
-Me falla. ¿Es necesario?
+Añade el campo margen a los productos.
+MODULO OK

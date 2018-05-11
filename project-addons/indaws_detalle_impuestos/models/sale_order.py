@@ -55,7 +55,6 @@ class Saleorder(models.Model):
     @api.depends('order_line')
     def _get_importe_impuestos(self):
         for record in self:
-
             base_21 = 0.0
             iva_21 = 0.0
             base_10 = 0.0
@@ -73,11 +72,11 @@ class Saleorder(models.Model):
                 if line.tax_id:
                     for tax in line.tax_id:
                         if 'IVA' in tax.name:
-                            if tax.amount >= 0.209 and tax.amount <= 0.211:
+                            if tax.amount == 21:
                                 base_21 = base_21 + line.price_subtotal
-                            if tax.amount >= 0.09 and tax.amount <= 0.11:
+                            if tax.amount == 10:
                                 base_10 = base_10 + line.price_subtotal
-                            if tax.amount >= 0.03 and tax.amount <= 0.05:
+                            if tax.amount == 4:
                                 base_4 = base_4 + line.price_subtotal
                             if tax.amount == 0.00:
                                 base_0 = base_0 + line.price_subtotal

@@ -32,11 +32,10 @@
     "depends": [
         "sale",
         "product",
-        "dusal_web_tree_image",
+        "web_tree_image",
     ],
     "data": [
         'views/dusal_sale_view.xml',
-        # 'views/report_saleorder.xml',  Lo comento para tenerlo todo en custom
     ],
     "auto_install": False,
     "installable": True,

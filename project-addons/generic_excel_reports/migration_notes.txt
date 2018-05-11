@@ -1,1 +1,15 @@
-"CEWA UN MODELO PARA EXPORTAR A EXCEL ASI COMO UNA ASISTENTE, VER SI ES NECESARIO
+"CEWA UN MODELO PARA EXPORTAR A EXCEL ASI COMO UNA ASISTENTE, 
+VER SI ES NECESARIO
+
+PRUEBAS
+===============================================================================
+El Menú para configurar la exportación esta en el menú Tableros.
+Los modelos aquí configurados pueden exportarse a excel, seleccionando en la
+vista lista, varios registros y Buscando la Acción de Exportar Excel.
+
+Probé con líneas de factura y clientes y todo bien,
+no se como lo usarán para líneas de venta al no haber un menú para ello.
+
+Se uede configurar para cada modelo que campos debe exportar.
+
+MODULO OK.

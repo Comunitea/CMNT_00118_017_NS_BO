@@ -1,3 +1,11 @@
 Añade las imágenes a las líneas de venta y el informe de ventas
 El informe de ventas ĺo paso al modulo nostrum_custom ya que ahí se hace un 
-relace de la cabecer de la tabla y es incompatible con esta herencia
+replace de la cabecer de la tabla y es incompatible con esta herencia
+
+PRUEBAS
+==============================================================================
+Añade los related de la imagen a la línea, 
+tuve que cambiar la dependencia al módulo web_tree_image de OCA para sustituir
+la implementación del widget image declarado en dusal_web_tree_image
+
+MODEULO OK

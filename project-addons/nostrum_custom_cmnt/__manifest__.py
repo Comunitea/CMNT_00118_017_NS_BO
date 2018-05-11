@@ -17,7 +17,8 @@
         'indaws_nostrum_sport',
         'point_of_sale',
         'deltatech_sale_margin',
-        'dusal_sale'  # Para heredar el report metiendo las imágenes
+        'dusal_sale',  # Para heredar el report metiendo las imágenes,
+        'account_due_dates_str'
     ],
     'contributors': [
         "Comunitea ",
@@ -27,7 +28,6 @@
         "views/invoice.xml",
         "views/report_invoice.xml",
         "views/sale_view.xml",
-        "views/product_view.xml",
         "wizard/change_pos_price_view.xml",
         "views/point_of_sale_view.xml",
         "views/report_sale_order.xml",

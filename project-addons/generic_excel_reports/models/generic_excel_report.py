@@ -59,7 +59,7 @@ class GenericExcelReport(models.Model):
                 _get_id('generic_excel_reports',
                         'view_globle_report_wizard_form')
             res_id = data_obj.browse(model_data_id).res_id
-            button_name = _('Print (%s)') % action.name
+            button_name = _('Export Excel (%s)') % action.name
             act_id = action_obj.create({
                 'name': button_name,
                 'type': 'ir.actions.act_window',

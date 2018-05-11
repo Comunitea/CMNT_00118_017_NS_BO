@@ -82,14 +82,14 @@ class PosOrder(models.Model):
                         tax_description = tax.description
 
                     if 'IVA' in tax_name or 'IVA' in tax_description:
-                        if tax.amount >= 0.209 and tax.amount <= 0.211:
-                            base_21 = base_21 + line.price_subtotal
-                        if tax.amount >= 0.09 and tax.amount <= 0.11:
-                            base_10 = base_10 + line.price_subtotal
-                        if tax.amount >= 0.03 and tax.amount <= 0.05:
-                            base_4 = base_4 + line.price_subtotal
-                        if tax.amount == 0.00:
-                            base_0 = base_0 + line.price_subtotal
+                        if tax.amount == 21:
+                                base_21 = base_21 + line.price_subtotal
+                            if tax.amount == 10:
+                                base_10 = base_10 + line.price_subtotal
+                            if tax.amount == 4:
+                                base_4 = base_4 + line.price_subtotal
+                            if tax.amount == 0.00:
+                                base_0 = base_0 + line.price_subtotal
 
                     if 'Recargo' in tax_name or 'Recargo' in tax_description:
                         ptje_req = tax.amount

@@ -9,6 +9,8 @@ UPDATE ir_module_module SET state = 'to remove' WHERE name = 'tko_mail_smtp_per_
 UPDATE ir_module_module SET state = 'to remove' WHERE name = 'wk_base_partner_patch';
 UPDATE ir_module_module SET state = 'to remove' WHERE name = 'product_do_merge';
 UPDATE ir_module_module SET state = 'to remove' WHERE name = 'web_widget_one2many_tags';
+UPDATE ir_module_module SET state = 'to remove' WHERE name = 'mail_sendgrid';
+
 
 -- Me cargo vistas
 delete from ir_ui_view where arch_db like '%date_confirm%';
@@ -45,3 +47,5 @@ UPDATE ir_module_module SET state = 'to remove' WHERE name = 'account_payment_mo
 UPDATE ir_module_module SET state = 'to remove' WHERE name = 'account_admin_tools';
 
 
+delete from ir_ui_view where id = 2092;
+delete from ir_ui_view where arch_db like '%shipment_count%'

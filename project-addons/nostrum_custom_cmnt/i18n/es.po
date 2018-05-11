@@ -4,16 +4,21 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-28 09:36+0000\n"
-"PO-Revision-Date: 2018-03-28 09:36+0000\n"
+"POT-Creation-Date: 2018-05-11 12:57+0000\n"
+"PO-Revision-Date: 2018-05-11 12:57+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
+msgid "&amp;bull;"
+msgstr "&amp;bull;"
 
 #. module: nostrum_custom_cmnt
 #. openerp-web
@@ -23,12 +28,62 @@ msgid "(Sports Medicine Center SL)"
 msgstr "(Sports Medicine Center SL)"
 
 #. module: nostrum_custom_cmnt
-#: view:change.pos.price:nostrum_custom_cmnt.change_pos_price_form
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
+msgid "<strong>Customer Code:</strong>"
+msgstr "<strong>Código de cliente:</strong>"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
+msgid "<strong>Description:</strong>"
+msgstr "<strong>Descripción:</strong>"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
+msgid "<strong>Invoice Date:</strong>"
+msgstr "<strong>Fecha factura:</strong>"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
+msgid "<strong>Payment Term:</strong>"
+msgstr "<strong>Plazo de pago:</strong>"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
+msgid "<strong>Reference:</strong>"
+msgstr "<strong>Referencia:</strong>"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
+msgid "<strong>Referencia cliente:</strong>"
+msgstr "<strong>Referencia cliente:</strong>"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
+msgid "<strong>Referencia proveedor:</strong>"
+msgstr "<strong>Referencia proveedor:</strong>"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
+msgid "<strong>Source:</strong>"
+msgstr "<strong>Fuente:</strong>"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
+msgid "<strong>Subtotal: </strong>"
+msgstr "<strong>Subtotal: </strong>"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
+msgid "<strong>Vencimientos:</strong>"
+msgstr "<strong>Vencimientos:</strong>"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.change_pos_price_form
 msgid "Apply"
 msgstr "Aplicar"
 
 #. module: nostrum_custom_cmnt
-#: view:account.invoice:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
 msgid "Año"
 msgstr "Año"
 
@@ -54,13 +109,13 @@ msgid "CODIGO"
 msgstr "CODIGO"
 
 #. module: nostrum_custom_cmnt
-#: view:change.pos.price:nostrum_custom_cmnt.change_pos_price_form
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.change_pos_price_form
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "Cancelar"
 
 #. module: nostrum_custom_cmnt
-#: view:change.pos.price:nostrum_custom_cmnt.change_pos_price_form
 #: model:ir.actions.act_window,name:nostrum_custom_cmnt.action_change_pos_price_wzd
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.change_pos_price_form
 msgid "Change Price"
 msgstr "Cambiar Precio"
 
@@ -70,38 +125,27 @@ msgid "Change Price Unit"
 msgstr "Cambiar precio unitario"
 
 #. module: nostrum_custom_cmnt
-#: field:pos.order.line,cost:0
-#: field:pricelist.partnerinfo,cost:0
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_pos_order_line_cost
 msgid "Cost"
 msgstr "Coste"
 
 #. module: nostrum_custom_cmnt
-#: help:pricelist.partnerinfo,cost:0
-msgid "Cost price of the product template used for standard stock valuation in accounting and used as a base price on purchase orders. Expressed in the default unit of measure of the product."
-msgstr "Cost price of the product template used for standard stock valuation in accounting and used as a base price on purchase orders. Expressed in the default unit of measure of the product."
+#: model:ir.model.fields,help:nostrum_custom_cmnt.field_pos_order_line_cost
+msgid "Cost of the product template used for standard stock valuation in accounting and used as a base price on purchase orders. Expressed in the default unit of measure of the product."
+msgstr "Coste para la plantilla de producto usada para la valoración de existencias estándar en contabilidad, y utilizada como precio de referencia en órdenes de compra. Se expresa en la unidad de medida por defecto del producto."
 
 #. module: nostrum_custom_cmnt
-#: help:pos.order.line,cost:0
-msgid "Cost price of the product variant used for standard stock valuation in accounting and used as a base price on purchase orders. Expressed in the default unit of measure of the product."
-msgstr "Cost price of the product variant used for standard stock valuation in accounting and used as a base price on purchase orders. Expressed in the default unit of measure of the product."
-
-#. module: nostrum_custom_cmnt
-#: field:change.pos.price,create_uid:0
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price_create_uid
 msgid "Created by"
-msgstr "Created by"
+msgstr "Creado por"
 
 #. module: nostrum_custom_cmnt
-#: field:change.pos.price,create_date:0
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price_create_date
 msgid "Created on"
-msgstr "Created on"
+msgstr "Creado en"
 
 #. module: nostrum_custom_cmnt
-#: view:website:account.report_invoice_document
-msgid "Customer Code:"
-msgstr "Código de cliente"
-
-#. module: nostrum_custom_cmnt
-#: field:account.invoice,customer_ref:0
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_invoice_customer_ref
 msgid "Customer Reference"
 msgstr "Referencia cliente"
 
@@ -113,27 +157,22 @@ msgid "DTO %"
 msgstr "DTO %"
 
 #. module: nostrum_custom_cmnt
-#: view:pos.order:nostrum_custom_cmnt.view_pos_order_filter_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_pos_order_filter_cmnt
 msgid "Day"
 msgstr "Día"
 
 #. module: nostrum_custom_cmnt
-#: view:website:sale.report_saleorder_document
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
 msgid "Description"
 msgstr "Descripción"
 
 #. module: nostrum_custom_cmnt
-#: view:website:account.report_invoice_document
-msgid "Description:"
-msgstr "Descripción:"
-
-#. module: nostrum_custom_cmnt
-#: view:account.invoice:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
 msgid "Diario"
 msgstr "Diario"
 
 #. module: nostrum_custom_cmnt
-#: view:website:sale.report_saleorder_document
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
 msgid "Disc.(%)"
 msgstr "Desc.(%)"
 
@@ -145,22 +184,17 @@ msgid "Discount:"
 msgstr "Discount:"
 
 #. module: nostrum_custom_cmnt
-#: field:change.pos.price,display_name:0
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price_display_name
 msgid "Display Name"
-msgstr "Display Name"
+msgstr "Nombre mostrado"
 
 #. module: nostrum_custom_cmnt
-#: view:account.invoice:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
-msgid "Due Month"
-msgstr "Mes de vencimiento"
-
-#. module: nostrum_custom_cmnt
-#: view:account.invoice:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
 msgid "Día vencimiento"
 msgstr "Día vencimiento"
 
 #. module: nostrum_custom_cmnt
-#: view:account.invoice:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
 msgid "Días"
 msgstr "Días"
 
@@ -179,14 +213,14 @@ msgid "FECHA:"
 msgstr "FECHA:"
 
 #. module: nostrum_custom_cmnt
-#: view:sale.order.line:nostrum_custom_cmnt.view_sales_order_lines_filter
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_sales_order_lines_filter
 msgid "Group By"
 msgstr "Agrupar por"
 
 #. module: nostrum_custom_cmnt
-#: field:change.pos.price,id:0
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price_id
 msgid "ID"
-msgstr "ID"
+msgstr "ID (identificación)"
 
 #. module: nostrum_custom_cmnt
 #. openerp-web
@@ -196,33 +230,38 @@ msgid "IMPORTES"
 msgstr "IMPORTES"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
+msgid "Image&gt;"
+msgstr "Image&gt;"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.model,name:nostrum_custom_cmnt.model_product_supplierinfo
+msgid "Information about a product vendor"
+msgstr "Information about a product vendor"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.model,name:nostrum_custom_cmnt.model_account_invoice
 msgid "Invoice"
 msgstr "Factura"
 
 #. module: nostrum_custom_cmnt
-#: view:website:account.report_invoice_document
-msgid "Invoice Date:"
-msgstr "Fecha de factura:"
-
-#. module: nostrum_custom_cmnt
-#: field:change.pos.price,__last_update:0
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price___last_update
 msgid "Last Modified on"
-msgstr "Last Modified on"
+msgstr "Última modificación en"
 
 #. module: nostrum_custom_cmnt
-#: field:change.pos.price,write_uid:0
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price_write_uid
 msgid "Last Updated by"
-msgstr "Last Updated by"
+msgstr "Última actualización de"
 
 #. module: nostrum_custom_cmnt
-#: field:change.pos.price,write_date:0
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price_write_date
 msgid "Last Updated on"
-msgstr "Last Updated on"
+msgstr "Última actualización en"
 
 #. module: nostrum_custom_cmnt
-#: view:sale.order.line:nostrum_custom_cmnt.view_sale_order_lines_form
-#: view:sale.order.line:nostrum_custom_cmnt.view_sale_order_lines_tree
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_sale_order_lines_form
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_sale_order_lines_tree
 msgid "Lines"
 msgstr "Líneas"
 
@@ -232,34 +271,34 @@ msgid "Lines of Point of Sale"
 msgstr "Líneas del Terminal Punto de Venta"
 
 #. module: nostrum_custom_cmnt
-#: view:account.invoice:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
 msgid "Mes"
 msgstr "Mes"
 
 #. module: nostrum_custom_cmnt
-#: view:pos.order:nostrum_custom_cmnt.pos_order_lines_form_adding_cost
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.pos_order_lines_form_adding_cost
 msgid "Modify Price"
 msgstr "Modificar precio"
 
 #. module: nostrum_custom_cmnt
-#: view:sale.order.line:nostrum_custom_cmnt.view_sales_order_lines_filter
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_sales_order_lines_filter
 msgid "Month"
 msgstr "Mes"
 
 #. module: nostrum_custom_cmnt
-#: field:change.pos.price,new_price:0
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price_new_price
 msgid "New Price Unit"
 msgstr "Nuevo precio unitario"
 
 #. module: nostrum_custom_cmnt
-#: view:sale.order.line:nostrum_custom_cmnt.view_sales_order_lines_filter
-msgid "Order"
-msgstr "Pedido"
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
+msgid "No."
+msgstr "Num."
 
 #. module: nostrum_custom_cmnt
-#: view:pos.order:nostrum_custom_cmnt.view_pos_order_filter_cmnt
-msgid "Order Month"
-msgstr "Mes del pedido"
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_sales_order_lines_filter
+msgid "Order"
+msgstr "Pedido"
 
 #. module: nostrum_custom_cmnt
 #. openerp-web
@@ -269,17 +308,23 @@ msgid "P.V.P"
 msgstr "P.V.P"
 
 #. module: nostrum_custom_cmnt
-#: field:sale.order.line,partner_id:0
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_sale_order_line_partner_id
 msgid "Partner"
 msgstr "Empresa"
 
 #. module: nostrum_custom_cmnt
-#: view:website:sale.report_saleorder_document
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_invoice_payment_term_15355
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_sale_order_payment_term_15356
+msgid "Payment term"
+msgstr "Payment term"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
 msgid "Price"
 msgstr "Precio"
 
 #. module: nostrum_custom_cmnt
-#: view:sale.order.line:nostrum_custom_cmnt.view_sales_order_lines_filter
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_sales_order_lines_filter
 msgid "Product"
 msgstr "Producto"
 
@@ -289,24 +334,9 @@ msgid "Purchase Order"
 msgstr "Pedido de compra"
 
 #. module: nostrum_custom_cmnt
-#: view:website:sale.report_saleorder_document
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
 msgid "Quantity"
 msgstr "Cantidad"
-
-#. module: nostrum_custom_cmnt
-#: view:website:account.report_invoice_document
-msgid "Reference:"
-msgstr "Referencia:"
-
-#. module: nostrum_custom_cmnt
-#: view:website:account.report_invoice_document
-msgid "Referencia cliente:"
-msgstr "Referencia cliente:"
-
-#. module: nostrum_custom_cmnt
-#: view:website:account.report_invoice_document
-msgid "Referencia proveedor:"
-msgstr "Referencia proveedor:"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model,name:nostrum_custom_cmnt.model_sale_order
@@ -325,17 +355,12 @@ msgid "Sales Order Lines"
 msgstr "Líneas pedido de ventas"
 
 #. module: nostrum_custom_cmnt
-#: view:sale.order.line:nostrum_custom_cmnt.view_sales_order_lines_filter
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_sales_order_lines_filter
 msgid "Search Sales Order"
 msgstr "Buscar pedido de venta"
 
 #. module: nostrum_custom_cmnt
-#: view:website:account.report_invoice_document
-msgid "Source:"
-msgstr "Origen:"
-
-#. module: nostrum_custom_cmnt
-#: field:pos.order.line,state:0
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_pos_order_line_state
 msgid "Status"
 msgstr "Estado"
 
@@ -354,7 +379,7 @@ msgid "TEL."
 msgstr "TEL."
 
 #. module: nostrum_custom_cmnt
-#: view:website:sale.report_saleorder_document
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
 msgid "Taxes"
 msgstr "Impuestos"
 
@@ -366,12 +391,17 @@ msgid "Total"
 msgstr "Total"
 
 #. module: nostrum_custom_cmnt
-#: view:website:sale.report_saleorder_document
-msgid "Unit Price"
-msgstr "Precio unidad"
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
+msgid "Total Price"
+msgstr "Precio total"
 
 #. module: nostrum_custom_cmnt
-#: view:website:sale.report_saleorder_document
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
+msgid "Unit Price"
+msgstr "Precio unitario"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
 msgid "Unit Price Net"
 msgstr "Precio neto ud"
 
@@ -397,7 +427,7 @@ msgid "VENTA:"
 msgstr "VENTA:"
 
 #. module: nostrum_custom_cmnt
-#: field:account.invoice,vendor_ref:0
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_invoice_vendor_ref
 msgid "Vendor Reference"
 msgstr "Referencia proveedor"
 

@@ -51,9 +51,6 @@ Features:
         'security/ir.model.access.csv',
         'views/sale_margin_view.xml',
         'views/account_invoice_view.xml',
-        'report/sale_margin_report.xml',
-        'views/commission_users_view.xml',
-        'wizard/commission_compute_view.xml',
     ],
     "installable": True,
 }

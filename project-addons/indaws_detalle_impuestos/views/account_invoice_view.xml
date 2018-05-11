@@ -8,22 +8,37 @@
                 
                 <notebook position="inside">
                     <page string="Detalle impuestos">
-                        <group>
-                            <field name="base_21" />
-                            <field name="iva_21" />
-                            <field name="base_10" />
-                            <field name="iva_10" />
-                            <field name="base_4" />
-                            <field name="iva_4" />
-                            <field name="base_0" />
-                            <field name="iva_0" />
-                            <field name="base_req" />
-                            <field name="ptje_req" />
-                            <field name="cuota_req" />
-                            <field name="base_ret" />
-                            <field name="ptje_ret" />
-                            <field name="cuota_ret" />
-                        </group>
+                        <group tring="Desglose">
+                            <group colspan="4" col="8">
+                                <group>
+                                    <field name="base_21" />
+                                    <field name="iva_21" />
+                                </group>
+                                <group>
+                                    <field name="base_10" />
+                                    <field name="iva_10" />
+                                </group>
+                                <group>
+                                    <field name="base_4" />
+                                    <field name="iva_4" />
+                                </group>
+                                <group>
+                                    <field name="base_0" />
+                                    <field name="iva_0" />
+                                </group>
+                            </group>
+                            <group string="Recargos">
+                                <field name="base_req" />
+                                <field name="base_req" />
+                                <field name="ptje_req" />
+                                <field name="cuota_req" />
+                            </group>
+                            <group string="Retenciones">
+                                <field name="base_ret" />
+                                <field name="ptje_ret" />
+                                <field name="cuota_ret" />
+                            </group>
+                    </group>
                     </page>
                 </notebook>
 
@@ -31,7 +46,6 @@
             </field>
         </record>
 
-        
         <record id="view_account_invoice_detalle_impuestos_form" model="ir.ui.view">
             <field name="name">account.invoice.detalle.impuestos.inherit</field>
             <field name="model">account.invoice</field>
@@ -41,22 +55,36 @@
                 
                 <notebook position="inside">
                     <page string="Detalle impuestos">
-                        <group>
-                            <field name="base_21" />
-                            <field name="iva_21" />
-                            <field name="base_10" />
-                            <field name="iva_10" />
-                            <field name="base_4" />
-                            <field name="iva_4" />
-                            <field name="base_0" />
-                            <field name="iva_0" />
+                        <group string="Desglose">
+                            <group colspan="4" col="8">
+                                <group>
+                                    <field name="base_21" />
+                                    <field name="iva_21" />
+                                </group>
+                                <group>
+                                    <field name="base_10" />
+                                    <field name="iva_10" />
+                                </group>
+                                <group>
+                                    <field name="base_4" />
+                                    <field name="iva_4" />
+                                </group>
+                                <group>
+                                    <field name="base_0" />
+                                    <field name="iva_0" />
+                                </group>
+                            </group>
+                        <group string="Recargos">
                             <field name="base_req" />
                             <field name="ptje_req" />
                             <field name="cuota_req" />
+                        </group>
+                        <group string="Retenciones">
                             <field name="base_ret" />
                             <field name="ptje_ret" />
                             <field name="cuota_ret" />
                         </group>
+                    </group>
                     </page>
                 </notebook>
 

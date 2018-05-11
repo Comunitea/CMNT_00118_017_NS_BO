@@ -25,9 +25,8 @@
     'version': '1.0',
     'author': 'inDAWS',
     'category': 'Tools',
-    'depends': [ 'base', 'account', 'stock_account', 'account_invoice_sale_link', 'indaws_sending', 'delivery' ],
-    'demo': [],
-    'data': [ ],
+    'depends': ['base', 'account', 'stock_account',
+                'indaws_sending', 'delivery'],
+
     'installable': True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

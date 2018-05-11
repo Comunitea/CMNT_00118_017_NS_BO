@@ -1,1 +1,10 @@
 En sending service.py parece que faltan imports, estaba mal en el original ya
+
+PRUEBAS
+==============================================================================
+Tuve que poner la segunda funcion en el campo function duplicado sending.
+Se hacía uso de company_id.sending_carrier_id, campo el cual no estña declarado
+y no dejaba entrar en los albaranes desde la venta.
+
+Quito los required de la vista, ya que son campos que pueden estar ocultos
+PROBAR BIEN CON PABLO

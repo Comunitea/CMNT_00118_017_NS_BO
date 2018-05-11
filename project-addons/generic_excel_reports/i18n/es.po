@@ -1,0 +1,215 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* generic_excel_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 08:45+0000\n"
+"PO-Revision-Date: 2018-05-11 08:45+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: generic_excel_reports
+#: model:ir.ui.view,arch_db:generic_excel_reports.view_globle_report_form
+msgid "Add<br/>Context Action"
+msgstr "Añadir <br/>Acción de contexto."
+
+#. module: generic_excel_reports
+#: model:ir.ui.view,arch_db:generic_excel_reports.view_globle_report_wizard_form
+msgid "Are you sure to print report?"
+msgstr "Estás seguro que deseas exportar a Excel?"
+
+#. module: generic_excel_reports
+#: model:ir.ui.view,arch_db:generic_excel_reports.view_globle_report_wizard_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: generic_excel_reports
+#: model:ir.actions.act_window,name:generic_excel_reports.action_generate_globle_report
+#: model:ir.ui.menu,name:generic_excel_reports.menu_generate_globle_report
+msgid "Configure Excel Reports"
+msgstr "Configurar informes EWxcel"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_create_uid
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_wizard_create_uid
+#: model:ir.model.fields,field_description:generic_excel_reports.field_ir_model_fields_excel_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_create_date
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_wizard_create_date
+#: model:ir.model.fields,field_description:generic_excel_reports.field_ir_model_fields_excel_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_display_name
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_wizard_display_name
+#: model:ir.model.fields,field_description:generic_excel_reports.field_ir_model_fields_excel_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: generic_excel_reports
+#: model:ir.ui.view,arch_db:generic_excel_reports.view_globle_report_wizard_form
+msgid "Excel report"
+msgstr "Informe Excel"
+
+#. module: generic_excel_reports
+#: model:ir.ui.view,arch_db:generic_excel_reports.view_globle_report_form
+msgid "Excel report form"
+msgstr "Informe Excel"
+
+#. module: generic_excel_reports
+#: code:addons/generic_excel_reports/models/generic_excel_report.py:62
+#, python-format
+msgid "Export Excel (%s)"
+msgstr "Exportar Excel (%s)"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_field_ids
+#: model:ir.model.fields,field_description:generic_excel_reports.field_ir_model_fields_excel_field_id
+msgid "Fields"
+msgstr "Campos"
+
+#. module: generic_excel_reports
+#: model:ir.ui.view,arch_db:generic_excel_reports.view_globle_report_form
+msgid "Fields To Print"
+msgstr "Campos a imprimir"
+
+#. module: generic_excel_reports
+#: model:ir.ui.view,arch_db:generic_excel_reports.view_globle_report_tree
+msgid "GLoble Report"
+msgstr "Informe Global"
+
+#. module: generic_excel_reports
+#: model:ir.ui.view,arch_db:generic_excel_reports.view_globle_report_wizard_form
+msgid "Here is the Excel Report:"
+msgstr "Aquí está el informe excel:"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_id
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_wizard_id
+#: model:ir.model.fields,field_description:generic_excel_reports.field_ir_model_fields_excel_id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report___last_update
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_wizard___last_update
+#: model:ir.model.fields,field_description:generic_excel_reports.field_ir_model_fields_excel___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_wizard_write_uid
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_write_uid
+#: model:ir.model.fields,field_description:generic_excel_reports.field_ir_model_fields_excel_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_wizard_write_date
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_write_date
+#: model:ir.model.fields,field_description:generic_excel_reports.field_ir_model_fields_excel_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_name
+#: model:ir.ui.view,arch_db:generic_excel_reports.view_globle_report_form
+msgid "Name"
+msgstr "Nombre"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_model_name
+msgid "Object"
+msgstr "Objeto"
+
+#. module: generic_excel_reports
+#: model:ir.ui.view,arch_db:generic_excel_reports.view_globle_report_wizard_form
+msgid "Ok"
+msgstr "Aceptar"
+
+#. module: generic_excel_reports
+#: model:ir.ui.view,arch_db:generic_excel_reports.view_globle_report_form
+msgid "Remove the contextual action to use this report on related documents"
+msgstr "Eliminar la acción contextual para usar estos informes en los modelos relaccionados"
+
+#. module: generic_excel_reports
+#: model:ir.ui.view,arch_db:generic_excel_reports.view_globle_report_form
+msgid "Remove<br/>Context Action"
+msgstr "Eliminar<br/>Acción de contexto"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_ir_model_fields_excel_report_id
+msgid "Report"
+msgstr "Informe"
+
+#. module: generic_excel_reports
+#: model:ir.ui.view,arch_db:generic_excel_reports.view_globle_report_wizard_form
+msgid "Report Generated"
+msgstr "Report Generated"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_ir_model_fields_excel_sequence_excel
+msgid "Secuencia"
+msgstr "Secuencia"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_ref_ir_value
+msgid "Sidebar Button"
+msgstr "Botón en la barra lateral"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_ref_ir_act_window
+msgid "Sidebar action"
+msgstr "Acción barra lateral"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_wizard_state
+msgid "State"
+msgstr "Provincia"
+
+#. module: generic_excel_reports
+#: selection:generic.excel.report.wizard,state:0
+msgid "choose"
+msgstr "elegir"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_wizard_data
+msgid "file"
+msgstr "fichero"
+
+#. module: generic_excel_reports
+#: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_wizard_name
+msgid "filename"
+msgstr "nombre fichero"
+
+#. module: generic_excel_reports
+#: model:ir.model,name:generic_excel_reports.model_generic_excel_report
+msgid "generic.excel.report"
+msgstr "generic.excel.report"
+
+#. module: generic_excel_reports
+#: model:ir.model,name:generic_excel_reports.model_generic_excel_report_wizard
+msgid "generic.excel.report.wizard"
+msgstr "generic.excel.report.wizard"
+
+#. module: generic_excel_reports
+#: selection:generic.excel.report.wizard,state:0
+msgid "get"
+msgstr "obtener"
+
+#. module: generic_excel_reports
+#: model:ir.model,name:generic_excel_reports.model_ir_model_fields_excel
+msgid "ir.model.fields.excel"
+msgstr "ir.model.fields.excel"
+
