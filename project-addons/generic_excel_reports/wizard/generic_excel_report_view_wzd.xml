@@ -10,7 +10,7 @@
                 <field name="name" invisible="1"/>
                 <group states="choose" string="Excel report">
                     <div >
-                        Are you sure to print report?
+                        Are you sure to export excel?
                     </div>
                 <footer states="choose">
                     <button name="print_report" string="Ok" type="object" class="oe_highlight"/>

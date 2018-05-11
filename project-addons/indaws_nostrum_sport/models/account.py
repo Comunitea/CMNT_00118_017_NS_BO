@@ -45,7 +45,7 @@ class AccountInvoiceLine(models.Model):
 
     sale_order_lines = fields.Many2many('sale.order.line',
                                         'sale_order_line_invoice_rel',
-                                        'invoice_id',
+                                        'invoice_line_id',
                                         'order_line_id',
                                         'Sale Order  Lines', readonly=True)
 
@@ -110,7 +110,7 @@ class AccountInvoice(models.Model):
     def _get_margin_ptje(self):
         for record in self:
             purchase_total = 0.0
-            for lin in record.invoice_line:
+            for lin in record.invoice_line_ids:
                 purchase_total = purchase_total + (lin.precio_coste *
                                                    lin.quantity)
             margen = 0
@@ -240,7 +240,7 @@ class AccountInvoiceNostrum(models.Model):
         action = self.env.ref(r_name).read()[0]
         invoice_line_ids = []
         for elem in self.invoice_ids:
-            for line in elem.invoice_line:
+            for line in elem.invoice_line_ids:
                 invoice_line_ids.append(line.id)
         action['domain'] = [('id', 'in', invoice_line_ids)]
         return action

@@ -12,7 +12,7 @@
                     <button name="%(action_change_pos_price_wzd)d"
                         type="action"
                         string="Modify Price"
-                        icon="terp-dolar"
+                        icon="fa-dollar"
                         states='paid'
                     />
                 </xpath>

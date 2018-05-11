@@ -1,4 +1,16 @@
-Hay que añadir lo de los vencimientos de los informes,
-aplicar el commit de la rama 8
-Ver el comentario del fichero product. ¿Que hacemos con ese precio?
-¿Que hacia la herencia de slae.order que añadia el campo date_confirm de donde sale?
+
+¿Que hacia la herencia de slae.order que añadia el campo date_confirm de
+ donde sale?
+
+PRUEBAS
+==============================================================================
+Quito el campo coste del listado de proveedores por no ser necesario en la 10
+ya no hay un one2Many para cojer los precios según cantidad, así que el campo
+precio que ya existe es el equivalente al campo coste.
+
+El informe de ventas falla si usamos los t-if en las columnas para mostrar el 
+nº de línea o la imagen en función del check. 
+¿Será necesaria esta funcionalidad?, si lo es a lo mejor hay que imprimir
+informes diferentes segun los checks.
+
+MODULO OK

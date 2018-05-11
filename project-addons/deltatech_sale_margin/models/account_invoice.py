@@ -29,7 +29,8 @@ class AccountInvoiceLine(models.Model):
 
     purchase_price = fields.Float(string='Cost Price',
                                   digits=dp.get_precision('Product Price'))
-    commission = fields.Float(string="Commission", default=0.0)
+    # POST MIGRATION
+    # commission = fields.Float(string="Commission", default=0.0)
 
     # Se estaba heredando el create y el write para garantizar que no hay
     # precio 0 en la línea

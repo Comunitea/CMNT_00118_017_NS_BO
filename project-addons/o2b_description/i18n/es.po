@@ -1,0 +1,77 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* o2b_description
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 13:15+0000\n"
+"PO-Revision-Date: 2018-05-11 13:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: o2b_description
+#: model:ir.ui.view,arch_db:o2b_description.description_form_view_new
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: o2b_description
+#: model:ir.model.fields,field_description:o2b_description.field_description_update_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: o2b_description
+#: model:ir.model.fields,field_description:o2b_description.field_description_update_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: o2b_description
+#: model:ir.model.fields,field_description:o2b_description.field_description_update_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: o2b_description
+#: model:ir.model.fields,field_description:o2b_description.field_description_update_id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: o2b_description
+#: model:ir.model.fields,field_description:o2b_description.field_description_update___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: o2b_description
+#: model:ir.model.fields,field_description:o2b_description.field_description_update_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: o2b_description
+#: model:ir.model.fields,field_description:o2b_description.field_description_update_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: o2b_description
+#: model:ir.ui.view,arch_db:o2b_description.description_form_view_new
+msgid "Please Confirm the Update for product description."
+msgstr "Por favor confirma la actualización de la descripción de producto"
+
+#. module: o2b_description
+#: model:ir.model,name:o2b_description.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea pedido de venta"
+
+#. module: o2b_description
+#: model:ir.actions.act_window,name:o2b_description.action_view_sale_order_form_view
+msgid "Update Description"
+msgstr "Actualizar descripción"
+
+#. module: o2b_description
+#: model:ir.model,name:o2b_description.model_description_update
+msgid "description.update"
+msgstr "description.update"
+

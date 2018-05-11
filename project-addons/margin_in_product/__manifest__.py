@@ -27,12 +27,13 @@
      Margin
      =======
 
-     This gives the profitability by calculating the difference between the Price for customers and Cost Price.
+     This gives the profitability by calculating the difference between the
+     Price for customers and Cost Price.
 
         """,
-    'price':19,
+    'price': 19,
     'live_test_url': 'http://custo.olabs.be/web/login?db=demo0002&login=demo',
-    'currency':"EUR",
+    'currency': "EUR",
     'author': "O'Labs",
     'depends': [
         'product'
@@ -42,4 +43,4 @@
     ],
     'images': ['static/description/banner.jpg'],
     'installable': True,
-    }
+}

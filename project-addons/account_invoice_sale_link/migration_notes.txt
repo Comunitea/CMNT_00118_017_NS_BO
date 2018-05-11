@@ -1,1 +1,11 @@
+COMENTARIOS MIGRACIÓN
+==============================================================================
 Pendiente de revisar si funcionan los many2many inversos
+
+PRUEBAS
+==============================================================================
+Funcionan los que ya estaban creados, pero cuando facturo una venta no me 
+hace el link, normal por otro lado porque no ve donde puede hacerse, 
+pero en la v8 si se crea este link
+
+PENDIENTE DE CORREGIR

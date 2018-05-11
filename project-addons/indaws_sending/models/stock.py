@@ -32,21 +32,10 @@ class StockPicking(models.Model):
     # Overloaded stock_picking to manage carriers :
     _inherit = 'stock.picking'
 
+    @api.multi
     def _get_sending(self):
-        res = {}
         for pick in self:
-            carrier_id = pick.carrier_id.id
-            sending_company_id = pick.company_id.sending_carrier_id.id
-            picking_type = pick.picking_type_id.code
-            slist = ['done', 'waiting', 'confirmed', 'assigned',
-                     'partially_available']
-            if carrier_id == sending_company_id and pick.state in slist and \
-                    picking_type == 'outgoing':
-                pick.sending = True
-            else:
-                pick.sending = False
-
-        return res
+            pick.sending = True
 
     sending = fields.Boolean(compute='_get_sending',
                              string='Campos visibles Sending')
@@ -90,8 +79,7 @@ class StockPicking(models.Model):
                 fecha = datetime.strptime(picking.sending_fecha,
                                           '%Y-%m-%d %H:%M:%S')
             else:
-                fecha = datetime.strptime(fields.datetime.now(),
-                                          '%Y-%m-%d %H:%M:%S')
+                fecha = fields.datetime.now()
             fecha_formateada = fecha.strftime('%d/%m/%Y')
 
             if picking.partner_id.mobile:

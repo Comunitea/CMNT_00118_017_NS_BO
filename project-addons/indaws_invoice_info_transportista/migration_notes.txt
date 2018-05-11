@@ -1,1 +1,9 @@
-Se añaden campos transportidta a la factura aunque no hay vista declarada
+Se añaden campos transportidta a la factura aunque no hay vista declarada.
+
+PRUEBAS
+==============================================================================
+No parecen estarse usando estos campos.
+MODULO OK
+
+Pensear en eliminar post-migration
+

@@ -79,15 +79,15 @@ class AccountInvoice(models.Model):
             cuota_ret = 0.0
 
             for line in record.invoice_line_ids:
-                if line.invoice_line_tax_id:
-                    for tax in line.invoice_line_tax_id:
+                if line.invoice_line_tax_ids:
+                    for tax in line.invoice_line_tax_ids:
                         if tax:
                             if 'IVA' in tax.name:
-                                if tax.amount >= 0.209 and tax.amount <= 0.211:
+                                if tax.amount == 21:
                                     base_21 = base_21 + line.price_subtotal
-                                if tax.amount >= 0.09 and tax.amount <= 0.11:
+                                if tax.amount == 10:
                                     base_10 = base_10 + line.price_subtotal
-                                if tax.amount >= 0.03 and tax.amount <= 0.05:
+                                if tax.amount == 4:
                                     base_4 = base_4 + line.price_subtotal
                                 if tax.amount == 0.00:
                                     base_0 = base_0 + line.price_subtotal

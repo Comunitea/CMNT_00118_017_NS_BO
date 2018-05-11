@@ -1,7 +1,32 @@
+COMENTARIOS MIGRACIÓN
+===============================================================================
 Añade el campo purchase price a la línea de factura y la de compra.
-El purchase_price de compra se movió antes de la migración al módulo de sale_margin por un tema del orden en que se ejecutaban los onchanges.
+El purchase_price de compra se movió antes de la migración al módulo de 
+sale_margin por un tema del orden en que se ejecutaban los onchanges.
 
-Se declara un report, que sale en el Menu de Ventas/Commission y se llama Commission, qizás lo quitemos después
+Se declara un report, que sale en el Menu de Ventas/Commission y 
+se llama Commission, qizás lo quitemos después
 
 PENDIENTE DE MOVER EL PURCHASE PRICE DESDE LA FACTURACIÓN DE ALBARÁN A LA LÍNEA
 DE FACTURA
+
+PRUEBAS
+===============================================================================
+Quité la herencia del product_id_change y del contraint y lo sustituí por un
+onchange que muestra el warnig.
+
+Elimino lo que tiene que ver con comisiones.
+Parece que siguén quedando los menus en Configuración/Ventas.
+Procuro que el purchase_price se pase a la línea de factura. Ya no se factura
+desde el albarán, así que hago nuevo método para pasar el purchase price a la 
+línea de factura.
+
+El sale margin report también lo elimino ya que según pablo no lo usan
+(Ni lo conocían)
+
+Por lo tanto este módulo solo añade el campo purchase_price a la línea de
+factura y se encarga de que se propague desde la venta. Tab mete un warning
+para no vender por debajo del precio de compra.
+
+
+MODULO OK

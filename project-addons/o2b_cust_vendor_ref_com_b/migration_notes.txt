@@ -1,1 +1,5 @@
 Añade dos campos de referencia a res.partner.
+
+PRUEBAS
+==============================================================================
+MODULO OK

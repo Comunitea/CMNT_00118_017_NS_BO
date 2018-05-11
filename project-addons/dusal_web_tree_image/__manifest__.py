@@ -32,9 +32,9 @@
         'web',
     ],
     'qweb': [
-        'static/src/xml/widget.xml',
+        # 'static/src/xml/widget.xml',
     ],
     'data': [
-        'view/assets.xml',
+        # 'view/assets.xml',
     ],
 }

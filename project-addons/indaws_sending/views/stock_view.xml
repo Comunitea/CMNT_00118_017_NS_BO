@@ -19,9 +19,9 @@
                     <field name="sending_portes" required="0" attrs="{'readonly':[('sending_expedicion', '!=', False)],'required':[('sending', '=', True)]}"/>
                     <field name="sending_reembolso" attrs="{'readonly':[('sending_expedicion', '!=', False)]}"/>
                     <field name="sending_seguro"  attrs="{'readonly':[('sending_expedicion', '!=', False)]}" />
-                    <field name="sending_retorno"  required="1" attrs="{'readonly':[('sending_expedicion', '!=', False)]}" />  
-                    <field name="sending_numbultos" required="1" attrs="{'readonly':[('sending_expedicion', '!=', False)]}" />  
-                    <field name="sending_kilos" required="1" attrs="{'readonly':[('sending_expedicion', '!=', False)]}" />  
+                    <field name="sending_retorno"  required="0" attrs="{'readonly':[('sending_expedicion', '!=', False)]}" />  
+                    <field name="sending_numbultos" required="0" attrs="{'readonly':[('sending_expedicion', '!=', False)]}" />  
+                    <field name="sending_kilos" required="0" attrs="{'readonly':[('sending_expedicion', '!=', False)]}" />  
                   </group>
                   <group colspan="4">
                     <field name="sending_observaciones"  attrs="{'readonly':[('sending_expedicion', '!=', False)]}"/>

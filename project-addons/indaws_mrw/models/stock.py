@@ -205,17 +205,17 @@ class StockPicking(models.Model):
         reference = False
         mrw_carrier_id = False
         mrw_carrier_obj = carrier_obj.search([('name', '=', 'MRW')], limit=1)
-        if mrw_carrier_obj > 0:
+        if mrw_carrier_obj:
             mrw_carrier_id = mrw_carrier_obj.id
         if not mrw_carrier_id:
             raise UserError(
-                _('Error Envio MRW'),
-                _('No se encuentra tranportista MRW'))
+                _('Error Envio MRW: No se encuentra tranportista MRW'))
 
         if mrw_carrier_id != deliv.carrier_id.id:
             raise UserError(
                 _('Error Envio MRW'),
-                _('Este albaran no tiene como transportista a MRW'))
+                _('Error Envio MRW: Este albaran no tiene como transportista\
+                   a MRW'))
 
         if deliv.carrier_tracking_ref:
             mess_id = self.env['indaws_wizard.message'].\

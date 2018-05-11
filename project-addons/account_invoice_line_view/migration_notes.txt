@@ -1,3 +1,17 @@
+COMENTARIOS
+===============================================================================
 Añade el menú Líneas Factura proveedor En Contabilidad/Proveedores.
 Se añaden muchos related de la factura a la línea de factura.
-Se renombro algún campo, como el uos_id por uom_id, y el de .._taxes_id por ..taxes_id
+Se renombro algún campo, como el uos_id por uom_id, 
+y el de .._taxes_id por ..taxes_id
+
+
+PRUEBAS
+===============================================================================
+ - Se añade el menú de Lineas Factura clientes en Contabilidad/clientes
+ - Se añade el menú de Lineas Factura Proveedores en Contabilidad/Proveedores
+
+Funcionan los filtros y los agrupadores
+Traducido
+
+MODULO OK.

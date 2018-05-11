@@ -37,4 +37,5 @@ class SaleOrderLine(models.Model):
                                         related='product_id.image_small')
     product_image_medium = fields.Binary(string='Image medium',
                                          related='product_id.image_medium')
-    product_image = fields.Binary(string='Image')
+    product_image = fields.Binary(string='Image',
+                                  related='product_id.image')

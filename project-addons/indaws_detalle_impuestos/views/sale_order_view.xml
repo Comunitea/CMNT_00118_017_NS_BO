@@ -7,27 +7,33 @@
 		
 			<notebook position="inside">
                 <page string="Detalle impuestos">
-                     <group>
-
-                        <field name="base_21" />
-                        <field name="iva_21" />
-                        <field name="base_10" />
-                        <field name="iva_10" />
-                        <field name="base_4" />
-                        <field name="iva_4" />
-                        <field name="base_0" />
-                        <field name="iva_0" />
-                        <field name="base_req" />
-                        <field name="ptje_req" />
-                        <field name="cuota_req" />
-
+                    <group string="Desglose">
+                        <group colspan="4" col="8">
+                            <group>
+                                <field name="base_21" />
+                                <field name="iva_21" />
+                            </group>
+                            <group>
+                                <field name="base_10" />
+                                <field name="iva_10" />
+                            </group>
+                            <group>
+                                <field name="base_4" />
+                                <field name="iva_4" />
+                            </group>
+                            <group>
+                                <field name="base_0" />
+                                <field name="iva_0" />
+                            </group>
+                        </group>
+                        <group string="Recargo">
+                            <field name="base_req" />
+                            <field name="ptje_req" />
+                            <field name="cuota_req" />
+                        </group>
                     </group>
                 </page>
             </notebook>
-            
-            
-            
-
         </field>
     </record>
 </odoo>

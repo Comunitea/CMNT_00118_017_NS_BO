@@ -1,2 +1,12 @@
 Añade un desglose de impuestos, por iba 21 , 4 y 10 en una nueva pestaña en 
-ventas facturas y terminal punto de venta, aunque en esta ultima no se modifica la vista
+ventas facturas y terminal punto de venta, aunque en esta ultima no se 
+modifica la vista
+
+PRUEBAS
+==============================================================================
+Ahora el tax.amount es el % entero, no en decimales, con lo cual para saber si 
+es IVA 21 se hace la comparación con == 21 en lugar de == 0.21.
+
+Modifiqué la vista para ponerla mas bonita.
+
+MODULO OK

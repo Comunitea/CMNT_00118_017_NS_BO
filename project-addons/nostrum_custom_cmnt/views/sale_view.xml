@@ -100,7 +100,7 @@
                     <field name="margin_ptje" readonly="1" groups="deltatech_sale_margin.group_sale_margin"/>
                 </xpath>
                 <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="replace">
-                    <field name="price_unit"  on_change="price_unit_change(price_unit,purchase_price,context)"  />
+                    <field name="price_unit"/>
                 </xpath>
             </field>
         </record>
