@@ -4,3 +4,5 @@ Había una herencia de res partner que no se usaba, actualizaba nombres de
 clientes.
 Tan solo hay una herencia de la vista kanban que hay que revisar.
 Ahora mismo no hace nada este modulo
+
+MODULO OK?

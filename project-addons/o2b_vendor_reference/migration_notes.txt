@@ -1,0 +1,6 @@
+PRUEBAS
+==============================================================================
+Añade dos botones para actualizar las cuentas a cobrar y a recibir.
+
+MODULO OK
+(Lo necesitan)??

@@ -8,11 +8,12 @@ from odoo import models, api
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    @api.one
+    @api.multi
     def copy(self, default=None):
-        sale_copy = super(SaleOrder, self).copy(default)
+        self.ensure_one()
         # we unlink pack lines that should not be copied
+        sale_copy = super(SaleOrder, self).copy(default)
         pack_copied_lines = sale_copy.order_line.filtered(
-            lambda l: l.pack_parent_line_id.order_id == self)
+            lambda l: l.pack_parent_line_id.order_id.id == self.id)
         pack_copied_lines.unlink()
         return sale_copy
