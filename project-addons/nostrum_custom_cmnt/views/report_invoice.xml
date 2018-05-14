@@ -39,7 +39,7 @@
             <xpath expr="//p[@t-if='o.payment_term_id']" position="replace">
                 <p t-if="o.payment_term_id.note">
                     <strong>Payment Term:</strong>
-                    <span t-field="o.payment_term.note"/>
+                    <span t-field="o.payment_term_id.note"/>
                 </p>
                 <p t-if="o.expiration_dates_str">
                     <strong>Vencimientos:</strong>
