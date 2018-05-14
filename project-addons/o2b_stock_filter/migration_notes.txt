@@ -1,3 +1,7 @@
 Estaba metiendo el campo customer_ref en res.partner, 
-pero eso ya lo hace el modulo 02vb_cust_vendor_ref_com_b
+pero eso ya lo hace el modulo 02b_cust_vendor_ref_com_b
 dejamos solo la herencia de la vista.
+
+PRUEBAS
+===============================================================================
+MODULO OK?? Necesito el filtro de company B en albaranes?
