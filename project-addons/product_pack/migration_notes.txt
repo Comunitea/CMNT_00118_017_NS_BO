@@ -1,1 +1,8 @@
-Revisar la herencia de los campos de stock y como se calculan teniendo en cuenta los packs
+Revisar la herencia de los campos de stock y como se calculan 
+teniendo en cuenta los packs
+
+PRUEBAS
+===============================================================================
+YA ME DEJA CRREAR PACKS, se quito el uos_id del fichero pack.py
+
+MODULO OK

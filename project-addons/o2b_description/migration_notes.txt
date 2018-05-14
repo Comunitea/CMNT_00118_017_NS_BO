@@ -6,6 +6,7 @@ PRUEBAS
 No acaba de funcionar porque hay pedidos en estado bloqueado que no dejan
 actualizar la descripciñon, quiźás mejor con sql
 preguntar si es necesario este módulo.
+
 Está prohibido modificar los siguientes campos en un pedido bloqueado:
 Etiquetas analíticas
 Descripción

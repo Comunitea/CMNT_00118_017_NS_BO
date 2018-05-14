@@ -1,0 +1,6 @@
+PRUEBAS
+==============================================================================
+Añade a la vista de variante del producto, 3 campos que tienen que ver con el
+precio extra de los atributos.
+
+MODULO OK.

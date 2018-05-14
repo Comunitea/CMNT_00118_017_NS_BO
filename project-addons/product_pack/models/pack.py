@@ -36,16 +36,17 @@ class ProductPack(models.Model):
         subproduct = self.product_id
         quantity = self.quantity * line.product_uom_qty
 
-        taxes = order.fiscal_position.map_tax(
+        taxes = order.fiscal_position_id.map_tax(
             subproduct.taxes_id)
         tax_id = [(6, 0, taxes.ids)]
 
-        if subproduct.uos_id:
-            uos_id = subproduct.uos_id.id
-            uos_qty = quantity * subproduct.uos_coeff
-        else:
-            uos_id = False
-            uos_qty = quantity
+        # POST MIGRATION, NO HAY UOS
+        # if subproduct.uos_id:
+        #     uos_id = subproduct.uos_id.id
+        #     uos_qty = quantity * subproduct.uos_coeff
+        # else:
+        #     uos_id = False
+        #     uos_qty = quantity
 
         # if pack is fixed price or totlice price we don want amount on
         # pack lines
@@ -83,8 +84,8 @@ class ProductPack(models.Model):
             'address_allotment_id': False,
             'product_uom_qty': quantity,
             'product_uom': subproduct.uom_id.id,
-            'product_uos_qty': uos_qty,
-            'product_uos': uos_id,
+            # 'product_uos_qty': uos_qty,  NO HAY UOS (postmigration)
+            # 'product_uos': uos_id,  NO HAY UOS (postmigration)
             'product_packaging': False,
             'discount': discount,
             'number_packages': False,
@@ -95,5 +96,3 @@ class ProductPack(models.Model):
             'purchase_price': subproduct.standard_price
         }
         return vals
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
