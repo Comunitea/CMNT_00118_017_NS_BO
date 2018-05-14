@@ -11,7 +11,6 @@ UPDATE ir_module_module SET state = 'to remove' WHERE name = 'product_do_merge';
 UPDATE ir_module_module SET state = 'to remove' WHERE name = 'web_widget_one2many_tags';
 UPDATE ir_module_module SET state = 'to remove' WHERE name = 'mail_sendgrid';
 
-
 -- Me cargo vistas
 delete from ir_ui_view where arch_db like '%date_confirm%';
 --Me cargo la herencia de el report de duasal_sale para que no entre en conflicto con el de nostrum custom
