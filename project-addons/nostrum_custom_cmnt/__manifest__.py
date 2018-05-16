@@ -28,6 +28,7 @@
         "views/invoice.xml",
         "views/report_invoice.xml",
         "views/sale_view.xml",
+        "views/product_view.xml",
         "wizard/change_pos_price_view.xml",
         "views/point_of_sale_view.xml",
         "views/report_sale_order.xml",
