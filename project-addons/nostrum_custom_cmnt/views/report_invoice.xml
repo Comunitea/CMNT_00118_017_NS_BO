@@ -14,7 +14,7 @@
                         <p t-field="o.date_invoice"/>
                     </div>
                     <div class="col-xs-2" t-if="o.origin">
-                        <strong>Source:</strong>
+                        <strong>Origen:</strong>
                         <p t-field="o.origin"/>
                     </div>
                     <div class="col-xs-2" t-if="o.partner_id.ref">
@@ -43,9 +43,21 @@
                 </p>
                 <p t-if="o.expiration_dates_str">
                     <strong>Vencimientos:</strong>
-                    <span t-field="o.expiration_dates_str"/>
+                    <!-- <span t-field="o.expiration_dates_str"/> -->
                 </p>
             </xpath>
+
+            <xpath expr="//table[@class='table table-condensed']/tbody/tr/td[6]" position="replace">
+                <td class="text-right">
+                    <span t-esc="', '.join(map(lambda x: (x.name), l.invoice_line_tax_ids))"/>
+                </td>
+            </xpath>
+
+            <xpath expr="//div[@t-if='len(o.tax_line_ids) > 0']/div/table/tbody/tr/td[1]" position="replace">
+                <td><span t-field="t.tax_id.name"/></td>
+            </xpath>
+
+
 
     </template>
   </data>
