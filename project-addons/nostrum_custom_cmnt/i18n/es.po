@@ -231,13 +231,13 @@ msgstr "IMPORTES"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
-msgid "Image&gt;"
-msgstr "Image&gt;"
+msgid "Image"
+msgstr "Imagen"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model,name:nostrum_custom_cmnt.model_product_supplierinfo
 msgid "Information about a product vendor"
-msgstr "Information about a product vendor"
+msgstr "Información sobre el vendedor del producto"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_delivery_carrier_internal_note

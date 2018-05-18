@@ -55,3 +55,22 @@ delete from res_groups where id in (select id from res_groups where name = 'Show
 -- Pasar las descrition_sale a nuevo campo internal_note
 update product_template set internal_note = description_sale;
 update product_template set description_sale=null;
+
+-- Error al acceder a payment_terp_id
+delete from ir_ui_view where arch_db like '%days2%';ç
+
+
+-- Copiar los nombres al campo note de los modos y plazos de pago
+update account_payment_term set note=name;
+update account_payment_mode set note=name;
+
+
+-- Diario abono ventas eliminado y pasadas referencias al de ventas
+update account_invoice set journal_id = 1 where id in(select id from account_invoice where journal_id = 3);
+update account_move set journal_id = 1 where id in(select id from account_move where journal_id = 3);
+delete from account_journal where id = 3;
+
+-- Diario abono comprAS eliminado y pasado al de proveedores
+update account_invoice set journal_id = 4 where id in(select id from account_invoice where journal_id = 2);
+update account_move set journal_id = 4 where id in(select id from account_move where journal_id = 2);
+delete from account_journal where id = 2;
