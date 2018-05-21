@@ -4,6 +4,7 @@
 
 from . import invoice
 from . import sale
+from . import stock
 from . import point_of_sale
 from . import purchase
 from . import product
