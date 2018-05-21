@@ -57,7 +57,7 @@ update product_template set internal_note = description_sale;
 update product_template set description_sale=null;
 
 -- Error al acceder a payment_terp_id
-delete from ir_ui_view where arch_db like '%days2%';ç
+delete from ir_ui_view where arch_db like '%days2%';
 
 
 -- Copiar los nombres al campo note de los modos y plazos de pago
