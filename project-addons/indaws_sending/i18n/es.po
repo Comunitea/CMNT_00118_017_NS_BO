@@ -1,0 +1,308 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* indaws_sending
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-22 08:43+0000\n"
+"PO-Revision-Date: 2018-05-22 08:43+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_picking_id
+msgid "Albaran"
+msgstr "Albarán"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_alto
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_alto
+msgid "Alto"
+msgstr "Alto"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_ancho
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_ancho
+msgid "Ancho"
+msgstr "Ancho"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending
+msgid "Campos visibles Sending"
+msgstr "Campos visibles Envío"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_res_company_sending_center
+msgid "Centro"
+msgstr "Centro"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_product_codigo
+msgid "Codigo"
+msgstr "Codigo"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_codbarras
+msgid "Codigo Barras"
+msgstr "Codigo Barras"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_error
+msgid "Codigo Error"
+msgstr "Codigo Error"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_product_cod_porte_debido
+msgid "Codigo Portes Debidos"
+msgstr "Codigo Portes Debidos"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_product_cod_porte_pagado
+msgid "Codigo Portes Pagados"
+msgstr "Codigo Portes Pagados"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_codunico
+msgid "Codunico"
+msgstr "Codunico"
+
+#. module: indaws_sending
+#: model:ir.model,name:indaws_sending.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: indaws_sending
+#: model:ir.ui.view,arch_db:indaws_sending.indaws_sending_stock_picking_form
+msgid "Configuración Sending"
+msgstr "Configuración Envío"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_res_company_sending_password
+msgid "Contraseña"
+msgstr "Contraseña"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_create_uid
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_product_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_create_date
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_product_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: indaws_sending
+#: selection:stock.picking,sending_portes:0
+msgid "Debido"
+msgstr "Debido"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_product_name
+msgid "Denominación"
+msgstr "Denominación"
+
+#. module: indaws_sending
+#: model:ir.ui.view,arch_db:indaws_sending.indaws_sending_stock_picking_form
+msgid "Descargar"
+msgstr "Descargar"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_url_etiqueta
+msgid "Descargar Etiqueta"
+msgstr "Descargar Etiqueta"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_descripcion
+msgid "Descripcion"
+msgstr "Descripcion"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_bultos_ids
+msgid "Detalle Bultos"
+msgstr "Detalle Bultos"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_display_name
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_product_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_entrsabado
+msgid "Entrega Sábado"
+msgstr "Entrega Sábado"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_fecha
+msgid "Fecha Envio"
+msgstr "Fecha Envio"
+
+#. module: indaws_sending
+#: model:ir.ui.view,arch_db:indaws_sending.indaws_sending_stock_picking_form
+msgid "Grabar Envío"
+msgstr "Grabar Envío"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_id
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_product_id
+msgid "ID"
+msgstr "ID"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_kilos
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_kilos
+msgid "Kilos"
+msgstr "Kilos"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_largo
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_largo
+msgid "Largo"
+msgstr "Largo"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos___last_update
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_product___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_write_uid
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_product_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_write_date
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_product_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_mensaje_error
+msgid "Mensaje Error"
+msgstr "Mensaje Error"
+
+#. module: indaws_sending
+#: model:ir.ui.view,arch_db:indaws_sending.indaws_sending_company
+msgid "Mensajeria Sending"
+msgstr "Mensajeria Envío"
+
+#. module: indaws_sending
+#: selection:stock.picking,sending_entrsabado:0
+#: selection:stock.picking,sending_retorno:0
+msgid "No"
+msgstr "No"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_numbulto
+msgid "Numero Bulto"
+msgstr "Numero Bulto"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_numbultos
+msgid "Numero Bultos"
+msgstr "Numero Bultos"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_numenviovuelta
+msgid "Numero Envio Vuelta"
+msgstr "Numero Envio Vuelta"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_expedicion
+msgid "Numero de Expedicion"
+msgstr "Numero de Expedicion"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_observaciones
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_observaciones
+msgid "Observaciones"
+msgstr "Observaciones"
+
+#. module: indaws_sending
+#: selection:stock.picking,sending_portes:0
+msgid "Pagado"
+msgstr "Pagado"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_portes
+msgid "Portes"
+msgstr "Portes"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_producto
+msgid "Producto"
+msgstr "Producto"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_reembolso
+msgid "Reembolso"
+msgstr "Reembolso"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_referencia
+msgid "Referencia"
+msgstr "Referencia"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_retorno
+msgid "Retorno"
+msgstr "Retorno"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_seguro
+msgid "Seguro"
+msgstr "Seguro"
+
+#. module: indaws_sending
+#: model:ir.actions.act_window,name:indaws_sending.view_sending_account_invoice_form
+#: model:ir.ui.view,arch_db:indaws_sending.indaws_sending_stock_picking_form
+msgid "Sending"
+msgstr "Envío"
+
+#. module: indaws_sending
+#: selection:stock.picking,sending_entrsabado:0
+#: selection:stock.picking,sending_retorno:0
+msgid "Si"
+msgstr "Si"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_product_sigla
+msgid "Sigla"
+msgstr "Sigla"
+
+#. module: indaws_sending
+#: model:ir.model,name:indaws_sending.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_res_company_sending_username
+msgid "Usuario"
+msgstr "Usuario"
+
+#. module: indaws_sending
+#: model:ir.model.fields,field_description:indaws_sending.field_indaws_sending_picking_bultos_volumen
+#: model:ir.model.fields,field_description:indaws_sending.field_stock_picking_sending_volumen
+msgid "Volumen"
+msgstr "Volumen"
+
+#. module: indaws_sending
+#: model:ir.model,name:indaws_sending.model_indaws_sending_picking_bultos
+msgid "indaws_sending.picking_bultos"
+msgstr "indaws_sending.picking_bultos"
+
+#. module: indaws_sending
+#: model:ir.model,name:indaws_sending.model_indaws_sending_product
+msgid "indaws_sending.product"
+msgstr "indaws_sending.product"
+
