@@ -48,25 +48,6 @@ class SendingService:
             etiquetarExpedicionPDF(str(center), expedicion, self.username,
                                    str(passwd.hexdigest()))
 
-        _logger.warning("Resultado: "+ result)
+        _logger.warning("Resultado: " + result)
 
         return result
-
-    def seguimientoenvio(self, dato):
-        print "<<<<<<<<<<< SEGUIMIENTO ENVIO"
-        if self.test_mode:
-            url = self.seguimiento_test_url
-        else:
-            url = self.seguimiento_url
-        print url
-
-        connect_client = Client(url,
-                                transport=HTTPSClientCertTransport(self.key,
-                                                                   self.cert))
-        print connect_client
-        print self.username, dato, self.password
-        result = connect_client.service.\
-            seguimientoEnvio(self.username, dato, self.password)
-        print result
-
-        return True
