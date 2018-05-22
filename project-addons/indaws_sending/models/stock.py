@@ -87,7 +87,6 @@ class StockPicking(models.Model):
             elif picking.partner_id.phone:
                 telefono = picking.partner_id.phone
 
-            import ipdb; ipdb.set_trace()
             if picking.sending_observaciones:
                 observaciones = unquote_plus(picking.sending_observaciones)
             else:

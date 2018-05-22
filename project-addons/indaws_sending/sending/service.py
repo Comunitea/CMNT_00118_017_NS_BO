@@ -26,7 +26,6 @@ class SendingService:
 
         passwd = md5.new()
         passwd.update(self.password)
-        import ipdb; ipdb.set_trace()
         result = connect_client.service.\
             entrada_expediciones(str(center), fichero, 'xml',
                                  str(passwd.hexdigest()))
