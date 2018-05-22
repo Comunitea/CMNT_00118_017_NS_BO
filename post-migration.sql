@@ -74,3 +74,11 @@ delete from account_journal where id = 3;
 update account_invoice set journal_id = 4 where id in(select id from account_invoice where journal_id = 2);
 update account_move set journal_id = 4 where id in(select id from account_move where journal_id = 2);
 delete from account_journal where id = 2;
+
+-- Borrar las tarifas innecesarias solo si no estánm borradas ya
+update sale_order set pricelist_id = 1 where id in (select id from sale_order where pricelist_id != 1);
+delete from product_pricelist where id != 1;
+delete from product_pricelist_item;
+
+-- Borrar métodos de entrega
+delete from delivery_carrier;
