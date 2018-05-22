@@ -87,11 +87,9 @@ class StockPicking(models.Model):
             elif picking.partner_id.phone:
                 telefono = picking.partner_id.phone
 
+            import ipdb; ipdb.set_trace()
             if picking.sending_observaciones:
-                observaciones =\
-                    unquote_plus(picking.
-                                 sending_observaciones('utf-8',
-                                                       'xmlcharrefreplace'))
+                observaciones = unquote_plus(picking.sending_observaciones)
             else:
                 observaciones = ''
             if picking.sending_entrsabado is False:
@@ -134,8 +132,8 @@ class StockPicking(models.Model):
             xml += '<PaisDestinatario>034</PaisDestinatario>'
             xml += '<CodigoPostalDestinatario>' + picking.partner_id.zip + \
                 '</CodigoPostalDestinatario>'
-            xml += '<PoblacionDestinatario>' + picking.partner_id.city + ' \
-                </PoblacionDestinatario>'
+            xml += '<PoblacionDestinatario>' + picking.partner_id.city +  \
+                '</PoblacionDestinatario>'
             xml += '<PersonaContactoDestinatario>' + picking.partner_id.name \
                 + '</PersonaContactoDestinatario>'
             xml += '<TelefonoContactoDestinatario>' + telefono + \
@@ -153,7 +151,7 @@ class StockPicking(models.Model):
             xml += '<Observaciones1>' + observaciones + '</Observaciones1>'
             xml += '<Kilos>' + str(int(picking.sending_kilos)) + '</Kilos>'
             xml += '<Volumen>' + str(picking.sending_volumen) + '</Volumen>'
-            xml += '<ReferenciaCl i ente>' + picking.name + \
+            xml += '<ReferenciaCliente>' + picking.name + \
                 '</ReferenciaCliente>'
             xml += '<TipoPortes>' + picking.sending_portes + '</TipoPortes>'
             xml += '<EntregaSabado>' + picking.sending_entrsabado + \
