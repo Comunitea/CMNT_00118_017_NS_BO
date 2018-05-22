@@ -29,6 +29,7 @@
         "views/invoice.xml",
         "views/report_invoice.xml",
         "views/sale_view.xml",
+        "views/stock_view.xml",
         "views/pos_report.xml",
         "views/product_view.xml",
         "wizard/change_pos_price_view.xml",
