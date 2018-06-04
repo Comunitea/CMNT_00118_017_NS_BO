@@ -31,6 +31,9 @@ class PurchaseOrderLine(models.Model):
                               string="Cod producto", readonly=True)
     partner_ref = fields.\
         Char(related='order_id.partner_id.property_account_payable_id.code',
+             string="Num cuenta", readonly=True)
+    customer_ref = fields.\
+        Char(related='order_id.partner_id.property_account_payable_id.code',
              string="Num cliente", readonly=True)
     partner_vat = fields.Char(related='order_id.partner_id.vat',
                               string="NIF", readonly=True)

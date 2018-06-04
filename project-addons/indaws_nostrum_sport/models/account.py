@@ -27,7 +27,9 @@ class AccountInvoiceLine(models.Model):
     _inherit = 'account.invoice.line'
 
     partner_ref = fields.Char(related='invoice_id.account_id.code',
-                              string="Num cliente", readonly=True)
+                              string="Num cuenta", readonly=True)
+    customer_ref = fields.Char(related='invoice_id.account_id.code',
+                               string="Num cliente", readonly=True)
     partner_vat = fields.Char(related='invoice_id.partner_id.vat',
                               string="NIF")
     partner_phone = fields.Char(related='invoice_id.partner_id.phone',
@@ -92,7 +94,7 @@ class AccountInvoice(models.Model):
     margin_base = fields.Float(digits=(6, 2), string="Margen",
                                compute='_get_margin_ptje')
 
-    partner_ref = fields.Char(related='account_id.code', string="Num cliente",
+    partner_ref = fields.Char(related='account_id.code', string="Num cuenta",
                               readonly=True)
     partner_vat = fields.Char(related='partner_id.vat', string="NIF",
                               readonly=True)

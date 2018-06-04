@@ -27,6 +27,9 @@ class PosOrder(models.Model):
     # MIGRATION el property_account_receivable_id se le añade_id
     partner_ref = fields.\
         Char(related='partner_id.property_account_receivable_id.code',
+             string="Num cuenta", readonly=True)
+    partner_ref = fields.\
+        Char(related='partner_id.customer_ref',
              string="Num cliente", readonly=True)
     partner_vat = fields.Char(related='partner_id.vat', string="NIF",
                               readonly=True)
