@@ -34,7 +34,7 @@ msgstr "Cancelar"
 #: model:ir.actions.act_window,name:generic_excel_reports.action_generate_globle_report
 #: model:ir.ui.menu,name:generic_excel_reports.menu_generate_globle_report
 msgid "Configure Excel Reports"
-msgstr "Configurar informes EWxcel"
+msgstr "Configurar informes Excel"
 
 #. module: generic_excel_reports
 #: model:ir.model.fields,field_description:generic_excel_reports.field_generic_excel_report_create_uid

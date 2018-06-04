@@ -39,9 +39,9 @@ class SAaleOrderLine(models.Model):
     price_unit_net = fields.Float(digits=(6, 2), string="Precio neto unitario",
                                   compute='_get_net_unit')
     # MIGRATION el property_account_receivable_id se le añade_id
-    partner_ref = fields.\
-        Char(related='order_id.partner_id.property_account_receivable_id.code',
-             string="Num cliente", readonly=True)
+    customer_ref = fields.\
+        Char(related='order_id.partner_id.customer_ref',
+             string="Num cuenta", readonly=True)
     partner_vat = fields.Char(related='order_id.partner_id.vat',
                               string="NIF", readonly=True)
     partner_phone = fields.Char(related='order_id.partner_id.phone',

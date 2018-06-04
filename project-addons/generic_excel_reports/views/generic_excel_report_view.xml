@@ -84,7 +84,6 @@
     
     <menuitem action="action_generate_globle_report"
         id="menu_generate_globle_report" parent="base.menu_reporting_config"
-        groups="base.group_no_one"
         sequence="3"/>
 </odoo>
         

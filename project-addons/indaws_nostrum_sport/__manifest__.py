@@ -27,7 +27,8 @@
     'category': 'Tools',
     'depends': ['base', 'account', 'product', 'sale', 'purchase',
                 'indaws_detalle_impuestos', 'account_invoice_line_view',
-                'deltatech_sale_margin', 'point_of_sale'],
+                'deltatech_sale_margin', 'point_of_sale',
+                'o2b_cust_vendor_ref_com_b'],
     'demo': [],
     'data': [
         'views/account_view.xml',
