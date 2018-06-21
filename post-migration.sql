@@ -47,7 +47,7 @@ UPDATE ir_module_module SET state = 'to remove' WHERE name = 'account_admin_tool
 
 
 delete from ir_ui_view where id = 2092;
-delete from ir_ui_view where arch_db like '%shipment_count%'
+delete from ir_ui_view where arch_db like '%shipment_count%';
 
 -- Si quiero installar crm_phonecall primero:
 delete from res_groups where id in (select id from res_groups where name = 'Show Scheduled Calls Menu');
