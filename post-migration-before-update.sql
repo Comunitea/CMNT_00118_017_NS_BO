@@ -76,7 +76,7 @@ delete from account_journal where id = 2;
 
 -- Borrar las tarifas innecesarias solo si no estánm borradas ya
 update sale_order set pricelist_id = 1 where id in (select id from sale_order where pricelist_id != 1);
-delete from product_pricelist where id != 1;
+delete from product_pricelist where not in (1, 2);
 
 -- Borrar métodos de entrega
 delete from delivery_carrier;
