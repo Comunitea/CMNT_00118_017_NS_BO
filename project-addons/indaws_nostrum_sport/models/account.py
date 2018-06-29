@@ -94,7 +94,7 @@ class AccountInvoice(models.Model):
     margin_base = fields.Float(digits=(6, 2), string="Margen",
                                compute='_get_margin_ptje')
 
-    partner_ref = fields.Char(related='account_id.code', string="Num cuenta",
+    partner_ref = fields.Char(related='partner_id.ref', string="Num cuenta",
                               readonly=True)
     partner_vat = fields.Char(related='partner_id.vat', string="NIF",
                               readonly=True)

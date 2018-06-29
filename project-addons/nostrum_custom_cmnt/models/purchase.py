@@ -21,7 +21,7 @@ class PurchaseOrderLine(models.Model):
             date=self.order_id.date_order and self.order_id.date_order[:10],
             uom_id=self.product_uom)
         # Set cost to purchase price if not seller and price unit defined.
-        if not seller and self.product_id and not self.price_unit:
+        if self.product_id and (not seller or not self.price_unit):
             cost = self.product_id.standard_price
             price_unit = self.product_id.uom_po_id.\
                 _compute_price(cost, self.product_id.uom_po_id)
