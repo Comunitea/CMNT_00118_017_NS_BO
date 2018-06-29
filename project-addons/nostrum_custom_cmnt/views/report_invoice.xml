@@ -52,6 +52,23 @@
                 </p>
             </xpath>
 
+            <xpath expr="//p[@t-if='o.partner_bank_id']" position="replace">
+                <strong>Bank Account:</strong>
+                <p t-if="o.mandate_id and o.mandate_id.partner_bank_id">
+                    <t t-if="o.mandate_id.partner_bank_id.bank_id">
+                        <t t-esc="o.mandate_id.partner_bank_id.bank_id.name + ('' if not o.mandate_id.partner_bank_id.bank_id.bic else ' (' + o.mandate_id.partner_bank_id.bank_id.bic + ')')"/>
+                    </t>
+                    <span t-field="o.mandate_id.partner_bank_id.acc_number"/>
+                </p>
+                <p t-if="not o.mandate_id and o.partner_bank_id">
+                    <t t-if="o.partner_bank_id.bank_id">
+                        <t t-esc="o.partner_bank_id.bank_id.name + ('' if not o.partner_bank_id.bank_id.bic else ' (' + o.partner_bank_id.bank_id.bic + ')')"/>
+                    </t>
+                    <span t-field="o.partner_bank_id.acc_number"/>
+                </p>
+            </xpath>
+
+
             <xpath expr="//table[@class='table table-condensed']/tbody/tr/td[6]" position="replace">
                 <td class="text-right">
                     <span t-esc="', '.join(map(lambda x: (x.name), l.invoice_line_tax_ids))"/>
