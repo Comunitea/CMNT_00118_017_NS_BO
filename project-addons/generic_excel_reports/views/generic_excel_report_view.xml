@@ -83,7 +83,7 @@
     
     
     <menuitem action="action_generate_globle_report"
-        id="menu_generate_globle_report" parent="base.menu_reporting_config"
+        id="menu_generate_globle_report" parent="report.reporting_menuitem"
         sequence="3"/>
 </odoo>
         
