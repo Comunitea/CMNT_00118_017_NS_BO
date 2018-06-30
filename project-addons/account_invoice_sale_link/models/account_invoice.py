@@ -20,20 +20,34 @@
 #
 ##############################################################################
 
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
 
-    # This is the reverse link of the field 'invoice_ids' of sale.order
-    # defined in addons/sale/sale.py
+    @api.multi
+    def _get_sales(self):
+        """
+        Get sales related to invoice lines
+        """
+        for invoice in self:
+            sale_ids = invoice.invoice_line_ids.\
+                mapped('sale_line_ids.order_id')
+            invoice.update({
+                'sale_ids': sale_ids
+            })
+
     sale_ids = fields.Many2many(
-        'sale.order', 'sale_order_invoice_rel', 'invoice_id',
-        'order_id', 'Sale Orders', readonly=True,
+        'sale.order', 'Sale Orders', compute="_get_sales", readonly=True,
         help="This is the list of sale orders related to this invoice.")
 
-    purchase_ids = fields.Many2many(
-        'purchase.order', 'purchase_invoice_rel', 'invoice_id',
-        'purchase_id', 'Purchase Orders', readonly=True,
-        help="This is the list of purchase orders related to this invoice.")
+
+class AccountInvoiceLine(models.Model):
+    _inherit = 'account.invoice.line'
+
+    # The reverse relation
+    sale_line_ids = fields.Many2many(
+        'sale.order.line', 'sale_order_line_invoice_rel', 'invoice_line_id',
+        'order_line_id', 'Sale Orders', readonly=True,
+        help="This is the list of sale orders related to this invoice.")
