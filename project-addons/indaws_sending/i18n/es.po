@@ -80,7 +80,7 @@ msgstr "Compañías"
 #. module: indaws_sending
 #: model:ir.ui.view,arch_db:indaws_sending.indaws_sending_stock_picking_form
 msgid "Configuración Sending"
-msgstr "Configuración Envío"
+msgstr "Configuración Sending"
 
 #. module: indaws_sending
 #: model:ir.model.fields,field_description:indaws_sending.field_res_company_sending_password
