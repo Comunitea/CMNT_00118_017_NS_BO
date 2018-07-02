@@ -1,6 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 ##############################################################################
-#
+
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
 #
@@ -20,13 +20,11 @@
 ##############################################################################
 
 
-{
-    'name': 'Datos de transportista en factura',
-    'version': '1.0',
-    'author': 'inDAWS',
-    'category': 'Tools',
-    'depends': ['base', 'account', 'stock_account',
-                'indaws_sending', 'delivery'],
-    'data': ['views/delivery_view.xml'],
-    'installable': True,
-}
+from openerp import models, fields
+
+
+class DeliveryCarrier(models.Model):
+    _name = 'delivery.carrier'
+    _inherit = 'delivery.carrier'
+
+    web = fields.Char(string="Web transportista")

@@ -1,6 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
 #
@@ -51,10 +51,3 @@ class AccountInvoice(models.Model):
             record.transportista = transportista
             record.num_seguimiento = num_seguimiento
             record.web_transportista = web_transportista
-
-
-class DeliveryCarrier(models.Model):
-    _name = 'delivery.carrier'
-    _inherit = 'delivery.carrier'
-
-    web = fields.Char(string="Web transportista")
