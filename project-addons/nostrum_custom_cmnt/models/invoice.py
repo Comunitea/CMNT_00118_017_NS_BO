@@ -12,4 +12,4 @@ class AccountInvoice(models.Model):
     customer_ref = fields.Char('Customer Reference',
                                related='partner_id.customer_ref')
     payment_term = fields.Many2one(required=True, readonly=False)
-    payment_mode_id = fields.Many2one(required=True)
+    payment_mode_id = fields.Many2one(required=False)
