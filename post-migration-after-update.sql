@@ -13,3 +13,6 @@ update account_payment_mode set note=name;
 update res_partner set valued_picking = False;
 
 UPDATE ir_module_module SET state = 'to remove' WHERE name = 'nan_partner_risk';
+
+-- Eliminar properties duplicadas que se pasaron del product.template
+delete from ir_property where id in (select max(id) from ir_property where name = 'standard_price' group by res_id having count(*) > 1);
