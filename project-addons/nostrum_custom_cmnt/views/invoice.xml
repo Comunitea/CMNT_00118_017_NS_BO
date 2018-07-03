@@ -50,7 +50,7 @@
             <field name="inherit_id" ref="account.invoice_tree"/>
             <field name="arch" type="xml">
                 <field name="amount_total_signed" position="before">
-                        <field name="amount_total_signed" string="Subtotal" sum="Untaxed Amount"/>
+                        <field name="amount_untaxed_signed" string="Subtotal" sum="Untaxed Amount"/>
                 </field>
             </field>
         </record>
