@@ -11,10 +11,8 @@
                 <table class="table table-condensed">
                     <thead>
                         <tr>
-                            <!-- <th t-if="o.print_line_number">No.</th> -->
-                            <th >No.</th>
-                            <!-- <th t-if="o.print_product_image"><strong>Image</strong></th> -->
-                            <th>Image</th>
+                            <th t-if="doc.print_line_number">Ndoc.</th>
+                            <th t-if="doc.print_product_image"><strong>Image</strong></th>
                             <th>Description</th>
                             <th class="text-right">Quantity</th>
                             <th class="text-right">Unit Price</th>
@@ -36,21 +34,16 @@
                                 </tr>
                             </t>
 
-                            <!-- Lines associated -->
                             <t t-foreach="layout_category['lines']" t-as="l">
                                 <tr>
-                                    <!-- <td t-if="o.print_line_number"> -->
-                                    <td>
+                                    <td t-if="doc.print_line_number">
                                         <t t-set="number" t-value="number+1"/>
                                         <span t-esc="number"/>
                                     </td>
-                                    <!-- <td t-if="o.print_product_image"> -->
-                                    <td>
-                   <!--                      <span t-if="o.image_size == 'small'"><img t-if="l.product_image_small" t-att-src="'data:image/png;base64,%s' % l.product_image_small" style="max-width: 100%;"/></span>
-                                        <span t-if="o.image_size == 'medium'"><img t-if="l.product_image_medium" t-att-src="'data:image/png;base64,%s' % l.product_image_medium" style="max-width: 100%;"/></span>
-                                        <span t-if="o.image_size == 'original'"><img t-if="l.product_image" t-att-src="'data:image/png;base64,%s' % l.product_image" style="max-width: 100%;"/></span> -->
-                                        <span><img t-if="l.product_image_small" t-att-src="'data:image/png;base64,%s' % l.product_image_small" style="max-width: 100%;"/></span>
-                                    
+                                    <td t-if="doc.print_product_image">
+                                        <span t-if="doc.image_size == 'small'"><img t-if="l.product_image_small" t-att-src="'data:image/png;base64,%s' % l.product_image_small" style="max-width: 100%;"/></span>
+                                        <span t-if="doc.image_size == 'medium'"><img t-if="l.product_image_medium" t-att-src="'data:image/png;base64,%s' % l.product_image_medium" style="max-width: 100%;"/></span>
+                                        <span t-if="doc.image_size == 'original'"><img t-if="l.product_image" t-att-src="'data:image/png;base64,%s' % l.product_image" style="max-width: 100%;"/></span>
                                     </td>
                                     <td >
                                         <div  t-if="l.product_id.url_presupuesto">
@@ -102,7 +95,7 @@
                 </table>
             </xpath>
            <!--  <xpath expr="//p[@t-if='doc.payment_term_id.note']" position="replace">
-            <p t-if="o.payment_term_id">
+            <p t-if="doc.payment_term_id">
                 <strong>Payment Term:</strong>
                 <span t-field="doc.payment_term_id.note"/>
             </p>
