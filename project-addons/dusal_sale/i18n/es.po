@@ -65,7 +65,7 @@ msgstr "Num."
 #. module: dusal_sale
 #: selection:sale.order,image_size:0
 msgid "Big"
-msgstr "Gran"
+msgstr "Grande"
 
 #. module: dusal_sale
 #: field:sale.order,print_product_image:0
