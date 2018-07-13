@@ -259,6 +259,7 @@ class StockPicking(models.Model):
         }
         return destino
 
+    @api.model
     def create(self, vals):
         # Actualiza los datos de sending al crear el albaran
         if 'origin' in vals:
