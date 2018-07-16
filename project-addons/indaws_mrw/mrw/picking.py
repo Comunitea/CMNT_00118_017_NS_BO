@@ -21,7 +21,6 @@ class Picking(API):
     """
     __slots__ = ()
 
-    @api.model
     def create(self, data):
         """
         Create a MRW shipment using the given data
