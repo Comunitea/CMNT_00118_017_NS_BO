@@ -19,7 +19,8 @@
         'deltatech_sale_margin',
         'dusal_sale',  # Para heredar el report metiendo las imágenes,
         'account_due_dates_str',
-        'stock_valued_picking_report'
+        'stock_valued_picking_report',
+        'crm_phonecall'
     ],
     'contributors': [
         "Comunitea ",
@@ -30,6 +31,7 @@
         "views/report_invoice.xml",
         "views/sale_view.xml",
         "views/stock_view.xml",
+        "views/phonecall_view.xml",
         "views/pos_report.xml",
         "views/product_view.xml",
         "wizard/change_pos_price_view.xml",

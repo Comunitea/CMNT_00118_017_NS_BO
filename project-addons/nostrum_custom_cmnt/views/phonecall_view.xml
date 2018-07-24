@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_crm_case_phonecalls_filter_add_day_group" model="ir.ui.view">
+            <field name="name">view_crm_case_phonecalls_filter_add_day_group</field>
+            <field name="model">crm.phonecall</field>
+            <field name="inherit_id" ref="crm_phonecall.view_crm_case_phonecalls_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group" position="inside">
+                    <filter string="Day" domain="[]" context="{'group_by':'date:day'}"/>
+                </xpath>
+            </field>
+        </record>
+</odoo>
