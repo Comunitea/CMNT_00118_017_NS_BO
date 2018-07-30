@@ -119,5 +119,31 @@
             </field>
         </record>
 
+        <record id="sale_order_search_time_filters" model="ir.ui.view">
+            <field name="name">sale.order.search.inherit.sale.add.time.filters</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.sale_order_view_search_inherit_sale"/>
+            <field name="arch" type="xml">
+                <filter name="sales" position="after">
+                    <filter string="Day" domain="[]" context="{'group_by':'date_order:day'}"/>
+                    <filter string="Month" domain="[]" context="{'group_by':'date_order:month'}"/>
+                    <filter string="Year" domain="[]" context="{'group_by':'date_order:year'}"/>
+                </filter>
+            </field>
+        </record>
+
+        <record id="sale_quotation_search_time_filters" model="ir.ui.view">
+            <field name="name">sale.order.search.inherit.quotation.add.time.filters</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+            <field name="arch" type="xml">
+                <filter name="sales" position="after">
+                    <filter string="Day" domain="[]" context="{'group_by':'date_order:day'}"/>
+                    <filter string="Month" domain="[]" context="{'group_by':'date_order:month'}"/>
+                    <filter string="Year" domain="[]" context="{'group_by':'date_order:year'}"/>
+                </filter>
+            </field>
+        </record>
+
     </data>
 </openerp>

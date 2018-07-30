@@ -7,6 +7,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//group" position="inside">
                     <filter string="Day" domain="[]" context="{'group_by':'date:day'}"/>
+                    <filter string="Year" domain="[]" context="{'group_by':'date:year'}"/>
                 </xpath>
             </field>
         </record>
