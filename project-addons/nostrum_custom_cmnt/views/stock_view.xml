@@ -14,4 +14,18 @@
             </field>
         </field>
     </record>
+
+    <record id="cmnt_stock_filter_add_time" model="ir.ui.view">
+        <field name="name">cmnt_stock_filter_add_time</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+        <filter name="picking_type" position="after">
+                <filter string="Day" domain="[]" context="{'group_by':'min_date:day'}"/>
+                <filter string="Month" domain="[]" context="{'group_by':'min_date:month'}"/>
+                <filter string="Year" domain="[]" context="{'group_by':'min_date:year'}"/>
+            </filter>
+        </field>
+    </record>
+
 </odoo>

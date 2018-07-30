@@ -20,7 +20,8 @@
         'dusal_sale',  # Para heredar el report metiendo las imágenes,
         'account_due_dates_str',
         'stock_valued_picking_report',
-        'crm_phonecall'
+        'crm_phonecall',
+        'stock'
     ],
     'contributors': [
         "Comunitea ",
