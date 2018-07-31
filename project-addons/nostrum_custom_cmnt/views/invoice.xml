@@ -52,6 +52,14 @@
                 <field name="amount_total_signed" position="before">
                         <field name="amount_untaxed_signed" string="Subtotal" sum="Untaxed Amount"/>
                 </field>
+
+                <field name="state" position="after">
+                    <field name="phonecall_count"/>
+                    <button type="action"
+                        name="%(crm_phonecall.crm_case_categ_phone_incoming0)d"
+                        icon="fa-phone"
+                        context="{'search_default_partner_id': partner_id}"/>
+                </field>
             </field>
         </record>
 
@@ -62,6 +70,14 @@
             <field name="arch" type="xml">
                 <field name="amount_total_signed" position="before">
                         <field name="amount_untaxed_signed" string="Subtotal" sum="Untaxed Amount"/>
+                </field>
+
+                <field name="state" position="after">
+                    <field name="phonecall_count"/>
+                    <button type="action"
+                        name="%(crm_phonecall.crm_case_categ_phone_incoming0)d"
+                        icon="fa-phone"
+                        context="{'search_default_partner_id': partner_id}"/>
                 </field>
             </field>
         </record>

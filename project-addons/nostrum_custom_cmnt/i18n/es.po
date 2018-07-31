@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-30 09:05+0000\n"
-"PO-Revision-Date: 2018-07-30 09:05+0000\n"
+"POT-Creation-Date: 2018-07-31 17:34+0000\n"
+"PO-Revision-Date: 2018-07-31 17:34+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -409,6 +409,12 @@ msgstr "Ndoc."
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price_new_price
 msgid "New Price Unit"
 msgstr "Nuevo precio unitario"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_invoice_phonecall_count
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_sale_order_phonecall_count
+msgid "Nº Calls"
+msgstr "Nº LLamadas"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_sales_order_lines_filter

@@ -13,3 +13,5 @@ class AccountInvoice(models.Model):
                                related='partner_id.customer_ref')
     payment_term = fields.Many2one(required=True, readonly=False)
     payment_mode_id = fields.Many2one(required=False)
+    phonecall_count = fields.Integer(related='partner_id.phonecall_count',
+                                     string="Nº Calls")

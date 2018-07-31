@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
+<odoo>
+
 
             <!-- ????????? date_confirm?''' -->
 <!--         <record id="view_order_form_add_date_confirm" model="ir.ui.view">
@@ -145,5 +145,38 @@
             </field>
         </record>
 
-    </data>
-</openerp>
+        <!-- Me duplica las targetas ??? -->
+<!--     <record id="phonecalls_in_sale_dashboard" model="ir.ui.view">
+        <field name="name">phonecalls_in_sale_dashboard</field>
+        <field name="model">crm.team</field>
+        <field name="inherit_id" ref="sales_team.crm_team_salesteams_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//t[@t-name='kanban-box']" position="inside">
+
+                <div class="o_kanban_card_header">
+                    <div class="o_kanban_card_header_title">
+                        <div class="o_primary">LLamaditas</div>
+                    </div>
+                    <div class="o_kanban_manage_button_section">
+                        <a class="o_kanban_manage_toggle_button" href="#">More <i class="fa fa-caret-down"/></a>
+                    </div>
+                </div>
+            </xpath> 
+        </field>
+    </record> -->
+
+    <record id="view_order_tree_add_phonecalls"  model="ir.ui.view" >
+            <field name="name">view.order.tree.add.phonecalls</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="phonecall_count"/>
+                    <button type="action"
+                        name="%(crm_phonecall.crm_case_categ_phone_incoming0)d"
+                        icon="fa-phone"
+                        context="{'search_default_partner_id': partner_id}"/>
+                </field>
+            </field>
+        </record>
+</odoo>

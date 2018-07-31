@@ -9,6 +9,8 @@ class SaleOrder(models.Model):
 
     payment_term = fields.Many2one(required=True, readonly=False)
     payment_mode_id = fields.Many2one(required=True)
+    phonecall_count = fields.Integer(related='partner_id.phonecall_count',
+                                     string="Nº Calls")
 
 
 class SaleOrderLine(models.Model):
