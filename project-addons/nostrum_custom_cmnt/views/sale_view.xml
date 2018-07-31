@@ -180,10 +180,10 @@
             </field>
         </record>
 
-    <record id="view_quottion_tree_add_phonecalls"  model="ir.ui.view" >
-            <field name="name">view.quottion.tree.add.phonecalls</field>
+    <record id="view_quotation_tree_add_phonecalls"  model="ir.ui.view" >
+            <field name="name">view.quotation.tree.add.phonecalls</field>
             <field name="model">sale.order</field>
-            <field name="inherit_id" ref="sale.view_quottion_tree"/>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
             <field name="arch" type="xml">
                 <field name="state" position="after">
                     <field name="phonecall_count"/>
