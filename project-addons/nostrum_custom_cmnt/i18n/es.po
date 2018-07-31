@@ -414,7 +414,7 @@ msgstr "Nuevo precio unitario"
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_invoice_phonecall_count
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_sale_order_phonecall_count
 msgid "Nº Calls"
-msgstr "Nº LLamadas"
+msgstr "Nº Llamadas"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_sales_order_lines_filter

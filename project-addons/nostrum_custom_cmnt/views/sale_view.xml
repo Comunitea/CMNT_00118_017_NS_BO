@@ -179,4 +179,19 @@
                 </field>
             </field>
         </record>
+
+    <record id="view_quottion_tree_add_phonecalls"  model="ir.ui.view" >
+            <field name="name">view.quottion.tree.add.phonecalls</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quottion_tree"/>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="phonecall_count"/>
+                    <button type="action"
+                        name="%(crm_phonecall.crm_case_categ_phone_incoming0)d"
+                        icon="fa-phone"
+                        context="{'search_default_partner_id': partner_id}"/>
+                </field>
+            </field>
+        </record>
 </odoo>
