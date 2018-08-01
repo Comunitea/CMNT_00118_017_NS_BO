@@ -42,6 +42,7 @@
     ],
     'qweb': [
         'static/src/xml/pos.xml',
+        'static/src/xml/sales_team_dashboard.xml',
     ],
     "demo": [
     ],

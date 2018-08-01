@@ -28,7 +28,7 @@
             <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
             <field name="arch" type="xml">
                     <field name="date_order" position="after">
-                        <filter string="Day" domain="[ ]" context="{'group_by': 'date_order:day'}" />
+                        <filter string="Day" domain="[]" context="{'group_by': 'date_order:day'}" />
                     </field>
             </field>
         </record>
