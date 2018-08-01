@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-31 17:34+0000\n"
-"PO-Revision-Date: 2018-07-31 17:34+0000\n"
+"POT-Creation-Date: 2018-08-01 12:41+0000\n"
+"PO-Revision-Date: 2018-08-01 12:41+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -26,6 +26,34 @@ msgstr "&amp;bull;"
 #, python-format
 msgid "(Sports Medicine Center SL)"
 msgstr "(Sports Medicine Center SL)"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:137
+#, python-format
+msgid "3 exp. closing"
+msgstr "3 esp. cierre"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:183
+#, python-format
+msgid "35,029.39€"
+msgstr "35,029.39€"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:170
+#, python-format
+msgid "78,140.03€"
+msgstr "78,140.03€"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:215
+#, python-format
+msgid "80.000€"
+msgstr "80.000€"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
@@ -163,6 +191,13 @@ msgid "Account"
 msgstr "Cuenta"
 
 #. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:160
+#, python-format
+msgid "Activities Done"
+msgstr "Actividades realizadas"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sessionsummary
 msgid "Amount"
 msgstr "Importe"
@@ -215,6 +250,25 @@ msgid "Change Price Unit"
 msgstr "Cambiar precio unitario"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.actions.act_window,help:nostrum_custom_cmnt.today_crm_case_categ_phone_outgoing0
+#: model:ir.actions.act_window,help:nostrum_custom_cmnt.week_crm_case_categ_phone_outgoing0
+msgid "Click to schedule a call"
+msgstr "Pulse para planificar una llamada"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:194
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:198
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:207
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:211
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:220
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:224
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:228
+#, python-format
+msgid "Click to set"
+msgstr "De clic para ajustar"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_pos_order_line_cost
 msgid "Cost"
 msgstr "Coste"
@@ -223,6 +277,13 @@ msgstr "Coste"
 #: model:ir.model.fields,help:nostrum_custom_cmnt.field_pos_order_line_cost
 msgid "Cost of the product template used for standard stock valuation in accounting and used as a base price on purchase orders. Expressed in the default unit of measure of the product."
 msgstr "Coste para la plantilla de producto usada para la valoración de existencias estándar en contabilidad, y utilizada como precio de referencia en órdenes de compra. Se expresa en la unidad de medida por defecto del producto."
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:261
+#, python-format
+msgid "Create a few opportunities in it."
+msgstr "Cree algunas oportunidades en el."
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price_create_uid
@@ -318,9 +379,23 @@ msgid "FECHA:"
 msgstr "FECHA:"
 
 #. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:260
+#, python-format
+msgid "Great sales journeys start with a clean pipeline."
+msgstr "Grandes ventas empiezan con un embudo organizado."
+
+#. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_sales_order_lines_filter
 msgid "Group By"
 msgstr "Agrupar por"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:259
+#, python-format
+msgid "Hi there!"
+msgstr "Hola Ahí! "
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price_id
@@ -357,9 +432,23 @@ msgid "Invoice"
 msgstr "Factura"
 
 #. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:186
+#, python-format
+msgid "Invoiced"
+msgstr "Facturado"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price___last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:234
+#, python-format
+msgid "Last Month"
+msgstr "Último mes"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price_write_uid
@@ -372,6 +461,11 @@ msgid "Last Updated on"
 msgstr "Última actualización en"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.model,name:nostrum_custom_cmnt.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Iniciativa/Oportunidad"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_sale_order_lines_form
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_sale_order_lines_tree
 msgid "Lines"
@@ -381,6 +475,13 @@ msgstr "Líneas"
 #: model:ir.model,name:nostrum_custom_cmnt.model_pos_order_line
 msgid "Lines of Point of Sale"
 msgstr "Líneas del Terminal Punto de Venta"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:61
+#, python-format
+msgid "Meetings"
+msgstr "Reuniones"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
@@ -401,6 +502,20 @@ msgid "Month"
 msgstr "Mes"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_crm_case_phonecalls_filter_add_day_group
+msgid "My Phonecalls"
+msgstr "Mis llamadas"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:78
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:80
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:262
+#, python-format
+msgid "My Pipeline"
+msgstr "Flujo de ventas"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
 msgid "Ndoc."
 msgstr "Ndoc."
@@ -411,10 +526,33 @@ msgid "New Price Unit"
 msgstr "Nuevo precio unitario"
 
 #. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:86
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_crm_case_phonecalls_filter_add_day_group
+#, python-format
+msgid "Next 7 days"
+msgstr "Proximos 7 días"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:74
+#, python-format
+msgid "Next Actions"
+msgstr "Siguientes acciones"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_invoice_phonecall_count
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_sale_order_phonecall_count
 msgid "Nº Calls"
-msgstr "Nº Llamadas"
+msgstr "Nº LLamadas"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.actions.act_window,help:nostrum_custom_cmnt.today_crm_case_categ_phone_outgoing0
+#: model:ir.actions.act_window,help:nostrum_custom_cmnt.week_crm_case_categ_phone_outgoing0
+msgid "Odoo allows you to easily define all the calls to be done\n"
+"            by your sales team and follow up based on their summary."
+msgstr "Odoo le permite definir fácilmente las llamadas a ser realizadas\n"
+"           por su equipo de ventas y seguirlas basadas en su resumen."
 
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_sales_order_lines_filter
@@ -445,6 +583,13 @@ msgstr "Empresa"
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_sale_order_payment_term_14937
 msgid "Payment term"
 msgstr "Payment term"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:148
+#, python-format
+msgid "Performance"
+msgstr "Rendimiento"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model,name:nostrum_custom_cmnt.model_pos_order
@@ -508,6 +653,12 @@ msgid "Sales Order Lines"
 msgstr "Líneas pedido de ventas"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.actions.act_window,name:nostrum_custom_cmnt.today_crm_case_categ_phone_outgoing0
+#: model:ir.actions.act_window,name:nostrum_custom_cmnt.week_crm_case_categ_phone_outgoing0
+msgid "Scheduled Calls"
+msgstr "Llamadas planificadas"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_sales_order_lines_filter
 msgid "Search Sales Order"
 msgstr "Buscar pedido de venta"
@@ -558,14 +709,100 @@ msgid "TEL."
 msgstr "TEL."
 
 #. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:192
+#, python-format
+msgid "Target"
+msgstr "Objetivo"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
 msgid "Taxes"
 msgstr "Impuestos"
 
 #. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:148
+#, python-format
+msgid "This Month"
+msgstr "Este mes"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
 msgid "Tlf:"
 msgstr "Tlf:"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:65
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:108
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:122
+#, python-format
+msgid "To Activities"
+msgstr "a acciones"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:151
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:235
+#, python-format
+msgid "To Activity Report"
+msgstr "a informe de acciones"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:52
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:98
+#, python-format
+msgid "To Calendar"
+msgstr "A calendario"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:177
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:245
+#, python-format
+msgid "To Invoice Report"
+msgstr "a informe de facturas"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:132
+#, python-format
+msgid "To Opportunities"
+msgstr "a oportunidades"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:164
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:240
+#, python-format
+msgid "To Opportunity Report"
+msgstr "a informe de oportunidad"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:39
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:48
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:88
+#, python-format
+msgid "To Phonecalls"
+msgstr "Llamadas"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:35
+#, python-format
+msgid "To do"
+msgstr "Por realizar"
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:35
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_crm_case_phonecalls_filter_add_day_group
+#, python-format
+msgid "Today"
+msgstr "Hoy"
 
 #. module: nostrum_custom_cmnt
 #. openerp-web
@@ -629,12 +866,41 @@ msgid "Visite la web nostrumsport.com"
 msgstr "Visite la web nostrumsport.com"
 
 #. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:173
+#, python-format
+msgid "Won in Opportunities"
+msgstr "Ganado en oportunidades"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.cmnt_stock_filter_add_time
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.sale_order_search_time_filters
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.sale_quotation_search_time_filters
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_crm_case_phonecalls_filter_add_day_group
 msgid "Year"
 msgstr "Año"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.actions.act_window,help:nostrum_custom_cmnt.today_crm_case_categ_phone_outgoing0
+#: model:ir.actions.act_window,help:nostrum_custom_cmnt.week_crm_case_categ_phone_outgoing0
+msgid "You can use the import feature to massively import a new list of\n"
+"            prospects to qualify."
+msgstr "Puede usar la característica de importación para importar\n"
+"            masivamente una nueva lista de prospectos a calificar."
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:135
+#, python-format
+msgid "exp. closing"
+msgstr "cierre esp."
+
+#. module: nostrum_custom_cmnt
+#. openerp-web
+#: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:125
+#, python-format
+msgid "overdue"
+msgstr "vencido"
 
 #. module: nostrum_custom_cmnt
 #. openerp-web

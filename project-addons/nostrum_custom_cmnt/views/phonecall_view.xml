@@ -5,10 +5,65 @@
             <field name="model">crm.phonecall</field>
             <field name="inherit_id" ref="crm_phonecall.view_crm_case_phonecalls_filter"/>
             <field name="arch" type="xml">
+                <xpath expr="//filter[1]" position="replace">
+                     <filter string="My Phonecalls"  name="my_phonecalls" domain="[('user_id', '=', uid)]"/>
+                </xpath>
+                <field name="state" position="after">
+                    <separator/>
+                    <filter string="Today" name="today" domain="[('date','&lt;=', (datetime.date.today()).strftime('%Y-%m-%d')),('date','>=',(datetime.date.today()).strftime('%Y-%m-%d'))]"/>
+                    <filter string="Next 7 days" name="next_week" domain="[('date','>=',time.strftime('%Y-%m-%d')),('date','&lt;=', (context_today() + datetime.timedelta(days=7)).strftime('%Y-%m-%d'))]"/>
+                    <separator/>
+                </field>
+                
                 <xpath expr="//group" position="inside">
                     <filter string="Day" domain="[]" context="{'group_by':'date:day'}"/>
                     <filter string="Year" domain="[]" context="{'group_by':'date:year'}"/>
                 </xpath>
             </field>
         </record>
+
+    <!-- To open from dashboard today calls -->
+    <record model="ir.actions.act_window" id="today_crm_case_categ_phone_outgoing0">
+        <field name="name">Scheduled Calls</field>
+        <field name="res_model">crm.phonecall</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,calendar</field>
+        <field name="view_id" ref="crm_phonecall.crm_case_phone_tree_view"/>
+        <field name="domain">[('state','!=','done')]</field>
+        <field name="context">{'search_default_today': 1, 'search_default_my_phonecalls': 1}</field>
+        <field name="search_view_id" ref="crm_phonecall.view_crm_case_phonecalls_filter"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to schedule a call
+            </p><p>
+            Odoo allows you to easily define all the calls to be done
+            by your sales team and follow up based on their summary.
+        </p><p>
+            You can use the import feature to massively import a new list of
+            prospects to qualify.
+        </p>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="week_crm_case_categ_phone_outgoing0">
+        <field name="name">Scheduled Calls</field>
+        <field name="res_model">crm.phonecall</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,calendar</field>
+        <field name="view_id" ref="crm_phonecall.crm_case_phone_tree_view"/>
+        <field name="domain">[('state','!=','done')]</field>
+        <field name="context">{'search_default_next_week': 1, 'search_default_my_phonecalls': 1}</field>
+        <field name="search_view_id" ref="crm_phonecall.view_crm_case_phonecalls_filter"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to schedule a call
+            </p><p>
+            Odoo allows you to easily define all the calls to be done
+            by your sales team and follow up based on their summary.
+        </p><p>
+            You can use the import feature to massively import a new list of
+            prospects to qualify.
+        </p>
+        </field>
+    </record>
 </odoo>
