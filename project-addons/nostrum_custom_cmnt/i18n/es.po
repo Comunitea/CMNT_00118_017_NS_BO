@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-01 12:41+0000\n"
-"PO-Revision-Date: 2018-08-01 12:41+0000\n"
+"POT-Creation-Date: 2018-08-07 12:37+0000\n"
+"PO-Revision-Date: 2018-08-07 12:37+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -439,6 +439,11 @@ msgid "Invoiced"
 msgstr "Facturado"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.model,name:nostrum_custom_cmnt.model_account_journal
+msgid "Journal"
+msgstr "Diario"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price___last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
@@ -579,10 +584,15 @@ msgid "Partner"
 msgstr "Empresa"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_journal_payment_mode_id
+msgid "Payment Mode"
+msgstr "Modo de pago"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_invoice_payment_term_14936
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_sale_order_payment_term_14937
 msgid "Payment term"
-msgstr "Payment term"
+msgstr "Plazo de pago"
 
 #. module: nostrum_custom_cmnt
 #. openerp-web
@@ -787,7 +797,7 @@ msgstr "a informe de oportunidad"
 #: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:88
 #, python-format
 msgid "To Phonecalls"
-msgstr "Llamadas"
+msgstr "a llamadas"
 
 #. module: nostrum_custom_cmnt
 #. openerp-web

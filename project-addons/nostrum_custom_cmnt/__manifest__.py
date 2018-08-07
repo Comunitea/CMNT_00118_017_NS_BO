@@ -39,6 +39,7 @@
         "views/point_of_sale_view.xml",
         "views/report_sale_order.xml",
         'views/report_sessionsummary.xml',
+        'views/account_view.xml',
     ],
     'qweb': [
         'static/src/xml/pos.xml',
