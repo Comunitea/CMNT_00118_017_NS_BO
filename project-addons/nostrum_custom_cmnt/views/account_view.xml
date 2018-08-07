@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+       <record id="view_account_journal_form_add_payment_mode" model="ir.ui.view">
+            <field name="name">view_account_journal_form_add_payment_mode</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <field name="code" position="before">
+                        <field name="payment_mode_id"/>
+                </field>
+            </field>
+        </record>
+</odoo>

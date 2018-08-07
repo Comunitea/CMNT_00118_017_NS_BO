@@ -11,3 +11,4 @@ from . import purchase
 from . import product
 from . import pos
 from . import crm_lead
+from . import account
