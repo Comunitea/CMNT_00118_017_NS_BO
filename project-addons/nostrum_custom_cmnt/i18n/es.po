@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-07 12:37+0000\n"
-"PO-Revision-Date: 2018-08-07 12:37+0000\n"
+"POT-Creation-Date: 2018-09-03 10:32+0000\n"
+"PO-Revision-Date: 2018-09-03 10:32+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -196,6 +196,11 @@ msgstr "Cuenta"
 #, python-format
 msgid "Activities Done"
 msgstr "Actividades realizadas"
+
+#. module: nostrum_custom_cmnt
+#: model:res.groups,comment:nostrum_custom_cmnt.group_creation_of_products
+msgid "Allows users to create products"
+msgstr "Permite al usuario crear productos"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sessionsummary
@@ -592,7 +597,7 @@ msgstr "Modo de pago"
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_invoice_payment_term_14936
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_sale_order_payment_term_14937
 msgid "Payment term"
-msgstr "Plazo de pago"
+msgstr "Payment term"
 
 #. module: nostrum_custom_cmnt
 #. openerp-web
@@ -620,6 +625,11 @@ msgstr "Elemento de la tarifa"
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_sales_order_lines_filter
 msgid "Product"
 msgstr "Producto"
+
+#. module: nostrum_custom_cmnt
+#: model:res.groups,name:nostrum_custom_cmnt.group_creation_of_products
+msgid "Product Creation"
+msgstr "Creación de productos"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model,name:nostrum_custom_cmnt.model_product_template
