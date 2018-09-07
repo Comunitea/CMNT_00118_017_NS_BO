@@ -12,6 +12,16 @@ class SaleOrder(models.Model):
     phonecall_count = fields.Integer(related='partner_id.phonecall_count',
                                      string="Nº Calls")
 
+    @api.multi
+    def action_confirm(self):
+        """
+        Que no nos cree línea de envío.
+        """
+        res = super(SaleOrder, self).action_confirm()
+        for so in self:
+            so.invoice_shipping_on_delivery = False
+        return res
+
 
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'

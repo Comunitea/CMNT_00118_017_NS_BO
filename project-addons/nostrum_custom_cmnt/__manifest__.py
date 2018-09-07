@@ -22,7 +22,8 @@
         'stock_valued_picking_report',
         'crm_phonecall',
         'stock',
-        'purchase'
+        'purchase',
+        'delivery'
     ],
     'contributors': [
         "Comunitea ",
