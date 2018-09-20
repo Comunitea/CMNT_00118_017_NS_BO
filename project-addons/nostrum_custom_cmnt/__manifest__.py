@@ -21,13 +21,17 @@
         'account_due_dates_str',
         'stock_valued_picking_report',
         'crm_phonecall',
-        'stock'
+        'stock',
+        'purchase',
+        'delivery'
     ],
     'contributors': [
         "Comunitea ",
         "Javier Colmenero <javier@comunitea.com>"
     ],
     "data": [
+        "security/nostrum_security.xml",
+        "security/ir.model.access.csv",
         "views/invoice.xml",
         "views/report_invoice.xml",
         "views/sale_view.xml",
@@ -40,6 +44,7 @@
         "views/report_sale_order.xml",
         'views/report_sessionsummary.xml',
         'views/account_view.xml',
+        'views/partner_view.xml',
     ],
     'qweb': [
         'static/src/xml/pos.xml',
