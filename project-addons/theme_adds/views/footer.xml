@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- footer -->
+
+    <template id="subscribe_footer" inherit_id="clarico_layout.clarico_layout_footer_default"
+              name="Add subscribe block footer" >
+        <xpath expr="//footer/section" position="before">
+            <div class="bg_subscribe_footer">
+                <div class="container">
+                    <div class="wp_subscribe_footer">
+                        <div class="oe_snippet_body input-group js_subscribe" data-list-id="0">
+                            <input type="email" name="email" class="js_subscribe_email form-control"
+                                   placeholder="Tu email..."/>
+                            <span class="input-group-btn">
+                                <a href="#" class="btn btn-primary js_subscribe_btn">Suscribirme</a>
+                                <a href="#" class="btn btn-success js_subscribed_btn hidden"
+                                   disabled="disabled">Gracias</a>
+                            </span>
+                            <div class="alert alert-success hidden">Gracias por su subscripción!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="replace_footer" inherit_id="clarico_layout.clarico_layout_footer_default" name="Replace footer" >
+        <xpath expr="//footer//div[@id='footer']/div[@class='row']" position="replace">
+            <div class="common_footer_content_details_div">
+                <div class="company_details_footer">
+                    <ul class="customer-contact-ul">
+                        <li>
+                            <div class="contact_detail_para">
+                                <p class="span_lbl">Tienda</p>
+                                :
+                                <p class="field_padding">
+                                    <span t-field="res_company.city" />,
+                                    <span t-field="res_company.street" />,
+                                    <span t-field="res_company.zip" />
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact_detail_para">
+                                <p class="span_lbl">Oficinas</p>
+                                :
+                                <p class="field_padding">
+                                    <span t-field="res_company.city" />, Avd. Campanar 55 bajo,
+                                    <span t-field="res_company.zip" />
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact_detail_para">
+                                <p class="span_lbl">Teléfono</p>
+                                :
+                                <p class="field_padding" t-field="res_company.phone" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact_detail_para">
+                                <p class="span_lbl">WhatsApp</p>
+                                :
+                                <p class="field_padding">640 823 409</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact_detail_para">
+                                <p class="span_lbl">Email</p>
+                                :
+                                <p class="field_padding" t-field="res_company.email" />
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="social_icons_footer">
+                        <div class="footer-social-icon">
+                            <a class="o_facebook" t-att-href="website.social_facebook"
+                                t-if="website.social_facebook">
+                                <i class="fa fa-facebook" />
+                            </a>
+                            <a class="o_twitter" t-att-href="website.social_twitter"
+                                t-if="website.social_twitter">
+                                <i class="fa fa-twitter" />
+                            </a>
+                            <a class="o_linkedin" t-att-href="website.social_linkedin"
+                                t-if="website.social_linkedin">
+                                <i class="fa fa-linkedin" />
+                            </a>
+                            <a class="o_youtube" t-att-href="website.social_youtube"
+                                t-if="website.social_youtube">
+                                <i class="fa fa-youtube-play" />
+                            </a>
+                            <a class="o_googleplus" t-att-href="website.social_googleplus"
+                                t-if="website.social_googleplus" rel="publisher">
+                                <i class="fa fa-google-plus-square" />
+                            </a>
+                            <a class="o_github" t-att-href="website.social_github" t-if="website.social_github">
+                                <i class="fa fa-github" />
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled" id="products"></ul>
+                </div>
+                <div class="col-md-7  col-lg-3">
+                    <div class="footer-heading">
+                        <ul class="customer-service-ul">
+                            <li><a href="#">Condiciones de envío</a></li>
+                            <li><a href="#">Devoluciones</a></li>
+                            <li><a href="#">Política de Cookies y privacidad</a></li>
+                            <li><a href="#">Sobre nosotros</a></li>
+                            <li><a href="#">Contacto</a></li>
+                            <li><a href="#">Distribuye nuestros productos</a></li>
+                            <li><a href="#">Condiciones legales</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5  col-lg-3">
+                    <div class="footer-heading">
+                        <ul class="help-ul">
+                            <li><a href="#">Mi cuenta</a></li>
+                            <li><a href="#">Mis pedidos</a></li>
+                            <li><a href="#">Mis direcciones</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4  col-lg-3">
+                    <div class="footer_logo">
+                        <section><img src="/theme_adds/static/img/logo-footer.png"/></section>
+                    </div>
+                    <div class="oe_stucture"/>
+                    <section><h3 class="footer_payment_heading">Metodos de pago</h3></section>
+                    <div class="payment_img_footer">
+                        <section><img src="/theme_adds/static/img/payment-options.png"></img></section>
+                    </div>
+                </div>
+                <div class="col-md-4  col-lg-2" id="info">
+                    <ul class="list-unstyled" style="display:none">
+                    </ul>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="replace_footer_1" inherit_id="clarico_layout.clarico_layout_footer_default" name="Replace footer" >
+        <xpath expr="//footer//section[@class='three_Column_snippet_wrap']" position="replace" />
+    </template>
+
+    <template id="replace_footer_2" inherit_id="clarico_layout.clarico_layout_footer_copyright" name="Replace footer">
+        <xpath expr="//div[@class='endfooter_list']" position="replace" />
+    </template>
+
+    <template id="replace_footer_3" inherit_id="clarico_layout.clarico_layout_footer_copyright" name="Replace footer">
+        <xpath expr="//div[@class='pull-center text-muted']" position="replace">
+            <div class="pull-center text-muted">
+                 © 2016 Nostrum Sport, S.L. Todos los derechos reservados.
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
