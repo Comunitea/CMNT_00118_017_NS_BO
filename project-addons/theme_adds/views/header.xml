@@ -1,4 +1,88 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
+
+    <template id="add_attrs_wishlist_header" inherit_id="clarico_wishlist.clarico_wishlist_theme_wishlist"
+              name="Add classes to wishlist counter">
+        <xpath expr="//sup[@class='wish_count']" position="attributes">
+            <attribute name="class">wish_count label label-primary</attribute>
+        </xpath>
+    </template>
+
+    <template id="add_attrs_compare_header" inherit_id="clarico_compare.clarico_compare_layout_icon"
+              name="Add classes to compare counter">
+        <xpath expr="//sup[@class='product_count']" position="attributes">
+            <attribute name="class">product_count label label-primary</attribute>
+        </xpath>
+    </template>
+
+
+    <template id="replace_offer-center" inherit_id="clarico_layout.clarico_header_main" name="Replace offer-center" >
+        <xpath expr="//div[@class='main-header']//div[@class='offer-center']" position="replace">
+            <div class="new_header_contacts">
+                <span><i class="fa fa-phone" /> <font t-field="res_company.phone"/></span>
+                <span><i class="fa fa-whatsapp" /> <font>640 823 409</font></span>
+                <div class="header-social-icon">
+                    <a class="o_facebook" t-att-href="website.social_facebook"
+                        t-if="website.social_facebook">
+                        <i class="fa fa-facebook" />
+                    </a>
+                    <a class="o_twitter" t-att-href="website.social_twitter"
+                        t-if="website.social_twitter">
+                        <i class="fa fa-twitter" />
+                    </a>
+                    <a class="o_linkedin" t-att-href="website.social_linkedin"
+                        t-if="website.social_linkedin">
+                        <i class="fa fa-linkedin" />
+                    </a>
+                    <a class="o_youtube" t-att-href="website.social_youtube"
+                        t-if="website.social_youtube">
+                        <i class="fa fa-youtube-play" />
+                    </a>
+                    <a class="o_googleplus" t-att-href="website.social_googleplus"
+                        t-if="website.social_googleplus" rel="publisher">
+                        <i class="fa fa-google-plus-square" />
+                    </a>
+                    <a class="o_github" t-att-href="website.social_github" t-if="website.social_github">
+                        <i class="fa fa-github" />
+                    </a>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//li[@class='top-custom-menu']" position="replace"/>
+    </template>
+
+    <template id="header_center_inside" inherit_id="website.layout">
+        <xpath expr="//div[@class='container']" position="before">
+            <div class="new_header_in_wrap clarico_row">
+                <div class="new_header_in clarico_row_maxW">
+                    <div class="row">
+                        <div class="col-md-4 new_hd_img">
+                            <a href="/"><img src="/theme_adds/static/img/logo-head.png" alt="Nostrumsport"/></a>
+                        </div>
+                        <div class="col-md-4 new_hd_search">
+                            <div class="oe_search new_hd_search_input">
+                                <input type="text" name="search"
+                                       class="search-query form-control oe_search_box clarico_search_border"
+                                       placeholder="Search..." t-att-value="search" required="required" />
+                            </div>
+                            <span class="input-group-btn new_hd_search_btn">
+                                <button type="submit" class="btn btn-default oe_search_button">
+                                    <i class="fa fa-search" />
+                                </button>
+                            </span>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="hd_widget_revi_demo">
+                                <a href="https://revi.io/es/opiniones/wwwnostrumsportcom" target="_blank">
+                                    <img src="/theme_adds/static/img/revi-widget-demo.png" alt="Revi 9.2/10"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
 </odoo>

@@ -8,6 +8,9 @@
         <xpath expr="//footer/section" position="before">
             <div class="bg_subscribe_footer">
                 <div class="container">
+                    <div class="title_subscribe_footer">
+                        Suscríbete a nuestro newsletter y mantente al día de todas las novedades
+                    </div>
                     <div class="wp_subscribe_footer">
                         <div class="oe_snippet_body input-group js_subscribe" data-list-id="0">
                             <input type="email" name="email" class="js_subscribe_email form-control"
@@ -101,8 +104,14 @@
                         </div>
                     </div>
                     <ul class="list-unstyled" id="products"></ul>
+                    <div class="payment_img_footer">
+                        <section><img src="/theme_adds/static/img/payment-options.png"></img></section>
+                    </div>
+                    <!--div class="footer_logo">
+                        <section><img src="/theme_adds/static/img/logo-footer.png"/></section>
+                    </div-->
                 </div>
-                <div class="col-md-7  col-lg-3">
+                <div class="col-md-3  col-lg-2">
                     <div class="footer-heading">
                         <ul class="customer-service-ul">
                             <li><a href="#">Condiciones de envío</a></li>
@@ -115,7 +124,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-5  col-lg-3">
+                <div class="col-md-3  col-lg-2">
                     <div class="footer-heading">
                         <ul class="help-ul">
                             <li><a href="#">Mi cuenta</a></li>
@@ -124,16 +133,17 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-4  col-lg-3">
-                    <div class="footer_logo">
-                        <section><img src="/theme_adds/static/img/logo-footer.png"/></section>
-                    </div>
+                <div class="col-md-6  col-lg-5">
+                    <iframe width="100%" height="350" style="border:0;"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12318.255725397388!2d-0.3995472192764121!3d39.47917903836471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xec08ec7b5ae81ff4!2sSports+Medicine+Center!5e0!3m2!1ses!2ses!4v1467373033075"
+                            frameborder="0"></iframe>
+                </div>
+                <!--div class="col-md-4  col-lg-3">
+
                     <div class="oe_stucture"/>
                     <section><h3 class="footer_payment_heading">Metodos de pago</h3></section>
-                    <div class="payment_img_footer">
-                        <section><img src="/theme_adds/static/img/payment-options.png"></img></section>
-                    </div>
-                </div>
+
+                </div-->
                 <div class="col-md-4  col-lg-2" id="info">
                     <ul class="list-unstyled" style="display:none">
                     </ul>
