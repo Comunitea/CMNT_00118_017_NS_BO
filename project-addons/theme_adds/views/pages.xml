@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Condiciones de envío -->
+    <record id="website.entrega" model="ir.ui.view">
+        <field name="website_meta_title">Condiciones de envío - NostrumSport</field>
+        <field name="website_meta_description">Nuestros términos y condiciones de envío</field>
+        <field name="website_meta_keywords">condiciones, entrega, plazo, envío, paquete</field>
+    </record>
+    <template id="website.entrega" page="True">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="clarico_row">
+                    <div class="clarico_row_maxW">
+                        <h1 class="chs_heading ch_padding">Condiciones de envío</h1>
+                        <h2>Tarifas de envíos</h2>
+                        <h3>Nacional</h3>
+                        <table class="tbl"><tbody><tr><td>
+                        <h4>España Penínsular:</h4>
+                        </td>
+                        <td>
+                        <h4>Baleares y Canarias:</h4>
+                        <p><strong>*envios a Canarias no Incluyen IVA</strong></p>
+                        </td>
+                        </tr><tr><td>
+                        <p>Más de 100 € netos (sin IVA y con descuentos) y máximo 15Kg: <strong>GRATIS </strong></p>
+                        <p>Hasta 15kg: <strong>4,50 € (5,45€ con IVA)</strong></p>
+                        <p>Cada 5 Kilos Extra: <strong>3 € (3,63€ con IVA)</strong></p>
+                        <p><strong>Nota: </strong>Para pedidos de más de 15Kg que sean superiores a 100€ se cobrará solamente el sobrepeso.</p>
+                        </td>
+                        <td>
+                        <p>Hasta 5kg: <strong>11,55 € (13,98€ con IVA)</strong></p>
+                        <p>Hasta 10kg: <strong>13,75 € (16,64€ con IVA)</strong></p>
+                        <p>11-20kg.: <strong>24,00 € (29,04€ con IVA)</strong></p>
+                        <p> </p>
+                        </td>
+                        </tr></tbody></table>
+                        <h3>Internacional</h3>
+                        <h4>Portugal (continental):</h4>
+                        <p><strong>Hasta 5kg</strong>: 4,95 € (5,99€ con IVA)</p>
+                        <p><strong>Hasta 10kg</strong>: 6,95 € (8.41€ con IVA)</p>
+                        <p><strong>Hasta 20kg.</strong>: 9,95 € (12.04€ con IVA)</p>
+                        <br/>
+                        <h4>Zona 1 (Francia, Paises Bajos, Belgica, Luxemburgo)</h4>
+                        <p><strong>0-4kg:</strong> 10,95 € (12,25€ con IVA)</p>
+                        <p><strong>5-9kg:</strong> 12,75 € (15.43€ con IVA)</p>
+                        <p><strong>10-14kg:</strong> 14,95 € (18.09€ con IVA)</p>
+                        <p><strong>15-30kg:</strong> 24,50 € (29.65€ con IVA)</p>
+                        <br/>
+                        <h4>Zona 2 (Italia, Alemania, Austria, UK, Suiza)</h4>
+                        <p><strong>0-4kg:</strong> 11,50 € (13.92€ con IVA)</p>
+                        <p><strong>5-9kg</strong>: 13,75 € (16.64€ con IVA)</p>
+                        <p><strong>10-14kg:</strong> 19.95 € (24.14€ con IVA)</p>
+                        <p><strong>15-30kg:</strong> 26,50 € (32.07€ con IVA)</p>
+                        <br/>
+                        <h4>Zona 3 (resto Unión Europea):</h4>
+                        <p><strong>0-4kg:</strong> 18,25 € (22,08€ con IVA)</p>
+                        <p><strong>5-9kg</strong>: 28,75 € (34.79€ con IVA)</p>
+                        <p><strong>10-14kg:</strong> 38.95 € (47.34€ con IVA)</p>
+                        <p><strong>15-30kg:</strong> 52,00 € (62.92€ con IVA)</p>
+                        <br/>
+                        <p><strong>Resto del mundo: <a href="mailto:vsebastian@spmc.es">Contactar</a></strong></p>
+                        <br/>
+                        <p><strong>NOTA:</strong> Para pedidos bajo condiciones especiales no especificadas aquí,
+                            nos pondremos en contacto con Usted para concretar el importe de los gastos de envío.</p>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Sobre nosotros -->
+    <record id="website.sobre-nosotros" model="ir.ui.view">
+        <field name="website_meta_title">Sobre nosotros - NostrumSport</field>
+        <field name="website_meta_description">Quien somos? Que hacemos? Donde estamos? Cual nuestra misión?
+            Conozca mejor nuestro trabajo y servicio.</field>
+        <field name="website_meta_keywords">sobre nosotros, información</field>
+    </record>
+    <template id="website.sobre-nosotros" page="True">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="clarico_row">
+                    <div class="clarico_row_maxW">
+                        <h1 class="chs_heading ch_padding">Sobre nosotros</h1>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h2>Nuestra empresa</h2>
+                                <p>Nostrum Sport Medicine S.L. es una empresa familiar dedicada a la venta online de
+                                    material de Fisioterapia y masaje desde 1999. Es la versión online de nuestra
+                                    tienda física en Valencia, Sports Medicine Center, fundada en 1991 por Francisco
+                                    Sebastián.</p>
+                                <p>Nuestro objetivo es ofrecer a nuestros clientes el mejor producto del mercado,
+                                    atención muy cercana y un servicio rápido y eficaz para garantizar su satisfacción.
+                                    Estamos en constante búsqueda de nuevos productos de calidad que os faciliten
+                                    vuestro día a día.</p>
+                                <p>- CIF: B98210057</p>
+                                <p>- Direccion Fisc: Avda. Campanar, 39-5</p>
+                            </div>
+                            <div class="col-md-4">
+                                <h2>Nuestra Tienda</h2>
+                                <p><b>Con sede en Valencia, distribuimos a toda España.</b></p>
+                                <p>Nuestras tienda Sports Medicine Center, situada en Valencia  frente a
+                                    C.C. Nuevo Centro, puedes encontrar una amplia gama de nuestro catálogo.
+                                    Si puedes, no dudes en visitarnos.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <h2>Nuestras Oficinas</h2>
+                                <p>Desde las oficinas de NostrumSport manejamos y dirigimos la web.
+                                    Si tienes alguna duda o consulta, la resolveremos desde aquí.
+                                    Siempre estamos dispuestos a mejorar y para eso <strong>necesitamos tu opinión
+                                        y tus sugerencias</strong>, así que no dudes en llamar, escribirnos
+                                    o dejar tu opinión abajo. Si está en nuestra mano, implementaremos tu mejora.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Pago seguro -->
+    <record id="website.pago-seguro" model="ir.ui.view">
+        <field name="website_meta_title">Pago seguro - NostrumSport</field>
+        <field name="website_meta_description">Nuestra forma de pago segura</field>
+        <field name="website_meta_keywords">pago seguro, ssl, visa, mastercard, paypal</field>
+    </record>
+    <template id="website.pago-seguro" page="True">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="clarico_row">
+                    <div class="clarico_row_maxW">
+                        <h1 class="chs_heading ch_padding">Pago seguro</h1>
+                        <h2>Formas de Pago</h2>
+                        <p>De forma a facilitar el pago de todos os productos que desea, nuestra tienda online dispone
+                            de los siguientes métodos:</p>
+                        <h3>Pago en Tienda</h3>
+                        <p>Visitándonos en nuestra tienda situada en:Av/Pio XII nº1 bajo, 46009 Valencia.
+                            Podrás recoger y pagar tu pedido tanto en efectivo como con tarjeta sin ningún
+                            tipo de gasto adicional.</p>
+                        <p>Puedes visitar nuestro show-room y comprar lo que necesites – Comprar online,
+                            elegir como método de pago “Pago en tienda” y en menos de 24 horas te indicaremos
+                            cuando puedes venir a recoger tu pedido.</p>
+                        <h3>Tarjeta de Crédito y Débito</h3>
+                        <p>No conlleva ningún gasto adicional para el cliente.</p>
+                        <h3>Transferencia Bancaria</h3>
+                        <p>No conlleva ningún gasto adicional para el cliente.
+                            Puedes hacerlo en nuestra cuenta bancaria:<br/>
+                            TITULAR: NOSTRUMSPORT<br/>
+                            NÚMERO DE CUENTA: BBVA IBAN ES92 0182 0512 3802 0801 297<br/>
+                            BIC: BBVAESMMXXX</p>
+                        <h3>Reembolso</h3>
+                        <p>Solo aceptamos reembolsos para pedidos de mas de 100€ y menos de 350€,
+                            El reembolso tendrá un recargo de un 4% del coste del mismo.</p>
+                        <h3>Paypal</h3>
+                        <p>Tendrá un recargo de un 3% de comisión.</p>
+                        <h3>Paga + Más Tarde</h3>
+                        <p>Financia tus pedidos hasta en 12 meses con nuestro modulo de pago aplazado.
+                            Opción válidad para pedidos de mas de 350€. La aceptación de la financiación depende
+                            directamente de la financiera de Paga Mas Tarde que realiza el método con un
+                            algoritmo matemático.</p>
+
+                        <h2>Plazo de entrega</h2>
+                        <p>El plazo de entrega estipulado para la península es de 3 a 5 días hábiles.
+                            Siendo lo más <b>habitual</b> la entrega en <b>24-48 horas</b>.</p>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Devoluciones -->
+    <record id="website.devoluciones" model="ir.ui.view">
+        <field name="website_meta_title">Devoluciones - NostrumSport</field>
+        <field name="website_meta_description">Si cuando reciba su pedido no queda satisfecho, tiene un plazo de
+            diez (10) días, a contar desde la fecha de recepción para ejecutar el derecho de devolución.</field>
+        <field name="website_meta_keywords"></field>
+    </record>
+    <template id="website.devoluciones" page="True">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="clarico_row">
+                    <div class="clarico_row_maxW">
+                        <h1 class="chs_heading ch_padding">Devoluciones</h1>
+                        <p>Si cuando reciba su pedido no queda satisfecho, tiene un plazo de <strong> diez (10)
+                            días</strong>, a contar desde la fecha de recepción para ejecutar el
+                            <strong>derecho de devolución.</strong></p>
+                        <p>En caso de devolución, los gastos de envío no serán reembolsados. Asimismo, los gastos
+                            de recogida serán por cuenta del cliente (equivalen al importe del envío que
+                            corresponda al tipo de producto adquirido y al destino enviado).</p>
+                        <p>Para realizar la devolución, el producto deberá estar en perfectas condiciones, en
+                            su embalaje original y con los manuales, accesorios o regalos promocionales incluidos
+                            en su caso. Una vez recibida la mercancía en nuestros almacenes, y previa comprobación
+                            del estado de la misma, se procederá al reintegro de su importe.</p>
+                        <p>En cualquier caso, se admitirá la devolución de los productos defectuosos y envíos
+                            erróneos, siendo Nostrum Sport Medicine quien se hará cargo de los gastos de envío
+                            siempre que el cliente comunique esta circunstancia en el plazo de diez (10) días
+                            contados desde la fecha de recepción del envío.</p>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Política de privacidad -->
+    <record id="website.politica-de-cookies" model="ir.ui.view">
+        <field name="website_meta_title">Política de Cookies y privacidad - NostrumSport</field>
+        <field name="website_meta_description"></field>
+        <field name="website_meta_keywords"></field>
+    </record>
+    <template id="website.politica-de-cookies" page="True">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="clarico_row">
+                    <div class="clarico_row_maxW">
+                        <h1 class="chs_heading ch_padding">Política de privacidad</h1>
+                        <p>Esta Política de Privacidad forma parte integrante de las Condiciones Generales de NostrumSport.com (en adelante, “NostrumSport”) y será aplicable a los datos de carácter personal que los usuarios de la página web www.NostrumSport.com faciliten a NostrumSport, así como a aquellos otros que pudieran comunicar durante el desarrollo de una relación contractual con la empresa.</p>
+                        <p>La presente política de privacidad sólo se aplica a los datos personales recabados a través de NostrumSport.com</p>
+
+                        <h3>1 ¿Quién es el responsable del tratamiento de tus datos?</h3>
+                        <ul>
+                            <li>NostrumSport, marca de Sports Medicine Center SL - B96214812</li>
+                            <li>Dirección postal: Av/PioXII nº1 bajo, Valencia</li>
+                            <li>Correo electrónico: info@nostrumsport.com</li>
+                            <li>Teléfono: 96 348 76 71</li>
+                        </ul>
+
+                        <h3>2 ¿Con qué finalidad tratamos tus datos personales?</h3>
+                        <ul>
+                            <li>En cumplimiento con lo dispuesto en la normativa vigente en materia de protección de datos, NostrumSport, te informa de que únicamente tratará tus datos personales en la medida en que sean adecuados, pertinentes y limitados a lo estrictamente necesario para los fines para los que son recabados.</li>
+                            <li>En este sentido, podrás facilitar libremente tus datos personales a NostrumSport a través de los distintos procedimientos establecidos para ello, que los tratará para las siguientes finalidades siempre y cuando el Usuario haya prestado su consentimiento de forma específica, informada e inequívoca:
+                                <ul>
+                                    <li>La defensa de tus intereses y la gestión del encargo profesional que constituye el objeto de las Condiciones Generales del que este documento forma parte integrante. Para hacer uso de los servicios profesionales de NostrumSport es necesario que dispongas de cuenta de cliente y te identifiques de la forma oportuna. Para esta finalidad NostrumSport  podrá tratar datos identificativos, datos de contacto, datos bancarios.</li>
+                                    <li>La atención de solicitudes de información, quejas y sugerencias a través de los medios que NostrumSport dispone para ello. Para esta finalidad NostrumSport podrá tratar datos identificativos y de contacto.</li>
+                                    <li>El envío de información comercial relativa a NostrumSport y sus servicios. Para esta finalidad NostrumSport podrá tratar datos identificativos y de contacto.</li>
+                                    <li>El envío de información comercial de terceros que pueda resultar de tu interés. Para esta finalidad NostrumSport podrá tratar datos identificativos y de contacto.</li>
+                                    <li>La gestión de tu suscripción al blog de NostrumSport, manteniéndote informado sobre las novedades y actualizaciones. Para esta finalidad NostrumSport  podrá tratar datos identificativos y de contacto.</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h3>3 ¿Cuál es la legitimación para el tratamiento de tus datos?</h3>
+                        <ul>
+                            <li>La base de legitimación para el tratamiento de tus datos por parte de NostrumSport podrá consistir en:
+                                <ul>
+                                    <li>La existencia de una relación contractual con NostrumSport, que tratará tus datos personales para la ejecución del encargo profesional.</li>
+                                    <li>El cumplimiento de una obligación legal aplicable a NostrumSport.</li>
+                                    <li>Tu consentimiento prestado de forma libre, específica, informada e inequívoca. Podrás retirar el consentimiento en cualquier momento, a través de los medios que dispone NostrumSport para ello.</li>
+                                </ul>
+                            </li>
+                            <li>Los usuarios garantizáis que los datos personales aportados son verdaderos, exactos, completos y actualizados, ya que seréis los únicos responsables de cualquier daño o perjuicio, directo o indirecto, que pudiera ocasionarse como consecuencia del incumplimiento de tal obligación.</li>
+                            <li>Así mismo, a los efectos de garantizar el deber de calidad y la actualización de los datos, deberás comunicar a NostrumSport cualquier modificación que pudiera tener lugar en los datos facilitados.</li>
+                        </ul>
+
+                        <h3>4 ¿Por cuánto tiempo conservaremos tus datos?</h3>
+                        <ul>
+                            <li>Tus datos personales serán conservados por distintos plazos, en función de la finalidad para las que son objeto de tratamiento:
+                                <ul>
+                                    <li>Datos de clientes: los datos se conservarán durante el tiempo necesario para el cumplimiento del encargo profesional encomendado. Transcurrido este plazo, NostrumSport podrá conservar estos datos para el cumplimiento de obligaciones legales que le exijan la conservación de dichos datos.</li>
+                                    <li>Datos basados en el consentimiento: los datos se conservarán desde que los comuniques hasta que retires tu consentimiento, a través de los medios que dispone NostrumSport para ello.</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h3>5 ¿A qué destinatarios se comunicarán tus datos?</h3>
+                        <ul>
+                            <li>NostrumSport sigue unas normas éticas y respeta tu privacidad. Con excepción de los supuestos de cesión o comunicación de tus datos, bien en los casos requeridos por ley, bien en cumplimiento con el encargo profesional encomendado, no comunicaremos tus datos personales a terceros sin tu consentimiento libre, específico, informado e inequívoco.</li>
+                            <li>A modo meramente ilustrativo, NostrumSport puede ser requerido por ley a la comunicación de tus datos a la Administración Pública y otros organismos de naturaleza jurisdiccional.</li>
+                            <li>Asimismo, para el cumplimiento del encargo profesional podremos comunicar tus datos a entidades frente a las que se interpongan reclamaciones o a juzgados y tribunales.</li>
+                            <li>Por su parte, te informamos de que terceros podrán acceder a tus datos personales por cuenta de NostrumSport, con la única finalidad de prestarte los servicios solicitados. Estos terceros serán considerados encargados del tratamiento y ofrecen garantías suficientes para aplicar medidas técnicas y organizativas apropiadas para el cumplimiento de la normativa vigente.</li>
+                        </ul>
+
+                        <h3>6 ¿Con qué finalidad utilizamos cookies?</h3>
+                        <ul>
+                            <li>NostrumSport hace uso, en NostrumSport.com, de cookies respecto de los usuarios que navegan en el sitio web. Las cookies son ficheros enviados al navegador, mediante un servidor web, con la finalidad de registrar las actividades de los usuarios durante su tiempo de navegación. El uso de las cookies permite que el servidor de NostrumSport.com reconozca el navegador web utilizado por el usuario con la finalidad de que la navegación sea más sencilla, identificándote cuando visitas nuestro sitio web y permitiendo preservar tu estado de acceso, permitiendo medir la audiencia y parámetros del tráfico, controlar el progreso y número de entradas, guardar los datos de sesión y recordar las operaciones más relevantes de los usuarios.</li>
+                            <li>El usuario tiene la posibilidad de configurar su navegador para ser avisado de la recepción de cookies e impedir su instalación. Dispones de información ampliada en la Política de Cookies.</li>
+                        </ul>
+
+                        <h3>7 ¿Qué medidas de seguridad implementamos para la protección de tus datos personales?</h3>
+                        <ul>
+                            <li>En respuesta a tu preocupación por garantizar la seguridad y confidencialidad de tus datos, te informamos que NostrumSport ha adoptado medidas técnicas y organizativas necesarias para para evitar la destrucción, pérdida, mal uso, alteración accidental o ilícita, comunicación o acceso no autorizado y robo de los datos personales facilitados.</li>
+                            <li>Para aquellos servicios de la web que precisen registrarse como usuario deberás elegir una contraseña. Eres responsable de mantener la confidencialidad de esta contraseña, así como de todas las actividades que ocurran en la sesión iniciada con tu nombre de usuario y contraseña. Igualmente, te comprometes a notificar a NostrumSport a la mayor brevedad el uso no autorizado de tu nombre de usuario y contraseña o cualquier otro fallo en la seguridad. NostrumSport no será responsable por los daños o pérdidas que se pudieran originar debido al incumplimiento de esta obligación por tu parte.</li>
+                        </ul>
+
+                        <h3>8 ¿Cuáles son tus derechos sobre tus datos personales?</h3>
+                        <ul>
+                            <li>Derecho de acceso: tienes derecho a obtener confirmación acerca de si NostrumSport trata tus datos personales que le conciernan y, en tal caso, a acceder a los mismo. Asimismo, tendrás derecho a obtener una copia de los datos.</li>
+                            <li>Derecho de rectificación: tienes derecho a solicitar la rectificación de los datos personales inexactos que te conciernan.</li>
+                            <li>Derecho de supresión: tienes derecho a solicitar la supresión de tus datos, entre otros motivos, cuando los datos ya no sean adecuados, necesarios o pertinentes para los fines para los que fueron facilitados.</li>
+                            <li>Derecho de oposición: tienes derecho a oponerte al tratamiento de tus datos personales, por motivos relativos a tu situación particular. En dicho caso, NostrumSport cesará en el tratamiento de dichos datos, salvo que existan motivos legítimos imperiosos, o para la formulación, el ejercicio o la defensa de reclamaciones.</li>
+                            <li>Derecho a la limitación del tratamiento: bajo la premisa de que concurran determinadas condiciones, podrás solicitar la limitación del tratamiento de tus datos, en cuyo caso NostrumSport únicamente podrá tratarlos, con la excepción de su conservación, para el ejercicio o defensa de reclamaciones, para la protección de derechos de terceros o por razones de interés público.</li>
+                            <li>Derecho a la portabilidad de los datos: tienes derecho a recibir o, en su caso, a que NostrumSport facilite a terceros tus datos personales en un formato estructurado, de uso común y lectura mecánica, siempre y cuando dicho tratamiento se base en tu consentimiento y se efectúe por medios automatizados.</li>
+                        </ul>
+                        <p>Podrás ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad a través de correo postal a Av/Pio XII nº1 bajo o a través de correo electrónico a info@NostrumSport.com, aportando fotocopia del DNI o documento de identidad.</p>
+                        <p>NostrumSport se compromete a dar respuesta a todas las solicitudes dentro del plazo establecido en la normativa vigente.</p>
+                        <p>Asimismo, podrás presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD), cuyos datos de contacto se ofrecen a través de la página web www.aepd.es</p>
+
+                        <h2>Política de Cookies</h2>
+                        <p>Uso propio y las cookies de terceros para facilitar la navegación dentro del sitio, analizar y mejorar nuestros servicios o enviar anuncio más relevantes a sus intereses. Usted puede cambiar la configuración de cookies en cualquier momento.</p>
+                        <p>La página web contiene "cookies" que permiten Nostrum Medicina Deportiva, SL obtener una gran cantidad de datos, como las páginas web visitadas anteriormente por el usuario, así como los productos y servicios para mantener su cuenta abierta. Las cookies son pequeños fragmentos de texto que las redes envían al navegador que la información sobre retirada de la página web acerca de su visita, por lo que su próxima visita y haciendo la navegación más simple página web.</p>
+                        <p> </p>
+                        <table class="tbl"><tbody>
+                            <tr><td><p><strong>Tipos de Cookies</strong></p></td><td><p><strong>Para que sirve</strong></p></td></tr>
+                            <tr><td><p>Preferencias</p></td><td><p>Esta cookie permite a nuestro sitio web información sobre las retiradas que modifican el aspecto o comportamiento de la página, por ejemplo su idioma. La pérdida de información almacenada en una cookie de preferencia puede hacer que la experiencia de la web es menos funcional, pero no debería afectar a su funcionamiento.</p></td></tr>
+                            <tr><td><p>Seguridad</p></td><td><p>Ultilizamos cookies de seguridad para autentificar los usuarios, evitar uso fraudulento de credenciales, proteger los datos los usuarios y asegurar el sistema de pago en la página web.</p></td></tr>
+                            <tr><td><p>Proceso</p></td><td><p>Las cookies permiten que los procesos de funcionamiento de la página web y la oferta esperada por el usuario que accede a la página web, por ejemplo, navegar por páginas web o el acceso a las áreas seguras de los servicios del sitio web. Sin estas cookies, el sitio no puede funcionar adecuadamente.</p></td></tr>
+                            <tr><td><p>Publicidad</p></td><td><p>Utilizamos cookies para criar publicidade mais atractiva para os usuários, com anúncios baseados em conteúdo que é relevante para si, melhorar os relatórios de rendimento da campanha e evitar mostrar anúncios que já tenha visto.</p></td></tr>
+                            <tr><td><p>Estado da sesión</p></td><td><p>Páginas web suelen recopilar información acerca de cómo los usuarios interactúan con la página web. Esta información puede incluir las páginas que los usuarios visitan con más frecuencia y si los usuarios reciben mensajes de error desde determinadas páginas. Si estas cookies están bloqueadas o se elimina, el sitio seguirá funcionando.</p></td></tr>
+                            <tr><td><p>Google Analytics</p></td><td><p><a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage"> Google Analytics</a> es una herramienta de análisis web gratuito de Google que permite a los propietarios de sitios web saben cómo los usuarios interactúan con la página web. Estos cookies recogen información de forma anónima para reportar la página web sin necesidad de identificar a los usuarios individuales.</p></td></tr>
+                        </tbody></table>
+                        <p>Si prefieren el usuario, puede evitar Acceso A "cookie" en su disco duro configurando su navegador en su ordenador para que le advierta de la recepción de "cookies" y para impedir la instalación de las mismas en su disco duro. El sitio web puede no funcionar correctamente debido a razones técnicas. Para restringir, bloquear o borrar las cookies puede entrar: </p>
+                        <p> </p>
+                        <ul>
+                            <li>Internet Explorer: <a title="Internet Explorer deshabilitar Cookies" href="http://windows.microsoft.com/es-xl/internet-explorer/delete-manage-cookies#ie=%E2%80%9Die-10%E2%80%B3" target="_blank">windows.microsoft.com/es-xl/internet-explorer/delete-manage-cookies#ie=”ie-10″</a></li>
+                            <li>FireFox: <a title="Firefox control de cookies" href="http://support.mozilla.org/es/kb/Borrar%20cookies" target="_blank">support.mozilla.org/es/kb/Borrar%20cookies</a></li>
+                            <li>Chrome: <a title="Chrome control de cookies" target="_blank">support.google.com/chrome/answer/95647?hl=”es”</a></li>
+                            <li>Safari: <a title="Safari control de cookies" target="_blank">www.apple.com/es/privacy/use-of-cookies/</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Condiciones legales -->
+    <record id="website.condiciones-legales" model="ir.ui.view">
+        <field name="website_meta_title">Condiciones de envío - NostrumSport</field>
+        <field name="website_meta_description">Condiciones de envío de NostrumSport, la tienda de fisioterapia.
+            Entrega en 24-48h, envío a 4,50€ (en península) pero para pedidos de más de 100€ ENVIO GRATIS</field>
+        <field name="website_meta_keywords"></field>
+    </record>
+    <template id="website.condiciones-legales" page="True">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="clarico_row">
+                    <div class="clarico_row_maxW">
+                        <h1 class="chs_heading ch_padding">Condiciones legales de NostrumSport.com</h1>
+                        <p>Todas las compras que se realicen en NostrumSport.com están sujetas a las condiciones generales de compra expuestas en el presente documento.</p>
+                        <p>Las ventas generadas tanto online como en tienda física son ventas reguladas por la legislación española vigente en materia de la salud.</p>
+
+                        <h3>Nostrum Sport – Sport Medicine Center SL</h3>
+                        <p>Sport Medicine Center SL</p>
+                        <p>CIF: B96214812</p>
+                        <p>Av/ Pio XII nº1 bajo</p>
+                        <p>46009 Valencia. España.</p>
+                        <p>Teléfono: 96 348 76 71</p>
+                        <p>Correo electrónico: <a href="mailto:info@nostrumsport.com">info@nostrumsport.com</a></p>
+
+                        <h3>1. Listas de precio</h3>
+                        <p>Los precios de los productos que se muestran en nuestra tienda online incluyen los impuestos de la legislación española vigente.</p>
+                        <p>En relación al Impuesto sobre el Valor Añadido (IVA), se aplicará el tipo impositivo para el territorio de la Unión Europea donde es de aplicación este impuesto. Quedarán exentos de pagar este impuesto todas aquellas empresas pertenecientes a países de la Unión Europea con número de IVA intracomunitario, exceptuando España. En la venta a cualquier otro país del mundo no se repercutirá IVA, no obstante los sistemas aduaneros de cada país aplicarán las cargas impositivas correspondientes.</p>
+                        <p>Debido a su especial régimen fiscal, son considerados territorios extracomunitarios los ámbitos geográficos correspondientes a Canarias, Ceuta y Melilla. Por lo tanto, las compras realizadas por residentes de estos territorios están exentas del pago del IVA (los gastos del despacho de aduanas y los impuestos de importación no están incluidos en el precio del artículo ni en el del envío, y deberán ser pagados en destino por el cliente).</p>
+                        <p>Los precios y la moneda única de pago es el euro.</p>
+                        <p>Los precios expuestos en NostrumSport.com podrán ser revisados y modificados si las condiciones lo requieren en cualquier momento.</p>
+
+                        <h3>2. Métodos de pago</h3>
+
+                        <p>a) Pago en tienda: Visitándonos en nuestra tienda situada en: Av/Pio XII nº1 bajo, 46009 Valencia. Podrás recoger y pagar tu pedido tanto en efectivo como con tarjeta sin ningún tipo de gasto adicional.</p>
+                        <p>1.Puedes visitar nuestro show-room y comprar lo que necesites – Comprar online, elegir como método de pago “Pago en tienda” y en menos de 24 horas te indicaremos cuando puedes venir a recoger tu pedido.</p>
+                        <p>2.Transferencia Bancaria: No conlleva ningún gasto adicional para el cliente. Puedes hacerlo en nuestra cuenta bancaria:</p>
+                        <p>TITULAR: NOSTRUMSPORT </p>
+                        <p>NÚMERO DE CUENTA:</p>
+                        <p>BANCO: BBVA IBAN ES92 0182 0512 3802 0801 2979 BIC: BBVAESMMXXX </p>
+                        <p> </p>
+                        <p>En el momento que nos envíes el justificante de transferencia al correo <a href="mailto:info@nostrumsport.com">info@nostrumsport.com</a> procederemos al envío.</p>
+                        <p>3. Tarjeta de Crédito: No conlleva ningún gasto adicional para el cliente</p>
+                        <p>4. Paypal: Se aplicará un 3% adicional</p>
+                        <p>5. Paga+tarde: Financia tu compra hasta en 12 meses. Totalmente online.</p>
+                        <p>6. Contra Reembolso: No conlleva ningún gasto adicional para el cliente</p>
+                        <p>Puede entrar en este link <a href="/page/pago-seguro">https://nostrumsport.com/page/pago-seguro</a> para ver toda la información relativa a los métodos de pago.</p>
+
+                        <h3>3. Gastos de énvio</h3>
+                        <p>Los gastos de envío son por zonas:</p>
+                        <p>Puede entrar en este link <a href="/page/entrega">https://nostrumsport.com/page/entrega</a> para ver  toda la información relativa a los gastos de envío.</p>
+
+                        <h3>4. Plazos de entrega y procesos de devolución</h3>
+                        <p>Para España: NostrumSport se exige la máxima celeridad en la entrega de sus pedidos. Nuestro compromiso con el cliente es máximo y por ello habitualmente las entregas se hacen en periodos no superiores a 48 horas, en muchos casos menores a 24 horas. NostrumSport es distribuidor en sí mismo y además vende productos de más de 200 fabricantes nacionales e internacionales. La tienda online está compuesta por más de 5.000 referencias lo que hace imposible mantener un stock constante de todos. Por ello, los envíos pueden alargarse en el tiempo y superar las 48 horas que nos marcamos como objetivo.</p>
+                        <p>Para envíos internacionales:</p>
+                        <p>Los plazos de entrega podrían prolongarse hasta una o dos semanas.</p>
+                        <p>Garantizamos dar información rápida a nuestros clientes de los plazos de entrega estimados y si no cumplen con sus pretensiones procederíamos a la devolución del importe de su pedido.</p>
+                        <p>Algunos productos de nuestra tienda están descatalogados o con rupturas de stock prolongadas debido a que nuestros proveedores no nos lo comunican previamente. En estos casos procederemos al reembolso del importe del producto en un plazo no superior a 48 horas.</p>
+
+                        <h3>5. Garantía</h3>
+                        <p>Los clientes de NostrumSport.com se benefician de la garantía dada por los distintos fabricantes de cada uno de los artículos.</p>
+                        <p>Los defectos o desperfectos debidos a una incorrecta utilización o manipulación del material o los desgastes producidos por un uso normal del mismo, no se incluyen en esta garantía.</p>
+                        <p>Las mermas en la funcionalidad de los artículos, debidas a las limitaciones de concepción de los mismos, también están excluidas de la cobertura de esta garantía.</p>
+                        <p>En caso de producto defectuoso, el vendedor deberá proceder, según corresponda, a la reparación, sustitución, rebaja del precio o resolución del contrato, gestiones que serán gratuitas para el consumidor y usuario. El vendedor responde de las faltas de conformidad que se manifiesten en un plazo de dos años desde la entrega. El consumidor y usuario deberá informar al vendedor de la falta de conformidad en el plazo de dos meses desde que tuvo conocimiento de ella.</p>
+                        <p>Consulte el consejo especializado de nuestro Servicio de Atención al Cliente, el cual le facilitará el contacto de los diferentes servicios técnicos de nuestros proveedores, así como la forma de proceder para recibir un aparato de sustitución de similares características en menos de 48 horas.</p>
+
+                        <h3>6. Devoluciones y cambio de material</h3>
+                        <p>Puede <a href="/page/devoluciones">https://nostrumsport.com/page/devoluciones</a> para ver toda la información relativa a las devoluciones y reembolsos.</p>
+                        <p>Tambien lo puede hacer a través de nuestro whatsapp: 640 823 409</p>
+
+                        <h3>7. Limitacion de responsabilidad</h3>
+                        <p>Es responsabilidad del cliente estar técnicamente capacitado para utilizar los materiales que NostrumSport distribuye</p>
+
+                        <h3>8. Protección de datos de caracter personal</h3>
+                        <p>En cumplimiento de lo establecido en la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal, NostrumSport informa a sus clientes de que cuantos datos personales le faciliten serán incluidos en un fichero automatizado de datos de carácter personal, creado y mantenido bajo la responsabilidad de NostrumSport</p>
+                        <p>La finalidad de dicho fichero es facilitar la tramitación de los pedidos y enviar ofertas comerciales en el futuro sobre productos y servicios que puedan resultar de interés a nuestros clientes.</p>
+                        <p>NostrumSport garantiza la seguridad y confidencialidad de los datos facilitados. De este modo, se compromete al cumplimiento de su obligación de secreto de los datos de carácter personal y de su deber de guardarlos y adoptar todas las medidas necesarias para evitar su alteración, pérdida, tratamiento o uso no autorizado. Por lo tanto, toda la información sobre nuestros clientes no será utilizada con propósitos comerciales ni será cedida a terceros.</p>
+                        <p>Los clientes de NostrumSport podrán en todo momento ejercitar los derechos de acceso, rectificación, cancelación y oposición, comunicándolo por escrito a nuestra dirección de correo electrónico info@nostrumsport.com llamando al teléfono 96 348 76 71</p>
+
+                        <h3>9. Legislación y jurisdicción</h3>
+                        <p>Las presentes condiciones generales se interpretarán conforme a la legislación vigente en España en la materia, que se aplicará subsidiariamente en todo lo que no se haya previsto en las mismas. (Básicamente Ley 34/2002 de 11 de julio de servicios de la información y comercio electrónico).</p>
+                        <p>Las partes se someten, a su elección, para la resolución de los conflictos y con renuncia a cualquier otro fuero, a los juzgados y tribunales del domicilio del usuario. </p>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

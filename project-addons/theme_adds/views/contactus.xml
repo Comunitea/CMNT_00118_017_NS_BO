@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
+    <record id="website.contactus" model="ir.ui.view">
+        <field name="website_meta_title">Contáctanos - NostrumSport</field>
+        <field name="website_meta_description">Utiliza nuestro formulario para ponerte en contacto con nosotros</field>
+        <field name="website_meta_keywords">formulario de contacto, e-mail</field>
+    </record>
+
     <template id="replace_contact_right" inherit_id="website.contactus" name="Replace contact right block">
         <xpath expr="//div[@id='wrap']//div[@class='col-md-4 mb32']" position="replace">
             <div class="col-md-4 mb32">

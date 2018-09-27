@@ -114,22 +114,22 @@
                 <div class="col-md-3  col-lg-2">
                     <div class="footer-heading">
                         <ul class="customer-service-ul">
-                            <li><a href="#">Condiciones de envío</a></li>
-                            <li><a href="#">Devoluciones</a></li>
-                            <li><a href="#">Política de Cookies y privacidad</a></li>
-                            <li><a href="#">Sobre nosotros</a></li>
-                            <li><a href="#">Contacto</a></li>
-                            <li><a href="#">Distribuye nuestros productos</a></li>
-                            <li><a href="#">Condiciones legales</a></li>
+                            <li><a href="/page/entrega">Condiciones de envío</a></li>
+                            <li><a href="/page/devoluciones">Devoluciones</a></li>
+                            <li><a href="/page/politica-de-cookies">Política de Cookies y privacidad</a></li>
+                            <li><a href="/page/sobre-nosotros">Sobre nosotros</a></li>
+                            <li><a href="/page/contactus">Contacto</a></li>
+                            <li><a href="mailto:vsebastian@spmc.es">Distribuye nuestros productos</a></li>
+                            <li><a href="/page/condiciones-legales">Condiciones legales</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-3  col-lg-2">
                     <div class="footer-heading">
                         <ul class="help-ul">
-                            <li><a href="#">Mi cuenta</a></li>
-                            <li><a href="#">Mis pedidos</a></li>
-                            <li><a href="#">Mis direcciones</a></li>
+                            <li><a href="/my/home">Mi cuenta</a></li>
+                            <li><a href="/my/orders">Mis pedidos</a></li>
+                            <li><a href="/my/account">Mis direcciones</a></li>
                         </ul>
                     </div>
                 </div>

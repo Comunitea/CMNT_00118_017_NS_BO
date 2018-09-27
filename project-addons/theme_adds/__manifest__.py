@@ -8,6 +8,9 @@
     'category': 'Custom',
     'depends': ['website_sale'],
     'data': [
+        'views/wishlist.xml',
+        'views/blog.xml',
+        'views/pages.xml',
         'views/menu.xml',
         'views/shop_home.xml',
         'views/contactus.xml',
