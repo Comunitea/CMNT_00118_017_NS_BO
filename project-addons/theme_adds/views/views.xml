@@ -5,6 +5,7 @@
         <xpath expr="link[last()]" position="after">
             <link href="/theme_adds/static/css/header.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_adds/static/css/footer.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_adds/static/css/content.less" rel="stylesheet" type="text/less"/>
         </xpath>
     </template>
 

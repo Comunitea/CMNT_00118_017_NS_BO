@@ -3,36 +3,11 @@
 
     <data>
 
-        <!-- record id="menu_contactus" model="website.menu">
-            <field name="name">Contact us</field>
-            <field name="url">/page/contactus</field>
-            <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">60</field>
-            <field name="website_id" ref="website.default_website"/>
-        </record>
-
-        <delete model="website.menu" id="menu_contactus"/-->
+        <delete model="website.menu" id="clarico_diningroom"/>
+        <delete model="website.menu" id="clarico_livingroom"/>
 
 
-        <!-- pages -->
-        <template id="website.entrega" page="True">
-            <t t-call="website.layout">
-                <div id="wrap">
-                    <div class="clarico_row">
-                        <div class="clarico_row_maxW">
-                            <h1 class="chs_heading ch_padding">Condiciones de envío</h1>
-                        </div>
-                    </div>
-                </div>
-            </t>
-        </template>
-
-
-
-
-
-
-        <!-- menu -->
+        <!-- main menu -->
         <record id="home_link" model="website.menu">
             <field name="name">Tienda</field>
             <field name="url">/page/homepage</field>

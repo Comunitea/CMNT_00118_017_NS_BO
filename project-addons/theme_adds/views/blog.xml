@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="blog_title_replace" inherit_id="clarico_blogs.clarico_blogs_post_complete">
+        <xpath expr="//h2[@class='blog_complete_subtitle']" position="replace"/>
+        <xpath expr="//span[@class='fa fa-tags blog_complete_tag_icon']" position="replace"/>
+        <xpath expr="//div[@id='blog_content']" position="after">
+            <t t-if="next_post">
+                <div class="mt32 blog_complete_max_width">
+                    <div class="wp_next_post">
+                        <div class="read_next_title">
+                            Next post: <a t-field="next_post.name"
+                               t-attf-href="/blog/#{ slug(next_post.blog_id) }/post/#{ slug(next_post) }/#wrap"/>
+                        </div>
+                        <div class="read_next_subtitle">
+                            <a t-field="next_post.subtitle"
+                               t-attf-href="/blog/#{ slug(next_post.blog_id) }/post/#{ slug(next_post) }/#wrap"/>
+                        </div>
+                        <a class="btn btn-primary"
+                           t-attf-href="/blog/#{ slug(next_post.blog_id) }/post/#{ slug(next_post) }/#wrap">
+                            Read Next Post</a>
+                    </div>
+                </div>
+            </t>
+		</xpath>
+    </template>
+
+    <template id="blog_items_list_replace" inherit_id="clarico_blogs.clarico_blogs_blog_post_short">
+<!--        <xpath expr="//span[@class='seprater']" position="replace"/>
+        <xpath expr="//span[2][@class='seprater']" position="replace"/>
+        <xpath expr="//span[@class='blog_post_author-static']" position="replace"/>
+        <xpath expr="//div[@class='o_sharing_links social-icons']" position="replace">
+            <div class="new_blog_item_btn_wp" t-foreach="blog_posts" t-as="blog_post">
+                <a t-attf-href="/blog/#{slug(blog_post.blog_id)}/post/#{slug(blog_post)}"
+                   class="btn btn-primary">Read more...</a>
+            </div>
+        </xpath>-->
+        <xpath expr="//div[@class='mb32 blog_post_div']" position="replace">
+            <div t-foreach="blog_posts" t-as="blog_post" class="mb32 blog_post_div"
+                name="blog_post">
+                <a t-attf-href="/blog/#{ slug(blog_post.blog_id) }/post/#{ slug(blog_post) }">
+                    <h2 t-field="blog_post.name" class="mb4 o_blog_post_title">Untitled Post</h2>
+                </a>
+                <span class="blog_post_date" t-field="blog_post.post_date"
+							t-options='{"format": "MMMM, yyyy"}' />
+
+                <div class="blog-post-subtitle-div">
+                    <p t-field="blog_post.subtitle" class="blog-post-subtitle">Untitled Post</p>
+                </div>
+                <div class="new_blog_item_btn_wp">
+                    <a t-attf-href="/blog/#{ slug(blog_post.blog_id) }/post/#{ slug(blog_post) }"
+                       class="btn btn-primary">Read more...</a>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+
+    <template id="blog_cover_replace" inherit_id="website_blog.blog_cover">
+
+    </template>
+
+
+    <data>
+        <!-- blog posts -->
+        <!--record id="blog_post-01" model="blog.post">
+            <field name="name">Title</field>
+            <field name="subtitle">Subtitle / description</field>
+            <field name="blog_id" ref="website_blog.blog_blog_1"/>
+            <field name="website_published" eval="True"/>
+            <field name="published_date" eval="time.strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="content">
+                <![CDATA[ html content ]]>
+            </field>
+        </record-->
+    </data>
+</odoo>

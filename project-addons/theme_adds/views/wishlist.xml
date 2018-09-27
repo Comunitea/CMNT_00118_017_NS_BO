@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="wishlist_banner_replace" inherit_id="clarico_wishlist.clarico_wishlist_wishlist_template">
+        <xpath expr="//div[@class='main-div-W100 wishlist-main']/section" position="replace"/>
+        <xpath expr="//a[@class='clear-all-wishlist']" position="replace">
+            <a class="clear-all-wishlist btn btn-primary">Clear Wishlist</a>
+        </xpath>
+        <xpath expr="//div[@class='wishlist_rating_main_div']" position="replace"/>
+        <xpath expr="//div[@class='remove_wish_div']" position="replace"/>
+    </template>
+
+</odoo>
