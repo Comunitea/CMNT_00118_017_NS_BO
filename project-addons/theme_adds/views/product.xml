@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="product_block_replace" inherit_id="clarico_product.clarico_product_product">
+        <xpath expr="//div[@class='p_static_desc_para']" position="replace">
+            <div class="p_static_desc_para">
+                <ul>
+                    <li>25 años de experiencia</li>
+                    <li>Envio gratis a partir de 99€</li>
+                    <li>Mejor calidad a buen precio</li>
+                    <li>Pago 100% Seguro</li>
+                </ul>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

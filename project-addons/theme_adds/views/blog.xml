@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
+    <record id="add_blog_content_field" model="ir.ui.view">
+        <field name="name">blog.post.form</field>
+        <field name="model">blog.post</field>
+        <field name="inherit_id" ref="website_blog.view_blog_post_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='ranking']/.." position="after">
+                <group string="Content">
+                    <field name="content"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
     <template id="blog_title_replace" inherit_id="clarico_blogs.clarico_blogs_post_complete">
         <xpath expr="//h2[@class='blog_complete_subtitle']" position="replace"/>
         <xpath expr="//span[@class='fa fa-tags blog_complete_tag_icon']" position="replace"/>
