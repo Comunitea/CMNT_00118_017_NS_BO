@@ -4,14 +4,53 @@
     <template id="product_block_replace" inherit_id="clarico_product.clarico_product_product">
         <xpath expr="//div[@class='p_static_desc_para']" position="replace">
             <div class="p_static_desc_para">
-                <ul>
+<!--                <ul>
                     <li>25 años de experiencia</li>
                     <li>Envio gratis a partir de 99€</li>
                     <li>Mejor calidad a buen precio</li>
                     <li>Pago 100% Seguro</li>
-                </ul>
+                </ul>-->
+                <div class="wld-cont-logos">
+                    <div class="wld-logo">
+                        <p><img src="/theme_adds/static/img/experience.png" alt="25 años de experiencia"/>
+                            <span>25 años de<br/>experiencia</span></p>
+                    </div>
+                    <div class="wld-logo">
+                        <p><img src="/theme_adds/static/img/freeshipping.png" alt="Envio gratis a partir de 99€"/>
+                            <span>A partir<br/>de 99€</span></p>
+                    </div>
+                    <div class="wld-logo">
+                        <p><img src="/theme_adds/static/img/bestprices.png" alt="Mejor calidad a buen precio"/>
+                            <span >Mejor calidad<br/>a buen precio</span></p>
+                    </div>
+                    <div class="wld-logo">
+                        <p><img src="/theme_adds/static/img/securepayment.png" alt="Pago 100% Seguro"/>
+                            <span>Pago 100%<br/>Seguro</span></p>
+                    </div>
+                </div>
             </div>
         </xpath>
+        <xpath expr="//p[@class='text-muted res_pera_description']//.." position="replace"/>
+        <xpath expr="//input[@name='product_id']//.." position="replace"/>
+        <xpath expr="//div[@class='4_btns_combo']" position="after">
+            <t t-placeholder="select">
+                <input type="hidden" class="product_id" name="product_id"
+                    t-att-value="product.product_variant_id.id if len(product.product_variant_ids) == 1 else '0'" />
+                <t t-call="website_sale.variants">
+                    <t t-set="ul_class" t-value="'nav-stacked'" />
+                </t>
+            </t>
+            <div class="prod_des" t-if="product.description_sale">
+                <p t-field="product.description_sale" class="text-muted res_pera_description" />
+            </div>
+        </xpath>
+        <xpath expr="//h4[@class='css_non_editable_mode_hidden decimal_precision']" position="after">
+            <div t-if="product.list_price" class="price_sin_iva">
+                <span t-field="product.list_price"
+                      t-options='{"widget": "monetary", "display_currency": product.currency_id,}'/> sin IVA
+            </div>
+        </xpath>
+        <xpath expr="//div[@class='ctg_class']" position="replace"/>
     </template>
 
 </odoo>

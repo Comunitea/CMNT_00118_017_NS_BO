@@ -12,6 +12,7 @@
         'clarico_layout'
     ],
     'data': [
+        'views/cart.xml',
         'views/product.xml',
         'views/wishlist.xml',
         'views/blog.xml',

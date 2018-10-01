@@ -16,6 +16,9 @@
         </xpath>
     </template>
 
+    <template id="logo_header_replace" inherit_id="website.layout_logo_show">
+        <xpath expr="//a[@class='navbar-brand logo']" position="replace"/>
+    </template>
 
     <template id="replace_offer-center" inherit_id="clarico_layout.clarico_header_main" name="Replace offer-center" >
         <xpath expr="//div[@class='main-header']//div[@class='offer-center']" position="replace">
@@ -57,22 +60,24 @@
             <div class="new_header_in_wrap clarico_row">
                 <div class="new_header_in clarico_row_maxW">
                     <div class="row">
-                        <div class="col-md-4 new_hd_img">
+                        <div class="col-md-3 col-sm-3 col-xs-12 new_hd_img">
                             <a href="/"><img src="/theme_adds/static/img/logo-head.png" alt="Nostrumsport"/></a>
                         </div>
-                        <div class="col-md-4 new_hd_search">
-                            <div class="oe_search new_hd_search_input">
-                                <input type="text" name="search"
-                                       class="search-query form-control oe_search_box clarico_search_border"
-                                       placeholder="Search..." t-att-value="search" required="required" />
+                        <div class="col-md-6 col-sm-6 col-xs-12 new_hd_search">
+                            <div class="new_hd_search_wp">
+                                <div class="oe_search new_hd_search_input">
+                                    <input type="text" name="search"
+                                           class="search-query form-control oe_search_box clarico_search_border"
+                                           placeholder="Search..." t-att-value="search" required="required" />
+                                </div>
+                                <span class="input-group-btn new_hd_search_btn">
+                                    <button type="submit" class="btn btn-default oe_search_button">
+                                        <i class="fa fa-search" />
+                                    </button>
+                                </span>
                             </div>
-                            <span class="input-group-btn new_hd_search_btn">
-                                <button type="submit" class="btn btn-default oe_search_button">
-                                    <i class="fa fa-search" />
-                                </button>
-                            </span>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3 col-sm-3 col-xs-12">
                             <div class="hd_widget_revi_demo">
                                 <a href="https://revi.io/es/opiniones/wwwnostrumsportcom" target="_blank">
                                     <img src="/theme_adds/static/img/revi-widget-demo.png" alt="Revi 9.2/10"/>
