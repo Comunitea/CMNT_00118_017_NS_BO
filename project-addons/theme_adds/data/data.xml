@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--  Delete Demo Filters -->
+        <delete model="ir.filters" id="clarico_product_carousel.ir_filter_featured_product"/>
+        <delete model="ir.filters" id="clarico_product_carousel.ir_filter_service_product"/>
+        <delete model="ir.filters" id="clarico_product_carousel.ir_filter_sellable_product"/>
+        <delete model="website.filter.ept" id="clarico_product_carousel.ept_filter_featured_product"/>
+        <delete model="website.filter.ept" id="clarico_product_carousel.ept_filter_service_product"/>
+        <delete model="website.filter.ept" id="clarico_product_carousel.ept_filter_sellable_product"/>
+
+        <!--  Create Custom Filters -->
+            <record id="ir_filter_featured_product" model="ir.filters">
+                <field name="name">Featured Products</field>
+                <field name="model_id">product.template</field>
+                <field name="domain">[['website_published', '=', True],[u'sale_ok', u'=', True]]</field>
+                <field name="user_id" eval="False" />
+                <field name="context">{}</field>
+            </record>
+
+        <record id="ir_filter_featured_category" model="ir.filters">
+            <field name="name">Featured Categories</field>
+            <field name="model_id">product.template</field>
+            <field name="domain">[['website_published', '=', True],[u'type', u'=', 'service']]</field>
+            <field name="user_id" eval="False" />
+            <field name="context">{}</field>
+        </record>
+
+        <record id="ir_filter_novelty_product" model="ir.filters">
+            <field name="name">Novelties</field>
+            <field name="model_id">product.template</field>
+            <field name="domain">[['website_published', '=', True],[u'sale_ok', u'=', True]]</field>
+            <field name="user_id" eval="False" />
+            <field name="context">{}</field>
+        </record>
+
+        <!--  Website Carousel Filters -->
+        <record id="website_ept_filter_featured_product" model="website.filter.ept">
+            <field name="name">Featured Products</field>
+            <field name="filter_id" ref="ir_filter_featured_product"></field>
+            <field name="website_published" eval="True"></field>
+        </record>
+
+        <record id="website_ept_filter_featured_category" model="website.filter.ept">
+            <field name="name">Featured Categories</field>
+            <field name="filter_id" ref="ir_filter_featured_category"></field>
+            <field name="website_published" eval="True"></field>
+        </record>
+
+        <record id="website_ept_filter_novelty_product" model="website.filter.ept">
+            <field name="name">Novelties Products</field>
+            <field name="filter_id" ref="ir_filter_novelty_product"></field>
+            <field name="website_published" eval="True"></field>
+        </record>
+
+        <!--  Website Carousel Multi Filters-->
+        <record id="multifilter" model="website.multi.filter.ept">
+            <field name="name" >Multifilter</field>
+            <field name="website_published" eval="True"/>
+        </record>
+
+        <record id="ept_filter_featured_product" model="filter.ept">
+            <field name="name">Featured Products</field>
+            <field name="filter_ept_id" ref="theme_adds.website_ept_filter_featured_product"></field>
+            <field name="fname" ref="theme_adds.multifilter"></field>
+            <field name="website_published" eval="True"></field>
+        </record>
+
+        <record id="ept_filter_featured_category" model="filter.ept">
+            <field name="name">Featured Categories</field>
+            <field name="filter_ept_id" ref="theme_adds.website_ept_filter_featured_category"></field>
+            <field name="fname" ref="theme_adds.multifilter"></field>
+            <field name="website_published" eval="True"></field>
+        </record>
+
+        <record id="ept_filter_novelty_product" model="filter.ept">
+            <field name="name">Novelties Products</field>
+            <field name="filter_ept_id" ref="theme_adds.website_ept_filter_novelty_product"></field>
+            <field name="fname" ref="theme_adds.multifilter"></field>
+            <field name="website_published" eval="True"></field>
+        </record>
+    </data>
+</openerp>
