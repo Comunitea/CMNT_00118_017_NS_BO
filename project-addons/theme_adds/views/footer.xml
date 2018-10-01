@@ -3,14 +3,17 @@
 
     <!-- footer -->
 
-    <template id="subscribe_footer" inherit_id="clarico_layout.clarico_layout_footer_default"
-              name="Add subscribe block footer" >
+    <template id="subscribe_modal_replace" inherit_id="clarico_email_subscriber.clarico_email_subscriber_popup">
+        <xpath expr="//div[@id='EmailSubscriberModal']" position="replace"/>
+    </template>
+
+    <template id="subscribe_footer" inherit_id="clarico_layout.clarico_layout_footer_default">
         <xpath expr="//footer/section" position="before">
             <div class="bg_subscribe_footer">
                 <div class="container">
                     <div class="title_subscribe_footer">
                         Suscríbete a nuestro newsletter y mantente al día de todas las novedades
-                    </div>
+                    </div><!--
                     <div class="wp_subscribe_footer">
                         <div class="oe_snippet_body input-group js_subscribe" data-list-id="0">
                             <input type="email" name="email" class="js_subscribe_email form-control"
@@ -22,6 +25,20 @@
                             </span>
                             <div class="alert alert-success hidden">Gracias por su subscripción!</div>
                         </div>
+                    </div>-->
+                    <div class="wp_subscribe_footer">
+                        <div class="js_follow_alias hidden" data-id="2" data-object="mail.channel" data-follow="off">
+                            <div class="input-group js_mg_follow_form">
+                                <input name="email" class="js_follow_email form-control" placeholder="su correo electrónico..." disabled="disabled" type="email"/>
+                                <span class="input-group-btn">
+                                    <button href="#" class="btn btn-primary js_follow_btn o_default_snippet_text">Suscribir</button>
+                                </span>
+                            </div>
+                            <p class="js_mg_details hidden well well-sm o_default_snippet_text"><span class="js_mg_email hidden o_default_snippet_text"><i class="fa fa-envelope-o"></i><a href="#" class="js_mg_email o_default_snippet_text"> enviar correo</a> - </span><i class="fa fa-file-o"></i><a href="/groups/0" class="js_mg_link o_default_snippet_text"> archivos</a> -
+                                <i class="fa fa-times"></i><a href="#" class="js_unfollow_btn o_default_snippet_text"> anular suscripción</a>
+                            </p>
+                            <p class="js_mg_confirmation hidden well well-sm o_default_snippet_text">Se ha enviado un mail de confirmación</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -31,87 +48,89 @@
     <template id="replace_footer" inherit_id="clarico_layout.clarico_layout_footer_default" name="Replace footer" >
         <xpath expr="//footer//div[@id='footer']/div[@class='row']" position="replace">
             <div class="common_footer_content_details_div">
-                <div class="company_details_footer">
-                    <ul class="customer-contact-ul">
-                        <li>
-                            <div class="contact_detail_para">
-                                <p class="span_lbl">Tienda</p>
-                                :
-                                <p class="field_padding">
-                                    <span t-field="res_company.city" />,
-                                    <span t-field="res_company.street" />,
-                                    <span t-field="res_company.zip" />
-                                </p>
+                <div class="col-md-3 col-sm-5 col-xs-12">
+                    <div class="company_details_footer">
+                        <ul class="customer-contact-ul">
+                            <li>
+                                <div class="contact_detail_para">
+                                    <p class="span_lbl">Tienda</p>
+                                    :
+                                    <p class="field_padding">
+                                        <span t-field="res_company.city" />,
+                                        <span t-field="res_company.street" />,
+                                        <span t-field="res_company.zip" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact_detail_para">
+                                    <p class="span_lbl">Oficinas</p>
+                                    :
+                                    <p class="field_padding">
+                                        <span t-field="res_company.city" />, Avd. Campanar 55 bajo,
+                                        <span t-field="res_company.zip" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact_detail_para">
+                                    <p class="span_lbl">Teléfono</p>
+                                    :
+                                    <p class="field_padding" t-field="res_company.phone" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact_detail_para">
+                                    <p class="span_lbl">WhatsApp</p>
+                                    :
+                                    <p class="field_padding">640 823 409</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact_detail_para">
+                                    <p class="span_lbl">Email</p>
+                                    :
+                                    <p class="field_padding" t-field="res_company.email" />
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="social_icons_footer">
+                            <div class="footer-social-icon">
+                                <a class="o_facebook" t-att-href="website.social_facebook"
+                                    t-if="website.social_facebook">
+                                    <i class="fa fa-facebook" />
+                                </a>
+                                <a class="o_twitter" t-att-href="website.social_twitter"
+                                    t-if="website.social_twitter">
+                                    <i class="fa fa-twitter" />
+                                </a>
+                                <a class="o_linkedin" t-att-href="website.social_linkedin"
+                                    t-if="website.social_linkedin">
+                                    <i class="fa fa-linkedin" />
+                                </a>
+                                <a class="o_youtube" t-att-href="website.social_youtube"
+                                    t-if="website.social_youtube">
+                                    <i class="fa fa-youtube-play" />
+                                </a>
+                                <a class="o_googleplus" t-att-href="website.social_googleplus"
+                                    t-if="website.social_googleplus" rel="publisher">
+                                    <i class="fa fa-google-plus-square" />
+                                </a>
+                                <a class="o_github" t-att-href="website.social_github" t-if="website.social_github">
+                                    <i class="fa fa-github" />
+                                </a>
                             </div>
-                        </li>
-                        <li>
-                            <div class="contact_detail_para">
-                                <p class="span_lbl">Oficinas</p>
-                                :
-                                <p class="field_padding">
-                                    <span t-field="res_company.city" />, Avd. Campanar 55 bajo,
-                                    <span t-field="res_company.zip" />
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact_detail_para">
-                                <p class="span_lbl">Teléfono</p>
-                                :
-                                <p class="field_padding" t-field="res_company.phone" />
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact_detail_para">
-                                <p class="span_lbl">WhatsApp</p>
-                                :
-                                <p class="field_padding">640 823 409</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact_detail_para">
-                                <p class="span_lbl">Email</p>
-                                :
-                                <p class="field_padding" t-field="res_company.email" />
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="social_icons_footer">
-                        <div class="footer-social-icon">
-                            <a class="o_facebook" t-att-href="website.social_facebook"
-                                t-if="website.social_facebook">
-                                <i class="fa fa-facebook" />
-                            </a>
-                            <a class="o_twitter" t-att-href="website.social_twitter"
-                                t-if="website.social_twitter">
-                                <i class="fa fa-twitter" />
-                            </a>
-                            <a class="o_linkedin" t-att-href="website.social_linkedin"
-                                t-if="website.social_linkedin">
-                                <i class="fa fa-linkedin" />
-                            </a>
-                            <a class="o_youtube" t-att-href="website.social_youtube"
-                                t-if="website.social_youtube">
-                                <i class="fa fa-youtube-play" />
-                            </a>
-                            <a class="o_googleplus" t-att-href="website.social_googleplus"
-                                t-if="website.social_googleplus" rel="publisher">
-                                <i class="fa fa-google-plus-square" />
-                            </a>
-                            <a class="o_github" t-att-href="website.social_github" t-if="website.social_github">
-                                <i class="fa fa-github" />
-                            </a>
                         </div>
+                        <ul class="list-unstyled" id="products"></ul>
+                        <div class="payment_img_footer">
+                            <section><img src="/theme_adds/static/img/payment-options.png"></img></section>
+                        </div>
+                        <!--div class="footer_logo">
+                            <section><img src="/theme_adds/static/img/logo-footer.png"/></section>
+                        </div-->
                     </div>
-                    <ul class="list-unstyled" id="products"></ul>
-                    <div class="payment_img_footer">
-                        <section><img src="/theme_adds/static/img/payment-options.png"></img></section>
-                    </div>
-                    <!--div class="footer_logo">
-                        <section><img src="/theme_adds/static/img/logo-footer.png"/></section>
-                    </div-->
                 </div>
-                <div class="col-md-3  col-lg-2">
+                <div class="col-md-2 col-sm-4 col-xs-12">
                     <div class="footer-heading">
                         <ul class="customer-service-ul">
                             <li><a href="/page/entrega">Condiciones de envío</a></li>
@@ -124,7 +143,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-3  col-lg-2">
+                <div class="col-md-2 col-sm-3 col-xs-12">
                     <div class="footer-heading">
                         <ul class="help-ul">
                             <li><a href="/my/home">Mi cuenta</a></li>
@@ -133,20 +152,13 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-6  col-lg-5">
+                <div class="col-md-5 col-sm-12">
                     <iframe width="100%" height="350" style="border:0;"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12318.255725397388!2d-0.3995472192764121!3d39.47917903836471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xec08ec7b5ae81ff4!2sSports+Medicine+Center!5e0!3m2!1ses!2ses!4v1467373033075"
                             frameborder="0"></iframe>
                 </div>
-                <!--div class="col-md-4  col-lg-3">
-
-                    <div class="oe_stucture"/>
-                    <section><h3 class="footer_payment_heading">Metodos de pago</h3></section>
-
-                </div-->
                 <div class="col-md-4  col-lg-2" id="info">
-                    <ul class="list-unstyled" style="display:none">
-                    </ul>
+                    <ul class="list-unstyled" style="display:none"></ul>
                 </div>
             </div>
         </xpath>

@@ -62,9 +62,6 @@
     font-weight: 400;
     line-height: 14px;
 }
-header .navbar-header {
-    display: none !important;
-}
 .new_header_in_wrap {
     margin: 15px 0 -15px 0;
 }
@@ -76,14 +73,17 @@ header .navbar-header {
 }
 .new_hd_search {
     text-align: center;
-    background: #398439;
-    padding: 2px 0 2px 2px;
-    margin: 10px 0 0 0;
+}
+.new_hd_search_wp {
+    max-width: 450px;
+    margin: 10px auto 0 auto;
 }
 .new_hd_search_input {
     width: calc(90.5%);
     float: left;
     display: block;
+    background: #398439;
+    padding: 2px 0 2px 2px;
     & .clarico_search_border {
         border-bottom: none !important;
     }
@@ -94,12 +94,16 @@ header .navbar-header {
     display: block;
     & button {
         width: 99%;
+        padding: 8px 0;
     }
 }
 .hd_widget_revi_demo {
     position: absolute;
     right: 0;
     top: 4px;
+    & img {
+        max-width: 100%;
+    }
 }
 header .navbar .navbar-top-collapse {
     margin-top: -5px;
@@ -108,4 +112,22 @@ header .navbar .navbar-top-collapse {
 .clarico_product_breadcrumb {
     padding: 7px 0 5px 0;
     margin-top: -10px;
+}
+
+/* media part*/
+
+@media (max-width: 1200px){
+    .hd_widget_revi_demo {
+        position: relative;
+    }
+}
+@media (max-width: 768px){
+    .new_hd_img {
+        text-align: center;
+        margin: 0;
+    }
+    .hd_widget_revi_demo {
+        text-align: center;
+        margin: 0;
+    }
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="cart_replace_general" inherit_id="clarico_cart.clarico_clear_cart">
+        <xpath expr="//a[@class='clear_shopping_cart']" position="replace">
+            <a class="clear_shopping_cart btn btn-primary"
+               t-if="website_sale_order and website_sale_order.website_order_line">Clear Cart</a>
+        </xpath>
+    </template>
+
+    <template id="cart_banner_replace" inherit_id="clarico_cart.clarico_cart">
+        <xpath expr="//div[@class='cart-cover-img-div']" position="replace"/>
+    </template>
+
+</odoo>
