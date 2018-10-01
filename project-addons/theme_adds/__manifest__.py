@@ -6,17 +6,20 @@
     'author': 'Comunitea',
     'license': 'AGPL-3',
     'category': 'Custom',
-    'depends': ['website_sale'],
+    'depends': ['website_sale',
+                # 'clarico_product_carousel',
+                'clarico_layout',
+                'clarico_shop',
+                'snippet_style_7'
+                ],
     'data': [
-        'views/wishlist.xml',
-        'views/blog.xml',
-        'views/pages.xml',
         'views/menu.xml',
         'views/shop_home.xml',
         'views/contactus.xml',
         'views/footer.xml',
         'views/header.xml',
         'views/views.xml',
+        'data/data.xml'
     ],
     'demo': [
 

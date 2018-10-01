@@ -3,44 +3,53 @@
 
     <data>
 
-        <delete model="website.menu" id="clarico_diningroom"/>
-        <delete model="website.menu" id="clarico_livingroom"/>
+        <!-- Demo Menu -->
+        <delete model="website.menu" id="clarico_layout.clarico_diningroom"/>
+        <delete model="website.menu" id="clarico_layout.clarico_livingroom"/>
 
+        <!-- Default Menu -->
+        <!--<delete model="website.menu" id="website_blog.menu_news"/>-->
 
         <!-- main menu -->
         <record id="home_link" model="website.menu">
             <field name="name">Tienda</field>
-            <field name="url">/page/homepage</field>
+            <field name="url">/shop</field>
             <field name="parent_id" ref="website.main_menu"/>
             <field name="sequence" type="int">0</field>
             <field name="website_id" ref="website.default_website"/>
         </record>
-        <record id="products_link" model="website.menu">
-            <field name="name">Productos</field>
-            <field name="url">/shop</field>
+        <record id="clarico_categories" model="website.menu">
+			<field name="name">Categories</field>
+			<field name="parent_id" ref="website.main_menu" />
+			<field name="dynamic_menu" eval="True"></field>
+			<field name="sequence" type="int">10</field>
+		</record>
+        <!--<record id="products_link" model="website.menu">-->
+            <!--<field name="name">Productos</field>-->
+            <!--<field name="url">/shop</field>-->
+            <!--<field name="parent_id" ref="website.main_menu"/>-->
+            <!--<field name="sequence" type="int">30</field>-->
+            <!--<field name="website_id" ref="website.default_website"/>-->
+        <!--</record>-->
+        <record id="blog_link" model="website.menu">
+            <field name="name">Blog</field>
+            <field name="url">/blog/blog-1</field>
             <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">30</field>
+            <field name="sequence" type="int">20</field>
             <field name="website_id" ref="website.default_website"/>
         </record>
         <record id="catalog_link" model="website.menu">
             <field name="name">Catalogo</field>
             <field name="url">https://nostrumsport.com/catalogo/catalogo_nostrum2017-2018.pdf</field>
             <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">40</field>
-            <field name="website_id" ref="website.default_website"/>
-        </record>
-        <record id="blog_link" model="website.menu">
-            <field name="name">Blog</field>
-            <field name="url">/blog/blog-1</field>
-            <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">50</field>
+            <field name="sequence" type="int">30</field>
             <field name="website_id" ref="website.default_website"/>
         </record>
         <record id="informacion_submenu" model="website.menu">
             <field name="name">Información</field>
             <field name="url">/page/entrega</field>
             <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">60</field>
+            <field name="sequence" type="int">40</field>
             <field name="website_id" ref="website.default_website"/>
         </record>
             <!-- submenu -->
@@ -48,49 +57,49 @@
                 <field name="name">Condiciones de envío</field>
                 <field name="url">/page/entrega</field>
                 <field name="parent_id" ref="informacion_submenu"/>
-                <field name="sequence" type="int">10</field>
+                <field name="sequence" type="int">41</field>
                 <field name="website_id" ref="website.default_website"/>
             </record>
             <record id="about_page_link" model="website.menu">
                 <field name="name">Sobre nosotros</field>
                 <field name="url">/page/sobre-nosotros</field>
                 <field name="parent_id" ref="informacion_submenu"/>
-                <field name="sequence" type="int">15</field>
+                <field name="sequence" type="int">42</field>
                 <field name="website_id" ref="website.default_website"/>
             </record>
             <record id="payment_page_link" model="website.menu">
                 <field name="name">Pago seguro</field>
                 <field name="url">/page/pago-seguro</field>
                 <field name="parent_id" ref="informacion_submenu"/>
-                <field name="sequence" type="int">20</field>
+                <field name="sequence" type="int">43</field>
                 <field name="website_id" ref="website.default_website"/>
             </record>
             <record id="devolution_page_link" model="website.menu">
                 <field name="name">Devoluciones</field>
                 <field name="url">/page/devoluciones</field>
                 <field name="parent_id" ref="informacion_submenu"/>
-                <field name="sequence" type="int">25</field>
+                <field name="sequence" type="int">44</field>
                 <field name="website_id" ref="website.default_website"/>
             </record>
             <record id="cookies_page_link" model="website.menu">
                 <field name="name">Política de Cookies y privacidad</field>
                 <field name="url">/page/politica-de-cookies</field>
                 <field name="parent_id" ref="informacion_submenu"/>
-                <field name="sequence" type="int">30</field>
+                <field name="sequence" type="int">45</field>
                 <field name="website_id" ref="website.default_website"/>
             </record>
             <record id="distributions_page_link" model="website.menu">
                 <field name="name">Distribuye nuestros productos</field>
                 <field name="url">mailto:vsebastian@spmc.es</field>
                 <field name="parent_id" ref="informacion_submenu"/>
-                <field name="sequence" type="int">35</field>
+                <field name="sequence" type="int">46</field>
                 <field name="website_id" ref="website.default_website"/>
             </record>
             <record id="legal_page_link" model="website.menu">
                 <field name="name">Condiciones legales</field>
                 <field name="url">/page/condiciones-legales</field>
                 <field name="parent_id" ref="informacion_submenu"/>
-                <field name="sequence" type="int">40</field>
+                <field name="sequence" type="int">47</field>
                 <field name="website_id" ref="website.default_website"/>
             </record>
             <!-- end of submenu -->
@@ -98,7 +107,7 @@
             <field name="name">Contactos</field>
             <field name="url">/page/contactus</field>
             <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">70</field>
+            <field name="sequence" type="int">50</field>
             <field name="website_id" ref="website.default_website"/>
         </record>
 
