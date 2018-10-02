@@ -53,4 +53,33 @@
         <xpath expr="//div[@class='ctg_class']" position="replace"/>
     </template>
 
+
+    <!-- modulo de comparación -->
+
+    <template id="compare_product_in_category_page_replace" inherit_id="clarico_compare.clarico_compare_category_shop">
+        <xpath expr="//div[@class='comparelist']/.." position="replace"/>
+    </template>
+
+    <template id="compare_product_in_category_page_replace_border" inherit_id="clarico_shop.clarico_shop_products_item">
+        <xpath expr="//div[@class='hover-cnt']/hr[@class='product-hover-hr'][1]" position="replace"/>
+    </template>
+
+    <template id="compare_product_quick_view_replace" inherit_id="clarico_quick_view_compare.clarico_quick_view_compare_category_Quickview">
+        <xpath expr="//div[@class='comparelist']" position="replace"/>
+    </template>
+
+    <template id="compare_product_product_page_replace" inherit_id="clarico_compare.clarico_compare_category_product">
+        <xpath expr="//div[@class='comparelist']" position="replace"/>
+    </template>
+
+    <!-- modulo de quick view -->
+
+    <template id="quick_view_category_page_replace" inherit_id="clarico_quick_view.product_quick_view_products_item">
+        <xpath expr="//a[@class='quick-view-a']/.." position="replace"/>
+    </template>
+
+    <template id="compare_product_in_category_page_replace_border_2" inherit_id="clarico_shop.clarico_shop_products_item">
+        <xpath expr="//div[@class='hover-cnt']/hr[@class='product-hover-hr'][1]" position="replace"/>
+    </template>
+
 </odoo>
