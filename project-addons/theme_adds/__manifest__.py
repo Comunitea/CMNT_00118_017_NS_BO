@@ -10,9 +10,11 @@
     'depends': [
         'clarico_shop',
         'website_sale',
-        'clarico_layout'
+        'clarico_layout',
+        'website_product_tags_73lines'
     ],
     'data': [
+        'data/product_data.xml',
         'views/cart.xml',
         'views/product.xml',
         'views/wishlist.xml',
@@ -24,6 +26,7 @@
         'views/footer.xml',
         'views/header.xml',
         'views/views.xml',
+        'views/product_view.xml',
     ],
     'images': [
         'static/description/icon.png',

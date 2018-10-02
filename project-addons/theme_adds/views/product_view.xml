@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- View for mark Products Tags -->
+    <record id="product_tags_add_marked" model="ir.ui.view">
+        <field name="name">product.tags.add.marked</field>
+        <field name="model">product.tag</field>
+        <field name="inherit_id" ref="website_product_tags_73lines.product_tag_form_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="marked"/>
+            </field>
+        </field>
+    </record>
+</odoo>
