@@ -8,6 +8,7 @@
     'license': 'AGPL-3',
     'category': 'Custom',
     'depends': [
+        'clarico_shop',
         'website_sale',
         'clarico_layout'
     ],
