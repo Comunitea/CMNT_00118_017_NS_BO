@@ -9,11 +9,11 @@
         </xpath>
     </template>
 
-    <template id="add_attrs_compare_header" inherit_id="clarico_compare.clarico_compare_layout_icon"
-              name="Add classes to compare counter">
-        <xpath expr="//sup[@class='product_count']" position="attributes">
+    <template id="add_attrs_compare_header" inherit_id="clarico_compare.clarico_compare_layout_icon">
+        <xpath expr="//a[@class='compare']" position="replace"/>
+        <!--<xpath expr="//sup[@class='product_count']" position="attributes">
             <attribute name="class">product_count label label-primary</attribute>
-        </xpath>
+        </xpath>-->
     </template>
 
     <template id="logo_header_replace" inherit_id="website.layout_logo_show">
@@ -65,16 +65,18 @@
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12 new_hd_search">
                             <div class="new_hd_search_wp">
-                                <div class="oe_search new_hd_search_input">
-                                    <input type="text" name="search"
-                                           class="search-query form-control oe_search_box clarico_search_border"
-                                           placeholder="Search..." t-att-value="search" required="required" />
-                                </div>
-                                <span class="input-group-btn new_hd_search_btn">
-                                    <button type="submit" class="btn btn-default oe_search_button">
-                                        <i class="fa fa-search" />
-                                    </button>
-                                </span>
+                                <form action="/shop" method="get" t-att-class="search_class">
+                                    <div class="oe_search new_hd_search_input">
+                                        <input type="text" name="search"
+                                               class="search-query form-control oe_search_box clarico_search_border"
+                                               placeholder="Search in store..." t-att-value="search" required="required" />
+                                    </div>
+                                    <span class="input-group-btn new_hd_search_btn">
+                                        <button type="submit" class="btn btn-default oe_search_button">
+                                            <i class="fa fa-search" />
+                                        </button>
+                                    </span>
+                                </form>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-12">

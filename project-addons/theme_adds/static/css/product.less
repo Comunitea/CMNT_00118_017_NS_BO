@@ -1,11 +1,12 @@
 .clarico_product_breadcrumb .sub_breadcrumb .clarico_breadcrumb {
     padding: 0;
 }
-#website_published_button {
+/*#website_published_button {
     display: none;
-}
+}*/
 #div_comb_img_detail .col-sm-7 #o-carousel-product .carousel-inner div.item {
-    height: auto !important;
+    /*height: auto !important;*/
+    max-height: 400px;
 }
 .div_class_product_features {
     padding-top: 1%;
@@ -53,5 +54,16 @@ ul.js_add_cart_variants {
         padding-top: 3px;
         font-size: 15px;
         line-height: 17px;
+    }
+}
+.owl-item {
+    & .recently_viewed_img_div {
+        height: 180px;
+        & img {
+            max-height: 100%;
+        }
+    }
+    & .alternet_common {
+        width: 100%;
     }
 }

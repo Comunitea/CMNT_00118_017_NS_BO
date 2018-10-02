@@ -13,4 +13,16 @@
         </xpath>
     </template>
 
+    <template id="signup_bg_image_replace" inherit_id="clarico_signup.clarico_signup_c_signup">
+        <xpath expr="//div[@class='image_signup_class']" position="replace">
+            <div class="bg_signup_new_image"/>
+        </xpath>
+    </template>
+
+    <template id="signin_bg_image_replace" inherit_id="clarico_signin.clarico_signin_c_signin">
+        <xpath expr="//div[@class='image_signup_class']" position="replace">
+            <div class="bg_signup_new_image"/>
+        </xpath>
+    </template>
+
 </odoo>

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
+    <template id="veiw_wishlist_btn_left_sidebar_replace" inherit_id="clarico_wishlist.clarico_wishlist_wish_link">
+        <xpath expr="//a[@class='apply-wishlist apply-filter-in-page shop_view_popup_link_btn']" position="replace"/>
+    </template>
+
     <!-- Replace default Product Tags view from website_product_tags_73lines -->
     <template id="website_product_tags_73lines.website_product_tag" inherit_id="website_sale.products"
-                    name="Product Tags" customize_show="True" priority="300">
-    </template>
+                    name="Product Tags" customize_show="True" priority="300"/>
 
     <!-- Theme shop view -->
     <template id="shop" inherit_id="clarico_shop.clarico_shop_products" name="Custom Shop">
