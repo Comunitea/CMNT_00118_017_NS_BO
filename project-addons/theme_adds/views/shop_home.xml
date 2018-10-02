@@ -1,4 +1,144 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
+    <!-- Theme shop view -->
+    <template id="shop" inherit_id="clarico_shop.clarico_shop_products" name="Custom Shop">
+        <xpath expr="//div[@class='shop_cover_img_container']" position="replace"/>
+
+        <!-- Tag filter -->
+        <xpath expr="//div[@class='menu-filter-div']" position="inside">
+            <t t-set="tags" t-value="website.get_product_tags()" />
+            <t t-if="len(tags) &gt; 1">
+                <t t-foreach="tags" t-as="tag">
+                    <span>
+                        <a class="product-tag btn btn-primary btn-xs mb8" t-attf-href="/shop?tags=#{tag.id}"
+                           style="font-size: 14px;">
+                            <span t-field="tag.name" />
+                        </a>
+                    </span>
+                </t>
+            </t>
+        </xpath>
+
+        <!-- New product show -->
+        <xpath expr="//ul[@class='dropdown-menu']" position="replace">
+            <ul class="dropdown-menu" role="menu">
+                <li class="show_product">
+                    <a class="ppg_show" data-id="6">6</a>
+                </li>
+                <li class="show_product">
+                    <a class="ppg_show" data-id="24">24</a>
+                </li>
+                <li class="show_product">
+                    <a class="ppg_show" data-id="48">48</a>
+                </li>
+            </ul>
+        </xpath>
+
+        <!-- Budget -->
+        <xpath expr="//div[@class='products_pager bottom_pager']" position="after">
+            <section>
+                <div class="clarico_home_second_section">
+                    <div class="clarico_home_second_sub_section">
+                        <h2 class="chs_heading" style="text-align:center;">¿Habres una Nueva Clínica?
+                            <a href="page/contactus" style="text-decoration: underline;">Pídenos presupuesto</a>
+                        </h2>
+                        <p class="chs_para" style="text-align:center;">Ponemos 25 años de experiencia a tu servicio</p>
+                    </div>
+                    <div class="clarico_home_second_sub_section">
+                            <div class="chs_detail_container">
+                            <h2 class="chs_heading">Nostrumsport: Material fisioterapia</h2>
+                            <p class="chs_para">
+                                Encuentra el mejor material de fisioterapia online de la mano de Nostrumsport.
+                                En nuestra tienda online podrás encontrar todo lo necesario para tu clínica o para uso personal:
+                                camillas plegables, aceite para masajes, vendajes, mobiliario clínico, material de electroterapia,
+                                agujas de acupuntura y mucho más.
+                            </p>
+                            <p class="chs_para">
+                                Además, contamos con gabinetes completos para hacer más fácil tu compra.
+                                Puedes personalizarlos a tus necesidades añadiendo o quitando tantos productos como desees.
+                            </p>
+                            <a class="chs_btn_readmore" href="#">Shop Now</a>
+                            </div>
+                    </div>
+                    <div class="clarico_home_second_sub_section">
+                        <div class="chs_detail_container">
+                            <h2 class="chs_heading">Material de fisioterapia para nueva clínica</h2>
+                            <p class="chs_para">
+                                Especialistas en clínicas de fisioterapia, Nostrumsport dispone de un amplio catálogo de productos
+                                perfectos para renovar tu vieja clínica o para montar una nueva con el mejor material y la garantía
+                                de una fabricación bajo las últimas tecnologías del mercado examinadas por los más exigentes controles de calidad.
+                            </p>
+                            <p class="chs_para">
+                                Si vas a abrir una nueva clínica o necesitas material fisioterapia,
+                                Nostrumsport pone a tu servicio más de 25 años de experiencia en todo tipo de productos para fisioterapia.
+                                Además, te facilitaremos un presupuesto totalmente personalizado del material que necesites sin ningún tipo de compromiso,
+                                aconsejándote sobre las mejores soluciones a las necesidades que tu negocio adquiera,
+                                los productos más recomendados y un servicio postventa que te ayudará en todo lo que necesites.
+                            </p>
+                            <p class="chs_para">
+                                No esperes más y cuenta con Nostrumsport para la aparatología de tu clínica.
+                                Somos una empresa líder del sector gracias a la calidad de nuestros productos, un precio competitivo
+                                y la experiencia de nuestro equipo a tu disposición para tu clínica.
+                            </p>
+                            <a class="chs_btn_readmore" href="page/contactus">Ask for a Budget</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </xpath>
+    </template>
+
+    <!-- Lateral filter -->
+    <template id="left_filter" inherit_id="clarico_shop.clarico_shop_shop_page">
+        <xpath expr="//div[@id='products_grid_before']" position="replace">
+            <div class="mask_cover"></div>
+            <div class="main">
+                <div class="mCustomScrollbar" id="products_grid_before"
+                     data-mcs-theme="dark">
+                    <div class="products_grid_before_maxW">
+                        <span class="mobile-view-filter-close-btn">X</span>
+                        <h4 class="category">Product Category</h4>
+                        <a class="apply-filter">View Filter</a>
+
+                        <hr></hr>
+
+                        <div class="all-category-div">
+                            <ul class="nav nav-pills nav-stacked mt16" id="o_shop_collapse_category">
+                                <li t-att-class=" '' if category else 'active all-products' ">
+                                    <a t-att-href="keep('/shop',category=0)" class="o_not_editable">All Products
+                                    </a>
+                                </li>
+                                <t t-foreach="categories" t-as="categ">
+                                    <t t-call="website_sale.option_collapse_categories_recursive" />
+                                </t>
+                            </ul>
+                        </div>
+
+                        <hr></hr>
+
+                        <div class="mt16 mb16">
+                            <t t-set="tags" t-value="website.get_product_tags()" />
+                            <t t-if="len(tags) &gt; 1">
+                                <div class="mt16 mb16">
+                                    <h3>Tags</h3>
+                                    <t t-foreach="tags" t-as="tag">
+                                        <span>
+                                            <a class="product-tag btn btn-primary btn-xs mb8" t-attf-href="/shop?tags=#{tag.id}"
+                                               style="font-size: 14px;">
+                                                <span t-field="tag.name" />
+                                            </a>
+                                        </span>
+                                    </t>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
 </odoo>
+

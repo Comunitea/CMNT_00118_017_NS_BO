@@ -8,6 +8,8 @@
             <link href="/theme_adds/static/css/content.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_adds/static/css/product.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_adds/static/css/cart.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_adds/static/css/shop.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_adds/static/css/main.less" rel="stylesheet" type="text/less"/>
         </xpath>
     </template>
 
