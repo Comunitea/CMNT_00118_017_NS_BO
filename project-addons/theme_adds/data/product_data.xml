@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--  Create Default Custom Tags as Marked -->
+    <record id="marked_tag_featured_product" model="product.tag">
+        <field name="name">Featured Products</field>
+        <field name="marked" eval="1"/>
+    </record>
+
+    <record id="marked_tag_featured_categories" model="product.tag">
+        <field name="name">Featured Categories</field>
+        <field name="marked" eval="1"/>
+    </record>
+
+    <record id="marked_tag_novelties" model="product.tag">
+        <field name="name">Novelties</field>
+        <field name="marked" eval="1"/>
+    </record>
+
+    <record id="marked_tag_offers" model="product.tag">
+        <field name="name">Offers</field>
+        <field name="marked" eval="1"/>
+    </record>
+</odoo>
+

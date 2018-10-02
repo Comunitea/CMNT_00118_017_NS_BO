@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
+    <!-- Replace default Product Tags view from website_product_tags_73lines -->
+    <template id="website_product_tags_73lines.website_product_tag" inherit_id="website_sale.products"
+                    name="Product Tags" customize_show="True" priority="300">
+    </template>
+
     <!-- Theme shop view -->
     <template id="shop" inherit_id="clarico_shop.clarico_shop_products" name="Custom Shop">
         <xpath expr="//div[@class='shop_cover_img_container']" position="replace"/>
 
-        <!-- Tag filter -->
+        <!-- Product Tags filter -->
         <xpath expr="//div[@class='menu-filter-div']" position="inside">
-            <t t-set="tags" t-value="website.get_product_tags()" />
+            <t t-set="tags" t-value="website.get_product_tags_marked()" />
             <t t-if="len(tags) &gt; 1">
                 <t t-foreach="tags" t-as="tag">
                     <span>
