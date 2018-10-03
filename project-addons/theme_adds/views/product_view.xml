@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- View for mark Products Tags -->
+    <!-- Add field to marks Products Tags. Only products marked are visibles in shop submenu -->
     <record id="product_tags_add_marked" model="ir.ui.view">
         <field name="name">product.tags.add.marked</field>
         <field name="model">product.tag</field>
@@ -11,4 +11,32 @@
             </field>
         </field>
     </record>
+
+    <!-- Add fields to publish products in web and change website sequence -->
+    <record id="website_product" model="ir.ui.view">
+        <field name="name">website.product</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="website_sale.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <group name="website"  position="inside">
+                <field name="website_published"/>
+                <field name="website_sequence"/>
+            </group>
+        </field>
+    </record>
+
+    <!--<delete model="product.template" id="product.website_sequence"/>-->
+    <!-- Add field to change website sequence for products in treeView  -->
+    <record id="website_sequence_product" model="ir.ui.view">
+        <field name="name">website.sequence.product</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="default_code" position="before">
+                <field name="website_sequence"/>
+                <field name="website_sequence" widget="handle"/>
+            </field>
+        </field>
+    </record>
+
 </odoo>

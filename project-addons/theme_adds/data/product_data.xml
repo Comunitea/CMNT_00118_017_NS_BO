@@ -20,5 +20,44 @@
         <field name="name">Offers</field>
         <field name="marked" eval="1"/>
     </record>
+
+    <!--  Create Custom Filters To Sort Products in Shop -->
+    <record id="ir_filter_featured_product" model="ir.filters">
+        <field name="name">Featured Products</field>
+        <field name="model_id">product.template</field>
+        <field name="domain">[['active', '=', True], ['website_published', '=', True],[u'sale_ok', u'=', True], [u'tag_ids', u'ilike', u'Featured Product']]</field>
+        <field name="user_id" eval="1" />
+        <field name="context">{}</field>
+    </record>
+
+    <record id="ir_filter_featured_category" model="ir.filters">
+        <field name="name">Featured Categories</field>
+        <field name="model_id">product.template</field>
+        <field name="domain">[['active', '=', True], ['website_published', '=', True],[u'sale_ok', u'=', True], [u'tag_ids', u'ilike', u'Featured Categories']]</field>
+        <field name="user_id" eval="1" />
+        <field name="context">{}</field>
+    </record>
+
+    <record id="ir_filter_novelty_product" model="ir.filters">
+        <field name="name">Novelties</field>
+        <field name="model_id">product.template</field>
+        <field name="domain">[['active', '=', True], ['website_published', '=', True],[u'sale_ok', u'=', True], [u'tag_ids', u'ilike', u'Novelties']]</field>
+        <field name="user_id" eval="1" />
+        <field name="context">{}</field>
+    </record>
+
+    <record id="ir_filter_offer_product" model="ir.filters">
+        <field name="name">Offers</field>
+        <field name="model_id">product.template</field>
+        <field name="domain">[['active', '=', True], ['website_published', '=', True],[u'sale_ok', u'=', True], [u'tag_ids', u'ilike', u'Offers']]</field>
+        <field name="user_id" eval="1" />
+        <field name="context">{}</field>
+    </record>
+
+    <!--  Create System Parameter to change default products to show in shop -->
+    <record id="default_products_to_show" model="ir.config_parameter">
+        <field name="key">default_products_to_show</field>
+        <field name="value">6</field>
+    </record>
 </odoo>
 
