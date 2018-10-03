@@ -32,7 +32,7 @@
         <xpath expr="//ul[@class='dropdown-menu']" position="replace">
             <ul class="dropdown-menu" role="menu">
                 <li class="show_product">
-                    <a class="ppg_show" data-id="6">6</a>
+                    <a class="ppg_show" data-id="12">12</a>
                 </li>
                 <li class="show_product">
                     <a class="ppg_show" data-id="24">24</a>
