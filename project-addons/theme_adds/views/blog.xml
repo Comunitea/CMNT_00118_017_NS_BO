@@ -63,6 +63,16 @@
         </xpath>
     </template>
 
+    <template id="blog_pager_insert" inherit_id="website_blog.blog_post_short">
+        <xpath expr="//div[@id='main_column']" position="after">
+             <div class="container">
+                <t t-call="website.pager" >
+                    <t t-set="classname">pull-right</t>
+                </t>
+            </div>
+        </xpath>
+    </template>
+
     <data>
         <!-- blog posts -->
         <!--record id="blog_post-01" model="blog.post">

@@ -76,15 +76,8 @@
             <div class="new_header_in_wrap clarico_row">
                 <div class="new_header_in clarico_row_maxW">
                     <div class="row">
-                        <div class="col-md-3 col-sm-7 col-xs-7 new_hd_img">
+                        <div class="col-md-3 col-sm-7 col-xs-7 new_hd_img desktop-version">
                             <a href="/"><img src="/theme_adds/static/img/logo-head.png" alt="Nostrumsport"/></a>
-                        </div>
-                        <div class="col-xs-5 col-sm-5 mobile-version">
-                            <div class="hd_widget_revi_demo">
-                                <a href="https://revi.io/es/opiniones/wwwnostrumsportcom" target="_blank">
-                                    <img src="/theme_adds/static/img/revi-widget-demo.png" alt="Revi 9.2/10"/>
-                                </a>
-                            </div>
                         </div>
                         <div class="col-md-6 col-sm-12 col-xs-12 new_hd_search">
                             <div class="new_hd_search_wp">
@@ -102,7 +95,10 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-3 desktop-version">
+                        <div class="col-md-3 col-sm-7 col-xs-7 new_hd_img mobile-version">
+                            <a href="/"><img src="/theme_adds/static/img/logo-head.png" alt="Nostrumsport"/></a>
+                        </div>
+                        <div class="col-md-3 col-xs-5 col-sm-5">
                             <div class="hd_widget_revi_demo">
                                 <a href="https://revi.io/es/opiniones/wwwnostrumsportcom" target="_blank">
                                     <img src="/theme_adds/static/img/revi-widget-demo.png" alt="Revi 9.2/10"/>
