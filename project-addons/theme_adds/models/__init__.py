@@ -4,3 +4,4 @@
 
 import product
 import shop
+import blog
