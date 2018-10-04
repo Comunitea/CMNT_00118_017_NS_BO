@@ -20,6 +20,9 @@
         & i {
             margin-right: 2px;
         }
+        & a {
+            color: #fff;
+        }
     }
     & font {
         font-size: 17px;
@@ -34,6 +37,9 @@
         & i {
             margin-left: 10px;
         }
+    }
+    & .desktop-version, .mobile-version {
+        float: left;
     }
 }
 .main-header-right .company-phone-div li {
@@ -112,22 +118,84 @@ header .navbar .navbar-top-collapse {
 .clarico_product_breadcrumb {
     padding: 7px 0 5px 0;
 }
+.mobile-version {
+    display: none;
+}
 
 /* media part*/
 
 @media (max-width: 1200px){
+    .main-header {
+        padding: 7px 0 5px 0;
+    }
     .hd_widget_revi_demo {
         position: relative;
     }
+    .navbar-default {
+        & .container {
+            width: 100% !important;
+        }
+        & .navbar-header {
+            background: @theme-color;
+            margin: 5px 0 3px 0;
+            padding: 0 10px;
+        }
+        & .navbar-toggle {
+            float: left;
+            padding: 6px 7px;
+            margin: 5px 0;
+            & .icon-bar {
+                background-color: #fff;
+            }
+            & .sr-only {
+                position: relative;
+                float: right;
+                margin-left: 30px;
+                font-family: oswald-light;
+                font-size: 16px;
+                text-transform: uppercase;
+                line-height: 16px;
+                width: auto;
+                height: auto;
+                color: #fff;
+            }
+        }
+    }
 }
-@media (max-width: 768px){
+@media (max-width: 800px){
+    .desktop-version {
+        display: none;
+    }
+    .mobile-version {
+        display: block;
+    }
+    .main-header-right {
+        width: auto !important;
+    }
+    #header-social li {
+        margin: 0;
+    }
     .new_hd_img {
         text-align: center;
         margin: 0;
+        & img {
+            width: 90%;
+        }
     }
     .hd_widget_revi_demo {
         text-align: center;
-        margin: 0;
+        margin: -10px 0 0 0;
+        & img {
+            width: 90%;
+        }
+    }
+    .new_header_contacts {
+        & span {
+            margin: 0 0 0 10px;
+        }
+        & .header-social-icon {
+            margin-left: 0;
+        }
     }
 }
 
@@ -138,7 +206,6 @@ header .navbar .navbar-top-collapse {
  .products_pager > .pagination > li > a {
     color: #fff;
 }
-
 #sub_header_row .clarico_product_breadcrumb {
     margin-top: 0px;
 }

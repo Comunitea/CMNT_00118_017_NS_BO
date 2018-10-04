@@ -20,11 +20,27 @@
         <xpath expr="//a[@class='navbar-brand logo']" position="replace"/>
     </template>
 
+    <template id="login_btn_replace" inherit_id="clarico_layout.clarico_header_main">
+        <xpath expr="//ul[@id='logout_ul']/li[1]" position="replace">
+            <li groups="base.group_public" t-if="website.user_id == user_id">
+                <a t-attf-href="/web/login">
+                    <b>Sign in</b>
+                </a>
+            </li>
+        </xpath>
+    </template>
+
     <template id="replace_offer-center" inherit_id="clarico_layout.clarico_header_main" name="Replace offer-center" >
         <xpath expr="//div[@class='main-header']//div[@class='offer-center']" position="replace">
             <div class="new_header_contacts">
-                <span><i class="fa fa-phone" /> <font t-field="res_company.phone"/></span>
-                <span><i class="fa fa-whatsapp" /> <font>640 823 409</font></span>
+                <div class="desktop-version">
+                    <span><i class="fa fa-phone" /> <font t-field="res_company.phone"/></span>
+                    <span><i class="fa fa-whatsapp" /> <font>640 823 409</font></span>
+                </div>
+                <div class="mobile-version">
+                    <span><a href="tel:96 340 42 55"><i class="fa fa-phone" /></a></span>
+                    <span><a href="https://api.whatsapp.com/send?phone=34640823409\u0026text=Me%20gustaría%20información%20sobre%20"><i class="fa fa-whatsapp" /></a></span>
+                </div>
                 <div class="header-social-icon">
                     <a class="o_facebook" t-att-href="website.social_facebook"
                         t-if="website.social_facebook">
@@ -60,10 +76,17 @@
             <div class="new_header_in_wrap clarico_row">
                 <div class="new_header_in clarico_row_maxW">
                     <div class="row">
-                        <div class="col-md-3 col-sm-3 col-xs-12 new_hd_img">
+                        <div class="col-md-3 col-sm-7 col-xs-7 new_hd_img">
                             <a href="/"><img src="/theme_adds/static/img/logo-head.png" alt="Nostrumsport"/></a>
                         </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12 new_hd_search">
+                        <div class="col-xs-5 col-sm-5 mobile-version">
+                            <div class="hd_widget_revi_demo">
+                                <a href="https://revi.io/es/opiniones/wwwnostrumsportcom" target="_blank">
+                                    <img src="/theme_adds/static/img/revi-widget-demo.png" alt="Revi 9.2/10"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12 new_hd_search">
                             <div class="new_hd_search_wp">
                                 <form action="/shop" method="get" t-att-class="search_class">
                                     <div class="oe_search new_hd_search_input">
@@ -79,7 +102,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="col-md-3 col-sm-3 desktop-version">
                             <div class="hd_widget_revi_demo">
                                 <a href="https://revi.io/es/opiniones/wwwnostrumsportcom" target="_blank">
                                     <img src="/theme_adds/static/img/revi-widget-demo.png" alt="Revi 9.2/10"/>

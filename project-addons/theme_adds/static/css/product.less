@@ -75,3 +75,13 @@ ul.js_add_cart_variants {
 .product_info_style_padding {
     padding-left: 0px;
 }
+.products_pager {
+    & ul.pagination {
+        & li:nth-child(n+5) {
+            display: none;
+        }
+        & li:last-child {
+            display: inline;
+        }
+    }
+}

@@ -82,4 +82,14 @@
         <xpath expr="//div[@class='hover-cnt']/hr[@class='product-hover-hr'][1]" position="replace"/>
     </template>
 
+    <template id="replace_shop_pager" inherit_id="clarico_shop.clarico_shop_products">
+        <xpath expr="//div[@id='shop_pager']" position="replace">
+            <div class="products_pager" id="shop_pager">
+                <div class="row">
+                    <t t-call="website.pager" />
+                </div>
+            </div>
+        </xpath>
+    </template>
+
 </odoo>
