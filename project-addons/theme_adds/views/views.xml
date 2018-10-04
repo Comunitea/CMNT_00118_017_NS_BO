@@ -25,6 +25,13 @@
         </xpath>
     </template>
 
+    <template id="add_start_btn_on_signin_page" inherit_id="clarico_signin.clarico_signin_c_signin">
+        <xpath expr="//button[@class='btn btn-primary login_btn_main']" position="after">
+            <a href="/shop" class="btn btn-primary">Back</a>
+            <a href="/page/contactus" class="btn btn-primary">Contactus</a>
+        </xpath>
+    </template>
+
     <record id="social_fb_link" model="website.config.settings">
         <field name="social_twitter">https://twitter.com/NostrumSport</field>
         <field name="social_facebook">https://www.facebook.com/nostrumsport</field>
