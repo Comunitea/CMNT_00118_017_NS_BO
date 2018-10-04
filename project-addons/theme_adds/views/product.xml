@@ -51,6 +51,31 @@
             </div>
         </xpath>
         <xpath expr="//div[@class='ctg_class']" position="replace"/>
+
+        <!-- Website Description -->
+        <xpath expr="//div[@id='product_full_description']" position="replace">
+            <div t-if="product.website_description" class="div_class_product_features">
+                <div class="div_sub_class_product_features">
+                    <div class="col-md-7 col-sm-7 product_info_style_padding">
+                        <div class="col-ld-12 col-md-12 product_sort_description_div_class">
+                            <div class="clo-md-12 recently_view_product_headind_div_class">
+                                <p class="product_info_heading_para_class">PRODUCT DESCRIPTION</p>
+                            </div>
+                        </div>
+                        <div class="div_main_class_desc">
+                            <p class="product_sort_description_para_class" t-field="product.website_description"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Extra Features Description -->
+    <template id="clarico_extra_features_custom" inherit_id="clarico_extra_features.clarico_extra_features">
+        <xpath expr="//p[@class='product_info_heading_para_class']" position="replace">
+            <p class="product_info_heading_para_class">EXTRA FEATURES DESCRIPTION</p>
+        </xpath>
     </template>
 
 
@@ -80,16 +105,6 @@
 
     <template id="compare_product_in_category_page_replace_border_2" inherit_id="clarico_shop.clarico_shop_products_item">
         <xpath expr="//div[@class='hover-cnt']/hr[@class='product-hover-hr'][1]" position="replace"/>
-    </template>
-
-    <template id="replace_shop_pager" inherit_id="clarico_shop.clarico_shop_products">
-        <xpath expr="//div[@id='shop_pager']" position="replace">
-            <div class="products_pager" id="shop_pager">
-                <div class="row">
-                    <t t-call="website.pager" />
-                </div>
-            </div>
-        </xpath>
     </template>
 
 </odoo>
