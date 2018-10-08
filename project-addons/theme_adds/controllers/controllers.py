@@ -18,7 +18,9 @@ class claricoShopCustom(claricoShop):
         Change default search order
     """
     def _get_search_order(self, post):
-        return '%s, id desc' % post.get('order', 'website_sequence asc')
+        # OrderBy will be parsed in orm and so no direct sql injection
+        # id is added to be sure that order is a unique sort key
+        return '%s , id asc' % post.get('order', 'website_sequence asc')
 
     """
         Change default products to show in shop by ir.config_parameter
