@@ -66,7 +66,7 @@
                                 Además, contamos con gabinetes completos para hacer más fácil tu compra.
                                 Puedes personalizarlos a tus necesidades añadiendo o quitando tantos productos como desees.
                             </p>
-                            <a class="btn btn-primary btn-lg mb32" href="#">Shop Now</a>
+                            <a class="btn btn-primary common-btn btn-lg mb32" href="/shop">Shop Now</a>
                             </div>
                     </div>
                     <div class="clarico_home_second_sub_section">
@@ -89,7 +89,7 @@
                                 Somos una empresa líder del sector gracias a la calidad de nuestros productos, un precio competitivo
                                 y la experiencia de nuestro equipo a tu disposición para tu clínica.
                             </p>
-                            <a class="btn btn-primary btn-lg mb32" href="page/contactus">Ask for a Budget</a>
+                            <a class="btn btn-primary common-btn btn-lg mb32" href="/page/contactus">Ask for a Budget</a>
                         </div>
                     </div>
                 </div>

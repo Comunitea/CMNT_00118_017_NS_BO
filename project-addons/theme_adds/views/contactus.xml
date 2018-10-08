@@ -27,4 +27,14 @@
         </xpath>
     </template>
 
+    <template id="contactus_input_email_replace" inherit_id="website_crm.contactus_form">
+        <xpath expr="//input[@name='email_from']/.." position="replace">
+            <div class="col-md-7 col-sm-8">
+                <input type="email" class="form-control o_website_form_input cinput"
+                    name="email_from" required=""
+                    t-att-value="request.params.get('email_from', '')" />
+            </div>
+        </xpath>
+    </template>
+
 </odoo>
