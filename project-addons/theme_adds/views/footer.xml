@@ -166,6 +166,9 @@
 
     <template id="replace_footer_1" inherit_id="clarico_layout.clarico_layout_footer_default" name="Replace footer" >
         <xpath expr="//footer//section[@class='three_Column_snippet_wrap']" position="replace" />
+        <xpath expr="//footer" position="after">
+            <!--<script src="/theme_adds/static/js/script.js" type="text/javascript"/>-->
+        </xpath>
     </template>
 
     <template id="replace_footer_2" inherit_id="clarico_layout.clarico_layout_footer_copyright" name="Replace footer">
@@ -175,7 +178,7 @@
     <template id="replace_footer_3" inherit_id="clarico_layout.clarico_layout_footer_copyright" name="Replace footer">
         <xpath expr="//div[@class='pull-center text-muted']" position="replace">
             <div class="pull-center text-muted">
-                 © 2016 Nostrum Sport, S.L. Todos los derechos reservados.
+                 © 2018 Nostrum Sport, S.L. Todos los derechos reservados.
             </div>
         </xpath>
     </template>

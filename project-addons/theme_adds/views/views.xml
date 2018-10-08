@@ -32,6 +32,22 @@
         </xpath>
     </template>
 
+    <template id="no_products_define_replace" inherit_id="clarico_shop.clarico_shop_products">
+        <xpath expr="//div[@class='text-center text-muted not_defined']" position="replace">
+            <div class="text-center text-muted not_defined">
+                <div class="left_class">
+                    <h3 class="css_editable_display">
+                        <i class="fa fa-wheelchair" aria-hidden="true"/> No product defined
+                    </h3>
+                    <a href="/shop" class="btn btn-primary common-btn btn-lg">Shop now</a>
+                </div>
+                <div class="right_class">
+                    <img src="/theme_adds/static/img/404-camilla.jpg"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
     <record id="social_fb_link" model="website.config.settings">
         <field name="social_twitter">https://twitter.com/NostrumSport</field>
         <field name="social_facebook">https://www.facebook.com/nostrumsport</field>
