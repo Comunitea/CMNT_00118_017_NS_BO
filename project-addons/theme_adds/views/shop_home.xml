@@ -109,9 +109,7 @@
                         <span class="mobile-view-filter-close-btn">X</span>
                         <h4 class="category">Product Category</h4>
                         <a class="apply-filter">View Filter</a>
-
                         <hr></hr>
-
                         <div class="all-category-div">
                             <ul class="nav nav-pills nav-stacked mt16" id="o_shop_collapse_category">
                                 <li t-att-class=" '' if category else 'active all-products' ">
@@ -123,9 +121,7 @@
                                 </t>
                             </ul>
                         </div>
-
                         <hr></hr>
-
                         <div class="mt16 mb16">
                             <t t-set="tags" t-value="website.get_product_tags()" />
                             <t t-if="len(tags) &gt; 1">
