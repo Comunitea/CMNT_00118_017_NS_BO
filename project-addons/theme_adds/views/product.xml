@@ -147,7 +147,7 @@
                         </t>
                     </ol>
                     <div t-if="product.p_video_url">
-                        <a class="pvideo_link" href="#">git 
+                        <a class="pvideo_link" href="#">
                             <i class="fa fa-video-camera" aria-hidden="true"></i>
                         </a>
                     </div>
