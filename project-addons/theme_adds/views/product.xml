@@ -68,14 +68,14 @@
     <!-- Product description -->
     <template id="product_content_field_replace" inherit_id="clarico_extra_features.clarico_extra_features">
         <xpath expr="//div[@class='col-md-7 col-sm-7 product_info_style_padding']" position="replace">
-            <div class="col-md-7 col-sm-7 product_info_style_padding">
+            <div class="col-md-7 col-sm-7 product_info_style_padding" t-if="len(product.website_description) &gt; 15">
                 <div class="col-ld-12 col-md-12 product_sort_description_div_class">
                     <div class="clo-md-12 recently_view_product_headind_div_class">
                         <p class="product_info_heading_para_class">PRODUCT DESCRIPTION</p>
                     </div>
                 </div>
                 <div class="div_main_class_desc">
-                    <p class="product_sort_description_para_class" t-field="product.website_description"></p>
+                    <div class="product_sort_description_para_class" t-field="product.website_description"/>
                 </div>
             </div>
         </xpath>
@@ -99,7 +99,7 @@
                         <div class="carousel-inner inner-slider">
                             <div class="item active image_zoom" itemprop="image"
                                 t-field="product.image"
-                                t-options='{"widget": "image", "class": "product_detail_img js_variant_img", "alt-field": "name", "zoom": "image"}' />
+                                t-options='{"widget": "image", "resize": image, "class": "product_detail_img ", "alt-field": "name", "zoom": "image"}' />
                             <div t-if="variant_img" class="item image_zoom"
                                 itemprop="image" t-field="product.image"
                                 t-options='{"widget": "image", "class": "product_detail_img", "alt-field": "name", "zoom": "image"}' />
@@ -222,7 +222,52 @@
     <!-- add ref.field in product compact view -->
     <template id="add_ref_field_product_list" inherit_id="clarico_shop.clarico_shop_products_item">
         <xpath expr="//div[@class='details']" position="after">
-            <div t-if="product.default_code">SKU: <span t-field="product.default_code"/></div>
+            <div class="detail-sku">SKU:
+                <span t-field="product.default_code" t-if="product.default_code" />
+                <span t-if="not product.default_code">---</span>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- stars insert -->
+    <!--<template id="star_rating_mini_product_replace" inherit_id="clarico_rating.clarico_rating_shop_product_rating_products_item">
+        <xpath expr="//t[@t-set='rating_stat']" position="replace"/>
+    </template>-->
+    <template id="star_rating_mini_product_insert" inherit_id="clarico_shop.clarico_shop_products_item">
+        <xpath expr="//div[@class='itemscope-main']" position="inside">
+            <div class="wp_new_stars">
+                <t t-set="rating_stat" t-value="rating_product" />
+					<t t-call="rating.rating_star_card">
+					<t t-set="rating_default_value" t-value="'%.2f' % (rating_stat[product.id].get('avg', 0.0),)" />
+					<t t-set="rating_disabled" t-value="True" />
+				</t>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- stars insert product page -->
+    <template id="star_rating_product_page_insert" inherit_id="clarico_product.clarico_product_product">
+        <xpath expr="//div[@class='product_name_rating']" position="after">
+            <div class="wp_stars_product_page">
+                <t t-set="rating_stat" t-value="rating_product" />
+					<t t-call="rating.rating_star_card">
+					<t t-set="rating_disabled" t-value="True" />
+				</t>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- mini image of product replace -->
+    <template id="product_mini_image_replace" inherit_id="clarico_shop.clarico_shop_products_item">
+        <xpath expr="//div[@class='product-image oe_product_image']" position="replace">
+            <div class="product-image oe_product_image">
+                <a itemprop="url"
+                    t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))">
+                    <span itemprop="image" t-field="product.image"
+                        t-options="{'widget': 'image', 'resize':'250x250'}" t-att-alt="product.name" />
+                </a>
+            <div id="in-wishlist-shop"/>
+            </div>
         </xpath>
     </template>
 

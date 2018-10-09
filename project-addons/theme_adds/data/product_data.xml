@@ -57,7 +57,7 @@
     <!--  Create System Parameter to change default products to show in shop -->
     <record id="default_products_to_show" model="ir.config_parameter">
         <field name="key">default_products_to_show</field>
-        <field name="value">6</field>
+        <field name="value">8</field>
     </record>
 </odoo>
 
