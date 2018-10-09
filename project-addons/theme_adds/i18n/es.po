@@ -1,0 +1,227 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* theme_adds
+#
+# Translators:
+# Rubén Seijas <ruben@comunitea.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-08 14:41+0000\n"
+"PO-Revision-Date: 2018-10-08 14:41+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.login_btn_replace
+msgid "<b>Sign in</b>"
+msgstr "<b>Registrarse</b>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.replace_contact_right
+msgid "<b>Telefono:</b>"
+msgstr "<b>Teléfono:</b>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.left_filter
+msgid "All Products"
+msgstr "Todos los Productossss"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "Ask for a Budget"
+msgstr "Pedir Presupuesto"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.add_start_btn_on_signin_page
+msgid "Back"
+msgstr "Atrás"
+
+#. module: theme_adds
+#: model:ir.model.fields,field_description:theme_adds.field_blog_post_blog_post_image
+msgid "Background Image URL"
+msgstr "URL Imagen de Fondo"
+
+#. module: theme_adds
+#: model:ir.model,name:theme_adds.model_blog_post
+msgid "Blog Post"
+msgstr "Entrada del Blog"
+
+#. module: theme_adds
+#: model:website.menu,name:theme_adds.shop_category_link
+msgid "Categories"
+msgstr "Categorías"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.cart_replace_general
+msgid "Clear Cart"
+msgstr "Vaciar Carro"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.wishlist_banner_replace
+msgid "Clear Wishlist"
+msgstr "Vaciar Lista Deseos"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.clarico_shop_products
+msgid "show"
+msgstr "Mostrar"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.clarico_shop_products
+msgid "Sort by"
+msgstr "Ordenar"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer
+#: model:website.menu,name:theme_adds.entrega_page_link
+msgid "Condiciones de envío"
+msgstr "Condiciones de envío"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer
+#: model:website.menu,name:theme_adds.legal_page_link
+msgid "Condiciones legales"
+msgstr "Condiciones legales"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.add_start_btn_on_signin_page
+msgid "Contactus"
+msgstr "Contacto"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.add_blog_content_field
+msgid "Content"
+msgstr "Contenido"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
+msgid "Descripción para el producto"
+msgstr "Descripción del Producto"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.clarico_extra_features_custom
+msgid "EXTRA FEATURES DESCRIPTION"
+msgstr "CARACTERÍSTICAS EXTRA"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_block_replace
+msgid "Envio gratis a partir de 99€"
+msgstr "Envío gratis a partir de 99€"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
+msgid "Esta nota se mostrará en los productos."
+msgstr "Esta nota se mostrará en los productos."
+
+#. module: theme_adds
+#: model:ir.filters,name:theme_adds.ir_filter_featured_category
+#: model:product.tag,name:theme_adds.marked_tag_featured_categories
+msgid "Featured Categories"
+msgstr "Categorías Destacadas"
+
+#. module: theme_adds
+#: model:ir.filters,name:theme_adds.ir_filter_featured_product
+#: model:product.tag,name:theme_adds.marked_tag_featured_product
+msgid "Featured Products"
+msgstr "Productos Destacados"
+
+#. module: theme_adds
+#: model:ir.model.fields,field_description:theme_adds.field_product_tag_marked
+msgid "Marked"
+msgstr "Marcado"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.blog_title_replace
+msgid "Next post:"
+msgstr "Siguiente entrada:"
+
+#. module: theme_adds
+#: model:ir.filters,name:theme_adds.ir_filter_novelty_product
+#: model:product.tag,name:theme_adds.marked_tag_novelties
+msgid "Novelties"
+msgstr "Novedades"
+
+#. module: theme_adds
+#: model:ir.filters,name:theme_adds.ir_filter_offer_product
+#: model:product.tag,name:theme_adds.marked_tag_offers
+msgid "Offers"
+msgstr "Ofertas"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_block_replace
+msgid "PRODUCT DESCRIPTION"
+msgstr "CARACTERÍSTICAS"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_content_field_replace
+msgid "PRODUCT DESCRIPTION"
+msgstr "CARACTERÍSTICAS"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.left_filter
+msgid "Categories"
+msgstr "Categorías"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.blog_title_replace
+msgid "Read Next Post"
+msgstr "Leer siguiente entrada"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.blog_items_list_replace
+msgid "Read more..."
+msgstr "Leer más..."
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.header_center_inside
+msgid "Search in store..."
+msgstr "Buscar en tienda..."
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "Shop Now"
+msgstr "Comprar Ahora"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer
+#: model:website.menu,name:theme_adds.about_page_link
+msgid "Sobre nosotros"
+msgstr "Sobre nosotros"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.left_filter
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.blog_items_list_replace
+msgid "Untitled Post"
+msgstr "Entrada sin título"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.left_filter
+msgid "View Filter"
+msgstr "Ver Filtro"
+
+#. module: theme_adds
+#: model:ir.model,name:theme_adds.model_website
+msgid "Website"
+msgstr "Sitio web"
+
+#. module: clarico_recently_viewed
+#: model:ir.model,name:clarico_recently_viewed.recent_cart_product
+msgid "Recently Viewed items"
+msgstr "VISTOS RECIENTEMENTE"
+
