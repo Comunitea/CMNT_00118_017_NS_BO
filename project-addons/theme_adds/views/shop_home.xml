@@ -107,7 +107,7 @@
                      data-mcs-theme="dark">
                     <div class="products_grid_before_maxW">
                         <span class="mobile-view-filter-close-btn">X</span>
-                        <h4 class="category">Product Category</h4>
+                        <h4 class="category">Categories</h4>
                         <a class="apply-filter">View Filter</a>
                         <hr></hr>
                         <div class="all-category-div">
@@ -126,7 +126,7 @@
                             <t t-set="tags" t-value="website.get_product_tags()" />
                             <t t-if="len(tags) &gt; 1">
                                 <div class="mt16 mb16">
-                                    <h3>Tags</h3>
+                                    <h4 class="category">Tags</h4>
                                     <t t-foreach="tags" t-as="tag">
                                         <span>
                                             <a class="product-tag btn btn-primary btn-xs mb8" t-attf-href="/shop?tags=#{tag.id}"
