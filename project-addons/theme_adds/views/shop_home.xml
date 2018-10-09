@@ -49,7 +49,7 @@
                 <div class="clarico_home_second_section">
                     <div class="clarico_home_second_sub_section">
                         <h2 class="chs_heading" style="text-align:center;">¿Habres una Nueva Clínica?
-                            <a href="page/contactus" style="text-decoration: underline;">Pídenos presupuesto</a>
+                            <a href="/page/contactus" style="text-decoration: underline;">Pídenos presupuesto</a>
                         </h2>
                         <p class="chs_para" style="text-align:center;">Ponemos 25 años de experiencia a tu servicio</p>
                     </div>

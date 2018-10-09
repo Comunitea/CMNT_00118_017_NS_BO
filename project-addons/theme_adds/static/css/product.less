@@ -1,12 +1,24 @@
 .clarico_product_breadcrumb .sub_breadcrumb .clarico_breadcrumb {
     padding: 0;
 }
+.product_available {
+    & .alert-success {
+        padding: 0;
+    }
+    & .instock_text {
+        padding: 2px 7px;
+        background: #fff;
+    }
+}
 /*#website_published_button {
     display: none;
 }*/
 #div_comb_img_detail .col-sm-7 #o-carousel-product .carousel-inner div.item {
     /*height: auto !important;*/
     max-height: 400px;
+    & img {
+        max-height: 400px;
+    }
 }
 .div_class_product_features {
     padding-top: 1%;
@@ -42,6 +54,17 @@ ul.js_add_cart_variants {
 }
 #product_page_recently_view {
     margin-top: 5%;
+}
+.product_name_rating {
+    margin-bottom: 0;
+}
+.wp_stars_product_page {
+    & .o_rating_star_card {
+        margin-bottom: 2%;
+    }
+    & .stars {
+        font-size: 18px !important;
+    }
 }
 .zooming_image_screen {
     width: auto !important;
