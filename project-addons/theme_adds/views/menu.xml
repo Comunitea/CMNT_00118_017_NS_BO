@@ -8,9 +8,6 @@
         <delete model="website.menu" id="clarico_layout.clarico_livingroom"/>
         <delete model="website.menu" id="clarico_layout.clarico_categories"/>
 
-        <!-- Default Menu -->
-        <!--<delete model="website.menu" id="website_blog.menu_news"/>-->
-
         <!-- main menu -->
         <record id="home_link" model="website.menu">
             <field name="name">Tienda</field>
@@ -19,20 +16,6 @@
             <field name="sequence" type="int">0</field>
             <field name="website_id" ref="website.default_website"/>
         </record>
-        <record id="shop_category_link" model="website.menu">
-			<field name="name">Categories</field>
-			<field name="parent_id" ref="website.main_menu"/>
-			<field name="dynamic_menu" eval="True"/>
-			<field name="sequence" type="int">10</field>
-            <field name="website_id" ref="website.default_website"/>
-		</record>
-        <!--<record id="products_link" model="website.menu">-->
-            <!--<field name="name">Productos</field>-->
-            <!--<field name="url">/shop</field>-->
-            <!--<field name="parent_id" ref="website.main_menu"/>-->
-            <!--<field name="sequence" type="int">30</field>-->
-            <!--<field name="website_id" ref="website.default_website"/>-->
-        <!--</record>-->
         <record id="blog_link" model="website.menu">
             <field name="name">Blog</field>
             <field name="url">/blog/blog-1</field>

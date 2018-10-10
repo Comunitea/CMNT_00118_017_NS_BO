@@ -11,21 +11,55 @@
 
     <!-- Theme shop view -->
     <template id="shop" inherit_id="clarico_shop.clarico_shop_products" name="Custom Shop">
+
+        <!--Categories Filter like Submenu-->
+        <!--<xpath expr="//div[@class='menu-filter-div']" position="inside">-->
+            <!--<div class="mask_cover"></div>-->
+            <!--<div class="main">-->
+                <!--<div class="mCustomScrollbar" id="products_grid_before" data-mcs-theme="dark">-->
+                    <!--<div class="products_grid_before_maxW">-->
+                        <!--<span class="mobile-view-filter-close-btn">X</span>- -->
+                        <!--<a class="apply-filter">View Filter</a>-->
+                        <!--<div class="all-category-div">-->
+                            <!--<a href="" class="product-tag btn btn-primary btn-xs mb8 dropdown-toggle" data-toggle="dropdown">-->
+                                <!--<span data-oe-model="website.menu" data-oe-id="38" data-oe-field="name" data-oe-type="char" data-oe-expression="submenu.name">Categories</span>-->
+                            <!--</a>-->
+                            <!--<t t-call="clarico_layout.dynamic_category"></t>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</xpath>-->
+
+
         <xpath expr="//div[@class='shop_cover_img_container']" position="replace"/>
 
         <!-- Product Tags filter -->
-        <xpath expr="//div[@class='menu-filter-div']" position="inside">
-            <t t-set="tags" t-value="website.get_product_tags_marked()" />
-            <t t-if="len(tags) &gt; 1">
-                <t t-foreach="tags" t-as="tag">
-                    <span>
-                        <a class="product-tag btn btn-primary btn-xs mb8" t-attf-href="/shop?tags=#{tag.id}"
-                           style="font-size: 14px;">
-                            <span t-field="tag.name" />
-                        </a>
-                    </span>
+        <xpath expr="//div[@class='view-as-right-cnt']" position="before">
+            <div class="menu-tags col-sm-6 col-sm-offset-3">
+                <t t-set="tags" t-value="website.get_product_tags_marked()" />
+                <t t-if="len(tags) &gt; 1">
+                    <div class="all-category-div">
+                        <ul>
+                            <li t-att-class=" '' if tag else 'active all-products' ">
+                                <a class="product-tag btn btn-primary btn-xs mb8" t-attf-href="/shop" style="font-size: 14px;">
+                                    <span aria-hidden="true">All Products</span>
+                                </a>
+                            </li>
+                                <t t-foreach="tags" t-as="tag">
+                                    <li class="active">
+                                        <span>
+                                            <a class="product-tag btn btn-primary btn-xs mb8" t-attf-href="/shop?tags=#{tag.id}"
+                                               style="font-size: 14px;">
+                                                <span t-field="tag.name" />
+                                            </a>
+                                        </span>
+                                    </li>
+                                </t>
+                        </ul>
+                    </div>
                 </t>
-            </t>
+            </div>
         </xpath>
 
         <!-- New product show -->
@@ -100,46 +134,78 @@
 
     <!-- Lateral filter -->
     <template id="left_filter" inherit_id="clarico_shop.clarico_shop_shop_page">
-        <xpath expr="//div[@id='products_grid_before']" position="replace">
-            <div class="mask_cover"></div>
-            <div class="main">
-                <div class="mCustomScrollbar" id="products_grid_before"
-                     data-mcs-theme="dark">
-                    <div class="products_grid_before_maxW">
-                        <span class="mobile-view-filter-close-btn">X</span>
-                        <h4 class="category">Categories</h4>
-                        <a class="apply-filter">View Filter</a>
+        <xpath expr="//div[@id='products_grid_before']/div[@class='products_grid_before_maxW']" position="replace">
+
+            <!--Left Menu Normal-->
+            <!--<span class="mobile-view-filter-close-btn">X</span>-->
+            <!--<h4 class="category">Categories</h4>-->
+            <!--<a class="apply-filter">View Filter</a>-->
+            <!--<hr></hr>-->
+            <!--<div class="all-category-div">-->
+            <!--<ul class="nav nav-pills nav-stacked mt16" id="o_shop_collapse_category">-->
+            <!--<li t-att-class=" '' if category else 'active all-products' ">-->
+            <!--<a t-att-href="keep('/shop',category=0)" class="o_not_editable">All Products-->
+            <!--</a>-->
+            <!--</li>-->
+            <!--<t t-foreach="categories" t-as="categ">-->
+            <!--<t t-call="website_sale.option_collapse_categories_recursive" />-->
+            <!--</t>-->
+            <!--</ul>-->
+            <!--</div>-->
+            <!--<hr></hr>-->
+
+
+            <!--Left Menu Like Submenu-->
+            <span class="mobile-view-filter-close-btn">X</span>
+            <a class="apply-filter">View Filter</a>
+            <div class="all-category-div">
+                <a href="" class="product-tag btn btn-primary btn-xs mb8 dropdown-toggle" data-toggle="dropdown">
+                    <span data-oe-model="website.menu" data-oe-id="37" data-oe-field="name" data-oe-type="char" data-oe-expression="submenu.name">Categories</span>
+                </a>
+                <t t-call="clarico_layout.dynamic_category"></t>
+            </div>
+            <!--<hr/>-->
+
+
+            <!--Left Menu Tags-->
+            <!--<div class="mt16 mb16">-->
+            <!--<t t-set="tags" t-value="website.get_product_tags()" />-->
+            <!--<t t-if="len(tags) &gt; 1">-->
+            <!--<div class="mt16 mb16">-->
+            <!--<h4 class="category">Tags</h4>-->
+            <!--<t t-foreach="tags" t-as="tag">-->
+            <!--<span>-->
+            <!--<a class="product-tag btn btn-primary btn-xs mb8" t-attf-href="/shop?tags=#{tag.id}"-->
+            <!--style="font-size: 14px;">-->
+            <!--<span t-field="tag.name" />-->
+            <!--</a>-->
+            <!--</span>-->
+            <!--</t>-->
+            <!--<hr></hr>-->
+            <!--</div>-->
+            <!--</t>-->
+            <!--</div>-->
+
+        </xpath>
+
+        <!--Left Menu Tags for submenu Categories -->
+        <xpath expr="//div[@class='main']" position="after">
+            <div id="products_grid_tags">
+                <t t-set="tags" t-value="website.get_product_tags()" />
+                <t t-if="len(tags) &gt; 1">
+                    <div class="mt16 mb16">
+                        <h4 class="category">Tags</h4>
+                        <t t-foreach="tags" t-as="tag">
+                            <span>
+                                <a class="product-tag btn btn-primary btn-xs mb8" t-attf-href="/shop?tags=#{tag.id}"
+                                   style="font-size: 14px;">
+                                    <span t-field="tag.name" />
+                                </a>
+                            </span>
+                        </t>
                         <hr></hr>
-                        <div class="all-category-div">
-                            <ul class="nav nav-pills nav-stacked mt16" id="o_shop_collapse_category">
-                                <li t-att-class=" '' if category else 'active all-products' ">
-                                    <a t-att-href="keep('/shop',category=0)" class="o_not_editable">All Products
-                                    </a>
-                                </li>
-                                <t t-foreach="categories" t-as="categ">
-                                    <t t-call="website_sale.option_collapse_categories_recursive" />
-                                </t>
-                            </ul>
-                        </div>
-                        <hr></hr>
-                        <div class="mt16 mb16">
-                            <t t-set="tags" t-value="website.get_product_tags()" />
-                            <t t-if="len(tags) &gt; 1">
-                                <div class="mt16 mb16">
-                                    <h4 class="category">Tags</h4>
-                                    <t t-foreach="tags" t-as="tag">
-                                        <span>
-                                            <a class="product-tag btn btn-primary btn-xs mb8" t-attf-href="/shop?tags=#{tag.id}"
-                                               style="font-size: 14px;">
-                                                <span t-field="tag.name" />
-                                            </a>
-                                        </span>
-                                    </t>
-                                </div>
-                            </t>
-                        </div>
                     </div>
-                </div>
+                </t>
             </div>
         </xpath>
     </template>

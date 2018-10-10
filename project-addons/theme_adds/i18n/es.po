@@ -54,7 +54,7 @@ msgid "Blog Post"
 msgstr "Entrada del Blog"
 
 #. module: theme_adds
-#: model:website.menu,name:theme_adds.shop_category_link
+#: model:website.menu,name:theme_adds.left_filter
 msgid "Categories"
 msgstr "Categorías"
 
