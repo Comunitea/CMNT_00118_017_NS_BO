@@ -31,7 +31,7 @@ msgstr "<b>Teléfono:</b>"
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.left_filter
 msgid "All Products"
-msgstr "Todos los Productossss"
+msgstr "Todos los Productos"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.shop
