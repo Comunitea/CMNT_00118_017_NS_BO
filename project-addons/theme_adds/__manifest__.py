@@ -8,10 +8,13 @@
     'license': 'AGPL-3',
     'category': 'Custom',
     'depends': [
-        'clarico_shop',
+        'theme_clarico',
         'website_sale',
-        'clarico_layout',
-        'website_product_tags_73lines'
+        'website_product_tags_73lines',
+        'website_crm_recaptcha',
+        'website_mail_channel',
+        'website_sale_one_step_checkout',
+        'website_mail_channel'
     ],
     'data': [
         'data/product_data.xml',
