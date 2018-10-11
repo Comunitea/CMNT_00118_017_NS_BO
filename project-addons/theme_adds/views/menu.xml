@@ -7,6 +7,9 @@
         <delete model="website.menu" id="clarico_layout.clarico_diningroom"/>
         <delete model="website.menu" id="clarico_layout.clarico_livingroom"/>
         <delete model="website.menu" id="clarico_layout.clarico_categories"/>
+        <delete model="website.menu" id="website_sale.menu_shop"/>
+        <delete model="website.menu" id="website.menu_homepage"/>
+        <delete model="website.menu" id="website_blog.menu_news"/>
 
         <!-- main menu -->
         <record id="home_link" model="website.menu">

@@ -61,6 +61,7 @@
     & .product-des {
         display: block !important;
         transition: none !important;
+        z-index: 20;
     }
     & .wp_new_stars {
         position: absolute;
@@ -166,7 +167,9 @@ li.dropdown {
 li.all-products, .all-category-div li {
     display: inline-block;
 }
-
+.custom-menu-inside-div {
+    background-color: #fff;
+}
 .first-level-category{
 	width:100%;
 	display:inline-block;
@@ -174,13 +177,13 @@ li.all-products, .all-category-div li {
 
 
 	.first-level-category-li{
-		width: 70%;
+		width: 100%;
 		/*.pl(20px);
 		background:#eee;
 		border-bottom:1px solid #CCC;*/
 
 		& .first-level-left-div{
-			width:100%;
+			width:30%;
 			background: white;
     		border-bottom: 1px solid #E4E4E4;
     		border-right: 1px solid #E4E4E4;

@@ -66,15 +66,41 @@
 
     <!-- Product description -->
     <template id="product_content_field_replace" inherit_id="clarico_extra_features.clarico_extra_features">
-        <xpath expr="//div[@class='col-md-7 col-sm-7 product_info_style_padding']" position="replace">
-            <div class="col-md-7 col-sm-7 product_info_style_padding" t-if="len(product.website_description) &gt; 15">
+<!--        <xpath expr="//div[@class='col-md-7 col-sm-7 product_info_style_padding']" position="replace">
+            <div class="col-md-7 col-sm-7 product_info_style_padding" t-if="product.description">
                 <div class="col-ld-12 col-md-12 product_sort_description_div_class">
                     <div class="clo-md-12 recently_view_product_headind_div_class">
                         <p class="product_info_heading_para_class">PRODUCT DESCRIPTION</p>
                     </div>
                 </div>
                 <div class="div_main_class_desc">
-                    <div class="product_sort_description_para_class" t-field="product.website_description"/>
+                    <div class="product_sort_description_para_class" t-field="product.description"/>
+                </div>
+            </div>
+        </xpath>-->
+        <!--<xpath expr="//p[@class='product_sort_description_para_class']" position="replace"/>-->
+    </template>
+
+    <template id="product_content_field_position" inherit_id="clarico_product.clarico_product_product">
+        <xpath expr="//div[@class='div_class_whole_product_features']" position="replace">
+            <div
+                t-if="product.description or product.extra_features_id or product.alternative_product_ids or product.accessory_product_ids"
+                class="div_class_whole_product_features">
+                <div class="div_class_product_features">
+                    <div class="div_sub_class_product_features">
+                        <div class="col-md-7 col-sm-7 product_info_style_padding" t-if="product.description">
+                            <div class="col-ld-12 col-md-12 product_sort_description_div_class">
+                                <div class="clo-md-12 recently_view_product_headind_div_class">
+                                    <p class="product_info_heading_para_class">PRODUCT DESCRIPTION</p>
+                                </div>
+                            </div>
+                            <div class="div_main_class_desc">
+                                <div class="product_sort_description_para_class" t-field="product.description"/>
+                            </div>
+                        </div>
+                        <t t-call="clarico_extra_features.clarico_extra_features" />
+                        <div class="column-right_p_alternative"/>
+                    </div>
                 </div>
             </div>
         </xpath>
