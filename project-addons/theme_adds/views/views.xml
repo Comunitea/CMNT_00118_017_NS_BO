@@ -27,8 +27,8 @@
 
     <template id="add_start_btn_on_signin_page" inherit_id="clarico_signin.clarico_signin_c_signin">
         <xpath expr="//button[@class='btn btn-primary login_btn_main']" position="after">
+            <a href="/web/signup" class="btn btn-primary">Signup</a>
             <a href="/shop" class="btn btn-primary">Back</a>
-            <a href="/page/contactus" class="btn btn-primary">Contactus</a>
         </xpath>
     </template>
 
