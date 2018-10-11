@@ -13,3 +13,9 @@ class ProductTag(models.Model):
     _inherit = 'product.tag'
 
     marked = fields.Boolean('Marked')
+
+
+class ProductDescription(models.Model):
+    _inherit = 'product.template'
+
+    description = fields.Html('Content', strip_style=True)
