@@ -2,12 +2,12 @@
 <odoo>
 
     <!-- Condiciones de envío -->
-    <record id="website.entrega" model="ir.ui.view">
+    <record id="website_page_entrega" model="ir.ui.view">
         <field name="website_meta_title">Condiciones de envío - NostrumSport</field>
         <field name="website_meta_description">Nuestros términos y condiciones de envío</field>
         <field name="website_meta_keywords">condiciones, entrega, plazo, envío, paquete</field>
     </record>
-    <template id="website.entrega" page="True">
+    <template id="website_page_entrega" page="True">
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="clarico_row">
@@ -70,13 +70,13 @@
     </template>
 
     <!-- Sobre nosotros -->
-    <record id="website.sobre-nosotros" model="ir.ui.view">
+    <record id="website_page_sobre-nosotros" model="ir.ui.view">
         <field name="website_meta_title">Sobre nosotros - NostrumSport</field>
         <field name="website_meta_description">Quien somos? Que hacemos? Donde estamos? Cual nuestra misión?
             Conozca mejor nuestro trabajo y servicio.</field>
         <field name="website_meta_keywords">sobre nosotros, información</field>
     </record>
-    <template id="website.sobre-nosotros" page="True">
+    <template id="website_page_sobre-nosotros" page="True">
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="clarico_row">
@@ -119,12 +119,12 @@
     </template>
 
     <!-- Pago seguro -->
-    <record id="website.pago-seguro" model="ir.ui.view">
+    <record id="website_page_pago-seguro" model="ir.ui.view">
         <field name="website_meta_title">Pago seguro - NostrumSport</field>
         <field name="website_meta_description">Nuestra forma de pago segura</field>
         <field name="website_meta_keywords">pago seguro, ssl, visa, mastercard, paypal</field>
     </record>
-    <template id="website.pago-seguro" page="True">
+    <template id="website_page_pago-seguro" page="True">
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="clarico_row">
@@ -169,13 +169,13 @@
     </template>
 
     <!-- Devoluciones -->
-    <record id="website.devoluciones" model="ir.ui.view">
+    <record id="website_page_devoluciones" model="ir.ui.view">
         <field name="website_meta_title">Devoluciones - NostrumSport</field>
         <field name="website_meta_description">Si cuando reciba su pedido no queda satisfecho, tiene un plazo de
             diez (10) días, a contar desde la fecha de recepción para ejecutar el derecho de devolución.</field>
         <field name="website_meta_keywords"></field>
     </record>
-    <template id="website.devoluciones" page="True">
+    <template id="website_page_devoluciones" page="True">
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="clarico_row">
@@ -202,12 +202,12 @@
     </template>
 
     <!-- Política de privacidad -->
-    <record id="website.politica-de-cookies" model="ir.ui.view">
+    <record id="website_page_politica-de-cookies" model="ir.ui.view">
         <field name="website_meta_title">Política de Cookies y privacidad - NostrumSport</field>
         <field name="website_meta_description"></field>
         <field name="website_meta_keywords"></field>
     </record>
-    <template id="website.politica-de-cookies" page="True">
+    <template id="website_page_politica-de-cookies" page="True">
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="clarico_row">
@@ -322,13 +322,13 @@
     </template>
 
     <!-- Condiciones legales -->
-    <record id="website.condiciones-legales" model="ir.ui.view">
+    <record id="website_page_condiciones-legales" model="ir.ui.view">
         <field name="website_meta_title">Condiciones de envío - NostrumSport</field>
         <field name="website_meta_description">Condiciones de envío de NostrumSport, la tienda de fisioterapia.
             Entrega en 24-48h, envío a 4,50€ (en península) pero para pedidos de más de 100€ ENVIO GRATIS</field>
         <field name="website_meta_keywords"></field>
     </record>
-    <template id="website.condiciones-legales" page="True">
+    <template id="website_page_condiciones-legales" page="True">
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="clarico_row">
