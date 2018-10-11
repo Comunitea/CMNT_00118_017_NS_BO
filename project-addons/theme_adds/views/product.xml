@@ -98,8 +98,86 @@
                                 <div class="product_sort_description_para_class" t-field="product.description"/>
                             </div>
                         </div>
+                        <div class="column-right_p_alternative">
+                            <t t-if="product.alternative_product_ids">
+                                <span style="display:none;" class="acce_count"
+                                    t-esc="len(product.alternative_product_ids)" />
+                                <div class="alternate_recent_product_whole_div_class">
+                                    <div class="container_class" t-if="product.alternative_product_ids"
+                                        style="margin-top:0 !important;">
+                                        <h3 class="alternate_product_heading_para_class">Suggested Items</h3>
+                                        <div id="suggested_item_product" class="recently_viewed_container">
+                                            <div class="owl-carousel">
+                                                <t t-foreach="product.alternative_product_ids" t-as="alt_product">
+                                                    <div class="alternet_common">
+                                                        <div class="parent">
+                                                            <a t-attf-href="/shop/product/#{ slug(alt_product) }">
+                                                                <div t-field="alt_product.image_medium" class="recently_viewed_img_div"
+                                                                    t-options="{'widget': 'image'}" />
+                                                            </a>
+                                                            <div class="recently_viwed_details">
+                                                                <div class="recently_view_product_name">
+                                                                    <a t-attf-href="/shop/product/#{ slug(alt_product) }"
+                                                                        style="display: block">
+                                                                        <p t-field="alt_product.name" />
+                                                                    </a>
+                                                                </div>
+
+                                                                <div class="recently_view_product_price">
+                                                                    <p t-field="alt_product.website_price"
+                                                                        t-options='{"widget": "monetary", "display_currency": website.currency_id, }' />
+                                                                </div>
+                                                                <hr class="r_v_deatil_hr" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </t>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+                            <t t-if="product.accessory_product_ids">
+                                <span style="display:none;" class="suggest_count"
+                                    t-esc="len(product.accessory_product_ids)" />
+                                <div class="alternate_recent_product_whole_div_class">
+                                    <div class="container_class" t-if="product.accessory_product_ids"
+                                        style="margin-top:0 !important;">
+                                        <h3 class="alternate_product_heading_para_class">Accessories</h3>
+                                        <div id="suggested_item_product" class="recently_viewed_container">
+                                            <div class="owl-carousel">
+                                                <t t-foreach="product.accessory_product_ids" t-as="alt_product">
+                                                    <div class="alternet_common">
+                                                        <div class="parent">
+                                                            <a t-attf-href="/shop/product/#{ slug(alt_product.product_tmpl_id) }"
+                                                                style="display: block">
+                                                                <div t-field="alt_product.image_medium" class="recently_viewed_img_div"
+                                                                    t-options="{'widget': 'image'}" />
+                                                            </a>
+                                                            <div class="recently_viwed_details">
+                                                                <div class="recently_view_product_name">
+                                                                    <a t-attf-href="/shop/product/#{ slug(alt_product.product_tmpl_id) }"
+                                                                        style="display: block">
+                                                                        <p t-field="alt_product.name" />
+                                                                    </a>
+                                                                </div>
+
+                                                                <div class="recently_view_product_price">
+                                                                    <p t-field="alt_product.website_price"
+                                                                        t-options='{"widget": "monetary", "display_currency": website.currency_id, }' />
+                                                                </div>
+                                                                <hr class="r_v_deatil_hr" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </t>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
                         <t t-call="clarico_extra_features.clarico_extra_features" />
-                        <div class="column-right_p_alternative"/>
                     </div>
                 </div>
             </div>
