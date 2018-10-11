@@ -48,6 +48,7 @@
         </xpath>
     </template>
 
+    <!-- Redes sociales -->
     <record id="social_fb_link" model="website.config.settings">
         <field name="social_twitter">https://twitter.com/NostrumSport</field>
         <field name="social_facebook">https://www.facebook.com/nostrumsport</field>
@@ -56,5 +57,14 @@
         <field name="social_youtube"/>
         <field name="social_googleplus">https://plus.google.com/+NostrumSportSLValencia</field>
     </record>
+
+    <!-- Error 404 -->
+    <template id="theme_adds_404" inherit_id="clarico_404.clarico_404">
+        <xpath expr="//div[@class='clarico_404_right']" position="replace">
+            <div class="clarico_404_right">
+                <img src="/theme_adds/static/img/404-skeleton.jpg"/>
+            </div>
+        </xpath>
+    </template>
 
 </odoo>
