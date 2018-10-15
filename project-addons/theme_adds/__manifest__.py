@@ -13,8 +13,7 @@
         'website_product_tags_73lines',
         'website_crm_recaptcha',
         'website_mail_channel',
-        'website_sale_one_step_checkout',
-        'website_mail_channel'
+        'website_sale_one_step_checkout'
     ],
     'data': [
         'data/product_data.xml',
