@@ -3,13 +3,23 @@
 
     <template id="cart_replace_general" inherit_id="clarico_cart.clarico_clear_cart">
         <xpath expr="//a[@class='clear_shopping_cart']" position="replace">
-            <a class="clear_shopping_cart btn btn-primary"
+            <a class="btn btn-primary common-btn vrt_algn_top" href="/shop" onclick="window.history.go(-1); return false;">
+                <span class="fa fa-long-arrow-left" />
+                Continue Shopping
+            </a>
+            <a class="clear_shopping_cart btn btn-primary common-btn vrt_algn_top"
                t-if="website_sale_order and website_sale_order.website_order_line">Clear Cart</a>
         </xpath>
     </template>
 
     <template id="cart_banner_replace" inherit_id="clarico_cart.clarico_cart">
         <xpath expr="//div[@class='cart-cover-img-div']" position="replace"/>
+    </template>
+
+    <template id="back_to_shop_btn_replace" inherit_id="website_sale.continue_shopping">
+        <xpath expr="//a[@href='/shop']" position="attributes">
+            <attribute name="onclick">window.history.go(-1); return false;</attribute>
+        </xpath>
     </template>
 
 </odoo>
