@@ -40,4 +40,12 @@
         </xpath>
     </template>
 
+    <template id="contactus_add_breadcrumbs" inherit_id="website.contactus">
+        <xpath expr="//div[@class='clarico_row_maxW']" position="before">
+            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+        </xpath>
+    </template>
+
+
+
 </odoo>

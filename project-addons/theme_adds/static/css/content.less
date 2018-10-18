@@ -27,7 +27,7 @@ a.clear-all-wishlist.btn {
     }
 }
 .pull-right.pagination {
-    margin-top: 15px;
+    margin: 4px 0;
     background-color: #f5f5f5;
     padding: 7px 4px;
 }
@@ -81,6 +81,20 @@ a.clear-all-wishlist.btn {
         & li:last-child a {
             padding-right: -5px;
             border-right: none;
+        }
+    }
+    & .full-width {
+        background-color: @theme-color;
+        color: #fff;
+        & .breadcrumb {
+            background-color: @theme-color;
+            color: #fff;
+            & a {
+                color: #fff;
+            }
+            & .active {
+                color: #fff;
+            }
         }
     }
 }

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <data noupdate="0">
 
     <!-- Condiciones de envío -->
-    <template id="website_page_entrega" page="True">
+    <template id="website.entrega" page="True">
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="clarico_row">
+                    <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
                     <div class="clarico_row_maxW">
                         <h1 class="chs_heading ch_padding">Condiciones de envío</h1>
                         <h2>Tarifas de envíos</h2>
@@ -63,17 +65,18 @@
             </div>
         </t>
     </template>
-    <record id="website_page_entrega" model="ir.ui.view">
+    <record id="website.entrega" model="ir.ui.view">
         <field name="website_meta_title">Condiciones de envío - NostrumSport</field>
         <field name="website_meta_description">Nuestros términos y condiciones de envío</field>
         <field name="website_meta_keywords">condiciones, entrega, plazo, envío, paquete</field>
     </record>
 
     <!-- Sobre nosotros -->
-    <template id="website_page_sobre-nosotros" page="True">
+    <template id="website.sobre-nosotros" page="True">
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="clarico_row">
+                    <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
                     <div class="clarico_row_maxW">
                         <h1 class="chs_heading ch_padding">Sobre nosotros</h1>
                         <div class="row">
@@ -111,7 +114,7 @@
             </div>
         </t>
     </template>
-    <record id="website_page_sobre-nosotros" model="ir.ui.view">
+    <record id="website.sobre-nosotros" model="ir.ui.view">
         <field name="website_meta_title">Sobre nosotros - NostrumSport</field>
         <field name="website_meta_description">Quien somos? Que hacemos? Donde estamos? Cual nuestra misión?
             Conozca mejor nuestro trabajo y servicio.</field>
@@ -119,10 +122,11 @@
     </record>
 
     <!-- Pago seguro -->
-    <template id="website_page_pago-seguro" page="True">
+    <template id="website.pago-seguro" page="True">
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="clarico_row">
+                    <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
                     <div class="clarico_row_maxW">
                         <h1 class="chs_heading ch_padding">Pago seguro</h1>
                         <h2>Formas de Pago</h2>
@@ -162,17 +166,18 @@
             </div>
         </t>
     </template>
-    <record id="website_page_pago-seguro" model="ir.ui.view">
+    <record id="website.pago-seguro" model="ir.ui.view">
         <field name="website_meta_title">Pago seguro - NostrumSport</field>
         <field name="website_meta_description">Nuestra forma de pago segura</field>
         <field name="website_meta_keywords">pago seguro, ssl, visa, mastercard, paypal</field>
     </record>
 
     <!-- Devoluciones -->
-    <template id="website_page_devoluciones" page="True">
+    <template id="website.devoluciones" page="True">
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="clarico_row">
+                    <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
                     <div class="clarico_row_maxW">
                         <h1 class="chs_heading ch_padding">Devoluciones</h1>
                         <p>Si cuando reciba su pedido no queda satisfecho, tiene un plazo de <strong> diez (10)
@@ -194,18 +199,19 @@
             </div>
         </t>
     </template>
-    <record id="website_page_devoluciones" model="ir.ui.view">
+    <record id="website.devoluciones" model="ir.ui.view">
         <field name="website_meta_title">Devoluciones - NostrumSport</field>
         <field name="website_meta_description">Si cuando reciba su pedido no queda satisfecho, tiene un plazo de
             diez (10) días, a contar desde la fecha de recepción para ejecutar el derecho de devolución.</field>
-        <field name="website_meta_keywords"></field>
+        <field name="website_meta_keywords"/>
     </record>
 
     <!-- Política de privacidad -->
-    <template id="website_page_politica-de-cookies" page="True">
+    <template id="website.politica-de-cookies" page="True">
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="clarico_row">
+                    <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
                     <div class="clarico_row_maxW">
                         <h1 class="chs_heading ch_padding">Política de privacidad</h1>
                         <p>Esta Política de Privacidad forma parte integrante de las Condiciones Generales de NostrumSport.com (en adelante, “NostrumSport”) y será aplicable a los datos de carácter personal que los usuarios de la página web www.NostrumSport.com faciliten a NostrumSport, así como a aquellos otros que pudieran comunicar durante el desarrollo de una relación contractual con la empresa.</p>
@@ -315,17 +321,18 @@
             </div>
         </t>
     </template>
-    <record id="website_page_politica-de-cookies" model="ir.ui.view">
+    <record id="website.politica-de-cookies" model="ir.ui.view">
         <field name="website_meta_title">Política de Cookies y privacidad - NostrumSport</field>
-        <field name="website_meta_description"></field>
-        <field name="website_meta_keywords"></field>
+        <field name="website_meta_description"/>
+        <field name="website_meta_keywords"/>
     </record>
 
     <!-- Condiciones legales -->
-    <template id="website_page_condiciones-legales" page="True">
+    <template id="website.condiciones-legales" page="True">
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="clarico_row">
+                    <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
                     <div class="clarico_row_maxW">
                         <h1 class="chs_heading ch_padding">Condiciones legales de NostrumSport.com</h1>
                         <p>Todas las compras que se realicen en NostrumSport.com están sujetas a las condiciones generales de compra expuestas en el presente documento.</p>
@@ -401,11 +408,12 @@
             </div>
         </t>
     </template>
-    <record id="website_page_condiciones-legales" model="ir.ui.view">
+    <record id="website.condiciones-legales" model="ir.ui.view">
         <field name="website_meta_title">Condiciones de envío - NostrumSport</field>
         <field name="website_meta_description">Condiciones de envío de NostrumSport, la tienda de fisioterapia.
             Entrega en 24-48h, envío a 4,50€ (en península) pero para pedidos de más de 100€ ENVIO GRATIS</field>
-        <field name="website_meta_keywords"></field>
+        <field name="website_meta_keywords"/>
     </record>
 
+    </data>
 </odoo>

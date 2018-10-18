@@ -64,6 +64,9 @@
                 <img src="/theme_adds/static/img/404-skeleton.jpg"/>
             </div>
         </xpath>
+        <xpath expr="//div[@class='container']" position="before">
+            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+        </xpath>
     </template>
 
 </odoo>

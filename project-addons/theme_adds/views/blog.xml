@@ -70,6 +70,26 @@
                     <t t-set="classname">pull-right</t>
                 </t>
             </div>
+            <!--<div class="full-width">
+                <div class="breadcrumb-main">
+                    <div class="blog-maxw">
+                        <t t-call="website.pager" >
+                            <t t-set="classname">pull-right</t>
+                        </t>
+                    </div>
+                </div>
+            </div>-->
+        </xpath>
+        <xpath expr="//div[@class='container'][1]" position="replace">
+            <div class="full-width">
+                <div class="breadcrumb-main">
+                    <div class="blog-maxw">
+                        <t t-call="website.pager" >
+                            <t t-set="classname">pull-right</t>
+                        </t>
+                    </div>
+                </div>
+            </div>
         </xpath>
     </template>
 
