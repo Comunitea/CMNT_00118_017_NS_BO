@@ -22,4 +22,16 @@
         </xpath>
     </template>
 
+    <template id="add_fiction_breadcrumbs_bar" inherit_id="website_sale.cart">
+        <xpath expr="//div[@class='container oe_website_sale']" position="before">
+            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+        </xpath>
+    </template>
+
+    <template id="add_fiction_breadcrumbs_bar_checkout" inherit_id="website_sale_one_step_checkout.osc_onestepcheckout">
+        <xpath expr="//div[@class='container oe_website_sale oe_website_sale_osc']" position="before">
+            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+        </xpath>
+    </template>
+
 </odoo>

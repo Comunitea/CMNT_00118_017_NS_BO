@@ -111,4 +111,16 @@
         </xpath>
     </template>
 
+    <template id="breadcrumbs_fiction_bar">
+        <div id="sub_header_row">
+            <div class="clarico_product_breadcrumb">
+                <div class="sub_breadcrumb">
+                    <div class="nav-view">
+                        <div class="nav-selection-div"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
 </odoo>
