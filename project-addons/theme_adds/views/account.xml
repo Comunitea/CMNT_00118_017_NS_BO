@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="add_fiction_breadcrumbs_bar_myaccount" inherit_id="clarico_account.clarico_account_portal_layout">
+        <xpath expr="//div[@class='wizard-bg']" position="before">
+			<t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+		</xpath>
+    </template>
+
+
+    <template id="add_fiction_breadcrumbs_bar_my_orders" inherit_id="website_portal_sale.orders_followup">
+        <xpath expr="//div[@class='container'][1]" position="before">
+            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+        </xpath>
+    </template>
+
+</odoo>
