@@ -78,6 +78,7 @@
                 <div class="clarico_row">
                     <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
                     <div class="clarico_row_maxW">
+                        <style>@media(min-width: 801px){h1.chs_heading{padding-left: 15px;}}</style>
                         <h1 class="chs_heading ch_padding">Sobre nosotros</h1>
                         <div class="row">
                             <div class="col-md-4">
@@ -412,6 +413,31 @@
         <field name="website_meta_title">Condiciones de envío - NostrumSport</field>
         <field name="website_meta_description">Condiciones de envío de NostrumSport, la tienda de fisioterapia.
             Entrega en 24-48h, envío a 4,50€ (en península) pero para pedidos de más de 100€ ENVIO GRATIS</field>
+        <field name="website_meta_keywords"/>
+    </record>
+
+        <!-- Condiciones legales -->
+    <template id="website.distribucion" page="True">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="clarico_row">
+                    <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+                    <div class="clarico_row_maxW">
+                        <h1 class="chs_heading ch_padding">Distribuye nuestros productos</h1>
+                        <p>¿Quieres ser un distribuidor de nuestros productos de fisioterapia?</p>
+                        <p>¡Ponte en contacto con nuestra tienda Nostrumsport!</p>
+                        <p>Teléfono de conacto: <strong t-field="res_company.phone"/></p>
+                        <p>Correo electrónico: <strong t-field="res_company.email"/></p>
+                        <p><a href="/page/contactus" class="btn common-btn">Contactar</a></p>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    <record id="website.distribucion" model="ir.ui.view">
+        <field name="website_meta_title">Distribuye nuestros productos - NostrumSport</field>
+        <field name="website_meta_description">Distribución de productos para fisioterapia - tienda NostrumSport.com
+        </field>
         <field name="website_meta_keywords"/>
     </record>
 

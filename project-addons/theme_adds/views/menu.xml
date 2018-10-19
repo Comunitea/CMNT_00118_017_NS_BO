@@ -79,7 +79,7 @@
             </record>
             <record id="distributions_page_link" model="website.menu">
                 <field name="name">Distribuye nuestros productos</field>
-                <field name="url">mailto:vsebastian@spmc.es</field>
+                <field name="url">/page/distribucion</field>
                 <field name="parent_id" ref="informacion_submenu"/>
                 <field name="sequence" type="int">46</field>
                 <field name="website_id" ref="website.default_website"/>
