@@ -29,6 +29,8 @@
         'views/header.xml',
         'views/views.xml',
         'views/product_view.xml',
+        'views/account.xml',
+        'views/group.xml',
     ],
     'images': [
         'static/description/icon.png',

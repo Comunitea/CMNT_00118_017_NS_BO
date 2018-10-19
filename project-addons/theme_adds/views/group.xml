@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="add_fiction_breadcrumbs_bar_mail_channel_start" inherit_id="website_mail_channel.mail_channels">
+        <xpath expr="//section[@class='bg-primary jumbotron mt0 mb0']" position="before">
+            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+        </xpath>
+    </template>
+
+    <template id="add_fiction_breadcrumbs_bar_mail_channel_group_message"
+              inherit_id="website_mail_channel.group_message">
+        <xpath expr="//section[@class='container']" position="before">
+            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+        </xpath>
+    </template>
+
+    <template id="add_fiction_breadcrumbs_bar_mail_channel_group_messages"
+              inherit_id="website_mail_channel.group_messages">
+        <xpath expr="//section[@class='container']" position="before">
+            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+        </xpath>
+    </template>
+
+    <template id="add_fiction_breadcrumbs_bar_mail_channel_confirmation_subscription"
+              inherit_id="website_mail_channel.confirmation_subscription">
+        <xpath expr="//div[@class='container']" position="before">
+            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+        </xpath>
+    </template>
+
+    <template id="add_fiction_breadcrumbs_bar_mail_channel_invalid_token_subscription"
+              inherit_id="website_mail_channel.invalid_token_subscription">
+        <xpath expr="//div[@class='container']" position="before">
+            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+        </xpath>
+    </template>
+
+    <template id="add_fiction_breadcrumbs_bar_mail_channel_not_subscribed"
+              inherit_id="website_mail_channel.not_subscribed">
+        <xpath expr="//div[@class='container']" position="before">
+            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+        </xpath>
+    </template>
+
+</odoo>
