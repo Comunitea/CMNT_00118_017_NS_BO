@@ -42,6 +42,7 @@
             <div t-if="product.list_price and (product.website_price - product.list_price) &gt; 0.01" class="price_sin_iva">
                 <span t-field="product.list_price" t-options='{"widget": "monetary", "display_currency": product.currency_id,}'/> sin IVA
             </div>
+            <div t-else="" class="price_sin_iva">(Precio sin IVA)</div>
         </xpath>
         <xpath expr="//div[@class='ctg_class']" position="replace"/>
 
