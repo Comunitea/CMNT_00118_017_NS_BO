@@ -8,10 +8,16 @@
     </template>
 
 
-    <template id="add_fiction_breadcrumbs_bar_my_orders" inherit_id="website_portal_sale.orders_followup">
+    <!--<template id="add_fiction_breadcrumbs_bar_my_orders" inherit_id="website_portal_sale.orders_followup">
         <xpath expr="//div[@class='container'][1]" position="before">
             <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
         </xpath>
-    </template>
+    </template>-->
+
+    <!--<template id="add_fiction_breadcrumbs_class_bar_my_orders" inherit_id="website_portal.details">
+		<xpath expr="//div[@class='col-md-8 div_class_contact_details_page_padding div_class_contact_details_responsive']" position="attributes">
+            <attribute name="class">clarico_product_breadcrumb</attribute>
+        </xpath>
+    </template>-->
 
 </odoo>
