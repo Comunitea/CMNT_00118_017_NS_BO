@@ -8,7 +8,19 @@
         <field name="arch" type="xml">
             <field name="name" position="after">
                 <field name="marked"/>
+                <field name="tag_color"/>
             </field>
+        </field>
+    </record>
+    <record id="product_tags_add_marked_tree" model="ir.ui.view">
+        <field name="name">product.tags.add.marked.tree</field>
+        <field name="model">product.tag</field>
+        <field name="inherit_id" ref="website_product_tags_73lines.product_tag_tree_view"/>
+        <field name="arch" type="xml">
+            <tree string="Product Tags">
+                <field name="marked"/>
+                <field name="tag_color"/>
+            </tree>
         </field>
     </record>
 

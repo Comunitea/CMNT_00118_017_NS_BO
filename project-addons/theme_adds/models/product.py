@@ -13,6 +13,11 @@ class ProductTag(models.Model):
     _inherit = 'product.tag'
 
     marked = fields.Boolean('Marked')
+    tag_color = fields.Selection([('default', 'Green'),
+                                  ('red', 'Red'),
+                                  ('yellow', 'Yellow'),
+                                  ('blue', 'Blue'),
+                                  ('gray', 'Gray')], 'Tag label color', default='default')
 
 
 class ProductDescription(models.Model):
