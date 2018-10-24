@@ -45,7 +45,7 @@
         </xpath>
     </template>
 
-    <template id="replace_footer" inherit_id="clarico_layout.clarico_layout_footer_default" name="Replace footer" >
+    <template id="replace_footer_default" inherit_id="clarico_layout.clarico_layout_footer_default" name="Replace footer default">
         <xpath expr="//footer//div[@id='footer']/div[@class='row']" position="replace">
             <div class="common_footer_content_details_div">
                 <div class="col-md-3 col-sm-5 col-xs-12">
@@ -53,21 +53,11 @@
                         <ul class="customer-contact-ul">
                             <li>
                                 <div class="contact_detail_para">
-                                    <p class="span_lbl">Tienda</p>
+                                    <p class="span_lbl">Address</p>
                                     :
                                     <p class="field_padding">
                                         <span t-field="res_company.city" />,
                                         <span t-field="res_company.street" />,
-                                        <span t-field="res_company.zip" />
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="contact_detail_para">
-                                    <p class="span_lbl">Oficinas</p>
-                                    :
-                                    <p class="field_padding">
-                                        <span t-field="res_company.city" />, Avd. Campanar 55 bajo,
                                         <span t-field="res_company.zip" />
                                     </p>
                                 </div>
@@ -164,9 +154,6 @@
                 </div>
             </div>
         </xpath>
-    </template>
-
-    <template id="replace_footer_1" inherit_id="clarico_layout.clarico_layout_footer_default" name="Replace footer" >
         <xpath expr="//footer//section[@class='three_Column_snippet_wrap']" position="replace" />
         <xpath expr="//footer" position="after">
             <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"/>
@@ -175,16 +162,8 @@
         </xpath>
     </template>
 
-    <template id="replace_footer_2" inherit_id="clarico_layout.clarico_layout_footer_copyright" name="Replace footer">
+    <template id="replace_footer_copyright" inherit_id="clarico_layout.clarico_layout_footer_copyright" name="Replace footer copyright">
         <xpath expr="//div[@class='endfooter_list']" position="replace" />
-    </template>
-
-    <template id="replace_footer_3" inherit_id="clarico_layout.clarico_layout_footer_copyright" name="Replace footer">
-        <xpath expr="//div[@class='pull-center text-muted']" position="replace">
-            <div class="pull-center text-muted">
-                 © 2018 Nostrum Sport, S.L. Todos los derechos reservados.
-            </div>
-        </xpath>
     </template>
 
 </odoo>

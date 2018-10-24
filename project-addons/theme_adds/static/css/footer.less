@@ -14,7 +14,6 @@ footer {
 .bg_subscribe_footer {
     padding: 30px 0 25px 0;
     background: @theme-color;
-    margin-top: 2%;
 }
 .wp_subscribe_footer {
     width: 90%;
@@ -51,6 +50,15 @@ footer {
     margin: -10px 0 15px 0px;
 }
 div.pull-center.text-muted{
-    background-color: @theme-color;
     color: #fff;
+    & a {
+        color: #fff;
+        text-decoration: underline;
+        & :hover {
+            text-decoration: none;
+        }
+    }
+}
+footer {
+    background-color: @theme-color !important;
 }

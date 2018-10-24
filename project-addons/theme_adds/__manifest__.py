@@ -8,12 +8,12 @@
     'license': 'AGPL-3',
     'category': 'Custom',
     'depends': [
-        'theme_clarico',
         'website_sale',
+        'website_cookie_notice',
         'website_product_tags_73lines',
         'website_crm_recaptcha',
         'website_mail_channel',
-        'website_sale_one_step_checkout'
+        'theme_clarico'
     ],
     'data': [
         'data/product_data.xml',
