@@ -8,7 +8,7 @@
                 
                 <notebook position="inside">
                     <page string="Detalle impuestos">
-                        <group tring="Desglose">
+                        <group string="Desglose">
                             <group colspan="4" col="8">
                                 <group>
                                     <field name="base_21" />
