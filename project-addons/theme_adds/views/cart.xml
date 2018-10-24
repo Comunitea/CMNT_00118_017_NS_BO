@@ -9,12 +9,12 @@
                     Continue Shopping
                 </a>
                 <span t-if="website_sale_order.amount_total &gt; 0">
-                    <a class="clear_shopping_cart btn btn-primary common-btn vrt_algn_top"
+                    <a class="clear_shopping_cart btn btn-primary common-btn vrt_algn_top mb4"
                        t-if="website_sale_order and website_sale_order.website_order_line">
                         Clear Cart
                     </a>
-                    <a class="btn btn-primary common-btn vrt_algn_top" href="/shop/checkout">
-                        Confirm <span class="fa fa-long-arrow-right" />
+                    <a class="btn btn-primary common-btn vrt_algn_top mb4" href="/shop/checkout">
+                        Process checkout <span class="fa fa-long-arrow-right" />
                     </a>
                 </span>
             </div>
