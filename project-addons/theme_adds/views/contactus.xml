@@ -10,15 +10,10 @@
     <template id="replace_contact_right" inherit_id="website.contactus" name="Replace contact right block">
         <xpath expr="//div[@id='wrap']//div[@class='col-md-4 mb32']" position="replace">
             <div class="col-md-4 mb32">
-                <p><strong>Tienda</strong>:
+                <p><strong>Dirección</strong>:
                     Sports Medicine Center,
                     <span t-field="res_company.city" />,
                     <span t-field="res_company.street" />,
-                    <span t-field="res_company.zip" />
-                </p>
-                <p><strong>Oficinas</strong>:
-                    <span t-field="res_company.city" />,
-                    Avd. Campanar, 55 bajo,
                     <span t-field="res_company.zip" />
                 </p>
                 <p><b>Telefono:</b> <span t-field="res_company.phone"/></p>

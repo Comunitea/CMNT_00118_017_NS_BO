@@ -214,7 +214,7 @@
                         <div class="mt16 mb16">
                             <h4 class="category">Tags</h4>
                             <t t-foreach="tags" t-as="tag">
-                                <span>
+                                <span t-att-class="tag.tag_color">
                                     <a class="product-tag btn btn-primary btn-xs mb8" t-attf-href="/shop?tags=#{tag.id}">
                                         <span t-field="tag.name" />
                                     </a>

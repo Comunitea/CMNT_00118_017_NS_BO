@@ -139,8 +139,27 @@ hr {
     text-transform: uppercase;
     font-size: 17px !important;
 }
-.main_left .product-tag {
-    font-size: 15px !important;
+.main_left .wp_products_grid_tags{
+    & h4.category {
+        padding-bottom: 4px;
+    }
+    & .product-tag {
+        font-size: 13px !important;
+        letter-spacing: 0.8px;
+        margin-top: -4px;
+    }
+    & .red .product-tag {
+        background-color: #EF5047;
+    }
+    & .yellow .product-tag {
+        background-color: #D5B91D;
+    }
+    & .gray .product-tag {
+        background-color: #687787;
+    }
+    & .blue .product-tag {
+        background-color: #6797E5;
+    }
 }
 
 .menu-tags {
@@ -233,23 +252,30 @@ li.all-products, .all-category-div li {
 		}
 	}
 }
-
-.block-none{
+/*.block-none{
     width: 100%;
     left: 0% !important;
-}
-
+}*/
 .menu_1_column_div{
 	overflow-x: visible;
 }
-
-
-/* media part */
+/*
+    CSS media part MIN-WIDTH
+*/
 @media (min-width: 1201px){
     .oe_shop_left {
         width: 24.5% !important;
     }
 }
+@media (min-width: 769px){
+    .main_left .wp_products_grid_tags {
+        overflow-y: auto;
+        max-height: 620px;
+    }
+}
+/*
+    CSS media part MAX-WIDTH
+*/
 @media (max-width: 1200px){
     .sub-menu-ul-heading {
         width: auto;

@@ -14,7 +14,7 @@ $("#contact_us_main_form").each(function(){
 });
 /* Category menu toggle open */
 $('a.to-toggle-menu').click(function(){
-    $('.custom-menu-inside-div').toggle();
+    $(this).next('.custom-menu-inside-div').toggle();
     return false;
 });
 /* Breadcrumb in category page */
