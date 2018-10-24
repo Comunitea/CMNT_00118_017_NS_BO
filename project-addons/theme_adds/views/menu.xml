@@ -26,6 +26,13 @@
             <field name="sequence" type="int">20</field>
             <field name="website_id" ref="website.default_website"/>
         </record>
+        <record id="categories_link" model="website.menu">
+			<field name="name">Categories</field>
+			<field name="parent_id" ref="website.main_menu" />
+			<field name="dynamic_menu" eval="True"/>
+			<field name="sequence" type="int">25</field>
+            <field name="website_id" ref="website.default_website"/>
+		</record>
         <record id="catalog_link" model="website.menu">
             <field name="name">Catalogo</field>
             <field name="url">https://nostrumsport.com/catalogo/catalogo_nostrum2017-2018.pdf</field>
