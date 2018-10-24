@@ -23,4 +23,5 @@ class ProductTag(models.Model):
 class ProductDescription(models.Model):
     _inherit = 'product.template'
 
+    description_short = fields.Text('Short description', help="Short description for product page", strip_style=True)
     description = fields.Html('Content', strip_style=True)
