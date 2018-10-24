@@ -26,6 +26,12 @@
         </xpath>
         <xpath expr="//p[@class='text-muted res_pera_description']//.." position="replace"/>
         <xpath expr="//input[@name='product_id']//.." position="replace"/>
+        <xpath expr="//div[@class='4_btns_combo']" position="before">
+            <div class="prod_des" t-if="product.description_short">
+                <p t-field="product.description_short" class="text-muted res_pera_description" />
+                <p t-field="product.description_sale" style="display: none;" />
+            </div>
+        </xpath>
         <xpath expr="//div[@class='4_btns_combo']" position="after">
             <t t-placeholder="select">
                 <input type="hidden" class="product_id" name="product_id"
@@ -34,9 +40,6 @@
                     <t t-set="ul_class" t-value="'nav-stacked'" />
                 </t>
             </t>
-            <div class="prod_des" t-if="product.description_sale">
-                <p t-field="product.description_sale" class="text-muted res_pera_description" />
-            </div>
         </xpath>
         <xpath expr="//h4[@class='css_non_editable_mode_hidden decimal_precision']" position="after">
             <div t-if="product.list_price and (product.website_price - product.list_price) &gt; 0.01" class="price_sin_iva">
