@@ -115,6 +115,9 @@
                                 <a class="o_github" t-att-href="website.social_github" t-if="website.social_github">
                                     <i class="fa fa-github" />
                                 </a>
+                                <a class="o_instagram" t-att-href="website.social_instagram" t-if="website.social_instagram">
+                                    <i class="fa fa-instagram" />
+                                </a>
                             </div>
                         </div>
                         <ul class="list-unstyled" id="products"></ul>
