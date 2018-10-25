@@ -34,6 +34,7 @@
         'views/product_view.xml',
         'views/account.xml',
         'views/group.xml',
+        'views/terms.xml',
     ],
     'images': [
         'static/description/icon.png',
