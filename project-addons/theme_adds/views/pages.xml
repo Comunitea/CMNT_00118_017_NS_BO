@@ -11,55 +11,64 @@
                     <div class="clarico_row_maxW">
                         <h1 class="chs_heading ch_padding">Condiciones de envío</h1>
                         <h2>Tarifas de envíos</h2>
-                        <h3>Nacional</h3>
-                        <table class="tbl"><tbody><tr><td>
-                        <h4>España Penínsular:</h4>
-                        </td>
-                        <td>
-                        <h4>Baleares y Canarias:</h4>
-                        <p><strong>*envios a Canarias no Incluyen IVA</strong></p>
-                        </td>
-                        </tr><tr><td>
-                        <p>Más de 100 € netos (sin IVA y con descuentos) y máximo 15Kg: <strong>GRATIS </strong></p>
-                        <p>Hasta 15kg: <strong>4,50 € (5,45€ con IVA)</strong></p>
-                        <p>Cada 5 Kilos Extra: <strong>3 € (3,63€ con IVA)</strong></p>
-                        <p><strong>Nota: </strong>Para pedidos de más de 15Kg que sean superiores a 100€ se cobrará solamente el sobrepeso.</p>
-                        </td>
-                        <td>
-                        <p>Hasta 5kg: <strong>11,55 € (13,98€ con IVA)</strong></p>
-                        <p>Hasta 10kg: <strong>13,75 € (16,64€ con IVA)</strong></p>
-                        <p>11-20kg.: <strong>24,00 € (29,04€ con IVA)</strong></p>
-                        <p> </p>
-                        </td>
-                        </tr></tbody></table>
-                        <h3>Internacional</h3>
-                        <h4>Portugal (continental):</h4>
-                        <p><strong>Hasta 5kg</strong>: 4,95 € (5,99€ con IVA)</p>
-                        <p><strong>Hasta 10kg</strong>: 6,95 € (8.41€ con IVA)</p>
-                        <p><strong>Hasta 20kg.</strong>: 9,95 € (12.04€ con IVA)</p>
-                        <br/>
-                        <h4>Zona 1 (Francia, Paises Bajos, Belgica, Luxemburgo)</h4>
-                        <p><strong>0-4kg:</strong> 10,95 € (12,25€ con IVA)</p>
-                        <p><strong>5-9kg:</strong> 12,75 € (15.43€ con IVA)</p>
-                        <p><strong>10-14kg:</strong> 14,95 € (18.09€ con IVA)</p>
-                        <p><strong>15-30kg:</strong> 24,50 € (29.65€ con IVA)</p>
-                        <br/>
-                        <h4>Zona 2 (Italia, Alemania, Austria, UK, Suiza)</h4>
-                        <p><strong>0-4kg:</strong> 11,50 € (13.92€ con IVA)</p>
-                        <p><strong>5-9kg</strong>: 13,75 € (16.64€ con IVA)</p>
-                        <p><strong>10-14kg:</strong> 19.95 € (24.14€ con IVA)</p>
-                        <p><strong>15-30kg:</strong> 26,50 € (32.07€ con IVA)</p>
-                        <br/>
-                        <h4>Zona 3 (resto Unión Europea):</h4>
-                        <p><strong>0-4kg:</strong> 18,25 € (22,08€ con IVA)</p>
-                        <p><strong>5-9kg</strong>: 28,75 € (34.79€ con IVA)</p>
-                        <p><strong>10-14kg:</strong> 38.95 € (47.34€ con IVA)</p>
-                        <p><strong>15-30kg:</strong> 52,00 € (62.92€ con IVA)</p>
-                        <br/>
-                        <p><strong>Resto del mundo: <a href="mailto:vsebastian@spmc.es">Contactar</a></strong></p>
-                        <br/>
-                        <p><strong>NOTA:</strong> Para pedidos bajo condiciones especiales no especificadas aquí,
-                            nos pondremos en contacto con Usted para concretar el importe de los gastos de envío.</p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h3>Nacional</h3>
+                                <div class="col-md-12">
+                                    <h4>España Penínsular:</h4>
+                                    <p>Más de 99€ y máximo 15Kg: <strong>GRATIS </strong></p>
+                                    <p>Hasta 15kg: <strong>4,50 € (5,45€ con IVA)</strong></p>
+                                    <p>Cada 5 Kilos Extra: <strong>3 € (3,63€ con IVA)</strong></p>
+                                    <p><strong>Nota: </strong>Para pedidos de más de 15Kg que sean superiores a 99€ se cobrará solamente el sobrepeso.</p>
+                                    <br/>
+                                    <h4>Baleares y Canarias:</h4>
+                                    <p>Hasta 5kg: <strong>11,55 € (13,98€ con IVA)</strong></p>
+                                    <p>Hasta 10kg: <strong>13,75 € (16,64€ con IVA)</strong></p>
+                                    <p>11-20kg.: <strong>24,00 € (29,04€ con IVA)</strong></p>
+                                    <p><strong>Nota: </strong>Envios a Canarias no Incluyen IVA</p>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <h3>Internacional</h3>
+                                <div class="col-md-6">
+                                    <h4>Portugal:</h4>
+                                    <p><strong>Hasta 5kg</strong>: 4,95 € (5,99€ con IVA)</p>
+                                    <p><strong>Hasta 10kg</strong>: 6,95 € (8.41€ con IVA)</p>
+                                    <p><strong>Hasta 20kg.</strong>: 9,95 € (12.04€ con IVA)</p>
+                                    <p><strong>Nota: </strong>Sólo parte continental</p>
+                                    <br/>
+                                    <h4>Francia, Paises Bajos, Belgica, Luxemburgo</h4>
+                                    <p><strong>0-4kg:</strong> 10,95 € (12,25€ con IVA)</p>
+                                    <p><strong>5-9kg:</strong> 12,75 € (15.43€ con IVA)</p>
+                                    <p><strong>10-14kg:</strong> 14,95 € (18.09€ con IVA)</p>
+                                    <p><strong>15-30kg:</strong> 24,50 € (29.65€ con IVA)</p>
+                                    <br/>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>Italia, Alemania, Austria, UK, Suiza</h4>
+                                    <p><strong>0-4kg:</strong> 11,50 € (13.92€ con IVA)</p>
+                                    <p><strong>5-9kg</strong>: 13,75 € (16.64€ con IVA)</p>
+                                    <p><strong>10-14kg:</strong> 19.95 € (24.14€ con IVA)</p>
+                                    <p><strong>15-30kg:</strong> 26,50 € (32.07€ con IVA)</p>
+                                    <br/>
+                                    <h4>Resto Unión Europea:</h4>
+                                    <p><strong>0-4kg:</strong> 18,25 € (22,08€ con IVA)</p>
+                                    <p><strong>5-9kg</strong>: 28,75 € (34.79€ con IVA)</p>
+                                    <p><strong>10-14kg:</strong> 38.95 € (47.34€ con IVA)</p>
+                                    <p><strong>15-30kg:</strong> 52,00 € (62.92€ con IVA)</p>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Otras Tarifas</h2>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Para el resto del mundo, por favor, pregúntenos <a href="/page/contactus">aquí.</a></p>
+                                <p>Para pedidos bajo condiciones especiales no especificadas aquí,
+                                    nos pondremos en contacto con Usted para concretar el importe de los gastos de envío.</p>
+                                <br/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -410,7 +419,7 @@
     <record id="website.condiciones-legales" model="ir.ui.view">
         <field name="website_meta_title">Condiciones de envío - NostrumSport</field>
         <field name="website_meta_description">Condiciones de envío de NostrumSport, la tienda de fisioterapia.
-            Entrega en 24-48h, envío a 4,50€ (en península) pero para pedidos de más de 100€ ENVIO GRATIS</field>
+            Entrega en 24-48h, envío a 4,50€ (en península) pero para pedidos de más de 99€ el ENVIO es GRATIS</field>
         <field name="website_meta_keywords"/>
     </record>
 

@@ -69,4 +69,26 @@
         </xpath>
     </template>
 
+    <template id="payment_delivery_replace" name="Delivery Costs" inherit_id="website_sale_one_step_checkout_delivery.payment_delivery">
+        <xpath expr="//div[@id='delivery_carrier_osc']" position="replace">
+            <div t-if="deliveries" id="delivery_carrier_osc_custom">
+                <h3 class="page-header mt16">Send Conditions</h3>
+
+                <div class="panel panel-default border_primary">
+                    <div class="panel-body">
+                        Free delivery for amounts over € 99 and weight less than 15Kg
+                    </div>
+                    <div class="panel-footer">
+                        <p>Amount to get free delivery:</p>
+                        <a t-if="99 - website_sale_order.amount_total &gt; 0" class="btn btn-block btn-primary" >
+                            <span t-esc="99 - website_sale_order.amount_total" style="white-space: nowrap;"
+                                  t-options="{'widget': 'monetary','from_currency': website_sale_order.pricelist_id.currency_id,'display_currency': website.currency_id}" />
+                        </a>
+                        <a t-if="99 - website_sale_order.amount_total &lt;= 0" class="btn btn-block btn-primary">You get free delivery!!!</a>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
 </odoo>
