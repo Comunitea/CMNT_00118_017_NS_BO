@@ -48,6 +48,19 @@
         </xpath>
     </template>
 
+
+    <record id="website_settings_add_instagam" model="ir.ui.view">
+        <field name="name">website.settings.add.instagam.form</field>
+        <field name="model">website.config.settings</field>
+        <field name="inherit_id" ref="website.view_website_config_settings"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='social_googleplus']" position="after">
+                <field name="social_instagram" placeholder="https://www.instagram.com/company_odoo"/>
+            </xpath>
+        </field>
+    </record>
+
+
     <!-- Redes sociales -->
     <record id="social_fb_link" model="website.config.settings">
         <field name="social_twitter">https://twitter.com/NostrumSport</field>
@@ -56,6 +69,7 @@
         <field name="social_linkedin"/>
         <field name="social_youtube"/>
         <field name="social_googleplus">https://plus.google.com/+NostrumSportSLValencia</field>
+        <field name="social_instagram">https://www.instagram.com/nostrumsport_/</field>
     </record>
 
     <!-- Error 404 -->
