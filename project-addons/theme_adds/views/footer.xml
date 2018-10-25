@@ -163,6 +163,9 @@
             </div>
         </xpath>
         <xpath expr="//footer//section[@class='three_Column_snippet_wrap']" position="replace" />
+        <xpath expr="//footer" position="before">
+            <div class="footer_before"/>
+        </xpath>
         <xpath expr="//footer" position="after">
             <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"/>
             <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"/>
