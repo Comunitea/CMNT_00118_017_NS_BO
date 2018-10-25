@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="legal_terms_of_use_add" inherit_id="website_legal_page.terms-of-use">
+        <xpath expr="//section[1]" position="before">
+            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+        </xpath>
+    </template>
+
+    <template id="legal_advice_add" inherit_id="website_legal_page.advice">
+        <xpath expr="//section[1]" position="before">
+            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+        </xpath>
+    </template>
+
+    <template id="legal_privacy_policy_add" inherit_id="website_legal_page.privacy-policy">
+        <xpath expr="//section[1]" position="before">
+            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+        </xpath>
+    </template>
+
+</odoo>
