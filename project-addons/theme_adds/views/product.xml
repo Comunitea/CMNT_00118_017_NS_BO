@@ -69,8 +69,8 @@
     </template>
 
     <!-- Product description -->
-    <template id="product_content_field_replace" inherit_id="clarico_extra_features.clarico_extra_features">
-<!--        <xpath expr="//div[@class='col-md-7 col-sm-7 product_info_style_padding']" position="replace">
+    <!--<template id="product_content_field_replace" inherit_id="clarico_extra_features.clarico_extra_features">
+        <xpath expr="//div[@class='col-md-7 col-sm-7 product_info_style_padding']" position="replace">
             <div class="col-md-7 col-sm-7 product_info_style_padding" t-if="product.description">
                 <div class="col-ld-12 col-md-12 product_sort_description_div_class">
                     <div class="clo-md-12 recently_view_product_headind_div_class">
@@ -81,9 +81,9 @@
                     <div class="product_sort_description_para_class" t-field="product.description"/>
                 </div>
             </div>
-        </xpath>-->
-        <!--<xpath expr="//p[@class='product_sort_description_para_class']" position="replace"/>-->
-    </template>
+        </xpath>
+        <xpath expr="//p[@class='product_sort_description_para_class']" position="replace"/>
+    </template>-->
 
     <template id="product_content_field_position" inherit_id="clarico_product.clarico_product_product">
         <xpath expr="//div[@class='div_class_whole_product_features']" position="replace">
@@ -189,11 +189,11 @@
     </template>
 
     <!-- Extra Features Description -->
-    <!--<template id="clarico_extra_features_custom" inherit_id="clarico_extra_features.clarico_extra_features">
+    <template id="clarico_extra_features_title" inherit_id="clarico_extra_features.clarico_extra_features">
         <xpath expr="//p[@class='product_info_heading_para_class']" position="replace">
             <p class="product_info_heading_para_class">EXTRA FEATURES DESCRIPTION</p>
         </xpath>
-    </template>-->
+    </template>
 
     <!-- product image carousel -->
     <template id="product_image_carousel_replace" inherit_id="clarico_product.clarico_product_product">
