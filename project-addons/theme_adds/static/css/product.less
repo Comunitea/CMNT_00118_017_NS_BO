@@ -60,9 +60,9 @@ ul.js_add_cart_variants {
         margin-bottom: 3%;
         & p.text-muted {
             color: #000;
-            background-color: #ECECED;
+            /*background-color: #ECECED;
             padding: 2px 6px;
-            margin: -2px -6px;
+            margin: -2px -6px;*/
         }
     }
 }
@@ -70,7 +70,7 @@ ul.js_add_cart_variants {
     margin-bottom: 1%;
 }
 #product_page_recently_view {
-    margin-top: 5%;
+    margin-top: 3%;
 }
 .product_name_rating {
     margin-bottom: 0;
@@ -170,7 +170,28 @@ ul.js_add_cart_variants {
         padding: 0 10px;
     }
 }
+p.p_class_cross_image.common-close-btn {
+    top: 16px;
+    right: 21px;
+    background-color: @theme-color;
+    color: #fff;
+}
+.zoomed_image_on_screen {
+    width: 80%;
+    height: 90%;
+    left: 10%;
+    top: 5%;
+    outline: 2px solid @theme-color;
+    box-shadow: 0px 0px 10px #000;
+    & .clarico_slide {
+        position: absolute;
+    }
+}
 
+
+/*
+    CSS media part MAX-WIDTH
+*/
 @media (max-width: 800px){
     & ul.pagination {
         & li a {

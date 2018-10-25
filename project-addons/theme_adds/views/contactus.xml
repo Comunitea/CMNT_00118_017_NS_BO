@@ -14,6 +14,27 @@
         </xpath>
     </template>
 
+    <template id="contactus_thanks_replace" inherit_id="website_crm.contactus_thanks">
+        <xpath expr="//div[@class='container']" position="before">
+            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+        </xpath>
+        <xpath expr="//div[@class='col-md-4']" position="replace"/>
+    </template>
+
+    <template id="clarico_contact_thanks" inherit_id="clarico_contact.clarico_contact_thanks">
+        <xpath expr="//div[@class='col-md-8']" position="replace">
+            <div class="col-md-12">
+                <h2>Your message has been sent successfully</h2>
+                <p class="mb16 mt16">We will get back to you shortly.</p>
+                <p class="mb16">If you have an emergency, do not hesitate to contact us by:</p>
+                <ul class="list-unstyled mb64">
+                    <li><i class="fa fa-phone"></i> : <span t-field="res_company.phone"/></li>
+                    <li><i class="fa fa-envelope"></i> : <span t-field="res_company.email"/></li>
+                </ul>
+            </div>
+        </xpath>
+    </template>
+
     <!-- Vista pisada porque clarico ya la tenia pisada -->
     <template id="website.contactus" name="Contact us" page="True">
 		<t t-call="website.layout">
