@@ -7,10 +7,24 @@
             <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
         </xpath>
         <xpath expr="//a[@class='clear-all-wishlist']" position="replace">
-            <a class="clear-all-wishlist btn btn-primary">Clear Wishlist</a>
+            <a class="clear-all-wishlist btn btn-primary common-btn">Clear Wishlist</a>
         </xpath>
         <xpath expr="//div[@class='wishlist_rating_main_div']" position="replace"/>
         <xpath expr="//div[@class='remove_wish_div']" position="replace"/>
+        <xpath expr="//div[@id='quick_view_wishlist']" position="replace">
+            <div class="go_to_product_wishlist"><a class="btn btn-primary" t-att-href="'/shop/product/%s' %slug(p.product_id)">Go to product</a></div>
+        </xpath>
+        <xpath expr="//div[@class='wish_product_main_div']" position="attributes">
+            <attribute name="class">wish_product_main_div row</attribute>
+        </xpath>
+        <xpath expr="//div[@class='product']" position="attributes">
+            <attribute name="class">product col-md-4</attribute>
+        </xpath>
+        <xpath expr="//div[@class='wishlist-img-div']" position="replace">
+            <div class="wishlist-img-div">
+                <img class="wishlist-img" t-att-src="'data:image/png;base64,%s' % p.product_id.image_medium"/>
+            </div>
+        </xpath>
     </template>
 
     <template id="wishlist_login_replace" inherit_id="clarico_wishlist.login">
