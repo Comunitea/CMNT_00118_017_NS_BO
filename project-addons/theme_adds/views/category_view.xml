@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_public_category_add_slug" model="ir.ui.view">
+        <field name="name">product.public.category.add.slug</field>
+        <field name="model">product.public.category</field>
+        <field name="inherit_id" ref="website_sale.product_public_category_form_view"/>
+        <field name="arch" type="xml">
+            <field name="attribute_select" position="after">
+                <field name="slug"/>
+            </field>
+        </field>
+    </record>
+</odoo>

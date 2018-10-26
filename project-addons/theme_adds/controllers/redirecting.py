@@ -3,14 +3,85 @@
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 from __builtin__ import type
 
-from odoo import http
+import unicodedata
+import re
+import ipdb
+
+# optional python-slugify import (https://github.com/un33k/python-slugify)
+try:
+    import slugify as slugify_lib
+except ImportError:
+    slugify_lib = None
+
+from odoo import http, api
+from odoo.tools import ustr
+
+
+####################################################
+# Slug API
+####################################################
+
+def slugify(s, max_length=None):
+    """ Transform a string to a slug that can be used in a url path.
+        This method will first try to do the job with python-slugify if present.
+        Otherwise it will process string by stripping leading and ending spaces,
+        converting unicode chars to ascii, lowering all chars and replacing spaces
+        and underscore with hyphen "-".
+        :param s: str
+        :param max_length: int
+        :rtype: str
+    """
+    s = ustr(s)
+    if slugify_lib:
+        # There are 2 different libraries only python-slugify is supported
+        try:
+            return slugify_lib.slugify(s, max_length=max_length)
+        except TypeError:
+            pass
+    uni = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore').decode('ascii')
+    slug_str = re.sub('[\W_]', ' ', uni).strip().lower()
+    slug_str = re.sub('[-\s]+', '-', slug_str)
+
+    return slug_str[:max_length]
+
+
+####################################################
+# Local classes
+####################################################
 
 class UrlsRedirect(http.Controller):
 
-    # @http.route(['/shop/product/<model("product.template"):product>'], type='http', auth="public", website=True)
-    # def product(self, product):
-    #     origin = http.request.httprequest.path
-    #     split = origin.split('/')
+    @http.route(['/es/<path:path>'], type='http', auth='public', website=True)
+    def search_product_by_slug(self, path):
+        split = path.split('.html')
+        direction = split[0]
+        products_list = http.request.env['product.template']
+        category_list = http.request.env['product.public.category']
+        is_product = products_list.search([('slug', '=', direction)])
+        is_category = category_list.search([('slug', '=', direction)])
+        # ipdb.set_trace()
+        if is_product.id:
+            identifier, name = is_product.id, is_product.display_name
+            slugname = slugify(name or '').strip().strip('-')
+            direction = "/shop/product/%s-%d" % (slugname, identifier)
+            return http.local_redirect(
+                direction,
+                dict(http.request.httprequest.args),
+                True,
+                code='301'
+            )
+        elif is_category.id:
+            identifier, name = is_category.id, is_category.name
+            slugname = slugify(name or '').strip().strip('-')
+            direction = "/shop/category/%s-%d" % (slugname, identifier)
+            return http.local_redirect(
+                direction,
+                dict(http.request.httprequest.args),
+                True,
+                code='301'
+            )
+        else:
+            return http.local_redirect('/%s' % path)
 
     @http.route(['/es/content/<path:path>'], type='http', auth='public', website=True)
     def text_page(self, path):
@@ -105,5 +176,4 @@ class UrlsRedirect(http.Controller):
         else:
             return http.local_redirect('/blog/blog-1')
 
-# import ipdb;
 # ipdb.set_trace()
