@@ -2,15 +2,12 @@
 # This file contains the translation of the following modules:
 #	* theme_adds
 #
-# Translators:
-# Rubén Seijas <ruben@comunitea.com>
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-08 14:41+0000\n"
-"PO-Revision-Date: 2018-10-08 14:41+0000\n"
+"POT-Creation-Date: 2018-10-25 16:52+0000\n"
+"PO-Revision-Date: 2018-10-25 16:52+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,19 +16,128 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_block_replace
+msgid "(Precio sin IVA)"
+msgstr "(Precio sin IVA)"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "12"
+msgstr "12"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "24"
+msgstr "24"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_block_replace
+msgid "25 años de experiencia"
+msgstr "25 años de experiencia"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "48"
+msgstr "48"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer_default
+msgid "640 823 409"
+msgstr "640 823 409"
+
+#. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.login_btn_replace
 msgid "<b>Sign in</b>"
-msgstr "<b>Registrarse</b>"
+msgstr "<b>Iniciar sesión</b>"
 
 #. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.replace_contact_right
-msgid "<b>Telefono:</b>"
-msgstr "<b>Teléfono:</b>"
+#: model:ir.ui.view,arch_db:theme_adds.no_products_define_replace
+msgid "<i class=\"fa fa-wheelchair\" aria-hidden=\"true\"/> No product defined"
+msgstr "<i class=\"fa fa-wheelchair\" aria-hidden=\"true\"/> No product defined"
 
 #. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.left_filter
-msgid "All Products"
-msgstr "Todos los Productos"
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "<span aria-hidden=\"true\">All Products</span>"
+msgstr "<span aria-hidden=\"true\">All Products</span>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_image_carousel_replace
+msgid "<span class=\"fa fa-chevron-left res_prev_class\" aria-hidden=\"true\"/>\n"
+"                                <span class=\"sr-only\">Previous</span>"
+msgstr "<span class=\"fa fa-chevron-left res_prev_class\" aria-hidden=\"true\"/>\n"
+"                                <span class=\"sr-only\">Previous</span>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_image_carousel_replace
+msgid "<span class=\"fa fa-chevron-right res_next_class\" aria-hidden=\"true\"/>\n"
+"                                <span class=\"sr-only\">Next</span>"
+msgstr "<span class=\"fa fa-chevron-right res_next_class\" aria-hidden=\"true\"/>\n"
+"                                <span class=\"sr-only\">Next</span>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.cart_banner_replace
+#: model:ir.ui.view,arch_db:theme_adds.cart_replace_general
+msgid "<span class=\"fa fa-long-arrow-left\"/>\n"
+"                    Continue Shopping"
+msgstr "<span class=\"fa fa-long-arrow-left\"/>\n"
+"                    Continue Shopping"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "<span data-oe-model=\"website.menu\" data-oe-id=\"37\" data-oe-field=\"name\" data-oe-type=\"char\" data-oe-expression=\"submenu.name\">Categories</span>"
+msgstr "<span data-oe-model=\"website.menu\" data-oe-id=\"37\" data-oe-field=\"name\" data-oe-type=\"char\" data-oe-expression=\"submenu.name\">Categories</span>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_block_replace
+msgid "<span>25 años de<br/>experiencia</span>"
+msgstr "<span>25 años de<br/>experiencia</span>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.replace_offer-center
+msgid "<span><i class=\"fa fa-whatsapp\"/> <font>640 823 409</font></span>"
+msgstr "<span><i class=\"fa fa-whatsapp\"/> <font>640 823 409</font></span>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_block_replace
+msgid "<span>A partir<br/>de 99€</span>"
+msgstr "<span>A partir<br/>de 99€</span>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_block_replace
+msgid "<span>Mejor calidad<br/>a buen precio</span>"
+msgstr "<span>Mejor calidad<br/>a buen precio</span>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_block_replace
+msgid "<span>Pago 100%<br/>Seguro</span>"
+msgstr "<span>Pago 100%<br/>Seguro</span>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_content_field_position
+msgid "Accessories"
+msgstr "Accesorios"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer_default
+msgid "Address"
+msgstr "Dirección"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "Además, contamos con gabinetes completos para hacer más fácil tu compra.\n"
+"                                Puedes personalizarlos a tus necesidades añadiendo o quitando tantos productos como desees."
+msgstr "Además, contamos con gabinetes completos para hacer más fácil tu compra.\n"
+"                                Puedes personalizarlos a tus necesidades añadiendo o quitando tantos productos como desees."
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.upd_breadcrumb_bar
+msgid "All products"
+msgstr "Todos los productos"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.payment_delivery_replace
+msgid "Amount to get free delivery:"
+msgstr "cantidad para recibir la entrega gratis:"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.shop
@@ -49,19 +155,34 @@ msgid "Background Image URL"
 msgstr "URL Imagen de Fondo"
 
 #. module: theme_adds
-#: model:ir.model,name:theme_adds.model_blog_post
-msgid "Blog Post"
-msgstr "Entrada del Blog"
+#: model:website.menu,name:theme_adds.blog_link
+msgid "Blog"
+msgstr "Blog"
 
 #. module: theme_adds
-#: model:website.menu,name:theme_adds.left_filter
+#: model:ir.model,name:theme_adds.model_blog_post
+msgid "Blog Post"
+msgstr "Entrada del blog"
+
+#. module: theme_adds
+#: selection:product.tag,tag_color:0
+msgid "Blue"
+msgstr "Azul"
+
+#. module: theme_adds
+#: model:website.menu,name:theme_adds.catalog_link
+msgid "Catalogo"
+msgstr "Catálogo"
+
+#. module: theme_adds
+#: model:website.menu,name:theme_adds.categories_link
 msgid "Categories"
 msgstr "Categorías"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.cart_replace_general
 msgid "Clear Cart"
-msgstr "Vaciar Carro"
+msgstr "Vaciar Carrito"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.wishlist_banner_replace
@@ -69,30 +190,20 @@ msgid "Clear Wishlist"
 msgstr "Vaciar Lista Deseos"
 
 #. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.clarico_shop_products
-msgid "show"
-msgstr "Mostrar"
-
-#. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.clarico_shop_products
-msgid "Sort by"
-msgstr "Ordenar"
-
-#. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.replace_footer
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer_default
 #: model:website.menu,name:theme_adds.entrega_page_link
 msgid "Condiciones de envío"
 msgstr "Condiciones de envío"
 
 #. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.replace_footer
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer_default
 #: model:website.menu,name:theme_adds.legal_page_link
 msgid "Condiciones legales"
 msgstr "Condiciones legales"
 
 #. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.add_start_btn_on_signin_page
-msgid "Contactus"
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer_default
+msgid "Contacto"
 msgstr "Contacto"
 
 #. module: theme_adds
@@ -101,19 +212,44 @@ msgid "Content"
 msgstr "Contenido"
 
 #. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
-msgid "Descripción para el producto"
-msgstr "Descripción del Producto"
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer_default
+#: model:website.menu,name:theme_adds.devolution_page_link
+msgid "Devoluciones"
+msgstr "Devoluciones"
 
 #. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.clarico_extra_features_custom
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer_default
+#: model:website.menu,name:theme_adds.distributions_page_link
+msgid "Distribuye nuestros productos"
+msgstr "Distribuye nuestros productos"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.clarico_extra_features_title
 msgid "EXTRA FEATURES DESCRIPTION"
 msgstr "CARACTERÍSTICAS EXTRA"
 
 #. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.replace_footer
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer_default
 msgid "Email"
 msgstr "Correo electrónico"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.wishlist_login_replace
+msgid "Email\n"
+"                            <span class=\"mandatory\">*</span>"
+msgstr "Email\n"
+"                            <span class=\"mandatory\">*</span>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "Encuentra el mejor material de fisioterapia online de la mano de Nostrumsport.\n"
+"                                En nuestra tienda online podrás encontrar todo lo necesario para tu clínica o para uso personal:\n"
+"                                camillas plegables, aceite para masajes, vendajes, mobiliario clínico, material de electroterapia,\n"
+"                                agujas de acupuntura y mucho más."
+msgstr "Encuentra el mejor material de fisioterapia online de la mano de Nostrumsport.\n"
+"                                En nuestra tienda online podrás encontrar todo lo necesario para tu clínica o para uso personal:\n"
+"                                camillas plegables, aceite para masajes, vendajes, mobiliario clínico, material de electroterapia,\n"
+"                                agujas de acupuntura y mucho más."
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.product_block_replace
@@ -121,9 +257,13 @@ msgid "Envio gratis a partir de 99€"
 msgstr "Envío gratis a partir de 99€"
 
 #. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
-msgid "Esta nota se mostrará en los productos."
-msgstr "Esta nota se mostrará en los productos."
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "Especialistas en clínicas de fisioterapia, Nostrumsport dispone de un amplio catálogo de productos\n"
+"                                    perfectos para renovar tu vieja clínica o para montar una nueva con el mejor material y la garantía\n"
+"                                    de una fabricación bajo las últimas tecnologías del mercado examinadas por los más exigentes controles de calidad."
+msgstr "Especialistas en clínicas de fisioterapia, Nostrumsport dispone de un amplio catálogo de productos\n"
+"                                    perfectos para renovar tu vieja clínica o para montar una nueva con el mejor material y la garantía\n"
+"                                    de una fabricación bajo las últimas tecnologías del mercado examinadas por los más exigentes controles de calidad."
 
 #. module: theme_adds
 #: model:ir.filters,name:theme_adds.ir_filter_featured_category
@@ -138,14 +278,109 @@ msgid "Featured Products"
 msgstr "Productos Destacados"
 
 #. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.payment_delivery_replace
+msgid "Free delivery for amounts over € 99 and weight less than 15Kg"
+msgstr "Envíos gratis para compras superiores a 99€ y peso inferior a 15Kg"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
+msgid "Full description"
+msgstr "Descripción completa"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
+msgid "Full product HTML description"
+msgstr "Descripción HTML completa del producto"
+
+#. module: theme_adds
+#: selection:product.tag,tag_color:0
+msgid "Gray"
+msgstr "Gris"
+
+#. module: theme_adds
+#: selection:product.tag,tag_color:0
+msgid "Green"
+msgstr "Green"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.clarico_contact_thanks
+msgid "If you have an emergency, do not hesitate to contact us by:"
+msgstr "Si tiene algún problema, no dude en contactar con nosotros por:"
+
+#. module: theme_adds
+#: model:website.menu,name:theme_adds.informacion_submenu
+msgid "Información"
+msgstr "Información"
+
+#. module: theme_adds
+#: model:ir.model.fields,field_description:theme_adds.field_website_config_settings_social_instagram
+#: model:ir.model.fields,field_description:theme_adds.field_website_social_instagram
+msgid "Instagram Account"
+msgstr "Cuenta de Instagram"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.wishlist_login_replace
+msgid "Login"
+msgstr "Registro"
+
+#. module: theme_adds
 #: model:ir.model.fields,field_description:theme_adds.field_product_tag_marked
 msgid "Marked"
 msgstr "Marcado"
 
 #. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "Material de fisioterapia para nueva clínica"
+msgstr "Material de fisioterapia para nueva clínica"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_block_replace
+msgid "Mejor calidad a buen precio"
+msgstr "Mejor calidad a buen precio"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer_default
+msgid "My Wishlist"
+msgstr "Mi lista de deseos"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer_default
+msgid "My account"
+msgstr "Mi cuenta"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer_default
+msgid "My cart"
+msgstr "Mi carrito"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer_default
+msgid "My orders"
+msgstr "Mis pedidos"
+
+#. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.blog_title_replace
 msgid "Next post:"
 msgstr "Siguiente entrada:"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "No esperes más y cuenta con Nostrumsport para la aparatología de tu clínica.\n"
+"                                    Somos una empresa líder del sector gracias a la calidad de nuestros productos, un precio competitivo\n"
+"                                    y la experiencia de nuestro equipo a tu disposición para tu clínica."
+msgstr "No esperes más y cuenta con Nostrumsport para la aparatología de tu clínica.\n"
+"                                    Somos una empresa líder del sector gracias a la calidad de nuestros productos, un precio competitivo\n"
+"                                    y la experiencia de nuestro equipo a tu disposición para tu clínica."
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.header_center_inside
+msgid "Nostrumsport"
+msgstr "Nostrumsport"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "Nostrumsport: Material fisioterapia"
+msgstr "Nostrumsport: Material fisioterapia"
 
 #. module: theme_adds
 #: model:ir.filters,name:theme_adds.ir_filter_novelty_product
@@ -160,19 +395,72 @@ msgid "Offers"
 msgstr "Ofertas"
 
 #. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_content_field_position
+msgid "PRODUCT DESCRIPTION"
+msgstr "CARACTERÍSTICAS"
+
+#. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.product_block_replace
-msgid "PRODUCT DESCRIPTION"
-msgstr "CARACTERÍSTICAS"
+msgid "Pago 100% Seguro"
+msgstr "Pago 100% Seguro"
 
 #. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.product_content_field_replace
-msgid "PRODUCT DESCRIPTION"
-msgstr "CARACTERÍSTICAS"
+#: model:website.menu,name:theme_adds.payment_page_link
+msgid "Pago seguro"
+msgstr "Pago seguro"
 
 #. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.left_filter
-msgid "Categories"
-msgstr "Categorías"
+#: model:ir.ui.view,arch_db:theme_adds.wishlist_login_replace
+msgid "Password\n"
+"                            <span class=\"mandatory\">*</span>"
+msgstr "Constraseña\n"
+"                            <span class=\"mandatory\">*</span>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer_default
+#: model:website.menu,name:theme_adds.cookies_page_link
+msgid "Política de Cookies y privacidad"
+msgstr "Política de Cookies y privacidad"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "Ponemos 25 años de experiencia a tu servicio"
+msgstr "Ponemos 25 años de experiencia a tu servicio"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.checkout_product_list_table_head_replace
+msgid "Price"
+msgstr "Precio"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.cart_replace_general
+msgid "Process checkout <span class=\"fa fa-long-arrow-right\"/>"
+msgstr "Process checkout <span class=\"fa fa-long-arrow-right\"/>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.checkout_product_list_table_head_replace
+msgid "Product"
+msgstr "Producto"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_tags_add_marked_tree
+msgid "Product Tags"
+msgstr "Etiquetas de productos"
+
+#. module: theme_adds
+#: model:ir.model,name:theme_adds.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "Pídenos presupuesto"
+msgstr "Pídenos presupuesto"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.checkout_product_list_table_head_replace
+msgid "Qnt."
+msgstr "Qnt."
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.blog_title_replace
@@ -185,9 +473,39 @@ msgid "Read more..."
 msgstr "Leer más..."
 
 #. module: theme_adds
+#: selection:product.tag,tag_color:0
+msgid "Red"
+msgstr "Rojo"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.wishlist_login_replace
+msgid "Register"
+msgstr "Registro"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.header_center_inside
+msgid "Revi 9.2/10"
+msgstr "Revi 9.2/10"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.add_ref_field_product_list
+msgid "SKU:"
+msgstr "SKU:"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.subscribe_footer
+msgid "Se ha enviado un mail de confirmación"
+msgstr "Se ha enviado un mail de confirmación"
+
+#. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.header_center_inside
 msgid "Search in store..."
 msgstr "Buscar en tienda..."
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.payment_delivery_replace
+msgid "Send Conditions"
+msgstr "Enviar Condiciones"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.shop
@@ -195,10 +513,67 @@ msgid "Shop Now"
 msgstr "Comprar Ahora"
 
 #. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.replace_footer
+#: model:ir.ui.view,arch_db:theme_adds.no_products_define_replace
+msgid "Shop now"
+msgstr "Comprar Ahora"
+
+#. module: theme_adds
+#: model:ir.model.fields,field_description:theme_adds.field_delivery_carrier_description_short
+#: model:ir.model.fields,field_description:theme_adds.field_product_product_description_short
+#: model:ir.model.fields,field_description:theme_adds.field_product_template_description_short
+msgid "Short description"
+msgstr "Pequeña descripción"
+
+#. module: theme_adds
+#: model:ir.model.fields,help:theme_adds.field_delivery_carrier_description_short
+#: model:ir.model.fields,help:theme_adds.field_product_product_description_short
+#: model:ir.model.fields,help:theme_adds.field_product_template_description_short
+msgid "Short description for product page"
+msgstr "Pequeña descripción sobre la página del producto"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
+msgid "Short product description"
+msgstr "Pequeña descripción del producto"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "Si vas a abrir una nueva clínica o necesitas material fisioterapia,\n"
+"                                    Nostrumsport pone a tu servicio más de 25 años de experiencia en todo tipo de productos para fisioterapia.\n"
+"                                    Además, te facilitaremos un presupuesto totalmente personalizado del material que necesites sin ningún tipo de compromiso,\n"
+"                                    aconsejándote sobre las mejores soluciones a las necesidades que tu negocio adquiera,\n"
+"                                    los productos más recomendados y un servicio postventa que te ayudará en todo lo que necesites."
+msgstr "Si vas a abrir una nueva clínica o necesitas material fisioterapia,\n"
+"                                    Nostrumsport pone a tu servicio más de 25 años de experiencia en todo tipo de productos para fisioterapia.\n"
+"                                    Además, te facilitaremos un presupuesto totalmente personalizado del material que necesites sin ningún tipo de compromiso,\n"
+"                                    aconsejándote sobre las mejores soluciones a las necesidades que tu negocio adquiera,\n"
+"                                    los productos más recomendados y un servicio postventa que te ayudará en todo lo que necesites."
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer_default
 #: model:website.menu,name:theme_adds.about_page_link
 msgid "Sobre nosotros"
 msgstr "Sobre nosotros"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_content_field_position
+msgid "Suggested Items"
+msgstr "Sugerencias"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.subscribe_footer
+msgid "Suscribir"
+msgstr "Suscribir"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.subscribe_footer
+msgid "Suscríbete a nuestro newsletter y mantente al día de todas las novedades"
+msgstr "Suscríbete a nuestro newsletter y mantente al día de todas las novedades"
+
+#. module: theme_adds
+#: model:ir.model.fields,field_description:theme_adds.field_product_tag_tag_color
+msgid "Tag label color"
+msgstr "Color de la etiqueta"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.left_filter
@@ -206,22 +581,102 @@ msgid "Tags"
 msgstr "Etiquetas"
 
 #. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer_default
+msgid "Teléfono"
+msgstr "Teléfono"
+
+#. module: theme_adds
+#: model:website.menu,name:theme_adds.home_link
+msgid "Tienda"
+msgstr "Tienda"
+
+#. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.blog_items_list_replace
 msgid "Untitled Post"
 msgstr "Entrada sin título"
 
 #. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.left_filter
-msgid "View Filter"
-msgstr "Ver Filtro"
+#: model:ir.ui.view,arch_db:theme_adds.clarico_contact_thanks
+msgid "We will get back to you shortly."
+msgstr "Le contestaremos en breve."
 
 #. module: theme_adds
 #: model:ir.model,name:theme_adds.model_website
 msgid "Website"
 msgstr "Sitio web"
 
-#. module: clarico_recently_viewed
-#: model:ir.model,name:clarico_recently_viewed.recent_cart_product
-msgid "Recently Viewed items"
-msgstr "VISTOS RECIENTEMENTE"
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
+msgid "Website description"
+msgstr "Descripción de la página web"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.replace_footer_default
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#. module: theme_adds
+#: selection:product.tag,tag_color:0
+msgid "Yellow"
+msgstr "Amarillo"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.payment_delivery_replace
+msgid "You get free delivery!!!"
+msgstr "¡¡¡Ya tiene envío gratuíto!!!"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.clarico_contact_thanks
+msgid "Your message has been sent successfully"
+msgstr "Su mensaje ha sido correctamente enviado"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.subscribe_footer
+msgid "anular suscripción"
+msgstr "anular suscripción"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.subscribe_footer
+msgid "archivos"
+msgstr "archivos"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.subscribe_footer
+msgid "enviar correo"
+msgstr "enviar correo"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.website_settings_add_instagam
+msgid "https://www.instagram.com/company_odoo"
+msgstr "https://www.instagram.com/company_odoo"
+
+#. module: theme_adds
+#: model:ir.model,name:theme_adds.model_product_tag
+msgid "product.tag"
+msgstr "etiqueta.producto"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.blog_pager_insert
+msgid "pull-right"
+msgstr "tirar a la derecha"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_block_replace
+msgid "sin IVA"
+msgstr "sin IVA"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.subscribe_footer
+msgid "su correo electrónico..."
+msgstr "su correo electrónico..."
+
+#. module: theme_adds
+#: model:ir.model,name:theme_adds.model_website_config_settings
+msgid "website.config.settings"
+msgstr "PáginaWeb.config.ahustes"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.shop
+msgid "¿Habres una Nueva Clínica?"
+msgstr "¿Habres una Nueva Clínica?"
 
