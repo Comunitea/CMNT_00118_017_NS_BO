@@ -25,3 +25,5 @@ class ProductDescription(models.Model):
 
     description_short = fields.Text('Short description', help="Short description for product page", strip_style=True)
     description = fields.Html('Content', strip_style=True)
+    # public_categ_ids = fields.Many2one('product.public.category', string='Website Product Category')
+    slug = fields.Char('Product old URL', help="Old product URL for redirection")
