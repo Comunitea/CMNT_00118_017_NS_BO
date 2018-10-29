@@ -1,4 +1,6 @@
-# © 2018 Comunitea - Javier Colmenero <javier@comunitea.com>
+# -*- coding: utf-8 -*-
+# © 2018 Comunitea
+# Ruben Seijas <ruben@comunitea.com> - Pavel Smirnov <pavel@comunitea.com>
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 {
     'name': 'Theme Adds Clarico',
@@ -15,6 +17,7 @@
         'website_mail_channel',
         'website_sale_one_step_checkout',
         'website_sale_one_step_checkout_delivery',
+        'payment_redsys',
         'payment_paypal',
         'theme_clarico'
     ],
@@ -35,6 +38,7 @@
         'views/account.xml',
         'views/group.xml',
         'views/terms.xml',
+        'views/category_view.xml',
     ],
     'images': [
         'static/description/icon.png',

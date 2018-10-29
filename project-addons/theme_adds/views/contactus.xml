@@ -35,47 +35,66 @@
         </xpath>
     </template>
 
+    <template id="contactus_recapthca_label" inherit_id="website_crm_recaptcha.contactus_form">
+        <xpath expr="//label[@class='col-md-3 col-sm-4 control-label']" position="attributes">
+            <attribute name="class">col-md-3 col-sm-4 control-label clabel</attribute>
+        </xpath>
+    </template>
+
     <!-- Vista pisada porque clarico ya la tenia pisada -->
-    <template id="website.contactus" name="Contact us" page="True">
+
+    <template id="contactus_company_info_replace" inherit_id="website.contactus">
+        <xpath expr="//div[@class='clarico_row_maxW']" position="before">
+            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+        </xpath>
+        <xpath expr="//div[@class='col-md-4 mb32']" position="replace">
+            <div class="col-md-4 mb32">
+                <p><strong>Address</strong>:
+                    Sports Medicine Center,
+                    <span t-field="res_company.city" />,
+                    <span t-field="res_company.street" />,
+                    <span t-field="res_company.zip" />
+                </p>
+                <p><b>Telefono:</b> <span t-field="res_company.phone"/></p>
+                <p><b>Correo:</b> <span t-field="res_company.email"/></p>
+            </div>
+        </xpath>
+    </template>
+
+    <!--<template id="website.contactus" name="Contact us" page="True">
 		<t t-call="website.layout">
 			<div id="wrap">
-				<div class="oe_structure" />
 				<div class="clarico_row">
-                    <!--Se añade barra menu verde-->
+                    &lt;!&ndash;Se añade barra menu verde&ndash;&gt;
                     <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
 					<div class="clarico_row_maxW">
-					<h1 class="chs_heading ch_padding">Contact us</h1>
-					<div class="row">
-						<div class="col-md-8" style="padding:0px;">
-							<div class="oe_structure">
-								<div class="contact_summary">
-									<p>Contact us about anything related to our company or
-										services.
-									</p>
-									<p>We'll do our best to get back to you as soon as possible.
-
-									</p>
-								</div>
-							</div>
-							<div class="text-center mt64" name="mail_button">
-                                <a t-attf-href="mailto:{{ res_company.email }}" class="btn btn-primary "
-                                   id="o_contact_mail">Send us an email</a>
+                        <h1 class="chs_heading ch_padding">Contact us</h1>
+                        <div class="row">
+                            <div class="col-md-8" style="padding:0px;">
+                                <div class="oe_structure">
+                                    <div class="contact_summary">
+                                        <p>Contact us about anything related to our company or services.</p>
+                                        <p>We'll do our best to get back to you as soon as possible.</p>
+                                    </div>
+                                </div>
+                                <div class="text-center mt64" name="mail_button">
+                                    <a t-attf-href="mailto:{{ res_company.email }}" class="btn btn-primary "
+                                       id="o_contact_mail">Send us an email</a>
+                                </div>
+                            </div>
+                            &lt;!&ndash;Se reemplazan los datos de contacto&ndash;&gt;
+                            <div class="col-md-4 mb32">
+                                <p><strong>Address</strong>:
+                                    Sports Medicine Center,
+                                    <span t-field="res_company.city" />,
+                                    <span t-field="res_company.street" />,
+                                    <span t-field="res_company.zip" />
+                                </p>
+                                <p><b>Telefono:</b> <span t-field="res_company.phone"/></p>
+                                <p><b>Correo:</b> <span t-field="res_company.email"/></p>
                             </div>
                         </div>
-                        <!--Se reemplazan los datos de contacto-->
-                        <div class="col-md-4 mb32">
-                            <p><strong>Address</strong>:
-                                Sports Medicine Center,
-                                <span t-field="res_company.city" />,
-                                <span t-field="res_company.street" />,
-                                <span t-field="res_company.zip" />
-                            </p>
-                            <p><b>Telefono:</b> <span t-field="res_company.phone"/></p>
-                            <p><b>Correo:</b> <span t-field="res_company.email"/></p>
-                        </div>
                     </div>
-                    </div>
-                    <div class="oe_structure" />
                 </div>
             </div>
 		</t>
@@ -85,6 +104,6 @@
         <field name="website_meta_title">Contáctanos - NostrumSport</field>
         <field name="website_meta_description">Utiliza nuestro formulario para ponerte en contacto con nosotros</field>
         <field name="website_meta_keywords">formulario de contacto, e-mail</field>
-    </record>
+    </record>-->
 
 </odoo>
