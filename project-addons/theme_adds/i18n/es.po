@@ -53,12 +53,12 @@ msgstr "<b>Iniciar sesión</b>"
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.no_products_define_replace
 msgid "<i class=\"fa fa-wheelchair\" aria-hidden=\"true\"/> No product defined"
-msgstr "<i class=\"fa fa-wheelchair\" aria-hidden=\"true\"/> No product defined"
+msgstr "<i class=\"fa fa-wheelchair\" aria-hidden=\"true\"/> Producto no definido"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.shop
 msgid "<span aria-hidden=\"true\">All Products</span>"
-msgstr "<span aria-hidden=\"true\">All Products</span>"
+msgstr "<span aria-hidden=\"true\">Todos los productos</span>"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.product_image_carousel_replace
@@ -80,12 +80,12 @@ msgstr "<span class=\"fa fa-chevron-right res_next_class\" aria-hidden=\"true\"/
 msgid "<span class=\"fa fa-long-arrow-left\"/>\n"
 "                    Continue Shopping"
 msgstr "<span class=\"fa fa-long-arrow-left\"/>\n"
-"                    Continue Shopping"
+"                    Continuar Comprando"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.shop
 msgid "<span data-oe-model=\"website.menu\" data-oe-id=\"37\" data-oe-field=\"name\" data-oe-type=\"char\" data-oe-expression=\"submenu.name\">Categories</span>"
-msgstr "<span data-oe-model=\"website.menu\" data-oe-id=\"37\" data-oe-field=\"name\" data-oe-type=\"char\" data-oe-expression=\"submenu.name\">Categories</span>"
+msgstr "<span data-oe-model=\"website.menu\" data-oe-id=\"37\" data-oe-field=\"name\" data-oe-type=\"char\" data-oe-expression=\"submenu.name\">Categorías</span>"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.product_block_replace
@@ -238,7 +238,7 @@ msgstr "Correo electrónico"
 msgid "Email\n"
 "                            <span class=\"mandatory\">*</span>"
 msgstr "Email\n"
-"                            <span class=\"mandatory\">*</span>"
+"                            <span class=\"mandato\">*</span>"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.shop
@@ -300,7 +300,7 @@ msgstr "Gris"
 #. module: theme_adds
 #: selection:product.tag,tag_color:0
 msgid "Green"
-msgstr "Green"
+msgstr "Verde"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.clarico_contact_thanks
@@ -673,7 +673,7 @@ msgstr "su correo electrónico..."
 #. module: theme_adds
 #: model:ir.model,name:theme_adds.model_website_config_settings
 msgid "website.config.settings"
-msgstr "PáginaWeb.config.ahustes"
+msgstr "PáginaWeb.config.ajustes"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.shop
