@@ -433,9 +433,10 @@
                      <t t-set="inc" t-value="inc+1"/>-->
                  </t>
              </li>
-            <li t-else="" >
-                <a href="/shop">All products</a>
-            </li>
+            <t t-else="" >
+                <span class="select-nevigation-span">/</span>
+                <li><a href="/shop">All products</a></li>
+            </t>
         </xpath>
     </template>
 

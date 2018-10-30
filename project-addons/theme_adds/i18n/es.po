@@ -58,7 +58,7 @@ msgstr "<i class=\"fa fa-wheelchair\" aria-hidden=\"true\"/> Producto no definid
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.shop
 msgid "<span aria-hidden=\"true\">All Products</span>"
-msgstr "<span aria-hidden=\"true\">Todos los productos</span>"
+msgstr "<span aria-hidden=\"true\">Todos</span>"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.product_image_carousel_replace
@@ -132,7 +132,7 @@ msgstr "Además, contamos con gabinetes completos para hacer más fácil tu comp
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.upd_breadcrumb_bar
 msgid "All products"
-msgstr "Todos los productos"
+msgstr "Todos"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.payment_delivery_replace
@@ -435,7 +435,7 @@ msgstr "Precio"
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.cart_replace_general
 msgid "Process checkout <span class=\"fa fa-long-arrow-right\"/>"
-msgstr "Process checkout <span class=\"fa fa-long-arrow-right\"/>"
+msgstr "Procesar compra <span class=\"fa fa-long-arrow-right\"/>"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.checkout_product_list_table_head_replace
@@ -460,7 +460,7 @@ msgstr "Pídenos presupuesto"
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.checkout_product_list_table_head_replace
 msgid "Qnt."
-msgstr "Qnt."
+msgstr "Cnt."
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.blog_title_replace
@@ -490,7 +490,7 @@ msgstr "Revi 9.2/10"
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.add_ref_field_product_list
 msgid "SKU:"
-msgstr "SKU:"
+msgstr "Ref:"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.subscribe_footer
@@ -515,7 +515,7 @@ msgstr "Comprar Ahora"
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.no_products_define_replace
 msgid "Shop now"
-msgstr "Comprar Ahora"
+msgstr "Ir a la tienda"
 
 #. module: theme_adds
 #: model:ir.model.fields,field_description:theme_adds.field_delivery_carrier_description_short
@@ -680,3 +680,33 @@ msgstr "PáginaWeb.config.ajustes"
 msgid "¿Habres una Nueva Clínica?"
 msgstr "¿Habres una Nueva Clínica?"
 
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.wishlist_banner_replace
+msgid "Go to product"
+msgstr "Ir al producto"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.osc_onestepcheckout
+msgid "Review Order"
+msgstr "Revisar el pedido"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.osc_onestepcheckout
+msgid "<span class=\"fa fa-arrow-right\"/>\n"
+"                      change"
+msgstr "<span class=\"fa fa-arrow-right\"/>\n"
+"                      cambiar"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address
+msgid "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"/>\n"
+"                  Add an address"
+msgstr "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"/>\n"
+"                  Añadir una dirección"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address_form
+msgid "Street\n"
+"            <span class=\"hidden-xs\">and Number</span>"
+msgstr "Calle\n"
+"            <span class=\"hidden-xs\">y Número</span>"

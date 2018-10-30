@@ -12,7 +12,9 @@
         <xpath expr="//div[@class='wishlist_rating_main_div']" position="replace"/>
         <xpath expr="//div[@class='remove_wish_div']" position="replace"/>
         <xpath expr="//div[@id='quick_view_wishlist']" position="replace">
-            <div class="go_to_product_wishlist"><a class="btn btn-primary" t-att-href="'/shop/product/%s' %slug(p.product_id)">Go to product</a></div>
+            <div class="go_to_product_wishlist">
+                <a class="btn btn-primary" t-att-href="'/shop/product/%s' %slug(p.product_id)">Go to product</a>
+            </div>
         </xpath>
         <xpath expr="//div[@class='wish_product_main_div']" position="attributes">
             <attribute name="class">wish_product_main_div row</attribute>
