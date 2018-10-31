@@ -687,6 +687,169 @@ msgstr "Ir al producto"
 
 #. module: website_sale_one_step_checkout
 #: model:ir.ui.view,arch_db:website_sale_one_step_checkout.osc_onestepcheckout
+msgid "Shop - Checkout"
+msgstr "Tienda - Compra"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.osc_onestepcheckout
+msgid "Payment Method"
+msgstr "Método de pago"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.osc_onestepcheckout
+msgid "(processing fees\n"
+"                            apply)"
+msgstr "(se aplican tarifas\n"
+"                            de procesamiento)"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.checkout_new_address_modal
+msgid "<span>Confirm</span>\n"
+"            <span class=\"fa fa-long-arrow-right\"/>"
+msgstr "<span>Confirmar</span>\n"
+"            <span class=\"fa fa-long-arrow-right\"/>"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address
+msgid "Address"
+msgstr "Dirección"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address
+msgid "Billing Address"
+msgstr "Dirección de facturación"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address
+msgid "Billing Information"
+msgstr "Información de facturación"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address_form
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.public_shipping_form
+msgid "City"
+msgstr "Ciudad"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address_form
+msgid "Company Name"
+msgstr "Nombre de la compañía"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address_form
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.public_shipping_form
+msgid "Country"
+msgstr "País"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address_form
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.public_shipping_form
+msgid "Country..."
+msgstr "País..."
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address_form
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address_form
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.public_shipping_form
+msgid "Name"
+msgstr "Nombre"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.osc_onestepcheckout
+msgid "Payment Method"
+msgstr "Método de pago"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address_form
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.public_shipping_form
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.osc_onestepcheckout
+msgid "Price"
+msgstr "Precio"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.osc_onestepcheckout
+msgid "Product"
+msgstr "Producto"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.osc_onestepcheckout
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.osc_onestepcheckout
+msgid "Save my payment data"
+msgstr "Guardar mis datos de pago"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address
+msgid "Shipping Address"
+msgstr "Dirección de envío"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.osc_onestepcheckout
+msgid "Shop - Checkout"
+msgstr "Tienda - Compra"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address
+msgid "Sign in"
+msgstr "Iniciar sesión"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address
+msgid "I already have an\n"
+"                      Account"
+msgstr "Ya tengo una cuenta"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address
+msgid "Checkout as guest"
+msgstr "Pagar como invitado"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address
+msgid "Ship to this address"
+msgstr "Enviar a esta dirección"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address_form
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.public_shipping_form
+msgid "State / Province"
+msgstr "Estado / Provincia"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address_form
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.public_shipping_form
+msgid "State / Province..."
+msgstr "Estado / Provincia..."
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address_form
+msgid "TIN / VAT"
+msgstr "NIF"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.model,name:website_sale_one_step_checkout.model_website
+msgid "Website"
+msgstr "Sitio web"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.address_form
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.public_shipping_form
+msgid "Zip Code"
+msgstr "Código postal"
+
+#. module: website_sale_one_step_checkout
+#: model:ir.ui.view,arch_db:website_sale_one_step_checkout.osc_onestepcheckout
 msgid "Review Order"
 msgstr "Revisar el pedido"
 
@@ -710,3 +873,29 @@ msgid "Street\n"
 "            <span class=\"hidden-xs\">and Number</span>"
 msgstr "Calle\n"
 "            <span class=\"hidden-xs\">y Número</span>"
+
+#. module: website_sale_one_step_checkout
+#. openerp-web
+#: code:/odoo-repos/e-commerce/website_sale_one_step_checkout/static/src/js/website_sale_one_step_checkout.js:335
+#, python-format
+msgid "Billing Address"
+msgstr "Dirección de facturación"
+
+#. module: website_sale_one_step_checkout
+#. openerp-web
+#: code:/odoo-repos/e-commerce/website_sale_one_step_checkout/static/src/js/website_sale_one_step_checkout.js:351
+#, python-format
+msgid "Shipping Address"
+msgstr "Dirección de envío"
+
+#. module: website_sale_one_step_checkout
+#. openerp-web
+#: code:/odoo-repos/e-commerce/website_sale_one_step_checkout/static/src/js/website_sale_one_step_checkout.js:364
+#, python-format
+msgid "Shipping Address"
+msgstr "Dirección de envío"
+
+#. module: website_crm_recaptcha
+#: model:ir.ui.view,arch_db:website_crm_recaptcha.contactus_form
+msgid "Human?"
+msgstr "¿Humano?"

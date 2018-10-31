@@ -1,13 +1,15 @@
-$("#contact_us_main_form").each(function(){
-    jQuery.validator.setDefaults({
-      debug: true,
-      success: "valid"
-    });
+$(document).ready(function(){
     $( "#contact_us_main_form" ).validate({
       rules: {
-        field: {
+        email_from: {
           required: true,
           email: true
+        }
+      },
+      messages: {
+        email_from: {
+            required: "Este campo es obligatorio",
+            email: "Por favor, introduce una dirección de correo electrónico válida"
         }
       }
     });
