@@ -92,16 +92,18 @@
                 class="div_class_whole_product_features">
                 <div class="div_class_product_features">
                     <div class="div_sub_class_product_features">
-                        <div class="col-md-7 col-sm-7 product_info_style_padding" t-if="len(product.description) &gt; 15">
-                            <div class="col-ld-12 col-md-12 product_sort_description_div_class">
-                                <div class="clo-md-12 recently_view_product_headind_div_class">
-                                    <p class="product_info_heading_para_class">PRODUCT DESCRIPTION</p>
+                        <t t-if="product.description != False">
+                            <div class="col-md-7 col-sm-7 product_info_style_padding" t-if="len(product.description) &gt; 15">
+                                <div class="col-ld-12 col-md-12 product_sort_description_div_class">
+                                    <div class="clo-md-12 recently_view_product_headind_div_class">
+                                        <p class="product_info_heading_para_class">PRODUCT DESCRIPTION</p>
+                                    </div>
+                                </div>
+                                <div class="div_main_class_desc">
+                                    <div class="product_sort_description_para_class" t-field="product.description"/>
                                 </div>
                             </div>
-                            <div class="div_main_class_desc">
-                                <div class="product_sort_description_para_class" t-field="product.description"/>
-                            </div>
-                        </div>
+                        </t>
                         <div class="column-right_p_alternative">
                             <t t-if="product.alternative_product_ids">
                                 <span style="display:none;" class="acce_count"
