@@ -649,17 +649,7 @@ msgstr "enviar correo"
 #: model:ir.ui.view,arch_db:theme_adds.website_settings_add_instagam
 msgid "https://www.instagram.com/company_odoo"
 msgstr "https://www.instagram.com/company_odoo"
-
-#. module: theme_adds
-#: model:ir.model,name:theme_adds.model_product_tag
-msgid "product.tag"
-msgstr "etiqueta.producto"
-
-#. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.blog_pager_insert
-msgid "pull-right"
-msgstr "tirar a la derecha"
-
+АF
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.product_block_replace
 msgid "sin IVA"
@@ -669,11 +659,6 @@ msgstr "sin IVA"
 #: model:ir.ui.view,arch_db:theme_adds.subscribe_footer
 msgid "su correo electrónico..."
 msgstr "su correo electrónico..."
-
-#. module: theme_adds
-#: model:ir.model,name:theme_adds.model_website_config_settings
-msgid "website.config.settings"
-msgstr "PáginaWeb.config.ajustes"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.shop
