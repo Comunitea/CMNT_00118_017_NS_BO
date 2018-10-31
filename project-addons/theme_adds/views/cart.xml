@@ -24,7 +24,7 @@
     <template id="cart_banner_replace" inherit_id="clarico_cart.clarico_cart">
         <xpath expr="//div[@class='cart-cover-img-div']" position="replace"/>
         <xpath expr="//div[@class='cart-main-div-full oe_cart']/div[@class='oe_structure']" position="before">
-            <div class="pull-left">
+            <div class="pull-left" t-if="website_sale_order.amount_total &gt; 0">
                 <a class="btn btn-primary common-btn" href="/shop" onclick="window.history.go(-1); return false;">
                     <span class="fa fa-long-arrow-left" />
                     Continue Shopping

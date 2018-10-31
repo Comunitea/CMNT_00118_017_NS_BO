@@ -14,13 +14,6 @@ a.clear-all-wishlist.btn {
     color: #fff;
     font-size: inherit;
 }
-.main-div-W100 .main-div-maxW .wish_product_main_div {
-    & .product {
-        width: 33.33333333%;
-        /*padding-bottom: 5px;
-        border-bottom: 2px solid @theme-color;*/
-    }
-}
 .go_to_product_wishlist {
     text-transform: uppercase;
     & a {
@@ -120,6 +113,13 @@ a.clear-all-wishlist.btn {
 /*
     CSS media part MIN-WIDTH
 */
+@media(min-width: 1101px){
+    .main-div-W100 .main-div-maxW .wish_product_main_div {
+        & .product {
+            width: 33.33333333%;
+        }
+    }
+}
 @media(min-width: 801px){
     h1.title_left_padding_15{
         padding-left: 15px;
