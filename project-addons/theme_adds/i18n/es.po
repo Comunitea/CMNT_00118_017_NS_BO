@@ -646,11 +646,6 @@ msgid "enviar correo"
 msgstr "enviar correo"
 
 #. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.website_settings_add_instagam
-msgid "https://www.instagram.com/company_odoo"
-msgstr "https://www.instagram.com/company_odoo"
-АF
-#. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.product_block_replace
 msgid "sin IVA"
 msgstr "sin IVA"
