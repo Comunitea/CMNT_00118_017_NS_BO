@@ -112,11 +112,11 @@
     }
 }
 header .navbar .navbar-top-collapse {
-    margin-top: -5px;
+    margin-top: -5px !important;
     padding: 0;
-}
-.clarico_product_breadcrumb {
-    padding: 7px 0 5px 0;
+    &.header-stick {
+        margin-top: 0 !important;
+    }
 }
 .mobile-version {
     display: none;
@@ -131,7 +131,12 @@ header .navbar .navbar-top-collapse {
 #sub_header_row .clarico_product_breadcrumb {
     margin-top: 0px;
 }
-
+.breadcrumb-main {
+    min-height:30px;
+}
+.sub_breadcrumb {
+    min-height: 25px;
+}
 
 /*
     CSS media part MAX-WIDTH 1200 px
