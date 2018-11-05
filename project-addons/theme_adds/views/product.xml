@@ -31,6 +31,11 @@
                 <p t-field="product.description_short" class="text-muted res_pera_description" />
                 <p t-field="product.description_sale" style="display: none;" />
             </div>
+            <div class="wp-add-to-cart-full-message">
+                <div class="add-to-cart-message"/>
+                <div class="wp-button"><a href="/shop/cart" class="btn btn-primary common-btn">Go to cart</a></div>
+                <div class="wp-close"><span>Close</span></div>
+            </div>
         </xpath>
         <xpath expr="//div[@class='4_btns_combo']" position="after">
             <t t-placeholder="select">
@@ -369,13 +374,21 @@
     <!-- mini image of product replace -->
     <template id="product_mini_image_replace" inherit_id="clarico_shop.clarico_shop_products_item">
         <xpath expr="//div[@class='product-image oe_product_image']" position="replace">
+            <div class="wp-add-to-cart-message">
+                <div class="add-to-cart-message"/>
+                <div class="wp-button"><a href="/shop/cart" class="btn btn-primary">Go to cart</a></div>
+                <div class="wp-button go-to-product">
+                    <a t-att-href="keep('/shop/product/%s' % slug(product))" class="btn btn-primary">View product</a>
+                </div>
+                <div class="wp-close"><span>Close</span></div>
+            </div>
             <div class="product-image oe_product_image">
                 <a itemprop="url"
                     t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))">
                     <span itemprop="image" t-field="product.image"
                         t-options="{'widget': 'image', 'resize':'250x250'}" t-att-alt="product.name" />
                 </a>
-            <div id="in-wishlist-shop"/>
+                <div id="in-wishlist-shop"/>
             </div>
         </xpath>
     </template>
