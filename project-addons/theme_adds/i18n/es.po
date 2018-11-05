@@ -879,3 +879,36 @@ msgstr "Dirección de envío"
 #: model:ir.ui.view,arch_db:website_crm_recaptcha.contactus_form
 msgid "Human?"
 msgstr "¿Humano?"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_block_replace
+msgid "Go to cart"
+msgstr "Ver la cesta"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_block_replace
+msgid "<span>Close</span>"
+msgstr "<span>Cerrar</span>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_mini_image_replace
+msgid "Go to cart"
+msgstr "Ver la cesta"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_mini_image_replace
+msgid "View product"
+msgstr "Ir al producto"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_mini_image_replace
+msgid "<span>Close</span>"
+msgstr "<span>Cerrar</span>"
+
+#. module: theme_adds
+#. openerp-web
+#: code:/project-addons/theme_adds/static/js/script.js:57
+#, python-format
+msgid "This product was added to cart"
+msgstr "Este producto fue añadido al carrito"
+
