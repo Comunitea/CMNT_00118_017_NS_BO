@@ -907,6 +907,20 @@ msgstr "<span>Cerrar</span>"
 
 #. module: theme_adds
 #. openerp-web
+#: code:/project-addons/theme_adds/static/js/script.js:11
+#, python-format
+msgid "This field is required"
+msgstr "Este campo es obligatorio"
+
+#. module: theme_adds
+#. openerp-web
+#: code:/project-addons/theme_adds/static/jsscript.js:12
+#, python-format
+msgid "Please enter a valid email address"
+msgstr "Por favor, introduce una dirección de correo electrónico válida"
+
+#. module: theme_adds
+#. openerp-web
 #: code:/project-addons/theme_adds/static/js/script.js:57
 #, python-format
 msgid "This product was added to cart"
