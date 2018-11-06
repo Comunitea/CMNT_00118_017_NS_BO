@@ -14,10 +14,20 @@
         <xpath expr="//div[@id='quick_view_wishlist']" position="replace">
             <div class="go_to_product_wishlist">
                 <a class="btn btn-primary" t-att-href="'/shop/product/%s' %slug(p.product_id)">Go to product</a>
+                <a t-if="len(p.product_id.product_variant_ids) == 1"
+                   class="btn btn-primary add-to-cart"
+                   t-att-data-id="p.product_id.product_variant_id.id" href="#">Add to cart</a>
             </div>
         </xpath>
         <xpath expr="//div[@class='wish_product_main_div']" position="attributes">
             <attribute name="class">wish_product_main_div row</attribute>
+        </xpath>
+        <xpath expr="//div[@class='wishlist-product-name-div']" position="inside">
+            <div class="wp-add-to-cart-wishlist-message">
+                <div class="add-to-cart-message"/>
+                <div class="wp-button"><a href="/shop/cart" class="btn btn-primary common-btn">Go to cart</a></div>
+                <div class="wp-close"><span>Close</span></div>
+            </div>
         </xpath>
         <xpath expr="//div[@class='product']" position="attributes">
             <attribute name="class">product col-md-4</attribute>

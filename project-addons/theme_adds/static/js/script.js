@@ -115,6 +115,35 @@ odoo.define('product_quick_view.quick_view', function (require) {
             }, 4500);
         });
     });
+    //
+    // On the Wishlist page
+    //
+    $('.go_to_product_wishlist a.add-to-cart').click(function(event){
+        event.preventDefault();
+
+        var msg_div = $(this).parents('.wishlist-product-name-div').find('.add-to-cart-message');
+        var prod_id = $(this).attr('data-id');
+
+        ajax.jsonRpc("/shop/cart/update_json", 'call', {
+            'product_id': parseInt(prod_id, 10),
+            'set_qty': 1
+        }).then(function (data) {
+            if (data.warning) {
+                $(msg_div).html(data.warning);
+                $(msg_div).parent().addClass('add-error').slideDown();
+            } else {
+                $(msg_div).html(msg_success);
+                $(msg_div).parent().removeClass('add-error').slideDown();
+            }
+            // cart quantity change
+            $('#header-cart .my_cart_quantity').html(data.cart_quantity);
+            // auto close
+            setTimeout(function(){
+                $(msg_div).parent().slideUp();
+            }, 4500);
+        });
+
+    });
 });
 /* Close popup "Was added" message */
 $('.wp-close').click(function(){
