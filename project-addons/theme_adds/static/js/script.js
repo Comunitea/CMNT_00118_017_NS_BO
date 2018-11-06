@@ -8,8 +8,8 @@ $(document).ready(function(){
       },
       messages: {
         email_from: {
-            required: "Este campo es obligatorio",
-            email: "Por favor, introduce una dirección de correo electrónico válida"
+            required: 'This field is required',
+            email: 'Please enter a valid email address'
         }
       }
     });
