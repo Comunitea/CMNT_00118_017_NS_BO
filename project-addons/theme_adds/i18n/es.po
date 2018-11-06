@@ -321,7 +321,7 @@ msgstr "Cuenta de Instagram"
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.wishlist_login_replace
 msgid "Login"
-msgstr "Registro"
+msgstr "Entrar"
 
 #. module: theme_adds
 #: model:ir.model.fields,field_description:theme_adds.field_product_tag_marked
@@ -665,6 +665,11 @@ msgstr "¿Habres una Nueva Clínica?"
 msgid "Go to product"
 msgstr "Ir al producto"
 
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.wishlist_banner_replace
+msgid "Add to cart"
+msgstr "Añadir al carrito"
+
 #. module: website_sale_one_step_checkout
 #: model:ir.ui.view,arch_db:website_sale_one_step_checkout.osc_onestepcheckout
 msgid "Shop - Checkout"
@@ -926,3 +931,12 @@ msgstr "Por favor, introduce una dirección de correo electrónico válida"
 msgid "This product was added to cart"
 msgstr "Este producto fue añadido al carrito"
 
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.wishlist_banner_replace
+msgid "Go to cart"
+msgstr "Ver la cesta"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.wishlist_banner_replace
+msgid "<span>Close</span>"
+msgstr "<span>Cerrar</span>"
