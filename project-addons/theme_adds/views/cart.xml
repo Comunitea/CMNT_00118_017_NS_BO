@@ -18,6 +18,9 @@
                     </a>
                 </span>
             </div>
+            <div class="row empty_cart_message">
+                <div class="in-empty_cart_message cart-empty-msg">Your cart is empty!</div>
+            </div>
         </xpath>
     </template>
 

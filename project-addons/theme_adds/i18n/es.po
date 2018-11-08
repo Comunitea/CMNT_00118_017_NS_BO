@@ -185,6 +185,11 @@ msgid "Clear Cart"
 msgstr "Vaciar Carrito"
 
 #. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.cart_replace_general
+msgid "Your cart is empty!"
+msgstr "¡Su cesta está vacía!"
+
+#. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.wishlist_banner_replace
 msgid "Clear Wishlist"
 msgstr "Vaciar Lista Deseos"
