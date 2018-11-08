@@ -3,7 +3,7 @@
 # Ruben Seijas <ruben@comunitea.com> - Pavel Smirnov <pavel@comunitea.com>
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 {
-    'name': 'Theme Adds Clarico',
+    'name': 'Licenses: Theme Adds Clarico',
     'version': '1.0',
     'summary': 'Tema addicional para Clarico Theme',
     'author': 'Comunitea',
@@ -15,10 +15,10 @@
         'website_product_tags_73lines',
         'website_crm_recaptcha',
         'website_mail_channel',
-        'website_sale_one_step_checkout',
-        'website_sale_one_step_checkout_delivery',
         'payment_redsys',
         'payment_paypal',
+        'website_sale_one_step_checkout_delivery',
+        'website_sale_one_step_checkout_charge_payment_fee',
         'theme_clarico'
     ],
     'data': [
