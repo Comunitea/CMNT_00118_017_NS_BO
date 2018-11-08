@@ -63,11 +63,15 @@ odoo.define('product_quick_view.quick_view', function (require) {
 
         var msg_div = $(this).find('.add-to-cart-message');
         var prod_id = $(this).find('input[name="product_id"]').val();
+        var spn_div = $(this).find('.oe_product_image');
+        var spinner = '<div class="wp-load-spinner"/>';
 
+        $(spn_div).append(spinner);
         ajax.jsonRpc("/shop/cart/update_json", 'call', {
             'product_id': parseInt(prod_id, 10),
             'set_qty': 1
         }).then(function (data) {
+            $(spn_div).find('.wp-load-spinner').fadeOut(300);
             if (data.warning) {
                 $(msg_div).html(data.warning);
                 $(msg_div).parent().addClass('add-error').slideDown();
@@ -80,6 +84,7 @@ odoo.define('product_quick_view.quick_view', function (require) {
             // auto close
             setTimeout(function(){
                 $(msg_div).parent().slideUp();
+                $(spn_div).find('.wp-load-spinner').detach();
             }, 4500);
         });
     });
@@ -95,11 +100,15 @@ odoo.define('product_quick_view.quick_view', function (require) {
         var msg_div  = $(this).find('.add-to-cart-message');
         var prod_id  = $(this).find('input[name="product_id"]').val();
         var prod_qty = $(this).find('input[name="add_qty"]').val();
+        var spn_div = $(this).find('#product_details');
+        var spinner = '<div class="wp-load-spinner spinner-left"/>';
 
+        $(spn_div).append(spinner);
         ajax.jsonRpc("/shop/cart/update_json", 'call', {
             'product_id': parseInt(prod_id, 10),
             'set_qty': parseInt(prod_qty, 10)
         }).then(function (data) {
+            $(spn_div).find('.wp-load-spinner').fadeOut(300);
             if (data.warning) {
                 $(msg_div).html(data.warning);
                 $(msg_div).parent().addClass('add-error').slideDown();
@@ -112,6 +121,7 @@ odoo.define('product_quick_view.quick_view', function (require) {
             // auto close
             setTimeout(function(){
                 $(msg_div).parent().slideUp();
+                $(spn_div).find('.wp-load-spinner').detach();
             }, 4500);
         });
     });
@@ -123,11 +133,15 @@ odoo.define('product_quick_view.quick_view', function (require) {
 
         var msg_div = $(this).parents('.wishlist-product-name-div').find('.add-to-cart-message');
         var prod_id = $(this).attr('data-id');
+        var spn_div = $(this).parents('.wishlist-product-name-div');
+        var spinner = '<div class="wp-load-spinner spinner-sm"/>';
 
+        $(spn_div).append(spinner);
         ajax.jsonRpc("/shop/cart/update_json", 'call', {
             'product_id': parseInt(prod_id, 10),
             'set_qty': 1
         }).then(function (data) {
+            $(spn_div).find('.wp-load-spinner').fadeOut(300);
             if (data.warning) {
                 $(msg_div).html(data.warning);
                 $(msg_div).parent().addClass('add-error').slideDown();
@@ -140,6 +154,7 @@ odoo.define('product_quick_view.quick_view', function (require) {
             // auto close
             setTimeout(function(){
                 $(msg_div).parent().slideUp();
+                $(spn_div).find('.wp-load-spinner').detach();
             }, 4500);
         });
 
@@ -149,3 +164,29 @@ odoo.define('product_quick_view.quick_view', function (require) {
 $('.wp-close').click(function(){
     $(this).parent().slideUp();
 });
+$('.oe_website_sale').each(function () {
+
+    var oe_website_sale = this;
+
+    $(oe_website_sale).on("change", "input.js_quantity", function () {
+        setTimeout(function(){
+            var sum = 0;
+            $('.js_quantity').each(function(){
+                if($(this).val()){
+                    sum += parseFloat($(this).val());
+                }else{
+                    sum += 0;
+                }
+            });
+            if(sum){
+                //console.log(sum);
+            }else{
+                $('.clear_shopping_cart').hide();
+                $('.cart-main-div-full').hide();
+                $('.empty_cart_message').show();
+            }
+        }, 100);
+    });
+});
+/* parts/odoo/addons/website_sale/static/src/js/website_sale.js:171
+$('.clear_shopping_cart').hide(); $('.cart-main-div-full').hide(); $('.empty_cart_message').show(); $('.clear_shopping_cart').click(); */
