@@ -349,25 +349,25 @@
     </template>-->
     <template id="star_rating_mini_product_insert" inherit_id="clarico_shop.clarico_shop_products_item">
         <xpath expr="//div[@class='itemscope-main']" position="inside">
-            <div class="wp_new_stars">
+            <!--<div class="wp_new_stars">
                 <t t-set="rating_stat" t-value="rating_product" />
 					<t t-call="rating.rating_star_card">
 					<t t-set="rating_default_value" t-value="'%.2f' % (rating_stat[product.id].get('avg', 0.0),)" />
 					<t t-set="rating_disabled" t-value="True" />
 				</t>
-            </div>
+            </div>-->
         </xpath>
     </template>
 
     <!-- stars insert product page -->
     <template id="star_rating_product_page_insert" inherit_id="clarico_product.clarico_product_product">
         <xpath expr="//div[@class='product_name_rating']" position="after">
-            <div class="wp_stars_product_page">
+            <!--<div class="wp_stars_product_page">
                 <t t-set="rating_stat" t-value="rating_product" />
 					<t t-call="rating.rating_star_card">
 					<t t-set="rating_disabled" t-value="True" />
 				</t>
-            </div>
+            </div>-->
         </xpath>
     </template>
 
