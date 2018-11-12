@@ -4,7 +4,7 @@
     <template id="cart_replace_general" inherit_id="clarico_cart.clarico_clear_cart">
         <xpath expr="//a[@class='clear_shopping_cart']" position="replace">
             <div class="shopping_cart_buttons">
-                <a class="btn btn-primary common-btn vrt_algn_top" href="/shop" id="continue_shopping">
+                <a class="btn btn-primary common-btn vrt_algn_top back-to-shopping" href="/">
                     <span class="fa fa-long-arrow-left" />
                     Continue Shopping
                 </a>
@@ -28,7 +28,7 @@
         <xpath expr="//div[@class='cart-cover-img-div']" position="replace"/>
         <xpath expr="//div[@class='cart-main-div-full oe_cart']/div[@class='oe_structure']" position="before">
             <div class="pull-left" t-if="website_sale_order.amount_total &gt; 0">
-                <a class="btn btn-primary common-btn" href="/shop" id="continue_shopping_cart">
+                <a class="btn btn-primary common-btn back-to-shopping" href="/">
                     <span class="fa fa-long-arrow-left" />
                     Continue Shopping
                 </a>
