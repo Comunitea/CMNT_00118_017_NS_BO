@@ -50,7 +50,7 @@
             <div t-if="product.list_price and (product.website_price - product.list_price) &gt; 0.01" class="price_sin_iva">
                 <span t-field="product.list_price" t-options='{"widget": "monetary", "display_currency": product.currency_id,}'/> sin IVA
             </div>
-            <div t-else="" class="price_sin_iva">(Precio sin IVA)</div>
+            <div t-elif="product.list_price &gt; 0" class="price_sin_iva">(Precio sin IVA)</div>
         </xpath>
         <xpath expr="//div[@class='ctg_class']" position="replace"/>
 
@@ -134,10 +134,13 @@
                                                                     </a>
                                                                 </div>
 
-                                                                <div class="recently_view_product_price">
-                                                                    <p t-field="alt_product.website_price"
-                                                                        t-options='{"widget": "monetary", "display_currency": website.currency_id, }' />
-                                                                </div>
+                                                                <!--Hide price for products with 0€ price-->
+                                                                <t t-if="alt_product.website_price &gt; 0">
+                                                                    <div class="recently_view_product_price">
+                                                                        <p t-field="alt_product.website_price"
+                                                                           t-options='{"widget": "monetary", "display_currency": website.currency_id, }' />
+                                                                    </div>
+                                                                </t>
                                                                 <hr class="r_v_deatil_hr" />
                                                             </div>
                                                         </div>
@@ -173,10 +176,13 @@
                                                                     </a>
                                                                 </div>
 
-                                                                <div class="recently_view_product_price">
-                                                                    <p t-field="alt_product.website_price"
-                                                                        t-options='{"widget": "monetary", "display_currency": website.currency_id, }' />
-                                                                </div>
+                                                                <!--Hide price for products with 0€ price-->
+                                                                <t t-if="alt_product.website_price &gt; 0">
+                                                                    <div class="recently_view_product_price">
+                                                                        <p t-field="alt_product.website_price"
+                                                                            t-options='{"widget": "monetary", "display_currency": website.currency_id, }' />
+                                                                    </div>
+                                                                </t>
                                                                 <hr class="r_v_deatil_hr" />
                                                             </div>
                                                         </div>
@@ -341,6 +347,25 @@
                 <span t-if="not product.default_code">---</span>
             </div>
         </xpath>
+
+        <!--Hide price for 0€ price in product compact viewlist at shop view-->
+        <xpath expr="//b[@class='responsive_price']" position="replace">
+            <b class="responsive_price">
+                <t t-if="product.list_price &gt; 0">
+                    <t t-if="(compute_currency(product.lst_price) - product.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
+                        <del class="text-danger mr8 " style="white-space: nowrap;"
+                             t-esc="compute_currency(product.website_public_price)"
+                             t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
+                    </t>
+
+                    <span class="orignal-price" t-esc="product.website_price"
+                          t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                    <span itemprop="price" style="display:none;" t-esc="product.website_price" />
+                    <span itemprop="priceCurrency" style="display:none;"
+                          t-esc="website.currency_id.name" />
+                </t>
+            </b>
+        </xpath>
     </template>
 
     <!-- stars insert -->
@@ -349,25 +374,25 @@
     </template>-->
     <template id="star_rating_mini_product_insert" inherit_id="clarico_shop.clarico_shop_products_item">
         <xpath expr="//div[@class='itemscope-main']" position="inside">
-            <div class="wp_new_stars">
+            <!--<div class="wp_new_stars">
                 <t t-set="rating_stat" t-value="rating_product" />
 					<t t-call="rating.rating_star_card">
 					<t t-set="rating_default_value" t-value="'%.2f' % (rating_stat[product.id].get('avg', 0.0),)" />
 					<t t-set="rating_disabled" t-value="True" />
 				</t>
-            </div>
+            </div>-->
         </xpath>
     </template>
 
     <!-- stars insert product page -->
     <template id="star_rating_product_page_insert" inherit_id="clarico_product.clarico_product_product">
         <xpath expr="//div[@class='product_name_rating']" position="after">
-            <div class="wp_stars_product_page">
+            <!--<div class="wp_stars_product_page">
                 <t t-set="rating_stat" t-value="rating_product" />
 					<t t-call="rating.rating_star_card">
 					<t t-set="rating_disabled" t-value="True" />
 				</t>
-            </div>
+            </div>-->
         </xpath>
     </template>
 
@@ -415,18 +440,21 @@
     <!-- add to cart button in compact view-->
     <template id="product_add_to_cart_replace" inherit_id="clarico_shop.clarico_shop_products_item" active="True">
         <xpath expr="//div[@id='add_to_cart_shop']" position="inside">
-            <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden" />
-            <t t-if="len(product.product_variant_ids) == 1">
-                <a class="a-submit customize-add-cart">
-                    <span class="fa fa-shopping-cart" />
-                   <!--  <span class="list-view-text">Add To Cart</span> -->
-                </a>
-            </t>
-            <t t-if="len(product.product_variant_ids) &gt; 1">
-                <a class="customize-add-cart" t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))">
-                    <span class="fa fa-shopping-cart" />
-                   <!--  <span class="list-view-text">Add To Cart</span> -->
-                </a>
+            <!--Hide add to cart button for products with 0€ price at grid products shop -->
+            <t t-if="product.list_price &gt; 0">
+                <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden" />
+                <t t-if="len(product.product_variant_ids) == 1">
+                    <a class="a-submit customize-add-cart">
+                        <span class="fa fa-shopping-cart" />
+                       <!--  <span class="list-view-text">Add To Cart</span> -->
+                    </a>
+                </t>
+                <t t-if="len(product.product_variant_ids) &gt; 1">
+                    <a class="customize-add-cart" t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))">
+                        <span class="fa fa-shopping-cart" />
+                       <!--  <span class="list-view-text">Add To Cart</span> -->
+                    </a>
+                </t>
             </t>
         </xpath>
     </template>
@@ -452,6 +480,113 @@
                 <span class="select-nevigation-span">/</span>
                 <li><a href="/shop">All products</a></li>
             </t>
+        </xpath>
+
+        <!--Hide price for 0€ price in product details at product details view-->
+        <xpath expr="//div[@class='price_comman_sub_class']" position="replace">
+            <t t-if="product.lst_price &gt; 0">
+                <t t-if="(compute_currency(product.lst_price) - product.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='with_discount'">
+                    <del class="text-danger mr8 strike-through strike-price"
+                         style="white-space: nowrap;" t-esc="compute_currency(product.website_public_price)"
+                         t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
+                </t>
+                <b>
+                    <t t-if="(compute_currency(product.lst_price) - product.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
+                        <del class="text-danger mr8 " style="white-space: nowrap;"
+                             t-esc="compute_currency(product.website_public_price)"
+                             t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
+                    </t>
+                    <span class="text-danger oe_default_price"
+                          style="text-decoration: line-through; white-space: nowrap;"
+                          t-esc="compute_currency(product.website_public_price)"
+                          t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}"
+                          t-att-style="'text-decoration: line-through; white-space: nowrap; ' + '' if (compute_currency(product.lst_price) - product.website_price) &gt; 0.01 and website.get_current_pricelist().discount_policy == 'without_discount' else 'display: none;'" />
+                    <b class="oe_price" style="white-space: nowrap;" t-esc="product.website_price"
+                       t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                    <span itemprop="price" style="display:none;" t-esc="product.website_price" />
+                    <span itemprop="priceCurrency" style="display:none;"
+                          t-esc="website.currency_id.name" />
+                </b>
+            </t>
+        </xpath>
+
+        <!--Hide add to cart button in product details at product details view for price 0€-->
+        <xpath expr="//div[@class='p_ad2cart']" position="replace">
+            <t t-if="product.list_price &gt; 0">
+                <div class="p_ad2cart">
+                <a id="add_to_cart" class="btn btn-primary btn-lg mt8 js_check_product a-submit" href="#">Add to Cart</a>
+                </div>
+            </t>
+            <t t-else=""/>
+        </xpath>
+
+    </template>
+
+    <!--Hide product quantity for 0€ price in product details at product details view-->
+    <template id="clarico_product_product_quantity_custom" inherit_id="clarico_product.clarico_product_product_quantity">
+        <xpath expr="//div[@class='product_quantity']" position="replace">
+            <t t-if="product.list_price &gt; 0">
+                <div class="product_quantity">
+                    <div class="css_quantity input-group oe_website_spinner"
+                         contenteditable="false">
+                        <a t-attf-href="#" class="mb8 input-group-addon js_add_cart_json">
+                            <i class="fa fa-minus"></i>
+                        </a>
+                        <input type="text" class="form-control" data-min="1" name="add_qty"
+                               value="1" />
+                        <a t-attf-href="#"
+                           class="mb8 input-group-addon float_left js_add_cart_json">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </div>
+                </div>
+            </t>
+            <t t-else=""/>
+        </xpath>
+    </template>
+
+    <!--Hide price for 0€ price in recently viewed items list at product details view-->
+    <template id="clarico_recently_viewed_recent_products_custom" inherit_id="clarico_recently_viewed.clarico_recently_viewed_recent_products">
+        <xpath expr="//div[@class='recently_viwed_common']" position="replace">
+            <div class="recently_viwed_common">
+                <div class="parent">
+                    <div class="recently_viewed_img_div">
+                        <a t-attf-href="/shop/product/#{ slug(rproduct) }">
+                            <img class="img img-responsive"
+                                 t-att-src="'data:image/png;base64,%s' % rproduct.image_medium"></img>
+                        </a>
+                    </div>
+                    <div class="recently_viwed_details">
+                        <div class="recently_view_product_name">
+                            <a t-attf-href="/shop/product/#{ slug(rproduct) }"
+                               style="display: block">
+                                <p t-field="rproduct.name" />
+                            </a>
+                        </div>
+                        <t t-if="rproduct.website_public_price &gt; 0">
+                            <div class="recently_view_product_price">
+                                <t t-if="(compute_currency(rproduct.lst_price) - rproduct.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
+                                    <del class="text-danger mr8 " style="white-space: nowrap;"
+                                         t-esc="compute_currency(rproduct.website_public_price)"
+                                         t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
+                                </t>
+                                <span class="text-danger oe_default_price"
+                                      style="text-decoration: line-through; white-space: nowrap;"
+                                      t-esc="compute_currency(rproduct.website_public_price)"
+                                      t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}"
+                                      t-att-style="'text-decoration: line-through; white-space: nowrap; ' + '' if (compute_currency(rproduct.lst_price) - rproduct.website_price) &gt; 0.01 and website.get_current_pricelist().discount_policy == 'without_discount' else 'display: none;'" />
+
+                                <b class="oe_price" style="white-space: nowrap;" t-esc="rproduct.website_price"
+                                   t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                                <span itemprop="price" style="display:none;" t-esc="rproduct.website_price" />
+                                <span itemprop="priceCurrency" style="display:none;"
+                                      t-esc="website.currency_id.name" />
+                            </div>
+                        </t>
+                        <hr class="r_v_deatil_hr" />
+                    </div>
+                </div>
+            </div>
         </xpath>
     </template>
 

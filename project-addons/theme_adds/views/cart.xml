@@ -95,4 +95,30 @@
         </xpath>
     </template>
 
+    <!--Hide price for 0€ price in recently viewed items list at cart view-->
+    <template id="recent_cart_product_custom" inherit_id="clarico_recently_viewed.recent_cart_product">
+        <xpath expr="//div[@class='recently_view_product_price']" position="replace">
+            <t t-if="rproduct.website_public_price &gt; 0">
+                <div class="recently_view_product_price">
+                    <t t-if="(compute_currency(rproduct.lst_price) - rproduct.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
+                        <del class="text-danger mr8 " style="white-space: nowrap;"
+                             t-esc="compute_currency(rproduct.website_public_price)"
+                             t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
+                    </t>
+                    <span class="text-danger oe_default_price"
+                          style="text-decoration: line-through; white-space: nowrap;"
+                          t-esc="compute_currency(rproduct.website_public_price)"
+                          t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}"
+                          t-att-style="'text-decoration: line-through; white-space: nowrap; ' + '' if (compute_currency(rproduct.lst_price) - rproduct.website_price) &gt; 0.01 and website.get_current_pricelist().discount_policy == 'without_discount' else 'display: none;'" />
+
+                    <b class="oe_price" style="white-space: nowrap;" t-esc="rproduct.website_price"
+                       t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                    <span itemprop="price" style="display:none;" t-esc="rproduct.website_price" />
+                    <span itemprop="priceCurrency" style="display:none;"
+                          t-esc="website.currency_id.name" />
+                </div>
+            </t>
+        </xpath>
+    </template>
+
 </odoo>
