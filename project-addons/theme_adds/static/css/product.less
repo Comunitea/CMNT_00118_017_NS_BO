@@ -122,10 +122,6 @@ ul.js_add_cart_variants {
         font-size: 18px !important;
     }
 }
-.zooming_image_screen {
-    width: auto !important;
-    max-height: 100%;
-}
 .wld-cont-logos {
     display: block;
     width: 100%;
@@ -214,6 +210,9 @@ ul.js_add_cart_variants {
             line-height: 18px;
         }
     }
+    & .dropdown-menu a {
+        color: #000;
+    }
 }
 p.p_class_cross_image.common-close-btn {
     top: 16px;
@@ -221,15 +220,33 @@ p.p_class_cross_image.common-close-btn {
     background-color: @theme-color;
     color: #fff;
 }
+.div_parent_zoom_class {
+    position: relative;
+    height: 100%;
+}
+.zooming_image_screen_o {
+    position: relative;
+    max-height: 100%;
+    padding-top: 1%;
+}
+.zooming_image_screen {
+    width: auto !important;
+    max-height: 99%;
+}
 .zoomed_image_on_screen {
-    width: 80%;
+    width: 70%;
     height: 90%;
-    left: 10%;
+    max-height: 800px;
+    cursor: default;
+    left: 15%;
     top: 5%;
     outline: 2px solid @theme-color;
     box-shadow: 0px 0px 10px #000;
     & .clarico_slide {
         position: absolute;
+        & .carousel-indicators {
+            margin-bottom: 0;
+        }
     }
 }
 .div_main_class_desc {

@@ -164,6 +164,7 @@ odoo.define('product_quick_view.quick_view', function (require) {
 $('.wp-close').click(function(){
     $(this).parent().slideUp();
 });
+/* Cart onchange recalculation and hiding buttons of control */
 $('.oe_website_sale').each(function () {
 
     var oe_website_sale = this;
@@ -190,3 +191,15 @@ $('.oe_website_sale').each(function () {
 });
 /* parts/odoo/addons/website_sale/static/src/js/website_sale.js:171
 $('.clear_shopping_cart').hide(); $('.cart-main-div-full').hide(); $('.empty_cart_message').show(); $('.clear_shopping_cart').click(); */
+
+/* Youtube video auto stop on closing (modal product window) */
+$(document).ready(function(){
+    var stopVideo = function(player) {
+        var vidSrc = player.prop('src');
+        player.prop('src', '');
+        player.prop('src', vidSrc);
+    };
+    $(document).on('click', '.popup-close', function(){
+        stopVideo($('.popup_iframe_url'));
+    });
+});
