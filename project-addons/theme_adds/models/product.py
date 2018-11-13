@@ -23,7 +23,8 @@ class ProductTag(models.Model):
 class ProductCustom(models.Model):
     _inherit = 'product.template'
 
-    description_short = fields.Text(_("Short product description"), help=_("Short description for product page"), strip_style=True)
+    description_short = fields.Text(_("Short product description"), help=_("Short description for product page"),
+                                    strip_style=True)
     description = fields.Html(_("Full product description"), strip_style=True)
     slug = fields.Char(_("Product old URL Website"), help=_("Old website product URL for redirection of Google SEO"))
     hide_website_price = fields.Boolean(_("Hide Website Price"), default=False,
