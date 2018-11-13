@@ -308,14 +308,28 @@ msgid "Website Category"
 msgstr "Categoría Sito Web"
 
 #. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
+#: code:project-addons/theme_adds/models/product.py:29
+#, python-format
 msgid "Product old URL Website"
 msgstr "URL del producto en el anterior Sitio Web"
 
 #. module: theme_adds
-#: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
+#: code:project-addons/theme_adds/models/product.py:29
+#, python-format
+msgid "Old website product URL for redirection of Google SEO"
+msgstr "URL del producto en el anterior Sitio Web para redireccionar el posicionamiento SEO en Google"
+
+#. module: theme_adds
+#: code:project-addons/theme_adds/models/product.py:30
+#, python-format
 msgid "Hide Website Price"
 msgstr "Ocultar precio en Sitio Web"
+
+#. module: theme_adds
+#: code:project-addons/theme_adds/models/product.py:31
+#, python-format
+msgid "If selected, hide price and add to cart button"
+msgstr "Si se selecciona, Ocultará el precio y el botón de añadir al carrito en el Sitio Web"
 
 #. module: theme_adds
 #: selection:product.tag,tag_color:0
