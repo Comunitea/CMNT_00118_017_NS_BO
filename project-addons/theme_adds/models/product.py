@@ -6,7 +6,7 @@
 # © 2018 Comunitea - Ruben Seijas <ruben@comunitea.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import models, fields
+from odoo import models, fields, _
 
 
 class ProductTag(models.Model):
@@ -20,10 +20,11 @@ class ProductTag(models.Model):
                                   ('gray', 'Gray')], 'Tag label color', default='default')
 
 
-class ProductDescription(models.Model):
+class ProductCustom(models.Model):
     _inherit = 'product.template'
 
-    description_short = fields.Text('Short description', help="Short description for product page", strip_style=True)
-    description = fields.Html('Content', strip_style=True)
-    # public_categ_ids = fields.Many2one('product.public.category', string='Website Product Category')
-    slug = fields.Char('Product old URL', help="Old product URL for redirection")
+    description_short = fields.Text(_("Short product description"), help=_("Short description for product page"), strip_style=True)
+    description = fields.Html(_("Full product description"), strip_style=True)
+    slug = fields.Char(_("Product old URL Website"), help=_("Old website product URL for redirection of Google SEO"))
+    hide_website_price = fields.Boolean(_("Hide Website Price"), default=False,
+                                        help=_("If selected, hide price and add to cart button"))

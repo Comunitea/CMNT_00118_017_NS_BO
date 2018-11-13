@@ -298,6 +298,26 @@ msgid "Full product HTML description"
 msgstr "Descripción HTML completa del producto"
 
 #. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
+msgid "Website"
+msgstr "Sito Web"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
+msgid "Website Category"
+msgstr "Categoría Sito Web"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
+msgid "Product old URL Website"
+msgstr "URL del producto en el anterior Sitio Web"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
+msgid "Hide Website Price"
+msgstr "Ocultar precio en Sitio Web"
+
+#. module: theme_adds
 #: selection:product.tag,tag_color:0
 msgid "Gray"
 msgstr "Gris"
