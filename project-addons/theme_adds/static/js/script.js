@@ -195,9 +195,9 @@ $('.clear_shopping_cart').hide(); $('.cart-main-div-full').hide(); $('.empty_car
 /* Youtube video auto stop on closing (modal product window) */
 $(document).ready(function(){
     var stopVideo = function(player) {
-        var vidSrc = player.prop('src');
-        player.prop('src', '');
-        player.prop('src', vidSrc);
+        var vidSrc = player.attr('src');
+        player.attr('src', '');
+        player.attr('src', vidSrc);
     };
     $(document).on('click', '.popup-close', function(){
         stopVideo($('.popup_iframe_url'));
