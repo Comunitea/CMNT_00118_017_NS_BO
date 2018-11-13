@@ -98,7 +98,7 @@
     <!--Hide price for 0€ price in recently viewed items list at cart view-->
     <template id="recent_cart_product_custom" inherit_id="clarico_recently_viewed.recent_cart_product">
         <xpath expr="//div[@class='recently_view_product_price']" position="replace">
-            <t t-if="rproduct.website_public_price &gt; 0">
+            <t t-if="rproduct.website_public_price &gt; 0 or len(rproduct.product_variant_ids) &gt; 1">
                 <div class="recently_view_product_price">
                     <t t-if="(compute_currency(rproduct.lst_price) - rproduct.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
                         <del class="text-danger mr8 " style="white-space: nowrap;"
