@@ -75,6 +75,7 @@
                         <!--<field name="website_style_ids" widget="many2many_tags" groups="base.group_no_one"/>-->
                         <field name="website_sequence"/>
                         <field name="slug"/>
+                        <field name="hide_website_price"/>
                     </group>
                     <group>
                         <separator string="Short product description" colspan="4"/>
