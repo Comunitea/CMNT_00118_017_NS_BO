@@ -203,3 +203,24 @@ $(document).ready(function(){
         stopVideo($('.popup_iframe_url'));
     });
 });
+
+/* Variable product change */
+$('ul.js_add_cart_variants').each(function(){
+    if(arr.size > 0){
+
+        $(document).on('change', 'input[name="product_id"]', function(){
+            var key = parseFloat($(this).val());
+            var val = parseFloat(arr.get(''+key+''));
+
+            val = val.toFixed(2);
+            if($('.price_sin_iva .oe_currency_value')){
+                $('.price_sin_iva .oe_currency_value').html(val);
+            }
+        });
+
+        $(document).on('change', 'input.js_variant_change', function(){
+            $('input[name=product_id]').trigger('change');
+        });
+
+    }
+});
