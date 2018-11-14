@@ -38,6 +38,12 @@
             </div>
         </xpath>
         <xpath expr="//div[@class='4_btns_combo']" position="after">
+            <script t-if="len(product.product_variant_ids) &gt; 1">
+                window.arr = new Map();
+                <t t-foreach="product.product_variant_ids" t-as="variant">
+                    arr.set('<t t-esc="variant.id"/>', '<t t-esc="variant.lst_price"/>');
+                </t>
+            </script>
             <t t-placeholder="select">
                 <input type="hidden" class="product_id" name="product_id"
                     t-att-value="product.product_variant_id.id if len(product.product_variant_ids) == 1 else '0'" />
