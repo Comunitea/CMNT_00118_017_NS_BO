@@ -308,25 +308,37 @@ msgid "Website Category"
 msgstr "Categoría Sito Web"
 
 #. module: theme_adds
-#: code:project-addons/theme_adds/models/product.py:29
+#: code:project-addons/theme_adds/models/product.py:21
+#, python-format
+msgid "Website Sequence"
+msgstr "Secuencia del Sitio Web"
+
+#. module: theme_adds
+#: code:project-addons/theme_adds/models/product.py:22
+#, python-format
+msgid "Choose the display order in the Website"
+msgstr "Elija el orden de secuencia del Sitio Web"
+
+#. module: theme_adds
+#: code:project-addons/theme_adds/models/product.py:31
 #, python-format
 msgid "Product old URL Website"
 msgstr "URL del producto en el anterior Sitio Web"
 
 #. module: theme_adds
-#: code:project-addons/theme_adds/models/product.py:29
+#: code:project-addons/theme_adds/models/product.py:31
 #, python-format
 msgid "Old website product URL for redirection of Google SEO"
 msgstr "URL del producto en el anterior Sitio Web para redireccionar el posicionamiento SEO en Google"
 
 #. module: theme_adds
-#: code:project-addons/theme_adds/models/product.py:30
+#: code:project-addons/theme_adds/models/product.py:32
 #, python-format
 msgid "Hide Website Price"
 msgstr "Ocultar precio en Sitio Web"
 
 #. module: theme_adds
-#: code:project-addons/theme_adds/models/product.py:31
+#: code:project-addons/theme_adds/models/product.py:33
 #, python-format
 msgid "If selected, hide price and add to cart button"
 msgstr "Si se selecciona, Ocultará el precio y el botón de añadir al carrito en el Sitio Web"
