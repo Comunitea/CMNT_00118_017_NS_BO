@@ -18,6 +18,13 @@ class ProductTag(models.Model):
                                   ('yellow', 'Yellow'),
                                   ('blue', 'Blue'),
                                   ('gray', 'Gray')], 'Tag label color', default='default')
+    website_sequence = fields.Integer('Website Sequence', default=lambda self: self._default_website_sequence(),
+                                      help=_("Choose the display order in the Website"))
+
+    def _default_website_sequence(self):
+        self._cr.execute("SELECT MIN(website_sequence) FROM %s" % self._table)
+        min_sequence = self._cr.fetchone()[0]
+        return min_sequence and min_sequence - 1 or 10
 
 
 class ProductCustom(models.Model):

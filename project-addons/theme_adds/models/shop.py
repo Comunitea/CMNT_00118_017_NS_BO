@@ -14,5 +14,15 @@ class Website(models.Model):
     def get_product_tags_marked(self):
         tag_pool = self.env["product.tag"]
         domain = [('marked', '=', True)]
-        tag_objs = tag_pool.sudo().search(domain)
+        tag_objs = tag_pool.sudo().search(domain, order=self.get_search_order())
         return tag_objs
+
+    def get_product_tags(self):
+        tag_pool = self.env["product.tag"]
+        tag_obj = tag_pool.sudo().search([], order=self.get_search_order())
+        return tag_obj
+
+    def get_search_order(self):
+        # OrderBy will be parsed in orm and so no direct sql injection
+        # id is added to be sure that order is a unique sort key
+        return '%s , id asc' % 'website_sequence asc'
