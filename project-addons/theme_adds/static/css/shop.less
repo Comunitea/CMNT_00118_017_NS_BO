@@ -44,7 +44,7 @@
 }
 .itemscope-main {
     /*border: 1px solid @theme-color;*/
-    height: 305px;
+    height: 318px;
     max-width: 100%;
     & .oe_product_image img {
         height: 220px;
@@ -96,6 +96,23 @@
 
     & .production-description {
         padding-top: 5px;
+        margin-top: 0 !important;
+        & .details {
+            height: 34px;
+            overflow: hidden;
+            margin-bottom: 1px;
+            & .product-name-h5 {
+                width: 100%;
+                padding: 0;
+                max-height: 100%;
+                & label a.product-name-a {
+                    white-space: normal;
+                    line-height: 17px;
+                    max-width: 100%;
+                    padding-top: 0 !important;
+                }
+            }
+        }
         & .detail-sku {
             float: left;
             margin: 0 10px 0 0;
@@ -111,9 +128,17 @@
         }
         & .in-stock {
             text-align: right;
+            position: absolute;
+            bottom: 7px;
+            right: 10px;
             & span {
                 padding: 3px 7px;
             }
+        }
+        & .warning {
+            position: absolute;
+            bottom: 7px;
+            right: 10px;
         }
         & .product-name-h5 {
             /*width: 95%;*/
