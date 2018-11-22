@@ -8,11 +8,12 @@
 
 
 from odoo import http
-from odoo.addons.clarico_shop.controllers.main import claricoShop
 from odoo.http import request
-#
-#
-class claricoShopCustom(claricoShop):
+from odoo.addons.clarico_shop.controllers.main import claricoShop
+from odoo.addons.clarico_cart.controllers.main import claricoClearCart
+
+
+class ClaricoShopCustom(claricoShop):
 
     """
         Change default search order
@@ -37,5 +38,17 @@ class claricoShopCustom(claricoShop):
             IrConfigParam = request.env['ir.config_parameter']
             ppg = int(IrConfigParam.sudo().get_param('default_products_to_show', 8))
 
-        return super(claricoShopCustom, self).shop(page=page, category=category, search=search, ppg=ppg, **post)
+        return super(ClaricoShopCustom, self).shop(page=page, category=category, search=search, ppg=ppg, **post)
+
+
+class ClaricoClearCartCustom(claricoClearCart):
+
+    """
+        Clear cart including selected Payment Method and entire sale order to prevent errors
+    """
+    @http.route(['/shop/clear_cart'], type='json', auth="public", methods=['POST'], website=True)
+    def clear_cart(self, **kw):
+        order = request.website.sale_get_order(force_create=1)
+        order.sudo().write({'payment_acquirer_id': False})
+        order.sudo().unlink()
 

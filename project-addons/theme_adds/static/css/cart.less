@@ -26,6 +26,10 @@ a.clear_shopping_cart.btn {
         margin-bottom: 4px !important;
     }
 }
+.empty_cart_message {
+    display: none;
+    margin: 20px 0;
+}
 /*
     CSS media part MIN-WIDTH
 */
@@ -41,5 +45,64 @@ a.clear_shopping_cart.btn {
     .cart-empty-msg {
         padding-top: 100px;
         padding-bottom: 150px;
+    }
+}
+/*
+    CSS media part MAX-WIDTH
+*/
+@media(max-width: 800px){
+    #cart_products {
+        border: none;
+        border-left: 1px solid #dddddd;
+        .cart-thead-tr th {
+            width: 120px;
+            min-width: 120px;
+            padding: 15px 5px !important;
+            border-top: 1px solid #dddddd;
+            &:nth-child(n+4){
+                width: 85px;
+                min-width: 85px;
+            }
+        }
+        .cart-tbody-tr {
+            & td {
+                width: 120px;
+                min-width: 120px !important;
+                padding: 15px 0 5px 0 !important;
+                &:nth-child(n+4){
+                    width: 85px !important;
+                    min-width: 85px !important;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            & input.js_quantity {
+                min-width: 35px !important;
+            }
+            & .input-group-addon {
+                padding: 6px 10px;
+            }
+            &:last-child {
+                border-bottom: 1px solid #dddddd;
+            }
+        }
+    }
+    .suggested-product-table tr {
+        display: table !important;
+    }
+}
+@media(max-width: 500px){
+    .oe_cart table#cart_products {
+        & tr {
+            width: auto !important;
+        }
+        & td:nth-last-child(2), td:last-child {
+            height: auto !important;
+        }
+    }
+    .oe_cart table.suggested-product-table tr {
+        display: inline-flex !important;
+        width: auto !important;
     }
 }

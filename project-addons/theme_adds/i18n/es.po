@@ -185,6 +185,11 @@ msgid "Clear Cart"
 msgstr "Vaciar Carrito"
 
 #. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.cart_replace_general
+msgid "Your cart is empty!"
+msgstr "¡Su cesta está vacía!"
+
+#. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.wishlist_banner_replace
 msgid "Clear Wishlist"
 msgstr "Vaciar Lista Deseos"
@@ -293,6 +298,52 @@ msgid "Full product HTML description"
 msgstr "Descripción HTML completa del producto"
 
 #. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
+msgid "Website"
+msgstr "Sito Web"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
+msgid "Website Category"
+msgstr "Categoría Sito Web"
+
+#. module: theme_adds
+#: code:project-addons/theme_adds/models/product.py:21
+#, python-format
+msgid "Website Sequence"
+msgstr "Secuencia del Sitio Web"
+
+#. module: theme_adds
+#: code:project-addons/theme_adds/models/product.py:22
+#, python-format
+msgid "Choose the display order in the Website"
+msgstr "Elija el orden de secuencia del Sitio Web"
+
+#. module: theme_adds
+#: code:project-addons/theme_adds/models/product.py:31
+#, python-format
+msgid "Product old URL Website"
+msgstr "URL del producto en el anterior Sitio Web"
+
+#. module: theme_adds
+#: code:project-addons/theme_adds/models/product.py:31
+#, python-format
+msgid "Old website product URL for redirection of Google SEO"
+msgstr "URL del producto en el anterior Sitio Web para redireccionar el posicionamiento SEO en Google"
+
+#. module: theme_adds
+#: code:project-addons/theme_adds/models/product.py:32
+#, python-format
+msgid "Hide Website Price"
+msgstr "Ocultar precio en Sitio Web"
+
+#. module: theme_adds
+#: code:project-addons/theme_adds/models/product.py:33
+#, python-format
+msgid "If selected, hide price and add to cart button"
+msgstr "Si se selecciona, Ocultará el precio y el botón de añadir al carrito en el Sitio Web"
+
+#. module: theme_adds
 #: selection:product.tag,tag_color:0
 msgid "Gray"
 msgstr "Gris"
@@ -321,7 +372,7 @@ msgstr "Cuenta de Instagram"
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.wishlist_login_replace
 msgid "Login"
-msgstr "Registro"
+msgstr "Entrar"
 
 #. module: theme_adds
 #: model:ir.model.fields,field_description:theme_adds.field_product_tag_marked
@@ -665,6 +716,11 @@ msgstr "¿Habres una Nueva Clínica?"
 msgid "Go to product"
 msgstr "Ir al producto"
 
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.wishlist_banner_replace
+msgid "Add to cart"
+msgstr "Añadir al carrito"
+
 #. module: website_sale_one_step_checkout
 #: model:ir.ui.view,arch_db:website_sale_one_step_checkout.osc_onestepcheckout
 msgid "Shop - Checkout"
@@ -879,3 +935,59 @@ msgstr "Dirección de envío"
 #: model:ir.ui.view,arch_db:website_crm_recaptcha.contactus_form
 msgid "Human?"
 msgstr "¿Humano?"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_block_replace
+msgid "Go to cart"
+msgstr "Ver la cesta"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_block_replace
+msgid "<span>Close</span>"
+msgstr "<span>Cerrar</span>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_mini_image_replace
+msgid "Go to cart"
+msgstr "Ver la cesta"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_mini_image_replace
+msgid "View product"
+msgstr "Ir al producto"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.product_mini_image_replace
+msgid "<span>Close</span>"
+msgstr "<span>Cerrar</span>"
+
+#. module: theme_adds
+#. openerp-web
+#: code:/project-addons/theme_adds/static/js/script.js:11
+#, python-format
+msgid "This field is required"
+msgstr "Este campo es obligatorio"
+
+#. module: theme_adds
+#. openerp-web
+#: code:/project-addons/theme_adds/static/jsscript.js:12
+#, python-format
+msgid "Please enter a valid email address"
+msgstr "Por favor, introduce una dirección de correo electrónico válida"
+
+#. module: theme_adds
+#. openerp-web
+#: code:/project-addons/theme_adds/static/js/script.js:57
+#, python-format
+msgid "This product was added to cart"
+msgstr "Este producto fue añadido al carrito"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.wishlist_banner_replace
+msgid "Go to cart"
+msgstr "Ver la cesta"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.wishlist_banner_replace
+msgid "<span>Close</span>"
+msgstr "<span>Cerrar</span>"

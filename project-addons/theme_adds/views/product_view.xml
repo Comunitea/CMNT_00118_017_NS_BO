@@ -9,6 +9,7 @@
             <field name="name" position="after">
                 <field name="marked"/>
                 <field name="tag_color"/>
+                <field name="website_sequence"/>
             </field>
         </field>
     </record>
@@ -17,6 +18,9 @@
         <field name="model">product.tag</field>
         <field name="inherit_id" ref="website_product_tags_73lines.product_tag_tree_view"/>
         <field name="arch" type="xml">
+            <field name="name" position="before">
+                    <field name="website_sequence" widget="handle"/>
+                </field>
             <tree string="Product Tags">
                 <field name="marked"/>
                 <field name="tag_color"/>
@@ -67,6 +71,7 @@
                         <field name="website_url" invisible="1"/>
                         <!--<field name="public_categ_ids" string="Website Category"/>-->
                         <field name="public_categ_ids" widget="many2many_tags" string="Website Category"/>
+                        <field name="tag_ids" widget="many2many_tags"/>
                         <field name="alternative_product_ids" widget="many2many_tags"/>
                         <field name="accessory_product_ids" widget="many2many_tags"/>
                         <field name="availability" widget="selection"/>
@@ -74,6 +79,7 @@
                         <!--<field name="website_style_ids" widget="many2many_tags" groups="base.group_no_one"/>-->
                         <field name="website_sequence"/>
                         <field name="slug"/>
+                        <field name="hide_website_price"/>
                     </group>
                     <group>
                         <separator string="Short product description" colspan="4"/>

@@ -18,7 +18,65 @@ a.clear-all-wishlist.btn {
     text-transform: uppercase;
     & a {
         color: #fff !important;
+        margin-bottom: 4px;
     }
+}
+.wish_product_main_div {
+    & .product {
+        min-height: 190px;
+    }
+}
+.main-div-W100 .main-div-maxW {
+    padding-top: 0 !important;
+    & .product .wishlist-product-name-div {
+        position: relative;
+        & .product_avail {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+    }
+}
+.wp-add-to-cart-wishlist-message {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 99%;
+    max-width: 245px;
+    margin: 0;
+    z-index: 99;
+    text-align: center;
+    background: #f5f5f5;
+    outline: 2px solid @theme-color;
+
+    & .add-to-cart-message {
+        padding: 10px 7px;
+        font-weight: 600;
+    }
+    & .wp-button {
+        text-transform: lowercase;
+    }
+    & .wp-close {
+        margin: 3px 0 5px 0;
+        text-transform: lowercase;
+        cursor: pointer;
+        & span {
+            border-bottom: 1px dashed;
+            &:hover {
+                border-bottom: none;
+            }
+        }
+    }
+    &.add-error {
+        & .add-to-cart-message {
+            color: #EF5047;
+        }
+        & .wp-button {
+            display: none;
+        }
+    }
+}
+.empty-wishlist-div {
+    margin: 50px 0 20px 0;
 }
 .wp_next_post {
     text-align: center;
@@ -38,11 +96,11 @@ a.clear-all-wishlist.btn {
     padding: 7px 4px;
 }
 .website_blog .full-width {
-    margin-top: 15px;
+    /*margin-top: 15px;*/
 }
 .breadcrumb {
-    padding-top: 7px;
-    padding-bottom: 7px;
+    padding-top: 5px;
+    padding-bottom: 3px;
 }
 .blog_content {
     & img {
@@ -70,7 +128,7 @@ a.clear-all-wishlist.btn {
 }
 .website_blog {
     & .pagination {
-        padding: 5px;
+        padding: 3px;
         background: @theme-color;
         border-radius: 5px;
         color: #fff;
@@ -95,6 +153,7 @@ a.clear-all-wishlist.btn {
         & .breadcrumb {
             background-color: @theme-color;
             color: #fff;
+            padding-bottom: 5px;
             & a {
                 color: #fff;
             }
@@ -110,6 +169,23 @@ a.clear-all-wishlist.btn {
 .o_website_form_input.error {
     display: block;
 }
+.form-control.error {
+    width: 100%;
+}
+.carousel-control {
+    color: @theme-color;
+    opacity: 0.8;
+    &:hover {
+        color: @theme-color;
+        opacity: 0.5;
+    }
+}
+
+.s_website_form input[type="checkbox"] + label {
+        padding: 0 0 0 25px;
+    text-align: left;
+}
+
 /*
     CSS media part MIN-WIDTH
 */
@@ -123,5 +199,35 @@ a.clear-all-wishlist.btn {
 @media(min-width: 801px){
     h1.title_left_padding_15{
         padding-left: 15px;
+    }
+}
+/*
+    CSS media part MAX-WIDTH
+*/
+@media(max-width: 800px){
+    .blog-maxw {
+        & .breadcrumb {
+            font-size: 10px;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+    .main-div-W100 .main-div-maxW .product .wishlist-product-name-div {
+        margin-left: 0 !important;
+        float: none !important;
+    }
+    .wish_product_main_div {
+        & .product {
+            min-height: auto;
+        }
+    }
+    .wp-add-to-cart-wishlist-message {
+        width: 96%;
+        margin: 0 2%;
+    }
+    .wishlist-product-cart-div {
+        width: 100%;
+        clear: both;
+        padding-top: 2px;
     }
 }

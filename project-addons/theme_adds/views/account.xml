@@ -7,17 +7,30 @@
 		</xpath>
     </template>
 
-
-    <!--<template id="add_fiction_breadcrumbs_bar_my_orders" inherit_id="website_portal_sale.orders_followup">
-        <xpath expr="//div[@class='container'][1]" position="before">
-            <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+    <template id="clarico_signin_redirect_replace" inherit_id="clarico_signin.clarico_signin_c_signin">
+        <xpath expr="//form[@class='oe_login_form login_area']" position="attributes">
+            <attribute name="onsubmit">this.action</attribute>
         </xpath>
-    </template>-->
+    </template>
 
-    <!--<template id="add_fiction_breadcrumbs_class_bar_my_orders" inherit_id="website_portal.details">
-		<xpath expr="//div[@class='col-md-8 div_class_contact_details_page_padding div_class_contact_details_responsive']" position="attributes">
-            <attribute name="class">clarico_product_breadcrumb</attribute>
-        </xpath>
-    </template>-->
+    <!-- Force new users to accept the stablished legal terms before creating a new user account-->
+    <template id="clarico_signup_c_signup_fields" inherit_id="auth_signup.fields">
+		<xpath expr="//input[@name='confirm_password']" position="after">
+			<div class="form-group field-accepted_legal_terms">
+				<input type="checkbox"
+					   name="accepted_legal_terms"
+					   id="accepted_legal_terms"
+					   required="required"/>
+				<label for="accepted_legal_terms" class="control-label">
+					<span id="legal_terms_msg">
+						Acepto el <a href="/legal/advice" target="_blank">Aviso Legal</a>
+						, la <a href="/legal/privacy-policy" target="_blank">Política de Privacidad</a>
+						, y los <a href="/legal/terms-of-use" target="_blank">Términos de Uso</a>
+						de <span t-field="res_company.name"/>.
+					</span>
+				</label>
+			</div>
+		</xpath>
+	</template>
 
 </odoo>

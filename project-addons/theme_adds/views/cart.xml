@@ -4,7 +4,7 @@
     <template id="cart_replace_general" inherit_id="clarico_cart.clarico_clear_cart">
         <xpath expr="//a[@class='clear_shopping_cart']" position="replace">
             <div class="shopping_cart_buttons">
-                <a class="btn btn-primary common-btn vrt_algn_top" href="/shop" onclick="window.history.go(-1); return false;">
+                <a class="btn btn-primary common-btn vrt_algn_top back-to-shopping" href="/">
                     <span class="fa fa-long-arrow-left" />
                     Continue Shopping
                 </a>
@@ -18,6 +18,9 @@
                     </a>
                 </span>
             </div>
+            <div class="row empty_cart_message">
+                <div class="in-empty_cart_message cart-empty-msg">Your cart is empty!</div>
+            </div>
         </xpath>
     </template>
 
@@ -25,7 +28,7 @@
         <xpath expr="//div[@class='cart-cover-img-div']" position="replace"/>
         <xpath expr="//div[@class='cart-main-div-full oe_cart']/div[@class='oe_structure']" position="before">
             <div class="pull-left" t-if="website_sale_order.amount_total &gt; 0">
-                <a class="btn btn-primary common-btn" href="/shop" onclick="window.history.go(-1); return false;">
+                <a class="btn btn-primary common-btn back-to-shopping" href="/">
                     <span class="fa fa-long-arrow-left" />
                     Continue Shopping
                 </a>
@@ -51,6 +54,22 @@
         </xpath>
     </template>
 
+    <template id="add_accepted_legal_terms_guest_checkout" inherit_id="website_sale_one_step_checkout.address_form">
+        <xpath expr="//div[@class='clearfix'][last()]" position="after">
+            <t t-if="order.partner_id.id == request.website.user_id.sudo().partner_id.id">
+                <div t-attf-class="form-group col-md-12 #{'has-error' if error and error.get('accepted_legal_terms') else ''}">
+                    <input type="checkbox"
+                           name="accepted_legal_terms"
+                           id="accepted_legal_terms"
+                           required="required"/>
+                    <label for="accepted_legal_terms" class="control-label">
+                        <t t-call="website_legal_page.acceptance_full"/>
+                    </label>
+                </div>
+            </t>
+        </xpath>
+    </template>
+
     <template id="add_fiction_breadcrumbs_bar_onfirmation"  inherit_id="website_sale.confirmation">
 		<xpath expr="//div[@class='container oe_website_sale']" position="before">
 			<t t-call="theme_adds.breadcrumbs_fiction_bar"/>
@@ -62,13 +81,14 @@
             <thead>
                   <tr>
                         <th colspan="2">Product</th>
-                        <th class="text-center">Qnt.</th>
+                        <th class="text-center">Qty</th>
                         <th class="text-center">Price</th>
                   </tr>
             </thead>
         </xpath>
     </template>
 
+    <!--Replace default payment delivery-->
     <template id="payment_delivery_replace" name="Delivery Costs" inherit_id="website_sale_one_step_checkout_delivery.payment_delivery">
         <xpath expr="//div[@id='delivery_carrier_osc']" position="replace">
             <div t-if="deliveries" id="delivery_carrier_osc_custom">
@@ -88,6 +108,36 @@
                     </div>
                 </div>
             </div>
+        </xpath>
+    </template>
+
+    <!--Hide price for 0€ price in recently viewed items list at cart view-->
+    <template id="recent_cart_product_custom" inherit_id="clarico_recently_viewed.recent_cart_product">
+
+        <xpath expr="//hr[@class='r_v_deatil_hr']" position="replace"/>
+
+        <xpath expr="//div[@class='recently_view_product_price']" position="replace">
+            <t t-if="not rproduct.hide_website_price">
+                <div class="recently_view_product_price">
+                    <t t-if="(compute_currency(rproduct.lst_price) - rproduct.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
+                        <del class="text-danger mr8 " style="white-space: nowrap;"
+                             t-esc="compute_currency(rproduct.website_public_price)"
+                             t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
+                    </t>
+                    <span class="text-danger oe_default_price"
+                          style="text-decoration: line-through; white-space: nowrap;"
+                          t-esc="compute_currency(rproduct.website_public_price)"
+                          t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}"
+                          t-att-style="'text-decoration: line-through; white-space: nowrap; ' + '' if (compute_currency(rproduct.lst_price) - rproduct.website_price) &gt; 0.01 and website.get_current_pricelist().discount_policy == 'without_discount' else 'display: none;'" />
+
+                    <b class="oe_price" style="white-space: nowrap;" t-esc="rproduct.website_price"
+                       t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                    <span itemprop="price" style="display:none;" t-esc="rproduct.website_price" />
+                    <span itemprop="priceCurrency" style="display:none;"
+                          t-esc="website.currency_id.name" />
+                </div>
+                <hr class="r_v_deatil_hr" />
+            </t>
         </xpath>
     </template>
 
