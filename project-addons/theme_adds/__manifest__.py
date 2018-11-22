@@ -20,6 +20,7 @@
         'website_sale_one_step_checkout_delivery',
         'website_sale_one_step_checkout_charge_payment_fee',
         'website_sale_require_legal',
+        'website_crm_privacy_policy',
         'theme_clarico'
     ],
     'data': [
