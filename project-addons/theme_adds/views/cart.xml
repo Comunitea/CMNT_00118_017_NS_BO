@@ -54,6 +54,22 @@
         </xpath>
     </template>
 
+    <template id="add_accepted_legal_terms_guest_checkout" inherit_id="website_sale_one_step_checkout.address_form">
+        <xpath expr="//div[@class='clearfix'][last()]" position="after">
+            <t t-if="order.partner_id.id == request.website.user_id.sudo().partner_id.id">
+                <div t-attf-class="form-group col-md-12 #{'has-error' if error and error.get('accepted_legal_terms') else ''}">
+                    <input type="checkbox"
+                           name="accepted_legal_terms"
+                           id="accepted_legal_terms"
+                           required="required"/>
+                    <label for="accepted_legal_terms" class="control-label">
+                        <t t-call="website_legal_page.acceptance_full"/>
+                    </label>
+                </div>
+            </t>
+        </xpath>
+    </template>
+
     <template id="add_fiction_breadcrumbs_bar_onfirmation"  inherit_id="website_sale.confirmation">
 		<xpath expr="//div[@class='container oe_website_sale']" position="before">
 			<t t-call="theme_adds.breadcrumbs_fiction_bar"/>
