@@ -84,4 +84,12 @@
         </xpath>
     </template>
 
+    <!-- Websaite Legal acceptance_full reusable template custom -->
+    <template id="website_legal_page.acceptance_full">
+        Acepto el <a href="/legal/advice" target="_blank">Aviso Legal</a>
+        , la <a href="/legal/privacy-policy" target="_blank">Política de Privacidad</a>
+        , y los <a href="/legal/terms-of-use" target="_blank">Términos de Uso</a>
+        de <span t-field="res_company.name"/>.
+    </template>
+
 </odoo>
