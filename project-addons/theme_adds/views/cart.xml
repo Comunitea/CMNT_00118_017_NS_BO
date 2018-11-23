@@ -67,6 +67,17 @@
                     </label>
                 </div>
             </t>
+            <t groups="base.group_portal">
+                <div t-attf-class="form-group col-md-12" hidden="1">
+                    <input type="checkbox"
+                           checked="1"
+                           name="accepted_legal_terms"
+                           id="accepted_legal_terms"/>
+                    <label for="accepted_legal_terms" class="control-label">
+                        <t t-call="website_legal_page.acceptance_full"/>
+                    </label>
+                </div>
+            </t>
         </xpath>
     </template>
 
