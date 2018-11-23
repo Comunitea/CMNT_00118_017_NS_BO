@@ -23,9 +23,9 @@
 					   required="required"/>
 				<label for="accepted_legal_terms" class="control-label">
 					<span id="legal_terms_msg">
-						Acepto el <a href="/legal/advice" target="_blank">Aviso Legal</a>
-						, la <a href="/legal/privacy-policy" target="_blank">Política de Privacidad</a>
-						, y los <a href="/legal/terms-of-use" target="_blank">Términos de Uso</a>
+						Acepto el <a href="/legal/advice" target="_blank" title="Haz click para verlo en una nueva pestaña">Aviso Legal</a>
+						, la <a href="/legal/privacy-policy" target="_blank" title="SHaz click para verlo en una nueva pestaña">Política de Privacidad</a>
+						, y los <a href="/legal/terms-of-use" target="_blank" title="Haz click para verlo en una nueva pestaña">Términos de Uso</a>
 						de <span t-field="res_company.name"/>.
 					</span>
 				</label>
