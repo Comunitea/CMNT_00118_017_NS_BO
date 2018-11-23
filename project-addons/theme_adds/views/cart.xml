@@ -56,7 +56,7 @@
 
     <template id="add_accepted_legal_terms_guest_checkout" inherit_id="website_sale_one_step_checkout.address_form">
         <xpath expr="//div[@class='clearfix'][last()]" position="after">
-            <t t-if="order.partner_id.id == request.website.user_id.sudo().partner_id.id">
+            <t groups="base.group_public">
                 <div t-attf-class="form-group col-md-12 #{'has-error' if error and error.get('accepted_legal_terms') else ''}">
                     <input type="checkbox"
                            name="accepted_legal_terms"
