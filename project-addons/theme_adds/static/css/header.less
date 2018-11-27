@@ -43,10 +43,13 @@
     }
 }
 .main-header-right .company-phone-div li {
-    display: block;
+    display: inline-block;
 }
 .main-header-right .company-phone-div .header-main-signin li a b {
     color: #fff;
+}
+.main-header-right .company-phone-div .header-main-signin li:first-child {
+    margin-right: 8px;
 }
 .main-header .st0 {
     stroke: #fff;
@@ -238,5 +241,21 @@ header .navbar .navbar-top-collapse {
     }
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a {
         color: #fff;
+    }
+}
+/*
+    CSS media part MAX-WIDTH 500 px
+*/
+@media (max-width: 500px){
+    .main-header-right {
+        & .company-phone-div {
+            margin-right: -5px;
+        }
+        .header-main-signin {
+            padding-right: 0 !important;
+            & li:first-child {
+                margin-right: 3px !important;
+            }
+        }
     }
 }

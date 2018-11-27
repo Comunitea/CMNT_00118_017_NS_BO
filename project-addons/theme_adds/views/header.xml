@@ -22,11 +22,18 @@
 
     <template id="login_btn_replace" inherit_id="clarico_layout.clarico_header_main">
         <xpath expr="//ul[@id='logout_ul']/li[1]" position="replace">
-            <li groups="base.group_public" t-if="website.user_id == user_id">
-                <a t-attf-href="/web/login">
-                    <b>Sign in</b>
-                </a>
-            </li>
+            <t groups="base.group_public" t-if="website.user_id == user_id">
+                <li>
+                    <a t-attf-href="/web/login">
+                        <b>Sign in</b>
+                    </a>
+                </li>
+                <li>
+                    <a t-attf-href="/web/signup">
+                        <b>Sign up</b>
+                    </a>
+                </li>
+            </t>
         </xpath>
     </template>
 
