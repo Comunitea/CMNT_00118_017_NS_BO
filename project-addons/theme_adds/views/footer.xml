@@ -4,7 +4,10 @@
     <!-- footer -->
 
     <template id="subscribe_modal_replace" inherit_id="clarico_email_subscriber.clarico_email_subscriber_popup">
-        <xpath expr="//div[@id='EmailSubscriberModal']" position="replace"/>
+        <!--<xpath expr="//div[@id='EmailSubscriberModal']" position="replace"/>-->
+        <xpath expr="//div[@id='EmailSubscriberModal']" position="attributes">
+            <attribute name="style">display: none !important; z-index: -9999 !important; overflow: hidden; opacity: 0; position: absolute;</attribute>
+        </xpath>
     </template>
 
     <template id="subscribe_footer" inherit_id="clarico_layout.clarico_layout_footer_default">
@@ -13,19 +16,7 @@
                 <div class="container">
                     <div class="title_subscribe_footer">
                         Suscríbete a nuestro newsletter y mantente al día de todas las novedades
-                    </div><!--
-                    <div class="wp_subscribe_footer">
-                        <div class="oe_snippet_body input-group js_subscribe" data-list-id="0">
-                            <input type="email" name="email" class="js_subscribe_email form-control"
-                                   placeholder="Tu email..."/>
-                            <span class="input-group-btn">
-                                <a href="#" class="btn btn-primary js_subscribe_btn">Suscribirme</a>
-                                <a href="#" class="btn btn-success js_subscribed_btn hidden"
-                                   disabled="disabled">Gracias</a>
-                            </span>
-                            <div class="alert alert-success hidden">Gracias por su subscripción!</div>
-                        </div>
-                    </div>-->
+                    </div>
                     <div class="wp_subscribe_footer">
                         <div class="js_follow_alias hidden" data-id="2" data-object="mail.channel" data-follow="off">
                             <div class="input-group js_mg_follow_form">
