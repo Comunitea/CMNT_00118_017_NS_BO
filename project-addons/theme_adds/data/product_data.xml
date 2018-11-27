@@ -3,7 +3,7 @@
     <!--  Create Default Custom Tags as Marked -->
     <record id="marked_tag_featured_product" model="product.tag">
         <field name="name">Featured Products</field>
-        <field name="marked" eval="1"/>
+        <field name="marked" eval="0"/>
     </record>
 
     <record id="marked_tag_featured_categories" model="product.tag">

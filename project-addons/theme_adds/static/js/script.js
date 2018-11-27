@@ -224,3 +224,34 @@ $('ul.js_add_cart_variants').each(function(){
 
     }
 });
+
+/* Set current tag class */
+$('a.product-tag').each(function(){
+    var search  = document.location.search
+        current = new URLSearchParams(search).get('tags')
+        is_search = new URLSearchParams(search).get('search');
+        pathname = document.location.pathname;
+        url = pathname.split('/page')[0];
+
+    if(current){
+        current = '/shop?tags='+current;
+    }else if(!(is_search)){
+        current = url;
+    }
+
+    if ($(this).attr("href") == current ){
+        $(this).parents('span').addClass('current');
+    }
+});
+
+/* Set search breadcrumbs */
+$(document).ready(function(){
+    var is_search = new URLSearchParams(document.location.search).get('search')
+        search_message = 'Search results';
+
+    if(is_search){
+        $(".select-nevigation-span").html("/");
+        $(".select-nevigation-child").attr("href", document.location);
+        $(".select-nevigation-child").html(search_message);
+    }
+});

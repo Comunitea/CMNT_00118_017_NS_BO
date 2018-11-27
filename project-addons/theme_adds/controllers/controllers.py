@@ -24,6 +24,51 @@ class ClaricoShopCustom(claricoShop):
         return '%s , id asc' % post.get('order', 'website_sequence asc')
 
     """
+        Change default products to show in shop start page
+    """
+    def _get_search_domain(self, search, category, attrib_values, price_vals = {}):
+
+        domain = request.website.sale_product_domain()
+        if search:
+            for srch in search.split(" "):
+                domain += [
+                    '|', '|', '|', '|', ('name', 'ilike', srch), ('description', 'ilike', srch),
+                    ('description_sale', 'ilike', srch), ('product_variant_ids.default_code', 'ilike', srch),
+                    ('brand_ept_id.name', 'ilike', srch)]
+
+        if category:
+            domain += [('public_categ_ids', 'child_of', int(category))]
+
+        if price_vals:
+            domain += [('list_price', '>=', price_vals.get('min_val')), ('list_price', '<=', price_vals.get('max_val'))]
+
+        if attrib_values:
+            attrib = None
+            ids = []
+            for value in attrib_values:
+                if value[0] == 0:
+                    ids.append(value[1])
+                    domain += [('brand_ept_id.id', 'in', ids)]
+                elif not attrib:
+                    attrib = value[0]
+                    ids.append(value[1])
+                elif value[0] == attrib:
+                    ids.append(value[1])
+                else:
+                    domain += [('attribute_line_ids.value_ids', 'in', ids)]
+                    attrib = value[0]
+                    ids = [value[1]]
+            if attrib:
+                domain += [('attribute_line_ids.value_ids', 'in', ids)]
+
+        tag_id = request.httprequest.args.get('tags')
+
+        if not category and not tag_id:
+            domain += [(u'tag_ids', u'ilike', u'Productos Destacados')]
+
+        return domain
+
+    """
         Change default products to show in shop by ir.config_parameter
     """
     @http.route([
