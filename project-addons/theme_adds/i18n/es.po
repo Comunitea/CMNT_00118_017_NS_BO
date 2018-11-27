@@ -975,7 +975,7 @@ msgstr "Este campo es obligatorio"
 
 #. module: theme_adds
 #. openerp-web
-#: code:/project-addons/theme_adds/static/jsscript.js:12
+#: code:/project-addons/theme_adds/static/js/script.js:12
 #, python-format
 msgid "Please enter a valid email address"
 msgstr "Por favor, introduce una dirección de correo electrónico válida"
@@ -986,6 +986,13 @@ msgstr "Por favor, introduce una dirección de correo electrónico válida"
 #, python-format
 msgid "This product was added to cart"
 msgstr "Este producto fue añadido al carrito"
+
+#. module: theme_adds
+#. openerp-web
+#: code:/project-addons/theme_adds/static/js/script.js:250
+#, python-format
+msgid "Search results"
+msgstr "Resultados de búsqueda"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.wishlist_banner_replace
