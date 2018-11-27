@@ -48,7 +48,12 @@ msgstr "640 823 409"
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.login_btn_replace
 msgid "<b>Sign in</b>"
-msgstr "<b>Iniciar sesión</b>"
+msgstr "<b>Entrar</b>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.login_btn_replace
+msgid "<b>Sign up</b>"
+msgstr "<b>Registrarse</b>"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.no_products_define_replace
