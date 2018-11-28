@@ -105,10 +105,11 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-7 col-xs-7 new_hd_img mobile-version">
+                        <div class="col-md-3 col-sm-4 col-xs-7 new_hd_img mobile-version">
                             <a href="/"><img src="/theme_adds/static/img/logo-head.png" alt="Nostrumsport"/></a>
                         </div>
-                        <div class="col-md-3 col-xs-5 col-sm-5">
+                        <div class="col-sm-5 col-xs-0 mobile-version"/>
+                        <div class="col-md-3 col-xs-5 col-sm-3">
                             <div class="hd_widget_revi_demo">
                                 <a href="https://revi.io/es/opiniones/wwwnostrumsportcom" target="_blank">
                                     <img src="/theme_adds/static/img/revi-widget-demo.png" alt="Revi 9.2/10"/>
@@ -117,6 +118,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </xpath>
+        <xpath expr="//header//div[@class='navbar-header']" position="inside">
+            <div class="wp-mobile-search-button mobile-version">
+                <span class="mobile-search-button"><i class="fa fa-search" /></span>
             </div>
         </xpath>
     </template>

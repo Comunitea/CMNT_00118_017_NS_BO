@@ -139,8 +139,10 @@
                                                     <div class="alternet_common">
                                                         <div class="parent">
                                                             <a t-attf-href="/shop/product/#{ slug(alt_product) }">
-                                                                <div t-field="alt_product.image_medium" class="recently_viewed_img_div"
-                                                                    t-options="{'widget': 'image'}" />
+                                                                <!--<div t-field="alt_product.image_medium" class="recently_viewed_img_div"
+                                                                    t-options="{'widget': 'image'}" />-->
+                                                                <div itemprop="image" t-field="alt_product.image"
+                                                                       t-options="{'widget': 'image', 'resize':'250x250'}" t-att-alt="alt_product.name" class="recently_viewed_img_div"/>
                                                             </a>
                                                             <div class="recently_viwed_details">
                                                                 <div class="recently_view_product_name">
@@ -181,8 +183,10 @@
                                                         <div class="parent">
                                                             <a t-attf-href="/shop/product/#{ slug(alt_product.product_tmpl_id) }"
                                                                 style="display: block">
-                                                                <div t-field="alt_product.image_medium" class="recently_viewed_img_div"
-                                                                    t-options="{'widget': 'image'}" />
+                                                                <!--<div t-field="alt_product.image_medium" class="recently_viewed_img_div"
+                                                                    t-options="{'widget': 'image'}" />-->
+                                                                 <div itemprop="image" t-field="alt_product.image"
+                                                                       t-options="{'widget': 'image', 'resize':'250x250'}" t-att-alt="alt_product.name" class="recently_viewed_img_div"/>
                                                             </a>
                                                             <div class="recently_viwed_details">
                                                                 <div class="recently_view_product_name">
@@ -566,8 +570,10 @@
                 <div class="parent">
                     <div class="recently_viewed_img_div">
                         <a t-attf-href="/shop/product/#{ slug(rproduct) }">
-                            <img class="img img-responsive"
-                                 t-att-src="'data:image/png;base64,%s' % rproduct.image_medium"></img>
+                            <!--<img class="img img-responsive"
+                                 t-att-src="'data:image/png;base64,%s' % rproduct.image_medium"/>-->
+                            <span itemprop="image" t-field="rproduct.image"
+                                  t-options="{'widget': 'image', 'resize':'250x250'}" t-att-alt="rproduct.name" />
                         </a>
                     </div>
                     <div class="recently_viwed_details">

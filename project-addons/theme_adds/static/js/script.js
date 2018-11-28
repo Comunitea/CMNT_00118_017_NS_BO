@@ -267,3 +267,9 @@ $('a.clear-all-wishlist').click(function(){
 $('a.clear_shopping_cart').click(function(){
     $('.wp-load-spinner-clear-cart').show();
 });
+
+/* Show search bar on mobile header */
+$('.mobile-search-button').click(function(){
+    $('.new_hd_search').toggle();
+    $(this).find('i').toggleClass('fa-search').toggleClass('fa-close');
+});
