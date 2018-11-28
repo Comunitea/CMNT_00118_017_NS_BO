@@ -30,6 +30,15 @@ a.clear_shopping_cart.btn {
     display: none;
     margin: 20px 0;
 }
+.oe_cart {
+    position: relative;
+    & .wp-load-spinner-clear-cart {
+        display: none;
+        & .wp-load-spinner {
+            background-position: center 15%;
+        }
+    }
+}
 /*
     CSS media part MIN-WIDTH
 */

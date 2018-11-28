@@ -6,6 +6,11 @@
         <xpath expr="//div[@class='main-div-W100 wishlist-main']/div[@class='main-div-maxW']" position="before">
             <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
         </xpath>
+        <xpath expr="//div[@class='main-div-maxW']" position="inside">
+            <div class="wp-load-spinner-clear-wishlist">
+                <div class="wp-load-spinner"/>
+            </div>
+        </xpath>
         <xpath expr="//a[@class='clear-all-wishlist']" position="replace">
             <a class="clear-all-wishlist btn btn-primary common-btn">Clear Wishlist</a>
         </xpath>
