@@ -170,6 +170,7 @@ $('.oe_website_sale').each(function () {
     var oe_website_sale = this;
 
     $(oe_website_sale).on("change", "input.js_quantity", function () {
+        $('.wp-load-spinner-clear-cart').show();
         setTimeout(function(){
             var sum = 0;
             $('.js_quantity').each(function(){
@@ -186,7 +187,8 @@ $('.oe_website_sale').each(function () {
                 $('.cart-main-div-full').hide();
                 $('.empty_cart_message').show();
             }
-        }, 100);
+            $('.wp-load-spinner-clear-cart').hide();
+        }, 500);
     });
 });
 /* parts/odoo/addons/website_sale/static/src/js/website_sale.js:171
@@ -254,4 +256,14 @@ $(document).ready(function(){
         $(".select-nevigation-child").attr("href", document.location);
         $(".select-nevigation-child").html(search_message);
     }
+});
+
+/* Clear wishlist list spinner */
+$('a.clear-all-wishlist').click(function(){
+    $('.wp-load-spinner-clear-wishlist').show();
+});
+
+/* Clear cart spinner */
+$('a.clear_shopping_cart').click(function(){
+    $('.wp-load-spinner-clear-cart').show();
 });
