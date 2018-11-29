@@ -64,7 +64,7 @@
     <!--Add privacy policy checkbox Only Public-->
     <template id="contactus_form_privacy" inherit_id="website_crm_privacy_policy.contactus_form" name="Add privacy policy checkbox Only Public">
         <xpath expr="//div[@class='checkbox']/../.." position="replace">
-            <t groups="base.group_public">
+            <t t-if="website.env.user == request.website.user_id">
                 <div class="form-group form-field o_website_form_required">
                     <div class="col-md-7 col-md-offset-3 col-sm-8 col-sm-offset-4">
                         <div class="checkbox">
