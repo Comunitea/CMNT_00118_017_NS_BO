@@ -41,7 +41,7 @@
             <script t-if="len(product.product_variant_ids) &gt; 1">
                 window.arr = new Map();
                 <t t-foreach="product.product_variant_ids" t-as="variant">
-                    arr.set('<t t-esc="variant.id"/>', '<t t-esc="variant.lst_price"/>');
+                    arr.set('&lt;t t-esc="variant.id"/>', '&lt;t t-esc="variant.lst_price"/>');
                 </t>
             </script>
             <t t-placeholder="select">
@@ -60,6 +60,9 @@
                     <span t-esc="compute_currency(product.product_variant_id.lst_price)" t-options='{"widget": "monetary", "display_currency": product.currency_id,}'/> sin IVA
                 </div>
                 <div groups="sale.group_show_price_subtotal" t-if="product.product_variant_id.list_price &gt; 0 or len(product.product_variant_ids) &gt; 1" class="price_sin_iva">(Precio sin IVA)</div>
+            </t>
+            <t t-else="">
+                <div>Precio No Disponible</div>
             </t>
         </xpath>
         <xpath expr="//div[@class='ctg_class']" position="replace"/>
@@ -138,12 +141,18 @@
                                                 <t t-foreach="product.alternative_product_ids" t-as="alt_product">
                                                     <div class="alternet_common">
                                                         <div class="parent">
-                                                            <a t-attf-href="/shop/product/#{ slug(alt_product) }">
-                                                                <!--<div t-field="alt_product.image_medium" class="recently_viewed_img_div"
-                                                                    t-options="{'widget': 'image'}" />-->
-                                                                <div itemprop="image" t-field="alt_product.image"
-                                                                       t-options="{'widget': 'image', 'resize':'250x250'}" t-att-alt="alt_product.name" class="recently_viewed_img_div"/>
-                                                            </a>
+                                                            <div class="recently_viewed_img_div">
+                                                                <a itemprop="url" t-att-href="'/shop/product/%s' % slug(alt_product)">
+                                                                    <span itemprop="image" />
+                                                                    <div class="div_c_sub_pc_image">
+                                                                        <div class="ribbon-wrapper" t-if="alt_product.label_ept_id">
+                                                                            <div class="ribbon btn btn-danger sale-btn" t-field="alt_product.label_ept_id"></div>
+                                                                        </div>
+                                                                        <span itemprop="image" t-field="alt_product.image_medium"
+                                                                              t-options="{'widget': 'image'}" t-att-alt="alt_product.name" />
+                                                                    </div>
+                                                                </a>
+                                                            </div>
                                                             <div class="recently_viwed_details">
                                                                 <div class="recently_view_product_name">
                                                                     <a t-attf-href="/shop/product/#{ slug(alt_product) }"
@@ -152,14 +161,17 @@
                                                                     </a>
                                                                 </div>
 
-                                                                <!--Hide price for products with 0€ price-->
-                                                                <t t-if="not alt_product.hide_website_price">
-                                                                    <div class="recently_view_product_price">
+                                                                <!--Hide price for products-->
+                                                                <div class="recently_view_product_price">
+                                                                    <t t-if="not alt_product.hide_website_price">
                                                                         <p t-field="alt_product.website_price"
                                                                            t-options='{"widget": "monetary", "display_currency": website.currency_id, }' />
-                                                                    </div>
-                                                                    <hr class="r_v_deatil_hr" />
-                                                                </t>
+                                                                    </t>
+                                                                    <t t-else="">
+                                                                        <p><b>N/D</b></p>
+                                                                    </t>
+                                                                </div>
+                                                                <hr class="r_v_deatil_hr" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -181,13 +193,18 @@
                                                 <t t-foreach="product.accessory_product_ids" t-as="alt_product">
                                                     <div class="alternet_common">
                                                         <div class="parent">
-                                                            <a t-attf-href="/shop/product/#{ slug(alt_product.product_tmpl_id) }"
-                                                                style="display: block">
-                                                                <!--<div t-field="alt_product.image_medium" class="recently_viewed_img_div"
-                                                                    t-options="{'widget': 'image'}" />-->
-                                                                 <div itemprop="image" t-field="alt_product.image"
-                                                                       t-options="{'widget': 'image', 'resize':'250x250'}" t-att-alt="alt_product.name" class="recently_viewed_img_div"/>
-                                                            </a>
+                                                            <div class="recently_viewed_img_div">
+                                                                <a itemprop="url" t-att-href="'/shop/product/%s' % slug(alt_product)">
+                                                                    <span itemprop="image" />
+                                                                    <div class="div_c_sub_pc_image">
+                                                                        <div class="ribbon-wrapper" t-if="alt_product.label_ept_id">
+                                                                            <div class="ribbon btn btn-danger sale-btn" t-field="alt_product.label_ept_id"></div>
+                                                                        </div>
+                                                                        <span itemprop="image" t-field="alt_product.image_medium"
+                                                                              t-options="{'widget': 'image'}" t-att-alt="alt_product.name" />
+                                                                    </div>
+                                                                </a>
+                                                            </div>
                                                             <div class="recently_viwed_details">
                                                                 <div class="recently_view_product_name">
                                                                     <a t-attf-href="/shop/product/#{ slug(alt_product.product_tmpl_id) }"
@@ -196,14 +213,17 @@
                                                                     </a>
                                                                 </div>
 
-                                                                <!--Hide price for products with 0€ price-->
-                                                                <t t-if="not alt_product.hide_website_price">
-                                                                    <div class="recently_view_product_price">
+                                                                <!--Hide price for products-->
+                                                                <div class="recently_view_product_price">
+                                                                    <t t-if="not alt_product.hide_website_price">
                                                                         <p t-field="alt_product.website_price"
-                                                                            t-options='{"widget": "monetary", "display_currency": website.currency_id, }' />
-                                                                    </div>
-                                                                    <hr class="r_v_deatil_hr" />
-                                                                </t>
+                                                                           t-options='{"widget": "monetary", "display_currency": website.currency_id, }' />
+                                                                    </t>
+                                                                    <t t-else="">
+                                                                        <p><b>N/D</b></p>
+                                                                    </t>
+                                                                </div>
+                                                                <hr class="r_v_deatil_hr" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -237,6 +257,9 @@
                     data-ride="carousel" data-interval="0">
                     <div class="carousel-outer">
                         <div class="carousel-inner inner-slider">
+                            <div class="ribbon-wrapper" t-if="product.label_ept_id">
+                                <div class="ribbon btn btn-danger sale-btn" t-field="product.label_ept_id"></div>
+                            </div>
                             <div class="item active image_zoom" itemprop="image"
                                 t-field="product.image"
                                 t-options='{"widget": "image", "resize": big, "class": "product_detail_img ", "alt-field": "name", "zoom": "image"}' />
@@ -368,7 +391,7 @@
             </div>
         </xpath>
 
-        <!--Hide price for 0€ price in product compact viewlist at shop view-->
+        <!--Hide price product compact viewlist at shop view-->
         <xpath expr="//b[@class='responsive_price']" position="replace">
             <b class="responsive_price">
                 <t t-if="not product.hide_website_price">
@@ -383,6 +406,9 @@
                     <span itemprop="price" style="display:none;" t-esc="product.website_price" />
                     <span itemprop="priceCurrency" style="display:none;"
                           t-esc="website.currency_id.name" />
+                </t>
+                <t t-else="">
+                    <b>N/D</b>
                 </t>
             </b>
         </xpath>
@@ -460,7 +486,7 @@
     <!-- add to cart button in compact view-->
     <template id="product_add_to_cart_replace" inherit_id="clarico_shop.clarico_shop_products_item" active="True">
         <xpath expr="//div[@id='add_to_cart_shop']" position="inside">
-            <!--Hide add to cart button for products with 0€ price at grid products shop -->
+            <!--Hide add to cart button for products with hide price at grid products shop -->
             <t t-if="not product.hide_website_price">
                 <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden" />
                 <t t-if="len(product.product_variant_ids) == 1">
@@ -502,7 +528,7 @@
             </t>
         </xpath>
 
-        <!--Hide price for 0€ price in product details at product details view-->
+        <!--Hide price in product details at product details view-->
         <xpath expr="//div[@class='price_comman_sub_class']" position="replace">
             <t t-if="not product.hide_website_price">
                 <t t-if="(compute_currency(product.lst_price) - product.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='with_discount'">
@@ -528,9 +554,12 @@
                           t-esc="website.currency_id.name" />
                 </b>
             </t>
+            <t t-else="">
+                <b>N/D</b>
+            </t>
         </xpath>
 
-        <!--Hide add to cart button in product details at product details view for price 0€-->
+        <!--Hide add to cart button in product details at product details view for price hide-->
         <xpath expr="//div[@class='p_ad2cart']" position="replace">
             <t t-if="not product.hide_website_price">
                 <div class="p_ad2cart">
@@ -541,7 +570,7 @@
 
     </template>
 
-    <!--Hide product quantity for 0€ price in product details at product details view-->
+    <!--Hide product quantity in product details at product details view-->
     <template id="clarico_product_product_quantity_custom" inherit_id="clarico_product.clarico_product_product_quantity">
         <xpath expr="//div[@class='product_quantity']" position="replace">
             <t t-if="not product.hide_website_price">
@@ -563,19 +592,24 @@
         </xpath>
     </template>
 
-    <!--Hide price for 0€ price in recently viewed items list at product details view-->
+    <!--Hide price in recently viewed items list at product details view-->
     <template id="clarico_recently_viewed_recent_products_custom" inherit_id="clarico_recently_viewed.clarico_recently_viewed_recent_products">
         <xpath expr="//div[@class='recently_viwed_common']" position="replace">
             <div class="recently_viwed_common">
                 <div class="parent">
                     <div class="recently_viewed_img_div">
-                        <a t-attf-href="/shop/product/#{ slug(rproduct) }">
-                            <!--<img class="img img-responsive"
-                                 t-att-src="'data:image/png;base64,%s' % rproduct.image_medium"/>-->
-                            <span itemprop="image" t-field="rproduct.image"
-                                  t-options="{'widget': 'image', 'resize':'250x250'}" t-att-alt="rproduct.name" />
+                        <a itemprop="url" t-att-href="'/shop/product/%s' % slug(rproduct)">
+                            <span itemprop="image" />
+                            <div class="div_c_sub_pc_image">
+                                <div class="ribbon-wrapper" t-if="rproduct.label_ept_id">
+                                    <div class="ribbon btn btn-danger sale-btn" t-field="rproduct.label_ept_id"></div>
+                                </div>
+                                <span itemprop="image" t-field="rproduct.image_medium"
+                                    t-options="{'widget': 'image'}" t-att-alt="rproduct.name" />
+                            </div>
                         </a>
                     </div>
+
                     <div class="recently_viwed_details">
                         <div class="recently_view_product_name">
                             <a t-attf-href="/shop/product/#{ slug(rproduct) }"
@@ -583,25 +617,30 @@
                                 <p t-field="rproduct.name" />
                             </a>
                         </div>
-                        <t t-if="rproduct.website_public_price &gt; 0 or len(rproduct.product_variant_ids) &gt; 1">
-                            <div class="recently_view_product_price">
-                                <t t-if="(compute_currency(rproduct.lst_price) - rproduct.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
-                                    <del class="text-danger mr8 " style="white-space: nowrap;"
-                                         t-esc="compute_currency(rproduct.website_public_price)"
-                                         t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
-                                </t>
-                                <span class="text-danger oe_default_price"
-                                      style="text-decoration: line-through; white-space: nowrap;"
-                                      t-esc="compute_currency(rproduct.website_public_price)"
-                                      t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}"
-                                      t-att-style="'text-decoration: line-through; white-space: nowrap; ' + '' if (compute_currency(rproduct.lst_price) - rproduct.website_price) &gt; 0.01 and website.get_current_pricelist().discount_policy == 'without_discount' else 'display: none;'" />
+                        <t t-if="not rproduct.hide_website_price">
+                            <t t-if="rproduct.website_public_price &gt; 0 or len(rproduct.product_variant_ids) &gt; 1">
+                                <div class="recently_view_product_price">
+                                    <t t-if="(compute_currency(rproduct.lst_price) - rproduct.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
+                                        <del class="text-danger mr8 " style="white-space: nowrap;"
+                                             t-esc="compute_currency(rproduct.website_public_price)"
+                                             t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
+                                    </t>
+                                    <span class="text-danger oe_default_price"
+                                          style="text-decoration: line-through; white-space: nowrap;"
+                                          t-esc="compute_currency(rproduct.website_public_price)"
+                                          t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}"
+                                          t-att-style="'text-decoration: line-through; white-space: nowrap; ' + '' if (compute_currency(rproduct.lst_price) - rproduct.website_price) &gt; 0.01 and website.get_current_pricelist().discount_policy == 'without_discount' else 'display: none;'" />
 
-                                <b class="oe_price" style="white-space: nowrap;" t-esc="rproduct.website_price"
-                                   t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
-                                <span itemprop="price" style="display:none;" t-esc="rproduct.website_price" />
-                                <span itemprop="priceCurrency" style="display:none;"
-                                      t-esc="website.currency_id.name" />
-                            </div>
+                                    <b class="oe_price" style="white-space: nowrap;" t-esc="rproduct.website_price"
+                                       t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                                    <span itemprop="price" style="display:none;" t-esc="rproduct.website_price" />
+                                    <span itemprop="priceCurrency" style="display:none;"
+                                          t-esc="website.currency_id.name" />
+                                </div>
+                            </t>
+                        </t>
+                        <t t-else="">
+                            <b>N/D</b>
                         </t>
                         <hr class="r_v_deatil_hr" />
                     </div>
