@@ -60,25 +60,27 @@
     </template>
 
     <template id="add_accepted_legal_terms_guest_checkout" inherit_id="website_sale_one_step_checkout.address_form">
-        <xpath expr="//form" position="inside">
-            <t t-if="website.user_id == user_id">
-                <div t-attf-class="form-group col-md-12 ">
+        <xpath expr="//div[@class='clearfix'][last()]" position="after">
+            <t groups="base.group_public">
+                <div t-attf-class="form-group col-md-12 #{'has-error' if error and error.get('accepted_legal_terms') else ''}">
                     <input type="checkbox"
                            name="accepted_legal_terms"
                            id="accepted_legal_terms"
-                           required="required"
-                           value=""/>
+                           required="required"/>
                     <label for="accepted_legal_terms" class="control-label">
                         <t t-call="website_legal_page.acceptance_full"/>
                     </label>
                 </div>
             </t>
-            <t t-else="">
+            <t groups="base.group_portal">
                 <div t-attf-class="form-group col-md-12" hidden="1">
                     <input type="checkbox"
                            checked="1"
                            name="accepted_legal_terms"
                            id="accepted_legal_terms"/>
+                    <label for="accepted_legal_terms" class="control-label">
+                        <t t-call="website_legal_page.acceptance_full"/>
+                    </label>
                 </div>
             </t>
         </xpath>
