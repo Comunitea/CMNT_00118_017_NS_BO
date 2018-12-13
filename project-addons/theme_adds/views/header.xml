@@ -139,4 +139,8 @@
         </div>
     </template>
 
+    <template id="website_portal.my_account_link" inherit_id="website.layout">
+        <xpath expr="//li[@id='o_logout']" position="before"/>
+    </template>
+
 </odoo>
