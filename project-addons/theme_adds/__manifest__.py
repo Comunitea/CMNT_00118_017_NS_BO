@@ -46,10 +46,12 @@
         'payment_acquirer_by_amount',
         'payment_redsys',
         'payment_paypal',
+        'checkout_coupon',
         'website_sale_one_step_checkout_delivery',
         'website_sale_one_step_checkout_charge_payment_fee',
         'website_sale_require_legal',
         'website_crm_privacy_policy',
+        'website_portal',
         'theme_clarico'
     ],
     'data': [
