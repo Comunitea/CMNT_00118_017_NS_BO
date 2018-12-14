@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#
 # © 2018 Comunitea
 # Ruben Seijas <ruben@comunitea.com> - Pavel Smirnov <pavel@comunitea.com>
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
@@ -33,7 +34,6 @@
     'license': 'AGPL-3',
     'category': 'Custom',
     'contributors': [
-        "Comunitea ",
         "Ruben Seijas <ruben@comunitea.com>",
         "Pavel Smirnov <pavel@comunitea.com>"
     ],
@@ -51,6 +51,7 @@
         'website_sale_one_step_checkout_charge_payment_fee',
         'website_sale_require_legal',
         'website_crm_privacy_policy',
+        'payment_paga_mas_tarde',
         'website_portal',
         'theme_clarico'
     ],
