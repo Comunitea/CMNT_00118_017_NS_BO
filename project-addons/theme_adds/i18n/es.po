@@ -327,8 +327,14 @@ msgstr "Elija el orden de secuencia del Sitio Web"
 #. module: theme_adds
 #: code:project-addons/theme_adds/models/product.py:31
 #, python-format
-msgid "Product old URL Website"
+msgid "SEO Old URL"
 msgstr "URL del producto en el anterior Sitio Web"
+
+#. module: theme_adds
+#: code:project-addons/theme_adds/models/product.py:31
+#, python-format
+msgid "Prestashop Old Product URL for redirection of Google SEO"
+msgstr "URL del producto en Prestashop para redireccionamiento de Google SEO"
 
 #. module: theme_adds
 #: code:project-addons/theme_adds/models/product.py:31
@@ -340,7 +346,7 @@ msgstr "URL del producto en el anterior Sitio Web para redireccionar el posicion
 #: code:project-addons/theme_adds/models/product.py:32
 #, python-format
 msgid "Hide Website Price"
-msgstr "Ocultar precio en Sitio Web"
+msgstr "Ocultar Precio en Web"
 
 #. module: theme_adds
 #: code:project-addons/theme_adds/models/product.py:33
