@@ -276,12 +276,15 @@ $('.mobile-search-button').click(function(){
 
 /* Hacer funcionar la validación de la aceptación de los términos legales en el formulario del oneCheckOut
    para guardar dirección de los usuarios invitados*/
-$('#public-billing-address').each(function(){
-    $(this).find('input[name="accepted_legal_terms"]').click(function(){
+$(document).ready(function(){
+    $('input[name="accepted_legal_terms"]').click(function(){
         if($(this).is(":checked")){
             $(this).attr("value", "123");
         } else {
             $(this).attr("value", "");
         }
+    });
+    $('label[for="accepted_legal_terms"]').on('click', function(){
+        $(input[name="accepted_legal_terms"]).attr("value", "123");
     });
 });

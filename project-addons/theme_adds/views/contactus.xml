@@ -74,7 +74,7 @@
                                 name="privacy_policy"
                                 class="o_website_form_input"
                                 required="required"/>
-                            <label class="control-label">
+                            <label class="control-label" for="privacy_policy">
                                 <t t-call="website_legal_page.acceptance_full"/>
                             </label>
                         </div>

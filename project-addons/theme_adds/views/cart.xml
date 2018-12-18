@@ -61,7 +61,7 @@
 
     <template id="add_accepted_legal_terms_guest_checkout" inherit_id="website_sale_one_step_checkout.address_form">
         <xpath expr="//form" position="inside">
-            <t t-if="website.user_id == user_id">
+            <t t-if="website.user_id == user_id and not checkout">
                     <div t-attf-class="form-group col-md-12 ">
                         <input type="checkbox"
                                name="accepted_legal_terms"
