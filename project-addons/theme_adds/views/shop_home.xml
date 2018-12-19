@@ -32,9 +32,11 @@
                     <div class="all-category-div">
                         <ul>
                             <li t-att-class=" '' if tag else 'active all-products' ">
-                                <a class="product-tag btn btn-primary btn-xs" t-attf-href="/shop" style="font-size: 14px;">
-                                    <span aria-hidden="true">All Products</span>
-                                </a>
+                                <span>
+                                    <a class="product-tag btn btn-primary btn-xs" t-attf-href="/shop" style="font-size: 14px;">
+                                        <span aria-hidden="true">Productos Destacados</span>
+                                    </a>
+                                </span>
                             </li>
                             <t t-foreach="tags" t-as="tag">
                                 <li class="active">
@@ -134,7 +136,10 @@
                             <h4 class="category">Tags</h4>
                             <t t-foreach="tags" t-as="tag">
                                 <span t-att-class="tag.tag_color">
-                                    <a class="product-tag btn btn-primary btn-xs mb8" t-attf-href="/shop?tags=#{tag.id}">
+                                    <a t-if="tag.name != 'Productos Destacados'" class="product-tag btn btn-primary btn-xs mb8" t-attf-href="/shop?tags=#{tag.id}">
+                                        <span t-field="tag.name" />
+                                    </a>
+                                    <a t-else="" href="/shop" class="product-tag btn btn-primary btn-xs mb8">
                                         <span t-field="tag.name" />
                                     </a>
                                 </span>

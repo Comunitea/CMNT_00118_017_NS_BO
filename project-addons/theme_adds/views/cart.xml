@@ -26,6 +26,11 @@
 
     <template id="cart_banner_replace" inherit_id="clarico_cart.clarico_cart">
         <xpath expr="//div[@class='cart-cover-img-div']" position="replace"/>
+        <xpath expr="//div[@class='cart-main-div-full oe_cart']" position="inside">
+            <div class="wp-load-spinner-clear-cart">
+                <div class="wp-load-spinner"/>
+            </div>
+        </xpath>
         <xpath expr="//div[@class='cart-main-div-full oe_cart']/div[@class='oe_structure']" position="before">
             <div class="pull-left" t-if="website_sale_order.amount_total &gt; 0">
                 <a class="btn btn-primary common-btn back-to-shopping" href="/">
@@ -55,16 +60,25 @@
     </template>
 
     <template id="add_accepted_legal_terms_guest_checkout" inherit_id="website_sale_one_step_checkout.address_form">
-        <xpath expr="//div[@class='clearfix'][last()]" position="after">
-            <t t-if="order.partner_id.id == request.website.user_id.sudo().partner_id.id">
-                <div t-attf-class="form-group col-md-12 #{'has-error' if error and error.get('accepted_legal_terms') else ''}">
+        <xpath expr="//form" position="inside">
+            <t t-if="website.user_id == user_id and not checkout">
+                    <div t-attf-class="form-group col-md-12 ">
+                        <input type="checkbox"
+                               name="accepted_legal_terms"
+                               id="accepted_legal_terms"
+                               required="required"
+                               value=""/>
+                        <label for="accepted_legal_terms" class="control-label">
+                            <t t-call="website_legal_page.acceptance_full"/>
+                        </label>
+                    </div>
+            </t>
+            <t t-else="">
+                <div t-attf-class="form-group col-md-12" hidden="1">
                     <input type="checkbox"
+                           checked="1"
                            name="accepted_legal_terms"
-                           id="accepted_legal_terms"
-                           required="required"/>
-                    <label for="accepted_legal_terms" class="control-label">
-                        <t t-call="website_legal_page.acceptance_full"/>
-                    </label>
+                           id="accepted_legal_terms"/>
                 </div>
             </t>
         </xpath>
@@ -85,6 +99,74 @@
                         <th class="text-center">Price</th>
                   </tr>
             </thead>
+        </xpath>
+    </template>
+
+    <template id="custom_onestepcheckout" inherit_id="website_sale_one_step_checkout.osc_onestepcheckout">
+
+        <!--Adapt payment_acquirer_by_amount to OSC-->
+        <xpath expr="//t[@t-foreach]/li" position="replace">
+            <t t-if="(not acquirer.min_amount_required and not acquirer.max_amount_required)
+                     or (
+                        (acquirer.min_amount_required &lt; website_sale_order.amount_total and acquirer.max_amount_required &gt; website_sale_order.amount_total)
+                        or (not acquirer.max_amount_required and acquirer.min_amount_required &lt; website_sale_order.amount_total)
+                        or (not acquirer.min_amount_required and acquirer.max_amount_required &gt; website_sale_order.amount_total)
+                        )">
+                <label t-if="acquirer.button">
+                    <input t-att-value="acquirer.id"
+                           type="radio"
+                           name="acquirer"
+                           t-att-checked="website_sale_order.payment_acquirer_id == acquirer"/>
+                    <span t-field="acquirer.image_small"
+                          t-att-title="acquirer.name"
+                          t-field-options='{"widget": "image", "style":"max-width: 60px; display: inline-block"}'/>
+                    <span t-field="acquirer.name"/>
+                    <span t-if="acquirer.fees_active">(processing fees apply)
+                    </span>
+                </label>
+            </t>
+        </xpath>
+
+        <!--Para adaptar paga+tarde a osc-->
+        <xpath expr="//div[@class='container oe_website_sale oe_website_sale_osc']/div" position="before">
+            <div t-if="request.session.get('pmt_tx_error')" class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true"><![CDATA[&times;]]></span>
+                        </button>
+                        <strong>PAGA+TARDE: </strong><span t-esc="request.session.get('pmt_tx_error')"></span>
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </xpath>
+
+        <!--Instrucciones de pago y simulador-->
+        <xpath expr="//div[@id='payment_body_info']" position="inside">
+            <span>For select a <strong>"Paga+Tarde"</strong> payment, the total amount must be over 350€.</span>
+            <br/>
+            <p>
+                <!-- Retrive Javascript SDK from CDN -->
+                <script type="text/javascript" src="https://cdn.pagamastarde.com/pmt-js-client-sdk/3/js/client-sdk.min.js"></script>
+                <!-- Create simulator container -->
+                <div class="PmtSimulator"
+                     data-pmt-style="Blue"
+                     data-pmt-type="6"
+                     t-att-data-pmt-amount="website_sale_order.amount_total"
+                     t-att-data-pmt-promoted-amount="0">
+                </div>
+                <!-- Set Public Key and reload simulator -->
+                <script>
+                    pmtClient.simulator.setPublicKey('pk_fdfadf9090a1c489501d5cb1');
+                    pmtClient.simulator.init();
+                    pmtClient.simulator.reload();
+                </script>
+            </p>
+            <button class="btn btn-block btn-primary"
+                    onclick="pmtClient.modal.open('https://developer.pagamastarde.com/landing/?pmt-pk=pk_fdfadf9090a1c489501d5cb1',
+                                    {'closeConfirmationMessage': null, 'largeSize': true});">Ver Instrucciones Paga+Tarde</button>
         </xpath>
     </template>
 
@@ -111,10 +193,23 @@
         </xpath>
     </template>
 
-    <!--Hide price for 0€ price in recently viewed items list at cart view-->
+    <!--Hide price in recently viewed items list at cart view-->
     <template id="recent_cart_product_custom" inherit_id="clarico_recently_viewed.recent_cart_product">
 
-        <xpath expr="//hr[@class='r_v_deatil_hr']" position="replace"/>
+        <xpath expr="//div[@class='recently_viewed_img_div']" position="replace">
+            <div class="recently_viewed_img_div">
+                <a itemprop="url" t-att-href="'/shop/product/%s' % slug(rproduct)">
+                    <span itemprop="image" />
+                    <div class="div_c_sub_pc_image">
+                        <div class="ribbon-wrapper" t-if="rproduct.label_ept_id">
+                            <div class="ribbon btn btn-danger sale-btn" t-field="rproduct.label_ept_id"></div>
+                        </div>
+                        <span itemprop="image" t-field="rproduct.image_medium"
+                              t-options="{'widget': 'image'}" t-att-alt="rproduct.name" />
+                    </div>
+                </a>
+            </div>
+        </xpath>
 
         <xpath expr="//div[@class='recently_view_product_price']" position="replace">
             <t t-if="not rproduct.hide_website_price">
@@ -136,7 +231,21 @@
                     <span itemprop="priceCurrency" style="display:none;"
                           t-esc="website.currency_id.name" />
                 </div>
-                <hr class="r_v_deatil_hr" />
+            </t>
+            <t t-else="">
+                <b>N/D</b>
+            </t>
+        </xpath>
+    </template>
+
+    <!--Hide price in suggested_products_list at cart view-->
+    <template id="suggested_products_list_custom" inherit_id="website_sale.suggested_products_list">
+        <xpath expr="//span[@t-field='product.website_price']" position="replace">
+            <t t-if="not product.hide_website_price">
+            <span t-field="product.website_price" style="white-space: nowrap;" t-options="{'widget': 'monetary','display_currency': website.currency_id}" />
+            </t>
+            <t t-else="">
+                <span>N/D</span>
             </t>
         </xpath>
     </template>

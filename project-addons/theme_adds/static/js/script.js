@@ -170,6 +170,7 @@ $('.oe_website_sale').each(function () {
     var oe_website_sale = this;
 
     $(oe_website_sale).on("change", "input.js_quantity", function () {
+        $('.wp-load-spinner-clear-cart').show();
         setTimeout(function(){
             var sum = 0;
             $('.js_quantity').each(function(){
@@ -186,7 +187,8 @@ $('.oe_website_sale').each(function () {
                 $('.cart-main-div-full').hide();
                 $('.empty_cart_message').show();
             }
-        }, 100);
+            $('.wp-load-spinner-clear-cart').hide();
+        }, 500);
     });
 });
 /* parts/odoo/addons/website_sale/static/src/js/website_sale.js:171
@@ -223,4 +225,66 @@ $('ul.js_add_cart_variants').each(function(){
         });
 
     }
+});
+
+/* Set current tag class */
+$('a.product-tag').each(function(){
+    var search  = document.location.search
+        current = new URLSearchParams(search).get('tags')
+        is_search = new URLSearchParams(search).get('search');
+        pathname = document.location.pathname;
+        url = pathname.split('/page')[0];
+
+    if(current){
+        current = '/shop?tags='+current;
+    }else if(!(is_search)){
+        current = url;
+    }
+
+    if ($(this).attr("href") == current ){
+        $(this).parents('span').addClass('current');
+    }
+});
+
+/* Set search breadcrumbs */
+$(document).ready(function(){
+    var is_search = new URLSearchParams(document.location.search).get('search')
+        search_message = 'Search results';
+
+    if(is_search){
+        $(".select-nevigation-span").html("/");
+        $(".select-nevigation-child").attr("href", document.location);
+        $(".select-nevigation-child").html(search_message);
+    }
+});
+
+/* Clear wishlist list spinner */
+$('a.clear-all-wishlist').click(function(){
+    $('.wp-load-spinner-clear-wishlist').show();
+});
+
+/* Clear cart spinner */
+$('a.clear_shopping_cart').click(function(){
+    $('.wp-load-spinner-clear-cart').show();
+});
+
+/* Show search bar on mobile header */
+$('.mobile-search-button').click(function(){
+    $('.new_hd_search').toggle();
+    $(this).find('i').toggleClass('fa-search').toggleClass('fa-close');
+});
+
+/* Hacer funcionar la validación de la aceptación de los términos legales en el formulario del oneCheckOut
+   para guardar dirección de los usuarios invitados*/
+$(document).ready(function(){
+    $('input[name="accepted_legal_terms"]').click(function(){
+        if($(this).is(":checked")){
+            $(this).attr("value", "123");
+        } else {
+            $(this).attr("value", "");
+        }
+    });
+    $('label[for="accepted_legal_terms"]').on('click', function(){
+        $(input[name="accepted_legal_terms"]).attr("value", "123");
+    });
 });

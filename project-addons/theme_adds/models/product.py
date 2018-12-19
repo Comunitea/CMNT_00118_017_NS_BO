@@ -33,6 +33,9 @@ class ProductCustom(models.Model):
     description_short = fields.Text(_("Short product description"), help=_("Short description for product page"),
                                     strip_style=True)
     description = fields.Html(_("Full product description"), strip_style=True)
-    slug = fields.Char(_("Product old URL Website"), help=_("Old website product URL for redirection of Google SEO"))
+    slug = fields.Char(_("SEO Old URL"), help=_("Prestashop Old Product URL for redirection of Google SEO"))
     hide_website_price = fields.Boolean(_("Hide Website Price"), default=False,
                                         help=_("If selected, hide price and add to cart button"))
+    product_meta_title = fields.Char("SEO Meta Title", translate=True)
+    product_meta_description = fields.Text("SEO Meta Description", translate=True)
+    product_meta_keywords = fields.Char("SEO Meta Keywords", translate=True)

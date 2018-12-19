@@ -43,10 +43,13 @@
     }
 }
 .main-header-right .company-phone-div li {
-    display: block;
+    display: inline-block;
 }
 .main-header-right .company-phone-div .header-main-signin li a b {
     color: #fff;
+}
+.main-header-right .company-phone-div .header-main-signin li:first-child {
+    margin-right: 8px;
 }
 .main-header .st0 {
     stroke: #fff;
@@ -82,7 +85,7 @@
 }
 .new_hd_search_wp {
     max-width: 450px;
-    margin: 10px auto 0 auto;
+    margin: 15px auto 0 auto;
 }
 .new_hd_search_input {
     width: calc(90.5%);
@@ -137,6 +140,19 @@ header .navbar .navbar-top-collapse {
 .sub_breadcrumb {
     min-height: 25px;
 }
+.wp-mobile-search-button {
+    float: right;
+    position: relative;
+    margin: 7px 0 0 0;
+    & .mobile-search-button {
+        color: #fff;
+        cursor: pointer;
+        border-radius: 4px;
+        border: 1px solid #fff;
+        padding: 2px 6px 4px;
+        font-size: 16px;
+    }
+}
 
 /*
     CSS media part MAX-WIDTH 1400 px
@@ -185,6 +201,7 @@ header .navbar .navbar-top-collapse {
                 width: auto;
                 height: auto;
                 color: #fff;
+                display: none;
             }
         }
     }
@@ -207,6 +224,8 @@ header .navbar .navbar-top-collapse {
     }
     .new_hd_search {
         margin-bottom: 5px;
+        min-height: 43px;
+        display: none;
     }
     .new_hd_search_wp {
         margin: -12px auto 0 auto;
@@ -220,7 +239,7 @@ header .navbar .navbar-top-collapse {
     }
     .hd_widget_revi_demo {
         text-align: center;
-        margin: -3px 0 -3px 0;
+        margin: -8px 0 -3px 0;
         & img {
             width: 90%;
         }
@@ -238,5 +257,26 @@ header .navbar .navbar-top-collapse {
     }
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a {
         color: #fff;
+    }
+}
+@media (max-width: 740px){
+    .clarico_row .clarico_row_maxW.new_header_in {
+        max-width: 450px;
+    }
+}
+/*
+    CSS media part MAX-WIDTH 500 px
+*/
+@media (max-width: 500px){
+    .main-header-right {
+        & .company-phone-div {
+            margin-right: -5px;
+        }
+        .header-main-signin {
+            padding-right: 0 !important;
+            & li:first-child {
+                margin-right: 3px !important;
+            }
+        }
     }
 }

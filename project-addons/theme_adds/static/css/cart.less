@@ -30,6 +30,15 @@ a.clear_shopping_cart.btn {
     display: none;
     margin: 20px 0;
 }
+.oe_cart {
+    position: relative;
+    & .wp-load-spinner-clear-cart {
+        display: none;
+        & .wp-load-spinner {
+            background-position: center 15%;
+        }
+    }
+}
 /*
     CSS media part MIN-WIDTH
 */
@@ -47,6 +56,21 @@ a.clear_shopping_cart.btn {
         padding-bottom: 150px;
     }
 }
+
+/* Centrar simulador paga+tarde en checkout */
+.oe_website_sale_osc .PmtSimulator {
+    width: 100%;
+    max-width: 369px;
+    margin: 0 auto;
+}
+
+/* Ajuste alerts en checkout y confirmacion del pedido */
+.oe_website_sale_osc, .oe_cart {
+    .alert {
+	    padding: 15px 35px 15px 15px;
+	}
+}
+
 /*
     CSS media part MAX-WIDTH
 */

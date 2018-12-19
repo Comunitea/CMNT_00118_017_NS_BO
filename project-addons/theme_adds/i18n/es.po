@@ -48,7 +48,12 @@ msgstr "640 823 409"
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.login_btn_replace
 msgid "<b>Sign in</b>"
-msgstr "<b>Iniciar sesión</b>"
+msgstr "<b>Entrar</b>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.login_btn_replace
+msgid "<b>Sign up</b>"
+msgstr "<b>Registrarse</b>"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.no_products_define_replace
@@ -322,8 +327,14 @@ msgstr "Elija el orden de secuencia del Sitio Web"
 #. module: theme_adds
 #: code:project-addons/theme_adds/models/product.py:31
 #, python-format
-msgid "Product old URL Website"
+msgid "SEO Old URL"
 msgstr "URL del producto en el anterior Sitio Web"
+
+#. module: theme_adds
+#: code:project-addons/theme_adds/models/product.py:31
+#, python-format
+msgid "Prestashop Old Product URL for redirection of Google SEO"
+msgstr "URL del producto en Prestashop para redireccionamiento de Google SEO"
 
 #. module: theme_adds
 #: code:project-addons/theme_adds/models/product.py:31
@@ -335,7 +346,7 @@ msgstr "URL del producto en el anterior Sitio Web para redireccionar el posicion
 #: code:project-addons/theme_adds/models/product.py:32
 #, python-format
 msgid "Hide Website Price"
-msgstr "Ocultar precio en Sitio Web"
+msgstr "Ocultar Precio en Web"
 
 #. module: theme_adds
 #: code:project-addons/theme_adds/models/product.py:33
@@ -970,7 +981,7 @@ msgstr "Este campo es obligatorio"
 
 #. module: theme_adds
 #. openerp-web
-#: code:/project-addons/theme_adds/static/jsscript.js:12
+#: code:/project-addons/theme_adds/static/js/script.js:12
 #, python-format
 msgid "Please enter a valid email address"
 msgstr "Por favor, introduce una dirección de correo electrónico válida"
@@ -981,6 +992,13 @@ msgstr "Por favor, introduce una dirección de correo electrónico válida"
 #, python-format
 msgid "This product was added to cart"
 msgstr "Este producto fue añadido al carrito"
+
+#. module: theme_adds
+#. openerp-web
+#: code:/project-addons/theme_adds/static/js/script.js:252
+#, python-format
+msgid "Search results"
+msgstr "Resultados de búsqueda"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.wishlist_banner_replace

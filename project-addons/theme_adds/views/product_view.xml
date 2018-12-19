@@ -78,9 +78,16 @@
                         <field name="availability_warning" attrs="{'invisible': [('availability', '!=', 'warning')]}"/>
                         <!--<field name="website_style_ids" widget="many2many_tags" groups="base.group_no_one"/>-->
                         <field name="website_sequence"/>
-                        <field name="slug"/>
                         <field name="hide_website_price"/>
                     </group>
+
+                    <group string="Seo Metadata">
+                        <field name="product_meta_title"/>
+                        <field name="product_meta_keywords"/>
+                        <field name="product_meta_description"/>
+                        <field name="slug"/>
+                    </group>
+
                     <group>
                         <separator string="Short product description" colspan="4"/>
                         <field name="description_short" colspan="4" nolabel="1" placeholder="Short product description"/>

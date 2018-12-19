@@ -6,6 +6,11 @@
         <xpath expr="//div[@class='main-div-W100 wishlist-main']/div[@class='main-div-maxW']" position="before">
             <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
         </xpath>
+        <xpath expr="//div[@class='main-div-maxW']" position="inside">
+            <div class="wp-load-spinner-clear-wishlist">
+                <div class="wp-load-spinner"/>
+            </div>
+        </xpath>
         <xpath expr="//a[@class='clear-all-wishlist']" position="replace">
             <a class="clear-all-wishlist btn btn-primary common-btn">Clear Wishlist</a>
         </xpath>
@@ -14,7 +19,7 @@
         <xpath expr="//div[@id='quick_view_wishlist']" position="replace">
             <div class="go_to_product_wishlist">
                 <a class="btn btn-primary" t-att-href="'/shop/product/%s' %slug(p.product_id)">Go to product</a>
-                <!--Hide add to cart button for products with 0€ price -->
+                <!--Hide add to cart button for products with hide price -->
                 <t t-if="not p.product_id.hide_website_price">
                     <a t-if="len(p.product_id.product_variant_ids) == 1"
                        class="btn btn-primary add-to-cart"
@@ -84,10 +89,23 @@
         </xpath>
     </template>
 
-    <!--Hide price for 0€ price in recently viewed items list at wishlist view-->
+    <!--Hide price in recently viewed items list at wishlist view-->
     <template id="clarico_recently_viewed_recent_products_wish_custom" inherit_id="clarico_recently_viewed.clarico_recently_viewed_recent_products_wish">
 
-        <xpath expr="//hr[@class='r_v_deatil_hr']" position="replace"/>
+        <xpath expr="//div[@class='recently_viewed_img_div']" position="replace">
+            <div class="recently_viewed_img_div">
+                <a itemprop="url" t-att-href="'/shop/product/%s' % slug(rproduct)">
+                    <span itemprop="image" />
+                    <div class="div_c_sub_pc_image">
+                        <div class="ribbon-wrapper" t-if="rproduct.label_ept_id">
+                            <div class="ribbon btn btn-danger sale-btn" t-field="rproduct.label_ept_id"></div>
+                        </div>
+                        <span itemprop="image" t-field="rproduct.image_medium"
+                              t-options="{'widget': 'image'}" t-att-alt="rproduct.name" />
+                    </div>
+                </a>
+            </div>
+        </xpath>
 
         <xpath expr="//div[@class='recently_view_product_price']" position="replace">
             <t t-if="not rproduct.hide_website_price">
@@ -109,12 +127,14 @@
                     <span itemprop="priceCurrency" style="display:none;"
                           t-esc="website.currency_id.name" />
                 </div>
-                <hr class="r_v_deatil_hr" />
+            </t>
+            <t t-else="">
+                <p><b>N/D</b></p>
             </t>
         </xpath>
     </template>
 
-    <!--Hide price for 0€ price in product list at wishlist view-->
+    <!--Hide price in product list at wishlist view-->
     <template id="clarico_wishlist_wishlist_template_custom" inherit_id="clarico_wishlist.clarico_wishlist_wishlist_template">
         <xpath expr="//div[@class='wishlist_price']" position="replace">
             <div class="wishlist_price">
@@ -129,13 +149,13 @@
                         <span class="text-danger oe_default_price" style="text-decoration: line-through; white-space: nowrap;"
                               t-esc="compute_currency(p.product_id.website_public_price)" t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" t-att-style="'text-decoration: line-through; white-space: nowrap; ' + '' if (compute_currency(p.product_id.lst_price) - p.product_id.website_price) &gt; 0.01 and website.get_current_pricelist().discount_policy == 'without_discount' else 'display: none;'" />
                         <!-- <span class="p-orignal-price" t-esc="p.product_id.website_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/> -->
-                        <p class="oe_price wishlist-price-p" style="white-space: nowrap;" t-esc="p.product_id.website_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                        <b class="oe_price wishlist-price-p" style="white-space: nowrap;" t-esc="p.product_id.website_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
                         <span itemprop="price" style="display:none;" t-esc="p.product_id.website_price" />
                         <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
                     </p>
                 </t>
                 <t t-else="">
-                    <p>&amp;nbsp;</p>
+                    <b>N/D</b>
                 </t>
             </div>
         </xpath>
@@ -143,19 +163,17 @@
 
     <template id="clarico_wishlist_product_page_custom" inherit_id="clarico_wishlist.clarico_wishlist_product_page">
 
-        <!--Hide add to wishlist for 0€ price in product details at product details view-->
+        <!--Hide add to wishlist for hide price in product details at product details view-->
         <xpath expr="//div[@id='wishicon_div']" position="replace">
-            <t t-if="not product.hide_website_price">
-                <div id="wishicon_div">
-                    <a title="Add To Wishlist" href="#a" class="add2wish"
-                       t-att-data-id="'%s' % product.id ">
-                        <i class="fa fa-heart" aria-hidden="true"></i>
-                    </a>
-                    <a title="In Wishlist" class="in2wish" t-att-data-id="'%s' % product.id ">
-                        <i class="fa fa-heart"></i>
-                    </a>
-                </div>
-            </t>
+            <div id="wishicon_div">
+                <a title="Add To Wishlist" href="#a" class="add2wish"
+                   t-att-data-id="'%s' % product.id ">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                </a>
+                <a title="In Wishlist" class="in2wish" t-att-data-id="'%s' % product.id ">
+                    <i class="fa fa-heart"></i>
+                </a>
+            </div>
         </xpath>
     </template>
 
