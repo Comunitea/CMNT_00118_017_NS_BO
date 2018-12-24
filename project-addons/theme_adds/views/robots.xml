@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+<template id="website.robots">
+User-agent: *
+Sitemap: <t t-esc="url_root"/>sitemap.xml
+Disallow: /web/
+Noindex: /website_payment/confirm
+Noindex: /shop/confirm_order
+Noindex: /shop/print
+</template>
+
+</odoo>

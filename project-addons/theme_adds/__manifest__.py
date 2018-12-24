@@ -73,6 +73,7 @@
         'views/group.xml',
         'views/terms.xml',
         'views/category_view.xml',
+        'views/robots.xml',
     ],
     'qweb': [
     ],

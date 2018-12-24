@@ -90,6 +90,11 @@
                 <iframe class="popup_iframe_url" t-attf-src="#{product.p_video_url}?autoplay=0&amp;controls=1"/>
             </div>
         </xpath>
+
+        <!-- Product name replace -->
+        <xpath expr="//div[@id='product_details']//div[@class='c_product_name']" position="replace">
+            <h1 class="c_product_name" itemprop="name" t-field="product.name"/>
+        </xpath>
     </template>
 
     <!-- Product description -->
