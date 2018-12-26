@@ -33,7 +33,7 @@
             </div>
             <div class="wp-add-to-cart-full-message">
                 <div class="add-to-cart-message"/>
-                <div class="wp-button"><a href="/shop/cart" class="btn btn-primary common-btn">Go to cart</a></div>
+                <div class="wp-button"><a rel="nofollow" href="/shop/cart" class="btn btn-primary common-btn">Go to cart</a></div>
                 <div class="wp-close"><span>Close</span></div>
             </div>
         </xpath>
@@ -461,7 +461,7 @@
         <xpath expr="//div[@class='product-image oe_product_image']" position="replace">
             <div class="wp-add-to-cart-message">
                 <div class="add-to-cart-message"/>
-                <div class="wp-button"><a href="/shop/cart" class="btn btn-primary">Go to cart</a></div>
+                <div class="wp-button"><a rel="nofollow" href="/shop/cart" class="btn btn-primary">Go to cart</a></div>
                 <div class="wp-button go-to-product">
                     <a t-att-href="keep('/shop/product/%s' % slug(product))" class="btn btn-primary">View product</a>
                 </div>

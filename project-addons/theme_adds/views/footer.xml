@@ -31,7 +31,7 @@
                                     <i class="fa fa-envelope-o"></i>
                                     <a href="#" class="js_mg_email o_default_snippet_text"> enviar correo</a> -
                                 </span>
-                                <i class="fa fa-file-o"></i><a href="/groups/0" class="js_mg_link o_default_snippet_text"> archivos</a> -
+                                <i class="fa fa-file-o"></i><a href="/groups/0" class="js_mg_link o_default_snippet_text" rel="nofollow"> archivos</a> -
                                 <i class="fa fa-times"></i><a href="#" class="js_unfollow_btn o_default_snippet_text"> anular suscripción</a>
                             </p>
                             <p class="js_mg_confirmation hidden well well-sm o_default_snippet_text">Se ha enviado un mail de confirmación</p>
@@ -83,30 +83,30 @@
                         </ul>
                         <div class="social_icons_footer">
                             <div class="footer-social-icon">
-                                <a class="o_facebook" t-att-href="website.social_facebook"
+                                <a class="o_facebook" rel="nofollow" t-att-href="website.social_facebook"
                                     t-if="website.social_facebook">
                                     <i class="fa fa-facebook" />
                                 </a>
-                                <a class="o_twitter" t-att-href="website.social_twitter"
+                                <a class="o_twitter" rel="nofollow" t-att-href="website.social_twitter"
                                     t-if="website.social_twitter">
                                     <i class="fa fa-twitter" />
                                 </a>
-                                <a class="o_linkedin" t-att-href="website.social_linkedin"
+                                <a class="o_linkedin" rel="nofollow" t-att-href="website.social_linkedin"
                                     t-if="website.social_linkedin">
                                     <i class="fa fa-linkedin" />
                                 </a>
-                                <a class="o_youtube" t-att-href="website.social_youtube"
+                                <a class="o_youtube" rel="nofollow" t-att-href="website.social_youtube"
                                     t-if="website.social_youtube">
                                     <i class="fa fa-youtube-play" />
                                 </a>
-                                <a class="o_googleplus" t-att-href="website.social_googleplus"
-                                    t-if="website.social_googleplus" rel="publisher">
+                                <a class="o_googleplus" rel="nofollow" t-att-href="website.social_googleplus"
+                                    t-if="website.social_googleplus">
                                     <i class="fa fa-google-plus-square" />
                                 </a>
-                                <a class="o_github" t-att-href="website.social_github" t-if="website.social_github">
+                                <a class="o_github" rel="nofollow" t-att-href="website.social_github" t-if="website.social_github">
                                     <i class="fa fa-github" />
                                 </a>
-                                <a class="o_instagram" t-att-href="website.social_instagram" t-if="website.social_instagram">
+                                <a class="o_instagram" rel="nofollow" t-att-href="website.social_instagram" t-if="website.social_instagram">
                                     <i class="fa fa-instagram" />
                                 </a>
                             </div>
@@ -123,23 +123,23 @@
                 <div class="col-md-2 col-sm-4 col-xs-12">
                     <div class="footer-heading">
                         <ul class="customer-service-ul">
-                            <li><a href="/page/entrega">Condiciones de envío</a></li>
-                            <li><a href="/page/devoluciones">Devoluciones</a></li>
-                            <li><a href="/page/politica-de-cookies">Política de Cookies y privacidad</a></li>
+                            <li><a rel="nofollow" href="/page/entrega">Condiciones de envío</a></li>
+                            <li><a rel="nofollow" href="/page/devoluciones">Devoluciones</a></li>
+                            <li><a rel="nofollow" href="/page/politica-de-cookies">Política de Cookies y privacidad</a></li>
                             <li><a href="/page/sobre-nosotros">Sobre nosotros</a></li>
                             <li><a href="/page/contactus">Contacto</a></li>
                             <li><a href="/page/distribucion">Distribuye nuestros productos</a></li>
-                            <li><a href="/page/condiciones-legales">Condiciones legales</a></li>
+                            <li><a rel="nofollow" href="/page/condiciones-legales">Condiciones legales</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-2 col-sm-3 col-xs-12">
                     <div class="footer-heading">
                         <ul class="help-ul">
-                            <li><a href="/my/home">My account</a></li>
-                            <li><a href="/my/orders">My orders</a></li>
-                            <li><a href="/shop/cart">My cart</a></li>
-                            <li><a href="/wishlist">My Wishlist</a></li>
+                            <li><a rel="nofollow" href="/my/home">My account</a></li>
+                            <li><a rel="nofollow" href="/my/orders">My orders</a></li>
+                            <li><a rel="nofollow" href="/shop/cart">My cart</a></li>
+                            <li><a rel="nofollow" href="/wishlist">My Wishlist</a></li>
                         </ul>
                     </div>
                 </div>

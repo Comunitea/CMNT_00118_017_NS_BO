@@ -33,7 +33,7 @@
         <xpath expr="//div[@class='wishlist-product-name-div']" position="inside">
             <div class="wp-add-to-cart-wishlist-message">
                 <div class="add-to-cart-message"/>
-                <div class="wp-button"><a href="/shop/cart" class="btn btn-primary common-btn">Go to cart</a></div>
+                <div class="wp-button"><a rel="nofollow" href="/shop/cart" class="btn btn-primary common-btn">Go to cart</a></div>
                 <div class="wp-close"><span>Close</span></div>
             </div>
         </xpath>
@@ -82,7 +82,7 @@
                         <button type="Button" class="btn btn-primary btnsubmit">Login </button>
                     </div>
                     <div class="clearfix oe_login_buttons">
-                        <a href="/web/login" class="btn btn-primary">Register</a>
+                        <a rel="nofollow" href="/web/login" class="btn btn-primary">Register</a>
                     </div>
                 </form>
             </div>
