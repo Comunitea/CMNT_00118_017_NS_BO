@@ -63,21 +63,31 @@
                                 <div class="contact_detail_para">
                                     <p class="span_lbl">Teléfono</p>
                                     :
-                                    <p class="field_padding" t-field="res_company.phone" />
+                                    <p class="field_padding desktop-version" t-field="res_company.phone" />
+                                    <p class="field_padding mobile-version">
+                                        <a t-att-href="'tel:%s' %res_company.phone" rel="nofollow" t-field="res_company.phone"/>
+                                    </p>
                                 </div>
                             </li>
                             <li>
                                 <div class="contact_detail_para">
                                     <p class="span_lbl">WhatsApp</p>
                                     :
-                                    <p class="field_padding">640 823 409</p>
+                                    <p class="field_padding desktop-version">640 823 409</p>
+                                    <p class="field_padding mobile-version">
+                                        <a href="https://api.whatsapp.com/send?phone=34640823409&amp;text=Me%20gustaría%20información%20sobre%20" rel="nofollow">
+                                            640 823 409
+                                        </a>
+                                    </p>
                                 </div>
                             </li>
                             <li>
                                 <div class="contact_detail_para">
                                     <p class="span_lbl">Email</p>
                                     :
-                                    <p class="field_padding" t-field="res_company.email" />
+                                    <p class="field_padding">
+                                        <a t-field="res_company.email" t-att-href="'mailto:%s' %res_company.email"/>
+                                    </p>
                                 </div>
                             </li>
                         </ul>

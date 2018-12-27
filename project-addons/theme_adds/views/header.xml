@@ -66,8 +66,8 @@
                     <span><i class="fa fa-whatsapp" /> <font>640 823 409</font></span>
                 </div>
                 <div class="mobile-version">
-                    <span><a href="tel:96 340 42 55" rel="nofollow"><i class="fa fa-phone" /></a></span>
-                    <span><a href="https://api.whatsapp.com/send?phone=34640823409\u0026text=Me%20gustaría%20información%20sobre%20" rel="nofollow"><i class="fa fa-whatsapp" /></a></span>
+                    <span><a t-att-href="'tel:%s' %res_company.phone" rel="nofollow"><i class="fa fa-phone" /></a></span>
+                    <span><a href="https://api.whatsapp.com/send?phone=34640823409&amp;text=Me%20gustaría%20información%20sobre%20" rel="nofollow"><i class="fa fa-whatsapp" /></a></span>
                 </div>
                 <div class="header-social-icon">
                     <a class="o_facebook" rel="nofollow" t-att-href="website.social_facebook"
@@ -162,6 +162,12 @@
 
     <template id="website_portal.my_account_link" inherit_id="website.layout">
         <xpath expr="//li[@id='o_logout']" position="before"/>
+    </template>
+
+    <template id="website_submenu_adds" inherit_id="website.submenu">
+        <xpath expr="//li[@t-if='not submenu.child_id']/a" position="inside">
+            <span class="caret" t-ignore="true" t-if="submenu.dynamic_menu"/>
+        </xpath>
     </template>
 
 </odoo>
