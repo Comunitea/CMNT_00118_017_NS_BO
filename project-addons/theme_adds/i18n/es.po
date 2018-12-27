@@ -995,7 +995,7 @@ msgstr "Este producto fue añadido al carrito"
 
 #. module: theme_adds
 #. openerp-web
-#: code:/project-addons/theme_adds/static/js/script.js:252
+#: code:/project-addons/theme_adds/static/js/script.js:260
 #, python-format
 msgid "Search results"
 msgstr "Resultados de búsqueda"
