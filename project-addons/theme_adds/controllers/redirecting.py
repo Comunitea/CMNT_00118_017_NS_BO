@@ -13,7 +13,7 @@ try:
 except ImportError:
     slugify_lib = None
 
-from odoo import http, api
+from odoo import http, api, models
 from odoo.tools import ustr
 
 
@@ -175,5 +175,13 @@ class UrlsRedirect(http.Controller):
             )
         else:
             return http.local_redirect('/blog/blog-1')
+
+
+class FaviconRoot(http.Controller):
+
+    @http.route('/favicon.ico', type='http', auth="public", website=True)
+    def favicon_redirect(self):
+        filename = '/web/image/website/1/favicon/'
+        return http.request.env['ir.http'].reroute(filename)
 
 # ipdb.set_trace()

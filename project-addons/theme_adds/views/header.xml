@@ -170,4 +170,10 @@
         </xpath>
     </template>
 
+    <template id="web_layout_head_adds" inherit_id="web.layout">
+        <xpath expr="//link[@rel='shortcut icon']" position="attributes">
+            <attribute name="t-att-href">'/favicon.ico'</attribute>
+        </xpath>
+    </template>
+
 </odoo>
