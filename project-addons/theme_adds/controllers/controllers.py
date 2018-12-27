@@ -62,8 +62,9 @@ class ClaricoShopCustom(claricoShop):
                 domain += [('attribute_line_ids.value_ids', 'in', ids)]
 
         tag_id = request.httprequest.args.get('tags')
+        is_search = request.httprequest.args.get('search')
 
-        if not category and not tag_id:
+        if not category and not tag_id and not is_search:
             domain += [(u'tag_ids', u'ilike', u'Productos Destacados')]
 
         return domain
