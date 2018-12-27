@@ -4,3 +4,4 @@
 
 import controllers
 import redirecting
+import sitemap

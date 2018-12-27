@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+<template id="sitemap_wrap">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<urlset t-attf-xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <t t-raw="content"/>
+</urlset>
+</template>
+
+<template id="sitemap_tpl"><url>
+    <loc t-esc="loc"/>
+    <lastmod t-esc="lastmod"/>
+    <changefreq t-esc="changefreq"/>
+    <priority t-esc="priority"/>
+</url>
+</template>
+
+</odoo>

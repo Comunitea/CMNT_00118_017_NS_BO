@@ -74,6 +74,7 @@
         'views/terms.xml',
         'views/category_view.xml',
         'views/robots.xml',
+        'views/sitemap.xml',
     ],
     'qweb': [
     ],
