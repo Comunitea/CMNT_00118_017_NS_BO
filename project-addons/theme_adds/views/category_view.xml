@@ -10,4 +10,15 @@
             </field>
         </field>
     </record>
+    <record id="product_public_category_tree_view_sequence" model="ir.ui.view">
+        <field name="name">Product public category add sequence</field>
+        <field name="model">product.public.category</field>
+        <field name="inherit_id" ref="website_sale.product_public_category_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sequence']" position="attributes">
+                <attribute name="invisible">0</attribute>
+                <attribute name="widget">handle</attribute>
+            </xpath>
+        </field>
+    </record>
 </odoo>
