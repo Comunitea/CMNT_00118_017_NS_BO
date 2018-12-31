@@ -123,6 +123,11 @@
                 </div>
             </section>
         </xpath>
+        <xpath expr="//div[@id='products_grid']/table[@id='product-grid-table']" position="before">
+            <div t-if="category" class="wp-category-title">
+                <h1 class="chs_heading category-title" t-esc="category.name"/>
+            </div>
+        </xpath>
     </template>
 
     <!-- Lateral filter -->
