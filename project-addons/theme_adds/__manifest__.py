@@ -53,6 +53,7 @@
         'website_crm_privacy_policy',
         'payment_paga_mas_tarde',
         'website_portal',
+        'sgeede_infinite_scroll',
         'theme_clarico'
     ],
     'data': [

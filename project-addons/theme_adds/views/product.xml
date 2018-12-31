@@ -496,7 +496,7 @@
 
     <!-- product pager -->
     <template id="replace_pager_template" inherit_id="website.pager">
-        <xpath expr="//ul" position="replace">
+        <!--<xpath expr="//ul" position="replace">
             <ul t-if="pager['page_count'] > 1" t-attf-class="#{ classname or '' } pagination" t-att-style="style or None">
                 <li t-att-class=" 'disabled' if pager['page']['num'] == 1 else None ">
                     <a t-att-href=" pager['page_previous']['url'] if pager['page']['num'] != 1 else None">◀</a>
@@ -510,7 +510,7 @@
                     <a t-att-href="pager['page_next']['url'] if pager['page']['num'] != pager['page_count'] else None">▶</a>
                 </li>
             </ul>
-        </xpath>
+        </xpath>-->
     </template>
 
     <!-- add to cart button in compact view-->
