@@ -19,6 +19,9 @@
                 <attribute name="invisible">0</attribute>
                 <attribute name="widget">handle</attribute>
             </xpath>
+            <xpath expr="//field[@name='display_name']" position="after">
+                <field name="slug"/>
+            </xpath>
         </field>
     </record>
 </odoo>

@@ -57,9 +57,8 @@ class UrlsRedirect(http.Controller):
         direction = split[0]
         products_list = http.request.env['product.template']
         category_list = http.request.env['product.public.category']
-        is_product = products_list.search([('slug', '=', direction)])
-        is_category = category_list.search([('slug', '=', direction)])
-        # ipdb.set_trace()
+        is_product = products_list.sudo().search([('slug', '=', direction)])
+        is_category = category_list.sudo().search([('slug', '=', direction)])
         if is_product.id:
             identifier, name = is_product.id, is_product.display_name
             slugname = slugify(name or '').strip().strip('-')
@@ -183,5 +182,3 @@ class FaviconRoot(http.Controller):
     def favicon_redirect(self):
         filename = '/web/image/website/1/favicon/'
         return http.request.env['ir.http'].reroute(filename)
-
-# ipdb.set_trace()
