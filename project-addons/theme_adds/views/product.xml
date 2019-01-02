@@ -537,25 +537,21 @@
 
     <!-- UPD breadcrumb bar -->
     <template id="upd_breadcrumb_bar" inherit_id="clarico_product.clarico_product_product">
-        <xpath expr="//ol[@class='breadcrumb clarico_breadcrumb']/li[1]" position="replace">
-            <a class="home-icon" href="/shop">
-                <i class="fa fa-home" aria-hidden="true"></i>
-            </a>
-            <!--<span class="select-nevigation-span">/</span>
+        <xpath expr="//div[@class='sub_breadcrumb']/ol/li[1]" position="replace">
             <li>
-                <a href="/shop">All products</a>
-            </li>-->
+                <a class="home-icon" href="/shop">
+                    <i class="fa fa-home" aria-hidden="true"/>
+                </a>
+            </li>
+        </xpath>
+        <xpath expr="//div[@class='sub_breadcrumb']/ol/li[@t-if='category']" position="replace">
             <li t-if="product.public_categ_ids">
-                 <t t-set="inc" t-value="0"/>
-                 <t t-foreach="product.public_categ_ids" t-as="category">
-                     <!--<t t-if="inc==0"><a t-esc="category.name" t-att-href="keep(slug(category))"/></t>
-                     <t t-set="inc" t-value="inc+1"/>-->
-                 </t>
-             </li>
-            <t t-else="" >
-                <span class="select-nevigation-span">/</span>
-                <li><a href="/shop">All products</a></li>
-            </t>
+                <t t-set="inc" t-value="0"/>
+                <t t-foreach="product.public_categ_ids" t-as="category">
+                    <t t-if="inc==0"><a t-esc="category.name" t-att-href="'/category/%s' % category.slug if category.slug else '/shop/category/%s' % slug(category)"/></t>
+                    <t t-set="inc" t-value="inc+1"/>
+                </t>
+            </li>
         </xpath>
 
         <!--Hide price in product details at product details view-->

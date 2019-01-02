@@ -68,6 +68,37 @@
                 </li>
             </ul>
         </xpath>
+        <!-- Hide "show order" button -->
+        <xpath expr="//div[@class='filter-show']" position="attributes">
+            <attribute name="style">display: none;</attribute>
+        </xpath>
+        <!-- SEO friendly URL's for "sort by" button -->
+        <xpath expr="//t[@t-set='website_sale_sortable']" position="attributes">
+            <attribute name="t-value">
+                [(list_price_desc_label, 'list_price+desc'),
+                (list_price_asc_label, 'list_price+asc'),
+                (name_asc_label, 'name+asc')]
+            </attribute>
+        </xpath>
+        <xpath expr="//li[@t-foreach='website_sale_sortable']" position="replace">
+            <li t-foreach="website_sale_sortable" t-as="sortby">
+                <t t-if="category">
+                    <a t-att-href="'/category/%s?order=%s' %(category.slug, sortby[1]) if category.slug else '/shop/category/%s' % slug(category)">
+                        <span t-raw="sortby[0]" />
+                    </a>
+                </t>
+                <t t-elif="search">
+                    <a t-att-href="'/shop?search=%s&amp;order=%s' %(search, sortby[1])">
+                        <span t-raw="sortby[0]" />
+                    </a>
+                </t>
+                <t t-else="">
+                    <a t-att-href="'/shop?order=%s' %sortby[1]">
+                        <span t-raw="sortby[0]" />
+                    </a>
+                </t>
+            </li>
+        </xpath>
 
         <!-- Budget -->
         <xpath expr="//div[@class='products_pager bottom_pager']" position="after">
@@ -159,6 +190,19 @@
         <!--Left Menu Tags for submenu Categories -->
         <xpath expr="//div[@class='main']" position="after">
 
+        </xpath>
+    </template>
+
+    <!-- Category dynamic menu -->
+    <template id="dynamic_category_menu" inherit_id="clarico_layout.dynamic_category" name="Category dynamic menu">
+        <xpath expr="//a[@class='first-level-category-a ']" position="attributes">
+            <attribute name="t-att-href">'/category/%s' %category_individual.slug if category_individual.slug else '/shop/category/%s' %slug(category_individual)</attribute>
+        </xpath>
+        <xpath expr="//a[@class='second-level-a menu_heading ']" position="attributes">
+            <attribute name="t-att-href">'/category/%s' %c.slug if c.slug else '/shop/category/%s' %slug(c)</attribute>
+        </xpath>
+        <xpath expr="//a[@class='sub_menu_list']" position="attributes">
+            <attribute name="t-att-href">'/category/%s' %child.slug if child.slug else '/shop/category/%s' %slug(child)</attribute>
         </xpath>
     </template>
 
