@@ -11,6 +11,7 @@ from odoo import http
 from odoo.http import request
 from odoo.addons.clarico_shop.controllers.main import claricoShop
 from odoo.addons.clarico_cart.controllers.main import claricoClearCart
+from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 
 class ClaricoShopCustom(claricoShop):
@@ -71,6 +72,7 @@ class ClaricoShopCustom(claricoShop):
 
     """
         Change default products to show in shop by ir.config_parameter
+        Add categories friendly URL's redirecting and rerouting
     """
     @http.route([
         '/shop',
@@ -100,6 +102,40 @@ class ClaricoShopCustom(claricoShop):
         category = category_list.sudo().search([('slug', '=', path)], limit=1)
         if category:
             return super(ClaricoShopCustom, self).shop(page=page, category=category, search=search, ppg=ppg, **post)
+        else:
+            return http.request.env['ir.http'].reroute('/404')
+
+
+class ProductCustom(WebsiteSale):
+    """
+    Product redirecting to slug URL
+    """
+    @http.route('/shop/product/<model("product.template"):product>', type='http', auth="public", website=True)
+    def _product(self, product, category='', search='', **kwargs):
+
+        if product.slug:
+            return http.local_redirect(
+                '/product/%s' % product.slug,
+                dict(http.request.httprequest.args),
+                True,
+                code='301'
+            )
+
+        return super(ProductCustom, self).product(product=product, category=category, search=search, **kwargs)
+
+    """
+    Product show on enter to new slug URL
+    """
+    @http.route('/product/<path:path>', type='http', auth="public", website=True)
+    def _product(self, path, product=None, category='', search='', **kwargs):
+
+        products_list = http.request.env['product.template']
+        product = products_list.sudo().search([('slug', '=', path)], limit=1)
+
+        if product:
+            return super(ProductCustom, self).product(product=product, category=category, search=search, **kwargs)
+        else:
+            return http.request.env['ir.http'].reroute('/404')
 
 
 class ClaricoClearCartCustom(claricoClearCart):
