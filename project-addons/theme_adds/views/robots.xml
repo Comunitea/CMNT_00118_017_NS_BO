@@ -5,9 +5,9 @@
 User-agent: *
 Sitemap: <t t-esc="url_root"/>sitemap.xml
 Disallow: /web/
-Noindex: /website_payment/confirm
-Noindex: /shop/confirm_order
-Noindex: /shop/print
+Disallow: /website_payment/confirm
+Disallow: /shop/confirm_order
+Disallow: /shop/print
 </template>
 
 </odoo>
