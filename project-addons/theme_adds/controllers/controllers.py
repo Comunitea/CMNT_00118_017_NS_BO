@@ -111,7 +111,7 @@ class ProductCustom(WebsiteSale):
     Product redirecting to slug URL
     """
     @http.route('/shop/product/<model("product.template"):product>', type='http', auth="public", website=True)
-    def _product(self, product, category='', search='', **kwargs):
+    def product(self, product, category='', search='', **kwargs):
 
         if product.slug:
             return http.local_redirect(

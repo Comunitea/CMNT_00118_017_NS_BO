@@ -83,7 +83,7 @@
         <xpath expr="//li[@t-foreach='website_sale_sortable']" position="replace">
             <li t-foreach="website_sale_sortable" t-as="sortby">
                 <t t-if="category">
-                    <a t-att-href="'/category/%s?order=%s' %(category.slug, sortby[1]) if category.slug else '/shop/category/%s' % slug(category)">
+                    <a t-att-href="'/category/%s?order=%s' %(category.slug, sortby[1]) if category.slug else '/shop/category/%s?order=%s' % (slug(category), sortby[1])">
                         <span t-raw="sortby[0]" />
                     </a>
                 </t>
