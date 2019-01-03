@@ -163,7 +163,8 @@
                                                     <div class="alternet_common">
                                                         <div class="parent">
                                                             <div class="recently_viewed_img_div">
-                                                                <a itemprop="url" t-att-href="'/shop/product/%s' % slug(alt_product)">
+                                                                <a itemprop="url"
+                                                                   t-att-href="'/product/%s' % alt_product.slug if alt_product.slug else '/shop/product/%s' % slug(alt_product)">
                                                                     <span itemprop="image" />
                                                                     <div class="div_c_sub_pc_image">
                                                                         <div class="ribbon-wrapper" t-if="alt_product.label_ept_id">
@@ -176,7 +177,7 @@
                                                             </div>
                                                             <div class="recently_viwed_details">
                                                                 <div class="recently_view_product_name">
-                                                                    <a t-attf-href="/shop/product/#{ slug(alt_product) }"
+                                                                    <a t-att-href="'/product/%s' % alt_product.slug if alt_product.slug else '/shop/product/%s' % slug(alt_product)"
                                                                         style="display: block">
                                                                         <p t-field="alt_product.name" />
                                                                     </a>
@@ -215,7 +216,8 @@
                                                     <div class="alternet_common">
                                                         <div class="parent">
                                                             <div class="recently_viewed_img_div">
-                                                                <a itemprop="url" t-att-href="'/shop/product/%s' % slug(alt_product)">
+                                                                <a itemprop="url"
+                                                                   t-att-href="'/product/%s' % alt_product.slug if alt_product.slug else '/shop/product/%s' % slug(alt_product.product_tmpl_id)">
                                                                     <span itemprop="image" />
                                                                     <div class="div_c_sub_pc_image">
                                                                         <div class="ribbon-wrapper" t-if="alt_product.label_ept_id">
@@ -228,7 +230,7 @@
                                                             </div>
                                                             <div class="recently_viwed_details">
                                                                 <div class="recently_view_product_name">
-                                                                    <a t-attf-href="/shop/product/#{ slug(alt_product.product_tmpl_id) }"
+                                                                    <a t-att-href="'/product/%s' % alt_product.slug if alt_product.slug else '/shop/product/%s' % slug(alt_product.product_tmpl_id)"
                                                                         style="display: block">
                                                                         <p t-field="alt_product.name" />
                                                                     </a>
@@ -479,18 +481,22 @@
                 <div class="add-to-cart-message"/>
                 <div class="wp-button"><a rel="nofollow" href="/shop/cart" class="btn btn-primary">Go to cart</a></div>
                 <div class="wp-button go-to-product">
-                    <a t-att-href="keep('/shop/product/%s' % slug(product))" class="btn btn-primary">View product</a>
+                    <a t-att-href="'/product/%s' % product.slug if product.slug else '/shop/product/%s' % slug(product)" class="btn btn-primary">View product</a>
                 </div>
                 <div class="wp-close"><span>Close</span></div>
             </div>
             <div class="product-image oe_product_image">
                 <a itemprop="url"
-                    t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))">
+                    t-att-href="'/product/%s' % product.slug if product.slug else '/shop/product/%s' % slug(product)">
                     <span itemprop="image" t-field="product.image"
                         t-options="{'widget': 'image', 'resize':'250x250'}" t-att-alt="product.name" t-att-title="product.name"/>
                 </a>
                 <div id="in-wishlist-shop"/>
             </div>
+        </xpath>
+        <!-- Friendly URL's -->
+        <xpath expr="//a[@class='product-name-a']" position="attributes">
+            <attribute name="t-att-href">'/product/%s' % product.slug if product.slug else '/shop/product/%s' % slug(product)</attribute>
         </xpath>
     </template>
 
@@ -526,7 +532,7 @@
                     </a>
                 </t>
                 <t t-if="len(product.product_variant_ids) &gt; 1">
-                    <a class="customize-add-cart" t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))">
+                    <a class="customize-add-cart" t-att-href="'/product/%s' % product.slug if product.slug else '/shop/product/%s' % slug(product)">
                         <span class="fa fa-shopping-cart" />
                        <!--  <span class="list-view-text">Add To Cart</span> -->
                     </a>
@@ -624,7 +630,7 @@
             <div class="recently_viwed_common">
                 <div class="parent">
                     <div class="recently_viewed_img_div">
-                        <a itemprop="url" t-att-href="'/shop/product/%s' % slug(rproduct)">
+                        <a itemprop="url" t-att-href="'/product/%s' % rproduct.slug if rproduct.slug else '/shop/product/%s' % slug(rproduct)">
                             <span itemprop="image" />
                             <div class="div_c_sub_pc_image">
                                 <div class="ribbon-wrapper" t-if="rproduct.label_ept_id">
@@ -638,7 +644,7 @@
 
                     <div class="recently_viwed_details">
                         <div class="recently_view_product_name">
-                            <a t-attf-href="/shop/product/#{ slug(rproduct) }"
+                            <a t-att-href="'/product/%s' % rproduct.slug if rproduct.slug else '/shop/product/%s' % slug(rproduct)"
                                style="display: block">
                                 <p t-field="rproduct.name" />
                             </a>
