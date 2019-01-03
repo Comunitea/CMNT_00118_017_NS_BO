@@ -27,43 +27,51 @@ class SitemapGenerate(Website):
                 'url': url,
             })
 
-        # Add home page to sitemap
+        def create_one(loc, lastmod, changefreq, image, priority):
+            return view.render_template('theme_adds.sitemap_tpl', {
+                'loc': loc,
+                'lastmod': lastmod,
+                'changefreq': changefreq,
+                'image': image,
+                'priority': priority
+            })
+
         today = date.today()
         first_day = date(today.year, today.month, 1)
-        sitemap_content += view.render_template('theme_adds.sitemap_tpl', {
-            'loc': request.httprequest.url_root + 'shop',
-            'lastmod': first_day,
-            'changefreq': 'weekly',
-            'priority': '0.5'
-        })
+        root = request.httprequest.url_root
 
-        # Add categories to sitemap
+        # Add favicon.ico
+        sitemap_content += create_one(root + 'favicon.ico', first_day, 'weekly', root + 'favicon.ico', '0.5')
+
+        # Add robots.txt
+        sitemap_content += create_one(root + 'robots.txt', first_day, 'weekly', '', '0.5')
+
+        # Add home page
+        image = '%stheme_adds/static/img/logo-head.png' % root
+        sitemap_content += create_one(root + 'shop', first_day, 'weekly', image, '0.5')
+
+        # Add product public categories
         domain = [('website_published', '=', True)]
         category_ids = request.env['product.public.category'].sudo().search(domain)
 
         for r in category_ids:
-            values = {
-                'loc': request.httprequest.url_root + 'shop/category/' + slug(r),
-                'lastmod': r.write_date[:-9],
-                'changefreq': 'weekly',
-                'priority': '0.5'
-            }
-            sitemap_content += view.render_template('theme_adds.sitemap_tpl', values)
+            loc = '%scategory/%s' % (root, r.slug) if r.slug else '%sshop/category/%s' % (root, slug(r))
+            if r.image_medium:
+                image = '%sweb/image?model=product.public.category&id=%s&field=image_medium' % (root, r.id)
+            else:
+                image = ''
+            sitemap_content += create_one(loc, r.write_date[:-9], 'weekly', image, '0.5')
 
-        # Add active and published products to sitemap
+        # Add active and published products
         domain = [('sale_ok', '=', True)]
         domain += [('active', '=', True)]
         domain += [('website_published', '=', True)]
         product_ids = request.env['product.template'].sudo().search(domain)
 
         for r in product_ids:
-            values = {
-                'loc': request.httprequest.url_root + 'shop/product/' + slug(r),
-                'lastmod': r.write_date[:-9],
-                'changefreq': 'weekly',
-                'priority': '0.5'
-            }
-            sitemap_content += view.render_template('theme_adds.sitemap_tpl', values)
+            loc = '%sproduct/%s' % (root, r.slug) if r.slug else '%sshop/product/%s' % (root, slug(r))
+            image = '%sweb/image/product.template/%s/image/' % (root, r.id) if r.image else ''
+            sitemap_content += create_one(loc, r.write_date[:-9], 'weekly', image, '0.5')
 
         # Sitemap generation
         content = view.render_template('theme_adds.sitemap_wrap', {'content': sitemap_content})
