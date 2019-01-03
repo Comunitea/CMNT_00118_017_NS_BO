@@ -71,6 +71,11 @@ a.clear_shopping_cart.btn {
 	}
 }
 
+/* Botones para obligar a loguearse en el checkout */
+#suggest_create_account_buttons {
+        float: right;
+    }
+
 /*
     CSS media part MAX-WIDTH
 */
@@ -128,5 +133,11 @@ a.clear_shopping_cart.btn {
     .oe_cart table.suggested-product-table tr {
         display: inline-flex !important;
         width: auto !important;
+    }
+}
+
+@media(max-width: 600px){
+    #suggest_create_account_buttons {
+        float: left !important;
     }
 }

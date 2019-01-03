@@ -17,6 +17,22 @@
                         Process checkout <span class="fa fa-long-arrow-right" />
                     </a>
                 </span>
+                <!--Botones para obligar a loguearse en el checkout-->
+                <a t-if="not user_authenticated"
+                   class="btn btn-primary common-btn vrt_algn_top mb4"
+                   href="/web/login?redirect=/shop/checkout"
+                   rel="nofollow">
+                    <span>Log in and checkout</span>
+                    <span class="fa fa-long-arrow-right"/>
+                </a>
+                <t t-if="suggest_create_account">
+                    <a class="btn btn-primary common-btn vrt_algn_top mb4"
+                       href="/web/signup?redirect=/shop/checkout"
+                       rel="nofollow">
+                        <span>Sign up and checkout</span>
+                        <span class="fa fa-long-arrow-right"/>
+                    </a>
+                </t>
             </div>
             <div class="row empty_cart_message">
                 <div class="in-empty_cart_message cart-empty-msg">Your cart is empty!</div>
@@ -51,6 +67,29 @@
         <xpath expr="//div[@class='container oe_website_sale']" position="before">
             <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
         </xpath>
+    </template>
+
+    <!--Botones para obligar a loguearse en el checkout-->
+    <template id="website_sale_suggest_create_account_custom" inherit_id="website_sale_suggest_create_account.cart">
+
+        <xpath expr="//a[@href='/web/signup?redirect=/shop/checkout']" position="replace"/>
+
+        <xpath expr="//a[@href='/web/login?redirect=/shop/checkout']" position="replace">
+            <div class="" id="suggest_create_account_buttons">
+                <a t-if="not user_authenticated" class="btn btn-primary common-btn mb4"
+                   href="/web/login?redirect=/shop/checkout" rel="nofollow">
+                    <span>Log in and checkout</span>
+                    <span class="fa fa-long-arrow-right"/>
+                </a>
+                <t t-if="suggest_create_account">
+                    <a class="btn btn-primary common-btn mb4" href="/web/signup?redirect=/shop/checkout" rel="nofollow">
+                        <span>Sign up and checkout</span>
+                        <span class="fa fa-long-arrow-right"/>
+                    </a>
+                </t>
+            </div>
+        </xpath>
+
     </template>
 
     <template id="add_fiction_breadcrumbs_bar_checkout" inherit_id="website_sale_one_step_checkout.osc_onestepcheckout">
