@@ -256,8 +256,8 @@
                         <div class="ribbon-wrapper" t-if="rproduct.label_ept_id">
                             <div class="ribbon btn btn-danger sale-btn" t-field="rproduct.label_ept_id"></div>
                         </div>
-                        <span itemprop="image" t-field="rproduct.image_medium"
-                              t-options="{'widget': 'image'}" t-att-alt="rproduct.name" />
+                        <span><img t-att-alt="rproduct.name" t-att-title="rproduct.name"
+                                   t-attf-src="/web/image/product.template/{{rproduct.id}}/image/250x250"/></span>
                     </div>
                 </a>
             </div>
@@ -292,6 +292,10 @@
 
     <!--Hide price in suggested_products_list at cart view-->
     <template id="suggested_products_list_custom" inherit_id="website_sale.suggested_products_list">
+        <xpath expr="//span[@t-field='product.image_small']" position="replace">
+            <span><img t-att-alt="product.name" t-att-title="product.name" class="image-64"
+                       t-attf-src="/web/image/product.template/{{product.product_tmpl_id.id}}/image/250x250"/></span>
+        </xpath>
         <xpath expr="//span[@t-field='product.website_price']" position="replace">
             <t t-if="not product.hide_website_price">
             <span t-field="product.website_price" style="white-space: nowrap;" t-options="{'widget': 'monetary','display_currency': website.currency_id}" />
@@ -306,6 +310,13 @@
     <template id="website_clarico_cart_lines_add" inherit_id="clarico_cart.theme_clarico_cart_lines" name="Website Clarico cart line changes">
         <xpath expr="//td[@t-if='line.product_id.product_tmpl_id']//a" position="attributes">
             <attribute name="t-att-href">'/product/%s' % line.product_id.product_tmpl_id.slug if line.product_id.product_tmpl_id.slug else '/shop/product/%s' % slug(line.product_id.product_tmpl_id)</attribute>
+        </xpath>
+    </template>
+
+    <template id="website_sale_cart_lines_add" inherit_id="website_sale.cart_lines" name="Website cart line product image replace">
+        <xpath expr="//table[@id='cart_products']//td[@align='center']/span" position="replace">
+            <span><img t-att-alt="line.product_id.name" t-att-title="line.product_id.name" class="img img-responsive img-rounded"
+                       t-attf-src="/web/image/product.template/{{line.product_id.product_tmpl_id.id}}/image/250x250"/></span>
         </xpath>
     </template>
 

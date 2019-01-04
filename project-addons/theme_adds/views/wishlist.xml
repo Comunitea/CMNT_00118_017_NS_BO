@@ -45,7 +45,7 @@
         </xpath>
         <xpath expr="//div[@class='wishlist-img-div']" position="replace">
             <div class="wishlist-img-div">
-                <img class="wishlist-img" t-att-src="'data:image/png;base64,%s' % p.product_id.image_medium"/>
+                <img class="wishlist-img" t-att-alt="p.product_id.name" t-att-title="p.product_id.name" t-attf-src="/web/image/product.template/{{p.product_id.id}}/image/250x250"/>
             </div>
         </xpath>
     </template>
@@ -103,8 +103,8 @@
                         <div class="ribbon-wrapper" t-if="rproduct.label_ept_id">
                             <div class="ribbon btn btn-danger sale-btn" t-field="rproduct.label_ept_id"></div>
                         </div>
-                        <span itemprop="image" t-field="rproduct.image_medium"
-                              t-options="{'widget': 'image'}" t-att-alt="rproduct.name" />
+                        <span><img t-att-alt="rproduct.name" t-att-title="rproduct.name"
+                                   t-attf-src="/web/image/product.template/{{rproduct.id}}/image/250x250"/></span>
                     </div>
                 </a>
             </div>

@@ -170,8 +170,8 @@
                                                                         <div class="ribbon-wrapper" t-if="alt_product.label_ept_id">
                                                                             <div class="ribbon btn btn-danger sale-btn" t-field="alt_product.label_ept_id"></div>
                                                                         </div>
-                                                                        <span itemprop="image" t-field="alt_product.image_medium"
-                                                                              t-options="{'widget': 'image'}" t-att-alt="alt_product.name" t-att-title="alt_product.name"/>
+                                                                        <span><img t-att-alt="alt_product.name" t-att-title="alt_product.name"
+                                                                                   t-attf-src="/web/image/product.template/{{alt_product.id}}/image/250x250"/></span>
                                                                     </div>
                                                                 </a>
                                                             </div>
@@ -186,7 +186,7 @@
                                                                 <!--Hide price for products-->
                                                                 <div class="recently_view_product_price">
                                                                     <t t-if="not alt_product.hide_website_price">
-                                                                        <p t-field="alt_product.website_price"
+                                                                        <span t-field="alt_product.website_price"
                                                                            t-options='{"widget": "monetary", "display_currency": website.currency_id, }' />
                                                                     </t>
                                                                     <t t-else="">
@@ -223,8 +223,8 @@
                                                                         <div class="ribbon-wrapper" t-if="alt_product.label_ept_id">
                                                                             <div class="ribbon btn btn-danger sale-btn" t-field="alt_product.label_ept_id"></div>
                                                                         </div>
-                                                                        <span itemprop="image" t-field="alt_product.image_medium"
-                                                                              t-options="{'widget': 'image'}" t-att-alt="alt_product.name" t-att-title="alt_product.name"/>
+                                                                        <span><img t-att-alt="alt_product.name" t-att-title="alt_product.name"
+                                                                                   t-attf-src="/web/image/product.template/{{alt_product.product_tmpl_id.id}}/image/250x250"/></span>
                                                                     </div>
                                                                 </a>
                                                             </div>
@@ -239,7 +239,7 @@
                                                                 <!--Hide price for products-->
                                                                 <div class="recently_view_product_price">
                                                                     <t t-if="not alt_product.hide_website_price">
-                                                                        <p t-field="alt_product.website_price"
+                                                                        <span t-field="alt_product.website_price"
                                                                            t-options='{"widget": "monetary", "display_currency": website.currency_id, }' />
                                                                     </t>
                                                                     <t t-else="">
@@ -488,8 +488,8 @@
             <div class="product-image oe_product_image">
                 <a itemprop="url"
                     t-att-href="'/product/%s' % product.slug if product.slug else '/shop/product/%s' % slug(product)">
-                    <span itemprop="image" t-field="product.image"
-                        t-options="{'widget': 'image', 'resize':'250x250'}" t-att-alt="product.name" t-att-title="product.name"/>
+                    <span><img t-att-alt="product.name" t-att-title="product.name"
+                               t-attf-src="/web/image/product.template/{{product.id}}/image/250x250"/></span>
                 </a>
                 <div id="in-wishlist-shop"/>
             </div>
@@ -636,8 +636,8 @@
                                 <div class="ribbon-wrapper" t-if="rproduct.label_ept_id">
                                     <div class="ribbon btn btn-danger sale-btn" t-field="rproduct.label_ept_id"></div>
                                 </div>
-                                <span itemprop="image" t-field="rproduct.image_medium"
-                                      t-options="{'widget': 'image'}" t-att-alt="rproduct.name" t-att-title="rproduct.name" />
+                                <span><img t-att-alt="rproduct.name" t-att-title="rproduct.name"
+                                           t-attf-src="/web/image/product.template/{{rproduct.id}}/image/250x250"/></span>
                             </div>
                         </a>
                     </div>
