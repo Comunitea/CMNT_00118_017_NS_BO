@@ -182,3 +182,8 @@ class FaviconRoot(http.Controller):
     def favicon_redirect(self):
         filename = '/web/image/website/1/favicon/'
         return http.request.env['ir.http'].reroute(filename)
+
+    @http.route('/manifest.json', type='http', auth="public", website=True)
+    def manifest_redirect(self):
+        filename = '/theme_adds/static/'
+        return http.request.env['ir.http'].reroute(filename)
