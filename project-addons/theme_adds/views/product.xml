@@ -3,6 +3,17 @@
 
     <template id="product_block_replace" inherit_id="clarico_product.clarico_product_product">
         <xpath expr="//div[@class='p_static_desc_para']" position="replace">
+            <!-- Paga+Tarde widget -->
+            <div class="wp-widget-paga-mas-tarde" t-if="product.website_price &gt; 349">
+                <script type="text/javascript" src="https://cdn.pagamastarde.com/pmt-js-client-sdk/3/js/client-sdk.min.js"/>
+                <div class="PmtSimulator"
+                     data-pmt-num-quota="2"
+                     data-pmt-style="blue"
+                     data-pmt-type="6"
+                     t-att-data-pmt-amount="product.website_price"/>
+                <script>pmtClient.setPublicKey('pk_fdfadf9090a1c489501d5cb1');pmtClient.simulator.init();</script>
+            </div>
+            <!-- END Paga+Tarde widget -->
             <div class="p_static_desc_para">
                 <div class="wld-cont-logos">
                     <div class="wld-logo">
@@ -33,17 +44,22 @@
             </div>
             <div class="wp-add-to-cart-full-message">
                 <div class="add-to-cart-message"/>
-                <div class="wp-button"><a href="/shop/cart" class="btn btn-primary common-btn">Go to cart</a></div>
+                <div class="wp-button"><a rel="nofollow" href="/shop/cart" class="btn btn-primary common-btn">Go to cart</a></div>
                 <div class="wp-close"><span>Close</span></div>
             </div>
         </xpath>
         <xpath expr="//div[@class='4_btns_combo']" position="after">
-            <script t-if="len(product.product_variant_ids) &gt; 1">
+            <!--<script t-if="len(product.product_variant_ids) &gt; 1">
                 window.arr = new Map();
                 <t t-foreach="product.product_variant_ids" t-as="variant">
                     arr.set('&lt;t t-esc="variant.id"/>', '&lt;t t-esc="variant.lst_price"/>');
                 </t>
-            </script>
+            </script>-->
+            <ul style="display: none;" id="product_variant_ids_variants_ul">
+                <t t-foreach="product.product_variant_ids" t-as="variant">
+                    <li t-att-data-id="variant.id" t-esc="variant.lst_price"/>
+                </t>
+            </ul>
             <t t-placeholder="select">
                 <input type="hidden" class="product_id" name="product_id"
                     t-att-value="product.product_variant_id.id if len(product.product_variant_ids) == 1 else '0'" />
@@ -89,6 +105,11 @@
             <div class="item active iframe_product_video" t-if="product.p_video_url">
                 <iframe class="popup_iframe_url" t-attf-src="#{product.p_video_url}?autoplay=0&amp;controls=1"/>
             </div>
+        </xpath>
+
+        <!-- Product name replace -->
+        <xpath expr="//div[@id='product_details']//div[@class='c_product_name']" position="replace">
+            <h1 class="c_product_name" itemprop="name" t-field="product.name"/>
         </xpath>
     </template>
 
@@ -142,20 +163,21 @@
                                                     <div class="alternet_common">
                                                         <div class="parent">
                                                             <div class="recently_viewed_img_div">
-                                                                <a itemprop="url" t-att-href="'/shop/product/%s' % slug(alt_product)">
+                                                                <a itemprop="url"
+                                                                   t-att-href="'/product/%s' % alt_product.slug if alt_product.slug else '/shop/product/%s' % slug(alt_product)">
                                                                     <span itemprop="image" />
                                                                     <div class="div_c_sub_pc_image">
                                                                         <div class="ribbon-wrapper" t-if="alt_product.label_ept_id">
                                                                             <div class="ribbon btn btn-danger sale-btn" t-field="alt_product.label_ept_id"></div>
                                                                         </div>
-                                                                        <span itemprop="image" t-field="alt_product.image_medium"
-                                                                              t-options="{'widget': 'image'}" t-att-alt="alt_product.name" />
+                                                                        <span><img t-att-alt="alt_product.name" t-att-title="alt_product.name"
+                                                                                   t-attf-src="/web/image/product.template/{{alt_product.id}}/image/250x250"/></span>
                                                                     </div>
                                                                 </a>
                                                             </div>
                                                             <div class="recently_viwed_details">
                                                                 <div class="recently_view_product_name">
-                                                                    <a t-attf-href="/shop/product/#{ slug(alt_product) }"
+                                                                    <a t-att-href="'/product/%s' % alt_product.slug if alt_product.slug else '/shop/product/%s' % slug(alt_product)"
                                                                         style="display: block">
                                                                         <p t-field="alt_product.name" />
                                                                     </a>
@@ -164,7 +186,7 @@
                                                                 <!--Hide price for products-->
                                                                 <div class="recently_view_product_price">
                                                                     <t t-if="not alt_product.hide_website_price">
-                                                                        <p t-field="alt_product.website_price"
+                                                                        <span t-field="alt_product.website_price"
                                                                            t-options='{"widget": "monetary", "display_currency": website.currency_id, }' />
                                                                     </t>
                                                                     <t t-else="">
@@ -194,20 +216,21 @@
                                                     <div class="alternet_common">
                                                         <div class="parent">
                                                             <div class="recently_viewed_img_div">
-                                                                <a itemprop="url" t-att-href="'/shop/product/%s' % slug(alt_product)">
+                                                                <a itemprop="url"
+                                                                   t-att-href="'/product/%s' % alt_product.slug if alt_product.slug else '/shop/product/%s' % slug(alt_product.product_tmpl_id)">
                                                                     <span itemprop="image" />
                                                                     <div class="div_c_sub_pc_image">
                                                                         <div class="ribbon-wrapper" t-if="alt_product.label_ept_id">
                                                                             <div class="ribbon btn btn-danger sale-btn" t-field="alt_product.label_ept_id"></div>
                                                                         </div>
-                                                                        <span itemprop="image" t-field="alt_product.image_medium"
-                                                                              t-options="{'widget': 'image'}" t-att-alt="alt_product.name" />
+                                                                        <span><img t-att-alt="alt_product.name" t-att-title="alt_product.name"
+                                                                                   t-attf-src="/web/image/product.template/{{alt_product.product_tmpl_id.id}}/image/250x250"/></span>
                                                                     </div>
                                                                 </a>
                                                             </div>
                                                             <div class="recently_viwed_details">
                                                                 <div class="recently_view_product_name">
-                                                                    <a t-attf-href="/shop/product/#{ slug(alt_product.product_tmpl_id) }"
+                                                                    <a t-att-href="'/product/%s' % alt_product.slug if alt_product.slug else '/shop/product/%s' % slug(alt_product.product_tmpl_id)"
                                                                         style="display: block">
                                                                         <p t-field="alt_product.name" />
                                                                     </a>
@@ -216,7 +239,7 @@
                                                                 <!--Hide price for products-->
                                                                 <div class="recently_view_product_price">
                                                                     <t t-if="not alt_product.hide_website_price">
-                                                                        <p t-field="alt_product.website_price"
+                                                                        <span t-field="alt_product.website_price"
                                                                            t-options='{"widget": "monetary", "display_currency": website.currency_id, }' />
                                                                     </t>
                                                                     <t t-else="">
@@ -261,14 +284,17 @@
                                 <div class="ribbon btn btn-danger sale-btn" t-field="product.label_ept_id"></div>
                             </div>
                             <div class="item active image_zoom" itemprop="image"
-                                t-field="product.image"
-                                t-options='{"widget": "image", "resize": big, "class": "product_detail_img ", "alt-field": "name", "zoom": "image"}' />
+                                 t-field="product.image"
+                                 t-att-title="product.name"
+                                 t-options='{"widget": "image", "resize": big, "class": "product_detail_img ", "alt-field": "name", "zoom": "image"}' />
                             <div t-if="variant_img" class="item image_zoom"
-                                itemprop="image" t-field="product.image"
-                                t-options='{"widget": "image", "resize": big, "class": "product_detail_img", "alt-field": "name", "zoom": "image"}' />
+                                 itemprop="image" t-field="product.image"
+                                 t-att-title="product.image.name"
+                                 t-options='{"widget": "image", "resize": big, "class": "product_detail_img", "alt-field": "name", "zoom": "image"}' />
                             <t t-if="len(image_ids)" t-foreach="image_ids" t-as="pimg">
                                 <div class="item image_zoom" t-field="pimg.image"
-                                    t-options='{"widget": "image", "resize": big, "class": "product_detail_img", "alt-field": "name", "zoom": "image" }' />
+                                     t-att-title="pimg.name"
+                                     t-options='{"widget": "image", "resize": big, "class": "product_detail_img", "alt-field": "name", "zoom": "image" }' />
                             </t>
                         </div>
                         <t t-if="len(image_ids) or variant_img">
@@ -291,21 +317,24 @@
                         <li data-target="#o-carousel-product" data-slide-to="0"
                             class="active">
                             <img class="img img-responsive js_variant_img_small"
-                                t-attf-src="/website/image/product.template/{{product.id}}/image/90x90"
-                                t-att-alt="product.name" />
+                                 t-attf-src="/website/image/product.template/{{product.id}}/image/90x90"
+                                 t-att-title="product.name"
+                                 t-att-alt="product.name" />
                         </li>
                         <li t-if="variant_img" data-target="#o-carousel-product"
                             data-slide-to="1" class="">
                             <img class="img img-responsive"
-                                t-attf-src="/website/image/product.template/{{product.id}}/image/90x90"
-                                t-att-alt="product.name" />
+                                 t-attf-src="/website/image/product.template/{{product.id}}/image/90x90"
+                                 t-att-title="product.name"
+                                 t-att-alt="product.name" />
                         </li>
                         <t t-if="len(image_ids)" t-foreach="image_ids" t-as="pimg">
                             <li data-target="#o-carousel-product"
                                 t-att-data-slide-to="pimg_index + (variant_img and 2 or 1)">
                                 <img class="img img-responsive"
-                                    t-attf-src="/website/image/product.image/{{pimg.id}}/image/90x90"
-                                    t-att-alt="pimg.name" />
+                                     t-attf-src="/website/image/product.image/{{pimg.id}}/image/90x90"
+                                     t-att-title="pimg.name"
+                                     t-att-alt="pimg.name" />
                             </li>
                         </t>
                     </ol>
@@ -324,7 +353,7 @@
                     </div>
                     <div class="div_parent_zoom_class">
                         <div class="zooming_image_screen_o">
-                            <img src="" class="zooming_image_screen"></img>
+                            <img src="" class="zooming_image_screen" t-att-alt="product.name" t-att-title="product.name"/>
                         </div>
                         <!-- slider on zoom -->
                         <div class="clarico_slide">
@@ -332,19 +361,22 @@
                                 data-mcs-theme="dark">
                                 <li class="active ref_imgs">
                                     <img class="img img-responsive"
-                                        t-attf-src="/website/image/product.template/{{product.id}}/image/"
-                                        t-att-alt="product.name" />
+                                         t-attf-src="/website/image/product.template/{{product.id}}/image/"
+                                         t-att-title="product.name"
+                                         t-att-alt="product.name" />
                                 </li>
                                 <li t-if="variant_img" class="ref_imgs">
                                     <img class="img img-responsive"
-                                        t-attf-src="/website/image/product.template/{{product.id}}/image/"
-                                        t-att-alt="product.name" />
+                                         t-attf-src="/website/image/product.template/{{product.id}}/image/"
+                                         t-att-title="product.name"
+                                         t-att-alt="product.name" />
                                 </li>
                                 <t t-if="len(image_ids)" t-foreach="image_ids" t-as="pimg">
                                     <li class="ref_imgs">
                                         <img class="img img-responsive "
-                                            t-attf-src="/website/image/product.image/{{pimg.id}}/image/"
-                                            t-att-alt="pimg.name" />
+                                             t-attf-src="/website/image/product.image/{{pimg.id}}/image/"
+                                             t-att-title="pimg.name"
+                                             t-att-alt="pimg.name" />
                                     </li>
                                 </t>
                             </ol>
@@ -447,26 +479,30 @@
         <xpath expr="//div[@class='product-image oe_product_image']" position="replace">
             <div class="wp-add-to-cart-message">
                 <div class="add-to-cart-message"/>
-                <div class="wp-button"><a href="/shop/cart" class="btn btn-primary">Go to cart</a></div>
+                <div class="wp-button"><a rel="nofollow" href="/shop/cart" class="btn btn-primary">Go to cart</a></div>
                 <div class="wp-button go-to-product">
-                    <a t-att-href="keep('/shop/product/%s' % slug(product))" class="btn btn-primary">View product</a>
+                    <a t-att-href="'/product/%s' % product.slug if product.slug else '/shop/product/%s' % slug(product)" class="btn btn-primary">View product</a>
                 </div>
                 <div class="wp-close"><span>Close</span></div>
             </div>
             <div class="product-image oe_product_image">
                 <a itemprop="url"
-                    t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))">
-                    <span itemprop="image" t-field="product.image"
-                        t-options="{'widget': 'image', 'resize':'250x250'}" t-att-alt="product.name" />
+                    t-att-href="'/product/%s' % product.slug if product.slug else '/shop/product/%s' % slug(product)">
+                    <span><img t-att-alt="product.name" t-att-title="product.name"
+                               t-attf-src="/web/image/product.template/{{product.id}}/image/250x250"/></span>
                 </a>
                 <div id="in-wishlist-shop"/>
             </div>
+        </xpath>
+        <!-- Friendly URL's -->
+        <xpath expr="//a[@class='product-name-a']" position="attributes">
+            <attribute name="t-att-href">'/product/%s' % product.slug if product.slug else '/shop/product/%s' % slug(product)</attribute>
         </xpath>
     </template>
 
     <!-- product pager -->
     <template id="replace_pager_template" inherit_id="website.pager">
-        <xpath expr="//ul" position="replace">
+        <!--<xpath expr="//ul" position="replace">
             <ul t-if="pager['page_count'] > 1" t-attf-class="#{ classname or '' } pagination" t-att-style="style or None">
                 <li t-att-class=" 'disabled' if pager['page']['num'] == 1 else None ">
                     <a t-att-href=" pager['page_previous']['url'] if pager['page']['num'] != 1 else None">◀</a>
@@ -480,7 +516,7 @@
                     <a t-att-href="pager['page_next']['url'] if pager['page']['num'] != pager['page_count'] else None">▶</a>
                 </li>
             </ul>
-        </xpath>
+        </xpath>-->
     </template>
 
     <!-- add to cart button in compact view-->
@@ -496,7 +532,7 @@
                     </a>
                 </t>
                 <t t-if="len(product.product_variant_ids) &gt; 1">
-                    <a class="customize-add-cart" t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))">
+                    <a class="customize-add-cart" t-att-href="'/product/%s' % product.slug if product.slug else '/shop/product/%s' % slug(product)">
                         <span class="fa fa-shopping-cart" />
                        <!--  <span class="list-view-text">Add To Cart</span> -->
                     </a>
@@ -507,25 +543,21 @@
 
     <!-- UPD breadcrumb bar -->
     <template id="upd_breadcrumb_bar" inherit_id="clarico_product.clarico_product_product">
-        <xpath expr="//ol[@class='breadcrumb clarico_breadcrumb']/li[1]" position="replace">
-            <a class="home-icon" href="/shop">
-                <i class="fa fa-home" aria-hidden="true"></i>
-            </a>
-            <!--<span class="select-nevigation-span">/</span>
+        <xpath expr="//div[@class='sub_breadcrumb']/ol/li[1]" position="replace">
             <li>
-                <a href="/shop">All products</a>
-            </li>-->
+                <a class="home-icon" href="/shop">
+                    <i class="fa fa-home" aria-hidden="true"/>
+                </a>
+            </li>
+        </xpath>
+        <xpath expr="//div[@class='sub_breadcrumb']/ol/li[@t-if='category']" position="replace">
             <li t-if="product.public_categ_ids">
-                 <t t-set="inc" t-value="0"/>
-                 <t t-foreach="product.public_categ_ids" t-as="category">
-                     <!--<t t-if="inc==0"><a t-esc="category.name" t-att-href="keep(slug(category))"/></t>
-                     <t t-set="inc" t-value="inc+1"/>-->
-                 </t>
-             </li>
-            <t t-else="" >
-                <span class="select-nevigation-span">/</span>
-                <li><a href="/shop">All products</a></li>
-            </t>
+                <t t-set="inc" t-value="0"/>
+                <t t-foreach="product.public_categ_ids" t-as="category">
+                    <t t-if="inc==0"><a t-esc="category.name" t-att-href="'/category/%s' % category.slug if category.slug else '/shop/category/%s' % slug(category)"/></t>
+                    <t t-set="inc" t-value="inc+1"/>
+                </t>
+            </li>
         </xpath>
 
         <!--Hide price in product details at product details view-->
@@ -598,21 +630,21 @@
             <div class="recently_viwed_common">
                 <div class="parent">
                     <div class="recently_viewed_img_div">
-                        <a itemprop="url" t-att-href="'/shop/product/%s' % slug(rproduct)">
+                        <a itemprop="url" t-att-href="'/product/%s' % rproduct.slug if rproduct.slug else '/shop/product/%s' % slug(rproduct)">
                             <span itemprop="image" />
                             <div class="div_c_sub_pc_image">
                                 <div class="ribbon-wrapper" t-if="rproduct.label_ept_id">
                                     <div class="ribbon btn btn-danger sale-btn" t-field="rproduct.label_ept_id"></div>
                                 </div>
-                                <span itemprop="image" t-field="rproduct.image_medium"
-                                    t-options="{'widget': 'image'}" t-att-alt="rproduct.name" />
+                                <span><img t-att-alt="rproduct.name" t-att-title="rproduct.name"
+                                           t-attf-src="/web/image/product.template/{{rproduct.id}}/image/250x250"/></span>
                             </div>
                         </a>
                     </div>
 
                     <div class="recently_viwed_details">
                         <div class="recently_view_product_name">
-                            <a t-attf-href="/shop/product/#{ slug(rproduct) }"
+                            <a t-att-href="'/product/%s' % rproduct.slug if rproduct.slug else '/shop/product/%s' % slug(rproduct)"
                                style="display: block">
                                 <p t-field="rproduct.name" />
                             </a>

@@ -11,6 +11,7 @@ from odoo import http
 from odoo.http import request
 from odoo.addons.clarico_shop.controllers.main import claricoShop
 from odoo.addons.clarico_cart.controllers.main import claricoClearCart
+from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 
 class ClaricoShopCustom(claricoShop):
@@ -62,14 +63,16 @@ class ClaricoShopCustom(claricoShop):
                 domain += [('attribute_line_ids.value_ids', 'in', ids)]
 
         tag_id = request.httprequest.args.get('tags')
+        is_search = request.httprequest.args.get('search')
 
-        if not category and not tag_id:
+        if not category and not tag_id and not is_search:
             domain += [(u'tag_ids', u'ilike', u'Productos Destacados')]
 
         return domain
 
     """
         Change default products to show in shop by ir.config_parameter
+        Add categories friendly URL's redirecting and rerouting
     """
     @http.route([
         '/shop',
@@ -83,7 +86,56 @@ class ClaricoShopCustom(claricoShop):
             IrConfigParam = request.env['ir.config_parameter']
             ppg = int(IrConfigParam.sudo().get_param('default_products_to_show', 8))
 
+        if category and category.slug:
+            return http.local_redirect(
+                '/category/%s' % category.slug,
+                dict(http.request.httprequest.args),
+                True,
+                code='301'
+            )
+
         return super(ClaricoShopCustom, self).shop(page=page, category=category, search=search, ppg=ppg, **post)
+
+    @http.route('/category/<path:path>', type='http', auth='public', website=True)
+    def _shop(self, path, page=0, category=None, search='', ppg=False, **post):
+        category_list = http.request.env['product.public.category']
+        category = category_list.sudo().search([('slug', '=', path)], limit=1)
+        if category:
+            return super(ClaricoShopCustom, self).shop(page=page, category=category, search=search, ppg=ppg, **post)
+        else:
+            return http.request.env['ir.http'].reroute('/404')
+
+
+class ProductCustom(WebsiteSale):
+    """
+    Product redirecting to slug URL
+    """
+    @http.route('/shop/product/<model("product.template"):product>', type='http', auth="public", website=True)
+    def product(self, product, category='', search='', **kwargs):
+
+        if product.slug:
+            return http.local_redirect(
+                '/product/%s' % product.slug,
+                dict(http.request.httprequest.args),
+                True,
+                code='301'
+            )
+
+        return super(ProductCustom, self).product(product=product, category=category, search=search, **kwargs)
+
+    """
+    Product show on enter to new slug URL
+    """
+    @http.route('/product/<path:path>', type='http', auth="public", website=True)
+    def _product(self, path, product=None, category='', search='', **kwargs):
+
+        products_list = http.request.env['product.template']
+        product = products_list.sudo().search([('slug', '=', path)], limit=1)
+
+        if product:
+            return super(ProductCustom, self).product(product=product, category=category, search=search, **kwargs)
+        else:
+            return http.request.env['ir.http'].reroute('/404')
 
 
 class ClaricoClearCartCustom(claricoClearCart):

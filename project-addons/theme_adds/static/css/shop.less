@@ -11,6 +11,10 @@
     margin-top: 1%;
 }
 
+.clarico_home_second_section {
+    margin-top: 25px;
+}
+
 .clarico_home_second_section .clarico_home_second_sub_section .chs_detail_container {
     margin-top: 0%;
 }
@@ -424,10 +428,28 @@ li.all-products, .all-category-div li {
         }
     }
 }
+.wp-category-title {
+    margin: -25px 0 0 0;
+    & h1.category-title {
+        font-size: 20px;
+        margin-top: 0;
+    }
+}
+.oe_product.oe_shop_left.oe_product_cart {
+    vertical-align: top !important;
+    height: auto !important;
+}
 
 /*
     CSS media part MIN-WIDTH
 */
+@media (min-width: 1400px){
+    .menu-tags {
+        & .all-category-div {
+            margin-left: -17px;
+        }
+    }
+}
 @media (min-width: 1201px){
     .oe_shop_left {
         width: 24.5% !important;
@@ -442,6 +464,11 @@ li.all-products, .all-category-div li {
 /*
     CSS media part MAX-WIDTH
 */
+@media (max-width: 1400px){
+    .menu-tags {
+        margin-left: 18%
+    }
+}
 @media (max-width: 1200px){
     .sub-menu-ul-heading {
         width: auto;
@@ -566,6 +593,9 @@ li.all-products, .all-category-div li {
             }
         }
     }
+    .wp-category-title {
+        margin: -15px 0 0 3px;
+    }
 }
 @media (max-width: 666px){
     .menu-tags {
@@ -612,6 +642,9 @@ li.all-products, .all-category-div li {
         &.spinner-left {
             background-position: center 25%;
         }
+    }
+    .wp-category-title {
+        margin: -5px 0 0 3px;
     }
 }
 /*

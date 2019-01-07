@@ -50,9 +50,11 @@
         'website_sale_one_step_checkout_delivery',
         'website_sale_one_step_checkout_charge_payment_fee',
         'website_sale_require_legal',
+        'website_sale_require_login',
         'website_crm_privacy_policy',
         'payment_paga_mas_tarde',
         'website_portal',
+        'sgeede_infinite_scroll',
         'theme_clarico'
     ],
     'data': [
@@ -73,6 +75,8 @@
         'views/group.xml',
         'views/terms.xml',
         'views/category_view.xml',
+        'views/robots.xml',
+        'views/sitemap.xml',
     ],
     'qweb': [
     ],

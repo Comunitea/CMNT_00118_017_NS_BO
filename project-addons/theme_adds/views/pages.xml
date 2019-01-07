@@ -323,15 +323,15 @@
                             <tr><td><p>Proceso</p></td><td><p>Las cookies permiten que los procesos de funcionamiento de la página web y la oferta esperada por el usuario que accede a la página web, por ejemplo, navegar por páginas web o el acceso a las áreas seguras de los servicios del sitio web. Sin estas cookies, el sitio no puede funcionar adecuadamente.</p></td></tr>
                             <tr><td><p>Publicidad</p></td><td><p>Utilizamos cookies para criar publicidade mais atractiva para os usuários, com anúncios baseados em conteúdo que é relevante para si, melhorar os relatórios de rendimento da campanha e evitar mostrar anúncios que já tenha visto.</p></td></tr>
                             <tr><td><p>Estado da sesión</p></td><td><p>Páginas web suelen recopilar información acerca de cómo los usuarios interactúan con la página web. Esta información puede incluir las páginas que los usuarios visitan con más frecuencia y si los usuarios reciben mensajes de error desde determinadas páginas. Si estas cookies están bloqueadas o se elimina, el sitio seguirá funcionando.</p></td></tr>
-                            <tr><td><p>Google Analytics</p></td><td><p><a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage"> Google Analytics</a> es una herramienta de análisis web gratuito de Google que permite a los propietarios de sitios web saben cómo los usuarios interactúan con la página web. Estos cookies recogen información de forma anónima para reportar la página web sin necesidad de identificar a los usuarios individuales.</p></td></tr>
+                            <tr><td><p>Google Analytics</p></td><td><p><a rel="nofollow" href="https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage"> Google Analytics</a> es una herramienta de análisis web gratuito de Google que permite a los propietarios de sitios web saben cómo los usuarios interactúan con la página web. Estos cookies recogen información de forma anónima para reportar la página web sin necesidad de identificar a los usuarios individuales.</p></td></tr>
                         </tbody></table>
                         <p>Si prefieren el usuario, puede evitar Acceso A "cookie" en su disco duro configurando su navegador en su ordenador para que le advierta de la recepción de "cookies" y para impedir la instalación de las mismas en su disco duro. El sitio web puede no funcionar correctamente debido a razones técnicas. Para restringir, bloquear o borrar las cookies puede entrar: </p>
                         <p> </p>
                         <ul>
-                            <li>Internet Explorer: <a title="Internet Explorer deshabilitar Cookies" href="http://windows.microsoft.com/es-xl/internet-explorer/delete-manage-cookies#ie=%E2%80%9Die-10%E2%80%B3" target="_blank">windows.microsoft.com/es-xl/internet-explorer/delete-manage-cookies#ie=”ie-10″</a></li>
-                            <li>FireFox: <a title="Firefox control de cookies" href="http://support.mozilla.org/es/kb/Borrar%20cookies" target="_blank">support.mozilla.org/es/kb/Borrar%20cookies</a></li>
-                            <li>Chrome: <a title="Chrome control de cookies" target="_blank">support.google.com/chrome/answer/95647?hl=”es”</a></li>
-                            <li>Safari: <a title="Safari control de cookies" target="_blank">www.apple.com/es/privacy/use-of-cookies/</a></li>
+                            <li>Internet Explorer: <a title="Internet Explorer deshabilitar Cookies" rel="nofollow" href="http://windows.microsoft.com/es-xl/internet-explorer/delete-manage-cookies#ie=%E2%80%9Die-10%E2%80%B3" target="_blank">windows.microsoft.com/es-xl/internet-explorer/delete-manage-cookies#ie=”ie-10″</a></li>
+                            <li>FireFox: <a title="Firefox control de cookies" rel="nofollow" href="http://support.mozilla.org/es/kb/Borrar%20cookies" target="_blank">support.mozilla.org/es/kb/Borrar%20cookies</a></li>
+                            <li>Chrome: <a title="Chrome control de cookies" rel="nofollow" target="_blank">support.google.com/chrome/answer/95647?hl=”es”</a></li>
+                            <li>Safari: <a title="Safari control de cookies" rel="nofollow" target="_blank">www.apple.com/es/privacy/use-of-cookies/</a></li>
                         </ul>
                         </div>
                         </div>
@@ -388,11 +388,11 @@
                             <p>4. Paypal: Se aplicará un 3% adicional</p>
                             <p>5. Paga + Más Tarde: Financia tu compra hasta en 12 meses. Totalmente online. Opción válidad para pedidos de mas de 350€. La aceptación de la financiación depende directamente de la financiera de Paga Mas Tarde que realiza el método con un algoritmo matemático.</p>
                             <p>6. Contra Reembolso: Solo aceptamos reembolsos para pedidos de mas de 100€ y menos de 350€, el reembolso tendrá un recargo de un 4% del coste del mismo.</p>
-                            <p>Puede entrar en este link <a href="/page/pago-seguro">https://nostrumsport.com/page/pago-seguro</a> para ver toda la información relativa a los métodos de pago.</p>
+                            <p>Puede entrar en este link <a rel="nofollow" href="/page/pago-seguro">https://nostrumsport.com/page/pago-seguro</a> para ver toda la información relativa a los métodos de pago.</p>
 
                             <h3>3. Gastos de énvio</h3>
                             <p>Los gastos de envío son por zonas:</p>
-                            <p>Puede entrar en este link <a href="/page/entrega">https://nostrumsport.com/page/entrega</a> para ver  toda la información relativa a los gastos de envío.</p>
+                            <p>Puede entrar en este link <a rel="nofollow" href="/page/entrega">https://nostrumsport.com/page/entrega</a> para ver  toda la información relativa a los gastos de envío.</p>
 
                             <h3>4. Plazos de entrega y procesos de devolución</h3>
                             <p>Para España: NostrumSport se exige la máxima celeridad en la entrega de sus pedidos. Nuestro compromiso con el cliente es máximo y por ello habitualmente las entregas se hacen en periodos no superiores a 48 horas, en muchos casos menores a 24 horas. NostrumSport es distribuidor en sí mismo y además vende productos de más de 200 fabricantes nacionales e internacionales. La tienda online está compuesta por más de 5.000 referencias lo que hace imposible mantener un stock constante de todos. Por ello, los envíos pueden alargarse en el tiempo y superar las 48 horas que nos marcamos como objetivo.</p>
@@ -409,7 +409,7 @@
                             <p>Consulte el consejo especializado de nuestro Servicio de Atención al Cliente, el cual le facilitará el contacto de los diferentes servicios técnicos de nuestros proveedores, así como la forma de proceder para recibir un aparato de sustitución de similares características en menos de 48 horas.</p>
 
                             <h3>6. Devoluciones y cambio de material</h3>
-                            <p>Puede <a href="/page/devoluciones">https://nostrumsport.com/page/devoluciones</a> para ver toda la información relativa a las devoluciones y reembolsos.</p>
+                            <p>Puede <a rel="nofollow" href="/page/devoluciones">https://nostrumsport.com/page/devoluciones</a> para ver toda la información relativa a las devoluciones y reembolsos.</p>
                             <p>Tambien lo puede hacer a través de nuestro whatsapp: 640 823 409</p>
 
                             <h3>7. Limitacion de responsabilidad</h3>

@@ -24,16 +24,37 @@
         <xpath expr="//ul[@id='logout_ul']/li[1]" position="replace">
             <t groups="base.group_public" t-if="website.user_id == user_id">
                 <li>
-                    <a t-attf-href="/web/login">
+                    <a t-attf-href="/web/login" rel="nofollow">
                         <b>Sign in</b>
                     </a>
                 </li>
                 <li>
-                    <a t-attf-href="/web/signup">
+                    <a t-attf-href="/web/signup" rel="nofollow">
                         <b>Sign up</b>
                     </a>
                 </li>
             </t>
+        </xpath>
+        <xpath expr="//li[@id='o_logout']/a" position="attributes">
+            <attribute name="rel">nofollow</attribute>
+        </xpath>
+    </template>
+
+    <template id="clarico_account_header_menu_replace" inherit_id="clarico_account.clarico_account_ecommerce_portal_my_account">
+        <xpath expr="//a[@href='/my/home']" position="attributes">
+            <attribute name="rel">nofollow</attribute>
+        </xpath>
+        <xpath expr="//a[@href='/shop/cart']" position="attributes">
+            <attribute name="rel">nofollow</attribute>
+        </xpath>
+        <xpath expr="//a[@href='/wishlist']" position="attributes">
+            <attribute name="rel">nofollow</attribute>
+        </xpath>
+        <xpath expr="//a[@href='/my/orders']" position="attributes">
+            <attribute name="rel">nofollow</attribute>
+        </xpath>
+        <xpath expr="//a[@href='/my/invoices']" position="attributes">
+            <attribute name="rel">nofollow</attribute>
         </xpath>
     </template>
 
@@ -45,34 +66,34 @@
                     <span><i class="fa fa-whatsapp" /> <font>640 823 409</font></span>
                 </div>
                 <div class="mobile-version">
-                    <span><a href="tel:96 340 42 55"><i class="fa fa-phone" /></a></span>
-                    <span><a href="https://api.whatsapp.com/send?phone=34640823409\u0026text=Me%20gustaría%20información%20sobre%20"><i class="fa fa-whatsapp" /></a></span>
+                    <span><a t-att-href="'tel:%s' %res_company.phone" rel="nofollow"><i class="fa fa-phone" /></a></span>
+                    <span><a href="https://api.whatsapp.com/send?phone=34640823409&amp;text=Me%20gustaría%20información%20sobre%20" rel="nofollow"><i class="fa fa-whatsapp" /></a></span>
                 </div>
                 <div class="header-social-icon">
-                    <a class="o_facebook" t-att-href="website.social_facebook"
+                    <a class="o_facebook" rel="nofollow" t-att-href="website.social_facebook"
                         t-if="website.social_facebook">
                         <i class="fa fa-facebook" />
                     </a>
-                    <a class="o_twitter" t-att-href="website.social_twitter"
+                    <a class="o_twitter" rel="nofollow" t-att-href="website.social_twitter"
                         t-if="website.social_twitter">
                         <i class="fa fa-twitter" />
                     </a>
-                    <a class="o_linkedin" t-att-href="website.social_linkedin"
+                    <a class="o_linkedin" rel="nofollow" t-att-href="website.social_linkedin"
                         t-if="website.social_linkedin">
                         <i class="fa fa-linkedin" />
                     </a>
-                    <a class="o_youtube" t-att-href="website.social_youtube"
+                    <a class="o_youtube" rel="nofollow" t-att-href="website.social_youtube"
                         t-if="website.social_youtube">
                         <i class="fa fa-youtube-play" />
                     </a>
-                    <a class="o_googleplus" t-att-href="website.social_googleplus"
-                        t-if="website.social_googleplus" rel="publisher">
+                    <a class="o_googleplus" rel="nofollow" t-att-href="website.social_googleplus"
+                        t-if="website.social_googleplus">
                         <i class="fa fa-google-plus-square" />
                     </a>
-                    <a class="o_github" t-att-href="website.social_github" t-if="website.social_github">
+                    <a class="o_github" rel="nofollow" t-att-href="website.social_github" t-if="website.social_github">
                         <i class="fa fa-github" />
                     </a>
-                    <a class="o_instagram" t-att-href="website.social_instagram" t-if="website.social_instagram">
+                    <a class="o_instagram" rel="nofollow" t-att-href="website.social_instagram" t-if="website.social_instagram">
                         <i class="fa fa-instagram" />
                     </a>
                 </div>
@@ -111,7 +132,7 @@
                         <div class="col-sm-5 col-xs-0 mobile-version"/>
                         <div class="col-md-3 col-xs-5 col-sm-3">
                             <div class="hd_widget_revi_demo">
-                                <a href="https://revi.io/es/opiniones/wwwnostrumsportcom" target="_blank">
+                                <a href="https://revi.io/es/opiniones/wwwnostrumsportcom" rel="nofollow" target="_blank">
                                     <img src="/theme_adds/static/img/revi-widget-demo.png" alt="Revi 9.2/10"/>
                                 </a>
                             </div>
@@ -141,6 +162,18 @@
 
     <template id="website_portal.my_account_link" inherit_id="website.layout">
         <xpath expr="//li[@id='o_logout']" position="before"/>
+    </template>
+
+    <template id="website_submenu_adds" inherit_id="website.submenu">
+        <xpath expr="//li[@t-if='not submenu.child_id']/a" position="inside">
+            <span class="caret" t-ignore="true" t-if="submenu.dynamic_menu"/>
+        </xpath>
+    </template>
+
+    <template id="web_layout_head_adds" inherit_id="web.layout">
+        <xpath expr="//link[@rel='shortcut icon']" position="attributes">
+            <attribute name="t-att-href">'/favicon.ico'</attribute>
+        </xpath>
     </template>
 
 </odoo>

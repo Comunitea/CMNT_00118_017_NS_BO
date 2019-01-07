@@ -1,0 +1,17 @@
+{
+  "short_name": "Nostrum",
+  "name": "Tienda de Fisioterapia",
+  "description": "La Tienda de Fisioterapia de Nostrum Sport",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "type": "image/png",
+      "sizes": "128x128"
+    }
+  ],
+  "start_url": "/shop",
+  "background_color": "#fff",
+  "theme_color": "#005E43",
+  "display": "browser",
+  "lang": "es-ES"
+}

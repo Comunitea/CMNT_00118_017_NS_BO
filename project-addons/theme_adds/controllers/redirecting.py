@@ -13,7 +13,7 @@ try:
 except ImportError:
     slugify_lib = None
 
-from odoo import http, api
+from odoo import http, api, models
 from odoo.tools import ustr
 
 
@@ -57,9 +57,8 @@ class UrlsRedirect(http.Controller):
         direction = split[0]
         products_list = http.request.env['product.template']
         category_list = http.request.env['product.public.category']
-        is_product = products_list.search([('slug', '=', direction)])
-        is_category = category_list.search([('slug', '=', direction)])
-        # ipdb.set_trace()
+        is_product = products_list.sudo().search([('slug', '=', direction)])
+        is_category = category_list.sudo().search([('slug', '=', direction)])
         if is_product.id:
             identifier, name = is_product.id, is_product.display_name
             slugname = slugify(name or '').strip().strip('-')
@@ -176,4 +175,15 @@ class UrlsRedirect(http.Controller):
         else:
             return http.local_redirect('/blog/blog-1')
 
-# ipdb.set_trace()
+
+class FaviconRoot(http.Controller):
+
+    @http.route('/favicon.ico', type='http', auth="public", website=True)
+    def favicon_redirect(self):
+        filename = '/web/image/website/1/favicon/'
+        return http.request.env['ir.http'].reroute(filename)
+
+    @http.route('/manifest.json', type='http', auth="public", website=True)
+    def manifest_redirect(self):
+        filename = '/theme_adds/static/'
+        return http.request.env['ir.http'].reroute(filename)

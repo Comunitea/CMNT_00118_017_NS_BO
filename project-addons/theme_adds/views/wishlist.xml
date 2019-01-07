@@ -18,7 +18,7 @@
         <xpath expr="//div[@class='remove_wish_div']" position="replace"/>
         <xpath expr="//div[@id='quick_view_wishlist']" position="replace">
             <div class="go_to_product_wishlist">
-                <a class="btn btn-primary" t-att-href="'/shop/product/%s' %slug(p.product_id)">Go to product</a>
+                <a class="btn btn-primary" t-att-href="'/product/%s' % p.product_id.slug if p.product_id.slug else '/shop/product/%s' % slug(p.product_id)">Go to product</a>
                 <!--Hide add to cart button for products with hide price -->
                 <t t-if="not p.product_id.hide_website_price">
                     <a t-if="len(p.product_id.product_variant_ids) == 1"
@@ -33,16 +33,19 @@
         <xpath expr="//div[@class='wishlist-product-name-div']" position="inside">
             <div class="wp-add-to-cart-wishlist-message">
                 <div class="add-to-cart-message"/>
-                <div class="wp-button"><a href="/shop/cart" class="btn btn-primary common-btn">Go to cart</a></div>
+                <div class="wp-button"><a rel="nofollow" href="/shop/cart" class="btn btn-primary common-btn">Go to cart</a></div>
                 <div class="wp-close"><span>Close</span></div>
             </div>
+        </xpath>
+        <xpath expr="//div[@class='wishlist-product-name-div']/a" position="attributes">
+            <attribute name="t-att-href">'/product/%s' % p.product_id.slug if p.product_id.slug else '/shop/product/%s' % slug(p.product_id)</attribute>
         </xpath>
         <xpath expr="//div[@class='product']" position="attributes">
             <attribute name="class">product col-md-4</attribute>
         </xpath>
         <xpath expr="//div[@class='wishlist-img-div']" position="replace">
             <div class="wishlist-img-div">
-                <img class="wishlist-img" t-att-src="'data:image/png;base64,%s' % p.product_id.image_medium"/>
+                <img class="wishlist-img" t-att-alt="p.product_id.name" t-att-title="p.product_id.name" t-attf-src="/web/image/product.template/{{p.product_id.id}}/image/250x250"/>
             </div>
         </xpath>
     </template>
@@ -82,7 +85,7 @@
                         <button type="Button" class="btn btn-primary btnsubmit">Login </button>
                     </div>
                     <div class="clearfix oe_login_buttons">
-                        <a href="/web/login" class="btn btn-primary">Register</a>
+                        <a rel="nofollow" href="/web/login" class="btn btn-primary">Register</a>
                     </div>
                 </form>
             </div>
@@ -94,14 +97,14 @@
 
         <xpath expr="//div[@class='recently_viewed_img_div']" position="replace">
             <div class="recently_viewed_img_div">
-                <a itemprop="url" t-att-href="'/shop/product/%s' % slug(rproduct)">
+                <a itemprop="url" t-att-href="'/product/%s' % rproduct.slug if rproduct.slug else '/shop/product/%s' % slug(rproduct)">
                     <span itemprop="image" />
                     <div class="div_c_sub_pc_image">
                         <div class="ribbon-wrapper" t-if="rproduct.label_ept_id">
                             <div class="ribbon btn btn-danger sale-btn" t-field="rproduct.label_ept_id"></div>
                         </div>
-                        <span itemprop="image" t-field="rproduct.image_medium"
-                              t-options="{'widget': 'image'}" t-att-alt="rproduct.name" />
+                        <span><img t-att-alt="rproduct.name" t-att-title="rproduct.name"
+                                   t-attf-src="/web/image/product.template/{{rproduct.id}}/image/250x250"/></span>
                     </div>
                 </a>
             </div>

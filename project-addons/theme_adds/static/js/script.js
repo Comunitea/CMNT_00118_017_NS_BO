@@ -208,6 +208,14 @@ $(document).ready(function(){
 
 /* Variable product change */
 $('ul.js_add_cart_variants').each(function(){
+
+    var arr = new Map();
+    $('#product_variant_ids_variants_ul li').each(function(){
+        var key = $(this).attr('data-id')
+            val = $(this).html()
+        arr.set(key, val)
+    });
+
     if(arr.size > 0){
 
         $(document).on('change', 'input[name="product_id"]', function(){
