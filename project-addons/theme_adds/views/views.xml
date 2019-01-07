@@ -3,7 +3,6 @@
 
     <template id="styles_adds" name="Additional styles" inherit_id="website.assets_frontend">
         <xpath expr="link[last()]" position="after">
-            <link href="/theme_adds/static/manifest.json" rel="manifest"/>
             <link href="/theme_adds/static/css/header.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_adds/static/css/footer.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_adds/static/css/content.less" rel="stylesheet" type="text/less"/>
@@ -25,6 +24,7 @@
 
     <template id="javascript_adds" inherit_id="clarico_layout.clarico_layout_footer_default" name="Add JavaScript links">
         <xpath expr="//footer" position="after">
+            <link href="/theme_adds/static/manifest.json" rel="manifest"/>
             <t t-call-assets="web.assets_common" t-css="false"/>
             <t t-call-assets="web.assets_frontend" t-css="false"/>
             <t t-call-assets="web_editor.summernote" t-css="false" groups="website.group_website_publisher"/>

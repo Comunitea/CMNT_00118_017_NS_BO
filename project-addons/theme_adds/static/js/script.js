@@ -296,3 +296,11 @@ $(document).ready(function(){
         $(input[name="accepted_legal_terms"]).attr("value", "123");
     });
 });
+
+
+/** Progressive Web App and SEO **/
+if('serviceWorker' in navigator) {
+    navigator.serviceWorker
+    .register('/theme_adds/static/js/sw.js')
+    .then(function() { console.log("Service Worker Registered"); });
+}
