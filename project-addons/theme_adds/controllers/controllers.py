@@ -33,9 +33,8 @@ class ClaricoShopCustom(claricoShop):
         if search:
             for srch in search.split(" "):
                 domain += [
-                    '|', '|', '|', '|', ('name', 'ilike', srch), ('description', 'ilike', srch),
-                    ('description_sale', 'ilike', srch), ('product_variant_ids.default_code', 'ilike', srch),
-                    ('brand_ept_id.name', 'ilike', srch)]
+                    '|', '|', '|', ('name', 'ilike', srch), ('description', 'ilike', srch),
+                    ('description_sale', 'ilike', srch), ('product_variant_ids.default_code', 'ilike', srch)]
 
         if category:
             domain += [('public_categ_ids', 'child_of', int(category))]
@@ -49,7 +48,7 @@ class ClaricoShopCustom(claricoShop):
             for value in attrib_values:
                 if value[0] == 0:
                     ids.append(value[1])
-                    domain += [('brand_ept_id.id', 'in', ids)]
+                    # domain += [('brand_ept_id.id', 'in', ids)]
                 elif not attrib:
                     attrib = value[0]
                     ids.append(value[1])
