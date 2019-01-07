@@ -12,6 +12,6 @@
   "start_url": "/shop",
   "background_color": "#fff",
   "theme_color": "#005E43",
-  "display": "browser",
+  "display": "standalone",
   "lang": "es-ES"
 }
