@@ -204,6 +204,12 @@
         <xpath expr="//a[@class='sub_menu_list']" position="attributes">
             <attribute name="t-att-href">'/category/%s' %child.slug if child.slug else '/shop/category/%s' %slug(child)</attribute>
         </xpath>
+        <xpath expr="//div[@class='first-level-category-image']" position="replace">
+            <div class="first-level-category-image">
+                <img t-att-alt="category_individual.name" t-att-title="category_individual.name"
+                     t-attf-src="/web/image/product.public.category/{{category_individual.id}}/image/64x64"/>
+            </div>
+        </xpath>
     </template>
 
 </odoo>
