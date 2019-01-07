@@ -52,7 +52,7 @@
                 </p>
             </xpath>
 
-            <xpath expr="//p[@t-if='o.partner_bank_id']" position="replace">
+            <xpath expr="//p[@t-foreach='o.partner_banks_to_show()']/.." position="replace">
                 <strong>Bank Account:</strong>
                 <p t-if="o.mandate_id and o.mandate_id.partner_bank_id">
                     <t t-if="o.mandate_id.partner_bank_id.bank_id">
