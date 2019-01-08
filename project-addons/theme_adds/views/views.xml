@@ -20,11 +20,16 @@
         <xpath expr="//t[@t-call-assets='web_editor.summernote'][@t-css='false']" position="replace"/>
         <xpath expr="//t[@t-call-assets='web_editor.assets_editor'][@t-css='false']" position="replace"/>
         <xpath expr="//t[@t-call-assets='website.assets_editor'][@t-css='false']" position="replace"/>
+
+        <!--Progressive Web App and SEO-->
+        <xpath expr="//meta[@name='generator']" position="after">
+            <meta name="theme-color" content="#005E43"/>
+            <link href="/theme_adds/static/manifest.json" rel="manifest"/>
+        </xpath>
     </template>
 
     <template id="javascript_adds" inherit_id="clarico_layout.clarico_layout_footer_default" name="Add JavaScript links">
         <xpath expr="//footer" position="after">
-            <link href="/theme_adds/static/manifest.json" rel="manifest"/>
             <t t-call-assets="web.assets_common" t-css="false"/>
             <t t-call-assets="web.assets_frontend" t-css="false"/>
             <t t-call-assets="web_editor.summernote" t-css="false" groups="website.group_website_publisher"/>
@@ -32,6 +37,15 @@
             <t t-call-assets="website.assets_editor" t-css="false" groups="website.group_website_publisher"/>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js" type="text/javascript"/>
             <script src="/theme_adds/static/js/script.js" type="text/javascript"/>
+
+            <!--Progressive Web App and SEO. Register Service Worker -->
+            <script>
+                if('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register('/theme_adds/static/js/sw.js').then(function() {
+                        console.log("Service Worker Registered");
+                    });
+                }
+            </script>
         </xpath>
     </template>
 

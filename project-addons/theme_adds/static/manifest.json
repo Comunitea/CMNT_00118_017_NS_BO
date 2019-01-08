@@ -4,9 +4,34 @@
   "description": "La Tienda de Fisioterapia de Nostrum Sport",
   "icons": [
     {
-      "src": "/favicon.ico",
+      "src": "/theme_adds/static/img/favicon_48.png",
       "type": "image/png",
-      "sizes": "128x128"
+      "sizes": "48x48"
+    },
+    {
+      "src": "/theme_adds/static/img/favicon_72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/theme_adds/static/img/favicon_96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/theme_adds/static/img/favicon_144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/theme_adds/static/img/favicon_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/theme_adds/static/img/favicon_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": "/shop",

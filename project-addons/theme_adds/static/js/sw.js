@@ -1,5 +1,5 @@
 /* Service Worker for Progressive Web App and SEO */
-importScripts('/cache-polyfill.js');
+importScripts('/theme_adds/static/js/cache-polyfill.js');
 
 /* cache the page assets */
 self.addEventListener('install', function(e) {
@@ -21,7 +21,8 @@ self.addEventListener('install', function(e) {
                 '/legal/advice',
                 '/blog/blog-1',
                 '/theme_adds/static/js/script.js',
-                '/theme_adds/static/img/404-camilla.jpg'
+                '/theme_adds/static/img/404-camilla.jpg',
+                '/theme_adds/static/img/favicon_144.png'
             ]);
         })
     );
