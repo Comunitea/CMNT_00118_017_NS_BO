@@ -5,6 +5,7 @@ from __builtin__ import type
 
 import unicodedata
 import re
+import os
 import ipdb
 
 # optional python-slugify import (https://github.com/un33k/python-slugify)
@@ -175,15 +176,61 @@ class UrlsRedirect(http.Controller):
         else:
             return http.local_redirect('/blog/blog-1')
 
+    @http.route(['/'], type='http', auth='public', website=True)
+    def start_page(self):
+        return http.local_redirect(
+            '/shop',
+            dict(http.request.httprequest.args),
+            True,
+            code='301'
+        )
+
 
 class FaviconRoot(http.Controller):
 
-    @http.route('/favicon.ico', type='http', auth="public", website=True)
+    @http.route('/favicon.ico', type='http', auth="public")
     def favicon_redirect(self):
         filename = '/web/image/website/1/favicon/'
         return http.request.env['ir.http'].reroute(filename)
 
-    @http.route('/manifest.json', type='http', auth="public", website=True)
+
+class ManifestRoot(http.Controller):
+
+    @http.route('/manifest.json', type='http', auth="public")
     def manifest_redirect(self):
-        filename = '/theme_adds/static/'
-        return http.request.env['ir.http'].reroute(filename)
+        rel_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        origin = '%s/static/manifest.json' % rel_path
+
+        def create_manifest(url, content):
+            return http.request.env['ir.attachment'].sudo().create({
+                'datas': content.encode('base64'),
+                'mimetype': 'application/json;charset=utf-8',
+                'type': 'binary',
+                'name': url,
+                'url': url,
+            })
+
+        manifest = open(origin)
+        content = manifest.read()
+        create_manifest('/manifest.json', content)
+
+        return http.request.make_response(content, [('Content-Type', 'application/json;charset=utf-8')])
+
+    @http.route('/sw.js', type='http', auth="public")
+    def sw_redirect(self):
+        rel_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        origin = '%s/static/js/sw.js' % rel_path
+
+        def create_sw(url, content):
+            return http.request.env['ir.attachment'].sudo().create({
+                'datas': content.encode('base64'),
+                'mimetype': 'application/javascript;charset=utf-8',
+                'type': 'binary',
+                'name': url,
+                'url': url,
+            })
+
+        manifest = open(origin)
+        content = manifest.read()
+        create_sw('/sw.js', content)
+        return http.request.make_response(content, [('Content-Type', 'application/javascript;charset=utf-8')])

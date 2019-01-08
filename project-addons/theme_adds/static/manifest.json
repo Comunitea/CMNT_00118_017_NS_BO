@@ -34,7 +34,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/shop",
+  "start_url": "/shop?homescreen=1",
   "background_color": "#fff",
   "theme_color": "#005E43",
   "display": "standalone",
