@@ -33,7 +33,7 @@
              <!--Progressive Web App and SEO. Register Service Worker -->
             <script>
                 if('serviceWorker' in navigator) {
-                    navigator.serviceWorker.register('/sw.js').then(function() { console.log("Service Worker Registered"); });
+                    navigator.serviceWorker.register('/sw.js').then(function() { /*console.log("Service Worker Registered");*/ });
                 }
             </script>
             <t t-call-assets="web.assets_common" t-css="false"/>

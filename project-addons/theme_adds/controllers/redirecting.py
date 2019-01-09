@@ -14,8 +14,11 @@ try:
 except ImportError:
     slugify_lib = None
 
-from odoo import http, api, models
+from odoo import http, api, models, fields
 from odoo.tools import ustr
+
+import datetime
+CACHE_TIME = datetime.timedelta(seconds=60)
 
 
 ####################################################
@@ -188,7 +191,7 @@ class UrlsRedirect(http.Controller):
 
 class FaviconRoot(http.Controller):
 
-    @http.route('/favicon.ico', type='http', auth="public")
+    @http.route('/favicon.ico', type='http', auth="none")
     def favicon_redirect(self):
         filename = '/web/image/website/1/favicon/'
         return http.request.env['ir.http'].reroute(filename)
@@ -196,41 +199,48 @@ class FaviconRoot(http.Controller):
 
 class ManifestRoot(http.Controller):
 
-    @http.route('/manifest.json', type='http', auth="public")
+    def _auto_create(self, source, destination, mimetype):
+        attachment = http.request.env['ir.attachment'].sudo()
+        cache_content = None
+
+        def create_file(url, content, mimetype):
+            return attachment.create({
+                'datas': content.encode('base64'),
+                'mimetype': mimetype,
+                'type': 'binary',
+                'name': url,
+                'url': url,
+            })
+
+        # Search in the cache
+        domain = [('url', '=', destination), ('type', '=', 'binary')]
+        in_cache = attachment.search(domain, limit=1)
+        if in_cache:
+            create_date = fields.Datetime.from_string(in_cache.create_date)
+            delta = datetime.datetime.now() - create_date
+            if delta < CACHE_TIME:
+                cache_content = in_cache.datas.decode('base64')
+
+        if not cache_content:
+            # Remove all old files
+            old_files = attachment.search(domain)
+            old_files.unlink()
+
+            # Create new file (attachment)
+            rel_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            file_path = rel_path + source
+            file_read = open(file_path)
+            content = file_read.read()
+            create_file(destination, content, mimetype)
+        else:
+            content = cache_content
+
+        return http.request.make_response(content, [('Content-Type', mimetype)])
+
+    @http.route('/manifest.json', type='http', auth="none")
     def manifest_redirect(self):
-        rel_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        origin = '%s/static/manifest.json' % rel_path
+        return self._auto_create('/static/manifest.json', '/manifest.json', 'application/json;charset=utf-8')
 
-        def create_manifest(url, content):
-            return http.request.env['ir.attachment'].sudo().create({
-                'datas': content.encode('base64'),
-                'mimetype': 'application/json;charset=utf-8',
-                'type': 'binary',
-                'name': url,
-                'url': url,
-            })
-
-        manifest = open(origin)
-        content = manifest.read()
-        create_manifest('/manifest.json', content)
-
-        return http.request.make_response(content, [('Content-Type', 'application/json;charset=utf-8')])
-
-    @http.route('/sw.js', type='http', auth="public")
+    @http.route('/sw.js', type='http', auth="none")
     def sw_redirect(self):
-        rel_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        origin = '%s/static/js/sw.js' % rel_path
-
-        def create_sw(url, content):
-            return http.request.env['ir.attachment'].sudo().create({
-                'datas': content.encode('base64'),
-                'mimetype': 'application/javascript;charset=utf-8',
-                'type': 'binary',
-                'name': url,
-                'url': url,
-            })
-
-        manifest = open(origin)
-        content = manifest.read()
-        create_sw('/sw.js', content)
-        return http.request.make_response(content, [('Content-Type', 'application/javascript;charset=utf-8')])
+        return self._auto_create('/static/js/sw.js', '/sw.js', 'application/javascript;charset=utf-8')
