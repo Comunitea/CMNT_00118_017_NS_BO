@@ -5,7 +5,6 @@ self.addEventListener('install', function(e) {
  e.waitUntil(
    caches.open('nostrum_cache').then(function(cache) {
      return cache.addAll([
-        '/',
         '/shop',
         '/shop?homescreen=1',
         '/page/contactus',
@@ -19,7 +18,7 @@ self.addEventListener('install', function(e) {
         '/legal/privacy-policy',
         '/legal/advice',
         '/shop/cart',
-        '/blog/blog-1',
+        '/blog/blog-1'
      ]);
    })
  );
