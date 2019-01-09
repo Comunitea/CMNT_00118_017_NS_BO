@@ -24,6 +24,7 @@
         <!--Progressive Web App and SEO-->
         <xpath expr="//meta[@name='generator']" position="after">
             <meta name="theme-color" content="#005E43"/>
+            <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
             <link href="/manifest.json" rel="manifest"/>
         </xpath>
     </template>
