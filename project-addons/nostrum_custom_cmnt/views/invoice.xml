@@ -2,28 +2,27 @@
 <openerp>
     <data>
 
-        <!-- Esta vista falla en remoto, algo del ir_model_data, solo se necesita en el informe -->
-        <!-- <record id="view_invoice_form_custom_nostrum" model="ir.ui.view">
+        <record id="view_invoice_form_custom_nostrum_cmnt" model="ir.ui.view">
             <field name="name">view_invoice_form_custom_nostrum</field>
             <field name="model">account.invoice</field>
             <field name="inherit_id" ref="account.invoice_form"/>
             <field name="arch" type="xml">
-                <field name="partner_id" position="after">
-                    <field name="customer_ref"/>
+                <field name="payment_term_id" position="attributes">
+                    <attribute name="options">{'create': False}</attribute>
                 </field>
             </field>
-        </record> -->
+        </record>
 
-        <!-- <record id="view_invoice_supplier_form_custom_nostrum" model="ir.ui.view">
+        <record id="view_invoice_supplier_form_custom_nostrum_cmnt" model="ir.ui.view">
             <field name="name">view_invoice_supplier_form_custom_nostrum</field>
             <field name="model">account.invoice</field>
             <field name="inherit_id" ref="account.invoice_supplier_form"/>
             <field name="arch" type="xml">
-                <field name="partner_id" position="after">
-                    <field name="vendor_ref"/>
+                <field name="payment_term_id" position="attributes">
+                    <attribute name="options">{'create': False}</attribute>
                 </field>
             </field>
-        </record> -->
+        </record>
 
         <!-- Filtros fijos -->
         <record id="view_account_invoice_filter_custom_nostrum" model="ir.ui.view">

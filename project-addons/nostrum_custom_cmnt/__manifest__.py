@@ -23,7 +23,8 @@
         'crm_phonecall',
         'stock',
         'purchase',
-        'delivery'
+        'delivery',
+        'web_m2x_options'
     ],
     'contributors': [
         "Comunitea ",
