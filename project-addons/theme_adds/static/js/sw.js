@@ -5,6 +5,7 @@ self.addEventListener('install', function(e) {
  e.waitUntil(
    caches.open('nostrum_cache').then(function(cache) {
      return cache.addAll([
+        '/shop?homescreen=1',
         '/web/static/lib/fontawesome/fonts/fontawesome-webfont.woff2',
         '/clarico_base/static/src/font/Oswald-Light.ttf',
         '/clarico_base/static/src/font/Muli-Regular.ttf',

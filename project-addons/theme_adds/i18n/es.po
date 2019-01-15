@@ -997,3 +997,10 @@ msgid "<span>Sign up and checkout</span>\n"
 "                        <span class=\"fa fa-long-arrow-right\"/>"
 msgstr "<span>Registrarse y procesar</span>\n"
 "                        <span class=\"fa fa-long-arrow-right\"/>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.custom_onestepcheckout
+msgid "<span>For select a <strong>\"Paga+Tarde\"</strong> payment, the total amount must be over 350€.</span>\n"
+"            <br/>"
+msgstr "<span>Para seleccionar el método de pago <strong>\"Paga+Tarde\"</strong>, el importe total debe ser superior a 350€.</span>\n"
+"            <br/>"
