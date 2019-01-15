@@ -8,11 +8,17 @@ $(document).ready(function(){
       },
       messages: {
         email_from: {
-            required: 'This field is required',
-            email: 'Please enter a valid email address'
+            required: 'Este campo es requerido',
+            email: 'Por favor, introduce una dirección válida'
         }
       }
     });
+    // Progressive Web App and SEO. Register Service Worker
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(function() {
+            console.log("Service Worker Registered");
+        });
+    }
 });
 /* Category menu toggle open */
 $('a.to-toggle-menu').click(function(){
@@ -54,7 +60,7 @@ odoo.define('product_quick_view.quick_view', function (require) {
     "use strict";
 
     var ajax = require('web.ajax');
-    var msg_success = 'This product was added to cart';
+    var msg_success = 'Este producto fue agregado al carrito';
     //
     // On the shop page
     //
@@ -257,7 +263,7 @@ $('a.product-tag').each(function(){
 /* Set search breadcrumbs */
 $(document).ready(function(){
     var is_search = new URLSearchParams(document.location.search).get('search')
-        search_message = 'Search results';
+        search_message = 'Resultados de búsqueda';
 
     if(is_search){
         $(".select-nevigation-span").html("/");

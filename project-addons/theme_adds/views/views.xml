@@ -33,12 +33,6 @@
 
     <template id="javascript_adds" inherit_id="clarico_layout.clarico_layout_footer_default" name="Add JavaScript links">
         <xpath expr="//footer" position="after">
-             <!--Progressive Web App and SEO. Register Service Worker -->
-            <script>
-                if('serviceWorker' in navigator) {
-                    navigator.serviceWorker.register('/sw.js').then(function() { /*console.log("Service Worker Registered");*/ });
-                }
-            </script>
             <t t-call-assets="web.assets_common" t-css="false"/>
             <t t-call-assets="web.assets_frontend" t-css="false"/>
             <t t-call-assets="web_editor.summernote" t-css="false" groups="website.group_website_publisher"/>
