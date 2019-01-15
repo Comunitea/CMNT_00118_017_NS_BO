@@ -973,34 +973,6 @@ msgid "<span>Close</span>"
 msgstr "<span>Cerrar</span>"
 
 #. module: theme_adds
-#. openerp-web
-#: code:/project-addons/theme_adds/static/js/script.js:11
-#, python-format
-msgid "This field is required"
-msgstr "Este campo es obligatorio"
-
-#. module: theme_adds
-#. openerp-web
-#: code:/project-addons/theme_adds/static/js/script.js:12
-#, python-format
-msgid "Please enter a valid email address"
-msgstr "Por favor, introduce una dirección de correo electrónico válida"
-
-#. module: theme_adds
-#. openerp-web
-#: code:/project-addons/theme_adds/static/js/script.js:57
-#, python-format
-msgid "This product was added to cart"
-msgstr "Este producto fue añadido al carrito"
-
-#. module: theme_adds
-#. openerp-web
-#: code:/project-addons/theme_adds/static/js/script.js:260
-#, python-format
-msgid "Search results"
-msgstr "Resultados de búsqueda"
-
-#. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.wishlist_banner_replace
 msgid "Go to cart"
 msgstr "Ver la cesta"
@@ -1009,3 +981,19 @@ msgstr "Ver la cesta"
 #: model:ir.ui.view,arch_db:theme_adds.wishlist_banner_replace
 msgid "<span>Close</span>"
 msgstr "<span>Cerrar</span>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.cart_replace_general
+#: model:ir.ui.view,arch_db:theme_adds.website_sale_suggest_create_account_custom
+msgid "<span>Log in and checkout</span>\n"
+"                    <span class=\"fa fa-long-arrow-right\"/>"
+msgstr "<span>Entrar y procesar</span>\n"
+"                    <span class=\"fa fa-long-arrow-right\"/>"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.cart_replace_general
+#: model:ir.ui.view,arch_db:theme_adds.website_sale_suggest_create_account_custom
+msgid "<span>Sign up and checkout</span>\n"
+"                        <span class=\"fa fa-long-arrow-right\"/>"
+msgstr "<span>Registrarse y procesar</span>\n"
+"                        <span class=\"fa fa-long-arrow-right\"/>"
