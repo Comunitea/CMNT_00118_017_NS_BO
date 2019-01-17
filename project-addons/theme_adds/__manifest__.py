@@ -55,6 +55,7 @@
         'payment_paga_mas_tarde',
         'website_portal',
         'sgeede_infinite_scroll',
+        'website_sale_filter_countries',
         'theme_clarico'
     ],
     'data': [
