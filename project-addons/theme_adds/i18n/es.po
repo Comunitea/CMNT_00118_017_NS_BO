@@ -1004,3 +1004,9 @@ msgid "<span>For select a <strong>\"Paga+Tarde\"</strong> payment, the total amo
 "            <br/>"
 msgstr "<span>Para seleccionar el método de pago <strong>\"Paga+Tarde\"</strong>, el importe total debe ser superior a 350€.</span>\n"
 "            <br/>"
+
+#. module: website_legal_page
+#: model:ir.ui.view,arch_db:website_legal_page.privacy-policy
+#: model:ir.ui.view,arch_db:website_legal_page.privacy_policy_link
+msgid "Privacy Policy"
+msgstr "Política de Privacidad"

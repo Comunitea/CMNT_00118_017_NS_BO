@@ -37,6 +37,14 @@
                             <p class="js_mg_confirmation hidden well well-sm o_default_snippet_text">Se ha enviado un mail de confirmación</p>
                         </div>
                     </div>
+                    <div class="pull-center text-muted legal">
+                        <span>
+                            Al suscribirme acepto el <a rel="nofollow" href="/legal/advice" target="_blank" title="Haz click para verlo en una nueva pestaña">Aviso Legal</a>
+                            , la <a rel="nofollow" href="/legal/privacy-policy" target="_blank" title="Haz click para verlo en una nueva pestaña">Política de Privacidad</a>
+                            , y los <a rel="nofollow" href="/legal/terms-of-use" target="_blank" title="Haz click para verlo en una nueva pestaña">Términos de Uso</a>
+                            de &amp;copy; <span t-field="res_company.name"/>.
+                        </span>
+                    </div>
                 </div>
             </div>
         </xpath>

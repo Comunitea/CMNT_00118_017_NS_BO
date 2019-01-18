@@ -26,7 +26,7 @@
 						Acepto el <a href="/legal/advice" rel="nofollow" target="_blank" title="Haz click para verlo en una nueva pestaña">Aviso Legal</a>
 						, la <a href="/legal/privacy-policy" rel="nofollow" target="_blank" title="Haz click para verlo en una nueva pestaña">Política de Privacidad</a>
 						, y los <a href="/legal/terms-of-use" rel="nofollow" target="_blank" title="Haz click para verlo en una nueva pestaña">Términos de Uso</a>
-						de <span t-field="res_company.name"/>.
+						de &amp;copy; <span t-field="res_company.name"/>.
 					</span>
 				</label>
 			</div>
