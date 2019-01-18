@@ -21,6 +21,14 @@ $(document).ready(function(){
                 console.log("Service Worker Registered in: " + window.location.host);
             });
         } else {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                if(registrations && registrations.length) {
+                    for(let registration of registrations) {
+                        registration.unregister()
+                    }
+                    console.log("Unregister Service Workers in: " + window.location.host);
+                }
+            });
             console.log("Service Worker Not Registered in: " + window.location.host);
         }
     }
