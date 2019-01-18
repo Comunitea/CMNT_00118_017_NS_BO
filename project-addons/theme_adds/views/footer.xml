@@ -17,15 +17,21 @@
                     <div class="title_subscribe_footer">
                         Suscríbete a nuestro newsletter y mantente al día de todas las novedades
                     </div>
-                    <div class="wp_subscribe_footer">
-                        <div class="js_follow_alias hidden" data-id="2" data-object="mail.channel" data-follow="off">
-                            <div class="input-group js_mg_follow_form">
-                                <input name="email" class="js_follow_email form-control"
-                                       placeholder="su correo electrónico..." disabled="disabled" type="email"/>
-                                <span class="input-group-btn">
-                                    <button href="#" class="btn btn-primary js_follow_btn o_default_snippet_text">Suscribir</button>
-                                </span>
-                            </div>
+                    <div class="js_follow_alias hidden" data-id="2" data-object="mail.channel" data-follow="off">
+                        <div class="input-group js_mg_follow_form wp_subscribe_footer">
+                            <input name="email" class="js_follow_email form-control"
+                                   placeholder="su correo electrónico..." disabled="disabled" type="email"/>
+                            <span class="input-group-btn">
+                                <button href="#" class="btn btn-primary js_follow_btn o_default_snippet_text">Suscribir</button>
+                            </span>
+                        </div>
+                        <div class="pull-center text-muted legal js_mg_follow_form">
+                            <span>
+                                Al suscribirme acepto la <a rel="nofollow" href="/legal/privacy-policy" target="_blank" title="Haz click para verlo en una nueva pestaña">Política de Privacidad</a>
+                                de &amp;copy; <span t-field="res_company.name"/>.
+                            </span>
+                        </div>
+                        <div class="wp_subscribe_footer text-center">
                             <p class="js_mg_details hidden well well-sm o_default_snippet_text">
                                 <span class="js_mg_email hidden o_default_snippet_text">
                                     <i class="fa fa-envelope-o"></i>
@@ -36,14 +42,6 @@
                             </p>
                             <p class="js_mg_confirmation hidden well well-sm o_default_snippet_text">Se ha enviado un mail de confirmación</p>
                         </div>
-                    </div>
-                    <div class="pull-center text-muted legal">
-                        <span>
-                            Al suscribirme acepto el <a rel="nofollow" href="/legal/advice" target="_blank" title="Haz click para verlo en una nueva pestaña">Aviso Legal</a>
-                            , la <a rel="nofollow" href="/legal/privacy-policy" target="_blank" title="Haz click para verlo en una nueva pestaña">Política de Privacidad</a>
-                            , y los <a rel="nofollow" href="/legal/terms-of-use" target="_blank" title="Haz click para verlo en una nueva pestaña">Términos de Uso</a>
-                            de &amp;copy; <span t-field="res_company.name"/>.
-                        </span>
                     </div>
                 </div>
             </div>
