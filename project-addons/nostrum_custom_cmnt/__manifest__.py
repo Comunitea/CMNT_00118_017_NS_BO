@@ -33,6 +33,7 @@
     "data": [
         "security/nostrum_security.xml",
         "security/ir.model.access.csv",
+        'data/pos_sequence.xml',
         "views/invoice.xml",
         "views/report_invoice.xml",
         "views/sale_view.xml",
