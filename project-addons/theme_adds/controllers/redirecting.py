@@ -55,7 +55,7 @@ def slugify(s, max_length=None):
 
 class UrlsRedirect(http.Controller):
 
-    @http.route(['/es/<path:path>'], type='http', auth='public', website=True)
+    @http.route(['/es/<path:path>', '/pt/<path:path>', '/fr/<path:path>'], type='http', auth='public', website=True)
     def search_product_by_slug(self, path):
         split = path.split('.html')
         direction = split[0]
@@ -86,7 +86,8 @@ class UrlsRedirect(http.Controller):
         else:
             return http.local_redirect('/%s' % path)
 
-    @http.route(['/es/content/<path:path>'], type='http', auth='public', website=True)
+    @http.route(['/es/content/<path:path>', '/pt/content/<path:path>', '/fr/content/<path:path>'],
+                type='http', auth='public', website=True)
     def text_page(self, path):
         split = path.split('.html')
         direction = '/page/' + split[0]
@@ -97,7 +98,7 @@ class UrlsRedirect(http.Controller):
             code='301'
         )
 
-    @http.route(['/es/contacto'], type='http', auth='public', website=True)
+    @http.route(['/es/contacto', '/pt/contacto', '/fr/contacto'], type='http', auth='public', website=True)
     def contact_page(self):
         return http.local_redirect(
             '/page/contactus',
@@ -106,7 +107,8 @@ class UrlsRedirect(http.Controller):
             code='301'
         )
 
-    @http.route(['/es/pedido-rapido'], type='http', auth='public', website=True)
+    @http.route(['/es/pedido-rapido', '/pt/pedido-rapido', '/fr/pedido-rapido'],
+                type='http', auth='public', website=True)
     def cart_page(self):
         return http.local_redirect(
             '/shop/cart',
@@ -115,7 +117,7 @@ class UrlsRedirect(http.Controller):
             code='301'
         )
 
-    @http.route(['/es/blog/<path:path>'], type='http', auth='public', website=True)
+    @http.route(['/es/blog/<path:path>', '/pt/blog/<path:path>', '/fr/blog/<path:path>'], type='http', auth='public', website=True)
     def post_page(self, path):
         redirect_list = {
             '53_Curso-de-Introduccion-a-la-T\xe9cnica-EPI-con-Jo.html':
@@ -179,7 +181,7 @@ class UrlsRedirect(http.Controller):
         else:
             return http.local_redirect('/blog/blog-1')
 
-    @http.route(['/'], type='http', auth='public', website=True)
+    @http.route(['/', '/pt/', '/fr/'], type='http', auth='public', website=True)
     def start_page(self):
         return http.local_redirect(
             '/shop',
