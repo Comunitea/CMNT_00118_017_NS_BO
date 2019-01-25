@@ -86,6 +86,9 @@
             <xpath expr="//div[@name='social_googleplus']" position="after">
                 <field name="social_instagram" placeholder="https://www.instagram.com/company_odoo"/>
             </xpath>
+            <xpath expr="//field[@name='website_name']" position="after">
+                <field name="domain"/>
+            </xpath>
         </field>
     </record>
 

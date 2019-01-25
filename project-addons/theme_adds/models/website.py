@@ -16,3 +16,4 @@ class WebsiteConfigSettings(models.TransientModel):
 
     website_id = fields.Many2one('website', string="website", default=1, required=True)
     social_instagram = fields.Char(related='website_id.social_instagram')
+    domain = fields.Char(related='website_id.domain')
