@@ -15,9 +15,22 @@ $(document).ready(function(){
     });
     // Progressive Web App and SEO. Register Service Worker
     if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').then(function() {
-            console.log("Service Worker Registered");
-        });
+
+        if('localhost' !== window.location.hostname){
+            navigator.serviceWorker.register('/sw.js').then(function() {
+                console.log("Service Worker Registered in: " + window.location.host);
+            });
+        } else {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                if(registrations && registrations.length) {
+                    for(let registration of registrations) {
+                        registration.unregister()
+                    }
+                    console.log("Unregister Service Workers in: " + window.location.host);
+                }
+            });
+            console.log("Service Worker Not Registered in: " + window.location.host);
+        }
     }
 });
 /* Category menu toggle open */

@@ -35,7 +35,7 @@
 		</record>
         <record id="catalog_link" model="website.menu">
             <field name="name">Catalogo</field>
-            <field name="url">https://nostrumsport.com/catalogo/catalogo_nostrum2017-2018.pdf</field>
+            <field name="url">/theme_adds/static/catalogo/catalogo_nostrum.pdf</field>
             <field name="parent_id" ref="website.main_menu"/>
             <field name="new_window" eval="True"/>
             <field name="sequence" type="int">30</field>

@@ -23,7 +23,8 @@
         'crm_phonecall',
         'stock',
         'purchase',
-        'delivery'
+        'delivery',
+        'web_m2x_options'
     ],
     'contributors': [
         "Comunitea ",
@@ -32,6 +33,7 @@
     "data": [
         "security/nostrum_security.xml",
         "security/ir.model.access.csv",
+        'data/pos_sequence.xml',
         "views/invoice.xml",
         "views/report_invoice.xml",
         "views/sale_view.xml",
