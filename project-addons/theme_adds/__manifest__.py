@@ -59,6 +59,7 @@
         'theme_clarico'
     ],
     'data': [
+        'data/redsys.xml',
         'data/product_data.xml',
         'views/cart.xml',
         'views/product.xml',
