@@ -98,6 +98,31 @@
         </xpath>
     </template>
 
+    <template id="add_sign_up_button" inherit_id="website_sale_one_step_checkout.address">
+        <xpath expr="//ul[@id='public_acc_info']/li[2]" position="attributes">
+            <attribute name="groups">base.group_portal</attribute>
+        </xpath>
+        <xpath expr="//ul[@id='public_acc_info']/li[2]" position="after">
+            <li groups="base.group_public" t-if="website.user_id == user_id">
+                <div class="col-md-12 mb8 mt16">
+                    <label>
+                        <input type="radio" name="public_customer" value="2"/>
+                        <span></span>
+                        Quiero crear una cuenta
+                    </label>
+                </div>
+                <div class="col-md-12 mb8" style="display:none" id="create-account">
+                    <div class="col-sm-12 col-md-12 one_kanban">
+                        <a class='btn btn-primary btn-block'
+                           t-attf-href="/web/signup?redirect=/shop/checkout">
+                            Registrarse
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </xpath>
+    </template>
+
     <template id="add_accepted_legal_terms_guest_checkout" inherit_id="website_sale_one_step_checkout.address_form">
         <xpath expr="//form" position="inside">
             <t t-if="website.user_id == user_id and not checkout">

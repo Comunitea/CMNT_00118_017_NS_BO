@@ -49,7 +49,7 @@
         'checkout_coupon',
         'website_sale_one_step_checkout_delivery',
         'website_sale_one_step_checkout_charge_payment_fee',
-        'website_sale_require_legal',
+        # 'website_sale_require_legal',
         'website_sale_require_login',
         'website_crm_privacy_policy',
         'payment_paga_mas_tarde',
