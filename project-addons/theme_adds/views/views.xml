@@ -58,6 +58,11 @@
     <template id="add_start_btn_on_signin_page" inherit_id="clarico_signin.clarico_signin_c_signin">
         <xpath expr="//button[@class='btn btn-primary login_btn_main']" position="after">
             <a href="/shop" class="btn btn-primary">Back</a>
+        <!--Aviso dummy en login-->
+        <div class="mt8">
+            <p class="text-success">Si ya tiene usuario pulse Iniciar sesión.</p>
+            <p class="text-success">Si no tiene usuario, pulse en Registrase.</p>
+        </div>
         </xpath>
     </template>
 
