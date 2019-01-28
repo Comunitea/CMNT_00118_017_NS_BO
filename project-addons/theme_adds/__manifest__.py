@@ -49,7 +49,7 @@
         'checkout_coupon',
         'website_sale_one_step_checkout_delivery',
         'website_sale_one_step_checkout_charge_payment_fee',
-        'website_sale_require_legal',
+        # 'website_sale_require_legal',
         'website_sale_require_login',
         'website_crm_privacy_policy',
         'payment_paga_mas_tarde',
@@ -59,6 +59,7 @@
         'theme_clarico'
     ],
     'data': [
+        'data/redsys.xml',
         'data/product_data.xml',
         'views/cart.xml',
         'views/product.xml',
