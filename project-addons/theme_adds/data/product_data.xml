@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo noupdate="1">
+<odoo>
+    <data noupdate="1">
+
     <!--  Create Default Custom Tags as Marked -->
     <record id="marked_tag_featured_product" model="product.tag">
         <field name="name">Featured Products</field>
@@ -59,5 +61,7 @@
         <field name="key">default_products_to_show</field>
         <field name="value">8</field>
     </record>
+
+    </data>
 </odoo>
 

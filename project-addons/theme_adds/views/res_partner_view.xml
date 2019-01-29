@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Add user filter to partner view form -->
+    <record id="view_partner_add_filter" model="ir.ui.view">
+        <field name="name">res.partner.add.filter</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='sales_purchases']//field[@name='user_id']" position="attributes">
+                <attribute name="domain">[('active','=', True), ('share', '=', False)]</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -74,6 +74,7 @@
         'views/header.xml',
         'views/views.xml',
         'views/product_view.xml',
+        'views/res_partner_view.xml',
         'views/account.xml',
         'views/group.xml',
         'views/terms.xml',

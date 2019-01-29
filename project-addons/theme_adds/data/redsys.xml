@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo noupdate="1">
+<odoo>
+    <data noupdate="1">
 
     <record id="payment_redsys.payment_acquirer_redsys" model="payment.acquirer">
         <field name="name">Redsys</field>
@@ -26,4 +27,5 @@
 <p>You will be redirected to the Redsys payment gateway after clicking on the payment button.</p>]]></field>
     </record>
 
+    </data>
 </odoo>
