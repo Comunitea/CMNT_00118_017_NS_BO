@@ -4,4 +4,5 @@
 
 import controllers
 import redirecting
+import redsys
 import sitemap

@@ -4,6 +4,7 @@
 
 import product
 import category
+import redsys
 import shop
 import blog
 import website
