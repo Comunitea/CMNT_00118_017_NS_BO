@@ -43,6 +43,7 @@
         'website_product_tags_73lines',
         'website_crm_recaptcha',
         'website_mail_channel',
+        'payment',
         'payment_acquirer_by_amount',
         'payment_redsys',
         'payment_paypal',

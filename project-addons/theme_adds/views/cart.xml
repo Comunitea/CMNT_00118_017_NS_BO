@@ -247,6 +247,13 @@
 
     </template>
 
+    <!-- Replace default text of "Pay now" button -->
+    <template id="payment_default_acquirer_button_add" inherit_id="payment.default_acquirer_button">
+        <xpath expr="//button/span" position="replace">
+            <span t-if="submit_txt">Confirmar pedido <span class="fa fa-long-arrow-right"/></span>
+        </xpath>
+    </template>
+
     <!--Replace default payment delivery-->
     <template id="payment_delivery_replace" name="Delivery Costs" inherit_id="website_sale_one_step_checkout_delivery.payment_delivery">
         <xpath expr="//div[@id='delivery_carrier_osc']" position="replace">
