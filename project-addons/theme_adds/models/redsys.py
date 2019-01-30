@@ -58,9 +58,10 @@ class SaleOrder(models.Model):
         payment = vals.get('payment_acquirer_id', False)
         if payment:
             mode = self.env['payment.acquirer'].sudo().search([('id', '=', vals['payment_acquirer_id'])])
-            vals.update({
-                    'payment_mode_id': mode.payment_mode.id
-                })
+            if mode:
+                vals.update({
+                        'payment_mode_id': mode.payment_mode.id
+                    })
         return super(SaleOrder, self).write(vals)
 
 
