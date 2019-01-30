@@ -69,13 +69,22 @@
             </t>
         </xpath>
 
-        <!-- Price for B2C and B2B users without taxes -->
+        <!-- Price for B2C and B2B users without taxes. Apply discount if exits -->
         <xpath expr="//h4[@class='css_non_editable_mode_hidden decimal_precision']" position="after">
+            <!--<t t-if="not product.hide_website_price">-->
+                <!--<div groups="sale.group_show_price_total" t-if="product.product_variant_id.lst_price and (product.website_price - product.product_variant_id.lst_price) &gt; 0.01" class="price_sin_iva">-->
+                    <!--<span t-esc="compute_currency(product.product_variant_id.lst_price)" t-options='{"widget": "monetary", "display_currency": product.currency_id,}'/> sin IVA-->
+                <!--</div>-->
+                <!--<div groups="sale.group_show_price_subtotal" t-if="product.product_variant_id.list_price &gt; 0 or len(product.product_variant_ids) &gt; 1" class="price_sin_iva">(Precio sin IVA)</div>-->
+            <!--</t>-->
             <t t-if="not product.hide_website_price">
-                <div groups="sale.group_show_price_total" t-if="product.product_variant_id.lst_price and (product.website_price - product.product_variant_id.lst_price) &gt; 0.01" class="price_sin_iva">
-                    <span t-esc="compute_currency(product.product_variant_id.lst_price)" t-options='{"widget": "monetary", "display_currency": product.currency_id,}'/> sin IVA
+                <div groups="sale.group_show_price_total" class="price_sin_iva"
+                     t-if="product.product_variant_id.website_discount_price and (product.website_public_price - product.product_variant_id.website_discount_price) &gt; 0.01">
+                <span t-esc="compute_currency(product.product_variant_id.website_discount_price)"
+                          t-options='{"widget": "monetary", "display_currency": product.currency_id,}'/> sin IVA
                 </div>
-                <div groups="sale.group_show_price_subtotal" t-if="product.product_variant_id.list_price &gt; 0 or len(product.product_variant_ids) &gt; 1" class="price_sin_iva">(Precio sin IVA)</div>
+                <div groups="sale.group_show_price_subtotal" class="price_sin_iva"
+                     t-if="product.product_variant_id.list_price &gt; 0 or len(product.product_variant_ids) &gt; 1">(Precio sin IVA)</div>
             </t>
             <t t-else="">
                 <div>Precio No Disponible</div>
@@ -186,8 +195,26 @@
                                                                 <!--Hide price for products-->
                                                                 <div class="recently_view_product_price">
                                                                     <t t-if="not alt_product.hide_website_price">
-                                                                        <span t-field="alt_product.website_price"
-                                                                           t-options='{"widget": "monetary", "display_currency": website.currency_id, }' />
+                                                                        <t t-if="alt_product.website_public_price &gt; 0 or len(alt_product.product_variant_ids) &gt; 1">
+                                                                            <div class="recently_view_product_price">
+                                                                                <t t-if="(compute_currency(alt_product.website_public_price) - alt_product.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
+                                                                                    <del class="text-danger mr8 " style="white-space: nowrap;"
+                                                                                         t-esc="compute_currency(alt_product.website_public_price)"
+                                                                                         t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
+                                                                                </t>
+                                                                                <span class="text-danger oe_default_price"
+                                                                                      style="text-decoration: line-through; white-space: nowrap;"
+                                                                                      t-esc="compute_currency(alt_product.website_public_price)"
+                                                                                      t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}"
+                                                                                      t-att-style="'text-decoration: line-through; white-space: nowrap; ' + '' if (compute_currency(alt_product.lst_price) - alt_product.website_price) &gt; 0.01 and website.get_current_pricelist().discount_policy == 'without_discount' else 'display: none;'" />
+
+                                                                                <b class="oe_price" style="white-space: nowrap;" t-esc="alt_product.website_price"
+                                                                                   t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                                                                                <span itemprop="price" style="display:none;" t-esc="alt_product.website_price" />
+                                                                                <span itemprop="priceCurrency" style="display:none;"
+                                                                                      t-esc="website.currency_id.name" />
+                                                                            </div>
+                                                                        </t>
                                                                     </t>
                                                                     <t t-else="">
                                                                         <p><b>N/D</b></p>
@@ -239,8 +266,26 @@
                                                                 <!--Hide price for products-->
                                                                 <div class="recently_view_product_price">
                                                                     <t t-if="not alt_product.hide_website_price">
-                                                                        <span t-field="alt_product.website_price"
-                                                                           t-options='{"widget": "monetary", "display_currency": website.currency_id, }' />
+                                                                        <t t-if="alt_product.website_public_price &gt; 0 or len(alt_product.product_variant_ids) &gt; 1">
+                                                                            <div class="recently_view_product_price">
+                                                                                <t t-if="(compute_currency(alt_product.website_public_price) - alt_product.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
+                                                                                    <del class="text-danger mr8 " style="white-space: nowrap;"
+                                                                                         t-esc="compute_currency(alt_product.website_public_price)"
+                                                                                         t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
+                                                                                </t>
+                                                                                <span class="text-danger oe_default_price"
+                                                                                      style="text-decoration: line-through; white-space: nowrap;"
+                                                                                      t-esc="compute_currency(alt_product.website_public_price)"
+                                                                                      t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}"
+                                                                                      t-att-style="'text-decoration: line-through; white-space: nowrap; ' + '' if (compute_currency(alt_product.lst_price) - alt_product.website_price) &gt; 0.01 and website.get_current_pricelist().discount_policy == 'without_discount' else 'display: none;'" />
+
+                                                                                <b class="oe_price" style="white-space: nowrap;" t-esc="alt_product.website_price"
+                                                                                   t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                                                                                <span itemprop="price" style="display:none;" t-esc="alt_product.website_price" />
+                                                                                <span itemprop="priceCurrency" style="display:none;"
+                                                                                      t-esc="website.currency_id.name" />
+                                                                            </div>
+                                                                        </t>
                                                                     </t>
                                                                     <t t-else="">
                                                                         <p><b>N/D</b></p>
@@ -428,7 +473,7 @@
         <xpath expr="//b[@class='responsive_price']" position="replace">
             <b class="responsive_price">
                 <t t-if="not product.hide_website_price">
-                    <t t-if="(compute_currency(product.lst_price) - product.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
+                    <t t-if="(compute_currency(product.website_public_price) - product.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
                         <del class="text-danger mr8 " style="white-space: nowrap;"
                              t-esc="compute_currency(product.website_public_price)"
                              t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
@@ -472,6 +517,27 @@
 					<t t-set="rating_disabled" t-value="True" />
 				</t>
             </div>-->
+        </xpath>
+
+        <!--Hide price in product details at product details view-->
+        <xpath expr="//div[@class='price_comman_class']" position="replace">
+            <t t-if="not product.hide_website_price">
+                <b>
+                    <t t-if="(compute_currency(product.website_public_price) - product.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
+                        <del class="text-danger mr8 "
+                             t-esc="compute_currency(product.website_public_price)"
+                             t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
+                    </t>
+                    <span class="oe_price" style="white-space: nowrap;" t-esc="product.website_price"
+                       t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                    <span itemprop="price" style="display:none;" t-esc="product.website_price" />
+                    <span itemprop="priceCurrency" style="display:none;"
+                          t-esc="website.currency_id.name" />
+                </b>
+            </t>
+            <t t-else="">
+                <b>N/D</b>
+            </t>
         </xpath>
     </template>
 
@@ -561,37 +627,6 @@
             </li>
         </xpath>
 
-        <!--Hide price in product details at product details view-->
-        <xpath expr="//div[@class='price_comman_sub_class']" position="replace">
-            <t t-if="not product.hide_website_price">
-                <t t-if="(compute_currency(product.lst_price) - product.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='with_discount'">
-                    <del class="text-danger mr8 strike-through strike-price"
-                         style="white-space: nowrap;" t-esc="compute_currency(product.website_public_price)"
-                         t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
-                </t>
-                <b>
-                    <!--<t t-if="(compute_currency(product.lst_price) - product.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
-                        <del class="text-danger mr8 " style="white-space: nowrap;"
-                             t-esc="compute_currency(product.website_public_price)"
-                             t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
-                    </t>-->
-                    <span class="text-danger oe_default_price"
-                          style="text-decoration: line-through; white-space: nowrap;"
-                          t-esc="compute_currency(product.website_public_price)"
-                          t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}"
-                          t-att-style="'text-decoration: line-through; white-space: nowrap; ' + '' if (compute_currency(product.lst_price) - product.website_price) &gt; 0.01 and website.get_current_pricelist().discount_policy == 'without_discount' else 'display: none;'" />
-                    <b class="oe_price" style="white-space: nowrap;" t-esc="product.website_price"
-                       t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
-                    <span itemprop="price" style="display:none;" t-esc="product.website_price" />
-                    <span itemprop="priceCurrency" style="display:none;"
-                          t-esc="website.currency_id.name" />
-                </b>
-            </t>
-            <t t-else="">
-                <b>N/D</b>
-            </t>
-        </xpath>
-
         <!--Hide add to cart button in product details at product details view for price hide-->
         <xpath expr="//div[@class='p_ad2cart']" position="replace">
             <t t-if="not product.hide_website_price">
@@ -653,7 +688,7 @@
                         <t t-if="not rproduct.hide_website_price">
                             <t t-if="rproduct.website_public_price &gt; 0 or len(rproduct.product_variant_ids) &gt; 1">
                                 <div class="recently_view_product_price">
-                                    <t t-if="(compute_currency(rproduct.lst_price) - rproduct.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
+                                    <t t-if="(compute_currency(rproduct.website_public_price) - rproduct.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
                                         <del class="text-danger mr8 " style="white-space: nowrap;"
                                              t-esc="compute_currency(rproduct.website_public_price)"
                                              t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />

@@ -113,7 +113,7 @@
         <xpath expr="//div[@class='recently_view_product_price']" position="replace">
             <t t-if="not rproduct.hide_website_price">
                 <div class="recently_view_product_price">
-                    <t t-if="(compute_currency(rproduct.lst_price) - rproduct.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
+                    <t t-if="(compute_currency(rproduct.website_public_price) - rproduct.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
                         <del class="text-danger mr8 " style="white-space: nowrap;"
                              t-esc="compute_currency(rproduct.website_public_price)"
                              t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
@@ -142,17 +142,18 @@
         <xpath expr="//div[@class='wishlist_price']" position="replace">
             <div class="wishlist_price">
                 <t t-if="not p.product_id.hide_website_price">
-                    <t t-if="(compute_currency(p.product_id.lst_price) - p.product_id.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='with_discount'">
-                        <del class="text-danger mr8 strike-through strike-price" style="white-space: nowrap;" t-esc="compute_currency(p.product_id.website_public_price)" t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
-                    </t>
                     <p>
-                        <t t-if="(compute_currency(p.product_id.lst_price) -p.product_id.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
-                            <del class="text-danger mr8 wishlist-price-p strike-price" style="white-space: nowrap;" t-esc="compute_currency(p.product_id.website_public_price)" t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
+                        <t t-if="(compute_currency(p.product_id.website_public_price) -p.product_id.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
+                            <b>
+                                <del class="text-danger mr8" style="white-space: nowrap;" t-esc="compute_currency(p.product_id.website_public_price)"
+                                 t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
+                            </b>
                         </t>
                         <span class="text-danger oe_default_price" style="text-decoration: line-through; white-space: nowrap;"
-                              t-esc="compute_currency(p.product_id.website_public_price)" t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" t-att-style="'text-decoration: line-through; white-space: nowrap; ' + '' if (compute_currency(p.product_id.lst_price) - p.product_id.website_price) &gt; 0.01 and website.get_current_pricelist().discount_policy == 'without_discount' else 'display: none;'" />
-                        <!-- <span class="p-orignal-price" t-esc="p.product_id.website_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/> -->
-                        <b class="oe_price wishlist-price-p" style="white-space: nowrap;" t-esc="p.product_id.website_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                              t-esc="compute_currency(p.product_id.website_public_price)"
+                              t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" t-att-style="'text-decoration: line-through; white-space: nowrap; ' + '' if (compute_currency(p.product_id.lst_price) - p.product_id.website_price) &gt; 0.01 and website.get_current_pricelist().discount_policy == 'without_discount' else 'display: none;'" />
+                        <b class="oe_price wishlist-price-p" style="white-space: nowrap;" t-esc="p.product_id.website_price"
+                           t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
                         <span itemprop="price" style="display:none;" t-esc="p.product_id.website_price" />
                         <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
                     </p>

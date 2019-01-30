@@ -7,6 +7,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import models, fields, _
+import odoo.addons.decimal_precision as dp
 
 
 class ProductTag(models.Model):
@@ -39,3 +40,28 @@ class ProductCustom(models.Model):
     product_meta_title = fields.Char("SEO Meta Title", translate=True)
     product_meta_description = fields.Text("SEO Meta Description", translate=True)
     product_meta_keywords = fields.Char("SEO Meta Keywords", translate=True)
+
+
+class Product(models.Model):
+    _inherit = "product.product"
+
+    website_discount_price = fields.Float('Website Discount Price', compute='_website_price',
+                                          digits=dp.get_precision('Product Price'))
+
+    def _website_price(self):
+        super(Product, self)._website_price()
+        qty = self._context.get('quantity', 1.0)
+        partner = self.env.user.partner_id
+        current_website = self.env['website'].get_current_website()
+        pricelist = current_website.get_current_pricelist()
+        company_id = current_website.company_id
+        context = dict(self._context, pricelist=pricelist.id, partner=partner)
+        self2 = self.with_context(context) if self._context != context else self
+
+        ret = self.env.user.has_group('sale.group_show_price_subtotal') and 'total_excluded' or 'total_included'
+        for p, p2 in zip(self, self2):
+            taxes = partner.property_account_position_id.map_tax(
+                p.taxes_id.sudo().filtered(lambda x: x.company_id == company_id))
+            discount_price = p2.price / (1 + (taxes.amount/100))
+            p.website_discount_price = taxes.compute_all(discount_price, pricelist.currency_id, quantity=qty,
+                                                         product=p2, partner=partner)[ret]
