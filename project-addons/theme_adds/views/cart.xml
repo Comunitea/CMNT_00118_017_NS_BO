@@ -328,31 +328,12 @@
             <span><img t-att-alt="product.name" t-att-title="product.name" class="image-64"
                        t-attf-src="/web/image/product.template/{{product.product_tmpl_id.id}}/image/250x250"/></span>
         </xpath>
-        <xpath expr="//span[@t-field='product.website_price']" position="replace">
-            <t t-if="not product.hide_website_price">
-                <t t-if="website.get_current_pricelist().discount_policy=='without_discount'">
-                        <del class="text-danger mr8 " style="white-space: nowrap;"
-                             t-esc="compute_currency(product.website_public_price)"
-                             t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
-                </t>
-                <t t-else="">
-                    <span class="text-danger oe_default_price"
-                          style="text-decoration: line-through; white-space: nowrap;"
-                          t-esc="compute_currency(product.website_public_price)"
-                          t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}"
-                          t-att-style="'text-decoration: line-through; white-space: nowrap; ' + '' if (compute_currency(product.lst_price) - product.website_price) &gt; 0.01 and website.get_current_pricelist().discount_policy == 'without_discount' else 'display: none;'" />
-
-                    <span class="oe_price" style="white-space: nowrap;" t-esc="compute_currency(product.website_price)"
-                       t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
-
-                </t>
-                <span itemprop="price" style="display:none;" t-esc="product.website_price" />
-                <span itemprop="priceCurrency" style="display:none;"
-                      t-esc="website.currency_id.name" />
-            </t>
-            <t t-else="">
-                <span>N/D</span>
-            </t>
+        <xpath expr="//del[@class='text-danger mr8']" position="attributes">
+            <attribute name="t-field">product.website_public_price</attribute>
+        </xpath>
+        <xpath expr="//del[@class='text-danger mr8']" position="attributes">
+            <attribute name="t-field">product.website_public_price</attribute>
+            <attribute name="class">text-danger</attribute>
         </xpath>
     </template>
 
