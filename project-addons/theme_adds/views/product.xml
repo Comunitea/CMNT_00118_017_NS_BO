@@ -71,17 +71,16 @@
 
         <!-- Price for B2C and B2B users without taxes. Apply discount if exits -->
         <xpath expr="//h4[@class='css_non_editable_mode_hidden decimal_precision']" position="after">
-            <!--<t t-if="not product.hide_website_price">-->
-                <!--<div groups="sale.group_show_price_total" t-if="product.product_variant_id.lst_price and (product.website_price - product.product_variant_id.lst_price) &gt; 0.01" class="price_sin_iva">-->
-                    <!--<span t-esc="compute_currency(product.product_variant_id.lst_price)" t-options='{"widget": "monetary", "display_currency": product.currency_id,}'/> sin IVA-->
-                <!--</div>-->
-                <!--<div groups="sale.group_show_price_subtotal" t-if="product.product_variant_id.list_price &gt; 0 or len(product.product_variant_ids) &gt; 1" class="price_sin_iva">(Precio sin IVA)</div>-->
-            <!--</t>-->
             <t t-if="not product.hide_website_price">
                 <div groups="sale.group_show_price_total" class="price_sin_iva"
                      t-if="product.product_variant_id.website_discount_price and (product.website_public_price - product.product_variant_id.website_discount_price) &gt; 0.01">
-                <span t-esc="compute_currency(product.product_variant_id.website_discount_price)"
-                          t-options='{"widget": "monetary", "display_currency": product.currency_id,}'/> sin IVA
+                    <t t-if="product.product_variant_id.website_discount_price and (product.lst_price - product.product_variant_id.website_discount_price) &gt; 0.01">
+                        <del class="text-danger mr8" style="white-space: nowrap;"
+                             t-esc="compute_currency(product.lst_price)"
+                             t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
+                    </t>
+                    <span t-esc="compute_currency(product.product_variant_id.website_discount_price)"
+                              t-options='{"widget": "monetary", "display_currency": product.currency_id,}'/> sin IVA
                 </div>
                 <div groups="sale.group_show_price_subtotal" class="price_sin_iva"
                      t-if="product.product_variant_id.list_price &gt; 0 or len(product.product_variant_ids) &gt; 1">(Precio sin IVA)</div>
