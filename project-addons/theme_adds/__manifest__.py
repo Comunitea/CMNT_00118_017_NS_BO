@@ -47,6 +47,7 @@
         'payment_acquirer_by_amount',
         'payment_redsys',
         'payment_paypal',
+        'payment_cash_on_delivery',
         'checkout_coupon',
         'website_sale_one_step_checkout_delivery',
         'website_sale_one_step_checkout_charge_payment_fee',
@@ -82,6 +83,7 @@
         'views/category_view.xml',
         'views/robots.xml',
         'views/sitemap.xml',
+        'views/payment.xml',
     ],
     'qweb': [
     ],
