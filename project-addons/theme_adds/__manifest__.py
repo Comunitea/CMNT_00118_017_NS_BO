@@ -84,6 +84,7 @@
         'views/robots.xml',
         'views/sitemap.xml',
         'views/payment.xml',
+        'views/delivery_view.xml'
     ],
     'qweb': [
     ],
