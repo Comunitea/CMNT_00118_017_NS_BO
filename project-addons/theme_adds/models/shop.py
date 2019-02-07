@@ -26,3 +26,13 @@ class Website(models.Model):
         # OrderBy will be parsed in orm and so no direct sql injection
         # id is added to be sure that order is a unique sort key
         return '%s , id asc' % 'website_sequence asc'
+
+    """
+        Get the list of child categories in the same category page
+    """
+    def get_child_category(self, category):
+        categories = self.env["product.public.category"]
+        parent = category.id if category else 0
+        domain = [('parent_id', '=', parent)]
+        result = categories.sudo().search(domain, order='sequence')
+        return result

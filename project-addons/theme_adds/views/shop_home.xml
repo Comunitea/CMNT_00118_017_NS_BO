@@ -28,7 +28,8 @@
 
             <div class="menu-tags">
                 <t t-set="tags" t-value="website.get_product_tags_marked()" />
-                <t t-if="len(tags) &gt; 1">
+                <t t-set="cats" t-value="website.get_child_category(category)" />
+                <t t-if="len(tags) &gt; 1 and not len(cats) &gt; 0">
                     <div class="all-category-div">
                         <ul>
                             <li t-att-class=" '' if tag else 'active all-products' ">
@@ -44,6 +45,22 @@
                                         <a class="product-tag btn btn-primary btn-xs" t-attf-href="/shop?tags=#{tag.id}"
                                            style="font-size: 14px;">
                                             <span t-field="tag.name" />
+                                        </a>
+                                    </span>
+                                </li>
+                            </t>
+                        </ul>
+                    </div>
+                </t>
+                <t t-else="len(cats) &gt; 0">
+                    <div class="all-category-div">
+                        <ul>
+                            <t t-foreach="cats" t-as="cat">
+                                <li class="mb4">
+                                    <span>
+                                        <a class="product-tag btn btn-primary btn-xs" t-att-title="cat.name"
+                                           t-att-href="'/category/%s' % cat.slug if cat.slug else '/shop/category/%s' % slug(cat)">
+                                            <span t-esc="cat.name" />
                                         </a>
                                     </span>
                                 </li>
