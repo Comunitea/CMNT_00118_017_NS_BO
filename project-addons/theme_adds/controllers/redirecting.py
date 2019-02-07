@@ -56,7 +56,7 @@ def slugify(s, max_length=None):
 class UrlsRedirect(http.Controller):
 
     @http.route(['/es/<path:path>', '/pt/<path:path>', '/fr/<path:path>'], type='http', auth='public', website=True)
-    def search_product_by_slug(self, path):
+    def search_product_by_slug(self, path, **kw):
         split = path.split('.html')
         direction = split[0]
         products_list = http.request.env['product.template']
