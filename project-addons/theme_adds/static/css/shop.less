@@ -175,6 +175,18 @@ hr {
 }
 .shop-page-breadcrumb {
     display: block !important;
+    .sub_breadcrumb {
+        max-width: 1400px;
+        & .nav-view {
+            width: 99%;
+            & .nav-selection-div {
+                float: none;
+                & .home-icon {
+                    float: none;
+                }
+            }
+        }
+}
 }
 .custom-menu-inside-div {
     /*display: block !important;*/
@@ -499,9 +511,6 @@ li.all-products, .all-category-div li {
         & .custom-menu-inside-div {
             max-width: 370px;
         }
-        & span.submenu-a {
-            margin-top: 12px;
-        }
         & .submenu_expand {
             margin-left: 0;
             padding-top: 0;
@@ -512,8 +521,31 @@ li.all-products, .all-category-div li {
         & .second-level-category-caret {
             margin-top: -17px !important;
         }
+        & .third-level-ul {
+            margin: 0 0 10px 0;
+            padding: 0;
+            & a.sub_menu_list {
+                padding: 0;
+                line-height: 16px
+            }
+        }
         & .third-level-li {
-            padding-top: 0;
+            padding: 10px 0 0 0;
+            display: block;
+        }
+        & span.submenu-a {
+            right: 9%;
+            padding: 8px 8px 7px 10px;
+            margin: 6px -10px -10px -10px !important;
+            color: #fff;
+            border-radius: 6px;
+            background-color: @theme-color;
+            &.fa-chevron-down {
+                padding-left: 8px;
+            }
+            &.second-level-category-caret {
+                margin-top: -25px !important;
+            }
         }
     }
 }
@@ -573,6 +605,7 @@ li.all-products, .all-category-div li {
         }
     }
     #shop_pager.products_pager {
+        display: none; /* disabled for infinity scroll use */
         & .pagination {
             margin-top: 0px !important;
             margin-bottom: 0px !important;
@@ -596,6 +629,9 @@ li.all-products, .all-category-div li {
     .wp-category-title {
         margin: -15px 0 0 3px;
     }
+    .clarico_product_breadcrumb {
+        padding-top: 0px;
+    }
 }
 @media (max-width: 666px){
     .menu-tags {
@@ -611,9 +647,6 @@ li.all-products, .all-category-div li {
                     font-size: 13px !important;
                 }
             }
-        }
-        & .third-level-ul {
-            margin-left: 0;
         }
     }
 }

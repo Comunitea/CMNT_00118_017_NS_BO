@@ -209,6 +209,32 @@ header .navbar .navbar-top-collapse {
             }
         }
     }
+    #top_menu {
+        & span.submenu-a {
+            right: 9%;
+            padding: 8px 8px 7px 10px;
+            margin: 6px -10px -10px -10px !important;
+            color: #fff;
+            border-radius: 6px;
+            background-color: @theme-color;
+            &.fa-chevron-down {
+                padding-left: 8px;
+            }
+            &.second-level-category-caret {
+                margin-top: -24px !important;
+            }
+        }
+        & ul.third-level-ul {
+            padding: 0;
+            margin: 0;
+            & .third-level-li {
+                padding: 10px 0 0 0;
+                & a.sub_menu_list {
+                    padding: 0;
+                }
+            }
+        }
+    }
 }
 /*
     CSS media part MAX-WIDTH 800 px

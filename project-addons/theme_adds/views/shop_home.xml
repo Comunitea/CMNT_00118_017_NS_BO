@@ -176,6 +176,40 @@
                 <h1 class="chs_heading category-title" t-esc="category.name"/>
             </div>
         </xpath>
+
+        <!-- New category multi-level breadcrumbs -->
+        <xpath expr="//div[@class='nav-selection-div']" position="replace">
+            <div class="nav-selection-div">
+                <ol class="breadcrumb clarico_breadcrumb">
+                    <li>
+                        <a class="home-icon" href="/shop">
+                            <i class="fa fa-home" aria-hidden="true"/>
+                        </a>
+                    </li>
+                    <t t-if="category and category.parent_id">
+                        <t t-set="parent" t-value="category.parent_id"/>
+                        <t t-if="parent.parent_id">
+                            <t t-set="sub_parent" t-value="parent.parent_id"/>
+                            <li>
+                                <a t-esc="sub_parent.name"
+                                   t-att-href="'/category/%s' % sub_parent.slug if sub_parent.slug else '/shop/category/%s' % slug(sub_parent)"/>
+                            </li>
+                        </t>
+                        <li>
+                            <a t-esc="parent.name"
+                               t-att-href="'/category/%s' % parent.slug if parent.slug else '/shop/category/%s' % slug(parent)"/>
+                        </li>
+                    </t>
+                    <li t-if="category">
+                        <a t-esc="category.name"
+                           t-att-href="'/category/%s' % category.slug if category.slug else '/shop/category/%s' % slug(category)"/>
+                    </li>
+                    <li t-else="">
+                        <a class="select-nevigation-child"/>
+                    </li>
+                </ol>
+            </div>
+        </xpath>
     </template>
 
     <!-- Lateral filter -->
@@ -215,6 +249,9 @@
         <xpath expr="//a[@class='first-level-category-a ']" position="attributes">
             <attribute name="t-att-href">'/category/%s' %category_individual.slug if category_individual.slug else '/shop/category/%s' %slug(category_individual)</attribute>
         </xpath>
+        <xpath expr="//li[@class='first-level-category-li dropdown-submenu']/span" position="attributes">
+            <attribute name="t-if">category_individual.child_id</attribute>
+        </xpath>
         <xpath expr="//a[@class='second-level-a menu_heading ']" position="attributes">
             <attribute name="t-att-href">'/category/%s' %c.slug if c.slug else '/shop/category/%s' %slug(c)</attribute>
         </xpath>
@@ -226,6 +263,9 @@
                 <img t-att-alt="category_individual.name" t-att-title="category_individual.name"
                      t-attf-src="/web/image/product.public.category/{{category_individual.id}}/image/64x64"/>
             </div>
+        </xpath>
+        <xpath expr="//li[@class='dropdown-submenu sub-menu-ul-heading']/span" position="attributes">
+            <attribute name="t-if">c.child_id</attribute>
         </xpath>
     </template>
 

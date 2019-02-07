@@ -119,6 +119,55 @@
         <xpath expr="//div[@id='product_details']//div[@class='c_product_name']" position="replace">
             <h1 class="c_product_name" itemprop="name" t-field="product.name"/>
         </xpath>
+
+        <!-- New product multi-level breadcrumbs -->
+        <xpath expr="//div[@class='sub_breadcrumb']/ol" position="replace">
+            <ol class="breadcrumb clarico_breadcrumb">
+                <li>
+                    <a class="home-icon" href="/shop">
+                        <i class="fa fa-home" aria-hidden="true"/>
+                    </a>
+                </li>
+                <t t-if="product.public_categ_ids">
+                    <t t-set="inc" t-value="0"/>
+                    <t t-foreach="product.public_categ_ids" t-as="category">
+                        <t t-if="inc==0">
+                            <t t-if="category.parent_id">
+                                <t t-set="parent" t-value="category.parent_id"/>
+                                <t t-if="parent.parent_id">
+                                    <t t-set="sub_parent" t-value="parent.parent_id"/>
+                                    <li>
+                                        <a t-esc="sub_parent.name"
+                                           t-att-href="'/category/%s' % sub_parent.slug if sub_parent.slug else '/shop/category/%s' % slug(sub_parent)"/>
+                                    </li>
+                                </t>
+                                <li>
+                                    <a t-esc="parent.name"
+                                       t-att-href="'/category/%s' % parent.slug if parent.slug else '/shop/category/%s' % slug(parent)"/>
+                                </li>
+                            </t>
+                            <li>
+                                <a t-esc="category.name"
+                                   t-att-href="'/category/%s' % category.slug if category.slug else '/shop/category/%s' % slug(category)"/>
+                            </li>
+                        </t>
+                        <t t-set="inc" t-value="inc+1"/>
+                    </t>
+                </t>
+                <li class="active">
+                    <span t-field="product.name" />
+                </li>
+            </ol>
+        </xpath>
+
+        <!--Hide add to cart button in product details at product details view for price hide-->
+        <xpath expr="//div[@class='p_ad2cart']" position="replace">
+            <t t-if="not product.hide_website_price">
+                <div class="p_ad2cart">
+                <a id="add_to_cart" class="btn btn-primary btn-lg mt8 js_check_product a-submit" href="#">Add to Cart</a>
+                </div>
+            </t>
+        </xpath>
     </template>
 
     <!-- Product description -->
@@ -605,36 +654,6 @@
                 </t>
             </t>
         </xpath>
-    </template>
-
-    <!-- UPD breadcrumb bar -->
-    <template id="upd_breadcrumb_bar" inherit_id="clarico_product.clarico_product_product">
-        <xpath expr="//div[@class='sub_breadcrumb']/ol/li[1]" position="replace">
-            <li>
-                <a class="home-icon" href="/shop">
-                    <i class="fa fa-home" aria-hidden="true"/>
-                </a>
-            </li>
-        </xpath>
-        <xpath expr="//div[@class='sub_breadcrumb']/ol/li[@t-if='category']" position="replace">
-            <li t-if="product.public_categ_ids">
-                <t t-set="inc" t-value="0"/>
-                <t t-foreach="product.public_categ_ids" t-as="category">
-                    <t t-if="inc==0"><a t-esc="category.name" t-att-href="'/category/%s' % category.slug if category.slug else '/shop/category/%s' % slug(category)"/></t>
-                    <t t-set="inc" t-value="inc+1"/>
-                </t>
-            </li>
-        </xpath>
-
-        <!--Hide add to cart button in product details at product details view for price hide-->
-        <xpath expr="//div[@class='p_ad2cart']" position="replace">
-            <t t-if="not product.hide_website_price">
-                <div class="p_ad2cart">
-                <a id="add_to_cart" class="btn btn-primary btn-lg mt8 js_check_product a-submit" href="#">Add to Cart</a>
-                </div>
-            </t>
-        </xpath>
-
     </template>
 
     <!--Hide product quantity in product details at product details view-->
