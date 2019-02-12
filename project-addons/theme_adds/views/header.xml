@@ -141,11 +141,11 @@
                 </div>
             </div>
         </xpath>
-        <xpath expr="//header//div[@class='navbar-header']" position="inside">
+        <!--<xpath expr="//header//div[@class='navbar-header']" position="inside">
             <div class="wp-mobile-search-button mobile-version">
                 <span class="mobile-search-button"><i class="fa fa-search" /></span>
             </div>
-        </xpath>
+        </xpath>-->
     </template>
 
     <template id="breadcrumbs_fiction_bar">

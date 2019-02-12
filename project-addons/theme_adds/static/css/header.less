@@ -140,7 +140,7 @@ header .navbar .navbar-top-collapse {
 .sub_breadcrumb {
     min-height: 25px;
 }
-.wp-mobile-search-button {
+/*.wp-mobile-search-button {
     float: right;
     position: relative;
     right: 0;
@@ -156,7 +156,7 @@ header .navbar .navbar-top-collapse {
         min-width: 32px;
         float: right;
     }
-}
+}*/
 
 /*
     CSS media part MAX-WIDTH 1400 px
@@ -252,13 +252,22 @@ header .navbar .navbar-top-collapse {
     #header-social li {
         margin: 0;
     }
-    .new_hd_search {
-        margin-bottom: 5px;
-        min-height: 43px;
-        display: none;
-    }
     .new_hd_search_wp {
-        margin: -12px auto 0 auto;
+        margin: 0 auto;
+    }
+    .new_hd_search {
+        margin: -8px 0 10px 0;
+        min-height: 35px;
+        /*display: none;*/
+    }
+    .new_hd_search_input {
+        & input.form-control {
+            height: 28px;
+        }
+    }
+    .new_hd_search_btn button.oe_search_button {
+        padding: 6px 0;
+        line-height: 18px;
     }
     .new_hd_img {
         text-align: center;
