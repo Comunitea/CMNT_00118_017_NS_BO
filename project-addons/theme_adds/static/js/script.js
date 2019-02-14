@@ -296,10 +296,10 @@ $('a.clear_shopping_cart').click(function(){
 });
 
 /* Show search bar on mobile header */
-$('.mobile-search-button').click(function(){
+/* $('.mobile-search-button').click(function(){
     $('.new_hd_search').toggle();
     $(this).find('i').toggleClass('fa-search').toggleClass('fa-close');
-});
+}); */
 
 /* Hacer funcionar la validación de la aceptación de los términos legales en el formulario del oneCheckOut
    para guardar dirección de los usuarios invitados*/
