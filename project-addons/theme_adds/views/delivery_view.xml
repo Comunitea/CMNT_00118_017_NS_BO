@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<odoo noupdate="0">
 
     <!-- Añadir producto al metodo de envio para relacionarlo con el que se carga en los pedidos y prep. -->
     <record id="view_delivery_carrier_form_custom" model="ir.ui.view">
@@ -10,6 +10,82 @@
             <field name="delivery_type" position="after">
                 <field name="product_id" class="oe_inline"/>
             </field>
+            <!--<field name="website_description" position="before">-->
+                <!--<group>-->
+                    <!--<div class="o_horizontal_separator">-->
+                        <!--Factores Sobrepeso-->
+                    <!--</div>-->
+                    <!--<group>-->
+                        <!--<field name="weight_base_max" class="oe_inline"/>-->
+                        <!--<field name="weight_range" class="oe_inline"/>-->
+                    <!--</group>-->
+                <!--</group>-->
+            <!--</field>-->
+        </field>
+        <!--<field name="arch" type="xml">-->
+            <!--<group>-->
+                <!--&lt;!&ndash;<div class="o_horizontal_separator">&ndash;&gt;-->
+                    <!--<span class="oe_inline">Factores Sobrepeso</span>-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--<group>-->
+                    <!--<field name="weight_base_max" class="oe_inline"/>-->
+                    <!--<field name="weight_range" class="oe_inline"/>-->
+                <!--</group>-->
+            <!--</group>-->
+        <!--</field>-->
+    </record>
+
+    <record id="view_delivery_carrier_form_website_delivery_custom" model="ir.ui.view">
+        <field name="name">view.delivery.carrier.form.website.delivery.custom</field>
+        <field name="model">delivery.carrier</field>
+        <field name="inherit_id" ref="website_sale_delivery.view_delivery_carrier_form_website_delivery"/>
+        <field name="arch" type="xml">
+            <group name="website" position="after">
+                <div class="o_horizontal_separator">
+                        Factores Sobrepeso
+                    </div>
+                    <group>
+
+                        <field name="weight_base_max" class="oe_inline"/>
+                        <field name="weight_range" class="oe_inline"/>
+                    </group>
+                </group>
+        </field>
+    </record>
+
+    <!--Control por dos condiciones en una misma regla-->
+    <record id="delivery.view_delivery_price_rule_form" model="ir.ui.view">
+        <field name="name">delivery.price.rule.form</field>
+        <field name="model">delivery.price.rule</field>
+        <field name="arch" type="xml">
+            <form string="Price Rules">
+                <group>
+                    <field name="name" invisible="1"/>
+                </group>
+                <group>
+                    <label for="variable" string="Condicion 1"/>
+                    <div class="o_row">
+                        <field name="variable"/>
+                        <field name="operator"/>
+                        <field name="max_value"/>
+                    </div>
+                    <label for="variable" string="Condicion 2"/>
+                    <div class="o_row">
+                        <field name="variable_2"/>
+                        <field name="operator_2"/>
+                        <field name="max_value_2"/>
+                    </div>
+                    <label for="list_base_price" string="Sale Price"/>
+                    <div>
+                        <field name="list_base_price" class="oe_inline"/>
+                        +
+                        <field name="list_price" class="oe_inline"/>
+                        *
+                        <field name="variable_factor" class="oe_inline"/>
+                    </div>
+                    <field name="standard_price" invisible="1"/>
+                </group>
+            </form>
         </field>
     </record>
 

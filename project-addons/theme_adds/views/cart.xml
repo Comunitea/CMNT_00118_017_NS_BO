@@ -168,8 +168,15 @@
                         <th colspan="2">Product</th>
                         <th class="text-center">Qty</th>
                         <th class="text-center">Price</th>
+                        <th class="text-center">Weight</th>
                   </tr>
             </thead>
+        </xpath>
+
+        <xpath expr="//table[@id='cart_products']//tr/td[last()]" position="after">
+            <td>
+                <div class="text-center" t-esc="line.product_id.weight"/>
+            </td>
         </xpath>
     </template>
 
@@ -257,23 +264,51 @@
     <!--Replace default payment delivery-->
     <template id="payment_delivery_replace" name="Delivery Costs" inherit_id="website_sale_one_step_checkout_delivery.payment_delivery">
         <xpath expr="//div[@id='delivery_carrier_osc']" position="replace">
-            <div t-if="deliveries" id="delivery_carrier_osc_custom">
+            <div id="delivery_carrier_osc_custom">
                 <h3 class="page-header mt16">Send Conditions</h3>
-
-                <div class="panel panel-default border_primary">
-                    <div class="panel-body">
-                        Free delivery for amounts over € 99 and weight less than 15Kg
+                <t t-if="deliveries">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            Free delivery for amounts over € 99 and weight less than 15Kg
+                        </div>
+                        <div class="panel-footer">
+                            <p>Amount to get free delivery:</p>
+                            <t t-if="any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower()) and any(x for x in order.carrier_id.state_ids if 'asturias' in x.name.lower())">
+                                <p t-if="99 - website_sale_order.amount_total &gt; 0" class="btn btn-block btn-primary" >
+                                    <span t-esc="99 - website_sale_order.amount_total" style="white-space: nowrap;"
+                                          t-options="{'widget': 'monetary','from_currency': website_sale_order.pricelist_id.currency_id,'display_currency': website.currency_id}" />
+                                </p>
+                                <a t-if="99 - website_sale_order.amount_total &lt;= 0" class="btn btn-block btn-primary">You get free delivery!!!</a>
+                            </t>
+                            <t t-else="">
+                                <p class="btn btn-block btn-primary">Solo España Penínsular</p>
+                            </t>
+                        </div>
                     </div>
-                    <div class="panel-footer">
-                        <p>Amount to get free delivery:</p>
-                        <a t-if="99 - website_sale_order.amount_total &gt; 0" class="btn btn-block btn-primary" >
-                            <span t-esc="99 - website_sale_order.amount_total" style="white-space: nowrap;"
-                                  t-options="{'widget': 'monetary','from_currency': website_sale_order.pricelist_id.currency_id,'display_currency': website.currency_id}" />
-                        </a>
-                        <a t-if="99 - website_sale_order.amount_total &lt;= 0" class="btn btn-block btn-primary">You get free delivery!!!</a>
+                </t>
+                <t t-else="">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Condiciones de envío no permitidas</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                Por favor, revise las condiciones de envío
+                                <a rel="nofollow" href="/page/entrega" target="_blank" style="text-decoration: underline;"
+                                   title="Haz click para verlo en una nueva pestaña"><strong>aquí</strong></a>.
+                            </p>
+                            <p>Es necesario cumplir las condiciones de envío para poder realizar la compra.</p>
+                        </div>
                     </div>
-                </div>
+                </t>
             </div>
+        </xpath>
+    </template>
+
+    <!--Reload page in OSC when address change to refresh delivery method that depends on it-->
+    <template id="address_kanban_custom" inherit_id="website_sale.address_kanban">
+        <xpath expr="//div[@class='panel-footer']" position="attributes">
+            <attribute name="id">select_this_address</attribute>
         </xpath>
     </template>
 

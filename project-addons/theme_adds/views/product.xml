@@ -88,6 +88,12 @@
             <t t-else="">
                 <div>Precio No Disponible</div>
             </t>
+            <div class="detail-weight">Peso:
+                <span t-field="product.weight" t-if="product.weight" > Kg.</span>
+                <span t-if="not product.weight">N/D</span>
+                <span></span>
+            </div>
+
         </xpath>
         <xpath expr="//div[@class='ctg_class']" position="replace"/>
 
