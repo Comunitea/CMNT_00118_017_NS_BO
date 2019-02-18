@@ -96,8 +96,9 @@ class ClaricoShopCustom(claricoShop):
             ppg = int(IrConfigParam.sudo().get_param('default_products_to_show', 8))
 
         if category and category.slug:
+            route = '/category/%s/page/%d' % (category.slug, page) if page else '/category/%s' % category.slug
             return http.local_redirect(
-                '/category/%s' % category.slug,
+                route,
                 dict(http.request.httprequest.args),
                 True,
                 code='301'
@@ -105,7 +106,10 @@ class ClaricoShopCustom(claricoShop):
 
         return super(ClaricoShopCustom, self).shop(page=page, category=category, search=search, ppg=ppg, **post)
 
-    @http.route('/category/<path:path>', type='http', auth='public', website=True)
+    @http.route([
+        '/category/<path:path>',
+        '/category/<path:path>/page/<int:page>'
+    ], type='http', auth='public', website=True)
     def _shop(self, path, page=0, category=None, search='', ppg=False, **post):
         category_list = http.request.env['product.public.category']
         category = category_list.sudo().search([('slug', '=', path)], limit=1)
