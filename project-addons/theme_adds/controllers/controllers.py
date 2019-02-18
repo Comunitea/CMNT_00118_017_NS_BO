@@ -7,8 +7,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from odoo import http
+from odoo import http, SUPERUSER_ID
 from odoo.http import request
+from odoo.exceptions import AccessError
 from odoo.addons.clarico_shop.controllers.main import claricoShop
 from odoo.addons.clarico_cart.controllers.main import claricoClearCart
 from odoo.addons.website_sale.controllers.main import WebsiteSale
@@ -148,9 +149,13 @@ class ProductCustom(WebsiteSale):
 
         products_list = http.request.env['product.template']
         product = products_list.sudo().search([('slug', '=', path)], limit=1)
+        user = request.env.uid
 
         if product:
-            return super(ProductCustom, self).product(product=product, category=category, search=search, **kwargs)
+            if not product.website_published and user != SUPERUSER_ID:
+                return request.render("website.403")
+            else:
+                return super(ProductCustom, self).product(product=product, category=category, search=search, **kwargs)
         else:
             return http.request.env['ir.http'].reroute('/404')
 
