@@ -113,6 +113,10 @@ class ClaricoShopCustom(claricoShop):
     def _shop(self, path, page=0, category=None, search='', ppg=False, **post):
         category_list = http.request.env['product.public.category']
         category = category_list.sudo().search([('slug', '=', path)], limit=1)
+        # Set new PPG from back-end settings
+        if not 'ppg' in request.httprequest.args:
+            IrConfigParam = request.env['ir.config_parameter']
+            ppg = int(IrConfigParam.sudo().get_param('default_products_to_show', 8))
         if category:
             return super(ClaricoShopCustom, self).shop(page=page, category=category, search=search, ppg=ppg, **post)
         else:
