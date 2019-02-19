@@ -10,29 +10,7 @@
             <field name="delivery_type" position="after">
                 <field name="product_id" class="oe_inline"/>
             </field>
-            <!--<field name="website_description" position="before">-->
-                <!--<group>-->
-                    <!--<div class="o_horizontal_separator">-->
-                        <!--Factores Sobrepeso-->
-                    <!--</div>-->
-                    <!--<group>-->
-                        <!--<field name="weight_base_max" class="oe_inline"/>-->
-                        <!--<field name="weight_range" class="oe_inline"/>-->
-                    <!--</group>-->
-                <!--</group>-->
-            <!--</field>-->
         </field>
-        <!--<field name="arch" type="xml">-->
-            <!--<group>-->
-                <!--&lt;!&ndash;<div class="o_horizontal_separator">&ndash;&gt;-->
-                    <!--<span class="oe_inline">Factores Sobrepeso</span>-->
-                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                <!--<group>-->
-                    <!--<field name="weight_base_max" class="oe_inline"/>-->
-                    <!--<field name="weight_range" class="oe_inline"/>-->
-                <!--</group>-->
-            <!--</group>-->
-        <!--</field>-->
     </record>
 
     <record id="view_delivery_carrier_form_website_delivery_custom" model="ir.ui.view">
@@ -45,7 +23,7 @@
                         Factores Sobrepeso
                     </div>
                     <group>
-
+                        <field name="weight_total_max" class="oe_inline"/>
                         <field name="weight_base_max" class="oe_inline"/>
                         <field name="weight_range" class="oe_inline"/>
                     </group>

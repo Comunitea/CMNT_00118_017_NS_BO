@@ -168,15 +168,8 @@
                         <th colspan="2">Product</th>
                         <th class="text-center">Qty</th>
                         <th class="text-center">Price</th>
-                        <th class="text-center">Weight</th>
                   </tr>
             </thead>
-        </xpath>
-
-        <xpath expr="//table[@id='cart_products']//tr/td[last()]" position="after">
-            <td>
-                <div class="text-center" t-esc="line.product_id.weight"/>
-            </td>
         </xpath>
     </template>
 
@@ -278,7 +271,13 @@
                                     <span t-esc="99 - website_sale_order.amount_total" style="white-space: nowrap;"
                                           t-options="{'widget': 'monetary','from_currency': website_sale_order.pricelist_id.currency_id,'display_currency': website.currency_id}" />
                                 </p>
-                                <a t-if="99 - website_sale_order.amount_total &lt;= 0" class="btn btn-block btn-primary">You get free delivery!!!</a>
+                                <t t-if="any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower())
+                                    and website_sale_order.total_weight > website_sale_order.carrier_id.weight_base_max">
+                                    <a class="btn btn-block btn-primary">Gratis. Solo pagas el sobrepeso!!!</a>
+                                </t>
+                                <t t-else="">
+                                <a class="btn btn-block btn-primary">You get free delivery!!!</a>
+                                </t>
                             </t>
                             <t t-else="">
                                 <p class="btn btn-block btn-primary">Solo España Penínsular</p>
@@ -289,19 +288,62 @@
                 <t t-else="">
                     <div class="panel panel-danger">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Condiciones de envío no permitidas</h3>
+                            <h3 class="panel-title">Ooops! Alguna condición de envío no es correcta</h3>
                         </div>
                         <div class="panel-body">
-                            <p>
-                                Por favor, revise las condiciones de envío
-                                <a rel="nofollow" href="/page/entrega" target="_blank" style="text-decoration: underline;"
-                                   title="Haz click para verlo en una nueva pestaña"><strong>aquí</strong></a>.
-                            </p>
-                            <p>Es necesario cumplir las condiciones de envío para poder realizar la compra.</p>
+                            Por favor, revise lo siguiente:
+                            <ul>
+                                <li>
+                                    No exceder el peso máximo permitido para su dirección de envío.
+                                    Si lo ha excedido, por favor, consultenos
+                                    <a rel="nofollow" href="/page/contactus" target="_blank" style="text-decoration: underline;"
+                                       title="Haz click en aquí para realizar su consulta"><strong>aquí</strong></a>.
+                                </li>
+                                <li>
+                                    Por favor, revise la dirección de entrega. Debe cubrir correctamente el país y la provincia.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="panel-footer">
+                            También puede revisar las condiciones de envío
+                            <a rel="nofollow" href="/page/entrega" target="_blank" style="text-decoration: underline;"
+                               title="Haz click para verlo en una nueva pestaña"><strong>aquí</strong></a>.
                         </div>
                     </div>
                 </t>
             </div>
+        </xpath>
+    </template>
+
+    <!--El peso se muestra solo si hay un error en las condiciones de envio o si es peninsular con sobrepeso-->
+    <template id="cart_delivery_custom" name="Delivery Weight" inherit_id="website_sale_delivery.cart_delivery">
+        <xpath expr="//div[@id='order_delivery']" position="before">
+            <div class="row text-danger" id="order_delivery" t-if="not deliveries or (deliveries and website_sale_order and website_sale_order.has_delivery
+                and website_sale_order.total_weight > website_sale_order.carrier_id.weight_total_max
+                and (not any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower())
+                or (any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower())
+                and website_sale_order.total_weight > website_sale_order.carrier_id.weight_base_max)))">
+                    <span class="col-xs-6 text-right"><strong title="Delivery will be updated after choosing a new delivery method"> Peso Total:</strong></span>
+                    <span class="col-xs-6 text-right">
+                        <strong t-esc="'{0:.2f}'.format(website_sale_order.total_weight)" style="white-space: nowrap;"/>
+                        <strong>Kg</strong>
+                    </span>
+            </div>
+        </xpath>
+    </template>
+
+    <!--Add State-->
+    <template id="address_kanban_custom" name="Delivery State" inherit_id="website_sale.address_kanban">
+        <xpath expr="//div[@class='panel-body']/t" position="attributes">
+            <attribute name="t-options">dict(widget='contact', fields=['name', 'address', 'state_id'], no_marker=True)</attribute>
+        </xpath>
+    </template>
+
+    <!--Show State-->
+    <template id="contact_custom" name="Delivery State" inherit_id="base.contact">
+        <xpath expr="//span[@itemprop='streetAddress']" position="after">
+            <span> - </span>
+            <span t-if="object.state_id and 'state_id' in fields" t-esc="object.state_id.name"/>
         </xpath>
     </template>
 

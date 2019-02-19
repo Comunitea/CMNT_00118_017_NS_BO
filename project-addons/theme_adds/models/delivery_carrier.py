@@ -18,11 +18,14 @@ class DeliveryCarrier(models.Model):
     _description = "Carrier"
     _order = 'sequence, id'
 
-    weight_base_max = fields.Float('Maximo Peso Base', required=False, help="Peso Maximo a partir del que \
+    weight_base_max = fields.Float('Máximo Peso Base', required=False, help="Peso Maximo a partir del que \
                                     empiezan los rangos por tramos de sobrepeso. Ej: 15Kg.")
     weight_range = fields.Float('Factor Tramo Sobreeso', required=False, help="Factor de rango a aplicar por tramos de \
                                  peso a partir del peso maximo base. Ej: 5, aplica un sobrepeso cada 5kg a partir del \
                                  peso maximo base")
+    weight_total_max = fields.Float('Máximo Peso Admisible', required=False, help="Peso Maximo a partir del cual \
+                                     ya no se envía la mercancía. Ej: 20Kg. Si se deja a cero no se aplicará este \
+                                     criterio. Ej: 0Kg.")
 
     def get_price_from_picking(self, total, weight, volume, quantity):
         """
