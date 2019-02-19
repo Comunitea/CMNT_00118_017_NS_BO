@@ -318,7 +318,7 @@
     <!--El peso se muestra solo si hay un error en las condiciones de envio o si es peninsular con sobrepeso-->
     <template id="cart_delivery_custom" name="Delivery Weight" inherit_id="website_sale_delivery.cart_delivery">
         <xpath expr="//div[@id='order_delivery']" position="before">
-            <div class="row text-danger" id="order_delivery_weight" t-if="not deliveries or (deliveries and website_sale_order and website_sale_order.has_delivery
+            <div class="row text-danger" id="order_delivery_weight" t-if="not deliveries and ('/shop/checkout' in request.httprequest.path) or (deliveries and website_sale_order and website_sale_order.has_delivery
                 and website_sale_order.total_weight > website_sale_order.carrier_id.weight_total_max
                 and (not any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower())
                 or (any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower())
