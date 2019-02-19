@@ -7,8 +7,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from odoo import http
+from odoo import http, SUPERUSER_ID
 from odoo.http import request
+from odoo.exceptions import AccessError
 from odoo.addons.clarico_shop.controllers.main import claricoShop
 from odoo.addons.clarico_cart.controllers.main import claricoClearCart
 from odoo.addons.website_sale.controllers.main import WebsiteSale
@@ -96,8 +97,9 @@ class ClaricoShopCustom(claricoShop):
             ppg = int(IrConfigParam.sudo().get_param('default_products_to_show', 8))
 
         if category and category.slug:
+            route = '/category/%s/page/%d' % (category.slug, page) if page else '/category/%s' % category.slug
             return http.local_redirect(
-                '/category/%s' % category.slug,
+                route,
                 dict(http.request.httprequest.args),
                 True,
                 code='301'
@@ -105,10 +107,17 @@ class ClaricoShopCustom(claricoShop):
 
         return super(ClaricoShopCustom, self).shop(page=page, category=category, search=search, ppg=ppg, **post)
 
-    @http.route('/category/<path:path>', type='http', auth='public', website=True)
+    @http.route([
+        '/category/<path:path>',
+        '/category/<path:path>/page/<int:page>'
+    ], type='http', auth='public', website=True)
     def _shop(self, path, page=0, category=None, search='', ppg=False, **post):
         category_list = http.request.env['product.public.category']
         category = category_list.sudo().search([('slug', '=', path)], limit=1)
+        # Set new PPG from back-end settings
+        if not 'ppg' in request.httprequest.args:
+            IrConfigParam = request.env['ir.config_parameter']
+            ppg = int(IrConfigParam.sudo().get_param('default_products_to_show', 8))
         if category:
             return super(ClaricoShopCustom, self).shop(page=page, category=category, search=search, ppg=ppg, **post)
         else:
@@ -140,9 +149,13 @@ class ProductCustom(WebsiteSale):
 
         products_list = http.request.env['product.template']
         product = products_list.sudo().search([('slug', '=', path)], limit=1)
+        user = request.env.uid
 
         if product:
-            return super(ProductCustom, self).product(product=product, category=category, search=search, **kwargs)
+            if not product.website_published and user != SUPERUSER_ID:
+                return request.render("website.403")
+            else:
+                return super(ProductCustom, self).product(product=product, category=category, search=search, **kwargs)
         else:
             return http.request.env['ir.http'].reroute('/404')
 
