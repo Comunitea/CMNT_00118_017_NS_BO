@@ -271,12 +271,12 @@
                                     <span t-esc="99 - website_sale_order.amount_total" style="white-space: nowrap;"
                                           t-options="{'widget': 'monetary','from_currency': website_sale_order.pricelist_id.currency_id,'display_currency': website.currency_id}" />
                                 </p>
-                                <t t-if="any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower())
+                                <t t-elif="any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower())
                                     and website_sale_order.total_weight > website_sale_order.carrier_id.weight_base_max">
                                     <a class="btn btn-block btn-primary">Gratis. Solo pagas el sobrepeso!!!</a>
                                 </t>
                                 <t t-else="">
-                                <a class="btn btn-block btn-primary">You get free delivery!!!</a>
+                                    <a class="btn btn-block btn-primary">You get free delivery!!!</a>
                                 </t>
                             </t>
                             <t t-else="">
@@ -318,7 +318,7 @@
     <!--El peso se muestra solo si hay un error en las condiciones de envio o si es peninsular con sobrepeso-->
     <template id="cart_delivery_custom" name="Delivery Weight" inherit_id="website_sale_delivery.cart_delivery">
         <xpath expr="//div[@id='order_delivery']" position="before">
-            <div class="row text-danger" id="order_delivery" t-if="not deliveries or (deliveries and website_sale_order and website_sale_order.has_delivery
+            <div class="row text-danger" id="order_delivery_weight" t-if="not deliveries or (deliveries and website_sale_order and website_sale_order.has_delivery
                 and website_sale_order.total_weight > website_sale_order.carrier_id.weight_total_max
                 and (not any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower())
                 or (any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower())
@@ -344,13 +344,6 @@
         <xpath expr="//span[@itemprop='streetAddress']" position="after">
             <span> - </span>
             <span t-if="object.state_id and 'state_id' in fields" t-esc="object.state_id.name"/>
-        </xpath>
-    </template>
-
-    <!--Reload page in OSC when address change to refresh delivery method that depends on it-->
-    <template id="address_kanban_custom" inherit_id="website_sale.address_kanban">
-        <xpath expr="//div[@class='panel-footer']" position="attributes">
-            <attribute name="id">select_this_address</attribute>
         </xpath>
     </template>
 
