@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+    <!--Add categories to product search view-->
+    <record id="product_template_search_view_website_category" model="ir.ui.view">
+        <field name="name">product.template.search.category</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="website_sale.product_template_search_view_website"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='consumable']" position="after">
+                <field name="public_categ_ids" filter_domain="[('public_categ_ids','child_of',self)]"/>
+            </xpath>
+        </field>
+    </record>
+
     <!-- Add field to marks Products Tags. Only products marked are visibles in shop submenu -->
     <record id="product_tags_add_marked" model="ir.ui.view">
         <field name="name">product.tags.add.marked</field>
@@ -47,9 +60,22 @@
         <field name="model">product.template</field>
         <field name="inherit_id" ref="product.product_template_tree_view"/>
         <field name="arch" type="xml">
-            <field name="default_code" position="before">
-                <field name="website_sequence"/>
+            <field name="sequence" position="before">
                 <field name="website_sequence" widget="handle"/>
+                <field name="website_sequence"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Add field to change website sequence for products in treeView  -->
+    <record id="website_category_product" model="ir.ui.view">
+        <field name="name">website.category.product</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="sequence" position="before">
+                <field name="public_categ_ids" widget="handle"/>
+                <field name="public_categ_ids"/>
             </field>
         </field>
     </record>
