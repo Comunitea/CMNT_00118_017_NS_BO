@@ -426,7 +426,18 @@
             <span><img t-att-alt="line.product_id.name" t-att-title="line.product_id.name" class="img img-responsive img-rounded"
                        t-attf-src="/web/image/product.template/{{line.product_id.product_tmpl_id.id}}/image/250x250"/></span>
         </xpath>
+        <!-- Hide products packs from cart lines -->
+        <xpath expr="//table[@id='cart_products']//tbody//tr" position="attributes">
+            <attribute name="t-if">line.product_id.product_tmpl_id.website_published</attribute>
+        </xpath>
     </template>
+
+    <!-- Hide products packs from modal cart lines -->
+    <!--<template id="clarico_cart_clarico_cart_popover_custom" inherit_id="clarico_cart.clarico_cart_popover">
+        <xpath expr="//div[@class='row mb8 cart_line popover-main-div']" position="attributes">
+            <attribute name="t-if">line.product_id.product_tmpl_id.website_published</attribute>
+        </xpath>
+    </template>-->
 
     <!-- Friendly URL's in my cart (alternative products) -->
     <template id="website_sale_suggested_products_list_add" inherit_id="website_sale.suggested_products_list" name="Alternative product in cart changes">
