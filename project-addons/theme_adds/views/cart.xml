@@ -245,10 +245,14 @@
             <attribute name="t-att-href">'/product/%s' % line.product_id.product_tmpl_id.slug if line.product_id.product_tmpl_id.slug else '/shop/product/%s' % slug(line.product_id.product_tmpl_id)</attribute>
         </xpath>
 
+        <xpath expr="//div[@id='col-3']//div[@class='row js_payment']" position="attributes">
+            <attribute name="t-if">deliveries</attribute>
+        </xpath>
+
     </template>
 
     <!-- Replace default text of "Pay now" button -->
-    <template id="payment_default_acquirer_button_add" inherit_id="payment.default_acquirer_button">
+    <template id="payment_default_acquirer_button_add" inherit_id="payment_transfer.transfer_acquirer_button">
         <xpath expr="//button/span" position="replace">
             <span t-if="submit_txt">Confirmar pedido <span class="fa fa-long-arrow-right"/></span>
         </xpath>
@@ -301,6 +305,9 @@
                                 </li>
                                 <li>
                                     Por favor, revise la dirección de entrega. Debe cubrir correctamente el país y la provincia.
+                                </li>
+                                <li>
+                                    También puede ser necesario volver a escoger la provincia y guardarla.
                                 </li>
                             </ul>
                         </div>
