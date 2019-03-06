@@ -88,7 +88,7 @@ odoo.define('product_quick_view.quick_view', function (require) {
         $(spn_div).append(spinner);
         ajax.jsonRpc("/shop/cart/update_json", 'call', {
             'product_id': parseInt(prod_id, 10),
-            'set_qty': 1
+            'add_qty': 1
         }).then(function (data) {
             $(spn_div).find('.wp-load-spinner').fadeOut(300);
             if (data.warning) {
@@ -125,7 +125,7 @@ odoo.define('product_quick_view.quick_view', function (require) {
         $(spn_div).append(spinner);
         ajax.jsonRpc("/shop/cart/update_json", 'call', {
             'product_id': parseInt(prod_id, 10),
-            'set_qty': parseInt(prod_qty, 10)
+            'add_qty': parseInt(prod_qty, 10)
         }).then(function (data) {
             $(spn_div).find('.wp-load-spinner').fadeOut(300);
             if (data.warning) {
