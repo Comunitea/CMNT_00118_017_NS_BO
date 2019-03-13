@@ -60,6 +60,7 @@
         'website_sale_filter_countries',
         'google_tag_manager',
         'facebook_pixel_manager',
+        'doofinder_search',
         'theme_clarico'
     ],
     'data': [
