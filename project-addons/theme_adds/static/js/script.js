@@ -315,3 +315,19 @@ $(document).ready(function(){
         $(input[name="accepted_legal_terms"]).attr("value", "123");
     });
 });
+
+/* Add Doofinder search widget */
+var doofinder_script ='//cdn.doofinder.com/media/js/doofinder-classic.7.latest.min.js';
+(function(d,t){var f=d.createElement(t),s=d.getElementsByTagName(t)[0];f.async=1;
+f.src=('https:'==location.protocol?'https:':'http:')+doofinder_script;
+f.setAttribute('charset','utf-8');
+s.parentNode.insertBefore(f,s)}(document,'script'));
+
+var dfClassicLayers = [{
+  "queryInput": "#doofinder_search",
+  "hashid": "98a4f858627305e834fb8af7a94442c4",
+  "zone": "eu1",
+  "display": {
+    "lang": "es"
+  }
+}];
