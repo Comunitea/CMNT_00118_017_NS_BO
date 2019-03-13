@@ -58,6 +58,8 @@
         'website_portal',
         'sgeede_infinite_scroll',
         'website_sale_filter_countries',
+        'google_tag_manager',
+        'facebook_pixel_manager',
         'theme_clarico'
     ],
     'data': [
