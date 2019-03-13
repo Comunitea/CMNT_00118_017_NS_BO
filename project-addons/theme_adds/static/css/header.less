@@ -160,6 +160,15 @@ header .navbar .navbar-top-collapse {
 #dfclassic {
     left: 20% !important;
 }
+#dfcompact {
+    .df-card__main {
+        padding: 5px 15px;
+    }
+    .df-card__image {
+        width: 50px;
+        height: 50px;
+    }
+}
 
 /*
     CSS media part MAX-WIDTH 1400 px
@@ -239,6 +248,16 @@ header .navbar .navbar-top-collapse {
         }
     }
 }
+
+/*
+    CSS media part MAX-WIDTH 1024 px
+*/
+@media (max-width: 1024px){
+    #dfclassic {
+        left: 15% !important;
+    }
+}
+
 /*
     CSS media part MAX-WIDTH 800 px
 */
@@ -299,6 +318,9 @@ header .navbar .navbar-top-collapse {
     }
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a {
         color: #fff;
+    }
+    #dfclassic {
+        left: 10% !important;
     }
 }
 @media (max-width: 740px){
