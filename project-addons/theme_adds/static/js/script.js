@@ -330,9 +330,9 @@ var dfCompactLayers = [{
     queryInput: '#doofinder_search',
     hashid: '98a4f858627305e834fb8af7a94442c4',
     zone: 'eu1',
-    // showInMobile: true,
+    showInMobile: true,
     display: {
-      lang: 'en'
+        lang: 'es'
     },
     searchParams: {
         rpp: 7
