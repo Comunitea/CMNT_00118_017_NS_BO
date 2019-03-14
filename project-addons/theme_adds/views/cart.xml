@@ -225,6 +225,7 @@
                 <div class="PmtSimulator"
                      data-pmt-style="Blue"
                      data-pmt-type="6"
+                     data-pmt-num-quota="12"
                      t-att-data-pmt-amount="website_sale_order.amount_total"
                      t-att-data-pmt-promoted-amount="0">
                 </div>
