@@ -357,8 +357,10 @@ var dfClassicLayers = [{
            show: true
         },
         results: {
-            initialLayout: 'list'
-        }
+            initialLayout: 'grid'
+        },
+        closeOnClick: true,
+        closeIfEmpty: true,
     },
 //    searchParams: {
 //        rpp: 7
