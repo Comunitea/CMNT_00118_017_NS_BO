@@ -1,9 +1,11 @@
 /* Service Worker for Progressive Web App and SEO */
 importScripts('/theme_adds/static/js/cache-polyfill.js');
 
-self.addEventListener('install', function(e) {
+self.addEventListener('', function(e) {
+// console.log("ServiceWorker install event: " + e.request.url);
  e.waitUntil(
    caches.open('nostrum_cache').then(function(cache) {
+//        console.log("ServiceWorker cache open: " + e.request.url);
      return cache.addAll([
         '/shop?homescreen=1',
         '/web/static/lib/fontawesome/fonts/fontawesome-webfont.woff2',
@@ -30,10 +32,13 @@ self.addEventListener('install', function(e) {
 });
 
 self.addEventListener('fetch', function(event) {
-//  console.log(event.request.url);
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      return response || fetch(event.request);
-    })
-  );
+//    console.log("ServiceWorker fetch event: " + event.request.url);
+    /* longpolling request must not be cached */
+    if (!event.request.url.includes('longpolling')){
+        event.respondWith(
+            caches.match(event.request).then(function(response) {
+                return response || fetch(event.request);
+            })
+        );
+    }
 });
