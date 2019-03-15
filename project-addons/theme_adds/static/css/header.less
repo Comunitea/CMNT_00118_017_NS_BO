@@ -158,6 +158,46 @@ header .navbar .navbar-top-collapse {
     }
 }*/
 
+/* Doofinder */
+
+.df-card__description {
+    display: none !important;
+}
+.df-card__content>:last-child {
+    margin-top: .75rem !important;
+}
+.df-compact-desktop, .df-classic {
+    border: 1px solid @theme-color !important;
+}
+.df-card__title {
+    color: @theme-color !important;
+}
+div.df-compact .df-results-block__header, .df-header-title, #df-header__dfclassic, .df-branding  {
+    color: #fff !important;
+    background-color: @theme-color !important;
+    font-weight: bold;
+}
+.df-compact-desktop .df-branding {
+    background-color: @theme-color !important;
+}
+.df-compact.doofinderLogo {
+    color: #fff !important;
+    font-weight: bold;
+}
+#dfclassic {
+    left: 10% !important;
+    width: 80% !important;
+}
+#dfcompact {
+    .df-card__main {
+        padding: 5px 15px;
+    }
+    .df-card__image {
+        width: 50px;
+        height: 50px;
+    }
+}
+
 /*
     CSS media part MAX-WIDTH 1400 px
 */
@@ -236,6 +276,17 @@ header .navbar .navbar-top-collapse {
         }
     }
 }
+
+/*
+    CSS media part MAX-WIDTH 1024 px
+*/
+@media (max-width: 1024px){
+    #dfclassic {
+        left: 10% !important;
+        width: 80% !important;
+    }
+}
+
 /*
     CSS media part MAX-WIDTH 800 px
 */
@@ -297,10 +348,22 @@ header .navbar .navbar-top-collapse {
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a {
         color: #fff;
     }
+    #dfclassic {
+        left: 10% !important;
+        width: 80% !important;
+    }
 }
 @media (max-width: 740px){
     .clarico_row .clarico_row_maxW.new_header_in {
         max-width: 450px;
+    }
+    .df-compact-desktop {
+        left: 1.2em !important;
+        width: 90% !important;
+    }
+    #dfclassic {
+        left: 10% !important;
+        width: 80% !important;
     }
 }
 /*
@@ -317,5 +380,16 @@ header .navbar .navbar-top-collapse {
                 margin-right: 3px !important;
             }
         }
+    }
+    #dfclassic {
+        left: 2rem !important;
+        width: 90% !important;
+    }
+}
+
+@media (max-width: 350px){
+    #dfclassic {
+        left: 1rem !important;
+        width: 90% !important;
     }
 }

@@ -315,3 +315,54 @@ $(document).ready(function(){
         $(input[name="accepted_legal_terms"]).attr("value", "123");
     });
 });
+
+/* Add Doofinder library */
+var doofinder_script ='//cdn.doofinder.com/media/js/doofinder-classic.7.latest.min.js';
+//var doofinder_script ='//cdn.doofinder.com/media/js/doofinder-compact.7.latest.min.js';
+(function(d,t){var f=d.createElement(t),s=d.getElementsByTagName(t)[0];f.async=1;
+  f.src=('https:'==location.protocol?'https:':'http:')+doofinder_script;
+  f.setAttribute('charset','utf-8');
+  s.parentNode.insertBefore(f,s)}(document,'script')
+);
+/* Load Doofinder search widget */
+var dfClassicLayers = [{
+//var dfCompactLayers = [{
+    queryInput: '#doofinder_search',
+    hashid: '98a4f858627305e834fb8af7a94442c4',
+    zone: 'eu1',
+    showInMobile: true,
+    display: {
+        lang: 'es',
+        translations: {
+            "Results": "Resultados",
+            "Search…": "Buscar...",
+            "Sorry, no results found.": "Lo sentimos, no hay resultados",
+            "View less…": "Ver menos",
+            "View more…": "Ver más",
+            "Search": "Buscar",
+            "CLOSE": "Cerrar",
+            "CLEAR": "Limpiar",
+            "FILTER": "Filtro",
+            "Query Too Large": "Consulta muy larga"
+        },
+        currency: {
+            symbol: '&euro;',
+            decimal: ',',
+            thousand: '.',
+            precision: 2,
+            format: '%v%s'
+        },
+        initialSearch: true,
+        header: {
+           show: true
+        },
+        results: {
+            initialLayout: 'grid'
+        },
+        closeOnClick: true,
+        closeIfEmpty: true,
+    },
+//    searchParams: {
+//        rpp: 7
+//    }
+}];

@@ -7,7 +7,7 @@
             <div class="wp-widget-paga-mas-tarde" t-if="product.website_price &gt; 349 and not product.hide_website_price">
                 <script type="text/javascript" src="https://cdn.pagamastarde.com/pmt-js-client-sdk/3/js/client-sdk.min.js"/>
                 <div class="PmtSimulator"
-                     data-pmt-num-quota="2"
+                     data-pmt-num-quota="12"
                      data-pmt-style="blue"
                      data-pmt-type="6"
                      t-att-data-pmt-amount="product.website_price"/>
