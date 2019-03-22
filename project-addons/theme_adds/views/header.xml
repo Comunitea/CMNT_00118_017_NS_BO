@@ -114,7 +114,7 @@
                             <div class="new_hd_search_wp">
                                 <form action="/shop" method="get" t-att-class="search_class">
                                     <div class="oe_search new_hd_search_input">
-                                        <input type="text" name="search" id="doofinder_search"
+                                        <input type="text" name="search" id="doofinder_search" autocomplete="off"
                                                class="search-query form-control oe_search_box clarico_search_border"
                                                placeholder="Buscar en tienda..." t-att-value="search" required="required" />
                                     </div>

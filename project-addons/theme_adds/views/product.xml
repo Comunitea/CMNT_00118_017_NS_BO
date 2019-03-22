@@ -165,7 +165,7 @@
         <xpath expr="//div[@class='p_ad2cart']" position="replace">
             <t t-if="not product.hide_website_price">
                 <div class="p_ad2cart">
-                <a id="add_to_cart" class="btn btn-primary btn-lg mt8 js_check_product a-submit" href="#">Add to Cart</a>
+                    <a id="add_to_cart" class="btn btn-primary btn-lg mt8 js_check_product a-submit" href="#">Añadir al Carrito</a>
                 </div>
             </t>
         </xpath>
