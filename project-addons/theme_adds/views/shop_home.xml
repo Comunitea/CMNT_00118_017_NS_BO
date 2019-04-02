@@ -17,9 +17,13 @@
         <!-- Product Tags filter -->
         <xpath expr="//div[@class='view-as-right-cnt']" position="before">
 
+            <!-- Show old clarico dynamic menu only in mobile devices-->
             <div class="wp-all-category-div">
                 <div class="all-category-div">
-                    <a href="#" class="product-tag btn btn-primary btn-xs to-toggle-menu">
+                    <div class="hidden-sm hidden-xs mt4 mr16">
+                        <strong class="product-tag">Categorías</strong>
+                    </div>
+                    <a href="#" class="product-tag btn btn-primary btn-xs to-toggle-menu hidden-md hidden-lg">
                         <span data-oe-model="website.menu" data-oe-id="37" data-oe-field="name" data-oe-type="char" data-oe-expression="submenu.name">Categories</span>
                     </a>
                     <t t-call="clarico_layout.dynamic_category"/>
@@ -215,6 +219,47 @@
     <!-- Lateral filter -->
     <template id="left_filter" inherit_id="clarico_shop.clarico_shop_shop_page">
         <xpath expr="//div[@id='products_grid_before']/div[@class='products_grid_before_maxW']" position="replace">
+
+            <!-- Show new dynamic menu only in full-size devices -->
+            <div class="wp-shop-sidebar-menu mb16 hidden-sm hidden-xs">
+                <div class="shop-sidebar-menu">
+                    <t t-set="categories" t-value="website.category_check()"/>
+                    <ul t-if="categories">
+                        <t t-foreach="categories" t-as="cat">
+                            <li t-if="not cat.parent_id" class="first-level">
+                                <div class="first-level-wp">
+                                    <div itemprop="image" class="first-level-img" t-field="cat.image_small"
+                                         t-options='{"widget": "image", "alt-field": "name"}' />
+                                    <a t-att-href="'/category/%s' %cat.slug if cat.slug else '/shop/category/%s' %slug(cat)"
+                                       t-field="cat.name" />
+                                </div>
+                                <div class="first-level-inner" t-if="cat.child_id">
+                                    <ul>
+                                        <t t-foreach="cat.child_id" t-as="sub_cat">
+                                            <li class="second-level">
+                                                <a t-att-href="'/category/%s' %sub_cat.slug if sub_cat.slug else '/shop/category/%s' %slug(sub_cat)"
+                                                   t-field="sub_cat.name"/>
+                                                <div class="second-level-inner" t-if="sub_cat.child_id">
+                                                    <ul>
+                                                        <t t-foreach="sub_cat.child_id" t-as="sub_2_cat">
+                                                            <li class="third-level">
+                                                                <a t-att-href="'/category/%s' %sub_2_cat.slug if sub_2_cat.slug else '/shop/category/%s' %slug(sub_2_cat)"
+                                                                   t-field="sub_2_cat.name"/>
+                                                            </li>
+                                                        </t>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </t>
+                                    </ul>
+                                </div>
+                            </li>
+                        </t>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Product tags menu -->
             <div class="wp_products_grid_tags">
                 <div id="products_grid_tags">
                     <t t-set="tags" t-value="website.get_product_tags()" />
