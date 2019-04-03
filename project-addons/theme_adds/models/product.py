@@ -6,7 +6,10 @@
 # © 2018 Comunitea - Ruben Seijas <ruben@comunitea.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import models, fields, _
+import unicodedata
+import re
+import random
+from odoo import api, models, fields, _
 import odoo.addons.decimal_precision as dp
 
 
@@ -34,12 +37,63 @@ class ProductCustom(models.Model):
     description_short = fields.Text(_("Short product description"), help=_("Short description for product page"),
                                     strip_style=True)
     description = fields.Html(_("Full product description"), strip_style=True)
-    slug = fields.Char(_("SEO Old URL"), help=_("Prestashop Old Product URL for redirection of Google SEO"))
+    slug = fields.Char(_("Friendly URL"), help=_("Friendly URL for SEO"))
     hide_website_price = fields.Boolean(_("Hide Website Price"), default=False,
                                         help=_("If selected, hide price and add to cart button"))
     product_meta_title = fields.Char("SEO Meta Title", translate=True)
     product_meta_description = fields.Text("SEO Meta Description", translate=True)
     product_meta_keywords = fields.Char("SEO Meta Keywords", translate=True)
+
+    def slug_validation(self, value):
+        # Unicode validation
+        uni = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode('ascii')
+        value = re.sub('[\W_]', ' ', uni).strip().lower()
+        value = re.sub('[-\s]+', '-', value)
+        value = value[:40]
+
+        # Check if this SLUG value already exists in any product or category
+        it_exists = self.sudo().search([('slug', '=', value)], limit=1).id
+        if it_exists and not it_exists == self.id:
+            # Add random URL part
+            value = '%s-%d' % (value, random.randint(0, 999))
+        return value
+
+    @api.multi
+    def write(self, values):
+        base_url = self.env['ir.config_parameter'].get_param('web.base.url')
+        for product in self:
+            has_slug = values.get('slug', False)
+            if not has_slug or has_slug == '':
+                # If slug not exists or is empty -> create from product name & id and validate
+                new_slug = '%s-%s' % (product.name, product.id)
+                slug = product.slug_validation(new_slug)
+            else:
+                # If slug exists -> validate
+                slug = product.slug_validation(has_slug)
+            # Write
+            values.update({
+                'slug': slug,
+                'url_presupuesto': '%s/product/%s' % (base_url, slug)
+            })
+            return super(ProductCustom, product).write(values)
+
+    @api.model
+    def create(self, values):
+        base_url = self.env['ir.config_parameter'].get_param('web.base.url')
+        has_slug = values.get('slug', False)
+        if not has_slug or has_slug == '':
+            # If slug isn't established -> create from product name
+            new_slug = values['name']
+            slug = self.slug_validation(new_slug)
+        else:
+            # If slug is established -> validate
+            slug = self.slug_validation(has_slug)
+        # Create
+        values.update({
+            'slug': slug,
+            'url_presupuesto': '%s/product/%s' % (base_url, slug)
+        })
+        return super(ProductCustom, self).create(values)
 
 
 class Product(models.Model):
