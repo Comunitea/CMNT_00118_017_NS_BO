@@ -145,7 +145,7 @@
                                 Además, contamos con gabinetes completos para hacer más fácil tu compra.
                                 Puedes personalizarlos a tus necesidades añadiendo o quitando tantos productos como desees.
                             </p>
-                            <!--<a class="btn btn-primary common-btn btn-lg mb32" href="/shop">Shop Now</a>-->
+                            <a class="btn btn-primary common-btn btn-lg mb32" href="/shop">Shop Now</a>
                             </div>
                         </div>
                         <div class="clarico_home_second_sub_section">
