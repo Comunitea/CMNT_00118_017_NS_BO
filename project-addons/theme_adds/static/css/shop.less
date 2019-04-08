@@ -466,6 +466,8 @@ li.all-products, .all-category-div li {
 
 /* New sidebar shop category menu */
 .wp-shop-sidebar-menu {
+    position: relative;
+    background: #fff;
     & shop-sidebar-menu {
         & a {
         }
@@ -532,7 +534,7 @@ li.all-products, .all-category-div li {
         display: none;
         position: absolute;
         width: 700px;
-        min-height: 110px;
+        min-height: 165px;
         top: 0;
         left: 100%;
         background: white;
@@ -540,6 +542,9 @@ li.all-products, .all-category-div li {
         border-left: none;
         margin: 0 0 0 3px;
         padding: 15px 5px 15px 0;
+        -webkit-box-shadow: 1px 0px 2px 0px @theme-color;
+        -moz-box-shadow:    1px 0px 2px 0px @theme-color;
+        box-shadow:         1px 0px 2px 0px @theme-color;
         & ul {
         }
     }

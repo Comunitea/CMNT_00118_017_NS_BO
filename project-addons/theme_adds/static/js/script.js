@@ -366,3 +366,16 @@ var dfClassicLayers = [{
 //        rpp: 7
 //    }
 }];
+
+/* Shop sidebar menu */
+$(document).ready(function(){
+    $('.shop-sidebar-menu .first-level').hover(function(){
+        if($(this).find('div.first-level-inner').length){
+            $('.products-grid-main').css('opacity', 0.3);
+        }else{
+            $('.products-grid-main').css('opacity', 1);
+        }
+    },function(){
+        $('.products-grid-main').css('opacity', 1);
+    });
+});
