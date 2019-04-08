@@ -204,6 +204,37 @@ div.df-compact .df-results-block__header, .df-header-title, #df-header__dfclassi
 }
 
 /*
+    CSS media part MIN-WIDTH 1200 px
+*/
+@media (min-width: 1201px){
+    ul#top_menu {
+        &.navbar-nav {
+            & > li {
+                & > a {
+                    color: white;
+                    font-size: 17px;
+                    line-height: 1.5;
+                    background-color: @theme-color;
+                    padding: 2px 5px !important;
+                    margin: 8px 2px 6px 2px;
+                }
+                &.active {
+                    border-top: none;
+                    margin-top: 0;
+                    & > a {
+                        font-weight: 600;
+                        color: @theme-color;
+                        background-color: #fff;
+                        padding: 0px 3px !important;
+                        border: 2px solid @theme-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
     CSS media part MAX-WIDTH 1400 px
 */
 @media (max-width: 1400px){
