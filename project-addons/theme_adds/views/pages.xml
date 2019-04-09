@@ -29,13 +29,13 @@
                             </div>-->
                         </div>
                         <div class="clarico_home_second_sub_section mb32">
-                            <div class="revi_widget_wide_14"/>
+                            <div class="revi_widget_wide_47"/>
                             <script type="text/javascript">
                                 var s = document.createElement("script");
                                 s.type = "text/javascript";
                                 s.setAttribute("async", "");
                                 s.setAttribute("defer", "");
-                                s.src = "https://revi.io/widgets/wide/Oq0OtK71NL/14";
+                                s.src = "https://revi.io/widgets/wide/Oq0OtK71NL/47";
                                 document.getElementsByTagName("body")[0].appendChild(s);
                             </script>
                         </div>
