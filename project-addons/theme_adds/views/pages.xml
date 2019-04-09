@@ -11,7 +11,10 @@
                     <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
                     <div class="clarico_row_maxW">
                         <div class="row">
-                            <div class="col-md-3 hidden-sm hidden-xs">
+                            <div class="col-md-12">
+                                <div class="clarico_home_second_section oe_structure oe_empty"/>
+                            </div>
+                            <!--<div class="col-md-12">
                                 <div class="mt48">
                                     <div class="revi_widget_vertical_80"/>
                                     <script type="text/javascript">
@@ -23,10 +26,7 @@
                                         document.getElementsByTagName("body")[0].appendChild(s);
                                     </script>
                                 </div>
-                            </div>
-                            <div class="col-md-9 col-sm-12">
-                                <div class="clarico_home_second_section oe_structure oe_empty"/>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="clarico_home_second_sub_section mb32">
                             <div class="revi_widget_wide_14"/>
