@@ -61,6 +61,7 @@
         'google_tag_manager',
         'facebook_pixel_manager',
         'doofinder_search',
+        'google_merchant_export',
         'theme_clarico'
     ],
     'data': [
