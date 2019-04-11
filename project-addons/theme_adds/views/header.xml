@@ -108,7 +108,7 @@
                 <div class="new_header_in clarico_row_maxW">
                     <div class="row">
                         <div class="col-md-3 col-sm-7 col-xs-7 new_hd_img desktop-version">
-                            <a href="/shop"><img src="/theme_adds/static/img/logo-head.png" alt="Nostrumsport"/></a>
+                            <a href="/"><img src="/theme_adds/static/img/logo-verde.png" alt="Nostrumsport"/></a>
                         </div>
                         <div class="col-md-6 col-sm-12 col-xs-12 new_hd_search">
                             <div class="new_hd_search_wp">
@@ -127,14 +127,25 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-7 new_hd_img mobile-version">
-                            <a href="/shop"><img src="/theme_adds/static/img/logo-head.png" alt="Nostrumsport"/></a>
+                            <a href="/"><img src="/theme_adds/static/img/logo-head.png" alt="Nostrumsport"/></a>
                         </div>
                         <div class="col-sm-5 col-xs-0 mobile-version"/>
                         <div class="col-md-3 col-xs-5 col-sm-3">
-                            <div class="hd_widget_revi_demo">
+                            <div class="hd_widget_revi_demo visible-sm visible-xs">
                                 <a href="https://revi.io/es/opiniones/wwwnostrumsportcom" rel="nofollow" target="_blank">
                                     <img src="/theme_adds/static/img/revi-widget-demo.png" alt="Revi 9.2/10"/>
                                 </a>
+                            </div>
+                            <div class="hd_widget_revi hidden-sm hidden-xs">
+                                <div class="revi_widget_small_15"/>
+                                <script type="text/javascript">
+                                    var s = document.createElement("script");
+                                    s.type = "text/javascript";
+                                    s.setAttribute("async", "");
+                                    s.setAttribute("defer", "");
+                                    s.src = "https://revi.io/widgets/small/Oq0OtK71NL/15";
+                                    document.getElementsByTagName("body")[0].appendChild(s);
+                                </script>
                             </div>
                         </div>
                     </div>

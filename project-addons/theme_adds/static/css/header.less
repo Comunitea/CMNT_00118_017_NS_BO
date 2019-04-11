@@ -114,6 +114,11 @@
         max-width: 100%;
     }
 }
+.hd_widget_revi {
+    position: relative;
+    width: 84%;
+    margin: 25px 0 0 14%;
+}
 header .navbar .navbar-top-collapse {
     margin-top: -5px !important;
     padding: 0;
@@ -195,6 +200,37 @@ div.df-compact .df-results-block__header, .df-header-title, #df-header__dfclassi
     .df-card__image {
         width: 50px;
         height: 50px;
+    }
+}
+
+/*
+    CSS media part MIN-WIDTH 1200 px
+*/
+@media (min-width: 1201px){
+    ul#top_menu {
+        &.navbar-nav {
+            & > li {
+                & > a {
+                    color: white;
+                    font-size: 17px;
+                    line-height: 1.5;
+                    background-color: @theme-color;
+                    padding: 2px 5px !important;
+                    margin: 8px 2px 6px 2px;
+                }
+                &.active {
+                    border-top: none;
+                    margin-top: 0;
+                    & > a {
+                        font-weight: 600;
+                        color: @theme-color;
+                        background-color: #fff;
+                        padding: 0px 3px !important;
+                        border: 2px solid @theme-color;
+                    }
+                }
+            }
+        }
     }
 }
 

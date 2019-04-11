@@ -2,6 +2,60 @@
 <odoo>
     <data noupdate="0">
 
+    <!-- Homepage -->
+    <delete id="website.homepage" model="ir.ui.view"/>
+    <template id="website.homepage" name="NostrumSport homepage" page="True">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="clarico_row">
+                    <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
+                    <div class="clarico_row_maxW">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="clarico_home_second_section oe_structure oe_empty"/>
+                            </div>
+                            <!--<div class="col-md-12">
+                                <div class="mt48">
+                                    <div class="revi_widget_vertical_80"/>
+                                    <script type="text/javascript">
+                                        var s = document.createElement("script");
+                                        s.type = "text/javascript";
+                                        s.setAttribute("async", "");
+                                        s.setAttribute("defer", "");
+                                        s.src = "https://revi.io/widgets/vertical/Oq0OtK71NL/80";
+                                        document.getElementsByTagName("body")[0].appendChild(s);
+                                    </script>
+                                </div>
+                            </div>-->
+                        </div>
+                        <div class="clarico_home_second_sub_section mb32">
+                            <div class="revi_widget_wide_47"/>
+                            <script type="text/javascript">
+                                var s = document.createElement("script");
+                                s.type = "text/javascript";
+                                s.setAttribute("async", "");
+                                s.setAttribute("defer", "");
+                                s.src = "https://revi.io/widgets/wide/Oq0OtK71NL/47";
+                                document.getElementsByTagName("body")[0].appendChild(s);
+                            </script>
+                        </div>
+                        <div class="clarico_home_second_sub_section mb32">
+                            <div class="chs_heading" style="text-align:center;">¿Abres una Nueva Clínica?
+                                <a href="/page/contactus" style="text-decoration: underline;">Pídenos presupuesto</a>
+                            </div>
+                            <p class="chs_para" style="text-align:center;">Ponemos 25 años de experiencia a tu servicio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    <record id="website.homepage" model="ir.ui.view">
+        <field name="website_meta_title">Material de Fisioterapia - NostrumSport</field>
+        <field name="website_meta_description">Productos de Fisioterapia</field>
+        <field name="website_meta_keywords"/>
+    </record>
+
     <!-- Condiciones de envío -->
     <template id="website.entrega" page="True">
         <t t-call="website.layout">
