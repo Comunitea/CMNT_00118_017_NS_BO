@@ -76,6 +76,7 @@ class ProductCustom(models.Model):
                 'url_presupuesto': '%s/product/%s' % (base_url, slug)
             })
             super(ProductCustom, product).write(values)
+        return True
 
     @api.model
     def create(self, values):
