@@ -13,20 +13,20 @@
             <!-- Add filter to state & country fields in the partner view -->
             <xpath expr="//div[@class='o_address_format'][1]/field[@name='state_id']" position="attributes">
                 <attribute name="options">{"no_open": True, 'create': false, 'create_edit': false}</attribute>
-                <attribute name="domain">[("website_available", "=", True)]</attribute>
+                <!-- <attribute name="domain">[("website_available", "=", True)]</attribute> -->
             </xpath>
             <xpath expr="//div[@class='o_address_format'][1]/field[@name='country_id']" position="attributes">
                 <attribute name="options">{"no_open": True, 'create': false, 'create_edit': false}</attribute>
-                <attribute name="domain">[("website_available", "=", True)]</attribute>
+                <!-- <attribute name="domain">[("website_available", "=", True)]</attribute> -->
             </xpath>
             <!-- Add filter to state & country fields in the modal window of new contact in partner view -->
             <xpath expr="//div[@name='div_address']/field[@name='state_id']" position="attributes">
                 <attribute name="options">{"no_open": True, 'create': false, 'create_edit': false}</attribute>
-                <attribute name="domain">[("website_available", "=", True)]</attribute>
+                <!-- <attribute name="domain">[("website_available", "=", True)]</attribute> -->
             </xpath>
             <xpath expr="//div[@name='div_address']/field[@name='country_id']" position="attributes">
                 <attribute name="options">{"no_open": True, 'create': false, 'create_edit': false}</attribute>
-                <attribute name="domain">[("website_available", "=", True)]</attribute>
+                <!-- <attribute name="domain">[("website_available", "=", True)]</attribute> -->
             </xpath>
         </field>
     </record>
