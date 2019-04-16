@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 # © 2018 Comunitea - Javier Colmenero <javier@comunitea.com>
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import fields, models, api
+from openerp import fields, models, api, _
+from odoo.exceptions import UserError
 
 
 class SaleOrder(models.Model):
@@ -21,6 +22,15 @@ class SaleOrder(models.Model):
         for so in self:
             so.invoice_shipping_on_delivery = False
         return res
+    
+    @api.multi
+    def action_cancel(self):
+        live_picks = \
+            self.mapped('picking_ids').filtered(lambda x: x.state != 'cancel')
+        if live_picks:
+            raise UserError(_('You can cancel a order with live pickings. \
+                you must cancel all the related pickings first'))
+        return super(SaleOrder, self).action_cancel()
 
 
 class SaleOrderLine(models.Model):

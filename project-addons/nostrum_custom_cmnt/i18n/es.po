@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-03 10:32+0000\n"
-"PO-Revision-Date: 2018-09-03 10:32+0000\n"
+"POT-Creation-Date: 2019-04-16 11:48+0000\n"
+"PO-Revision-Date: 2019-04-16 11:48+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgstr "<strong>Código de cliente:</strong>"
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
 msgid "<strong>Description:</strong>"
-msgstr "<strong>Descripci&#243;n:</strong>"
+msgstr "<strong>Descripción:</strong>"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sessionsummary
@@ -98,7 +98,7 @@ msgstr "<strong>Image</strong>"
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
 msgid "<strong>Invoice Date:</strong>"
-msgstr "<strong>Fecha factura:</strong>"
+msgstr "<strong>Fecha Factura:</strong>"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sessionsummary
@@ -184,6 +184,11 @@ msgstr "<strong>Total</strong>"
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
 msgid "<strong>Vencimientos:</strong>"
 msgstr "<strong>Vencimientos:</strong>"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.model.fields,help:nostrum_custom_cmnt.field_delivery_carrier_website_description
+msgid "A description of the Product that you want to communicate to your customers. This description will be copied to every Sale Order, Delivery Order and Customer Invoice/Refund"
+msgstr "Una descripción del producto que quiera comunicar a sus clientes. Esta descripción se copiará a cada pedido de venta, albarán de salida y factura de cliente."
 
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sessionsummary
@@ -334,8 +339,8 @@ msgstr "Descripción"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_delivery_carrier_website_description
-msgid "Description for the website"
-msgstr "Descripción para el sitio web"
+msgid "Description for Online Quotations"
+msgstr "Descripción para los pedidos online"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
@@ -405,7 +410,7 @@ msgstr "Hola Ahí! "
 #. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price_id
 msgid "ID"
-msgstr "ID (identificación)"
+msgstr "ID"
 
 #. module: nostrum_custom_cmnt
 #. openerp-web
@@ -451,7 +456,7 @@ msgstr "Diario"
 #. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price___last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr "Última modificación el"
 
 #. module: nostrum_custom_cmnt
 #. openerp-web
@@ -463,12 +468,12 @@ msgstr "Último mes"
 #. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price_write_uid
 msgid "Last Updated by"
-msgstr "Última actualización de"
+msgstr "Última actualización por"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price_write_date
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr "Última actualización el"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model,name:nostrum_custom_cmnt.model_crm_lead
@@ -609,7 +614,7 @@ msgstr "Rendimiento"
 #. module: nostrum_custom_cmnt
 #: model:ir.model,name:nostrum_custom_cmnt.model_pos_order
 msgid "Point of Sale Orders"
-msgstr "Point of Sale Orders"
+msgstr "Pedidos del TPV"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
@@ -639,12 +644,12 @@ msgstr "Plantilla de producto"
 #. module: nostrum_custom_cmnt
 #: model:ir.model,name:nostrum_custom_cmnt.model_purchase_order
 msgid "Purchase Order"
-msgstr "Pedido de compra"
+msgstr "Orden de Compra"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model,name:nostrum_custom_cmnt.model_purchase_order_line
 msgid "Purchase Order Line"
-msgstr "Línea pedido de compra"
+msgstr "Línea orden de compra"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
@@ -839,7 +844,7 @@ msgstr "Precio total"
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
 msgid "Unit Price"
-msgstr "Precio unitario"
+msgstr "Precio unidad"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
@@ -876,7 +881,7 @@ msgstr "VENTA:"
 #. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_invoice_vendor_ref
 msgid "Vendor Reference"
-msgstr "Referencia proveedor"
+msgstr "Referencia de proveedor"
 
 #. module: nostrum_custom_cmnt
 #. openerp-web
@@ -899,6 +904,12 @@ msgstr "Ganado en oportunidades"
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_crm_case_phonecalls_filter_add_day_group
 msgid "Year"
 msgstr "Año"
+
+#. module: nostrum_custom_cmnt
+#: code:addons/nostrum_custom_cmnt/models/sale.py:31
+#, python-format
+msgid "You can cancel a order with live pickings.                 you must cancel all the related pickings first"
+msgstr "No puedes cancelar un pedido con albaranes en curso.                 Debes cancelar primero los albaranes relacionados"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.actions.act_window,help:nostrum_custom_cmnt.today_crm_case_categ_phone_outgoing0
