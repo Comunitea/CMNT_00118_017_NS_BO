@@ -49,7 +49,7 @@ class ProductCustom(models.Model):
         uni = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode('ascii')
         value = re.sub('[\W_]', ' ', uni).strip().lower()
         value = re.sub('[-\s]+', '-', value)
-        value = value[:40]
+        value = value[:60]
 
         # Check if this SLUG value already exists in any product or category
         it_exists = self.sudo().search([('slug', '=', value)], limit=1).id
@@ -65,8 +65,11 @@ class ProductCustom(models.Model):
             has_slug = values.get('slug', False)
             if not has_slug or has_slug == '':
                 # If slug not exists or is empty -> create from product name & id and validate
-                new_slug = '%s-%s' % (product.name, product.id)
-                slug = product.slug_validation(new_slug)
+                if not product.slug:
+                    new_slug = '%s-%s' % (product.name, product.id)
+                    slug = product.slug_validation(new_slug)
+                else:
+                    slug = product.slug_validation(product.slug)
             else:
                 # If slug exists -> validate
                 slug = product.slug_validation(has_slug)
