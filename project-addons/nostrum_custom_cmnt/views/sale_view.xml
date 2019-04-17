@@ -8,13 +8,13 @@
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//button[1]" position="attributes">
-                    <attribute name="groups">account.group_account_user</attribute>
+                    <attribute name="groups">account.group_account_invoice</attribute>
                 </xpath>
                 <xpath expr="//button[2]" position="attributes">
-                    <attribute name="groups">account.group_account_user</attribute>
+                    <attribute name="groups">account.group_account_invoice</attribute>
                 </xpath>
                 <xpath expr="//button[@name='action_view_invoice']" position="attributes">
-                    <attribute name="groups">account.group_account_user</attribute>
+                    <attribute name="groups">account.group_account_invoice</attribute>
                 </xpath>
             </field>
         </record>
