@@ -2,17 +2,22 @@
 <odoo>
 
 
-            <!-- ????????? date_confirm?''' -->
-<!--         <record id="view_order_form_add_date_confirm" model="ir.ui.view">
-            <field name="name">sale.order.form.add.date.confirm</field>
+        <record id="view_order_form_add_add_group" model="ir.ui.view">
+            <field name="name">sale.order.form.add.group</field>
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <field name="date_order" position="after">
-                    <field name="date_confirm"/>
-                </field>
+                <xpath expr="//button[1]" position="attributes">
+                    <attribute name="groups">account.group_account_user</attribute>
+                </xpath>
+                <xpath expr="//button[2]" position="attributes">
+                    <attribute name="groups">account.group_account_user</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_view_invoice']" position="attributes">
+                    <attribute name="groups">account.group_account_user</attribute>
+                </xpath>
             </field>
-        </record> -->
+        </record>
 
         <record id="view_sale_order_lines_tree" model="ir.ui.view">
             <field name="name">view.sale.order.lines.tree</field>
