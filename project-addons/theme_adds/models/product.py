@@ -79,6 +79,8 @@ class ProductCustom(models.Model):
                 'url_presupuesto': '%s/product/%s' % (base_url, slug)
             })
             super(ProductCustom, product).write(values)
+            values.pop('slug')
+            values.pop('url_presupuesto')
         return True
 
     @api.model
