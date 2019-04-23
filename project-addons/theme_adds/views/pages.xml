@@ -3,7 +3,7 @@
     <data noupdate="1">
 
     <!-- Homepage -->
-    <delete id="website.homepage" model="ir.ui.view"/>
+    <!--<delete id="website.homepage" model="ir.ui.view"/>-->
     <template id="website.homepage" name="NostrumSport homepage" page="True">
         <t t-call="website.layout">
             <div id="wrap">
@@ -12,7 +12,146 @@
                     <div class="clarico_row_maxW">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="clarico_home_second_section oe_structure oe_empty"/>
+                                <div class="clarico_home_second_section oe_structure oe_empty">
+                                    <section class="s_title">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h1 class="text-center">Tu tienda de Fisioterapia desde 1989<br/></h1>
+                                                    <h3 class="text-center text-muted">Todo el material que necesitas al mejor precio<br/></h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <section class="cat_img_content_snippet_wrap mt0" style="height: 504px; overflow: hidden;">
+                                            <div class="cat_img_content_snippet_container">
+                                                <div class="daily_deals_img_section">
+                                                    <section>
+                                                        <a href="/product/theragun-g3-pro">
+                                                            <img src="/web/image/96716/theragun2.jpg" data-original-title="" title=""/>
+                                                        </a>
+                                                    </section>
+                                                </div>
+                                                <div class="daily_deals_content_class">
+                                                    <p class="hr_before_heading"> </p>
+                                                    <h1 class="content_heading">categorías y BUSCADOR<br/></h1>
+                                                    <div class="daily_deals_para">
+                                                        <p>Usa nuestro BUSCADOR AVANZADO en la parte superior de la página para encontrar rápida y cómodamente todo lo que necesites. También en nuestra sección de CATEGORÍAS<br/></p>
+                                                    </div>
+                                                    <a class="shop_now_button" href="/shop" data-original-title="" title="">IR A TIENDA </a>
+                                                </div>
+                                                <div class="daily_deals_snippet_category">
+                                                    <div class="category_row">
+                                                        <div class="category">
+                                                            <div class="cat_img_div">
+                                                                <section class="mb4">
+                                                                    <a href="/category/camillas">
+                                                                        <img src="/web/image/96718/camilla.jpg" data-original-title="" title=""/>
+                                                                    </a>
+                                                                </section>
+                                                            </div>
+                                                            <a href="/category/camillas" class="category_name" data-original-title="" title="">Camillas </a>
+                                                        </div>
+                                                        <div class="category">
+                                                            <div class="cat_img_div">
+                                                                <section>
+                                                                    <a href="/category/tape-vendaje-funcional">
+                                                                        <img src="/web/image/96719/vendajes.jpg" data-original-title="" title=""/>
+                                                                    </a>
+                                                                </section>
+                                                            </div>
+                                                            <a href="/category/tape-vendaje-funcional" class="category_name" data-original-title="" title="">Vendajes </a>
+                                                        </div>
+                                                        <div class="category">
+                                                            <div class="cat_img_div">
+                                                                <section class="mb32 mt16">
+                                                                    <a href="/category/Cremas-Aceites-Accesorios">
+                                                                        <img src="/web/image/96874/image%20(1).jpg" data-original-title="" title=""/>
+                                                                    </a>
+                                                                </section>
+                                                            </div>
+                                                            <a href="/category/Cremas-Aceites-Accesorios" class="category_name" data-original-title="" title="">cremas y aceites</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="category_row">
+                                                        <div class="category">
+                                                            <div class="cat_img_div">
+                                                                <section>
+                                                                    <a href="/category/Indiba">
+                                                                        <img src="/web/image/93091/equipo-indiba-activ-ct-8.jpg" data-original-title="" title=""/>
+                                                                    </a>
+                                                                </section>
+                                                            </div>
+                                                            <a href="#" class="category_name">Indiba</a>
+                                                        </div>
+                                                        <div class="category">
+                                                            <div class="cat_img_div">
+                                                                <section class="mt8 mb16">
+                                                                    <a href="/category/Game-Ready">
+                                                                        <img src="/web/image/93104/game%20ready.png" data-original-title="" title=""/>
+                                                                    </a>
+                                                                </section>
+                                                            </div>
+                                                            <a href="/category/Game-Ready" class="category_name">Game Ready</a>
+                                                        </div>
+                                                        <div class="category">
+                                                            <div class="cat_img_div">
+                                                                <section>
+                                                                    <a href="/category/Ec%C3%B3grafos">
+                                                                        <img src="/web/image/93109/descarga%20(1).jpg" data-original-title="" title=""/>
+                                                                    </a>
+                                                                </section>
+                                                            </div>
+                                                            <a href="/category/Ec%C3%B3grafos" class="category_name" data-original-title="" title="">Ecógrafo</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </section>
+                                    <section>
+                                        <div class="clarico_home_second_sub_section">
+                                            <div class="chs_detail_container">
+                                                <h1 class="chs_heading">Tienda de Fisioterapia Nostrum Sports</h1>
+                                                <p class="chs_para">
+                                                    Encuentra el mejor material de fisioterapia online de la mano de Nostrumsport.
+                                                    En nuestra tienda online podrás encontrar todo lo necesario para tu clínica o para uso personal:
+                                                    camillas plegables, aceite para masajes, vendajes, mobiliario clínico, material de electroterapia,
+                                                    agujas de acupuntura y mucho más.
+                                                </p>
+                                                <p class="chs_para">
+                                                    Además, contamos con gabinetes completos para hacer más fácil tu compra.
+                                                    Puedes personalizarlos a tus necesidades añadiendo o quitando tantos productos como desees.
+                                                </p>
+                                                <a class="btn btn-primary common-btn btn-lg mb32" href="/shop">Shop Now</a>
+                                            </div>
+                                        </div>
+                                        <div class="clarico_home_second_sub_section">
+                                            <div class="chs_detail_container">
+                                                <h2 class="chs_heading">Material de fisioterapia para nueva clínica</h2>
+                                                <p class="chs_para">
+                                                    Especialistas en clínicas de fisioterapia, Nostrumsport dispone de un amplio catálogo de productos
+                                                    perfectos para renovar tu vieja clínica o para montar una nueva con el mejor material y la garantía
+                                                    de una fabricación bajo las últimas tecnologías del mercado examinadas por los más exigentes controles de calidad.
+                                                </p>
+                                                <p class="chs_para">
+                                                    Si vas a abrir una nueva clínica o necesitas material fisioterapia,
+                                                    Nostrumsport pone a tu servicio más de 25 años de experiencia en todo tipo de productos para fisioterapia.
+                                                    Además, te facilitaremos un presupuesto totalmente personalizado del material que necesites sin ningún tipo de compromiso,
+                                                    aconsejándote sobre las mejores soluciones a las necesidades que tu negocio adquiera,
+                                                    los productos más recomendados y un servicio postventa que te ayudará en todo lo que necesites.
+                                                </p>
+                                                <p class="chs_para">
+                                                    No esperes más y cuenta con Nostrumsport para la aparatología de tu clínica.
+                                                    Somos una empresa líder del sector gracias a la calidad de nuestros productos, un precio competitivo
+                                                    y la experiencia de nuestro equipo a tu disposición para tu clínica.
+                                                </p>
+                                                <a class="btn btn-primary common-btn btn-lg mb32" href="/page/contactus">Ask for a Budget</a>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
                             </div>
                             <!--<div class="col-md-12">
                                 <div class="mt48">
