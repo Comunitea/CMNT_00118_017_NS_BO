@@ -149,10 +149,12 @@ class ProductCustom(WebsiteSale):
 
         products_list = http.request.env['product.template']
         product = products_list.sudo().search([('slug', '=', path)], limit=1)
-        user = request.env.uid
+        user = request.env.user
 
         if product:
-            if not product.website_published and user != SUPERUSER_ID:
+            if not product.website_published and user.id != SUPERUSER_ID and \
+                    not (user.has_group('website.group_website_designer')
+                         or user.has_group('website.group_website_publisher')):
                 return request.render("website.403")
             else:
                 return super(ProductCustom, self).product(product=product, category=category, search=search, **kwargs)
