@@ -7,14 +7,14 @@ self.addEventListener('', function(e) {
    caches.open('nostrum_cache').then(function(cache) {
 //        console.log("ServiceWorker cache open: " + e.request.url);
      return cache.addAll([
-        '/shop?homescreen=1',
+        '/?homescreen=1',
         '/web/static/lib/fontawesome/fonts/fontawesome-webfont.woff2',
         '/clarico_base/static/src/font/Oswald-Light.ttf',
         '/clarico_base/static/src/font/Muli-Regular.ttf',
         '/clarico_base/static/src/font/Muli-Bold.ttf',
         '/clarico_base/static/src/font/Muli-Light.ttf',
         '/clarico_base/static/src/font/Oswald-Regular.ttf',
-        '/theme_adds/static/js/script.js',
+        //'/theme_adds/static/js/script.js',
         '/theme_adds/static/img/logo-head.png',
         '/theme_adds/static/img/revi-widget-demo.png',
         '/theme_adds/static/img/404-skeleton.jpg',
@@ -25,7 +25,7 @@ self.addEventListener('', function(e) {
         '/theme_adds/static/img/favicon_96.png',
         '/theme_adds/static/img/favicon_72.png',
         '/theme_adds/static/img/favicon_48.png',
-        '/checkout_coupon/static/js/checkout.js'
+        //'/checkout_coupon/static/js/checkout.js'
      ]);
    })
  );
