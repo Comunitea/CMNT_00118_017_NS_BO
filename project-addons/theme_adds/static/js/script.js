@@ -16,11 +16,11 @@ $(document).ready(function(){
     // Progressive Web App and SEO. Register Service Worker
     if('serviceWorker' in navigator) {
 
-       /* if('localhost' !== window.location.hostname){
+       if('localhost' !== window.location.hostname){
             navigator.serviceWorker.register('/sw.js').then(function() {
                 console.log("Service Worker Registered in: " + window.location.host);
             });
-        } else {*/
+       } else {
             navigator.serviceWorker.getRegistrations().then(function(registrations) {
                 if(registrations && registrations.length) {
                     for(let registration of registrations) {
@@ -30,7 +30,7 @@ $(document).ready(function(){
                 }
             });
             console.log("Service Worker Not Registered in: " + window.location.host);
-        /*}*/
+       }
     }
 });
 /* Category menu toggle open */
