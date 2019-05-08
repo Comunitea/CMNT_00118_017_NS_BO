@@ -187,4 +187,14 @@
         </xpath>
     </template>
 
+    <!-- Cookies notice bar -->
+    <template id="cookie_notice" inherit_id="website_cookie_notice.message">
+        <xpath expr="//div[@id='website_cookie_notice']" position="attributes">
+            <attribute name="class">container-fluid cc-cookies</attribute>
+        </xpath>
+    </template>
+    <template id="cookie_banner" inherit_id="website_cookie_notice.cookiebanner">
+        <xpath expr="//t[@t-call='website_cookie_notice.message']" position="replace"/>
+    </template>
+
 </odoo>
