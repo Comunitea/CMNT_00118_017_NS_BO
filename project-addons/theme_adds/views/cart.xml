@@ -250,6 +250,23 @@
             <attribute name="t-if">deliveries</attribute>
         </xpath>
 
+        <!-- Add comment field to order -->
+        <xpath expr="//div[@id='col-3']//div[@class='row js_payment']" position="after">
+            <div id="cart_comment" class="panel panel-default" t-if="website_sale_order.payment_mode_id">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Observaciones del Pedido</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="input-group col-md-12">
+                        <textarea t-att-value="website_sale_order.order_web_comment" rows="5" name="cart_comment" class="form-control" id="cart_comment" placeholder="Escriba aquí su comentario..."/>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <p>Se puede añadir algún comentario para su pedido.</p>
+                </div>
+            </div>
+        </xpath>
+
     </template>
 
     <!-- Replace default text of "Pay now" button -->

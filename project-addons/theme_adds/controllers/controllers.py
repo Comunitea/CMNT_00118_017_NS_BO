@@ -173,3 +173,15 @@ class ClaricoClearCartCustom(claricoClearCart):
         order.sudo().write({'payment_acquirer_id': False})
         order.sudo().unlink()
 
+
+class OrderComment(WebsiteSale):
+    """
+        Add the user comment to sale_order
+    """
+    @http.route(['/shop/cart/set_order_comment'], type='json', auth='public', methods=['POST'], website=True)
+    def add_order_comment(self, order_comment):
+        order = request.website.sale_get_order()
+        order.sudo().write({
+            'order_web_comment': order_comment
+        })
+        return True

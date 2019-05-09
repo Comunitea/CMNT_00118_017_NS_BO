@@ -88,7 +88,8 @@
         'views/robots.xml',
         'views/sitemap.xml',
         'views/payment.xml',
-        'views/delivery_view.xml'
+        'views/delivery_view.xml',
+        'views/sale_order_view.xml'
     ],
     'qweb': [
     ],

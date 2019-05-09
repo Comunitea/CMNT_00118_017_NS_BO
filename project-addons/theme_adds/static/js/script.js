@@ -379,3 +379,44 @@ $(document).ready(function(){
         $('.products-grid-main').css('opacity', 1);
     });
 });
+
+/* Comment field en OSC */
+odoo.define('theme_adds.set_order_comment', function (require) {
+    "use strict";
+    var inherit = require('website_sale_one_step_checkout.osc');
+    var ajax = require('web.ajax');
+
+    var SetOrderCommitInValidation = inherit.include({
+        validateCheckoutData: function () {
+            // Add web comment to the order data
+            var order_comment = $('textarea[name=cart_comment]').val()
+            ajax.jsonRpc("/shop/cart/set_order_comment", 'call', {
+                'order_comment': order_comment
+            }).then(function (result) {
+                //console.log(result)
+            });
+
+            // Helper function to validate checkout data
+            // This function validates the mandatory billing fields
+            // if everything is fine return success
+            // else open the billing address form / modal
+            var self = this;
+            return ajax.jsonRpc('/shop/checkout/validate_checkout_data', 'call', {}).then(function (result) {
+                if (result.success) {
+                    return result;
+                } else {
+                    // if public user open form automatically
+                    var checkout_guest = $('input[name=public_customer]')[1];
+                    if (checkout_guest) {
+                        $(checkout_guest).click()
+                    } else {
+                        // if logged in customer open modal
+                        self.editBilling(result, self);
+                    }
+                    return result;
+                }
+            });
+        }
+    });
+
+});
