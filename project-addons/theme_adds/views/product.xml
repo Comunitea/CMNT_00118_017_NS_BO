@@ -169,6 +169,26 @@
                 </div>
             </t>
         </xpath>
+
+        <!-- Add revi product opinion widget -->
+        <xpath expr="//div[@class='div_class_whole_product_features']" position="after">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-sm-12">
+                        <div class="revi_widget_product_86"/>
+                        <script type="text/javascript">
+                            var s = document.createElement("script");
+                            s.type = "text/javascript";
+                            s.setAttribute("async", "");
+                            s.setAttribute("defer", "");
+                            s.src = "https://revi.io/widgets/product/Oq0OtK71NL/<t t-esc="product.id"/>/0/86";
+                            document.getElementsByTagName("body")[0].appendChild(s);
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+
     </template>
 
     <!-- Product description -->
