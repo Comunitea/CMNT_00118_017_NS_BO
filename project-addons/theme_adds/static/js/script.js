@@ -420,3 +420,11 @@ odoo.define('theme_adds.set_order_comment', function (require) {
     });
 
 });
+
+/* Scroll on stars click */
+$(document).ready(function(){
+    $('.wp_stars_product_page').on('click', function(){
+        var to_scroll = $('.wp_revi_widget_product').offset().top
+        $('html, body').animate({ scrollTop: to_scroll - 150}, 500);
+    });
+});
