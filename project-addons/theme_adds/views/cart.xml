@@ -152,6 +152,22 @@
         <xpath expr="//div[@class='container oe_website_sale']" position="before">
             <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
         </xpath>
+
+        <!-- Order comment-->
+        <xpath expr="//table[last()]" position="after">
+            <div class="clearfix" />
+            <div class="oe_structure" />
+            <h3 class="sub-heading text-left">Observaciones</h3>
+            <table class="table">
+                <tbody>
+                    <tr class="payment-information-tbody-tr table">
+                        <td colspan="2">
+                            <span t-field="order.order_web_comment" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </xpath>
     </template>
 
     <!-- Friendly URL's in the confirmation page -->
@@ -252,7 +268,7 @@
 
         <!-- Add comment field to order -->
         <xpath expr="//div[@id='col-3']//div[@class='row js_payment']" position="after">
-            <div id="cart_comment" class="panel panel-default" t-if="website_sale_order.payment_mode_id">
+            <div id="cart_comment mt32" class="panel panel-default border_primary" t-if="deliveries">
                 <div class="panel-heading">
                     <h4 class="panel-title">Observaciones del Pedido</h4>
                 </div>
@@ -262,7 +278,7 @@
                     </div>
                 </div>
                 <div class="panel-footer">
-                    <p>Se puede añadir algún comentario para su pedido.</p>
+                    <span>Las observaciones se incluirán en su pedido.</span>
                 </div>
             </div>
         </xpath>
@@ -282,7 +298,7 @@
             <div id="delivery_carrier_osc_custom">
                 <h3 class="page-header mt16">Send Conditions</h3>
                 <t t-if="deliveries">
-                    <div class="panel panel-default">
+                    <div class="panel panel-default border_primary">
                         <div class="panel-body">
                             Free delivery for amounts over € 99 and weight less than 15Kg
                         </div>
@@ -308,19 +324,13 @@
                     </div>
                 </t>
                 <t t-else="">
-                    <div class="panel panel-danger">
+                    <div class="panel panel-danger border_primary">
                         <div class="panel-heading">
                             <h3 class="panel-title">Ooops! Alguna condición de envío no es correcta</h3>
                         </div>
                         <div class="panel-body">
                             Por favor, revise lo siguiente:
                             <ul>
-                                <li>
-                                    No exceder el peso máximo permitido para su dirección de envío.
-                                    Si lo ha excedido, por favor, consultenos
-                                    <a rel="nofollow" href="/page/contactus" target="_blank" style="text-decoration: underline;"
-                                       title="Haz click en aquí para realizar su consulta"><strong>aquí</strong></a>.
-                                </li>
                                 <li>
                                     Por favor, revise la dirección de entrega. Debe cubrir correctamente el país y la provincia.
                                 </li>
@@ -340,15 +350,13 @@
         </xpath>
     </template>
 
-    <!--El peso se muestra solo si hay un error en las condiciones de envio o si es peninsular con sobrepeso-->
+    <!--El peso se muestra solo si hay un error en las condiciones de envio o si tiene sobrepeso-->
     <template id="cart_delivery_custom" name="Delivery Weight" inherit_id="website_sale_delivery.cart_delivery">
         <xpath expr="//div[@id='order_delivery']" position="before">
-            <div class="row text-danger" id="order_delivery_weight" t-if="not deliveries and ('/shop/checkout' in request.httprequest.path) or (deliveries and website_sale_order and website_sale_order.has_delivery
-                and website_sale_order.total_weight > website_sale_order.carrier_id.weight_total_max
-                and (not any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower())
-                or (any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower())
-                and website_sale_order.total_weight > website_sale_order.carrier_id.weight_base_max)))">
-                    <span class="col-xs-6 text-right"><strong title="Delivery will be updated after choosing a new delivery method"> Peso Total:</strong></span>
+            <div class="row text-danger" id="order_delivery_weight" t-if="website_sale_order and website_sale_order.has_delivery
+                and (website_sale_order.total_weight > website_sale_order.carrier_id.weight_total_max
+                and website_sale_order.total_weight > website_sale_order.carrier_id.weight_base_max)">
+                    <span class="col-xs-6 text-right"><strong title="Delivery will be updated after choosing a new delivery method"> Peso Entrega:</strong></span>
                     <span class="col-xs-6 text-right">
                         <strong t-esc="'{0:.2f}'.format(website_sale_order.total_weight)" style="white-space: nowrap;"/>
                         <strong>Kg</strong>
