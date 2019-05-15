@@ -62,6 +62,7 @@
         'facebook_pixel_manager',
         'doofinder_search',
         'google_merchant_export',
+        'revi_reviews',
         'theme_clarico'
     ],
     'data': [
