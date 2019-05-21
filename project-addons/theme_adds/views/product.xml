@@ -390,12 +390,15 @@
         <xpath expr="//div[@class='col-sm-7 res_product_img']" position="replace">
             <div class="col-md-7 col-sm-12 wp_res_product_img">
             <t t-set="rating" t-value="product.revi_product_rating()" />
-            <div t-if="rating and rating &gt; 0" class="wp_stars_product_page">
+            <div t-if="rating and rating['avg'] &gt; 0" class="wp_stars_product_page">
                 <t t-set="rating_stat" t-value="rating_product" />
                     <t t-call="rating.rating_star_card">
-                    <t t-set="rating_default_value" t-value="rating" />
+                    <t t-set="rating_default_value" t-value="rating['avg']" />
                     <t t-set="rating_disabled" t-value="True" />
                 </t>
+                <div class="stars_comment" t-if="rating['num']">
+                    <strong><t t-esc="rating['avg']"/>/5</strong> (<span><t t-esc="rating['num']"/> <t t-esc="'opiniones' if rating['plural'] else 'opinión'"/></span>)
+                </div>
             </div>
             <div class="res_product_img">
                 <t t-set="image_ids" t-value="product.product_image_ids" />
