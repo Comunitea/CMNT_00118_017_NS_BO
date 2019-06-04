@@ -203,6 +203,7 @@
                     <field name="margin_ptje" groups="deltatech_sale_margin.group_sale_margin"/>
                 </xpath>
                 <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="after">
+                    <field name="price_min"   groups="deltatech_sale_margin.group_sale_margin"/>
                     <field name="margin_base" groups="deltatech_sale_margin.group_sale_margin"/>
                     <field name="margin_ptje" groups="deltatech_sale_margin.group_sale_margin"/>
                 </xpath>

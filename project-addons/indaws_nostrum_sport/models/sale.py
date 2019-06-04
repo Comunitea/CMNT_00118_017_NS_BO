@@ -21,7 +21,7 @@
 from openerp import models, fields, api
 
 
-class SAaleOrderLine(models.Model):
+class SaleOrderLine(models.Model):
     _name = 'sale.order.line'
     _inherit = 'sale.order.line'
 
@@ -56,16 +56,46 @@ class SAaleOrderLine(models.Model):
                                string="Ciudad", readonly=True)
     partner_state = fields.Char(related='order_id.partner_id.state_id.name',
                                 string="Provincia", readonly=True)
+    price_min = fields.Float(digits=(6, 2), string="Precio mínimo")
+
+    @api.multi
+    @api.onchange('product_id')
+    def product_id_change(self):
+        """
+        Añado el cálculo del precio mínimo vasado en tarifa
+        """
+        res = super(SaleOrderLine, self).product_id_change()
+        if not self.product_id:
+            return res
+        min_price_pl = self.env.ref('indaws_nostrum_sport.pricelist_min_price')
+        price_min = min_price_pl.get_product_price(
+            self.product_id, self.product_uom_qty or 1.0, 
+            self.order_id.partner_id)
+        self.price_min = price_min
+        return res
 
     @api.model
     def _get_margin_ptje(self):
+        """
+        Calculo el margen basado en precio mínimo
+        """
         for record in self:
             record.margin_euros = record.price_subtotal - \
-                record.purchase_price * record.product_uom_qty
+                record.price_min * record.product_uom_qty
             margen = 0
             if record.price_subtotal != 0.0:
                 margen = (record.margin_euros / record.price_subtotal) * 100
             record.margin_ptje = margen
+    
+    @api.multi
+    def _prepare_invoice_line(self, qty):
+        """
+        Propago min price a la factura
+        """
+        self.ensure_one()
+        res = super(SaleOrderLine, self)._prepare_invoice_line(qty)
+        res.update(price_min=self.price_min)
+        return res
 
     @api.model
     def _get_net_unit(self):

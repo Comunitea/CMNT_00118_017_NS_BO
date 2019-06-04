@@ -64,17 +64,12 @@ class AccountInvoiceLine(models.Model):
     invoice_number = fields.Char(related='invoice_id.number',
                                  string="Num factura",
                                  readonly=True)
+    price_min = fields.Float(digits=(6, 2), string="Precio mínimo")
 
     def _get_margin_ptje(self):
         for record in self:
-            precio_coste = 0.0
-            if len(record.sale_order_lines) > 0:
-                for elem in record.sale_order_lines:
-                    precio_coste = elem.purchase_price
-            else:
-                if record.product_id:
-                    if record.product_id.standard_price != 0.0:
-                        precio_coste = record.product_id.standard_price
+            precio_coste = record.price_min
+            
             record.precio_coste = precio_coste
             margen = 0
             margin_base = record.price_subtotal - (precio_coste *
@@ -83,6 +78,18 @@ class AccountInvoiceLine(models.Model):
                 margen = (margin_base / record.price_subtotal) * 100
             record.margin_base = margin_base
             record.margin_ptje = margen
+    
+    @api.onchange('product_id')
+    def _onchange_product_id(self):
+        res = super(AccountInvoiceLine, self)._onchange_product_id()
+        if not self.product_id:
+            return res
+        min_price_pl = self.env.ref('indaws_nostrum_sport.pricelist_min_price')
+        price_min = min_price_pl.get_product_price(
+            self.product_id, self.quantity or 1.0, 
+            self.invoice_id.partner_id)
+        self.price_min = price_min
+        return res
 
 
 class AccountInvoice(models.Model):

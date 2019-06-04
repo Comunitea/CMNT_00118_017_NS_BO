@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Price list -->
+        <record id="pricelist_min_price" model="product.pricelist">
+            <field name="name">Tarifa precio mínimo</field>
+            <field name="sequence">99</field>
+        </record>
+
+    </data>
+</odoo>

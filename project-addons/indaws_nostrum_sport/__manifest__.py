@@ -31,6 +31,7 @@
                 'o2b_cust_vendor_ref_com_b'],
     'demo': [],
     'data': [
+        'data/product_data.xml',
         'views/account_view.xml',
         'views/pos_view.xml',
         'views/product_view.xml',
