@@ -115,12 +115,34 @@ ul.js_add_cart_variants {
     margin-bottom: 0;
 }
 .wp_stars_product_page {
-    & .o_rating_star_card {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 40px 0 0 0;
+    z-index: 100;
+    cursor: pointer;
+    /*& .o_rating_star_card {
         margin-bottom: 2%;
-    }
+    }*/
     & .stars {
-        font-size: 18px !important;
+        font-size: 22px !important;
+        color: #f4c318;
     }
+    & .o_rating_star_card {
+        margin-bottom: 0;
+    }
+    & .stars_comment {
+        font-size: 13px;
+        & strong {
+            font-size: 15px;
+        }
+        & span {
+            color: @theme-color;
+        }
+    }
+}
+.ribbon-wrapper{
+    z-index: 99;
 }
 .wld-cont-logos {
     display: block;

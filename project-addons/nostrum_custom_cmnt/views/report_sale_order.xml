@@ -94,11 +94,42 @@
                     </tbody>
                 </table>
             </xpath>
-           <!--  <xpath expr="//p[@t-if='doc.payment_term_id.note']" position="replace">
-            <p t-if="doc.payment_term_id">
-                <strong>Payment Term:</strong>
-                <span t-field="doc.payment_term_id.note"/>
+
+            <!-- Replace double payment_term_id: Just one header or in payment information -->
+           <xpath expr="//span[@t-field='doc.payment_term_id.note']" position="replace"/>
+    </template>
+
+    <!-- Replace double payment_mode_id: Just one front or back -->
+    <template id="report_sale_payment_mode_custom" inherit_id="account_payment_sale.report_sale_payment_mode">
+        <xpath expr="//p[@t-if='doc.payment_mode_id.note']" position="replace">
+            <t t-if="not doc.payment_acquirer_id.name">
+                    <p t-if="doc.payment_mode_id.note">
+                        <strong>Payment Mode:</strong>
+                        <span t-field="doc.payment_mode_id.note" />
+                    </p>
+                </t>
+        </xpath>
+    </template>
+
+    <!-- Order Comment -->
+    <template id="report_sale_order_document_custom_cmnt_obs" inherit_id="account_payment_sale.report_sale_payment_mode">
+        <xpath expr="//p[@t-if='doc.payment_mode_id.note']" position="after">
+            <p t-if="doc.order_web_comment">
+                <table class="table table-condensed mt32 mb32">
+                    <thead>
+                        <tr>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody class="sale_tbody">
+                        <tr>
+                            <td>
+                                <span t-field="doc.order_web_comment"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </p>
-            </xpath> -->
+        </xpath>
     </template>
 </odoo>

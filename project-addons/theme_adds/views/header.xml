@@ -137,13 +137,22 @@
                                 </a>
                             </div>
                             <div class="hd_widget_revi hidden-sm hidden-xs">
-                                <div class="revi_widget_small_15"/>
+                                <!--<div class="revi_widget_small_40"/>
                                 <script type="text/javascript">
                                     var s = document.createElement("script");
                                     s.type = "text/javascript";
                                     s.setAttribute("async", "");
                                     s.setAttribute("defer", "");
-                                    s.src = "https://revi.io/widgets/small/Oq0OtK71NL/15";
+                                    s.src = "https://revi.io/widgets/small/Oq0OtK71NL/40";
+                                    document.getElementsByTagName("body")[0].appendChild(s);
+                                </script>-->
+                                <div class="revi_widget_small_0"/>
+                                <script type="text/javascript">
+                                    var s = document.createElement("script");
+                                    s.type = "text/javascript";
+                                    s.setAttribute("async", "");
+                                    s.setAttribute("defer", "");
+                                    s.src = "https://revi.io/widgets/small/Oq0OtK71NL/0";
                                     document.getElementsByTagName("body")[0].appendChild(s);
                                 </script>
                             </div>
@@ -185,6 +194,16 @@
         <xpath expr="//link[@rel='shortcut icon']" position="attributes">
             <attribute name="t-att-href">'/favicon.ico'</attribute>
         </xpath>
+    </template>
+
+    <!-- Cookies notice bar -->
+    <template id="cookie_notice" inherit_id="website_cookie_notice.message">
+        <xpath expr="//div[@id='website_cookie_notice']" position="attributes">
+            <attribute name="class">container-fluid cc-cookies</attribute>
+        </xpath>
+    </template>
+    <template id="cookie_banner" inherit_id="website_cookie_notice.cookiebanner">
+        <xpath expr="//t[@t-call='website_cookie_notice.message']" position="replace"/>
     </template>
 
 </odoo>

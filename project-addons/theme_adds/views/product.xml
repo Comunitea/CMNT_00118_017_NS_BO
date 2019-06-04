@@ -169,6 +169,26 @@
                 </div>
             </t>
         </xpath>
+
+        <!-- Add revi product opinion widget -->
+        <xpath expr="//div[@class='div_class_whole_product_features']" position="after">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-sm-12 wp_revi_widget_product">
+                        <div class="revi_widget_product_86"/>
+                        <script type="text/javascript">
+                            var s = document.createElement("script");
+                            s.type = "text/javascript";
+                            s.setAttribute("async", "");
+                            s.setAttribute("defer", "");
+                            s.src = "https://revi.io/widgets/product/Oq0OtK71NL/<t t-esc="product.id"/>/0/86";
+                            document.getElementsByTagName("body")[0].appendChild(s);
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+
     </template>
 
     <!-- Product description -->
@@ -368,7 +388,19 @@
     <!-- product image carousel -->
     <template id="product_image_carousel_replace" inherit_id="clarico_product.clarico_product_product">
         <xpath expr="//div[@class='col-sm-7 res_product_img']" position="replace">
-            <div class="col-sm-7 res_product_img">
+            <div class="col-md-7 col-sm-12 wp_res_product_img">
+            <t t-set="rating" t-value="product.revi_product_rating()" />
+            <div t-if="rating and rating['avg'] &gt; 0" class="wp_stars_product_page">
+                <t t-set="rating_stat" t-value="rating_product" />
+                    <t t-call="rating.rating_star_card">
+                    <t t-set="rating_default_value" t-value="rating['avg']" />
+                    <t t-set="rating_disabled" t-value="True" />
+                </t>
+                <div class="stars_comment" t-if="rating['num']">
+                    <strong><t t-esc="rating['avg']"/>/5</strong> (<span><t t-esc="rating['num']"/> <t t-esc="'opiniones' if rating['plural'] else 'opinión'"/></span>)
+                </div>
+            </div>
+            <div class="res_product_img">
                 <t t-set="image_ids" t-value="product.product_image_ids" />
                 <div id="o-carousel-product" class="carousel slide"
                     data-ride="carousel" data-interval="0">
@@ -478,6 +510,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </xpath>
     </template>

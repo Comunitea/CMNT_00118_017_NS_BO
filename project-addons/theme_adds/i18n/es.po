@@ -1010,3 +1010,8 @@ msgstr "<span>Para seleccionar el método de pago <strong>\"Paga+Tarde\"</strong
 #: model:ir.ui.view,arch_db:website_legal_page.privacy_policy_link
 msgid "Privacy Policy"
 msgstr "Política de Privacidad"
+
+#. module: theme_adds
+#: model:ir.model.fields,field_description:theme_adds.field_sale_order_order_web_comment
+msgid "Order web comment"
+msgstr "Comentario web"

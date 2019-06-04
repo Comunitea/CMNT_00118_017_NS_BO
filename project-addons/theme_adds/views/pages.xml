@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <data noupdate="0">
+
+    <!-- Homepage Revi widget -->
+    <template id="homepage_revi_widget" name="Homepage Revi widget">
+        <section class="mt32 mb8 o_not_editable">
+            <div class="revi_widget_wide_47"/>
+            <script type="text/javascript">
+                var s = document.createElement("script");
+                s.type = "text/javascript";
+                s.setAttribute("async", "");
+                s.setAttribute("defer", "");
+                s.src = "https://revi.io/widgets/wide/Oq0OtK71NL/47";
+                document.getElementsByTagName("body")[0].appendChild(s);
+            </script>
+        </section>
+    </template>
+
+    </data>
+
     <data noupdate="1">
 
     <!-- Homepage -->
@@ -153,31 +172,8 @@
                                     </section>
                                 </div>
                             </div>
-                            <!--<div class="col-md-12">
-                                <div class="mt48">
-                                    <div class="revi_widget_vertical_80"/>
-                                    <script type="text/javascript">
-                                        var s = document.createElement("script");
-                                        s.type = "text/javascript";
-                                        s.setAttribute("async", "");
-                                        s.setAttribute("defer", "");
-                                        s.src = "https://revi.io/widgets/vertical/Oq0OtK71NL/80";
-                                        document.getElementsByTagName("body")[0].appendChild(s);
-                                    </script>
-                                </div>
-                            </div>-->
                         </div>
-                        <div class="clarico_home_second_sub_section mb32">
-                            <div class="revi_widget_wide_47"/>
-                            <script type="text/javascript">
-                                var s = document.createElement("script");
-                                s.type = "text/javascript";
-                                s.setAttribute("async", "");
-                                s.setAttribute("defer", "");
-                                s.src = "https://revi.io/widgets/wide/Oq0OtK71NL/47";
-                                document.getElementsByTagName("body")[0].appendChild(s);
-                            </script>
-                        </div>
+                        <t t-call="theme_adds.homepage_revi_widget"/>
                         <div class="clarico_home_second_sub_section mb32">
                             <div class="chs_heading" style="text-align:center;">¿Abres una Nueva Clínica?
                                 <a href="/page/contactus" style="text-decoration: underline;">Pídenos presupuesto</a>
@@ -202,60 +198,48 @@
                 <div class="clarico_row">
                     <t t-call="theme_adds.breadcrumbs_fiction_bar"/>
                     <div class="clarico_row_maxW">
-                        <h1 class="chs_heading ch_padding">Condiciones de envío</h1>
-                        <h2>Tarifas de envíos</h2>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <h3>Nacional</h3>
-                                <div class="col-md-12">
-                                    <h4>España Penínsular:</h4>
-                                    <p>Más de 99€ y máximo 15Kg: <strong>GRATIS </strong></p>
-                                    <p>Hasta 15kg: <strong>4,75 € (5,75€ con IVA)</strong></p>
-                                    <p>Cada 5 Kilos Extra: <strong>3 € (3,63€ con IVA)</strong></p>
-                                    <p><strong>Nota: </strong>Para pedidos de más de 15Kg que sean superiores a 99€ se cobrará solamente el sobrepeso.</p>
-                                    <br/>
-                                    <h4>Baleares y Canarias:</h4>
-                                    <p>Hasta 5kg: <strong>11,55 € (13,98€ con IVA)</strong></p>
-                                    <p>Hasta 10kg: <strong>13,75 € (16,64€ con IVA)</strong></p>
-                                    <p>11-20kg.: <strong>24,00 € (29,04€ con IVA)</strong></p>
-                                    <p><strong>Nota: </strong>Envios a Canarias no Incluyen IVA</p>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <h3>Internacional</h3>
-                                <div class="col-md-6">
-                                    <h4>Portugal:</h4>
-                                    <p><strong>Hasta 5kg</strong>: 4,95 € (5,99€ con IVA)</p>
-                                    <p><strong>Hasta 10kg</strong>: 6,95 € (8.41€ con IVA)</p>
-                                    <p><strong>Hasta 20kg.</strong>: 9,95 € (12.04€ con IVA)</p>
-                                    <p><strong>Nota: </strong>Sólo parte continental</p>
-                                    <br/>
-                                    <h4>Francia, Paises Bajos, Belgica, Luxemburgo</h4>
-                                    <p><strong>0-4kg:</strong> 10,95 € (12,25€ con IVA)</p>
-                                    <p><strong>5-9kg:</strong> 12,75 € (15.43€ con IVA)</p>
-                                    <p><strong>10-14kg:</strong> 14,95 € (18.09€ con IVA)</p>
-                                    <p><strong>15-30kg:</strong> 24,50 € (29.65€ con IVA)</p>
-                                    <br/>
-                                </div>
-                                <div class="col-md-6">
-                                    <h4>Italia, Alemania, Austria, UK, Suiza</h4>
-                                    <p><strong>0-4kg:</strong> 11,50 € (13.92€ con IVA)</p>
-                                    <p><strong>5-9kg</strong>: 13,75 € (16.64€ con IVA)</p>
-                                    <p><strong>10-14kg:</strong> 19.95 € (24.14€ con IVA)</p>
-                                    <p><strong>15-30kg:</strong> 26,50 € (32.07€ con IVA)</p>
-                                    <br/>
-                                    <h4>Resto Unión Europea:</h4>
-                                    <p><strong>0-4kg:</strong> 18,25 € (22,08€ con IVA)</p>
-                                    <p><strong>5-9kg</strong>: 28,75 € (34.79€ con IVA)</p>
-                                    <p><strong>10-14kg:</strong> 38.95 € (47.34€ con IVA)</p>
-                                    <p><strong>15-30kg:</strong> 52,00 € (62.92€ con IVA)</p>
-                                    <br/>
-                                </div>
-                            </div>
-                        </div>
-                        <h2>Otras Tarifas</h2>
                         <div class="row">
                             <div class="col-md-12">
+                                <h1 class="chs_heading ch_padding">Condiciones de envío</h1>
+                                <h2>Tarifas de envíos</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h3>España Penínsular:</h3>
+                                    <p>Más de 99€ y máximo 15Kg: <strong>GRATIS</strong></p>
+                                    <p>Hasta 15kg: <strong>5,75€ (6,96€ con IVA)</strong></p>
+                                    <p>Cada 5 Kilos Extra: <strong>3€ (3,63€ con IVA)</strong></p>
+                                    <p><strong>Nota: </strong>Para pedidos de más de 15Kg que sean superiores a 99€ se cobrará solamente el sobrepeso.</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h3>Baleares y Canarias:</h3>
+                                    <p>Hasta 5kg: <strong>17,7€ (21,42€ con IVA)</strong></p>
+                                    <p>Hasta 10kg: <strong>33,02€ (39,95€ con IVA)</strong></p>
+                                    <p>Hasta 20kg.: <strong>50,90€ (61,59€ con IVA)</strong></p>
+                                    <p>Cada 10 Kilos Extra: <strong>10€ (12,10€ con IVA)</strong></p>
+                                    <p><strong>Nota: </strong>Envios a Canarias no Incluyen IVA</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h3>Portugal:</h3>
+                                    <p><strong>Hasta 5kg: </strong>7,20€ (8,71€ con IVA)</p>
+                                    <p><strong>Hasta 10kg: </strong>10,80€ (13.07€ con IVA)</p>
+                                    <p><strong>Hasta 20kg: </strong>18€ (21.78€ con IVA)</p>
+                                    <p>Cada 10 Kilos Extra: <strong>15€ (18,15€ con IVA)</strong></p>
+                                    <p><strong>Nota: </strong>Sólo parte continental</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h3>Resto Unión Europea:</h3>
+                                    <p><strong>Hasta 5kg: </strong> 38,25€ (46,28€ con IVA)</p>
+                                    <p><strong>Hasta 10kg: </strong>48,75€ (58.99€ con IVA)</p>
+                                    <p><strong>Hasta 20kg: </strong>58.95€ (71.33€ con IVA)</p>
+                                    <p>Cada 10 Kilos Extra: <strong>25€ (30,25€ con IVA)</strong></p>
+                                    <p><strong>Nota: </strong>Sólo parte continental</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>Otras Tarifas</h2>
                                 <p>Para el resto del mundo, por favor, pregúntenos <a href="/page/contactus">aquí.</a></p>
                                 <p>Para pedidos bajo condiciones especiales no especificadas aquí,
                                     nos pondremos en contacto con Usted para concretar el importe de los gastos de envío.</p>

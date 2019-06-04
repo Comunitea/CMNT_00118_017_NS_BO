@@ -1,12 +1,14 @@
 import logging
 
-from odoo import api, models
+from odoo import api, models, fields
 
 _logger = logging.getLogger(__name__)
 
 
 class SaleOrder(models.Model):
     _inherit = "sale.order"
+
+    order_web_comment = fields.Text('Order web comment')
 
     @api.multi
     def _cart_find_product_line(self, product_id=None, line_id=None, **kwargs):

@@ -177,6 +177,12 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js" type="text/javascript"/>
             <script src="/theme_adds/static/js/script.js" type="text/javascript"/>
         </xpath>-->
+
+        <!-- Cookies notice bar -->
+        <xpath expr="//footer//div[@class='ftr_main']" position="after">
+            <t t-call="website_cookie_notice.message"/>
+        </xpath>
+
     </template>
 
     <template id="replace_footer_copyright" inherit_id="clarico_layout.clarico_layout_footer_copyright" name="Replace footer copyright">

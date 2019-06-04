@@ -599,6 +599,11 @@ msgid "Payment Mode"
 msgstr "Modo de pago"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_journal_payment_mode_id
+msgid "Notes"
+msgstr "Observaciones"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_invoice_payment_term_14936
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_sale_order_payment_term_14937
 msgid "Payment term"
