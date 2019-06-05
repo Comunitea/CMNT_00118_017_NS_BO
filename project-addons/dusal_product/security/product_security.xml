@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="group_sale_manager_dusal" model="res.groups">
+    <!-- aHORA CONTROLAMOS CON EL GRUPO MARGIN_MANAGER -->
+    <!-- <record id="group_sale_manager_dusal" model="res.groups">
         <field name="name">Show cost price</field>
-    </record>
+    </record> -->
 
 </odoo>

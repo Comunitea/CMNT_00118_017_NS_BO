@@ -11,4 +11,31 @@
                 </field>
             </field>
         </record>
+
+        <!-- Estos campos estan definidos en indaws_nostgrum_sport -->
+        <record id="custom_invoice_form_add_margin" model="ir.ui.view">
+            <field name="name">invoice_form_add_margin</field>
+            <field name="model">account.invoice</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                 <field name="amount_untaxed" position="before">
+                    <field name="margin_base" groups="nostrum_custom_cmnt.group_margin_manager" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                    <field name="margin_ptje" groups="nostrum_custom_cmnt.group_margin_manager"/>
+                    <field name="margin_base_min" readonly="1" groups="nostrum_custom_cmnt.group_margin_user" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                    <field name="margin_ptje_min" readonly="1" groups="nostrum_custom_cmnt.group_margin_user"/>
+                </field>
+                 <field name="amount_untaxed" position="attributes">
+                     <attribute name="class">oe_subtotal_footer_separator</attribute>
+                </field>
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="after">
+                    <field name="purchase_price"/>
+                    <field name="margin_base" groups="nostrum_custom_cmnt.group_margin_manager"/>
+                    <field name="margin_ptje" groups="nostrum_custom_cmnt.group_margin_manager"/>
+                    <field name="price_min"   groups="nostrum_custom_cmnt.group_margin_user"/>
+                    <field name="margin_base_min" groups="nostrum_custom_cmnt.group_margin_user"/>
+                    <field name="margin_ptje_min" groups="nostrum_custom_cmnt.group_margin_user"/>
+                </xpath>
+            </field>
+        </record>   
 </odoo>

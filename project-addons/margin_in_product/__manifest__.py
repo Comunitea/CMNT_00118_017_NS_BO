@@ -36,7 +36,8 @@
     'currency': "EUR",
     'author': "O'Labs",
     'depends': [
-        'product'
+        'product',
+        'nostrum_custom_cmnt'
     ],
     'data': [
         'views/product.xml',

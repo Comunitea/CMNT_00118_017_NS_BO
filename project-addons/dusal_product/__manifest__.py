@@ -4,7 +4,7 @@
 #    Copyright (C) 2015 Dusal.net
 #
 ##############################################################################
-
+# TODO QUITAR ESTE MODULO
 {
     "name": "Hide cost price of product",
     'summary': "Hide cost price, hide standard price, user group, \
@@ -30,8 +30,8 @@
         "stock_account",
     ],
     "data": [
-        'views/dusal_product_views.xml',
-        'security/product_security.xml',
+        # 'views/dusal_product_views.xml',
+        # 'security/product_security.xml',
     ],
     "auto_install": False,
     "installable": True,

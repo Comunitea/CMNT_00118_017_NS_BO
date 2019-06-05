@@ -36,6 +36,10 @@ class SaleOrderLine(models.Model):
                                compute='_get_margin_ptje')
     margin_euros = fields.Float(digits=(6, 2), string="Margen",
                                 compute='_get_margin_ptje')
+    margin_ptje_min = fields.Float(digits=(6, 2), string="Margen Min (%)",
+                               compute='_get_margin_ptje')
+    margin_euros_min = fields.Float(digits=(6, 2), string="Margen Min",
+                                    compute='_get_margin_ptje')
     price_unit_net = fields.Float(digits=(6, 2), string="Precio neto unitario",
                                   compute='_get_net_unit')
     # MIGRATION el property_account_receivable_id se le añade_id
@@ -81,11 +85,16 @@ class SaleOrderLine(models.Model):
         """
         for record in self:
             record.margin_euros = record.price_subtotal - \
+                record.purchase_price * record.product_uom_qty
+            record.margin_euros_min = record.price_subtotal - \
                 record.price_min * record.product_uom_qty
             margen = 0
+            margen_min = 0
             if record.price_subtotal != 0.0:
                 margen = (record.margin_euros / record.price_subtotal) * 100
+                margen_min = (record.margin_euros_min / record.price_subtotal) * 100
             record.margin_ptje = margen
+            record.margin_ptje_min = margen_min
     
     @api.multi
     def _prepare_invoice_line(self, qty):
@@ -112,6 +121,10 @@ class SaleOrder(models.Model):
                                 compute='_get_margin_ptje')
     margin_ptje = fields.Float(digits=(6, 2), string="Margen (%)",
                                compute='_get_margin_ptje')
+    margin_euros_min = fields.Float(digits=(6, 2), string="Margen Min",
+                                    compute='_get_margin_ptje')
+    margin_ptje_min = fields.Float(digits=(6, 2), string="Margen Min (%)",
+                                   compute='_get_margin_ptje')
     url_presupuesto = fields.Char(string="Url presupuesto")
     texto_presupuesto = fields.Char(string="Texto presupuesto")
 
@@ -125,10 +138,17 @@ class SaleOrder(models.Model):
     def _get_margin_ptje(self):
         for record in self:
             margin_euros = 0.0
+            margin_euros_min = 0.0
             for elem in record.order_line:
                 margin_euros = margin_euros + elem.margin_euros
+                margin_euros_min += elem.margin_euros_min
             margen = 0
+            margen_min = 0
             if record.amount_untaxed != 0.0:
                 margen = (margin_euros / record.amount_untaxed) * 100
+                margen_min = (margin_euros_min / record.amount_untaxed) * 100
+            
             record.margin_euros = margin_euros
             record.margin_ptje = margen
+            record.margin_euros = margin_euros_min
+            record.margin_ptje = margen_min

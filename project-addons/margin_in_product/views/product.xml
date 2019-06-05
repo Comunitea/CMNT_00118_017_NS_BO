@@ -10,7 +10,7 @@
         <field name="inherit_id" ref="product.product_template_only_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='list_price']" position="after">
-                    <field name="margin_percent" attrs="{'invisible': [('margin_percent', '=', 0)]}" groups="base.group_user"/>
+                    <field name="margin_percent" attrs="{'invisible': [('margin_percent', '=', 0)]}" groups="nostrum_custom_cmnt.group_margin_manager"/>
             </xpath>
         </field>
     </record>
@@ -23,7 +23,7 @@
         <field name="inherit_id" ref="product.product_template_tree_view"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='type']" position="after">
-                <field name="margin_percent" groups="base.group_user"/>
+                <field name="margin_percent" groups="nostrum_custom_cmnt.froup_margin_manager"/>
             </xpath>
         </field>
     </record>
@@ -35,7 +35,7 @@
         <field name="inherit_id" ref="product.product_normal_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='lst_price']" position="after">
-                <field name="margin_percent" groups="base.group_user"/>
+                <field name="margin_percent" groups="nostrum_custom_cmnt.froup_margin_manager"/>
             </xpath>
         </field>
     </record>
@@ -49,7 +49,7 @@
         <field name="inherit_id" ref="product.product_product_tree_view"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='lst_price']" position="after">
-                <field name="margin_percent" groups="base.group_user"/>
+                <field name="margin_percent" groups="nostrum_custom_cmnt.froup_margin_manager"/>
             </xpath>
         </field>
     </record>

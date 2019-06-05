@@ -51,12 +51,15 @@ class AccountInvoiceLine(models.Model):
                                         'order_line_id',
                                         'Sale Order  Lines', readonly=True)
 
-    precio_coste = fields.Float(digits=(6, 2), string="Coste",
-                                compute='_get_margin_ptje')
     margin_ptje = fields.Float(digits=(6, 2), string="Margen (%)",
                                compute='_get_margin_ptje')
     margin_base = fields.Float(digits=(6, 2), string="Margen",
                                compute='_get_margin_ptje')
+    price_min = fields.Float(digits=(6, 2), string="Precio mínimo")
+    margin_ptje_min = fields.Float(digits=(6, 2), string="Margen Min (%)",
+                                   compute='_get_margin_ptje')
+    margin_base_min = fields.Float(digits=(6, 2), string="Margen Min",
+                                   compute='_get_margin_ptje')
     ref_product = fields.Char(related='product_id.default_code',
                               string="Cod producto", readonly=True)
     code_account = fields.Char(related='account_id.code', string="Cod cuenta",
@@ -64,23 +67,35 @@ class AccountInvoiceLine(models.Model):
     invoice_number = fields.Char(related='invoice_id.number',
                                  string="Num factura",
                                  readonly=True)
-    price_min = fields.Float(digits=(6, 2), string="Precio mínimo")
 
     def _get_margin_ptje(self):
         for record in self:
-            precio_coste = record.price_min
-            
-            record.precio_coste = precio_coste
-            margen = 0
-            margin_base = record.price_subtotal - (precio_coste *
+            # Calculo margen en euros
+            price_cost = record.purchase_price            
+            price_cost_min = record.price_min
+            margin_base = record.price_subtotal - (price_cost *
                                                    record.quantity)
+            margin_base_min = record.price_subtotal - (price_cost_min *
+                                                       record.quantity)
+            # Calculo margen en %
+            margen = 0
+            margen_min = 0
             if record.price_subtotal != 0.0:
                 margen = (margin_base / record.price_subtotal) * 100
+                margen_min = (margin_base_min / record.price_subtotal) * 100
+            
+            # Escribo margen basado en coste
             record.margin_base = margin_base
+            record.margin_base_min = margin_base_min
+            # Escribo margen basado en precio mínimo
+            record.margin_ptje_min = margen_min
             record.margin_ptje = margen
     
     @api.onchange('product_id')
     def _onchange_product_id(self):
+        """
+        Cálculo del precio mínimo
+        """
         res = super(AccountInvoiceLine, self)._onchange_product_id()
         if not self.product_id:
             return res
@@ -100,6 +115,11 @@ class AccountInvoice(models.Model):
                                compute='_get_margin_ptje')
     margin_base = fields.Float(digits=(6, 2), string="Margen",
                                compute='_get_margin_ptje')
+    margin_ptje_min = fields.Float(digits=(6, 2), string="Margen Min(%)",
+                                   compute='_get_margin_ptje')
+    margin_base_min = fields.Float(digits=(6, 2), string="Margen Min",
+                                   compute='_get_margin_ptje')
+
 
     partner_ref = fields.Char(related='partner_id.ref', string="Num cuenta",
                               readonly=True)
@@ -119,15 +139,23 @@ class AccountInvoice(models.Model):
     def _get_margin_ptje(self):
         for record in self:
             purchase_total = 0.0
+            purchase_total_min = 0.0
             for lin in record.invoice_line_ids:
-                purchase_total = purchase_total + (lin.precio_coste *
+                purchase_total = purchase_total + (lin.purchase_price *
                                                    lin.quantity)
+                purchase_total_min = purchase_total + (lin.price_min *
+                                                       lin.quantity)
             margen = 0
+            margen_min = 0
             margin_base = record.amount_untaxed - purchase_total
+            margin_base_min = record.amount_untaxed - purchase_total_min
             if record.amount_untaxed != 0.0:
                 margen = (margin_base / record.amount_untaxed) * 100
+                margen_min = (margin_base_min / record.amount_untaxed) * 100
             record.margin_base = margin_base
             record.margin_ptje = margen
+            record.margin_base_min = margin_base_min
+            record.margin_ptje_min = margen_min
 
 
 class AccountMoveLine(models.Model):

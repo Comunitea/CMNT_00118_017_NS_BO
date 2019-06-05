@@ -192,21 +192,5 @@
         <menuitem name="Informes Nostrum" parent="account.menu_finance_receivables" id="menu_account_invoice_nostrum" action="action_account_invoice_nostrum" sequence="348"/>
         
         
-        <record id="invoice_form_add_margin" model="ir.ui.view">
-            <field name="name">invoice_form_add_margin</field>
-            <field name="model">account.invoice</field>
-            <field name="type">form</field>
-            <field name="inherit_id" ref="account.invoice_form"/>
-            <field name="arch" type="xml">
-                <xpath expr='//field[@name="account_id"]' position="after">
-                    <field name="margin_base" groups="deltatech_sale_margin.group_sale_margin"/>
-                    <field name="margin_ptje" groups="deltatech_sale_margin.group_sale_margin"/>
-                </xpath>
-                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="after">
-                    <field name="price_min"   groups="deltatech_sale_margin.group_sale_margin"/>
-                    <field name="margin_base" groups="deltatech_sale_margin.group_sale_margin"/>
-                    <field name="margin_ptje" groups="deltatech_sale_margin.group_sale_margin"/>
-                </xpath>
-            </field>
-        </record>   
+       
 </odoo>

@@ -24,7 +24,8 @@
         'stock',
         'purchase',
         'delivery',
-        'web_m2x_options'
+        'web_m2x_options',
+        'stock_account'
     ],
     'contributors': [
         "Comunitea ",
