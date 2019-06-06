@@ -150,5 +150,5 @@ class SaleOrder(models.Model):
             
             record.margin_euros = margin_euros
             record.margin_ptje = margen
-            record.margin_euros = margin_euros_min
-            record.margin_ptje = margen_min
+            record.margin_euros_min = margin_euros_min
+            record.margin_ptje_min = margen_min
