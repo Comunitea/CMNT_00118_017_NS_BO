@@ -141,10 +141,8 @@ class AccountInvoice(models.Model):
             purchase_total = 0.0
             purchase_total_min = 0.0
             for lin in record.invoice_line_ids:
-                purchase_total = purchase_total + (lin.purchase_price *
-                                                   lin.quantity)
-                purchase_total_min = purchase_total + (lin.price_min *
-                                                       lin.quantity)
+                purchase_total += (lin.purchase_price * lin.quantity)
+                purchase_total_min += (lin.price_min * lin.quantity)
             margen = 0
             margen_min = 0
             margin_base = record.amount_untaxed - purchase_total

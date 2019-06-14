@@ -140,7 +140,7 @@ class SaleOrder(models.Model):
             margin_euros = 0.0
             margin_euros_min = 0.0
             for elem in record.order_line:
-                margin_euros = margin_euros + elem.margin_euros
+                margin_euros += elem.margin_euros
                 margin_euros_min += elem.margin_euros_min
             margen = 0
             margen_min = 0
