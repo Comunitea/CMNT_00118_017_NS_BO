@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
+  <!-- Piso la plantilla original para piner las direcciones en dos columnas -->
+ <template id="sale.report_invoice_document_inherit_sale" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@name='invoice_address']" position="attributes">
+            <attribute name="groups">!sale.group_delivery_invoice_address</attribute>
+        </xpath>
+        <xpath expr="//div[@name='invoice_address']" position="before">
+            <div class="col-xs-6" groups="sale.group_delivery_invoice_address">
+                <strong t-if="o.partner_shipping_id == o.partner_id">Invoicing and shipping address:</strong>
+                <strong t-if="o.partner_shipping_id != o.partner_id">Invoicing address:</strong>
+                <div t-field="o.partner_id"
+                    t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
+                <span t-if="o.partner_id.vat">TIN: <span t-field="o.partner_id.vat"/></span>
+            </div>
+            <div class="col-xs-6" groups="sale.group_delivery_invoice_address">
+                <div t-if="o.partner_shipping_id != o.partner_id" class="mt8">
+                    <strong>Shipping address:</strong>
+                    <div t-field="o.partner_shipping_id"
+                        t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
+                    <span t-if="o.partner_shipping_id.vat">TIN: <span t-field="o.partner_shipping_id.vat"/></span>
+                </div>
+            </div>
+        </xpath>
+</template>
 
 <template id="report_invoice_document_custom" inherit_id="account_payment_partner.report_invoice_payment_mode">
             <xpath expr="//span[@t-if='o.partner_id.vat']" position="before">
