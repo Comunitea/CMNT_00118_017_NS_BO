@@ -37,5 +37,19 @@
                     <field name="margin_ptje_min" groups="nostrum_custom_cmnt.group_margin_user"/>
                 </xpath>
             </field>
-        </record>   
+        </record>
+
+        <!-- Sumatorio de margenes -->
+        <record id="custom_invoice_tree_add_margin" model="ir.ui.view">
+            <field name="name">invoice_form_add_margin</field>
+            <field name="model">account.invoice</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+                 <field name="state" position="before">
+                    <field name="margin_base" groups="nostrum_custom_cmnt.group_margin_manager" widget='monetary' options="{'currency_field': 'currency_id'}" sum="Margin Total"/>
+                    <field name="margin_ptje" groups="nostrum_custom_cmnt.group_margin_manager" avg="Avg. Margin"/>
+                </field>
+            </field>
+        </record>      
 </odoo>
