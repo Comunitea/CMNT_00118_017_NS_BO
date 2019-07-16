@@ -112,9 +112,10 @@ class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
 
     margin_ptje = fields.Float(digits=(6, 2), string="Margen (%)",
-                               compute='_get_margin_ptje')
+                               compute='_get_margin_ptje', store=True,
+                               group_operator='avg')
     margin_base = fields.Float(digits=(6, 2), string="Margen",
-                               compute='_get_margin_ptje')
+                               compute='_get_margin_ptje', store=True)
     margin_ptje_min = fields.Float(digits=(6, 2), string="Margen Min(%)",
                                    compute='_get_margin_ptje')
     margin_base_min = fields.Float(digits=(6, 2), string="Margen Min",
