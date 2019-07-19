@@ -137,6 +137,8 @@ class AccountInvoice(models.Model):
     partner_state = fields.Char(related='partner_id.state_id.name',
                                 string="Provincia", readonly=True)
 
+    @api.depends('invoice_line_ids', 'invoice_line_ids.purchase_price',
+                 'invoice_line_ids.price_min', 'invoice_line_ids.quantity')
     def _get_margin_ptje(self):
         for record in self:
             purchase_total = 0.0
