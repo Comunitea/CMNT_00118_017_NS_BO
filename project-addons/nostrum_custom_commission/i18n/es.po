@@ -1,0 +1,33 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* nostrum_custom_commission
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-30 10:28+0000\n"
+"PO-Revision-Date: 2019-07-30 10:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: nostrum_custom_commission
+#: model:ir.model,name:nostrum_custom_commission.model_sale_commission
+msgid "Commission in sales"
+msgstr "Comisión en ventas"
+
+#. module: nostrum_custom_commission
+#: code:addons/nostrum_custom_commission/models/sale_commission.py:11
+#, python-format
+msgid "Min Price difference"
+msgstr "Diferencia Precio min."
+
+#. module: nostrum_custom_commission
+#: model:ir.model,name:nostrum_custom_commission.model_sale_commission_line_mixin
+msgid "Mixin model for having commission agent lines in any object inheriting from this one"
+msgstr "Modelo mixin para tener líneas de agente de comisión en cualquier objeto heredando de éste"
+
