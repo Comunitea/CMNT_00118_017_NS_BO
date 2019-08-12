@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-16 11:48+0000\n"
-"PO-Revision-Date: 2019-04-16 11:48+0000\n"
+"POT-Creation-Date: 2019-08-12 12:12+0000\n"
+"PO-Revision-Date: 2019-08-12 12:12+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -116,6 +116,11 @@ msgid "<strong>Origen:</strong>"
 msgstr "<strong>Origen:</strong>"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_payment_mode_custom
+msgid "<strong>Payment Mode:</strong>"
+msgstr "<strong>Modo de pago:</strong>"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
 msgid "<strong>Payment Term:</strong>"
 msgstr "<strong>Plazo de pago:</strong>"
@@ -218,6 +223,11 @@ msgid "Apply"
 msgstr "Aplicar"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.custom_invoice_tree_add_margin
+msgid "Avg. Margin"
+msgstr "Avg. Margin"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
 msgid "Año"
 msgstr "Año"
@@ -287,6 +297,11 @@ msgstr "Coste"
 #: model:ir.model.fields,help:nostrum_custom_cmnt.field_pos_order_line_cost
 msgid "Cost of the product template used for standard stock valuation in accounting and used as a base price on purchase orders. Expressed in the default unit of measure of the product."
 msgstr "Coste para la plantilla de producto usada para la valoración de existencias estándar en contabilidad, y utilizada como precio de referencia en órdenes de compra. Se expresa en la unidad de medida por defecto del producto."
+
+#. module: nostrum_custom_cmnt
+#: model:ir.module.category,name:nostrum_custom_cmnt.module_category_margin
+msgid "Costes y márgenes"
+msgstr "Costes y márgenes"
 
 #. module: nostrum_custom_cmnt
 #. openerp-web
@@ -492,6 +507,21 @@ msgid "Lines of Point of Sale"
 msgstr "Líneas del Terminal Punto de Venta"
 
 #. module: nostrum_custom_cmnt
+#: model:res.groups,name:nostrum_custom_cmnt.group_margin_manager
+msgid "Margen Manager"
+msgstr "Margen Manager"
+
+#. module: nostrum_custom_cmnt
+#: model:res.groups,name:nostrum_custom_cmnt.group_margin_user
+msgid "Margen Usuario"
+msgstr "Margen Usuario"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.custom_invoice_tree_add_margin
+msgid "Margin Total"
+msgstr "Margin Total"
+
+#. module: nostrum_custom_cmnt
 #. openerp-web
 #: code:addons/nostrum_custom_cmnt/static/src/xml/sales_team_dashboard.xml:61
 #, python-format
@@ -556,6 +586,16 @@ msgid "Next Actions"
 msgstr "Siguientes acciones"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.view_account_invoice_filter_custom_nostrum
+msgid "No Vencimiento"
+msgstr "No Vencimiento"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt_obs
+msgid "Notes"
+msgstr "Notas"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_invoice_phonecall_count
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_sale_order_phonecall_count
 msgid "Nº Calls"
@@ -599,11 +639,6 @@ msgid "Payment Mode"
 msgstr "Modo de pago"
 
 #. module: nostrum_custom_cmnt
-#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_journal_payment_mode_id
-msgid "Notes"
-msgstr "Observaciones"
-
-#. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_invoice_payment_term_14936
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_sale_order_payment_term_14937
 msgid "Payment term"
@@ -615,6 +650,11 @@ msgstr "Payment term"
 #, python-format
 msgid "Performance"
 msgstr "Rendimiento"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.model,name:nostrum_custom_cmnt.model_crm_phonecall2phonecall
+msgid "Phonecall To Phonecall"
+msgstr "Llamada telefónica a llamada telefónica"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model,name:nostrum_custom_cmnt.model_pos_order

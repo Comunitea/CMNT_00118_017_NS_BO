@@ -10,14 +10,15 @@
     'license': 'AGPL-3',
     'depends': [
         'sale_commission',
-        'indaws_nostrum_sport'
+        'indaws_nostrum_sport',
     ],
     'contributors': [
         "Comunitea ",
         "Javier Colmenero <javier@comunitea.com>"
     ],
     "data": [
-
+        'views/report_settlement_grouped_template.xml',
+        'wizard/recompute_commission_wzd_view.xml',
     ],
     "installable": True
 }

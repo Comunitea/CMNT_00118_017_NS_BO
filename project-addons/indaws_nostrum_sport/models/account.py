@@ -104,6 +104,7 @@ class AccountInvoiceLine(models.Model):
             self.product_id, self.quantity or 1.0, 
             self.invoice_id.partner_id)
         self.price_min = price_min
+        self.purchase_price = self.product_id.standard_price
         return res
 
 

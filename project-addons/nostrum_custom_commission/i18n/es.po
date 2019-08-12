@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 10:28+0000\n"
-"PO-Revision-Date: 2019-07-30 10:28+0000\n"
+"POT-Creation-Date: 2019-08-12 12:09+0000\n"
+"PO-Revision-Date: 2019-08-12 12:09+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,94 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: nostrum_custom_commission
+#: model:ir.ui.view,arch_db:nostrum_custom_commission.report_settlement_by_invoice
+msgid "<strong>Agent:</strong>"
+msgstr "<strong>Agente:</strong>"
+
+#. module: nostrum_custom_commission
+#: model:ir.ui.view,arch_db:nostrum_custom_commission.report_settlement_by_invoice
+msgid "<strong>From:</strong>"
+msgstr "<strong>Desde:</strong>"
+
+#. module: nostrum_custom_commission
+#: model:ir.ui.view,arch_db:nostrum_custom_commission.report_settlement_by_invoice
+msgid "<strong>To:</strong>"
+msgstr "<strong>Hasta:</strong>"
+
+#. module: nostrum_custom_commission
+#: model:ir.ui.view,arch_db:nostrum_custom_commission.report_settlement_by_invoice
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: nostrum_custom_commission
+#: model:ir.ui.view,arch_db:nostrum_custom_commission.report_settlement_by_invoice
+msgid "Amount settled"
+msgstr "Importe liquidado"
+
+#. module: nostrum_custom_commission
+#: model:ir.ui.view,arch_db:nostrum_custom_commission.view_recompute_commission_wzd_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: nostrum_custom_commission
+#: model:ir.ui.view,arch_db:nostrum_custom_commission.report_settlement_by_invoice
+msgid "Commission"
+msgstr "Comisión"
+
+#. module: nostrum_custom_commission
 #: model:ir.model,name:nostrum_custom_commission.model_sale_commission
 msgid "Commission in sales"
 msgstr "Comisión en ventas"
+
+#. module: nostrum_custom_commission
+#: model:ir.model.fields,field_description:nostrum_custom_commission.field_recompute_commission_wzd_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: nostrum_custom_commission
+#: model:ir.model.fields,field_description:nostrum_custom_commission.field_recompute_commission_wzd_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: nostrum_custom_commission
+#: model:ir.model.fields,field_description:nostrum_custom_commission.field_recompute_commission_wzd_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: nostrum_custom_commission
+#: model:ir.model.fields,field_description:nostrum_custom_commission.field_recompute_commission_wzd_id
+msgid "ID"
+msgstr "ID"
+
+#. module: nostrum_custom_commission
+#: model:ir.ui.view,arch_db:nostrum_custom_commission.report_settlement_by_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: nostrum_custom_commission
+#: model:ir.ui.view,arch_db:nostrum_custom_commission.report_settlement_by_invoice
+msgid "Invoice date"
+msgstr "Fecha factura"
+
+#. module: nostrum_custom_commission
+#: model:ir.ui.view,arch_db:nostrum_custom_commission.view_recompute_commission_wzd_form
+msgid "It will recompute commissions for the selected invoices"
+msgstr "Se recalcularán las comisiones de las facturas seleccionadas"
+
+#. module: nostrum_custom_commission
+#: model:ir.model.fields,field_description:nostrum_custom_commission.field_recompute_commission_wzd___last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: nostrum_custom_commission
+#: model:ir.model.fields,field_description:nostrum_custom_commission.field_recompute_commission_wzd_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: nostrum_custom_commission
+#: model:ir.model.fields,field_description:nostrum_custom_commission.field_recompute_commission_wzd_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
 
 #. module: nostrum_custom_commission
 #: code:addons/nostrum_custom_commission/models/sale_commission.py:11
@@ -30,4 +115,41 @@ msgstr "Diferencia Precio min."
 #: model:ir.model,name:nostrum_custom_commission.model_sale_commission_line_mixin
 msgid "Mixin model for having commission agent lines in any object inheriting from this one"
 msgstr "Modelo mixin para tener líneas de agente de comisión en cualquier objeto heredando de éste"
+
+#. module: nostrum_custom_commission
+#: model:ir.model.fields,field_description:nostrum_custom_commission.field_sale_commission_settlement_line_partner_id
+#: model:ir.ui.view,arch_db:nostrum_custom_commission.report_settlement_by_invoice
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: nostrum_custom_commission
+#: model:ir.ui.view,arch_db:nostrum_custom_commission.view_recompute_commission_wzd_form
+msgid "Recompute"
+msgstr "Recalcular"
+
+#. module: nostrum_custom_commission
+#: model:ir.actions.act_window,name:nostrum_custom_commission.action_recompute_commission_wzd
+#: model:ir.ui.view,arch_db:nostrum_custom_commission.view_recompute_commission_wzd_form
+msgid "Recompute Agents Commisions"
+msgstr "Recalcular agentes y comisiones"
+
+#. module: nostrum_custom_commission
+#: model:ir.actions.report.xml,name:nostrum_custom_commission.action_report_settlement_by_invoice
+msgid "Settlement report by invoices"
+msgstr "Liquidaciones por facturas"
+
+#. module: nostrum_custom_commission
+#: model:ir.ui.view,arch_db:nostrum_custom_commission.view_recompute_commission_wzd_form
+msgid "or"
+msgstr "o"
+
+#. module: nostrum_custom_commission
+#: model:ir.model,name:nostrum_custom_commission.model_recompute_commission_wzd
+msgid "recompute.commission.wzd"
+msgstr "recompute.commission.wzd"
+
+#. module: nostrum_custom_commission
+#: model:ir.model,name:nostrum_custom_commission.model_sale_commission_settlement_line
+msgid "sale.commission.settlement.line"
+msgstr "sale.commission.settlement.line"
 

@@ -66,7 +66,7 @@ class SaleOrderLine(models.Model):
     @api.onchange('product_id')
     def product_id_change(self):
         """
-        Añado el cálculo del precio mínimo vasado en tarifa
+        Añado el cálculo del precio mínimo Basado en tarifa
         """
         res = super(SaleOrderLine, self).product_id_change()
         if not self.product_id:

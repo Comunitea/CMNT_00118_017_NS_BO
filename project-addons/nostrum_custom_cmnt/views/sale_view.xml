@@ -111,6 +111,9 @@
                 <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="replace">
                     <field name="price_unit"/>
                 </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="before">
+                    <field name="price_min"/>
+                </xpath>
             </field>
         </record>
 
