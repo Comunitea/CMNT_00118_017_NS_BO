@@ -17,6 +17,7 @@
         "Javier Colmenero <javier@comunitea.com>"
     ],
     "data": [
+        'views/product_view.xml',
         'views/report_settlement_grouped_template.xml',
         'wizard/recompute_commission_wzd_view.xml',
     ],
