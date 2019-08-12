@@ -25,7 +25,9 @@
         'purchase',
         'delivery',
         'web_m2x_options',
-        'stock_account'
+        'stock_account',
+        'sale_commission',
+        'nostrum_custom_commission'
     ],
     'contributors': [
         "Comunitea ",
@@ -48,6 +50,7 @@
         'views/report_sessionsummary.xml',
         'views/account_view.xml',
         'views/partner_view.xml',
+        'views/sale_commission_view.xml',
     ],
     'qweb': [
         'static/src/xml/pos.xml',

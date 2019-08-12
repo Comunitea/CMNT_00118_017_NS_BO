@@ -212,4 +212,36 @@
                 </field>
             </field>
         </record>
+
+        <!-- Piso la vista de comisiones para ponerle el groups -->
+        <record id="sale_commission.view_order_agent_form_inherit" model="ir.ui.view">
+            <field name="name">sale.agent.order.inherit.form</field>
+            <field name="model">sale.order</field>
+            <field name="groups_id" eval="[(4, ref('nostrum_custom_cmnt.group_margin_user'))]"/>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="order_line" position="attributes">
+                    <attribute name="context">{'partner_id': partner_id}</attribute>
+                </field>
+                <xpath expr="//field[@name='order_line']/tree" position="attributes">
+                    <attribute name="editable"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree//field[@name='price_subtotal']" position="after">
+                    <field name="commission_status"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='customer_lead']/.." position="after">
+                    <field name="commission_free"/>
+                    <field name="agents"
+                        attrs="{'invisible': [('commission_free', '=', True)]}"/>
+                </xpath>
+                <field name="amount_total" position="after">
+                    <field name="commission_total"
+                        widget="monetary"
+                        options="{'currency_field': 'currency_id'}"/>
+                </field>
+                <xpath expr="//field[@name='order_line']" position="after">
+                    <button name="recompute_lines_agents" type="object" string="Recompute lines agents" states="draft"/>
+                </xpath>
+            </field>
+    </record>
 </odoo>
