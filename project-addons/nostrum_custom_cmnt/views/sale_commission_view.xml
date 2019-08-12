@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <menuitem name="Commissions Management"
+              id="sale_commission.menu_sale_commissions_management"
+              groups="nostrum_custom_cmnt.group_margin_user"
+              parent="sales_team.menu_base_partner" />
+
+</odoo>
