@@ -152,3 +152,16 @@ class SaleOrder(models.Model):
             record.margin_ptje = margen
             record.margin_euros_min = margin_euros_min
             record.margin_ptje_min = margen_min
+
+    @api.multi
+    def _website_product_id_change(self, order_id, product_id, qty=0):
+        res = super(SaleOrder, self).\
+            _website_product_id_change(order_id, product_id, qty=qty)
+        min_price_pl = self.env.ref('indaws_nostrum_sport.pricelist_min_price')
+        product = self.env['product.product'].browse(product_id)
+        order = self.env['sale.order'].browse(order_id)
+        price_min = min_price_pl.get_product_price(
+            product, qty or 1.0, 
+            order.partner_id)
+        res.update(price_min=price_min)
+        return res

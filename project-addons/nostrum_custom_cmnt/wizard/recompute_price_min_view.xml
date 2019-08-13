@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+        <record id="view_recompute_price_min_invoice_form" model="ir.ui.view">
+            <field name="name">Recompute Price Min</field>
+            <field name="model">recompute.invoice.price.min</field>
+            <field name="arch" type="xml">
+                <form string="Recompute Price Min">
+                    <div name="help">
+                        <p>It will recompute min prices for the selected invoices</p>
+                    </div>
+
+                    <footer>
+                        <button name="recompute_price_min" string="Recompute" type="object" class="oe_highlight" />
+                        or
+                        <button special="cancel" string="Cancel" class="oe_link" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_recompute_price_min_invoice"
+                    multi="False"
+                    key2="client_action_multi"
+                    name="Recompute Price Min"
+                    src_model="account.invoice"
+                    res_model="recompute.invoice.price.min"
+                    view_mode="form"
+                    view_type="form"
+                    target="new" />
+        
+
+    <record id="view_recompute_price_min_sale_form" model="ir.ui.view">
+            <field name="name">Recompute Price Min</field>
+            <field name="model">recompute.sale.price.min</field>
+            <field name="arch" type="xml">
+                <form string="Recompute Price Min">
+                    <div name="help">
+                        <p>It will recompute min prices for the selected orders</p>
+                    </div>
+
+                    <footer>
+                        <button name="recompute_price_min" string="Recompute" type="object" class="oe_highlight" />
+                        or
+                        <button special="cancel" string="Cancel" class="oe_link" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_recompute_price_min_sale"
+                    multi="False"
+                    key2="client_action_multi"
+                    name="Recompute Price Min"
+                    src_model="sale.order"
+                    res_model="recompute.sale.price.min"
+                    view_mode="form"
+                    view_type="form"
+                    target="new" />
+
+</data>
+</odoo>

@@ -32,9 +32,9 @@
                     <field name="purchase_price"/>
                     <field name="margin_base" groups="nostrum_custom_cmnt.group_margin_manager"/>
                     <field name="margin_ptje" groups="nostrum_custom_cmnt.group_margin_manager"/>
-                    <field name="price_min"   groups="nostrum_custom_cmnt.group_margin_user"/>
-                    <field name="margin_base_min" groups="nostrum_custom_cmnt.group_margin_user"/>
-                    <field name="margin_ptje_min" groups="nostrum_custom_cmnt.group_margin_user"/>
+                    <field name="price_min"/>
+                    <field name="margin_base_min"/>
+                    <field name="margin_ptje_min"/>
                 </xpath>
             </field>
         </record>
@@ -48,9 +48,9 @@
                     <field name="purchase_price"/>
                     <field name="margin_base" groups="nostrum_custom_cmnt.group_margin_manager"/>
                     <field name="margin_ptje" groups="nostrum_custom_cmnt.group_margin_manager"/>
-                    <field name="price_min"   groups="nostrum_custom_cmnt.group_margin_user"/>
-                    <field name="margin_base_min" groups="nostrum_custom_cmnt.group_margin_user"/>
-                    <field name="margin_ptje_min" groups="nostrum_custom_cmnt.group_margin_user"/>
+                    <field name="price_min"/>
+                    <field name="margin_base_min"/>
+                    <field name="margin_ptje_min"/>
                 </field>
             </field>
         </record>
