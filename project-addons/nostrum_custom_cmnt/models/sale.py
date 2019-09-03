@@ -79,3 +79,19 @@ class SaleOrderLine(models.Model):
             discount = (new_list_price - price) / new_list_price * 100
             if discount > 0:
                 self.discount = discount
+
+class Website(models.Model):
+    _inherit = 'website'
+
+    @api.multi
+    def sale_get_order(self, force_create=False, code=None, 
+                       update_pricelist=False, force_pricelist=False):
+        res = super(Website, self).sale_get_order(
+            force_create=force_create, code=code, 
+            update_pricelist=update_pricelist,
+            force_pricelist=force_pricelist)
+        if res:
+            res.recompute_lines_agents()
+            if res.partner_id.user_id:
+                res.write({'user_id': res.partner_id.user_id.id})
+        return res

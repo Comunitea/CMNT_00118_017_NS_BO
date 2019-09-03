@@ -16,6 +16,16 @@ class PosOrder(models.Model):
                 if order.statement_ids[0].journal_id.payment_mode_id:
                     pm = order.statement_ids[0].journal_id.payment_mode_id.id
 
-            if order.invoice_id and pm:
-                order.invoice_id.write({'payment_mode_id': pm})
+            if order.invoice_id:
+                vals = {}
+                if pm:
+                    vals.update({'payment_mode_id': pm})
+                # Get commercial of partner
+                if order.invoice_id.partner_id.user_id:
+                    vals['user_id'] = order.invoice_id.partner_id.user_id.id
+                if vals:
+                    order.invoice_id.write(vals)
+
+                # Recompute commissions:
+                order.invoice_id.recompute_lines_agents()
         return res
