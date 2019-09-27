@@ -104,9 +104,9 @@
                     <field name="purchase_price" readonly="0"  groups="nostrum_custom_cmnt.group_margin_manager"/>
                     <field name="margin_euros" readonly="1" groups="nostrum_custom_cmnt.group_margin_manager"/>
                     <field name="margin_ptje" readonly="1" groups="nostrum_custom_cmnt.group_margin_manager"/>
-                    <field name="price_min" readonly="0"/>
-                    <field name="margin_euros_min" readonly="1"/>
-                    <field name="margin_ptje_min" readonly="1"/>
+                    <field name="price_min" readonly="0" groups="nostrum_custom_cmnt.group_margin_user"/>
+                    <field name="margin_euros_min" readonly="1" groups="nostrum_custom_cmnt.group_margin_user"/>
+                    <field name="margin_ptje_min" readonly="1" groups="nostrum_custom_cmnt.group_margin_user"/>
                 </xpath>
                 <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="replace">
                     <field name="price_unit"/>
@@ -128,8 +128,8 @@
                 <field name="amount_untaxed" position="before">
                     <field name="margin_euros" groups="nostrum_custom_cmnt.group_margin_manager" widget='monetary' options="{'currency_field': 'currency_id'}"/>
                     <field name="margin_ptje" groups="nostrum_custom_cmnt.group_margin_manager"/>
-                    <field name="margin_euros_min" readonly="1" widget='monetary' options="{'currency_field': 'currency_id'}"/>
-                    <field name="margin_ptje_min" readonly="1"/>
+                    <field name="margin_euros_min" groups="nostrum_custom_cmnt.group_margin_user" readonly="1" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                    <field name="margin_ptje_min" groups="nostrum_custom_cmnt.group_margin_user" readonly="1"/>
                 </field>
                  <field name="amount_untaxed" position="attributes">
                      <attribute name="class">oe_subtotal_footer_separator</attribute>

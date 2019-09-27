@@ -29,12 +29,12 @@
                      <attribute name="class">oe_subtotal_footer_separator</attribute>
                 </field>
                 <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="after">
-                    <field name="purchase_price"/>
+                    <field name="purchase_price" groups="nostrum_custom_cmnt.group_margin_manager"/>
                     <field name="margin_base" groups="nostrum_custom_cmnt.group_margin_manager"/>
                     <field name="margin_ptje" groups="nostrum_custom_cmnt.group_margin_manager"/>
-                    <field name="price_min"/>
-                    <field name="margin_base_min"/>
-                    <field name="margin_ptje_min"/>
+                    <field name="price_min" groups="nostrum_custom_cmnt.group_margin_user"/>
+                    <field name="margin_base_min" groups="nostrum_custom_cmnt.group_margin_user"/>
+                    <field name="margin_ptje_min" groups="nostrum_custom_cmnt.group_margin_user"/>
                 </xpath>
             </field>
         </record>
@@ -45,12 +45,12 @@
             <field name="inherit_id" ref="account.view_invoice_line_form" />
             <field name="arch" type="xml">
                 <field name="discount" position="after">
-                    <field name="purchase_price"/>
+                    <field name="purchase_price" groups="nostrum_custom_cmnt.group_margin_manager"/>
                     <field name="margin_base" groups="nostrum_custom_cmnt.group_margin_manager"/>
                     <field name="margin_ptje" groups="nostrum_custom_cmnt.group_margin_manager"/>
-                    <field name="price_min"/>
-                    <field name="margin_base_min"/>
-                    <field name="margin_ptje_min"/>
+                    <field name="price_min" groups="nostrum_custom_cmnt.group_margin_user"/>
+                    <field name="margin_base_min" groups="nostrum_custom_cmnt.group_margin_user"/>
+                    <field name="margin_ptje_min" groups="nostrum_custom_cmnt.group_margin_user"/>
                 </field>
             </field>
         </record>
