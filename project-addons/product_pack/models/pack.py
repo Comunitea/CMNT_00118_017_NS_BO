@@ -54,6 +54,8 @@ class ProductPack(models.Model):
                 'fixed_price', 'totalice_price']:
             price = 0.0
             discount = 0.0
+            cost = 0.0
+            price_min = 0.0
         else:
             pricelist = order.pricelist_id.id
             price = self.env['product.pricelist'].price_get(
@@ -62,6 +64,14 @@ class ProductPack(models.Model):
                     'uom': subproduct.uom_id.id,
                     'date': order.date_order})[pricelist]
             discount = self.discount
+            cost = subproduct.standard_price
+            min_price_pl = self.env.ref(
+                'indaws_nostrum_sport.pricelist_min_price')
+            price_min =  min_price_pl.get_product_price(
+                subproduct.id, quantity,
+                subproduct, line.product_uom_qty or 1.0, 
+                order.partner_id.id)
+
 
         # Obtain product name in partner's language
         if order.partner_id.lang:
@@ -93,6 +103,7 @@ class ProductPack(models.Model):
             'state': 'draft',
             'pack_parent_line_id': line.id,
             'pack_depth': line.pack_depth + 1,
-            'purchase_price': subproduct.standard_price
+            'purchase_price': cost,
+            'price_min': price_min
         }
         return vals
