@@ -29,3 +29,12 @@ class PosOrder(models.Model):
                 # Recompute commissions:
                 order.invoice_id.recompute_lines_agents()
         return res
+
+    @api.model
+    def _order_fields(self, ui_order):
+        res = super(PosOrder, self)._order_fields(ui_order)
+        if res['partner_id']:
+            partner = self.env['res.partner'].browse(res['partner_id'])
+            if partner.user_id:
+                res['user_id'] = partner.user_id.id
+        return res
