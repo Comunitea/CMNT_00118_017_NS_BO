@@ -35,7 +35,7 @@
                             </t>
 
                             <t t-foreach="layout_category['lines']" t-as="l">
-                                <tr>
+                                <tr t-if="not l.pack_parent_line_id">
                                     <td t-if="doc.print_line_number">
                                         <t t-set="number" t-value="number+1"/>
                                         <span t-esc="number"/>

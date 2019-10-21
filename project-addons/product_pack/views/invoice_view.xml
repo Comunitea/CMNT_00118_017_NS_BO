@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <record id="invoice_form_add_is_component" model="ir.ui.view">
+        <field name="name">custom_invoice_line_form_add_margin</field>
+        <field name="model">account.invoice.line</field>
+        <field name="inherit_id" ref="account.view_invoice_line_form" />
+        <field name="arch" type="xml">
+            <field name="product_id" position="after">
+                <field name="is_component"/>
+            </field>
+        </field>
+    </record>
+
+    </data>
+</openerp>

@@ -37,6 +37,7 @@ class SaleOrderLine(models.Model):
         'pack_parent_line_id',
         'Lines in pack'
     )
+    is_component = fields.Boolean('Es componente', readonly=True)
 
     @api.one
     @api.constrains('product_id', 'price_unit', 'product_uom_qty')
@@ -117,3 +118,10 @@ class SaleOrderLine(models.Model):
                     'price_subtotal': price_unit * quantity,
                 }
                 self.pack_line_ids.create(vals)
+    
+    @api.multi
+    def _prepare_invoice_line(self, qty):
+        self.ensure_one()
+        res = super(SaleOrderLine, self)._prepare_invoice_line(qty)
+        res.update(is_component=self.is_component)
+        return res

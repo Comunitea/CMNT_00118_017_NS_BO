@@ -63,7 +63,12 @@
 
              <xpath expr="//field[@name='order_line']/form//field[@name='discount']" position="after">
                 <field name="pack_type" invisible="1"/>
+                <field name="is_component" invisible="0"/>
                 <button name="action_pack_detail" string="Detail" attrs="{'invisible':[('pack_type', '!=', 'none_detailed_assited_price')]}" type="object"/>
+            </xpath> 
+
+            <xpath expr="//field[@name='order_line']/form//field[@name='tax_id']" position="before">
+                <field name="is_component" invisible="0"/>
             </xpath> 
         </field>
     </record>

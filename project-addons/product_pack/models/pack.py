@@ -102,6 +102,7 @@ class ProductPack(models.Model):
             'th_weight': False,
             'state': 'draft',
             'pack_parent_line_id': line.id,
+            'is_component': True,
             'pack_depth': line.pack_depth + 1,
             'purchase_price': cost,
             'price_min': price_min
