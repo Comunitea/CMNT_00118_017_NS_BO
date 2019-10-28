@@ -300,17 +300,16 @@
                 <t t-if="deliveries">
                     <div class="panel panel-default border_primary">
                         <div class="panel-body">
-                            Free delivery for amounts over € 99 and weight less than 15Kg
+                            Free delivery for amounts over 99€ (No delivery amount included) and weight less than 15Kg
                         </div>
                         <div class="panel-footer">
                             <p>Amount to get free delivery:</p>
                             <t t-if="any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower()) and any(x for x in order.carrier_id.state_ids if 'asturias' in x.name.lower())">
-                                <p t-if="99 - website_sale_order.amount_total &gt; 0" class="btn btn-block btn-primary" >
-                                    <span t-esc="99 - website_sale_order.amount_total" style="white-space: nowrap;"
+                                <p t-if="(99 if not website_sale_order.amount_delivery else website_sale_order.amount_delivery + 99) - website_sale_order.amount_total &gt; 0" class="btn btn-block btn-primary" >
+                                    <span t-esc="(99 if not website_sale_order.amount_delivery else website_sale_order.amount_delivery + 99) - website_sale_order.amount_total" style="white-space: nowrap;"
                                           t-options="{'widget': 'monetary','from_currency': website_sale_order.pricelist_id.currency_id,'display_currency': website.currency_id}" />
                                 </p>
-                                <t t-elif="any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower())
-                                    and website_sale_order.total_weight > website_sale_order.carrier_id.weight_base_max">
+                                <t t-elif="any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower()) and website_sale_order.total_weight > website_sale_order.carrier_id.weight_base_max">
                                     <a class="btn btn-block btn-primary">Gratis. Solo pagas el sobrepeso!!!</a>
                                 </t>
                                 <t t-else="">
