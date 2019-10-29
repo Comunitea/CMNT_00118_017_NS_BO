@@ -28,7 +28,8 @@
         'stock_account',
         'sale_commission',
         'nostrum_custom_commission',
-        'website_sale'
+        'website_sale',
+        'product_pack',
     ],
     'contributors': [
         "Comunitea ",

@@ -2,9 +2,11 @@
 ##############################################################################
 # For copyright and license notices, see __odoo__.py file in root directory
 ##############################################################################
-from . import pack
-from . import product
-from . import sale_order_line_pack_line
-from . import sale_order_line
-from . import sale_order
-from . import invoice
+from odoo import fields, models, api, _
+
+
+class AccountInvoiceLine(models.Model):
+    _inherit = 'account.invoice.line'
+
+ 
+    is_component = fields.Boolean('Es componente', readonly=False)

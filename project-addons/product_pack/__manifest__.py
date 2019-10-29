@@ -42,6 +42,7 @@ Withilist:
         'security/ir.model.access.csv',
         'views/pack_view.xml',
         'views/sale_view.xml',
+        'views/invoice_view.xml',
     ],
     'demo': [
         'demo/demo_data.xml',

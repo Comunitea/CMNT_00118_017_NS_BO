@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-13 15:45+0000\n"
-"PO-Revision-Date: 2019-08-13 15:45+0000\n"
+"POT-Creation-Date: 2019-10-21 16:40+0000\n"
+"PO-Revision-Date: 2019-10-21 16:40+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -353,6 +353,7 @@ msgid "Day"
 msgstr "Día"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sessionsummary
 msgid "Description"
@@ -369,6 +370,7 @@ msgid "Diario"
 msgstr "Diario"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
 msgid "Disc.(%)"
 msgstr "Desc.(%)"
@@ -723,6 +725,7 @@ msgid "Purchase Order Line"
 msgstr "Línea orden de compra"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
 msgid "Quantity"
 msgstr "Cantidad"
@@ -784,6 +787,11 @@ msgid "Session Summary:"
 msgstr "Resumen de sesión:"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
+msgid "Source Document"
+msgstr "Documento origen"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sessionsummary
 msgid "Statement Details:"
 msgstr "Detalles del extracto:"
@@ -826,6 +834,12 @@ msgid "Target"
 msgstr "Objetivo"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
+msgid "Tax Excluded Price"
+msgstr "Importe sin Impuestos"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
 msgid "Taxes"
 msgstr "Impuestos"
@@ -927,6 +941,7 @@ msgid "Total Price"
 msgstr "Precio total"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
 msgid "Unit Price"
 msgstr "Precio unidad"
@@ -974,6 +989,11 @@ msgstr "Referencia de proveedor"
 #, python-format
 msgid "Visite la web nostrumsport.com"
 msgstr "Visite la web nostrumsport.com"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.model,name:nostrum_custom_cmnt.model_website
+msgid "Website"
+msgstr "Sitio web"
 
 #. module: nostrum_custom_cmnt
 #. openerp-web
