@@ -63,7 +63,8 @@
         'doofinder_search',
         'google_merchant_export',
         'revi_reviews',
-        'theme_clarico'
+        'theme_clarico',
+        # 'website_canonical_url',
     ],
     'data': [
         'data/redsys.xml',

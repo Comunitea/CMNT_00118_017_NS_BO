@@ -265,7 +265,7 @@
                                                                 <div class="recently_view_product_price">
                                                                     <t t-if="not alt_product.hide_website_price">
                                                                         <t t-if="alt_product.website_public_price &gt; 0 or len(alt_product.product_variant_ids) &gt; 1">
-                                                                            <div class="recently_view_product_price">
+                                                                            <div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer" class="recently_view_product_price">
                                                                                 <t t-if="(compute_currency(alt_product.website_public_price) - alt_product.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
                                                                                     <del class="text-danger mr8 " style="white-space: nowrap;"
                                                                                          t-esc="compute_currency(alt_product.website_public_price)"
@@ -336,7 +336,7 @@
                                                                 <div class="recently_view_product_price">
                                                                     <t t-if="not alt_product.hide_website_price">
                                                                         <t t-if="alt_product.website_public_price &gt; 0 or len(alt_product.product_variant_ids) &gt; 1">
-                                                                            <div class="recently_view_product_price">
+                                                                            <div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer" class="recently_view_product_price">
                                                                                 <t t-if="(compute_currency(alt_product.website_public_price) - alt_product.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
                                                                                     <del class="text-danger mr8 " style="white-space: nowrap;"
                                                                                          t-esc="compute_currency(alt_product.website_public_price)"
@@ -739,7 +739,7 @@
                         </div>
                         <t t-if="not rproduct.hide_website_price">
                             <t t-if="rproduct.website_public_price &gt; 0 or len(rproduct.product_variant_ids) &gt; 1">
-                                <div class="recently_view_product_price">
+                                <div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer" class="recently_view_product_price">
                                     <t t-if="(compute_currency(rproduct.website_public_price) - rproduct.website_price ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
                                         <del class="text-danger mr8 " style="white-space: nowrap;"
                                              t-esc="compute_currency(rproduct.website_public_price)"
