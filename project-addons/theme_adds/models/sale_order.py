@@ -37,3 +37,29 @@ class SaleOrder(models.Model):
             return self.env['sale.order.line']
 
         return self.env['sale.order.line'].sudo().search(domain)
+
+    @api.model
+    def _get_website_data(self, order):
+        
+        values = super(SaleOrder, self)._get_website_data(order)
+        
+        product_ids = order.website_order_line.mapped('product_id')
+
+        cart_type = self._compute_cart_type(product_ids)
+                    
+        if len(cart_type) == 1 and cart_type[0].encode('ascii', 'ignore') == 'service':
+            
+            values.update({
+                'only_services': True
+            })
+        
+        return values
+
+    @api.multi
+    def _compute_cart_type(self, products):
+        cart_type = []
+        for product in products:
+            if product.type not in cart_type:
+                cart_type.append(product.type)
+
+        return cart_type

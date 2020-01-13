@@ -263,7 +263,7 @@
         </xpath>
 
         <xpath expr="//div[@id='col-3']//div[@class='row js_payment']" position="attributes">
-            <attribute name="t-if">deliveries</attribute>
+            <attribute name="t-if">deliveries or only_services</attribute>
         </xpath>
 
         <!-- Add comment field to order -->
@@ -297,7 +297,11 @@
         <xpath expr="//div[@id='delivery_carrier_osc']" position="replace">
             <div id="delivery_carrier_osc_custom">
                 <h3 class="page-header mt16">Send Conditions</h3>
-                <t t-if="deliveries">
+                <!-- Añadido para que mostrar sólo en caso de que todo el carro sean servicios. -->
+                <t t-if="only_services">
+                    <a class="btn btn-block btn-primary">You get free delivery!!!</a>
+                </t>
+                <t t-elif="deliveries">
                     <div class="panel panel-default border_primary">
                         <div class="panel-body">
                             Free delivery for amounts over 99€ (No delivery amount included) and weight less than 15Kg
