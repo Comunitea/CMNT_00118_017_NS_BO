@@ -43,23 +43,23 @@ class SaleOrder(models.Model):
         
         values = super(SaleOrder, self)._get_website_data(order)
         
-        product_ids = order.website_order_line.mapped('product_id')
-
-        cart_type = self._compute_cart_type(product_ids)
-                    
-        if len(cart_type) == 1 and cart_type[0].encode('ascii', 'ignore') == 'service':
+        only_services = all(l.product_id.type in ('service', 'digital') for l in order.website_order_line
+            .filtered(lambda x: not x.payment_fee_line))
             
-            values.update({
-                'only_services': True
-            })
+        values.update({
+            'only_services': only_services
+        })
         
         return values
 
     @api.multi
-    def _compute_cart_type(self, products):
-        cart_type = []
-        for product in products:
-            if product.type not in cart_type:
-                cart_type.append(product.type)
+    def delivery_set(self):
 
-        return cart_type
+        only_services = all(l.product_id.type in ('service', 'digital') for l in self.website_order_line
+            .filtered(lambda x: not x.payment_fee_line))
+
+        if only_services:
+            self._delivery_unset()
+            self.carrier_id = None
+        else:
+            return super(SaleOrder, self).delivery_set()

@@ -15,4 +15,12 @@
 
     </template>
 
+    <!-- Hide cash_on_delivery if the only cart_type is services -->
+
+    <template id="cash_acquirer_button_only_services" inherit_id="payment_cash_on_delivery.cash_acquirer_button" name="Cash on delivery Only Services">
+        <xpath expr="//form[@t-if='acquirer']" position="attributes">
+            <attribute name="t-if">acquirer and not only_services</attribute>
+        </xpath>
+    </template>
+
 </odoo>
