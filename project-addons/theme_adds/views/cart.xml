@@ -299,12 +299,20 @@
                 <h3 class="page-header mt16">Send Conditions</h3>
                 <!-- Añadido para que mostrar sólo en caso de que todo el carro sean servicios. -->
                 <t t-if="only_services">
-                    <a class="btn btn-block btn-primary">You get free delivery!!!</a>
+                    <div class="panel panel-default border_primary">
+                        <div class="panel-body">
+                            Digital products or services does not requiere shipping and will not influence the shipping cost.
+                        </div>
+                        <div class="panel-footer">
+                            <a class="btn btn-block btn-primary">You get free delivery!!!</a>
+                        </div>
+                    </div>
                 </t>
                 <t t-elif="deliveries">
                     <div class="panel panel-default border_primary">
                         <div class="panel-body">
-                            Free delivery for amounts over 99€ (No delivery amount included) and weight less than 15Kg
+                            Free delivery for amounts over 99€ (No delivery amount included) and weight less than 15Kg.
+                            Digital products or services does not requiere shipping and will not influence the shipping cost.
                         </div>
                         <div class="panel-footer">
                             <p>Amount to get free delivery:</p>

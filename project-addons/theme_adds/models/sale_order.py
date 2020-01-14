@@ -1,6 +1,7 @@
 import logging
 
 from odoo import api, models, fields
+import odoo.addons.decimal_precision as dp
 
 _logger = logging.getLogger(__name__)
 
@@ -9,6 +10,9 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     order_web_comment = fields.Text('Order web comment')
+    no_digital_products_total = fields.Float(
+        compute='_compute_no_digital_products_total',
+        digits=dp.get_precision('Account'))
 
     @api.multi
     def _cart_find_product_line(self, product_id=None, line_id=None, **kwargs):
@@ -63,3 +67,9 @@ class SaleOrder(models.Model):
             self.carrier_id = None
         else:
             return super(SaleOrder, self).delivery_set()
+
+    @api.multi
+    def _compute_no_digital_products_total(self):
+        for order in self:
+            order.no_digital_products_total = sum(line.price_total for line \
+                in order.order_line.filtered(lambda x: x.product_id.type not in ('service', 'digital')))

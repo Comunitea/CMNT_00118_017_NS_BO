@@ -289,8 +289,10 @@ msgstr "Productos Destacados"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.payment_delivery_replace
-msgid "Free delivery for amounts over 99€ (No delivery amount included) and weight less than 15Kg"
-msgstr "Envíos gratis para compras superiores a 99€ (Portes no incluidos) y peso inferior a 15Kg"
+msgid "Free delivery for amounts over 99€ (No delivery amount included) and weight less than 15Kg.
+        Digital products or services does not requiere shipping and will not influence the shipping cost."
+msgstr "Envíos gratis para compras superiores a 99€ (Portes no incluidos) y peso inferior a 15Kg
+            Los productos digitales o servicios no necesitan método de envío por lo que no se utilizarán para el cómputo del coste de envío."
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
@@ -686,6 +688,11 @@ msgstr "Amarillo"
 #: model:ir.ui.view,arch_db:theme_adds.payment_delivery_replace
 msgid "You get free delivery!!!"
 msgstr "¡¡¡Ya tiene envío gratuíto!!!"
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.payment_delivery_replace
+msgid "Digital products or services does not requiere shipping and will not influence the shipping cost."
+msgstr "Los productos digitales o servicios no necesitan método de envío por lo que no se utilizarán para el cómputo del coste de envío."
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.clarico_contact_thanks
