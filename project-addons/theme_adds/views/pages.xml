@@ -200,20 +200,23 @@
                     <div class="clarico_row_maxW">
                         <div class="row">
                             <div class="col-md-12">
-                                <h1 class="chs_heading ch_padding">Condiciones de envío</h1>
-                                <h2>Tarifas de envíos</h2>
+                                <h1 class="chs_heading"><strong>Condiciones de envío</strong></h1>
+                                <h3 class="chs_heading"><strong>Excepciones Tarifas</strong></h3>
+                                <p>Los productos digitales o servicios no necesitan método de envío por lo que no se utilizarán para el cómputo del coste de envío.</p>
+                                <p>Si solo se compran productos digitales o servicios no habrá gastos de envío ya que no se va a producir ningún envío físico.</p>
+                                <h3 class="chs_heading ch_padding"><strong>Tarifas de envíos</strong></h3>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <h3>España Penínsular:</h3>
+                                <h5 class="chs_para text-uppercase"><strong>España Penínsular:</strong></h5>
                                     <p>Más de 99€ y máximo 15Kg: <strong>GRATIS</strong></p>
                                     <p>Hasta 15kg: <strong>5,75€ (6,96€ con IVA)</strong></p>
                                     <p>Cada 5 Kilos Extra: <strong>3€ (3,63€ con IVA)</strong></p>
                                     <p><strong>Nota: </strong>Para pedidos de más de 15Kg que sean superiores a 99€ se cobrará solamente el sobrepeso.</p>
                             </div>
                             <div class="col-md-3">
-                                <h3>Baleares y Canarias:</h3>
+                                <h5 class="chs_para text-uppercase"><strong>Baleares y Canarias:</strong></h5>
                                     <p>Hasta 5kg: <strong>17,7€ (21,42€ con IVA)</strong></p>
                                     <p>Hasta 10kg: <strong>33,02€ (39,95€ con IVA)</strong></p>
                                     <p>Hasta 20kg.: <strong>50,90€ (61,59€ con IVA)</strong></p>
@@ -221,29 +224,63 @@
                                     <p><strong>Nota: </strong>Envios a Canarias no Incluyen IVA</p>
                             </div>
                             <div class="col-md-3">
-                                <h3>Portugal:</h3>
-                                    <p><strong>Hasta 5kg: </strong>7,20€ (8,71€ con IVA)</p>
-                                    <p><strong>Hasta 10kg: </strong>10,80€ (13.07€ con IVA)</p>
-                                    <p><strong>Hasta 20kg: </strong>18€ (21.78€ con IVA)</p>
-                                    <p>Cada 10 Kilos Extra: <strong>15€ (18,15€ con IVA)</strong></p>
-                                    <p><strong>Nota: </strong>Sólo parte continental</p>
+                                <h5 class="chs_para text-uppercase"><strong>Portugal:</strong></h5>
+                                <p>Hasta 5kg: <strong>7,20€ (8,71€ con IVA)</strong></p>
+                                <p>Hasta 10kg: <strong>10,80€ (13.07€ con IVA)</strong></p>
+                                <p>Hasta 20kg: <strong>18€ (21.78€ con IVA)</strong></p>
+                                <p>Cada 10 Kilos Extra: <strong>15€ (18,15€ con IVA)</strong></p>
+                                <p><strong>Nota: </strong>Sólo parte continental</p>
                             </div>
                             <div class="col-md-3">
-                                <h3>Resto Unión Europea:</h3>
-                                    <p><strong>Hasta 5kg: </strong> 38,25€ (46,28€ con IVA)</p>
-                                    <p><strong>Hasta 10kg: </strong>48,75€ (58.99€ con IVA)</p>
-                                    <p><strong>Hasta 20kg: </strong>58.95€ (71.33€ con IVA)</p>
-                                    <p>Cada 10 Kilos Extra: <strong>25€ (30,25€ con IVA)</strong></p>
-                                    <p><strong>Nota: </strong>Sólo parte continental</p>
+                                <h5 class="chs_para text-uppercase"><strong>Resto Unión Europea:</strong></h5>
+                                <p>Hasta 5kg: <strong> 38,25€ (46,28€ con IVA)</strong></p>
+                                <p>Hasta 10kg: <strong>48,75€ (58.99€ con IVA)</strong></p>
+                                <p>Hasta 20kg: <strong>58.95€ (71.33€ con IVA)</strong></p>
+                                <p>Cada 10 Kilos Extra: <strong>25€ (30,25€ con IVA)</strong></p>
+                                <p><strong>Nota: </strong>Sólo parte continental</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <h2>Otras Tarifas</h2>
+                                <h3 class="chs_heading"><strong>Otras Tarifas</strong></h3>
                                 <p>Para el resto del mundo, por favor, pregúntenos <a href="/page/contactus">aquí.</a></p>
                                 <p>Para pedidos bajo condiciones especiales no especificadas aquí,
                                     nos pondremos en contacto con Usted para concretar el importe de los gastos de envío.</p>
-                                <br/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="chs_heading"><strong>Plazo de Entrega</strong></h3>
+                                <p>El plazo de entrega estipulado para la península es de 3 a 5 días hábiles. Siendo lo más habitual la entrega en 24-48 horas.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="chs_heading"><strong>Formas de Pago</strong></h1>
+                                <p>De forma a facilitar el pago de todos os productos que desea, nuestra tienda online dispone de los siguientes métodos:</p>
+                                <h3 class="chs_heading"><strong>Pago en Tienda</strong></h3>
+                                <p>Visitándonos en nuestra tienda situada en:Av/Pio XII nº1 bajo, 46009 Valencia.</p>
+                                <p>Podrás recoger y pagar tu pedido tanto en efectivo como con tarjeta sin ningún tipo de gasto adicional.</p>
+                                <p>Puedes visitar nuestro show-room y comprar lo que necesites o comprar online y elegir como método de pago “Pago en tienda” y en menos de 24 horas te indicaremos cuando puedes venir a recoger tu pedido.</p>
+                                <h3 class="chs_heading"><strong>Tarjeta de Crédito y Débito</strong></h3>
+                                <p>No conlleva ningún gasto adicional para el cliente.</p>
+                                <h3 class="chs_heading"><strong>Transferencia Bancaria</strong></h3>
+                                <p>No conlleva ningún gasto adicional para el cliente.</p>
+                                <p>Puedes hacerlo en nuestra cuenta bancaria:</p>
+                                <ul class="list-unstyled">
+                                    <li><strong>TITULAR: </strong>NOSTRUMSPORT</li>
+                                    <li><strong>ENTIDAD: </strong>BBVA</li>
+                                    <li><strong>IBAN: </strong>ES92 0182 0512 3802 0801 2979</li>
+                                    <li><strong>BIC: </strong>BBVAESMMXXX</li>
+                                </ul>
+                                <h3 class="chs_heading"><strong>Reembolso</strong></h3>
+                                <p>Solo aceptamos reembolsos para pedidos de mas de 100€ y menos de 350€, El reembolso tendrá un recargo de un 4% del coste del mismo.</p>
+                                <h3 class="chs_heading"><strong>Paypal</strong></h3>
+                                <p>Tendrá un recargo de un 3% de comisión.</p>
+                                <h3 class="chs_heading"><strong>Paga + Tarde</strong></h3>
+                                <p>Financia tus pedidos hasta en 12 meses con nuestro módulo de pago aplazado.</p>
+                                <p>Opción válida para pedidos de más de 350€.</p>
+                                <p>La aceptación de la financiación depende directamente de la financiera de Paga + Tarde que realiza el método con un algoritmo matemático.</p>
                             </div>
                         </div>
                     </div>
