@@ -304,15 +304,16 @@
                             Digital products or services does not requiere shipping and will not influence the shipping cost.
                         </div>
                         <div class="panel-footer">
-                            <a class="btn btn-block btn-primary">You get free delivery!!!</a>
+                            <a class="btn btn-block btn-primary">No hay gastos de envío.</a>
                         </div>
                     </div>
                 </t>
                 <t t-elif="deliveries">
                     <div class="panel panel-default border_primary">
                         <div class="panel-body">
-                            Free delivery for amounts over 99€ (No delivery amount included) and weight less than 15Kg.
+                            Free delivery for amounts over 99€ (No delivery amount included) and weight less than 15Kg in Spain.
                             Digital products or services does not require shipping and will not influence the shipping cost.
+                            Remember select one payment method to process checkout.
                         </div>
                         <div class="panel-footer">
                             <p>Amount to get free delivery:</p>
@@ -329,7 +330,7 @@
                                 </t>
                             </t>
                             <t t-else="">
-                                <p class="btn btn-block btn-primary">Solo España Penínsular</p>
+                                <p class="btn btn-block btn-primary">Disponible solo España Penínsular</p>
                             </t>
                         </div>
                     </div>
