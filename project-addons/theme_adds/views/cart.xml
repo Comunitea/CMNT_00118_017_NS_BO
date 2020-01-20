@@ -304,15 +304,16 @@
                             Digital products or services does not requiere shipping and will not influence the shipping cost.
                         </div>
                         <div class="panel-footer">
-                            <a class="btn btn-block btn-primary">You get free delivery!!!</a>
+                            <a class="btn btn-block btn-primary">No hay gastos de envío.</a>
                         </div>
                     </div>
                 </t>
                 <t t-elif="deliveries">
                     <div class="panel panel-default border_primary">
                         <div class="panel-body">
-                            Free delivery for amounts over 99€ (No delivery amount included) and weight less than 15Kg.
-                            Digital products or services does not requiere shipping and will not influence the shipping cost.
+                            Free delivery for amounts over 99€ (No delivery amount included) and weight less than 15Kg in Spain.
+                            Digital products or services does not require shipping and will not influence the shipping cost.
+                            Remember select one payment method to process checkout.
                         </div>
                         <div class="panel-footer">
                             <p>Amount to get free delivery:</p>
@@ -329,7 +330,7 @@
                                 </t>
                             </t>
                             <t t-else="">
-                                <p class="btn btn-block btn-primary">Solo España Penínsular</p>
+                                <p class="btn btn-block btn-primary">Disponible solo España Penínsular</p>
                             </t>
                         </div>
                     </div>
@@ -337,21 +338,13 @@
                 <t t-else="">
                     <div class="panel panel-danger border_primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Ooops! Alguna condición de envío no es correcta</h3>
+                            <h3 class="panel-title">Ooops! Alguna condición de envío no es correcta!</h3>
                         </div>
                         <div class="panel-body">
-                            Por favor, revise lo siguiente:
-                            <ul>
-                                <li>
-                                    Por favor, revise la dirección de entrega. Debe cubrir correctamente el país y la provincia.
-                                </li>
-                                <li>
-                                    También puede ser necesario volver a escoger la provincia y guardarla.
-                                </li>
-                            </ul>
+                            Por favor, revise que se cumplan todas las condiciones para poder realizar el envío.
                         </div>
                         <div class="panel-footer">
-                            También puede revisar las condiciones de envío
+                            Puede revisar las condiciones de envío
                             <a rel="nofollow" href="/page/entrega" target="_blank" style="text-decoration: underline;"
                                title="Haz click para verlo en una nueva pestaña"><strong>aquí</strong></a>.
                         </div>
@@ -465,17 +458,19 @@
         </xpath>
         <!-- Hide products packs from cart lines -->
         <xpath expr="//table[@id='cart_products']//tbody//tr" position="attributes">
-            <attribute name="t-if">line.product_id.product_tmpl_id.website_published and not line.pack_parent_line_id</attribute>
+            <attribute name="t-if">not line.pack_parent_line_id</attribute>
+            <!-- Deleted line.product_id.product_tmpl_id.website_published because is used just here. Other sites just check is sale_ok = True -->
+            <!--<attribute name="t-if">line.product_id.product_tmpl_id.website_published and not line.pack_parent_line_id</attribute>-->
             <!--<attribute name="t-att-is-pack">line.pack_parent_line_id</attribute>-->
         </xpath>
     </template>
 
     <!-- Hide products packs from modal cart lines -->
-    <!--<template id="clarico_cart_clarico_cart_popover_custom" inherit_id="clarico_cart.clarico_cart_popover">
-        <xpath expr="//div[@class='row mb8 cart_line popover-main-div']" position="attributes">
-            <attribute name="t-if">line.product_id.product_tmpl_id.website_published</attribute>
-        </xpath>
-    </template>-->
+<!--    <template id="clarico_cart_clarico_cart_popover_custom" inherit_id="clarico_cart.clarico_cart_popover">-->
+<!--        <xpath expr="//div[@class='row mb8 cart_line popover-main-div']" position="attributes">-->
+<!--            <attribute name="t-if">line.product_id.product_tmpl_id.website_published</attribute>-->
+<!--        </xpath>-->
+<!--    </template>-->
 
     <!-- Friendly URL's in my cart (alternative products) -->
     <template id="website_sale_suggested_products_list_add" inherit_id="website_sale.suggested_products_list" name="Alternative product in cart changes">

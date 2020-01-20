@@ -1,6 +1,7 @@
 import logging
 
-from odoo import api, models, fields
+from odoo import api, fields, models
+
 import odoo.addons.decimal_precision as dp
 
 _logger = logging.getLogger(__name__)
@@ -44,24 +45,18 @@ class SaleOrder(models.Model):
 
     @api.model
     def _get_website_data(self, order):
-        
         values = super(SaleOrder, self)._get_website_data(order)
-        
-        only_services = all(l.product_id.type in ('service', 'digital') for l in order.website_order_line
-            .filtered(lambda x: not x.payment_fee_line))
-            
+        only_services = all(line.product_id.type in ('service', 'digital') for line in
+                            order.website_order_line.filtered(lambda x: not x.payment_fee_line))
         values.update({
             'only_services': only_services
         })
-        
         return values
 
     @api.multi
     def delivery_set(self):
-
-        only_services = all(l.product_id.type in ('service', 'digital') for l in self.website_order_line
-            .filtered(lambda x: not x.payment_fee_line))
-
+        only_services = all(line.product_id.type in ('service', 'digital') for line in
+                            self.website_order_line.filtered(lambda x: not x.payment_fee_line))
         if only_services:
             self._delivery_unset()
             self.carrier_id = None
@@ -71,5 +66,6 @@ class SaleOrder(models.Model):
     @api.multi
     def _compute_no_digital_products_total(self):
         for order in self:
-            order.no_digital_products_total = sum(line.price_total for line \
-                in order.order_line.filtered(lambda x: x.product_id.type not in ('service', 'digital')))
+            order.no_digital_products_total = sum(
+                line.price_total for line in order.order_line.filtered(
+                    lambda x: x.product_id.type not in ('service', 'digital')))

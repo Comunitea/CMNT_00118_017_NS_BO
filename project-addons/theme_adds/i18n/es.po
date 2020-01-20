@@ -142,7 +142,7 @@ msgstr "Todos"
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.payment_delivery_replace
 msgid "Amount to get free delivery:"
-msgstr "cantidad para recibir la entrega gratis:"
+msgstr "Cantidad restante para envío gratis:"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.shop
@@ -289,10 +289,8 @@ msgstr "Productos Destacados"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.payment_delivery_replace
-msgid "Free delivery for amounts over 99€ (No delivery amount included) and weight less than 15Kg.
-        Digital products or services does not requiere shipping and will not influence the shipping cost."
-msgstr "Envíos gratis para compras superiores a 99€ (Portes no incluidos) y peso inferior a 15Kg
-            Los productos digitales o servicios no necesitan método de envío por lo que no se utilizarán para el cómputo del coste de envío."
+msgid "Free delivery for amounts over 99€ (No delivery amount included) and weight less than 15Kg in Spain."
+msgstr "En España, los envíos son gratuitos para compras superiores a 99€ (Portes no incluidos) y peso inferior a 15Kg."
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.website_description_form_view
@@ -569,7 +567,7 @@ msgstr "Buscar en tienda..."
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.payment_delivery_replace
 msgid "Send Conditions"
-msgstr "Enviar Condiciones"
+msgstr "Condiciones de Envío"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.shop
@@ -687,12 +685,17 @@ msgstr "Amarillo"
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.payment_delivery_replace
 msgid "You get free delivery!!!"
-msgstr "¡¡¡Ya tiene envío gratuíto!!!"
+msgstr "Ya tiene envío gratuíto!!!"
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.payment_delivery_replace
 msgid "Digital products or services does not requiere shipping and will not influence the shipping cost."
 msgstr "Los productos digitales o servicios no necesitan método de envío por lo que no se utilizarán para el cómputo del coste de envío."
+
+#. module: theme_adds
+#: model:ir.ui.view,arch_db:theme_adds.payment_delivery_replace
+msgid "Remember select one payment method to process checkout."
+msgstr "Recuerde seleccionar un método de pago para poder continuar."
 
 #. module: theme_adds
 #: model:ir.ui.view,arch_db:theme_adds.clarico_contact_thanks
