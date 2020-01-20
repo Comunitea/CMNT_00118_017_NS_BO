@@ -97,4 +97,77 @@
 	    </field>
 	</record>
 
+     <!-- view used for product.product only -->
+        <record model="ir.ui.view" id="product_normal_form_view_custom">
+            <field name="name">product.product.procurement</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+
+                <div name="button_box" position="inside">
+                    <button class="oe_stat_button" name="action_view_purchases"
+                        type="object" icon="fa-usd">
+                        <field string="Purchases" name="purchase_count" widget="statinfo"/>
+                    </button>
+                </div>
+
+                <notebook position="inside">
+                    <page string="Stock Info">
+                        <group string="Stock Info">
+                            <field name="last_year_sales"/>
+                            <field name="average_month_sales"/>
+                            <field name="last_year_unit_sales"/>
+                            <field name="remaining_stock_days"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        
+        <!-- view used for product.product only -->
+        <!-- <record model="ir.ui.view" id="product_template_only_form_view_custom">
+            <field name="name">product.product.procurement</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Stock Info">
+                        <group string="Stock Info">
+                            <field name="last_year_sales"/>
+                            <field name="average_month_sales"/>
+                            <field name="last_year_unit_sales"/>
+                            <field name="remaining_stock_days"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record> -->
+
+        <!-- Smart button purchase lines -->
+        <record id="product_template_form_view_sale_order_button"  model="ir.ui.view">
+            <field name="name">product.template.purchase.order.button</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <div name="button_box" position="inside">
+                    <button class="oe_stat_button" name="action_view_purchases"
+                        type="object" icon="fa-usd">
+                        <field string="Purchases" name="purchase_count" widget="statinfo"/>
+                    </button>
+                </div>
+
+                <notebook position="inside">
+                    <page string="Stock Info">
+                        <group string="Stock Info">
+                            <field name="last_year_sales"/>
+                            <field name="average_month_sales"/>
+                            <field name="last_year_unit_sales"/>
+                            <field name="remaining_stock_days"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
 </odoo>

@@ -52,6 +52,7 @@
         'views/report_sessionsummary.xml',
         'views/account_view.xml',
         'views/partner_view.xml',
+        'views/purchase_view.xml',
         'views/sale_commission_view.xml',
         "wizard/recompute_price_min_view.xml",
     ],
