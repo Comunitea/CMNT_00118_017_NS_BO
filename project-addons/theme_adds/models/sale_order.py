@@ -65,7 +65,14 @@ class SaleOrder(models.Model):
 
     @api.multi
     def _compute_no_digital_products_total(self):
+        """
+        Exclude digital and service products that are parts of pack from compute total_amount in order
+        because products there are not really sent cannot be compute on delivery cost.
+        There are included services products that are a service but there are a pack because there are a service
+        only to improve sale and they are really sent.
+        """
         for order in self:
             order.no_digital_products_total = sum(
                 line.price_total for line in order.order_line.filtered(
-                    lambda x: x.product_id.type not in ('service', 'digital')))
+                    lambda x: x.product_id.type not in ('service', 'digital') or (
+                            x.product_id.type in ('service', 'digital') and x.product_id.pack)))

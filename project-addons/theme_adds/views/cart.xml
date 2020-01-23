@@ -187,6 +187,10 @@
                   </tr>
             </thead>
         </xpath>
+        <!-- Hide products packs from checkout review order table -->
+        <xpath expr="//tbody/tr" position="attributes">
+            <attribute name="t-foreach" t-if="not request.env['ir.ui.view'].search([('key', '=', 'website_sale_one_step_checkout_charge_payment_fee.add_fiction_breadcrumbs_bar_checkout')]).active">website_sale_order.website_order_line.filtered(lambda x : not x.pack_parent_line_id)</attribute>
+        </xpath>
     </template>
 
     <template id="custom_onestepcheckout" inherit_id="website_sale_one_step_checkout.osc_onestepcheckout">
@@ -457,20 +461,17 @@
                        t-attf-src="/web/image/product.template/{{line.product_id.product_tmpl_id.id}}/image/250x250"/></span>
         </xpath>
         <!-- Hide products packs from cart lines -->
-        <xpath expr="//table[@id='cart_products']//tbody//tr" position="attributes">
-            <attribute name="t-if">not line.pack_parent_line_id</attribute>
-            <!-- Deleted line.product_id.product_tmpl_id.website_published because is used just here. Other sites just check is sale_ok = True -->
-            <!--<attribute name="t-if">line.product_id.product_tmpl_id.website_published and not line.pack_parent_line_id</attribute>-->
-            <!--<attribute name="t-att-is-pack">line.pack_parent_line_id</attribute>-->
+        <xpath expr="//table[@id='cart_products']//t[@t-foreach]" position="attributes">
+            <attribute name="t-foreach" t-if="not request.env['ir.ui.view'].search([('key', '=', 'website_sale_one_step_checkout_charge_payment_fee.cart_lines_cash_on_delivery')]).active">website_sale_order.website_order_line.filtered(lambda x : not x.pack_parent_line_id)</attribute>
         </xpath>
     </template>
 
     <!-- Hide products packs from modal cart lines -->
-<!--    <template id="clarico_cart_clarico_cart_popover_custom" inherit_id="clarico_cart.clarico_cart_popover">-->
-<!--        <xpath expr="//div[@class='row mb8 cart_line popover-main-div']" position="attributes">-->
-<!--            <attribute name="t-if">line.product_id.product_tmpl_id.website_published</attribute>-->
-<!--        </xpath>-->
-<!--    </template>-->
+    <template id="website_sale_cart_popover" inherit_id="website_sale.cart_popover">
+        <xpath expr="//t[@t-foreach]" position="attributes">
+            <attribute name="t-foreach" t-if="not request.env['ir.ui.view'].search([('key', '=', 'website_sale_one_step_checkout_charge_payment_fee.cart_popover_lines_cash_on_delivery')]).active">website_sale_order.website_order_line.filtered(lambda x : not x.pack_parent_line_id)</attribute>
+        </xpath>
+    </template>
 
     <!-- Friendly URL's in my cart (alternative products) -->
     <template id="website_sale_suggested_products_list_add" inherit_id="website_sale.suggested_products_list" name="Alternative product in cart changes">
