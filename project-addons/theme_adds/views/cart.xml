@@ -303,11 +303,11 @@
         <xpath expr="//div[@id='delivery_carrier_osc']" position="replace">
             <div id="delivery_carrier_osc_custom">
                 <h3 class="page-header mt16">Send Conditions</h3>
-                <!-- Añadido para que mostrar sólo en caso de que todo el carro sean servicios. -->
                 <t t-if="only_services">
+                    <!-- Carrito contiene solo haya servicios. -->
                     <div class="panel panel-default border_primary">
                         <div class="panel-body">
-                            Digital products or services does not requiere shipping and will not influence the shipping cost.
+                            Los productos digitales o servicios no necesitan método de envío por lo que no se utilizarán para el cómputo del coste de envío.
                         </div>
                         <div class="panel-footer">
                             <a class="btn btn-block btn-primary">No hay gastos de envío.</a>
@@ -315,33 +315,58 @@
                     </div>
                 </t>
                 <t t-elif="deliveries">
+                    <!-- Carrito contiene productos y/o servicios. -->
                     <div class="panel panel-default border_primary">
                         <div class="panel-body">
-                            Free delivery for amounts over 99€ (No delivery amount included) and weight less than 15Kg in Spain.
-                            Digital products or services does not require shipping and will not influence the shipping cost.
-                            Remember select one payment method to process checkout.
+                            <span>En España, los envíos son gratuitos para compras superiores a 99€ (IVA incl.) y peso inferior a 15Kg.</span>
+                            <br/>
+                            <span>Los productos digitales, servicios y el importe del envío no se incluyen en el cálculo del importe para el envío gratuito.</span>
                         </div>
                         <div class="panel-footer">
-                            <p>Amount to get free delivery:</p>
+                            <p>Importe computable para envío gratuito:
+                                <strong>
+                                    <span t-esc="website_sale_order.no_digital_products_total"
+                                          style="white-space: nowrap;"
+                                          t-options="{'widget': 'monetary','from_currency': website_sale_order.pricelist_id.currency_id,'display_currency': website.currency_id}" />
+                                </strong>
+                            </p>
+                            <p>Importe restante para envío gratuito:</p>
                             <t t-if="any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower()) and any(x for x in order.carrier_id.state_ids if 'asturias' in x.name.lower())">
-                                <p t-if="(99 if not website_sale_order.amount_delivery else website_sale_order.amount_delivery + 99) - website_sale_order.amount_total &gt; 0" class="btn btn-block btn-primary" >
-                                    <span t-esc="(99 if not website_sale_order.amount_delivery else website_sale_order.amount_delivery + 99) - website_sale_order.amount_total" style="white-space: nowrap;"
+                                <!-- solo España Penínsular -->
+                                <t t-if="website_sale_order.amount_free_delivery &gt; 0 and any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower()) and website_sale_order.total_weight > website_sale_order.carrier_id.weight_base_max">
+                                    <!-- No llegas al importe y excedes el peso -->
+                                    <p class="btn btn-block btn-primary">
+                                        <span t-esc="website_sale_order.amount_free_delivery"
+                                          style="white-space: nowrap;"
+                                          t-options="{'widget': 'monetary','from_currency': website_sale_order.pricelist_id.currency_id,'display_currency': website.currency_id}" />
+                                    </p>
+                                    <p class="mt8 mb0">* Has excedido el peso de 15Kg. Al alcanzar el envío gratuito solo pagarás por el sobrepeso.</p>
+                                </t>
+                                <p t-elif="website_sale_order.amount_free_delivery &gt; 0" class="btn btn-block btn-primary" >
+                                    <!-- No llegas al importe y NO excedes el peso -->
+                                    <span t-esc="website_sale_order.amount_free_delivery"
+                                          style="white-space: nowrap;"
                                           t-options="{'widget': 'monetary','from_currency': website_sale_order.pricelist_id.currency_id,'display_currency': website.currency_id}" />
                                 </p>
-                                <t t-elif="any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower()) and website_sale_order.total_weight > website_sale_order.carrier_id.weight_base_max">
-                                    <a class="btn btn-block btn-primary">Gratis. Solo pagas el sobrepeso!!!</a>
+                                <t t-elif="website_sale_order.amount_free_delivery &lt;= 0 and any(x for x in order.carrier_id.country_ids if 'espa' in x.name.lower()) and website_sale_order.total_weight > website_sale_order.carrier_id.weight_base_max">
+                                    <!-- Llegas al importe pero excedes el peso -->
+                                    <p class="btn btn-block btn-primary">Solo pagas el sobrepeso!!!</p>
+                                    <p class="mt8 mb0">* Has alcanzado el importe pero has excedido el peso.</p>
                                 </t>
                                 <t t-else="">
-                                    <a class="btn btn-block btn-primary">You get free delivery!!!</a>
+                                    <!-- Llegas al importe y NO excedes el peso -->
+                                    <p class="btn btn-block btn-primary">Ya tiene envío gratis!!!</p>
                                 </t>
                             </t>
                             <t t-else="">
+                                 <!-- Si no es España Penínsular -->
                                 <p class="btn btn-block btn-primary">Disponible solo España Penínsular</p>
                             </t>
                         </div>
                     </div>
                 </t>
                 <t t-else="">
+                    <!-- Algo ha pasado. -->
                     <div class="panel panel-danger border_primary">
                         <div class="panel-heading">
                             <h3 class="panel-title">Ooops! Alguna condición de envío no es correcta!</h3>

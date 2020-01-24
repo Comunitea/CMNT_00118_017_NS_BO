@@ -14,6 +14,9 @@ class SaleOrder(models.Model):
     no_digital_products_total = fields.Float(
         compute='_compute_no_digital_products_total',
         digits=dp.get_precision('Account'))
+    amount_free_delivery = fields.Float(
+        compute='_compute_amount_free_delivery',
+        digits=dp.get_precision('Account'))
 
     @api.multi
     def _cart_find_product_line(self, product_id=None, line_id=None, **kwargs):
@@ -76,3 +79,12 @@ class SaleOrder(models.Model):
                 line.price_total for line in order.order_line.filtered(
                     lambda x: x.product_id.type not in ('service', 'digital') or (
                             x.product_id.type in ('service', 'digital') and x.product_id.pack)))
+
+    @api.multi
+    def _compute_amount_free_delivery(self):
+        """
+        Amount to get free delivery.
+        """
+        self.ensure_one()
+        amount_to_get_free_delivery = 99.01
+        self.amount_free_delivery = amount_to_get_free_delivery - self.no_digital_products_total

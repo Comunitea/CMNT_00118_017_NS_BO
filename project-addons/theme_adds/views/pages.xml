@@ -204,16 +204,19 @@
                                 <h3 class="chs_heading"><strong>Excepciones Tarifas</strong></h3>
                                 <p>Los productos digitales o servicios no necesitan método de envío por lo que no se utilizarán para el cómputo del coste de envío.</p>
                                 <p>Si solo se compran productos digitales o servicios no habrá gastos de envío ya que no se va a producir ningún envío físico.</p>
+                                <p>Los productos digitales, servicios y el importe del envío no se incluyen en el cálculo del importe para el envío gratuito.</p>
                                 <h3 class="chs_heading ch_padding"><strong>Tarifas de envíos</strong></h3>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
                                 <h5 class="chs_para text-uppercase"><strong>España Penínsular:</strong></h5>
-                                    <p>Más de 99€ y máximo 15Kg: <strong>GRATIS</strong></p>
+                                    <p>Más de 99€ (con IVA) y máximo 15Kg: <strong>GRATIS</strong></p>
                                     <p>Hasta 15kg: <strong>5,75€ (6,96€ con IVA)</strong></p>
                                     <p>Cada 5 Kilos Extra: <strong>3€ (3,63€ con IVA)</strong></p>
-                                    <p><strong>Nota: </strong>Para pedidos de más de 15Kg que sean superiores a 99€ se cobrará solamente el sobrepeso.</p>
+                                    <p><strong>Nota: </strong>
+                                        Para pedidos de más de 15Kg que sean superiores a 99€ (con IVA) se cobrará solamente el sobrepeso.
+                                    </p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="chs_para text-uppercase"><strong>Baleares y Canarias:</strong></h5>
