@@ -85,6 +85,6 @@ class SaleOrder(models.Model):
         """
         Amount to get free delivery.
         """
-        self.ensure_one()
         amount_to_get_free_delivery = 99.01
-        self.amount_free_delivery = amount_to_get_free_delivery - self.no_digital_products_total
+        for order in self:
+            order.amount_free_delivery = amount_to_get_free_delivery - order.no_digital_products_total
