@@ -107,7 +107,7 @@
                 <div class="col-md-12 mb8 mt16">
                     <label>
                         <input type="radio" name="public_customer" value="2"/>
-                        <span></span>
+                        <span/>
                         Quiero crear una cuenta
                     </label>
                 </div>
@@ -223,16 +223,16 @@
         <!--Para adaptar paga+tarde a osc-->
         <xpath expr="//div[@class='container oe_website_sale oe_website_sale_osc']/div" position="before">
             <div t-if="request.session.get('pmt_tx_error')" class="row">
-                <div class="col-md-4"></div>
+                <div class="col-md-4"/>
                 <div class="col-md-4">
                     <div class="alert alert-danger alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true"><![CDATA[&times;]]></span>
                         </button>
-                        <strong>PAGA+TARDE: </strong><span t-esc="request.session.get('pmt_tx_error')"></span>
+                        <strong>PAGA+TARDE: </strong><span t-esc="request.session.get('pmt_tx_error')"/>
                     </div>
                 </div>
-                <div class="col-md-4"></div>
+                <div class="col-md-4"/>
             </div>
         </xpath>
 
@@ -242,7 +242,7 @@
             <br/>
             <p>
                 <!-- Retrive Javascript SDK from CDN -->
-                <script type="text/javascript" src="https://cdn.pagamastarde.com/pmt-js-client-sdk/3/js/client-sdk.min.js"></script>
+                <script type="text/javascript" src="https://cdn.pagamastarde.com/pmt-js-client-sdk/3/js/client-sdk.min.js"/>
                 <!-- Create simulator container -->
                 <div class="PmtSimulator"
                      data-pmt-style="Blue"
@@ -417,6 +417,10 @@
 
     <!--Hide price in recently viewed items list at cart view-->
     <template id="recent_cart_product_custom" inherit_id="clarico_recently_viewed.recent_cart_product">
+         <!-- Only publish products -->
+        <xpath expr="//div[hasclass('recently_viwed_common')]" position="attributes">
+            <attribute name="t-if">rproduct.website_published</attribute>
+        </xpath>
 
         <xpath expr="//div[@class='recently_viewed_img_div']" position="replace">
             <div class="recently_viewed_img_div">
@@ -424,7 +428,7 @@
                     <span itemprop="image" />
                     <div class="div_c_sub_pc_image">
                         <div class="ribbon-wrapper" t-if="rproduct.label_ept_id">
-                            <div class="ribbon btn btn-danger sale-btn" t-field="rproduct.label_ept_id"></div>
+                            <div class="ribbon btn btn-danger sale-btn" t-field="rproduct.label_ept_id"/>
                         </div>
                         <span><img t-att-alt="rproduct.name" t-att-title="rproduct.name"
                                    t-attf-src="/web/image/product.template/{{rproduct.id}}/image/250x250"/></span>

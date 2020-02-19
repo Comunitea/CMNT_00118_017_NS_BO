@@ -76,10 +76,10 @@
                             <span class="mandatory">*</span>
                         </label>
                         <input type="password" name="password" id="password"
-                            class="password-textbox" required="required"
-                            t-att-autofocus="'autofocus' if login else None" maxlength="4096" />
+                               class="password-textbox" required="required"
+                               t-att-autofocus="'autofocus' if login else None" maxlength="4096" />
                     </div>
-                    <div class="error"></div>
+                    <div class="error"/>
                     <input type="hidden" name="redirect" t-att-value="redirect" />
                     <div class="clearfix oe_login_buttons">
                         <button type="Button" class="btn btn-primary btnsubmit">Login </button>
@@ -94,6 +94,10 @@
 
     <!--Hide price in recently viewed items list at wishlist view-->
     <template id="clarico_recently_viewed_recent_products_wish_custom" inherit_id="clarico_recently_viewed.clarico_recently_viewed_recent_products_wish">
+        <!-- Only publish products -->
+        <xpath expr="//div[hasclass('recently_viwed_common')]" position="attributes">
+            <attribute name="t-if">rproduct.website_published</attribute>
+        </xpath>
 
         <xpath expr="//div[@class='recently_viewed_img_div']" position="replace">
             <div class="recently_viewed_img_div">
@@ -101,7 +105,7 @@
                     <span itemprop="image" />
                     <div class="div_c_sub_pc_image">
                         <div class="ribbon-wrapper" t-if="rproduct.label_ept_id">
-                            <div class="ribbon btn btn-danger sale-btn" t-field="rproduct.label_ept_id"></div>
+                            <div class="ribbon btn btn-danger sale-btn" t-field="rproduct.label_ept_id"/>
                         </div>
                         <span><img t-att-alt="rproduct.name" t-att-title="rproduct.name"
                                    t-attf-src="/web/image/product.template/{{rproduct.id}}/image/250x250"/></span>
@@ -166,16 +170,15 @@
     </template>
 
     <template id="clarico_wishlist_product_page_custom" inherit_id="clarico_wishlist.clarico_wishlist_product_page">
-
         <!--Hide add to wishlist for hide price in product details at product details view-->
         <xpath expr="//div[@id='wishicon_div']" position="replace">
             <div id="wishicon_div">
                 <a title="Add To Wishlist" href="#a" class="add2wish"
                    t-att-data-id="'%s' % product.id ">
-                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <i class="fa fa-heart" aria-hidden="true"/>
                 </a>
                 <a title="In Wishlist" class="in2wish" t-att-data-id="'%s' % product.id ">
-                    <i class="fa fa-heart"></i>
+                    <i class="fa fa-heart"/>
                 </a>
             </div>
         </xpath>
