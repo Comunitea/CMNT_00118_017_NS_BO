@@ -34,6 +34,8 @@
     </template>
 
     <template id="google_analytics_head_script" inherit_id="web.layout" name="Web layout GA Script">
+        <!-- Metatag for google verification -->
+        <meta name="google-site-verification" content="-MYXmBk0dIYKqgFKUIWCDILZ1eC9n4tHq9XBr8yidD8" />
         <!-- Put analytics script from body to head -->
         <xpath expr="//script[last()]" position="after">
             <script id='tracking_code' t-if="website and website.google_analytics_key and not editable">
@@ -42,7 +44,7 @@
                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
                 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-                ga('create', _.str.trim('<t t-esc="website.google_analytics_key"/>'), 'auto');
+                ga('create', '&lt;t t-esc="request.env["website"].google_analytics_key"/&gt;', 'auto');
                 ga('send','pageview');
             </script>
         </xpath>
