@@ -88,3 +88,19 @@ class SaleOrder(models.Model):
         amount_to_get_free_delivery = 99.01
         for order in self:
             order.amount_free_delivery = amount_to_get_free_delivery - order.no_digital_products_total
+
+    @api.model
+    def _message_get_auto_subscribe_fields(self, updated_fields, auto_follow_fields=None):
+        """
+            Hook for user can decide it if receive or not auto subscribe fields by notify_email option
+        """
+        if auto_follow_fields is None:
+            auto_follow_fields = ['user_id']
+        user_field_lst = []
+        for name, field in self._fields.items():
+            if name in auto_follow_fields and name in updated_fields and getattr(field, 'track_visibility', False) \
+                    and field.comodel_name == 'res.users':
+                # New condition by notify email
+                if eval('self.' + name).notify_email != 'none':
+                    user_field_lst.append(name)
+        return user_field_lst
