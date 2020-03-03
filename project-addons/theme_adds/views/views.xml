@@ -34,10 +34,10 @@
     </template>
 
     <template id="google_analytics_head_script" inherit_id="web.layout" name="Web layout GA Script">
-        <!-- Metatag for google verification -->
-        <meta name="google-site-verification" content="-MYXmBk0dIYKqgFKUIWCDILZ1eC9n4tHq9XBr8yidD8" />
         <!-- Put analytics script from body to head -->
         <xpath expr="//script[last()]" position="after">
+            <!-- Metatag for google verification -->
+            <meta name="google-site-verification" content="-MYXmBk0dIYKqgFKUIWCDILZ1eC9n4tHq9XBr8yidD8" />
             <script id='tracking_code' t-if="website and website.google_analytics_key and not editable">
                 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
