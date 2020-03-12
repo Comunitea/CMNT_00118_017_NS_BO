@@ -69,6 +69,11 @@
             </t>
         </xpath>
 
+        <!-- Hide price including with display none for google cannot show it -->
+        <xpath expr="//h4[@class='css_non_editable_mode_hidden decimal_precision']" position="attributes">
+            <attribute name="t-if">not product.hide_website_price</attribute>
+        </xpath>
+
         <!-- Price for B2C and B2B users without taxes. Apply discount if exits -->
         <xpath expr="//h4[@class='css_non_editable_mode_hidden decimal_precision']" position="after">
             <t t-if="not product.hide_website_price">
