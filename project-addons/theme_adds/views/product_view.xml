@@ -42,17 +42,17 @@
     </record>
 
     <!-- Add fields to publish products in web and change website sequence -->
-    <record id="website_product" model="ir.ui.view">
-        <field name="name">website.product</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="website_sale.product_template_form_view"/>
-        <field name="arch" type="xml">
-            <!--<group name="website"  position="inside">
-                <field name="website_sequence"/>
-            </group>-->
-            <xpath expr="//group[@name='website']" position="replace"/>
-        </field>
-    </record>
+<!--    <record id="website_product" model="ir.ui.view">-->
+<!--        <field name="name">website.product</field>-->
+<!--        <field name="model">product.template</field>-->
+<!--        <field name="inherit_id" ref="website_sale.product_template_form_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            &lt;!&ndash;<group name="website"  position="inside">-->
+<!--                <field name="website_sequence"/>-->
+<!--            </group>&ndash;&gt;-->
+<!--            <xpath expr="//group[@name='website']" position="replace"/>-->
+<!--        </field>-->
+<!--    </record>-->
 
     <!-- Add field to change website sequence for products in treeView  -->
     <record id="website_sequence_product" model="ir.ui.view">
@@ -81,47 +81,47 @@
     </record>
 
     <!-- Add field website_description-->
-    <record id="website_description_form_view" model="ir.ui.view">
-        <field name="name">website.description.form.view</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="product.product_template_only_form_view" />
-        <field name="arch" type="xml">
-            <!--<xpath expr="//page[@name='notes']/group[@name='description']" position="inside">
-                <separator string="Descripción para el producto" colspan="4"/>
-                &lt;!&ndash;<field name="website_description" colspan="4" nolabel="1" placeholder="Esta nota se mostrará en los productos" modifiers="{}"/>&ndash;&gt;
-                <field name="os productos" modifiers="{}"/>
-            </xpath>-->
-            <xpath expr="//notebook[1]" position="inside">
-                <page string="Website" name="website_product_description">
-                    <group string="Website">
-                        <field name="website_url" invisible="1"/>
-                        <!--<field name="public_categ_ids" string="Website Category"/>-->
-                        <field name="public_categ_ids" widget="many2many_tags" string="Website Category"/>
-                        <field name="tag_ids" widget="many2many_tags"/>
-                        <field name="alternative_product_ids" widget="many2many_tags"/>
-                        <field name="accessory_product_ids" widget="many2many_tags"/>
-                        <field name="availability" widget="selection"/>
-                        <field name="availability_warning" attrs="{'invisible': [('availability', '!=', 'warning')]}"/>
-                        <!--<field name="website_style_ids" widget="many2many_tags" groups="base.group_no_one"/>-->
-                        <field name="website_sequence"/>
-                        <field name="hide_website_price"/>
-                    </group>
+<!--    <record id="website_description_form_view" model="ir.ui.view">-->
+<!--        <field name="name">website.description.form.view</field>-->
+<!--        <field name="model">product.template</field>-->
+<!--        <field name="inherit_id" ref="product.product_template_only_form_view" />-->
+<!--        <field name="arch" type="xml">-->
+<!--            &lt;!&ndash;<xpath expr="//page[@name='notes']/group[@name='description']" position="inside">-->
+<!--                <separator string="Descripción para el producto" colspan="4"/>-->
+<!--                &lt;!&ndash;<field name="website_description" colspan="4" nolabel="1" placeholder="Esta nota se mostrará en los productos" modifiers="{}"/>&ndash;&gt;-->
+<!--                <field name="os productos" modifiers="{}"/>-->
+<!--            </xpath>&ndash;&gt;-->
+<!--            <xpath expr="//notebook[1]" position="inside">-->
+<!--                <page string="Website" name="website_product_description">-->
+<!--                    <group string="Website">-->
+<!--                        <field name="website_url" invisible="1"/>-->
+<!--                        &lt;!&ndash;<field name="public_categ_ids" string="Website Category"/>&ndash;&gt;-->
+<!--                        <field name="public_categ_ids" widget="many2many_tags" string="Website Category"/>-->
+<!--                        <field name="tag_ids" widget="many2many_tags"/>-->
+<!--                        <field name="alternative_product_ids" widget="many2many_tags"/>-->
+<!--                        <field name="accessory_product_ids" widget="many2many_tags"/>-->
+<!--                        <field name="availability" widget="selection"/>-->
+<!--                        <field name="availability_warning" attrs="{'invisible': [('availability', '!=', 'warning')]}"/>-->
+<!--                        &lt;!&ndash;<field name="website_style_ids" widget="many2many_tags" groups="base.group_no_one"/>&ndash;&gt;-->
+<!--                        <field name="website_sequence"/>-->
+<!--                        <field name="hide_website_price"/>-->
+<!--                    </group>-->
 
-                    <group string="Seo Metadata">
-                        <field name="product_meta_title"/>
-                        <field name="product_meta_keywords"/>
-                        <field name="product_meta_description"/>
-                        <field name="slug"/>
-                    </group>
+<!--                    <group string="Seo Metadata">-->
+<!--                        <field name="product_meta_title"/>-->
+<!--                        <field name="product_meta_keywords"/>-->
+<!--                        <field name="product_meta_description"/>-->
+<!--                        <field name="slug"/>-->
+<!--                    </group>-->
 
-                    <group>
-                        <separator string="Short product description" colspan="4"/>
-                        <field name="description_short" colspan="4" nolabel="1" placeholder="Short product description"/>
-                        <separator string="Full product HTML description" colspan="4"/>
-                        <field name="description" colspan="4" nolabel="1" placeholder="Full description" modifiers="{}"/>
-                    </group>
-                </page>
-            </xpath>
-        </field>
-    </record>
+<!--                    <group>-->
+<!--                        <separator string="Short product description" colspan="4"/>-->
+<!--                        <field name="description_short" colspan="4" nolabel="1" placeholder="Short product description"/>-->
+<!--                        <separator string="Full product HTML description" colspan="4"/>-->
+<!--                        <field name="description" colspan="4" nolabel="1" placeholder="Full description" modifiers="{}"/>-->
+<!--                    </group>-->
+<!--                </page>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
 </odoo>
