@@ -64,7 +64,6 @@
         'views/account.xml',
         'views/group.xml',
         'views/terms.xml',
-        # 'views/category_view.xml',
         'views/robots.xml',
         'views/sitemap.xml',
         'views/payment.xml',
