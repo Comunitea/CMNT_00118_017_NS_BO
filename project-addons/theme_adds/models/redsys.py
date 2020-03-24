@@ -44,29 +44,3 @@ class AcquirerRedsys(models.Model):
             'Ds_Merchant_Paymethods': self.redsys_pay_method or 'T',
         }
         return self._url_encode64(json.dumps(values))
-
-
-class SaleOrder(models.Model):
-    _inherit = 'sale.order'
-
-    @api.multi
-    def write(self, vals):
-        """
-        Asocia el modo de pago con el metodo de pago web en los pedidos si existe un modo de pago relacionado
-        para ese metodo de pago web.
-        """
-        payment = vals.get('payment_acquirer_id', False)
-        if payment:
-            mode = self.env['payment.acquirer'].sudo().search([('id', '=', vals['payment_acquirer_id'])])
-            if mode:
-                vals.update({
-                        'payment_mode_id': mode.payment_mode.id
-                    })
-        return super(SaleOrder, self).write(vals)
-
-
-class PaymentMode(models.Model):
-    _inherit = 'payment.acquirer'
-
-    payment_mode = fields.Many2one('account.payment.mode', string='Payment Mode',
-                                   domain=[('payment_type', '=', 'inbound')])
