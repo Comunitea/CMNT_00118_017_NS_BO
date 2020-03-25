@@ -12,7 +12,7 @@
                      data-pmt-type="6"
                      t-att-data-pmt-amount="product.website_price"/>
                 <!-- Set Public Key and reload simulator -->
-                <t t-set="pmt" t-value="request.env['payment.acquirer'].search([('website_published', '=', True), ('company_id', '=', product.company_id.id), ('provider', '=', 'pmt')])"/>
+                <t t-set="pmt" t-value="request.env['payment.acquirer'].sudo().search([('website_published', '=', True), ('company_id', '=', product.company_id.id), ('provider', '=', 'pmt')])"/>
                 <script>pmtClient.setPublicKey('<t t-esc="pmt.pmt_public_key"/>');pmtClient.simulator.init();</script>
             </div>
             <!-- END Pagantis widget -->
