@@ -177,7 +177,7 @@
         </xpath>
     </template>
 
-    <template id="checkout_product_list_table_head_replace" inherit_id="website_sale_one_step_checkout.osc_onestepcheckout">
+    <template id="checkout_product_list_table_head_replace" name="One Step Checkout Nostrum" inherit_id="website_sale_one_step_checkout.osc_onestepcheckout">
         <xpath expr="//table[@id='cart_products']//thead[1]" position="replace">
             <thead>
                   <tr>
@@ -188,10 +188,11 @@
             </thead>
         </xpath>
         <!-- Hide products packs from checkout review order table -->
-        <xpath expr="//tbody/tr" position="attributes">
+        <xpath expr="//table[@id='cart_products']//tbody/tr" position="attributes">
             <attribute name="t-foreach"
-                       t-if="not request.env['ir.ui.view'].search([('key', '=', 'website_sale_one_step_checkout_charge_payment_fee.add_fiction_breadcrumbs_bar_checkout')]).active \
-                       and not request.env['ir.ui.view'].search([('key', '=', 'checkout_coupon.coupon_code_form')]).active">website_sale_order.website_order_line.filtered(lambda x : not x.pack_parent_line_id)</attribute>
+                       t-if="not request.env['ir.ui.view'].search([('key', '=', 'website_sale_one_step_checkout_charge_payment_fee.website_sale_one_step_checkout_osc_onestepcheckout')]).active">
+                website_sale_order.website_order_line.filtered(lambda x: x.product_id.sale_ok and not x.pack_parent_line_id)
+            </attribute>
         </xpath>
     </template>
 
