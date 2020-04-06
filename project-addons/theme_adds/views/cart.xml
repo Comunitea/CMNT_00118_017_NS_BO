@@ -274,7 +274,7 @@
     <!--Replace default payment delivery-->
     <template id="payment_delivery_replace" name="Delivery Costs" inherit_id="website_sale_one_step_checkout_delivery.payment_delivery">
         <xpath expr="//div[@id='delivery_carrier_osc']" position="replace">
-            <div id="delivery_carrier_osc_custom">
+            <div id="delivery_carrier_osc">
                 <h3 class="page-header mt16">Send Conditions</h3>
                 <t t-if="only_services">
                     <!-- Carrito contiene solo haya servicios. -->
@@ -335,22 +335,6 @@
                                  <!-- Si no es España Penínsular -->
                                 <p class="btn btn-block btn-primary">Disponible solo España Penínsular</p>
                             </t>
-                        </div>
-                    </div>
-                </t>
-                <t t-else="">
-                    <!-- Algo ha pasado. -->
-                    <div class="panel panel-danger border_primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Ooops! Alguna condición de envío no es correcta!</h3>
-                        </div>
-                        <div class="panel-body">
-                            Por favor, revise que se cumplan todas las condiciones para poder realizar el envío.
-                        </div>
-                        <div class="panel-footer">
-                            Puede revisar las condiciones de envío
-                            <a rel="nofollow" href="/page/entrega" target="_blank" style="text-decoration: underline;"
-                               title="Haz click para verlo en una nueva pestaña"><strong>aquí</strong></a>.
                         </div>
                     </div>
                 </t>
