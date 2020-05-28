@@ -26,7 +26,7 @@ class AcquirerRedsys(models.Model):
             'Ds_Sermepa_Url': (self._get_redsys_urls(self.environment)['redsys_form_url']),
             'Ds_Merchant_Amount': str(int(round(tx_values['amount'] * 100))),
             'Ds_Merchant_Currency': self.redsys_currency or '978',
-            'Ds_Merchant_Order': (tx_values['reference'] and tx_values['reference'][-12:] or alse),
+            'Ds_Merchant_Order': (tx_values['reference'] and tx_values['reference'][-12:] or False),
             'Ds_Merchant_MerchantCode': (self.redsys_merchant_code and self.redsys_merchant_code[:9]),
             'Ds_Merchant_Terminal': self.redsys_terminal or '1',
             'Ds_Merchant_TransactionType': (self.redsys_transaction_type or '0'),
