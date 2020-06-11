@@ -6,7 +6,6 @@ from __builtin__ import type
 import unicodedata
 import re
 import os
-import ipdb
 
 # optional python-slugify import (https://github.com/un33k/python-slugify)
 try:
