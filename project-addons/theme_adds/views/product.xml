@@ -3,8 +3,9 @@
 
     <template id="product_block_replace" inherit_id="clarico_product.clarico_product_product">
         <xpath expr="//div[@class='p_static_desc_para']" position="replace">
+            <t t-set="pmt" t-value="request.env['payment.acquirer'].sudo().search([('website_published', '=', True), ('company_id', '=', product.company_id.id), ('provider', '=', 'pmt')])"/>
             <!-- Pagantis widget -->
-            <div class="wp-widget-paga-mas-tarde mb16" t-if="product.website_price &gt; 349 and not product.hide_website_price">
+            <div class="wp-widget-paga-mas-tarde mb16" t-if="not product.hide_website_price and pmt and product.website_price &gt; pmt.min_amount_required">
                 <script type="text/javascript" src="https://cdn.pagamastarde.com/pmt-js-client-sdk/3/js/client-sdk.min.js"/>
                 <div class="PmtSimulator"
                      data-pmt-num-quota="12"
@@ -12,7 +13,6 @@
                      data-pmt-type="6"
                      t-att-data-pmt-amount="product.website_price"/>
                 <!-- Set Public Key and reload simulator -->
-                <t t-set="pmt" t-value="request.env['payment.acquirer'].sudo().search([('website_published', '=', True), ('company_id', '=', product.company_id.id), ('provider', '=', 'pmt')])"/>
                 <script>pmtClient.setPublicKey('<t t-esc="pmt.pmt_public_key"/>');pmtClient.simulator.init();</script>
             </div>
             <!-- END Pagantis widget -->
