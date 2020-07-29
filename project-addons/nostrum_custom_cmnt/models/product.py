@@ -77,7 +77,7 @@ class ProductTemplate(models.Model):
                         {'image': vals['image']})
         return res
 
-class ProductTemplate(models.Model):
+class ProductProduct(models.Model):
     _inherit = 'product.product'
 
     @api.multi
