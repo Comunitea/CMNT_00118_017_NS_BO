@@ -66,7 +66,16 @@ class ProductTemplate(models.Model):
             'res_model': action.res_model,
             'domain': [('id', '=', lines.ids)],
         }
-
+    
+    @api.multi
+    def write(self, vals):
+        res = super(ProductTemplate, self).write(vals)
+        if vals.get('image', False):
+            for template in self:
+                if len(template.product_variant_ids) == 1:
+                    template.product_variant_ids.write(
+                        {'image': vals['image']})
+        return res
 
 class ProductTemplate(models.Model):
     _inherit = 'product.product'
