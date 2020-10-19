@@ -47,6 +47,8 @@
                 ga('create', '<t t-esc="website.google_analytics_key"/>', 'auto');
                 ga('send','pageview');
             </script>
+            <!-- MD5 encryption script -->
+            <script src="/theme_adds/static/js/md5.min.js" type="text/javascript"/>
         </xpath>
     </template>
 
