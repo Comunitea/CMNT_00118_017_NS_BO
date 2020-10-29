@@ -11,24 +11,6 @@
         </field>
     </record>
 
-    <record id="partner_view_buttons_custom_partner" model="ir.ui.view">
-    <field name="name">mandate.res.partner.form.custom.partner</field>
-    <field name="model">res.partner</field>
-    <field name="inherit_id" ref="account_banking_mandate.partner_view_buttons"/>
-    <field name="arch" type="xml">
-        <xpath
-            expr="//div[@class='oe_button_box']//button[@name='%(account_banking_mandate.mandate_action)d'][hasclass('btn-link')]"
-            position="replace"/>
-        <xpath expr="//notebook//button[@name='%(base.action_res_partner_bank_account_form)d']" position="after">
-            <button type="action" class="btn-link"
-                    name="%(account_banking_mandate.mandate_action)d"
-                    context="{'search_default_partner_id': active_id, 'default_partner_id': active_id}">
-                <field string="Mandate(s)" name="mandate_count" widget="statinfo"/>
-            </button>
-        </xpath>
-    </field>
-</record>
-
     <record id="view_partner_form_buttons" model="ir.ui.view">
         <field name="name">view.partner.form.buttons</field>
         <field name="model">res.partner</field>
@@ -49,6 +31,24 @@
 
             <xpath expr="//field[@name='customer_ref']" position="before">
                 <field name="vat" placeholder="e.g. BE0477472701"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="partner_view_buttons_custom_partner" model="ir.ui.view">
+        <field name="name">mandate.res.partner.form.custom.partner</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account_banking_mandate.partner_view_buttons"/>
+        <field name="arch" type="xml">
+            <xpath
+                expr="//div[@class='oe_button_box']//button[@name='%(account_banking_mandate.mandate_action)d'][hasclass('btn-link')]"
+                position="replace"/>
+            <xpath expr="//notebook//button[@name='%(base.action_res_partner_bank_account_form)d']" position="after">
+                <button type="action" class="btn-link"
+                        name="%(account_banking_mandate.mandate_action)d"
+                        context="{'search_default_partner_id': active_id, 'default_partner_id': active_id}">
+                    <field string="Mandate(s)" name="mandate_count" widget="statinfo"/>
+                </button>
             </xpath>
         </field>
     </record>
