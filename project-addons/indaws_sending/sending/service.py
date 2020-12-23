@@ -11,7 +11,7 @@ _logger = logging.getLogger(__name__)
 
 class SendingService:
 
-    delivery_url = 'http://padua.sending.es/sending/ws_clientes?wsdl'
+    delivery_url = 'https://wssending.alertran.net/sending/ws_clientes?wsdl'
 
     def __init__(self, username, password):
         self.username = username
