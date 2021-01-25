@@ -156,6 +156,8 @@ class StockPicking(models.Model):
             xml += '<EntregaSabado>' + picking.sending_entrsabado + \
                 '</EntregaSabado>'
             xml += '<Retorno>' + picking.sending_retorno + '</Retorno>'
+            if picking.sending_reembolso > 0:
+                xml += '<ImporteReembolso>' + str(picking.sending_reembolso) + '</ImporteReembolso>'
             xml += '<Bultos>' + str(picking.sending_numbultos) + '</Bultos>'
             xml += '</Expedicion></Expediciones>'
 
