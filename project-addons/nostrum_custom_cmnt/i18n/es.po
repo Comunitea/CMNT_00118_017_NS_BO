@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-20 11:30+0000\n"
-"PO-Revision-Date: 2020-01-20 11:30+0000\n"
+"POT-Creation-Date: 2021-02-05 15:32+0000\n"
+"PO-Revision-Date: 2021-02-05 15:32+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -230,6 +230,18 @@ msgid "Average month sales"
 msgstr "Media ventas por mes"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_res_partner_pay_due_days
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_res_users_pay_due_days
+msgid "Average payment dues days"
+msgstr "Media días pago-vencimiento"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_res_partner_pay_invoice_days
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_res_users_pay_invoice_days
+msgid "Average payment invoice days"
+msgstr "Media días pago-factura"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.custom_invoice_tree_add_margin
 msgid "Avg. Margin"
 msgstr "Avg. Margin"
@@ -360,6 +372,16 @@ msgid "Day"
 msgstr "Día"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_move_line_diff_due_days
+msgid "Days from due date"
+msgstr "Días desde vencimiento"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_move_line_diff_invoice_days
+msgid "Days from invoice date"
+msgstr "Días desde factura"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_invoice_document_custom
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sale_order_document_custom_cmnt
 #: model:ir.ui.view,arch_db:nostrum_custom_cmnt.report_sessionsummary
@@ -444,7 +466,7 @@ msgstr "Hola Ahí! "
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_recompute_invoice_price_min_id
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_recompute_sale_price_min_id
 msgid "ID"
-msgstr "ID"
+msgstr "ID (identificación)"
 
 #. module: nostrum_custom_cmnt
 #. openerp-web
@@ -456,7 +478,7 @@ msgstr "IMPORTES"
 #. module: nostrum_custom_cmnt
 #: model:ir.model,name:nostrum_custom_cmnt.model_product_supplierinfo
 msgid "Information about a product vendor"
-msgstr "Informaciñon sobre un proveedor de producto"
+msgstr "Information about a product vendor"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_delivery_carrier_internal_note
@@ -498,6 +520,11 @@ msgid "Journal"
 msgstr "Diario"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.model,name:nostrum_custom_cmnt.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_delivery_carrier_last_year_sales
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_product_product_last_year_sales
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_product_template_last_year_sales
@@ -509,7 +536,7 @@ msgstr "Ventas último año"
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_recompute_invoice_price_min___last_update
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_recompute_sale_price_min___last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr "Última modificación en"
 
 #. module: nostrum_custom_cmnt
 #. openerp-web
@@ -523,14 +550,14 @@ msgstr "Último mes"
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_recompute_invoice_price_min_write_uid
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_recompute_sale_price_min_write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Última actualización de"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_change_pos_price_write_date
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_recompute_invoice_price_min_write_date
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_recompute_sale_price_min_write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr "Última actualización en"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_delivery_carrier_last_year_unit_sales
@@ -683,9 +710,19 @@ msgid "Partner"
 msgstr "Empresa"
 
 #. module: nostrum_custom_cmnt
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_move_line_pay_due_days
+msgid "Average payment dues days"
+msgstr "Media días pago-vencimiento"
+
+#. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_journal_payment_mode_id
 msgid "Payment Mode"
 msgstr "Modo de pago"
+
+#. module: nostrum_custom_cmnt
+#: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_move_line_pay_date
+msgid "Payment date"
+msgstr "Fecha de pago"
 
 #. module: nostrum_custom_cmnt
 #: model:ir.model.fields,field_description:nostrum_custom_cmnt.field_account_invoice_payment_term_14936

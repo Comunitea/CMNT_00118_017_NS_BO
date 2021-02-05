@@ -67,5 +67,19 @@
                     <field name="margin_ptje" groups="nostrum_custom_cmnt.group_margin_manager" avg="Avg. Margin"/>
                 </field>
             </field>
-        </record>      
+        </record>
+
+    <record model="ir.ui.view" id="account_move_line_tree_view_pay_days">
+        <field name="name">account.move.line.tree.custom</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="full_reconcile_id" position="after">
+                <field name="pay_date" invisible="0"/>
+                <field name="pay_due_days" invisible="0"/>
+                <field name="diff_invoice_days" invisible="0"/>
+                <field name="diff_due_days" invisible="0"/>
+            </field>
+        </field>
+    </record>
 </odoo>

@@ -30,6 +30,7 @@
         'nostrum_custom_commission',
         'website_sale',
         'product_pack',
+        'account_move_reconcile_helper' # reconcile_line_ids y su compute f()
     ],
     'contributors': [
         "Comunitea ",
@@ -39,6 +40,7 @@
         "security/nostrum_security.xml",
         "security/ir.model.access.csv",
         'data/pos_sequence.xml',
+        'data/partner_financial_risk_data.xml',
         "views/invoice.xml",
         "views/report_invoice.xml",
         "views/sale_view.xml",

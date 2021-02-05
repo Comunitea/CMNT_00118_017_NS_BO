@@ -15,4 +15,17 @@
                 </field>
             </field>
     </record>
+
+     <record id="partner_followup_form_view_custom" model="ir.ui.view">
+            <field name="name">partner_followup_form_view_custom</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account_credit_control.partner_followup_form_view"/>
+            <field name="arch" type="xml">
+                <field name="credit_policy_id" position="before">
+                    <field name="pay_invoice_days"/>
+                    <field name="pay_due_days"/>
+                </field>
+            </field>
+    </record>
+
 </odoo>
