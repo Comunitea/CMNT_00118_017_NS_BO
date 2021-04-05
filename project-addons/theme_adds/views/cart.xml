@@ -436,6 +436,54 @@
         </xpath>
     </template>
 
+    <!--Replace original template-->
+    <template id="website_sale.suggested_products_list" inherit_id="website_sale.cart_lines" customize_show="True" name="Alternative Products in my cart">
+        <xpath expr="//div[hasclass('js_cart_lines')][2]" position="after">
+            <table t-if="suggested_products" class="js_cart_lines table table-striped table-condensed">
+                <colgroup>
+                    <col width="80" />
+                    <col />
+                    <col width="100" />
+                    <col width="120" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th colspan="4">Suggested Accessories:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="suggested_products" t-as="product">
+                        <td>
+                            <a t-attf-href="/shop/product/#{ slug(product.product_tmpl_id) }">
+                                <span t-field="product.image_small" t-options="{'widget': 'image', 'class': 'img-rounded'}" />
+                            </a>
+                        </td>
+                        <td>
+                            <div>
+                                <a t-attf-href="/shop/product/#{ slug(product.product_tmpl_id) }">
+                                    <strong t-field="product.display_name" />
+                                </a>
+                            </div>
+                            <div class="text-muted" t-field="product.description_sale" />
+                        </td>
+                        <td>
+                            <t t-if="product.website_price_difference  and website.get_current_pricelist().discount_policy=='without_discount'">
+                                <del class="text-danger mr8" style="white-space: nowrap;" t-field="product.lst_price" t-options="{'widget': 'monetary','from_currency': product.currency_id, 'display_currency': website.currency_id}" />
+                            </t>
+                            <span t-field="product.website_price" style="white-space: nowrap;" t-options="{'widget': 'monetary','display_currency': website.currency_id}" />
+                        </td>
+                        <td class="text-center">
+                            <input class="js_quantity" name="product_id" t-att-data-product-id="product.id" type="hidden" />
+                            <a class="btn btn-link js_add_suggested_products">
+                                <strong>Add to Cart</strong>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </xpath>
+    </template>
+
     <!-- Friendly URL's in my cart (product lines) -->
     <template id="website_clarico_cart_lines_add" inherit_id="clarico_cart.theme_clarico_cart_lines" name="Website Clarico cart line changes">
         <xpath expr="//td[@t-if='line.product_id.product_tmpl_id']//a" position="attributes">
