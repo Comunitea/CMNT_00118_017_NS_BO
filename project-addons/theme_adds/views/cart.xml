@@ -13,20 +13,20 @@
                        t-if="website_sale_order and website_sale_order.website_order_line">
                         Clear Cart
                     </a>
-                    <a class="btn btn-primary common-btn vrt_algn_top mb4" href="/shop/checkout" rel="nofollow">
+                    <a class="btn btn-primary process_checkout_orange suggest_create_account_buttons common-btn vrt_algn_top mb4" href="/shop/checkout" rel="nofollow">
                         Process checkout <span class="fa fa-long-arrow-right" />
                     </a>
                 </span>
                 <!--Botones para obligar a loguearse en el checkout-->
                 <a t-if="not user_authenticated"
-                   class="btn btn-primary common-btn vrt_algn_top mb4"
+                   class="btn btn-primary common-btn vrt_algn_top mb4 suggest_create_account_buttons"
                    href="/web/login?redirect=/shop/checkout"
                    rel="nofollow">
                     <span>Log in and checkout</span>
                     <span class="fa fa-long-arrow-right"/>
                 </a>
                 <t t-if="suggest_create_account">
-                    <a class="btn btn-primary common-btn vrt_algn_top mb4"
+                    <a class="btn btn-primary common-btn vrt_algn_top mb4 mr4 suggest_create_account_buttons"
                        href="/web/signup?redirect=/shop/checkout"
                        rel="nofollow">
                         <span>Sign up and checkout</span>

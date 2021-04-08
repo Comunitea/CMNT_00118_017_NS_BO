@@ -1,4 +1,5 @@
 import logging
+import random
 
 from odoo import api, fields, models
 
@@ -104,3 +105,10 @@ class SaleOrder(models.Model):
                 if eval('self.' + name).notify_email != 'none':
                     user_field_lst.append(name)
         return user_field_lst
+
+    def _cart_accessories(self):
+        """ Suggest accessories based on 'Accessory Products' of products in cart """
+        for order in self:
+            accessory_products = order.website_order_line.mapped('product_id.accessory_product_ids').filtered(lambda product: product.website_published)
+            accessory_products -= order.website_order_line.mapped('product_id')
+            return random.sample(accessory_products, 3 if len(accessory_products) > 3 else len(accessory_products))
