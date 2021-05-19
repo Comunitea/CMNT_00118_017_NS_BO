@@ -3,7 +3,7 @@
     <data noupdate="1">
         <!-- Days without shopping reminder -->
         <record id="dws_reminder_mail" model="ir.config_parameter">
-            <field name="key">nostrum_custom_cmnt.dws_reminder_mail</field>
+            <field name="key">nostrum_dws.dws_reminder_mail</field>
             <field name="value">info@nostrumsport.com</field>
         </record>
     </data>
