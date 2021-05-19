@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <record id="partner_dws_form_view_custom" model="ir.ui.view">
+            <field name="name">partner_dws_form_view_custom</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="dws_reminder_days"/>
+                </field>
+            </field>
+    </record>
+
+</odoo>
