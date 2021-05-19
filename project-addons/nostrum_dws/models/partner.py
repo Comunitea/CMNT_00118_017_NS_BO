@@ -15,7 +15,7 @@ class ResPartner(models.Model):
 
     def dws_reminder(self):
 
-        dws_reminder_mail = self.env['ir.config_parameter'].get_param("nostrum_custom_cmnt.dws_reminder_mail")
+        dws_reminder_mail = self.env['ir.config_parameter'].get_param("nostrum_dws.dws_reminder_mail")
 
         if not dws_reminder_mail:
             logger.error(_('Days without shopping failed: The dws_reminder_mail parameter is undefined. Check them in ir.config.parameter.'))
