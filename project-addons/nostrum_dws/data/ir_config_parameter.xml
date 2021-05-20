@@ -6,5 +6,10 @@
             <field name="key">nostrum_dws.dws_reminder_mail</field>
             <field name="value">info@nostrumsport.com</field>
         </record>
+
+        <record id="all_sales" model="ir.config_parameter">
+            <field name="key">nostrum_dws.all_sales</field>
+            <field name="value">True</field>
+        </record>
     </data>
 </odoo>

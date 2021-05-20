@@ -16,21 +16,34 @@ class ResPartner(models.Model):
     def dws_reminder(self):
 
         dws_reminder_mail = self.env['ir.config_parameter'].get_param("nostrum_dws.dws_reminder_mail")
+        all_sales = self.env['ir.config_parameter'].get_param("nostrum_dws.all_sales")
 
         if not dws_reminder_mail:
             logger.error(_('Days without shopping failed: The dws_reminder_mail parameter is undefined. Check them in ir.config.parameter.'))
-            return        
+            return
 
-        partner_ids = self.env['res.partner'].search([
-            ("last_website_so_id", "!=", False),
-            ("last_website_so_id.confirmation_date", "!=", False)
-        ])
+        # All sale orders
+        if all_sales:
+            partner_ids = self.env['res.partner'].search([
+                ("sale_order_ids", "!=", False),
+            ])
+        else:
+            # Only website orders
+            partner_ids = self.env['res.partner'].search([
+                ("last_website_so_id", "!=", False),
+                ("last_website_so_id.confirmation_date", "!=", False)
+            ])
 
         mail_line = ''
         for partner in partner_ids:
-            dws = (datetime.now() - datetime.strptime(partner.last_website_so_id.confirmation_date, DEFAULT_SERVER_DATETIME_FORMAT)).days
-            if dws and dws > partner.dws_reminder_days:
-                mail_line += "<li>{} - Días desde su última compra ({}): {}</li>".format(partner.display_name, partner.last_website_so_id.confirmation_date, dws)
+            if all_sales and partner.sale_order_ids[-1].confirmation_date:
+                dws = (datetime.now() - datetime.strptime(partner.sale_order_ids[-1].confirmation_date, DEFAULT_SERVER_DATETIME_FORMAT)).days
+                if dws and dws > partner.dws_reminder_days:
+                    mail_line += "<li>{} - Días desde su última compra ({}): {}</li>".format(partner.display_name.encode('utf-8'), partner.sale_order_ids[-1].confirmation_date, dws)
+            if not all_sales:
+                dws = (datetime.now() - datetime.strptime(partner.last_website_so_id.confirmation_date, DEFAULT_SERVER_DATETIME_FORMAT)).days
+                if dws and dws > partner.dws_reminder_days:
+                    mail_line += "<li>{} - Días desde su última compra ({}): {}</li>".format(partner.display_name.encode('utf-8'), partner.last_website_so_id.confirmation_date, dws)
         if mail_line:
             body = 'Los siguientes usuarios han superado el tiempo de aviso sin realizar compras: <ul>%s</ul>'%mail_line
             subject = 'Aviso de usuarios que han superado el tiempo sin comprar'
@@ -45,6 +58,6 @@ class ResPartner(models.Model):
                     'subject': subject,
                     'body_html': '<pre>%s</pre>' % body
                 })
-                logger.error(_('Days without shopping succedd: Created the mail: {}.'.format(res)))
+                logger.info(_('Days without shopping succedd: Created the mail: {}.'.format(res)))
             except ImportError as e:
                 logger.error(_('Days without shopping failed: {}.'.format(e)))
