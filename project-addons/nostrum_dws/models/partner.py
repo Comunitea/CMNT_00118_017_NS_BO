@@ -38,11 +38,11 @@ class ResPartner(models.Model):
         for partner in partner_ids:
             if all_sales and partner.sale_order_ids[-1].confirmation_date:
                 dws = (datetime.now() - datetime.strptime(partner.sale_order_ids[-1].confirmation_date, DEFAULT_SERVER_DATETIME_FORMAT)).days
-                if dws and dws > partner.dws_reminder_days:
+                if dws and dws == partner.dws_reminder_days:
                     mail_line += "<li>{} - Días desde su última compra ({}): {}</li>".format(partner.display_name.encode('utf-8'), partner.sale_order_ids[-1].confirmation_date, dws)
             if not all_sales:
                 dws = (datetime.now() - datetime.strptime(partner.last_website_so_id.confirmation_date, DEFAULT_SERVER_DATETIME_FORMAT)).days
-                if dws and dws > partner.dws_reminder_days:
+                if dws and dws == partner.dws_reminder_days:
                     mail_line += "<li>{} - Días desde su última compra ({}): {}</li>".format(partner.display_name.encode('utf-8'), partner.last_website_so_id.confirmation_date, dws)
         if mail_line:
             body = 'Los siguientes usuarios han superado el tiempo de aviso sin realizar compras: <ul>%s</ul>'%mail_line
