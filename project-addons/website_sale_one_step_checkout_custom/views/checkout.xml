@@ -1,0 +1,78 @@
+<odoo>
+  <data>
+
+    <template id="osc_custom_styles" name="OSC Custom Styles" inherit_id="website.assets_frontend">
+        <xpath expr="link[last()]" position="after">
+            <link href="/website_sale_one_step_checkout_custom/static/css/general.less" rel="stylesheet" type="text/less"/>
+        </xpath>
+    </template>
+
+    <template id="osc_payment_method_custom" name="Nostrum OSC Payment Method Custom" inherit_id="website_sale_one_step_checkout.osc_onestepcheckout">
+      <xpath expr="//div[@id='payment_method']/h3" position="inside">
+        <i aria-hidden="true" class="fa fa-arrows-v pull-right"></i>
+      </xpath>
+
+      <xpath expr="//div[@id='payment_method']/h3" position="attributes">
+        <attribute name="data-toggle">collapse</attribute>
+        <attribute name="data-target">#osc_methods</attribute>
+      </xpath>
+
+      <xpath expr="//div[@id='payment_method']/ul" position="attributes">
+        <attribute name="id">osc_methods</attribute>
+        <attribute name="class">list-unstyled-custom collapse</attribute>
+      </xpath>
+    </template>
+
+
+    <template id="osc_address_custom" name="Nostrum OSC Delivery Collapse" inherit_id="website_sale_one_step_checkout.address">
+        <xpath expr="//t[@t-if='not only_services and order.partner_id.id != request.website.user_id.sudo().partner_id.id']/div[hasclass('row')][1]" position="attributes">
+            <attribute name="data-toggle">collapse</attribute>
+            <attribute name="data-target">#osc_shipping</attribute>
+        </xpath>
+
+        <xpath expr="//t[@t-if='not only_services and order.partner_id.id != request.website.user_id.sudo().partner_id.id']/div[hasclass('row')][1]//h3" position="inside">
+            <i aria-hidden="true" class="fa fa-arrows-v pull-right"></i>
+        </xpath>
+
+        <xpath expr="//div[@id='osc_shipping']" position="attributes">
+            <attribute name="class">row all_shipping js-shipping-address collapse</attribute>
+        </xpath>
+    </template>
+
+    <template id="osc_payment_default_custom" name="Nostrum OSC Payment Delivery Default" inherit_id="website_sale_one_step_checkout_delivery.payment_delivery">
+        <xpath expr="//div[@id='delivery_carrier_osc']/h3" position="attributes">
+            <attribute name="data-toggle">collapse</attribute>
+            <attribute name="data-target">#osc_delivery</attribute>
+        </xpath>
+        <xpath expr="//div[@id='delivery_carrier_osc']/h3" position="inside">
+            <i aria-hidden="true" class="fa fa-arrows-v pull-right"></i>
+        </xpath>
+    </template>
+
+    <template id="payment_delivery_replace_custom" name="OSC Delivery Replace Custom" inherit_id="theme_adds.payment_delivery_replace">
+        <xpath expr="//t[@t-if='only_services']/div[1]" position="attributes">
+            <attribute name="id">osc_delivery</attribute>
+            <attribute name="class">panel panel-default border_primary collapse</attribute>
+        </xpath>
+        <xpath expr="//t[@t-elif='deliveries']/div[1]" position="attributes">
+            <attribute name="id">osc_delivery</attribute>
+            <attribute name="class">panel panel-default border_primary collapse</attribute>
+        </xpath>
+    </template>
+
+    <template id="osc_payment_method_info_custom" name="OSC Payment method info custom" inherit_id="website_sale_one_step_checkout_charge_payment_fee.website_sale_one_step_checkout_osc_onestepcheckout">
+        <xpath expr="//div[@id='payment_method_info']/h3" position="attributes">
+            <attribute name="data-toggle">collapse</attribute>
+            <attribute name="data-target">#osc_payment_info</attribute>
+        </xpath>
+        <xpath expr="//div[@id='payment_method_info']/h3" position="inside">
+            <i aria-hidden="true" class="fa fa-arrows-v pull-right"></i>
+        </xpath>
+
+        <xpath expr="//div[@id='payment_method_info']/div[1]" position="attributes">
+            <attribute name="id">osc_payment_info</attribute>
+            <attribute name="class">panel panel-default border_primary collapse</attribute>
+        </xpath>
+    </template>
+  </data>
+</odoo>
