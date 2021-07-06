@@ -1,0 +1,30 @@
+<odoo>
+  <data>
+
+    <template id="product_block_attachments" name="Attach test" inherit_id="theme_adds.product_content_field_position">
+        <xpath expr="//div[hasclass('div_sub_class_product_features')]//div[last()]" position="after">
+            <t t-set="attach_ids" t-value="product._get_attachments_for_website()"/>
+            <div class="col-md-7 col-sm-7 product_info_style_padding" t-if="len(attach_ids) &gt; 0">
+                <div class="col-ld-12 col-md-12 product_sort_description_div_class">
+                    <div class="clo-md-12 recently_view_product_headind_div_class">
+                        <p class="product_info_heading_para_class">ATTACHMENTS</p>
+                    </div>
+                </div>
+                <div class="div_main_class_desc">
+                    <div class="product_sort_description_para_class">
+                        <ul>
+                            <t t-foreach="attach_ids" t-as="att">
+                                <li>
+                                    <a t-att-href="'/my/productAtt/' + str(att.id)" t-att-alt="att.name">
+                                        <t t-esc="att.name"/>
+                                    </a>
+                                </li>
+                            </t>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+  </data>
+</odoo>
