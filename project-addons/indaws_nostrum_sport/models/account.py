@@ -138,6 +138,10 @@ class AccountInvoice(models.Model):
     partner_state = fields.Char(related='partner_id.state_id.name',
                                 string="Provincia", readonly=True)
 
+    def _recalcular_todo(self):
+        records = self.env['account.invoice'].search([('type', '=', 'out_refund')])
+        records._get_margin_ptje()
+
     @api.depends('invoice_line_ids', 'invoice_line_ids.purchase_price',
                  'invoice_line_ids.price_min', 'invoice_line_ids.quantity')
     def _get_margin_ptje(self):
@@ -151,6 +155,9 @@ class AccountInvoice(models.Model):
             margen_min = 0
             margin_base = record.amount_untaxed - purchase_total
             margin_base_min = record.amount_untaxed - purchase_total_min
+            if record.type == 'out_refund':
+                margin_base = margin_base*(-1)
+                margin_base_min = margin_base_min*(-1)
             if record.amount_untaxed != 0.0:
                 margen = (margin_base / record.amount_untaxed) * 100
                 margen_min = (margin_base_min / record.amount_untaxed) * 100
