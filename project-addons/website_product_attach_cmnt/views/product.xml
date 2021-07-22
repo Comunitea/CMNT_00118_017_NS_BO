@@ -1,0 +1,28 @@
+<odoo>
+  <data>
+
+    <template id="product_block_attachments" name="Attach test" inherit_id="theme_adds.product_block_replace">
+        <xpath expr="//div[@class='container']" position="before">
+            <t t-set="attach_ids" t-value="product._get_attachments_for_website()"/>
+            <div t-if="attach_ids" class="container">
+                <div class="row">
+                    <div class="col-md-10 col-sm-12 wp_revi_widget_product">
+                        <p class="product_info_heading_para_class">ATTACHMENTS</p>
+                    </div>
+                    <div class="col-md-10 col-sm-12 wp_revi_widget_product">
+                        <ul>
+                            <t t-foreach="attach_ids" t-as="att">
+                                <li>
+                                    <a t-att-href="'/my/productAtt/' + str(att.id)" t-att-alt="att.name">
+                                        <t t-esc="att.name"/>
+                                    </a>
+                                </li>
+                            </t>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+  </data>
+</odoo>
