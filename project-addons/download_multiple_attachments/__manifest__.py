@@ -19,7 +19,7 @@
 ######################################################################################################
 {
         "name": "Download Multiple Attachments",
-        "version": "11.0",
+        "version": "10.0",
         "depends": ['base'],
         "author": "BHC",
         'website': 'www.bhc.be',
