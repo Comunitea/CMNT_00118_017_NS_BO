@@ -166,6 +166,13 @@ class AccountInvoice(models.Model):
             record.margin_base_min = margin_base_min
             record.margin_ptje_min = margen_min
 
+    @api.model
+    def read_group(self, domain, fields, groupby, offset=0, limit=None, orderby=False, lazy=True):
+        result = super(AccountInvoice, self).read_group(domain, fields, groupby, offset=offset, limit=limit, orderby=orderby, lazy=lazy)
+        for group in result:
+            if 'margin_ptje' in fields:
+                group['margin_ptje'] = (group['margin_base'] / group['amount_untaxed_signed']) * 100
+        return result
 
 class AccountMoveLine(models.Model):
     _name = 'account.move.line'
