@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+
+    <template id="clarico_product_product_udi" name="Product UDI" inherit_id="clarico_product.clarico_product_product">
+        <xpath expr="//div[@class='clarico_product_sku']" position="after">
+            <div class="clarico_product_sku" t-if="product.udi_code">
+                <p class="sku_label">
+                    UDI:
+                    <t t-esc="product.udi_code" />
+                </p>
+            </div>
+        </xpath>
+    </template>
+  </data>
+</odoo>
