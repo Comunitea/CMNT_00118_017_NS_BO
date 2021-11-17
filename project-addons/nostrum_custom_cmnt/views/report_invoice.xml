@@ -7,7 +7,7 @@
             <attribute name="groups">!sale.group_delivery_invoice_address</attribute>
         </xpath>
         <xpath expr="//div[@name='invoice_address']" position="before">
-            <div class="col-xs-6" groups="sale.group_delivery_invoice_address">
+            <div class="col-xs-6" style="float: right;" groups="sale.group_delivery_invoice_address">
                 <strong t-if="o.partner_shipping_id == o.partner_id">Invoicing and shipping address:</strong>
                 <strong t-if="o.partner_shipping_id != o.partner_id">Invoicing address:</strong>
                 <div t-field="o.partner_id"
