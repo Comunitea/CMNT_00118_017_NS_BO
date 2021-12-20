@@ -170,7 +170,7 @@ class AccountInvoice(models.Model):
     def read_group(self, domain, fields, groupby, offset=0, limit=None, orderby=False, lazy=True):
         result = super(AccountInvoice, self).read_group(domain, fields, groupby, offset=offset, limit=limit, orderby=orderby, lazy=lazy)
         for group in result:
-            if 'margin_ptje' in fields:
+            if 'margin_ptje' in fields and group['amount_untaxed_signed']:
                 group['margin_ptje'] = (group['margin_base'] / group['amount_untaxed_signed']) * 100
         return result
 
