@@ -14,14 +14,6 @@ class ResPartner(models.Model):
         'Days without shopping reminder', default=90)
 
     def dws_reminder(self):
-
-        def _get_last_confirmation_date(sale_order_ids):
-            last_confirmation_date = False
-            for sale_order in sale_order_ids:
-                if sale_order.confirmation_date and (not last_confirmation_date or sale_order.confirmation_date > last_confirmation_date):
-                    last_confirmation_date = sale_order.confirmation_date
-            return last_confirmation_date
-
         dws_reminder_mail = self.env['ir.config_parameter'].get_param("nostrum_dws.dws_reminder_mail")
         all_sales = self.env['ir.config_parameter'].get_param("nostrum_dws.all_sales")
 
@@ -43,7 +35,7 @@ class ResPartner(models.Model):
 
         mail_line = ''
         for partner in partner_ids:
-            last_confirmation_date = _get_last_confirmation_date(partner.sale_order_ids)
+            last_confirmation_date = partner.sale_order_ids.sorted(key=lambda x: x.confirmation_date)[-1].confirmation_date
             if all_sales and last_confirmation_date:
                 dws = (datetime.now() - datetime.strptime(last_confirmation_date, DEFAULT_SERVER_DATETIME_FORMAT)).days
                 if dws and dws == partner.dws_reminder_days:
