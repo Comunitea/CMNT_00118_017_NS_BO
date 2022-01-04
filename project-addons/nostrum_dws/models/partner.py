@@ -15,6 +15,13 @@ class ResPartner(models.Model):
 
     def dws_reminder(self):
 
+        def _get_last_confirmation_date(sale_order_ids):
+            last_confirmation_date = False
+            for sale_order in sale_order_ids:
+                if sale_order.confirmation_date and (not last_confirmation_date or sale_order.confirmation_date > last_confirmation_date):
+                    last_confirmation_date = sale_order.confirmation_date
+            return last_confirmation_date
+
         dws_reminder_mail = self.env['ir.config_parameter'].get_param("nostrum_dws.dws_reminder_mail")
         all_sales = self.env['ir.config_parameter'].get_param("nostrum_dws.all_sales")
 
@@ -36,10 +43,11 @@ class ResPartner(models.Model):
 
         mail_line = ''
         for partner in partner_ids:
-            if all_sales and partner.sale_order_ids[-1].confirmation_date:
-                dws = (datetime.now() - datetime.strptime(partner.sale_order_ids[-1].confirmation_date, DEFAULT_SERVER_DATETIME_FORMAT)).days
+            last_confirmation_date = _get_last_confirmation_date(partner.sale_order_ids)
+            if all_sales and last_confirmation_date:
+                dws = (datetime.now() - datetime.strptime(last_confirmation_date, DEFAULT_SERVER_DATETIME_FORMAT)).days
                 if dws and dws == partner.dws_reminder_days:
-                    mail_line += "<li>{} - Días desde su última compra ({}): {}</li>".format(partner.display_name.encode('utf-8'), partner.sale_order_ids[-1].confirmation_date, dws)
+                    mail_line += "<li>{} - Días desde su última compra ({}): {}</li>".format(partner.display_name.encode('utf-8'), last_confirmation_date, dws)
             if not all_sales:
                 dws = (datetime.now() - datetime.strptime(partner.last_website_so_id.confirmation_date, DEFAULT_SERVER_DATETIME_FORMAT)).days
                 if dws and dws == partner.dws_reminder_days:
