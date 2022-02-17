@@ -1,0 +1,26 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="view_company_form_custom_layout_inherit">
+        <field name="name">res.company.form.custom.layout.inherit</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+
+            <notebook position="inside">
+                <page string="Promotion in layout">
+                    <group>
+                        <field name="promotional_row"/>
+                        <field name="product_ids" options="{'limit': 4}" attrs="{'invisible': [('promotional_row','=',False)]}"/>
+                        <separator string="Description for promotional footer" colspan="4"/>
+                        <small>Texts limits with font size 13: 3 products + text: 153 characters. 2 products + text: 191 characters. 1 product + text: 366 characters. Only txt: 580 characters.</small>
+                        <field name="description_footer" colspan="4" nolabel="1" placeholder="Description for promotional footer" modifiers="{}"/>
+                    </group>
+                </page>
+            </notebook>
+
+        </field>
+    </record>
+
+  </data>
+</odoo>
