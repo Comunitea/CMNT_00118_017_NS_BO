@@ -1,0 +1,73 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* custom_layout_nostrum
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 17:19+0000\n"
+"PO-Revision-Date: 2022-02-10 17:19+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: custom_layout_nostrum
+#: model:ir.ui.view,arch_db:custom_layout_nostrum.view_company_form_custom_layout_inherit
+msgid "<small>Texts limits with font size 13: 3 products + text: 153 characters. 2 products + text: 191 characters. 1 product + text: 366 characters. Only txt: 580 characters.</small>"
+msgstr "<small>Límite de caracteres para una letra de tamaño 13: 3 productos + texto: 153 caracteres. 2 productos + texto: 191 caracteres. 1 producto + texto: 366 caracteres. Solo texto: 580 caracteres.</small>"
+
+#. module: custom_layout_nostrum
+#: model:ir.model.fields,help:custom_layout_nostrum.field_res_company_promotional_row
+msgid "Adds a promotional row in the report layouts."
+msgstr "Añadir una fila promocional a los pedidos/presupuestos."
+
+#. module: custom_layout_nostrum
+#: model:ir.model,name:custom_layout_nostrum.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: custom_layout_nostrum
+#: model:ir.ui.view,arch_db:custom_layout_nostrum.view_company_form_custom_layout_inherit
+msgid "Description for promotional footer"
+msgstr "Texto para footer promocional"
+
+#. module: custom_layout_nostrum
+#: model:ir.ui.view,arch_db:custom_layout_nostrum.external_layout_footer_custom_layout_inherit
+msgid "Nuestros productos destacados:"
+msgstr "Nuestros productos destacados:"
+
+#. module: custom_layout_nostrum
+#: model:ir.model,name:custom_layout_nostrum.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: custom_layout_nostrum
+#: model:ir.model.fields,field_description:custom_layout_nostrum.field_res_company_product_ids
+msgid "Products to show"
+msgstr "Productos a mostrar"
+
+#. module: custom_layout_nostrum
+#: model:ir.ui.view,arch_db:custom_layout_nostrum.view_company_form_custom_layout_inherit
+msgid "Promotion in layout"
+msgstr "Promoción en pedidos/presupuestos."
+
+#. module: custom_layout_nostrum
+#: code:addons/custom_layout_nostrum/models/res_company.py:13
+#: model:ir.model.fields,field_description:custom_layout_nostrum.field_res_company_description_footer
+#, python-format
+msgid "Promotional footer description"
+msgstr "Texto para footer promocional"
+
+#. module: custom_layout_nostrum
+#: model:ir.model.fields,field_description:custom_layout_nostrum.field_res_company_promotional_row
+msgid "Promotional row"
+msgstr "Fila promocional"
+
+#. module: custom_layout_nostrum
+#: model:ir.model.fields,help:custom_layout_nostrum.field_res_company_product_ids
+msgid "You can only add four products."
+msgstr "No puedes añadir más de cuatro productos."
