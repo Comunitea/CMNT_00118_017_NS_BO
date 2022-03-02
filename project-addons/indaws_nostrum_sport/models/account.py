@@ -44,8 +44,8 @@ class AccountInvoiceLine(models.Model):
                                string="Ciudad", readonly=True)
     partner_state = fields.Char(related='invoice_id.partner_id.state_id.name',
                                 string="Provincia", readonly=True)
-    categ_id = fields.Many2one(
-        'product.category', related='product_id.categ_id',
+    categ_id = fields.Char(
+        related='product_id.categ_id.display_name',
         string="Categoría interna", readonly=True)
 
     sale_order_lines = fields.Many2many('sale.order.line',
