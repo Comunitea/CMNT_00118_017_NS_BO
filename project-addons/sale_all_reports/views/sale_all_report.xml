@@ -8,6 +8,8 @@
                 <search>
                     <field name="product_id"/>
                     <field name="partner_id"/>
+                    <field name="company_id"/>
+                    <field name="user_id"/>
                 </search>
             </field>
         </record>
@@ -22,7 +24,17 @@
             <field name="context">{'search_default_Sales':1, 'group_by_no_leaf':1,'group_by':[]}</field>
         </record>
 
-        <menuitem name="All Sales" action="action_order_all_report" id="menu_report_product_all" parent="sales_team.menu_sale_report" sequence="10"/>
-        <menuitem name="All Sales" action="action_order_all_report" id="menu_report_product_all" parent="point_of_sale.menu_point_rep" sequence="10"/>
+        <record id="action_order_all_report2" model="ir.actions.act_window">
+            <field name="name">Sales  and Point of sale Analysis</field>
+            <field name="res_model">sale.all.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">pivot,graph</field>
+            <field name="view_id"></field>
+            <field name="search_view_id" ref="view_order_product_search"/>
+            <field name="context">{'search_default_Sales':1, 'group_by_no_leaf':1,'group_by':[]}</field>
+        </record>
+
+        <menuitem name="Sales Reports" action="action_order_all_report" id="menu_report_product_all" parent="sales_team.menu_sales" sequence="99"/>
+        <menuitem name="Sales Reports" action="action_order_all_report2" id="menu_report_product_all2" parent="point_of_sale.menu_point_of_sale" sequence="99"/>
     </data>
 </odoo>

@@ -10,13 +10,16 @@ class SaleAllReport(models.Model):
     product_id = fields.Many2one('product.product', 'Product', readonly=True)
     partner_id = fields.Many2one('res.partner', 'Partner', readonly=True)
     categ_id = fields.Many2one('product.category', 'Product Category', readonly=True)
-
+    company_id = fields.Many2one('res.company', 'Company', readonly=True)
+    user_id = fields.Many2one('res.users', 'Salesperson', readonly=True)
     def _select(self):
         select_str = """
              SELECT min(sol.id) as id,
              sol.product_id as product_id,
              pts.categ_id as categ_id,
-             ss.partner_id as partner_id
+             ss.partner_id as partner_id,
+             ss.user_id as user_id,
+             ss.company_id as company_id
         """
         return select_str
 
@@ -25,7 +28,9 @@ class SaleAllReport(models.Model):
              SELECT min(pol.id) as id,
              product_id as product_id,
              ptp.categ_id as categ_id,
-             s.partner_id as partner_id
+             s.partner_id as partner_id,
+             s.user_id as user_id,
+             s.company_id as company_id
 
         """
         return select_str
@@ -56,14 +61,18 @@ class SaleAllReport(models.Model):
         group_by_str = """
             GROUP BY sol.product_id,
                      pts.categ_id,
-                     ss.partner_id
+                     ss.partner_id,
+                     ss.user_id,
+                     ss.company_id
         """
         return group_by_str
     def _group_by2(self):
         group_by_str = """
             GROUP BY pol.product_id,
                      ptp.categ_id,
-                     s.partner_id
+                     s.partner_id,
+                     s.user_id,
+                     s.company_id
         """
         return group_by_str
     @api.model_cr

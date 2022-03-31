@@ -10,7 +10,10 @@
     "category": "Sales",
     "description": """Allow to add advance payments on sales and then use its on invoices""",
     "depends": ["base", "sale", "account","sales_team"],
-    "data": ["views/sale_all_report.xml",
-             "views/res_partner_views.xml"],
+    "data": ['views/sale_all_report.xml',
+             'views/res_partner_views.xml',
+             'security/sale_security.xml',
+             'security/ir.model.access.csv',
+             ],
     "installable": True,
 }
