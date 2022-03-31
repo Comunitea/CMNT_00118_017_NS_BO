@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_order_product_search" model="ir.ui.view">
+            <field name="name">sale.all.report.search</field>
+            <field name="model">sale.all.report</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="product_id"/>
+                    <field name="partner_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_order_all_report" model="ir.actions.act_window">
+            <field name="name">Sales  and Point of sale Analysis</field>
+            <field name="res_model">sale.all.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">pivot,graph</field>
+            <field name="view_id"></field>
+            <field name="search_view_id" ref="view_order_product_search"/>
+            <field name="context">{'search_default_Sales':1, 'group_by_no_leaf':1,'group_by':[]}</field>
+        </record>
+
+        <menuitem name="All Sales" action="action_order_all_report" id="menu_report_product_all" parent="sales_team.menu_sale_report" sequence="10"/>
+        <menuitem name="All Sales" action="action_order_all_report" id="menu_report_product_all" parent="point_of_sale.menu_point_rep" sequence="10"/>
+    </data>
+</odoo>
