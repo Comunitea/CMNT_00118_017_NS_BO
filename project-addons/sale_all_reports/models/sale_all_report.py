@@ -25,10 +25,10 @@ class SaleAllReport(models.Model):
              SELECT min(sol.id) as id,
              sol.product_id as product_id,
              pts.categ_id as categ_id,
-             ss.partner_id as partner_id,
-             ss.user_id as user_id,
-             ss.company_id as company_id,
-             ss.date_order as date,
+             so.partner_id as partner_id,
+             so.user_id as user_id,
+             so.company_id as company_id,
+             so.date_order as date,
              SUM(sol.price_total) as price_total,
              SUM(sol.product_uom_qty) as product_uom_qty,
              SUM(sol.price_subtotal) as price_subtotal
@@ -53,11 +53,11 @@ class SaleAllReport(models.Model):
     def _from(self):
         from_str = """
             sale_order_line sol
-                LEFT JOIN pos_order ss ON (ss.id=sol.order_id)
+                LEFT JOIN sale_order so ON (so.id=sol.order_id)
                 LEFT JOIN product_product ps ON (sol.product_id=ps.id)
                 LEFT JOIN product_template pts ON (ps.product_tmpl_id=pts.id)
                 LEFT JOIN product_uom us ON (us.id=pts.uom_id)
-                LEFT JOIN res_partner spartner on ss.partner_id = spartner.id
+                LEFT JOIN res_partner spartner on so.partner_id = spartner.id
         """
         return from_str
     def _from2(self):
@@ -76,10 +76,10 @@ class SaleAllReport(models.Model):
         group_by_str = """
             GROUP BY sol.product_id,
                      pts.categ_id,
-                     ss.partner_id,
-                     ss.user_id,
-                     ss.company_id,
-                     ss.date_order
+                     so.partner_id,
+                     so.user_id,
+                     so.company_id,
+                     so.date_order
         """
         return group_by_str
     def _group_by2(self):
@@ -105,5 +105,10 @@ class SaleAllReport(models.Model):
             FROM %s
             %s
             )""" % (self._table, self._select(), self._from(),self._group_by(), self._select2(), self._from2(), self._group_by2())
+        # query = """CREATE or REPLACE VIEW %s as (
+        #     %s
+        #     FROM %s
+        #     %s
+        #     )""" % (self._table, self._select(), self._from(),self._group_by())
         print(query)
         self.env.cr.execute(query)
