@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from odoo import tools
 from odoo import api, fields, models
 
@@ -12,6 +14,12 @@ class SaleAllReport(models.Model):
     categ_id = fields.Many2one('product.category', 'Product Category', readonly=True)
     company_id = fields.Many2one('res.company', 'Company', readonly=True)
     user_id = fields.Many2one('res.users', 'Salesperson', readonly=True)
+    date = fields.Datetime('Date Order', readonly=True)
+    product_uom_qty = fields.Float('# of Qty', readonly=True)
+    price_total = fields.Float('Total', readonly=True)
+    price_subtotal = fields.Float('Untaxed Total', readonly=True)
+
+
     def _select(self):
         select_str = """
              SELECT min(sol.id) as id,
@@ -19,7 +27,11 @@ class SaleAllReport(models.Model):
              pts.categ_id as categ_id,
              ss.partner_id as partner_id,
              ss.user_id as user_id,
-             ss.company_id as company_id
+             ss.company_id as company_id,
+             ss.date_order as date,
+             SUM(sol.price_total) as price_total,
+             SUM(sol.product_uom_qty) as product_uom_qty,
+             SUM(sol.price_subtotal) as price_subtotal
         """
         return select_str
 
@@ -30,8 +42,11 @@ class SaleAllReport(models.Model):
              ptp.categ_id as categ_id,
              s.partner_id as partner_id,
              s.user_id as user_id,
-             s.company_id as company_id
-
+             s.company_id as company_id,
+             s.date_order as date,
+             SUM((pol.qty * pol.price_unit) * (100 - pol.discount) / 100) AS price_total,
+             SUM(pol.qty) as product_uom_qty,
+             SUM(pol.price_subtotal) as price_subtotal
         """
         return select_str
 
@@ -63,7 +78,8 @@ class SaleAllReport(models.Model):
                      pts.categ_id,
                      ss.partner_id,
                      ss.user_id,
-                     ss.company_id
+                     ss.company_id,
+                     ss.date_order
         """
         return group_by_str
     def _group_by2(self):
@@ -72,7 +88,8 @@ class SaleAllReport(models.Model):
                      ptp.categ_id,
                      s.partner_id,
                      s.user_id,
-                     s.company_id
+                     s.company_id,
+                     s.date_order
         """
         return group_by_str
     @api.model_cr
