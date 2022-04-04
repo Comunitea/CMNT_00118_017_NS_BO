@@ -6,8 +6,9 @@
             <field name="model">sale.all.report</field>
             <field name="arch" type="xml">
                 <pivot string="Sales Analysis" disable_linking="True">
-                    <field name="date" interval="month" type="row"/>
+                    <!-- <field name="date" interval="month" type="row"/> -->
                     <field name="price_subtotal" type="measure"/>
+                    <field name="price_total" type="measure"/>
                 </pivot>
             </field>
        </record>
@@ -21,6 +22,7 @@
                     <field name="partner_id"/>
                     <field name="company_id"/>
                     <field name="user_id"/>
+                    <filter name="Sales" string="Sales" domain="[('state','not in',('draft', 'cancel', 'sent'))]"/>
                 </search>
             </field>
         </record>
@@ -48,4 +50,5 @@
         <menuitem name="Sales Reports" action="action_order_all_report" id="menu_report_product_all" parent="sales_team.menu_sales" sequence="99"/>
         <menuitem name="Sales Reports" action="action_order_all_report2" id="menu_report_product_all2" parent="point_of_sale.menu_point_of_sale" sequence="99"/>
     </data>
+
 </odoo>

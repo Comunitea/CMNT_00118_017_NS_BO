@@ -17,6 +17,15 @@ class SaleAllReport(models.Model):
     date = fields.Datetime('Date Order', readonly=True)
     product_uom_qty = fields.Float('# of Qty', readonly=True)
     price_total = fields.Float('Total', readonly=True)
+    state = fields.Selection([
+        ('draft', 'Draft Quotation'),
+        ('sent', 'Quotation Sent'),
+        ('sale', 'Sales Order'),
+        ('done', 'Sales Done'),
+        ('cancel', 'Cancelled'),
+        ('paid', 'Paid'),
+        ('invoiced', 'Invoiced'),
+        ], string='Status', readonly=True)
     price_subtotal = fields.Float('Untaxed Total', readonly=True)
 
 
@@ -29,6 +38,7 @@ class SaleAllReport(models.Model):
              so.user_id as user_id,
              so.company_id as company_id,
              so.date_order as date,
+             so.state as state,
              SUM(sol.price_total) as price_total,
              SUM(sol.product_uom_qty) as product_uom_qty,
              SUM(sol.price_subtotal) as price_subtotal
@@ -44,9 +54,11 @@ class SaleAllReport(models.Model):
              s.user_id as user_id,
              s.company_id as company_id,
              s.date_order as date,
-             SUM((pol.qty * pol.price_unit) * (100 - pol.discount) / 100) AS price_total,
+             s.state AS state,
+             SUM(pol.price_subtotal_incl) AS price_total,
              SUM(pol.qty) as product_uom_qty,
-             SUM(pol.price_subtotal) as price_subtotal
+             SUM(pol.price_subtotal) AS price_subtotal
+
         """
         return select_str
 
@@ -79,6 +91,7 @@ class SaleAllReport(models.Model):
                      so.partner_id,
                      so.user_id,
                      so.company_id,
+                     so.state,
                      so.date_order
         """
         return group_by_str
@@ -89,6 +102,7 @@ class SaleAllReport(models.Model):
                      s.partner_id,
                      s.user_id,
                      s.company_id,
+                     s.state,
                      s.date_order
         """
         return group_by_str
