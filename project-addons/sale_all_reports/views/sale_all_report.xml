@@ -22,7 +22,7 @@
                     <field name="partner_id"/>
                     <field name="company_id"/>
                     <field name="user_id"/>
-                    <filter name="Sales" string="Sales" domain="[('state','not in',('draft', 'cancel', 'sent'))]"/>
+                    <filter name="Vendido" string="Sales" domain="[('state','not in',('draft', 'cancel', 'sent'))]"/>
                 </search>
             </field>
         </record>
