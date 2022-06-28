@@ -11,7 +11,6 @@ _logger = logging.getLogger(__name__)
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
-    order_web_comment = fields.Text('Order web comment')
     no_digital_products_total = fields.Float(
         compute='_compute_no_digital_products_total',
         digits=dp.get_precision('Account'))
