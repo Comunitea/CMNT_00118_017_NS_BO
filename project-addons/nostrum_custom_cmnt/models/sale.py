@@ -12,6 +12,7 @@ class SaleOrder(models.Model):
     payment_mode_id = fields.Many2one(required=True)
     phonecall_count = fields.Integer(related='partner_id.phonecall_count',
                                      string="Nº Calls")
+    order_web_comment = fields.Text('Order web comment')
 
     @api.multi
     def action_confirm(self):
@@ -22,7 +23,7 @@ class SaleOrder(models.Model):
         for so in self:
             so.invoice_shipping_on_delivery = False
         return res
-    
+
     @api.multi
     def action_cancel(self):
         live_picks = \
@@ -84,10 +85,10 @@ class Website(models.Model):
     _inherit = 'website'
 
     @api.multi
-    def sale_get_order(self, force_create=False, code=None, 
+    def sale_get_order(self, force_create=False, code=None,
                        update_pricelist=False, force_pricelist=False):
         res = super(Website, self).sale_get_order(
-            force_create=force_create, code=code, 
+            force_create=force_create, code=code,
             update_pricelist=update_pricelist,
             force_pricelist=force_pricelist)
         if res:

@@ -37,7 +37,7 @@
                                     t-attf-src="/web/image/product.product/{{product.id}}/image/75x75"/>
                             </span>
                             <span class="col-xs-12">
-                                <a t-att-href="product.url_presupuesto"> <t t-esc="product.name[:40]"/> - <t t-esc="product.lst_price"/>€</a>
+                                <a t-att-href="product.url_presupuesto"> <t t-esc="product.name[:40]"/><span t-if="not product.hide_website_price"> - <t t-esc="product.website_price"/>€</span></a>
                             </span>                 
                         </div>
                     </t>

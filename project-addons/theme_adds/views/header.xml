@@ -103,6 +103,9 @@
     </template>
 
     <template id="header_center_inside" inherit_id="website.layout">
+        <xpath expr="//meta[last()]" position="after">
+            <meta name="robots" content="noindex, nofollow" />
+        </xpath>
         <xpath expr="//div[@class='container']" position="before">
             <div class="new_header_in_wrap clarico_row">
                 <div class="new_header_in clarico_row_maxW">
