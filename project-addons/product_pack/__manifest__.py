@@ -36,7 +36,7 @@ Withilist:
     'images': [
     ],
     'depends': [
-        'sale', 'sale_margin', 'indaws_nostrum_sport'
+        'sale', 'sale_margin', 'indaws_nostrum_sport', 'point_of_sale'
     ],
     'data': [
         'security/ir.model.access.csv',

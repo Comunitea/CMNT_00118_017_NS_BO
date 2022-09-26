@@ -8,3 +8,4 @@ from . import sale_order_line_pack_line
 from . import sale_order_line
 from . import sale_order
 from . import invoice
+from . import pos_order

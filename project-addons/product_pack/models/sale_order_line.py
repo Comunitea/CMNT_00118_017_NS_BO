@@ -118,7 +118,7 @@ class SaleOrderLine(models.Model):
                     'price_subtotal': price_unit * quantity,
                 }
                 self.pack_line_ids.create(vals)
-    
+
     @api.multi
     def _prepare_invoice_line(self, qty):
         self.ensure_one()
