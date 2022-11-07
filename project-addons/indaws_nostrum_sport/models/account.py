@@ -328,8 +328,7 @@ class AccountInvoiceNostrum(models.Model):
 
     @api.multi
     def action_open_sales_lines(self):
-        r_name = 'indaws_nostrum_sport.\
-            act_invoice_nostrum_2_sale_order_line_ids'
+        r_name = 'indaws_nostrum_sport.act_invoice_nostrum_2_sale_order_line_ids'
         action = self.env.ref(r_name).read()[0]
         action['domain'] = [('id', 'in', self.sale_line_ids.ids)]
         return action
